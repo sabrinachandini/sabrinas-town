@@ -52,6 +52,13 @@ export default async function TownPage({ params }: PageProps) {
               {town.heroSummary40}
             </Text>
             <Text className="mt-tight">{town.execSummary150}</Text>
+            {town.tourismInfo &&
+              "placeholder" in town.tourismInfo &&
+              town.tourismInfo.placeholder === true && (
+                <Text size="small" muted className="mt-element italic">
+                  This town profile is being developed. Content coming soon.
+                </Text>
+              )}
           </div>
 
           {/* Right: Score Panel */}

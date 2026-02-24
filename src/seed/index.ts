@@ -4,7 +4,6 @@
 import prisma from '../db/client.js';
 import { themes } from './themes.js';
 import { sources } from './sources.js';
-import { linkedTownStubs, lexingtonLinks } from './linkedTowns.js';
 import {
   lexingtonTown,
   lexingtonEvents,
@@ -14,7 +13,22 @@ import {
   midnightRideStops,
   lexingtonOrganization,
 } from './lexington.js';
+import {
+  seedAll75Towns,
+  seedTownLinks,
+  createTownChangeLogEntries,
+  validateSeedData as validate75TownData,
+} from './towns75.js';
+import {
+  concordTownUpdate,
+  concordEvents,
+  concordPeople,
+  concordStories,
+  concordThemeConnections,
+  concordSources,
+} from './concord.js';
 import { computeTownScore } from '../services/scoring.js';
+import { TOP_75_TOWNS, HUB_TOWN_IDS } from '../data/top75.js';
 
 const isDryRun = process.argv.includes('--dry-run');
 
@@ -52,16 +66,10 @@ async function main() {
   }
   console.log(`   ✓ ${sources.length} sources seeded\n`);
 
-  // 3. Seed linked town stubs
-  console.log('🗺️  Seeding linked town stubs...');
-  for (const town of linkedTownStubs) {
-    await prisma.town.upsert({
-      where: { id: town.id },
-      update: { name: town.name, state: town.state },
-      create: town,
-    });
-  }
-  console.log(`   ✓ ${linkedTownStubs.length} town stubs seeded\n`);
+  // 3. Seed all 75 towns
+  console.log('🗺️  Seeding 75-town network...');
+  const townCount = await seedAll75Towns();
+  console.log(`   ✓ ${townCount} towns seeded\n`);
 
   // 4. Seed Lexington (main vertical slice)
   console.log('🏛️  Seeding Lexington vertical slice...');
@@ -122,6 +130,74 @@ async function main() {
   }
   console.log(`   ✓ ${lexingtonStories.length} stories seeded`);
 
+  // 4b. Seed Concord (second flagship)
+  console.log('\n🏛️  Seeding Concord flagship content...');
+
+  // Update Concord town with full content
+  await prisma.town.update({
+    where: { id: 'us-ma-concord' },
+    data: concordTownUpdate,
+  });
+  console.log('   ✓ Concord town updated with full content');
+
+  // Concord sources
+  for (const source of concordSources) {
+    await prisma.source.upsert({
+      where: { id: source.id },
+      update: source,
+      create: source,
+    });
+  }
+  console.log(`   ✓ ${concordSources.length} Concord sources seeded`);
+
+  // Concord people
+  for (const person of concordPeople) {
+    await prisma.person.upsert({
+      where: { id: person.id },
+      update: person,
+      create: person,
+    });
+  }
+  console.log(`   ✓ ${concordPeople.length} Concord people seeded`);
+
+  // Concord events
+  for (const event of concordEvents) {
+    await prisma.event.upsert({
+      where: { id: event.id },
+      update: {
+        name: event.name,
+        summary: event.summary,
+        significanceWeight: event.significanceWeight,
+      },
+      create: event,
+    });
+  }
+  console.log(`   ✓ ${concordEvents.length} Concord events seeded`);
+
+  // Concord stories
+  for (const story of concordStories) {
+    const existingStory = await prisma.story.findFirst({
+      where: { id: story.id },
+    });
+
+    if (!existingStory) {
+      await prisma.story.create({
+        data: story,
+      });
+    } else {
+      await prisma.story.update({
+        where: { id: story.id },
+        data: {
+          title: story.title,
+          textVersion: story.textVersion,
+          verificationStatus: story.verificationStatus,
+          audioScript: story.audioScript,
+        },
+      });
+    }
+  }
+  console.log(`   ✓ ${concordStories.length} Concord stories seeded`);
+
   // 5. Create EventPerson connections
   console.log('\n🔗 Creating entity connections...');
 
@@ -140,29 +216,25 @@ async function main() {
   // Connect Parker to muster event
   await upsertEventPerson('event-parker-muster', 'person-john-parker', 'Commander');
 
+  // Concord EventPerson connections
+  await upsertEventPerson('event-north-bridge', 'person-john-buttrick', 'Commander');
+  await upsertEventPerson('event-north-bridge', 'person-isaac-davis', 'Company Captain');
+  await upsertEventPerson('event-north-bridge', 'person-amos-barrett', 'Minuteman');
+  await upsertEventPerson('event-british-concord-arrival', 'person-francis-smith', 'Expedition Commander');
+  await upsertEventPerson('event-supplies-hidden', 'person-james-barrett', 'Organizer');
+  await upsertEventPerson('event-barrett-farm-search', 'person-james-barrett', 'Defender');
+  await upsertEventPerson('event-provincial-congress-concord', 'person-james-barrett', 'Member');
+  await upsertEventPerson('event-british-retreat-concord', 'person-francis-smith', 'Commander');
+
   console.log('   ✓ Event-Person connections created');
 
-  // 6. Create town links
-  for (const link of lexingtonLinks) {
-    await prisma.townLink.upsert({
-      where: {
-        fromTownId_toTownId_linkType: {
-          fromTownId: 'us-ma-lexington',
-          toTownId: link.toTownId,
-          linkType: link.linkType,
-        },
-      },
-      update: { reason: link.reason, weight: link.weight },
-      create: {
-        fromTown: { connect: { id: 'us-ma-lexington' } },
-        toTown: { connect: { id: link.toTownId } },
-        linkType: link.linkType,
-        reason: link.reason,
-        weight: link.weight,
-      },
-    });
+  // 6. Create all town links (75-town network)
+  console.log('\n🔗 Seeding town links (75-town network)...');
+  const linkResult = await seedTownLinks();
+  console.log(`   ✓ ${linkResult.created} town links created`);
+  if (linkResult.skipped > 0) {
+    console.log(`   ⚠ ${linkResult.skipped} links skipped (missing towns)`);
   }
-  console.log(`   ✓ ${lexingtonLinks.length} town links created`);
 
   // 7. Create theme connections
   await upsertTownTheme('us-ma-lexington', 'liberty-freedom', 'Where liberty was first defended with blood');
@@ -170,6 +242,11 @@ async function main() {
   await upsertTownTheme('us-ma-lexington', 'enslaved-free-black', 'Prince Estabrook was wounded here');
   await upsertTownTheme('us-ma-lexington', 'women-revolution', 'Women watched and waited as battle unfolded');
   await upsertTownTheme('us-ma-lexington', 'preservation-memory', 'Lexington Green is among the best-preserved Revolutionary sites');
+
+  // Concord theme connections
+  for (const conn of concordThemeConnections) {
+    await upsertTownTheme('us-ma-concord', conn.themeId, conn.relevanceNote);
+  }
 
   console.log('   ✓ Town-Theme connections created');
 
@@ -214,14 +291,21 @@ async function main() {
     console.log('   ℹ Lexington organization already exists');
   }
 
-  // 10. Compute initial score
-  console.log('\n📊 Computing initial score...');
-  try {
-    const scoreResult = await computeTownScore('us-ma-lexington');
-    console.log(`   ✓ Lexington composite score: ${scoreResult.compositeScore}`);
-  } catch (error) {
-    console.log(`   ⚠ Score computation skipped (may need more data): ${error}`);
+  // 10. Compute scores for hub towns
+  console.log('\n📊 Computing scores for hub towns...');
+  for (const hubId of HUB_TOWN_IDS) {
+    try {
+      const scoreResult = await computeTownScore(hubId);
+      console.log(`   ✓ ${hubId}: ${scoreResult.compositeScore}`);
+    } catch (error) {
+      // Skip if hub doesn't have enough data yet
+    }
   }
+
+  // 11. Create ChangeLogEntries for new towns
+  console.log('\n📝 Creating changelog entries...');
+  const changelogCount = await createTownChangeLogEntries();
+  console.log(`   ✓ ${changelogCount} changelog entries created`);
 
   // Summary
   console.log('\n====================================');
@@ -229,19 +313,25 @@ async function main() {
   console.log(`
 Summary:
   - ${themes.length} themes
-  - ${sources.length} sources
-  - ${linkedTownStubs.length + 1} towns (Lexington + stubs)
-  - ${lexingtonPeople.length} people
-  - ${lexingtonEvents.length} events
-  - ${lexingtonStories.length} stories
-  - ${lexingtonLinks.length} town links
+  - ${sources.length + concordSources.length} sources
+  - ${TOP_75_TOWNS.length} towns (75-town network)
+  - ${lexingtonPeople.length + concordPeople.length} people (Lexington + Concord)
+  - ${lexingtonEvents.length + concordEvents.length} events (Lexington + Concord)
+  - ${lexingtonStories.length + concordStories.length} stories (Lexington + Concord)
+  - ${linkResult.created} town links
   - 1 route with ${midnightRideStops.length} stops
   - 1 organization
+  - ${changelogCount} changelog entries
+
+Flagship towns:
+  - Lexington: ${lexingtonEvents.length} events, ${lexingtonPeople.length} people, ${lexingtonStories.length} stories
+  - Concord: ${concordEvents.length} events, ${concordPeople.length} people, ${concordStories.length} stories
 
 Next steps:
-  1. Start the server: npm run dev
-  2. Test the Lexington endpoint: curl http://localhost:3000/towns/lexington-ma
-  3. Add more towns by following the lexington.ts pattern
+  1. Test the rankings: curl http://localhost:3000/rankings
+  2. Test Lexington: curl http://localhost:3000/towns/lexington-ma
+  3. Test Concord: curl http://localhost:3000/towns/concord-ma
+  4. Compare: curl http://localhost:3000/compare?townA=lexington-ma&townB=concord-ma
 `);
 }
 
@@ -280,7 +370,7 @@ async function upsertTownTheme(townId: string, themeId: string, relevanceNote: s
 async function validateSeedData() {
   console.log('Validating seed data...\n');
 
-  // Check for duplicate IDs
+  // Check for duplicate IDs in themes, sources, people, events
   const themeIds = themes.map((t) => t.id);
   const duplicateThemes = themeIds.filter((id, i) => themeIds.indexOf(id) !== i);
   if (duplicateThemes.length > 0) {
@@ -313,24 +403,39 @@ async function validateSeedData() {
     console.log('✓ Event IDs are unique');
   }
 
-  // Check required fields
+  // Check Lexington required fields
   console.log('\n✓ Lexington town has required fields:');
   console.log(`  - heroSummary40: ${lexingtonTown.heroSummary40.length} chars (limit 60)`);
   console.log(`  - execSummary150: ${lexingtonTown.execSummary150.length} chars (limit 200)`);
   console.log(`  - whyMatters: ${lexingtonTown.whyMatters.length} chars`);
 
-  // Check linked town references
-  const linkedTownIds = linkedTownStubs.map((t) => t.id);
-  const missingTowns = lexingtonLinks
-    .filter((l) => !linkedTownIds.includes(l.toTownId))
-    .map((l) => l.toTownId);
-  if (missingTowns.length > 0) {
-    console.error('\n❌ Links reference missing towns:', missingTowns);
-  } else {
-    console.log('\n✓ All linked towns have stubs');
+  // Validate 75-town data
+  console.log('\n📊 Validating 75-town network...');
+  const result = validate75TownData();
+
+  if (result.errors.length > 0) {
+    console.error('❌ Errors:');
+    for (const error of result.errors) {
+      console.error(`   - ${error}`);
+    }
   }
 
-  console.log('\n✅ Validation complete!');
+  if (result.warnings.length > 0) {
+    console.log('⚠ Warnings:');
+    for (const warning of result.warnings) {
+      console.log(`   - ${warning}`);
+    }
+  }
+
+  console.log(`\n✓ ${TOP_75_TOWNS.length} towns in network`);
+  console.log(`✓ ${HUB_TOWN_IDS.length} hub towns`);
+
+  if (result.valid) {
+    console.log('\n✅ Validation complete!');
+  } else {
+    console.error('\n❌ Validation failed! Fix errors before seeding.');
+    process.exit(1);
+  }
 }
 
 main()
