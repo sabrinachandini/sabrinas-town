@@ -1,0 +1,560 @@
+// MODEL: Claude Sonnet
+// Prisma schema for Sabrina's Town - American Revolution Tourism Network
+// Designed for interconnected knowledge graph, multi-tenant licensing, and agentic updates
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================================================
+// CORE ENTITIES
+// ============================================================================
+
+model Town {
+  id            String   @id // Stable ID: "us-ma-lexington"
+  name          String
+  state         String
+  country       String   @default("USA")
+  slug          String   @unique // URL-friendly: "lexington-ma"
+
+  // Geographic
+  lat           Float?
+  lng           Float?
+
+  // Content summaries
+  heroSummary40   String   @db.VarChar(60)  // ~40 chars for headlines
+  execSummary150  String   @db.VarChar(200) // ~150 chars for cards
+  whyMatters      String   @db.Text         // Full "why this town matters" text
+
+  // Tourism metadata (flexible JSONB)
+  tourismInfo     Json?    // walkabilityScore, bestTimeToVisit, avgVisitDuration, etc.
+
+  // Scoring
+  compositeScore      Float    @default(0)
+  scoreBreakdown      Json?    // { historical: 95, preservation: 80, accessibility: 70, ... }
+  scoreConfigVersion  String   @default("1.0.0")
+
+  // Timestamps
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  lastUpdatedAt DateTime @default(now()) // Content last updated (distinct from record)
+
+  // Relations
+  events        Event[]
+  stories       Story[]
+  outgoingLinks TownLink[] @relation("FromTown")
+  incomingLinks TownLink[] @relation("ToTown")
+  townThemes    TownTheme[]
+  routeStops    RouteStop[]
+  sourceTowns   SourceTown[]
+  townPeople    TownPerson[]
+
+  // Multi-tenant
+  organizations Organization[]
+
+  // Analytics & Updates
+  analyticsEvents AnalyticsEvent[]
+  updateDeltas    UpdateDelta[]
+  changeLogEntries ChangeLogEntry[]
+  scoreSnapshots  ScoreSnapshot[]
+
+  @@index([state])
+  @@index([compositeScore(sort: Desc)])
+}
+
+model Event {
+  id              String        @id // Stable ID: "battle-lexington-green-1775"
+  townId          String
+  town            Town          @relation(fields: [townId], references: [id])
+
+  name            String
+  startDate       DateTime?
+  endDate         DateTime?
+  datePrecision   DatePrecision @default(UNKNOWN)
+
+  summary         String        @db.Text
+  significanceWeight Int        @default(50) // 0-100 scale
+
+  // Optional geo (for events at specific locations within town)
+  lat             Float?
+  lng             Float?
+
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  // Relations
+  eventPeople     EventPerson[]
+  eventThemes     EventTheme[]
+  sourceEvents    SourceEvent[]
+  eventTowns      EventTown[]   // For events spanning multiple towns
+
+  @@index([townId])
+  @@index([startDate])
+}
+
+model Person {
+  id                  String             @id // Stable ID: "paul-revere"
+  name                String
+  roles               String[]           // ["Patriot", "Silversmith", "Messenger"]
+
+  bioShort            String             @db.VarChar(300)
+  bioLong             String?            @db.Text
+
+  birthYear           Int?
+  deathYear           Int?
+  verificationStatus  VerificationStatus @default(VERIFIED)
+
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+
+  // Relations
+  eventPeople         EventPerson[]
+  stories             Story[]            @relation("SubjectPerson")
+  sourcePeople        SourcePerson[]
+  townPeople          TownPerson[]
+
+  @@index([name])
+}
+
+model Theme {
+  id          String   @id // "liberty-freedom", "women-revolution", etc.
+  name        String
+  description String   @db.Text
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  townThemes  TownTheme[]
+  eventThemes EventTheme[]
+  storyThemes StoryTheme[]
+}
+
+model Route {
+  id          String      @id // "midnight-ride-route"
+  name        String
+  description String      @db.Text
+  totalMiles  Float?
+
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  // Relations
+  stops       RouteStop[]
+}
+
+model RouteStop {
+  id          String   @id @default(cuid())
+  routeId     String
+  route       Route    @relation(fields: [routeId], references: [id])
+  townId      String
+  town        Town     @relation(fields: [townId], references: [id])
+
+  stopOrder   Int      // 1, 2, 3...
+  notes       String?  @db.Text // What happened at this stop
+  arrivalTime String?  // "Approximately 11:00 PM" for historical context
+
+  @@unique([routeId, stopOrder])
+  @@index([routeId])
+  @@index([townId])
+}
+
+model Source {
+  id              String          @id @default(cuid())
+  type            SourceType
+  title           String
+  publisherOrHolder String
+  url             String?
+  publicationDate DateTime?
+  credibilityTier CredibilityTier @default(TODO)
+  notes           String?         @db.Text
+
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  // Relations (explicit joins for Prisma)
+  sourceTowns     SourceTown[]
+  sourceEvents    SourceEvent[]
+  sourceStories   SourceStory[]
+  sourcePeople    SourcePerson[]
+  updateDeltas    UpdateDelta[]
+}
+
+model Story {
+  id                  String             @id @default(cuid())
+  townId              String
+  town                Town               @relation(fields: [townId], references: [id])
+
+  title               String
+  storyType           StoryType
+
+  // For historical voices
+  subjectPersonId     String?
+  subjectPerson       Person?            @relation("SubjectPerson", fields: [subjectPersonId], references: [id])
+
+  // For modern voices
+  narratorName        String?            // "Dr. Jane Smith"
+  narratorRole        String?            // "Curator, Lexington Historical Society"
+
+  verificationStatus  VerificationStatus
+
+  // Content
+  audioScript         String?            @db.Text
+  textVersion         String             @db.Text
+
+  tags                String[]
+
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+
+  // Relations
+  storyThemes         StoryTheme[]
+  sourceStories       SourceStory[]
+
+  @@index([townId])
+  @@index([storyType])
+}
+
+// ============================================================================
+// INTER-TOWN LINKING (Knowledge Graph)
+// ============================================================================
+
+model TownLink {
+  id          String       @id @default(cuid())
+  fromTownId  String
+  fromTown    Town         @relation("FromTown", fields: [fromTownId], references: [id])
+  toTownId    String
+  toTown      Town         @relation("ToTown", fields: [toTownId], references: [id])
+
+  linkType    TownLinkType
+  reason      String       @db.Text // "Both towns were stops on Paul Revere's midnight ride"
+  weight      Int          @default(50) // 0-100, higher = stronger connection
+
+  createdAt   DateTime     @default(now())
+
+  @@unique([fromTownId, toTownId, linkType])
+  @@index([fromTownId])
+  @@index([toTownId])
+}
+
+// ============================================================================
+// JOIN TABLES
+// ============================================================================
+
+model EventPerson {
+  id          String @id @default(cuid())
+  eventId     String
+  event       Event  @relation(fields: [eventId], references: [id])
+  personId    String
+  person      Person @relation(fields: [personId], references: [id])
+
+  roleInEvent String? // "Commander", "Participant", "Witness"
+
+  @@unique([eventId, personId])
+}
+
+model EventTheme {
+  id       String @id @default(cuid())
+  eventId  String
+  event    Event  @relation(fields: [eventId], references: [id])
+  themeId  String
+  theme    Theme  @relation(fields: [themeId], references: [id])
+
+  @@unique([eventId, themeId])
+}
+
+model TownTheme {
+  id      String @id @default(cuid())
+  townId  String
+  town    Town   @relation(fields: [townId], references: [id])
+  themeId String
+  theme   Theme  @relation(fields: [themeId], references: [id])
+
+  relevanceNote String? // Why this theme is relevant to this town
+
+  @@unique([townId, themeId])
+}
+
+model TownPerson {
+  id       String @id @default(cuid())
+  townId   String
+  town     Town   @relation(fields: [townId], references: [id])
+  personId String
+  person   Person @relation(fields: [personId], references: [id])
+
+  connectionNote String? // "Birthplace", "Resided", "Key event location"
+
+  @@unique([townId, personId])
+}
+
+model StoryTheme {
+  id      String @id @default(cuid())
+  storyId String
+  story   Story  @relation(fields: [storyId], references: [id])
+  themeId String
+  theme   Theme  @relation(fields: [themeId], references: [id])
+
+  @@unique([storyId, themeId])
+}
+
+model EventTown {
+  id      String @id @default(cuid())
+  eventId String
+  event   Event  @relation(fields: [eventId], references: [id])
+  townId  String
+
+  role    String? // "Origin", "Destination", "Battle site"
+
+  @@unique([eventId, townId])
+}
+
+// Source junction tables
+model SourceTown {
+  id       String @id @default(cuid())
+  sourceId String
+  source   Source @relation(fields: [sourceId], references: [id])
+  townId   String
+  town     Town   @relation(fields: [townId], references: [id])
+
+  @@unique([sourceId, townId])
+}
+
+model SourceEvent {
+  id       String @id @default(cuid())
+  sourceId String
+  source   Source @relation(fields: [sourceId], references: [id])
+  eventId  String
+  event    Event  @relation(fields: [eventId], references: [id])
+
+  @@unique([sourceId, eventId])
+}
+
+model SourceStory {
+  id       String @id @default(cuid())
+  sourceId String
+  source   Source @relation(fields: [sourceId], references: [id])
+  storyId  String
+  story    Story  @relation(fields: [storyId], references: [id])
+
+  @@unique([sourceId, storyId])
+}
+
+model SourcePerson {
+  id       String @id @default(cuid())
+  sourceId String
+  source   Source @relation(fields: [sourceId], references: [id])
+  personId String
+  person   Person @relation(fields: [personId], references: [id])
+
+  @@unique([sourceId, personId])
+}
+
+// ============================================================================
+// MULTI-TENANT / LICENSING
+// ============================================================================
+
+model Organization {
+  id              String           @id @default(cuid())
+  townId          String
+  town            Town             @relation(fields: [townId], references: [id])
+
+  name            String           // "Lexington Tourism Board"
+  planTier        PlanTier         @default(STARTER)
+  status          OrgStatus        @default(TRIAL)
+
+  embedApiKey     String           @unique
+
+  // Branding config
+  brandingConfig  Json?            // { logoUrl, primaryColor, secondaryColor, ctaText, ... }
+
+  // Contact
+  contactEmail    String?
+  contactName     String?
+
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+
+  // Relations
+  analyticsEvents AnalyticsEvent[]
+
+  @@index([townId])
+  @@index([embedApiKey])
+}
+
+// ============================================================================
+// ANALYTICS
+// ============================================================================
+
+model AnalyticsEvent {
+  id        String              @id @default(cuid())
+  orgId     String?
+  org       Organization?       @relation(fields: [orgId], references: [id])
+  townId    String
+  town      Town                @relation(fields: [townId], references: [id])
+
+  eventType AnalyticsEventType
+  timestamp DateTime            @default(now())
+  metadata  Json?               // { referrer, userAgent, sessionId, ... }
+
+  @@index([orgId])
+  @@index([townId])
+  @@index([timestamp])
+  @@index([eventType])
+}
+
+// ============================================================================
+// AGENTIC UPDATES
+// ============================================================================
+
+model UpdateDelta {
+  id                  String            @id @default(cuid())
+  townId              String
+  town                Town              @relation(fields: [townId], references: [id])
+
+  detectedAt          DateTime          @default(now())
+
+  sourceId            String?
+  source              Source?           @relation(fields: [sourceId], references: [id])
+
+  // Raw and processed data
+  rawPayload          Json              // Original scraped/ingested data
+  extracted           Json              // Structured extracted changes
+
+  // Scoring and review
+  significanceScore   Int               @default(50) // 0-100
+  requiresHumanReview Boolean           @default(true)
+  questions           String[]          // Questions for human reviewer
+
+  status              UpdateDeltaStatus @default(PENDING)
+  appliedAt           DateTime?
+  appliedBy           String?           // Admin user identifier
+  rollbackReason      String?
+
+  createdAt           DateTime          @default(now())
+  updatedAt           DateTime          @updatedAt
+
+  // Relations
+  changeLogEntry      ChangeLogEntry?
+
+  @@index([townId])
+  @@index([status])
+  @@index([detectedAt])
+}
+
+model ChangeLogEntry {
+  id            String       @id @default(cuid())
+  townId        String
+  town          Town         @relation(fields: [townId], references: [id])
+
+  updateDeltaId String?      @unique
+  updateDelta   UpdateDelta? @relation(fields: [updateDeltaId], references: [id])
+
+  createdAt     DateTime     @default(now())
+
+  summary       String       // "Updated preservation status based on NPS report"
+  details       Json         // { fieldsChanged: [...], previousValues: {...}, newValues: {...} }
+  publicNotes   String?      @db.Text // User-facing explanation
+
+  @@index([townId])
+  @@index([createdAt])
+}
+
+model ScoreSnapshot {
+  id            String   @id @default(cuid())
+  townId        String
+  town          Town     @relation(fields: [townId], references: [id])
+
+  computedAt    DateTime @default(now())
+  compositeScore Float
+  breakdown     Json     // Full breakdown at this point in time
+  configVersion String   // Which scoring config was used
+
+  @@index([townId])
+  @@index([computedAt])
+}
+
+// ============================================================================
+// ENUMS
+// ============================================================================
+
+enum DatePrecision {
+  DAY
+  MONTH
+  YEAR
+  RANGE
+  UNKNOWN
+}
+
+enum VerificationStatus {
+  VERIFIED
+  ORAL_TRADITION
+  ANECDOTAL
+  UNVERIFIED
+}
+
+enum StoryType {
+  HISTORICAL_VOICE
+  MODERN_VOICE
+}
+
+enum SourceType {
+  PRIMARY
+  SECONDARY
+  TERTIARY
+  DATASET
+  INSTITUTIONAL
+  NEWS
+}
+
+enum CredibilityTier {
+  TIER1  // Academic, NPS, Smithsonian, primary documents
+  TIER2  // Reputable secondary sources, established historians
+  TIER3  // General reference, Wikipedia (with verification)
+  TODO   // Not yet evaluated
+}
+
+enum TownLinkType {
+  SHARED_EVENT
+  SHARED_PERSON
+  SHARED_THEME
+  ROUTE
+  COMPARISON
+  GEOGRAPHIC_PROXIMITY
+  OTHER
+}
+
+enum PlanTier {
+  STARTER
+  PRO
+  PREMIUM
+}
+
+enum OrgStatus {
+  ACTIVE
+  TRIAL
+  PAST_DUE
+  CANCELED
+}
+
+enum AnalyticsEventType {
+  PAGE_VIEW
+  ITINERARY_CLICK
+  TEACHER_DOWNLOAD
+  COMPARE_VIEW
+  EMBED_VIEW
+  FAQ_EXPAND
+  STORY_LISTEN
+  ROUTE_VIEW
+}
+
+enum UpdateDeltaStatus {
+  PENDING
+  APPLIED
+  REJECTED
+  ROLLED_BACK
+}

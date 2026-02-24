@@ -1,0 +1,60 @@
+{
+  "name": "Sabrina's Town",
+  "tagline": "History is for everyone.",
+  "description": "An interconnected network of the 75 most important American Revolution tourism towns",
+  "version": "1.0.0",
+  "branding": {
+    "primaryColor": "#1B4D3E",
+    "secondaryColor": "#8B4513",
+    "accentColor": "#C9A227",
+    "fontHeading": "Georgia, serif",
+    "fontBody": "system-ui, -apple-system, sans-serif"
+  },
+  "contact": {
+    "email": "hello@sabrinastown.com",
+    "support": "support@sabrinastown.com"
+  },
+  "social": {
+    "twitter": "@sabrinastown",
+    "instagram": "@sabrinastown"
+  },
+  "legal": {
+    "privacyPolicy": "/legal/privacy",
+    "termsOfService": "/legal/terms"
+  },
+  "network": {
+    "totalTowns": 75,
+    "launchTowns": 1,
+    "targetStates": ["MA", "NY", "PA", "VA", "NJ", "CT", "RI", "NH", "SC", "GA", "NC", "MD", "DE"],
+    "badge": {
+      "title": "Top 75 Revolutionary Towns",
+      "description": "Part of the interconnected network of America's most important Revolutionary sites"
+    }
+  },
+  "features": {
+    "publicApi": true,
+    "teacherEngine": true,
+    "embedWidgets": true,
+    "analytics": true,
+    "agenticUpdates": true
+  },
+  "scoring": {
+    "configVersion": "1.0.0",
+    "categories": [
+      { "id": "historical", "weight": 0.25, "label": "Historical Significance" },
+      { "id": "preservation", "weight": 0.15, "label": "Preservation Quality" },
+      { "id": "accessibility", "weight": 0.10, "label": "Visitor Accessibility" },
+      { "id": "interpretation", "weight": 0.15, "label": "Educational Interpretation" },
+      { "id": "interconnection", "weight": 0.15, "label": "Network Connections" },
+      { "id": "stories", "weight": 0.10, "label": "Story Richness" },
+      { "id": "sources", "weight": 0.10, "label": "Source Quality" }
+    ],
+    "tiers": [
+      { "name": "Exceptional", "minScore": 90 },
+      { "name": "Excellent", "minScore": 75 },
+      { "name": "Notable", "minScore": 60 },
+      { "name": "Relevant", "minScore": 40 },
+      { "name": "Emerging", "minScore": 0 }
+    ]
+  }
+}
