@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+/* Sabrina's Town Design System */
+/* Brand: "History is for everyone." */
+
+:root {
+  /* Background Colors */
+  --bg-primary: #F7F5F2;
+  --bg-secondary: #E6EBF2;
+
+  /* Text Colors */
+  --text-primary: #1E1E1E;
+  --text-muted: #6B7280;
+
+  /* Accent Colors */
+  --accent-blue: #2C4A7A;
+  --accent-blue-hover: #3B5F99;
+  --accent-red: #B03A48;
+  --accent-red-hover: #C54A57;
+
+  /* Border */
+  --border-light: #E2E2E2;
+
+  /* Typography Scale */
+  --font-size-h1: 4rem;      /* 64px */
+  --font-size-h2: 2.25rem;   /* 36px */
+  --font-size-h3: 1.5rem;    /* 24px */
+  --font-size-body: 1.125rem; /* 18px */
+  --font-size-small: 0.875rem; /* 14px */
+
+  /* Spacing Scale */
+  --space-section: 6rem;     /* 96px */
+  --space-component: 3rem;   /* 48px */
+  --space-element: 1.5rem;   /* 24px */
+  --space-tight: 0.75rem;    /* 12px */
+
+  /* Layout */
+  --max-width-narrow: 820px;
+  --max-width-wide: 1200px;
+}
+
+@theme inline {
+  /* Colors */
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-text-primary: var(--text-primary);
+  --color-text-muted: var(--text-muted);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-blue-hover: var(--accent-blue-hover);
+  --color-accent-red: var(--accent-red);
+  --color-accent-red-hover: var(--accent-red-hover);
+  --color-border-light: var(--border-light);
+
+  /* Font Families */
+  --font-heading: var(--font-playfair);
+  --font-body: var(--font-inter);
+
+  /* Font Sizes */
+  --font-size-h1: var(--font-size-h1);
+  --font-size-h2: var(--font-size-h2);
+  --font-size-h3: var(--font-size-h3);
+  --font-size-body: var(--font-size-body);
+  --font-size-small: var(--font-size-small);
+
+  /* Spacing */
+  --spacing-section: var(--space-section);
+  --spacing-component: var(--space-component);
+  --spacing-element: var(--space-element);
+  --spacing-tight: var(--space-tight);
+
+  /* Max Widths */
+  --max-width-narrow: var(--max-width-narrow);
+  --max-width-wide: var(--max-width-wide);
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: var(--font-size-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Base */
+h1, h2, h3 {
+  font-family: var(--font-playfair), Georgia, serif;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  font-weight: 600;
+}
+
+/* Link Base */
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-blue-hover);
+  text-decoration: underline;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--accent-blue);
+  color: white;
+}
+
+/* Focus States - Accessible */
+:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+/* Remove default button styles */
+button {
+  font-family: inherit;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  :root {
+    --font-size-h1: 2.5rem;    /* 40px on mobile */
+    --font-size-h2: 1.75rem;   /* 28px on mobile */
+    --font-size-h3: 1.25rem;   /* 20px on mobile */
+    --font-size-body: 1rem;    /* 16px on mobile */
+
+    --space-section: 4rem;
+    --space-component: 2rem;
+  }
+}
