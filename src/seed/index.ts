@@ -118,6 +118,12 @@ import {
   ticonderogaTownUpdate, ticonderogaPeople, ticonderogaEvents, ticonderogaStories,
   newYorkCityTownUpdate, newYorkCityPeople, newYorkCityEvents, newYorkCityStories,
 } from './newyork/content.js';
+import {
+  newHavenTownUpdate, newHavenPeople, newHavenEvents, newHavenStories,
+  newLondonTownUpdate, newLondonPeople, newLondonEvents, newLondonStories,
+  danburyTownUpdate, danburyPeople, danburyEvents, danburyStories,
+  grotonTownUpdate, grotonPeople, grotonEvents, grotonStories,
+} from './connecticut/content.js';
 import { computeTownScore } from '../services/scoring.js';
 import { TOP_75_TOWNS, HUB_TOWN_IDS } from '../data/top75.js';
 import { Prisma } from '@prisma/client';
@@ -1272,6 +1278,23 @@ async function main() {
   ];
 
   for (const town of nyTownExpansions) {
+    await prisma.town.update({ where: { id: town.id }, data: town.update });
+    for (const person of town.people) { await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person }); }
+    for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
+    for (const story of town.stories) { const ex = await prisma.story.findFirst({ where: { id: story.id! } }); if (!ex) { await prisma.story.create({ data: story }); } else { await prisma.story.update({ where: { id: story.id! }, data: { title: story.title, textVersion: story.textVersion } }); } }
+    console.log(`   ✓ ${town.name}: ${town.people.length} people, ${town.events.length} events, ${town.stories.length} stories`);
+  }
+
+  // 18. CT town content expansion
+  console.log('\n🏛️  Expanding Connecticut town content...');
+  const ctTownExpansions = [
+    { id: 'us-ct-new-haven', name: 'New Haven', update: newHavenTownUpdate, people: newHavenPeople, events: newHavenEvents, stories: newHavenStories },
+    { id: 'us-ct-new-london', name: 'New London', update: newLondonTownUpdate, people: newLondonPeople, events: newLondonEvents, stories: newLondonStories },
+    { id: 'us-ct-danbury', name: 'Danbury', update: danburyTownUpdate, people: danburyPeople, events: danburyEvents, stories: danburyStories },
+    { id: 'us-ct-groton', name: 'Groton', update: grotonTownUpdate, people: grotonPeople, events: grotonEvents, stories: grotonStories },
+  ];
+
+  for (const town of ctTownExpansions) {
     await prisma.town.update({ where: { id: town.id }, data: town.update });
     for (const person of town.people) { await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person }); }
     for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
