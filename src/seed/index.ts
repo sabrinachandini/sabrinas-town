@@ -80,8 +80,78 @@ import { worcesterEvents } from './worcester.js';
 import { springfieldEvents } from './springfield.js';
 import { computeTownScore } from '../services/scoring.js';
 import { TOP_75_TOWNS, HUB_TOWN_IDS } from '../data/top75.js';
+import { Prisma } from '@prisma/client';
+// Phase 2: Remaining MA town sources
+import {
+  salemSources,
+  marbleheadSources,
+  plymouthSources,
+  worcesterSources,
+  springfieldSources,
+} from './massachusetts/sources/index.js';
+// Phase 3: All other regional sources
+import {
+  newYorkSources,
+  pennsylvaniaSources,
+  newJerseySources,
+  virginiaSources,
+  southCarolinaSources,
+  northCarolinaSources,
+  georgiaSources,
+  connecticutSources,
+  rhodeIslandSources,
+  newHampshireSources,
+  marylandSources,
+  delawareSources,
+  vermontSources,
+  maineSources,
+  frontierSources,
+} from './sources/index.js';
 
 const isDryRun = process.argv.includes('--dry-run');
+
+/**
+ * Reusable helper: upsert sources and link them to a town via SourceTown.
+ * Also links any shared source IDs (sources already in the DB from other seed files).
+ */
+export async function upsertSourcesAndLink(
+  townId: string,
+  sources: Prisma.SourceCreateInput[],
+  sharedSourceIds: string[] = []
+) {
+  // Upsert each source
+  for (const source of sources) {
+    await prisma.source.upsert({
+      where: { id: source.id! },
+      update: source,
+      create: source,
+    });
+  }
+
+  // Link town-specific sources
+  const allSourceIds = [
+    ...sources.map((s) => s.id!),
+    ...sharedSourceIds,
+  ];
+
+  let linked = 0;
+  for (const sourceId of allSourceIds) {
+    const existing = await prisma.sourceTown.findFirst({
+      where: { sourceId, townId },
+    });
+    if (!existing) {
+      await prisma.sourceTown.create({
+        data: {
+          source: { connect: { id: sourceId } },
+          town: { connect: { id: townId } },
+        },
+      });
+      linked++;
+    }
+  }
+
+  return { upserted: sources.length, linked: allSourceIds.length, newLinks: linked };
+}
 
 async function main() {
   console.log('🏛️  Sabrina\'s Town - Database Seed');
@@ -208,35 +278,10 @@ async function main() {
   }
   console.log(`   ✓ ${lexingtonPlaces.length} Lexington places seeded`);
 
-  // Lexington-specific sources
-  for (const source of lexingtonSources) {
-    await prisma.source.upsert({
-      where: { id: source.id! },
-      update: source,
-      create: source,
-    });
-  }
-  console.log(`   ✓ ${lexingtonSources.length} Lexington-specific sources seeded`);
-
-  // Link all sources to Lexington (shared + Lexington-specific)
-  const allLexSourceIds = [
-    ...LEXINGTON_SHARED_SOURCE_IDS,
-    ...lexingtonSources.map((s) => s.id!),
-  ];
-  for (const sourceId of allLexSourceIds) {
-    const existing = await prisma.sourceTown.findFirst({
-      where: { sourceId, townId: 'us-ma-lexington' },
-    });
-    if (!existing) {
-      await prisma.sourceTown.create({
-        data: {
-          source: { connect: { id: sourceId } },
-          town: { connect: { id: 'us-ma-lexington' } },
-        },
-      });
-    }
-  }
-  console.log(`   ✓ ${allLexSourceIds.length} Lexington source-town connections created`);
+  // Lexington-specific sources (using helper)
+  const lexResult = await upsertSourcesAndLink('us-ma-lexington', lexingtonSources, LEXINGTON_SHARED_SOURCE_IDS);
+  console.log(`   ✓ ${lexResult.upserted} Lexington-specific sources seeded`);
+  console.log(`   ✓ ${lexResult.linked} Lexington source-town connections created`);
 
   // 4a-2. Seed additional Massachusetts places
   console.log('\n🗺️  Seeding Massachusetts places...');
@@ -294,31 +339,10 @@ async function main() {
   });
   console.log('   ✓ Concord town updated with full content');
 
-  // Concord sources
-  for (const source of concordSources) {
-    await prisma.source.upsert({
-      where: { id: source.id },
-      update: source,
-      create: source,
-    });
-  }
-  console.log(`   ✓ ${concordSources.length} Concord sources seeded`);
-
-  // Concord SourceTown connections (link sources to Concord)
-  for (const source of concordSources) {
-    const existing = await prisma.sourceTown.findFirst({
-      where: { sourceId: source.id, townId: 'us-ma-concord' },
-    });
-    if (!existing) {
-      await prisma.sourceTown.create({
-        data: {
-          source: { connect: { id: source.id } },
-          town: { connect: { id: 'us-ma-concord' } },
-        },
-      });
-    }
-  }
-  console.log(`   ✓ ${concordSources.length} Concord source-town connections created`);
+  // Concord sources (using helper)
+  const concordResult = await upsertSourcesAndLink('us-ma-concord', concordSources);
+  console.log(`   ✓ ${concordResult.upserted} Concord sources seeded`);
+  console.log(`   ✓ ${concordResult.linked} Concord source-town connections created`);
 
   // Concord people
   for (const person of concordPeople) {
@@ -378,31 +402,10 @@ async function main() {
   });
   console.log('   ✓ Boston town updated with full content');
 
-  // Boston sources
-  for (const source of bostonSources) {
-    await prisma.source.upsert({
-      where: { id: source.id },
-      update: source,
-      create: source,
-    });
-  }
-  console.log(`   ✓ ${bostonSources.length} Boston sources seeded`);
-
-  // Boston SourceTown connections (link sources to Boston)
-  for (const source of bostonSources) {
-    const existing = await prisma.sourceTown.findFirst({
-      where: { sourceId: source.id, townId: 'us-ma-boston' },
-    });
-    if (!existing) {
-      await prisma.sourceTown.create({
-        data: {
-          source: { connect: { id: source.id } },
-          town: { connect: { id: 'us-ma-boston' } },
-        },
-      });
-    }
-  }
-  console.log(`   ✓ ${bostonSources.length} Boston source-town connections created`);
+  // Boston sources (using helper)
+  const bostonResult = await upsertSourcesAndLink('us-ma-boston', bostonSources);
+  console.log(`   ✓ ${bostonResult.upserted} Boston sources seeded`);
+  console.log(`   ✓ ${bostonResult.linked} Boston source-town connections created`);
 
   // Boston people
   for (const person of bostonPeople) {
@@ -492,31 +495,10 @@ async function main() {
   });
   console.log('   ✓ Cambridge town updated with full content');
 
-  // Cambridge sources
-  for (const source of cambridgeSources) {
-    await prisma.source.upsert({
-      where: { id: source.id },
-      update: source,
-      create: source,
-    });
-  }
-  console.log(`   ✓ ${cambridgeSources.length} Cambridge sources seeded`);
-
-  // Cambridge SourceTown connections
-  for (const source of cambridgeSources) {
-    const existing = await prisma.sourceTown.findFirst({
-      where: { sourceId: source.id, townId: 'us-ma-cambridge' },
-    });
-    if (!existing) {
-      await prisma.sourceTown.create({
-        data: {
-          source: { connect: { id: source.id } },
-          town: { connect: { id: 'us-ma-cambridge' } },
-        },
-      });
-    }
-  }
-  console.log(`   ✓ ${cambridgeSources.length} Cambridge source-town connections created`);
+  // Cambridge sources (using helper)
+  const cambridgeResult = await upsertSourcesAndLink('us-ma-cambridge', cambridgeSources);
+  console.log(`   ✓ ${cambridgeResult.upserted} Cambridge sources seeded`);
+  console.log(`   ✓ ${cambridgeResult.linked} Cambridge source-town connections created`);
 
   // Cambridge people
   for (const person of cambridgePeople) {
@@ -606,31 +588,10 @@ async function main() {
   });
   console.log('   ✓ Arlington town updated with full content');
 
-  // Arlington sources
-  for (const source of arlingtonSources) {
-    await prisma.source.upsert({
-      where: { id: source.id },
-      update: source,
-      create: source,
-    });
-  }
-  console.log(`   ✓ ${arlingtonSources.length} Arlington sources seeded`);
-
-  // Arlington SourceTown connections
-  for (const source of arlingtonSources) {
-    const existing = await prisma.sourceTown.findFirst({
-      where: { sourceId: source.id, townId: 'us-ma-arlington' },
-    });
-    if (!existing) {
-      await prisma.sourceTown.create({
-        data: {
-          source: { connect: { id: source.id } },
-          town: { connect: { id: 'us-ma-arlington' } },
-        },
-      });
-    }
-  }
-  console.log(`   ✓ ${arlingtonSources.length} Arlington source-town connections created`);
+  // Arlington sources (using helper)
+  const arlingtonResult = await upsertSourcesAndLink('us-ma-arlington', arlingtonSources);
+  console.log(`   ✓ ${arlingtonResult.upserted} Arlington sources seeded`);
+  console.log(`   ✓ ${arlingtonResult.linked} Arlington source-town connections created`);
 
   // Arlington people
   for (const person of arlingtonPeople) {
@@ -784,6 +745,48 @@ async function main() {
     });
   }
   console.log(`   ✓ ${springfieldEvents.length} Springfield events seeded`);
+
+  // 4k. Seed sources for remaining MA towns (Phase 2)
+  console.log('\n📖 Seeding remaining Massachusetts town sources...');
+  const maTownSources: [string, string, typeof salemSources][] = [
+    ['Salem', 'us-ma-salem', salemSources],
+    ['Marblehead', 'us-ma-marblehead', marbleheadSources],
+    ['Plymouth', 'us-ma-plymouth', plymouthSources],
+    ['Worcester', 'us-ma-worcester', worcesterSources],
+    ['Springfield', 'us-ma-springfield', springfieldSources],
+  ];
+  for (const [name, townId, townSources] of maTownSources) {
+    const result = await upsertSourcesAndLink(townId, townSources);
+    console.log(`   ✓ ${name}: ${result.upserted} sources, ${result.newLinks} new links`);
+  }
+
+  // 4l. Seed sources for all other regions (Phase 3)
+  console.log('\n📖 Seeding regional sources (60 towns)...');
+  const regionSourceMaps: [string, Record<string, { sources: Prisma.SourceCreateInput[]; sharedIds?: string[] }>][] = [
+    ['New York', newYorkSources],
+    ['Pennsylvania', pennsylvaniaSources],
+    ['New Jersey', newJerseySources],
+    ['Virginia', virginiaSources],
+    ['South Carolina', southCarolinaSources],
+    ['North Carolina', northCarolinaSources],
+    ['Georgia', georgiaSources],
+    ['Connecticut', connecticutSources],
+    ['Rhode Island', rhodeIslandSources],
+    ['New Hampshire', newHampshireSources],
+    ['Maryland', marylandSources],
+    ['Delaware', delawareSources],
+    ['Vermont', vermontSources],
+    ['Maine', maineSources],
+    ['Frontier', frontierSources],
+  ];
+  for (const [regionName, sourceMap] of regionSourceMaps) {
+    let regionTotal = 0;
+    for (const [townId, { sources: townSources, sharedIds }] of Object.entries(sourceMap)) {
+      const result = await upsertSourcesAndLink(townId, townSources, sharedIds || []);
+      regionTotal += result.upserted;
+    }
+    console.log(`   ✓ ${regionName}: ${regionTotal} sources across ${Object.keys(sourceMap).length} towns`);
+  }
 
   // 5. Create EventPerson connections
   console.log('\n🔗 Creating entity connections...');
