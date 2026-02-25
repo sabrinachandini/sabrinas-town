@@ -30,7 +30,7 @@ export async function registerEmbedRoutes(fastify: FastifyInstance): Promise<voi
 
       try {
         // Verify org has access to this town (or it's their own town)
-        const isOwnTown = org.town.slug === slug;
+        const isOwnTown = org.town?.slug === slug;
         const hasAccess = isOwnTown || org.planTier !== 'STARTER';
 
         if (!hasAccess) {

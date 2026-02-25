@@ -14,19 +14,29 @@ import { registerAnalyticsRoutes } from './analytics.js';
 export async function registerRoutes(fastify: FastifyInstance): Promise<void> {
   // Health check with DB status and version
   fastify.get('/health', async () => {
-    let db: 'connected' | 'disconnected' = 'disconnected';
+    const commitSha = process.env.VERCEL_GIT_COMMIT_SHA ?? process.env.COMMIT_SHA ?? null;
+    const version = commitSha ? commitSha.slice(0, 7) : 'dev';
+
+    let dbOk = false;
+    let latencyMs = 0;
     try {
+      const start = Date.now();
       await prisma.$queryRaw(Prisma.sql`SELECT 1`);
-      db = 'connected';
+      latencyMs = Date.now() - start;
+      dbOk = true;
     } catch {
-      db = 'disconnected';
+      dbOk = false;
     }
 
     return {
-      status: 'ok',
-      db,
-      version: process.env.VERCEL_GIT_COMMIT_SHA || 'dev',
+      ok: true,
       timestamp: new Date().toISOString(),
+      version,
+      commitSha,
+      db: {
+        ok: dbOk,
+        latencyMs,
+      },
     };
   });
 

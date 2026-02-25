@@ -243,6 +243,169 @@ export async function registerAdminRoutes(fastify: FastifyInstance): Promise<voi
     }
   );
 
+  // =========================================================================
+  // Partner Inquiry Management
+  // =========================================================================
+
+  /**
+   * GET /admin/inquiries
+   * List partner inquiries with optional status filter and search
+   */
+    adminRoutes.get(
+    '/admin/inquiries',
+    async (
+      request: FastifyRequest<{
+        Querystring: { status?: string; q?: string };
+      }>,
+      reply: FastifyReply
+    ) => {
+      try {
+        const { prisma } = await import('../db/client.js');
+        const { status, q } = request.query;
+
+        const where: Record<string, unknown> = {};
+
+        if (status && ['NEW', 'IN_REVIEW', 'RESPONDED', 'CLOSED'].includes(status)) {
+          where.status = status;
+        }
+
+        if (q) {
+          where.OR = [
+            { email: { contains: q, mode: 'insensitive' } },
+            { name: { contains: q, mode: 'insensitive' } },
+            { organization: { contains: q, mode: 'insensitive' } },
+            { townSlug: { contains: q, mode: 'insensitive' } },
+          ];
+        }
+
+        const inquiries = await prisma.partnerInquiry.findMany({
+          where,
+          orderBy: { createdAt: 'desc' },
+          include: {
+            town: { select: { id: true, slug: true, name: true } },
+          },
+        });
+
+        return reply.send({
+          success: true,
+          data: inquiries,
+          meta: { timestamp: new Date().toISOString() },
+        });
+      } catch (error) {
+        request.log.error(error, 'Error listing inquiries');
+        return reply.status(500).send({
+          success: false,
+          error: 'Internal server error',
+        });
+      }
+    }
+  );
+
+  /**
+   * GET /admin/inquiries/:id
+   * Get single inquiry detail
+   */
+    adminRoutes.get(
+    '/admin/inquiries/:id',
+    async (
+      request: FastifyRequest<{ Params: { id: string } }>,
+      reply: FastifyReply
+    ) => {
+      try {
+        const { prisma } = await import('../db/client.js');
+        const { id } = request.params;
+
+        const inquiry = await prisma.partnerInquiry.findUnique({
+          where: { id },
+          include: {
+            town: { select: { id: true, slug: true, name: true } },
+          },
+        });
+
+        if (!inquiry) {
+          return reply.status(404).send({
+            success: false,
+            error: 'Inquiry not found',
+          });
+        }
+
+        return reply.send({
+          success: true,
+          data: inquiry,
+          meta: { timestamp: new Date().toISOString() },
+        });
+      } catch (error) {
+        request.log.error(error, 'Error fetching inquiry');
+        return reply.status(500).send({
+          success: false,
+          error: 'Internal server error',
+        });
+      }
+    }
+  );
+
+  /**
+   * PATCH /admin/inquiries/:id
+   * Update inquiry status and/or notes
+   */
+    adminRoutes.patch(
+    '/admin/inquiries/:id',
+    async (
+      request: FastifyRequest<{
+        Params: { id: string };
+        Body: { status?: string; notes?: string };
+      }>,
+      reply: FastifyReply
+    ) => {
+      try {
+        const { prisma } = await import('../db/client.js');
+        const { id } = request.params;
+        const { status, notes } = request.body || {};
+
+        const data: Record<string, unknown> = {};
+
+        if (status) {
+          const validStatuses = ['NEW', 'IN_REVIEW', 'RESPONDED', 'CLOSED'];
+          if (!validStatuses.includes(status)) {
+            return reply.status(400).send({
+              success: false,
+              error: `Invalid status. Must be one of: ${validStatuses.join(', ')}`,
+            });
+          }
+          data.status = status;
+        }
+
+        if (notes !== undefined) {
+          data.notes = notes;
+        }
+
+        if (Object.keys(data).length === 0) {
+          return reply.status(400).send({
+            success: false,
+            error: 'No valid fields to update',
+          });
+        }
+
+        const inquiry = await prisma.partnerInquiry.update({
+          where: { id },
+          data,
+        });
+
+        return reply.send({
+          success: true,
+          data: inquiry,
+          meta: { timestamp: new Date().toISOString() },
+        });
+      } catch (error) {
+        request.log.error(error, 'Error updating inquiry');
+        return reply.status(500).send({
+          success: false,
+          error: 'Internal server error',
+        });
+      }
+    }
+  );
+
   /**
    * POST /admin/recompute-scores
    * Recompute scores for one or all towns

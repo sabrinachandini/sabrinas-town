@@ -433,15 +433,18 @@ export interface TownSourcesResponse {
   town: { id: string; slug: string; name: string };
   totalCount: number;
   sources: TownSource[];
+  lastUpdated: string | null;
 }
 
 // Changelog types
 export interface ChangelogEntry {
   id: string;
   createdAt: string;
+  title: string | null;
   summary: string;
   publicNotes: string | null;
-  town: { id: string; slug: string; name: string };
+  category: string | null;
+  town: { id: string; slug: string; name: string } | null;
 }
 
 export interface ChangelogResponse {

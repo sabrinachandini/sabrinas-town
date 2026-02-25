@@ -71,6 +71,9 @@ model Town {
   primarySourcePackets PrimarySourcePacket[]
   teacherWorksheets    TeacherWorksheet[]
 
+  // Partner inquiries
+  partnerInquiries PartnerInquiry[]
+
   @@index([state])
   @@index([compositeScore(sort: Desc)])
 }
@@ -627,19 +630,31 @@ model UpdateDelta {
   @@index([detectedAt])
 }
 
+enum ChangelogCategory {
+  CONTENT
+  SOURCES
+  TEACHER
+  INFRA
+  FIX
+}
+
 model ChangeLogEntry {
-  id            String       @id @default(cuid())
-  townId        String
-  town          Town         @relation(fields: [townId], references: [id])
+  id            String             @id @default(cuid())
+  townId        String?
+  town          Town?              @relation(fields: [townId], references: [id])
 
-  updateDeltaId String?      @unique
-  updateDelta   UpdateDelta? @relation(fields: [updateDeltaId], references: [id])
+  updateDeltaId String?            @unique
+  updateDelta   UpdateDelta?       @relation(fields: [updateDeltaId], references: [id])
 
-  createdAt     DateTime     @default(now())
+  createdAt     DateTime           @default(now())
 
-  summary       String       // "Updated preservation status based on NPS report"
-  details       Json         // { fieldsChanged: [...], previousValues: {...}, newValues: {...} }
-  publicNotes   String?      @db.Text // User-facing explanation
+  title         String?
+  summary       String             // "Updated preservation status based on NPS report"
+  details       Json               // { fieldsChanged: [...], previousValues: {...}, newValues: {...} }
+  publicNotes   String?            @db.Text // User-facing explanation
+  category      ChangelogCategory?
+  createdBy     String?
+  links         Json?
 
   @@index([townId])
   @@index([createdAt])
@@ -843,4 +858,36 @@ enum PlaceType {
   TAVERN           // Historic taverns, inns
   LANDMARK         // Other significant locations
   TRAIL            // Walking paths, routes
+}
+
+// ============================================================================
+// PARTNER INQUIRIES
+// ============================================================================
+
+enum InquiryStatus {
+  NEW
+  IN_REVIEW
+  RESPONDED
+  CLOSED
+}
+
+model PartnerInquiry {
+  id           String        @id @default(cuid())
+  townId       String?
+  town         Town?         @relation(fields: [townId], references: [id])
+  townSlug     String?
+  name         String
+  title        String?
+  organization String?
+  email        String
+  phone        String?
+  message      String?       @db.Text
+  sourceUrl    String?
+  status       InquiryStatus @default(NEW)
+  notes        String?       @db.Text
+  createdAt    DateTime      @default(now())
+
+  @@index([status])
+  @@index([createdAt(sort: Desc)])
+  @@index([email])
 }

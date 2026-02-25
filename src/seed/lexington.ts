@@ -431,6 +431,7 @@ export const midnightRideStops: Array<{
  */
 export const lexingtonOrganization: Prisma.OrganizationCreateInput = {
   name: 'Lexington Tourism Board',
+  slug: 'lexington-tourism',
   town: { connect: { id: 'us-ma-lexington' } },
   planTier: 'PREMIUM',
   status: 'ACTIVE',

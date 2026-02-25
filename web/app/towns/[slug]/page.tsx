@@ -287,6 +287,11 @@ export default async function TownOverviewPage({ params }: PageProps) {
                 For details on how we evaluate sources, see our{" "}
                 <Link href="/methodology">Methodology</Link>.
               </Text>
+              <Text size="small" muted className="mt-2">
+                <Link href={`/changelog?town=${slug}`}>
+                  View changes for this town →
+                </Link>
+              </Text>
             </>
           ) : (
             <Text muted className="mt-element">
@@ -298,7 +303,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
 
       {/* Section 10: Transparency Footer */}
       <Divider spacing="section" />
-      <TransparencyFooter lastUpdatedAt={town.lastUpdatedAt} townSlug={slug} />
+      <TransparencyFooter lastUpdatedAt={sourcesData?.lastUpdated ?? town.lastUpdatedAt} townSlug={slug} />
 
       {/* Town Inquiry CTA */}
       <Container>
@@ -358,10 +363,13 @@ function SourceTierGroup({
   if (sources.length === 0) return null;
 
   return (
-    <div className="mt-component">
-      <Text size="small" muted className="uppercase tracking-wide font-medium">
-        {label}
-      </Text>
+    <details open className="mt-component group">
+      <summary className="cursor-pointer list-none flex items-center gap-2 select-none">
+        <span className="text-text-muted transition-transform group-open:rotate-90">&#9654;</span>
+        <Text size="small" muted className="uppercase tracking-wide font-medium">
+          {label} ({sources.length})
+        </Text>
+      </summary>
       <div className="mt-element space-y-2">
         {sources.map((source) => (
           <div key={source.id} className="flex items-start gap-2">
@@ -377,6 +385,11 @@ function SourceTierGroup({
                 )}
                 {" — "}
                 {source.publisherOrHolder}
+                {source.notes?.toLowerCase().includes("needs verification") && (
+                  <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-medium bg-amber-100 text-amber-800">
+                    Needs verification
+                  </span>
+                )}
               </Text>
               {source.notes && (
                 <Text size="small" muted>
@@ -387,6 +400,6 @@ function SourceTierGroup({
           </div>
         ))}
       </div>
-    </div>
+    </details>
   );
 }

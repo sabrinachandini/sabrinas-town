@@ -349,24 +349,31 @@ export async function getTownSources(slug: string) {
 
   if (!town) return null;
 
-  const sources = await prisma.source.findMany({
-    where: { sourceTowns: { some: { town: { slug } } } },
-    select: {
-      id: true,
-      type: true,
-      title: true,
-      publisherOrHolder: true,
-      url: true,
-      credibilityTier: true,
-      notes: true,
-    },
-    orderBy: [{ credibilityTier: 'asc' }, { title: 'asc' }],
-  });
+  const [sources, lastUpdatedResult] = await Promise.all([
+    prisma.source.findMany({
+      where: { sourceTowns: { some: { town: { slug } } } },
+      select: {
+        id: true,
+        type: true,
+        title: true,
+        publisherOrHolder: true,
+        url: true,
+        credibilityTier: true,
+        notes: true,
+      },
+      orderBy: [{ credibilityTier: 'asc' }, { title: 'asc' }],
+    }),
+    prisma.source.aggregate({
+      where: { sourceTowns: { some: { town: { slug } } } },
+      _max: { updatedAt: true },
+    }),
+  ]);
 
   return {
     town: { id: town.id, slug: town.slug, name: town.name },
     totalCount: sources.length,
     sources,
+    lastUpdated: lastUpdatedResult._max.updatedAt?.toISOString() ?? null,
   };
 }
 
@@ -397,9 +404,15 @@ export async function getGlobalChangelog(options: {
     entries: entries.map((e) => ({
       id: e.id,
       createdAt: e.createdAt.toISOString(),
+      title: e.title ?? null,
       summary: e.summary,
       publicNotes: e.publicNotes,
-      town: { id: e.town.id, slug: e.town.slug, name: e.town.name },
+      category: e.category ?? null,
+      createdBy: e.createdBy ?? null,
+      links: e.links ?? null,
+      town: e.town
+        ? { id: e.town.id, slug: e.town.slug, name: e.town.name }
+        : null,
     })),
     total,
   };

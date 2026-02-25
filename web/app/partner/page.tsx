@@ -20,10 +20,33 @@ export default function PartnerPage() {
         {/* Header */}
         <Heading level={1}>Partner with Sabrina's Town</Heading>
         <Text className="mt-element max-w-[620px]">
-          Tourism boards, historical societies, and civic organizations can join
-          the Revolutionary Town Network to feature their community's story with
-          professional presentation, embeddable widgets, and detailed analytics.
+          Every town in this network already has a public profile — scored,
+          sourced, and connected to the broader story of the Revolution. That
+          profile is free and always will be. Partnership is for the towns that
+          want to go further: to shape how their story is told, to reach
+          teachers and travelers through embeddable tools, and to understand who
+          is engaging with their history. This isn't a claim-your-listing
+          product. It's a stewardship model — your community's history,
+          maintained with the same rigor we apply to every town, with your
+          organization's voice and priorities woven in.
         </Text>
+
+        <Divider spacing="section" />
+
+        {/* What stays free */}
+        <section>
+          <Heading level={2}>What stays free, always</Heading>
+          <Text className="mt-element" muted>
+            Partnership adds capabilities on top of a foundation that remains
+            open to everyone.
+          </Text>
+          <ul className="mt-component space-y-2">
+            <FreeFeature>Public town profiles with full historical content</FreeFeature>
+            <FreeFeature>Teacher modules — lesson plans, primary sources, quizzes</FreeFeature>
+            <FreeFeature>Network search and cross-town connections</FreeFeature>
+            <FreeFeature>Source citations and credibility tiers on every claim</FreeFeature>
+          </ul>
+        </section>
 
         <Divider spacing="section" />
 
@@ -91,7 +114,11 @@ export default function PartnerPage() {
               </ul>
 
               <div className="mt-component">
-                <Button variant="secondary" className="w-full">
+                <Button
+                  href="/partner/inquire?tier=starter"
+                  variant="secondary"
+                  className="w-full"
+                >
                   Get Started
                 </Button>
               </div>
@@ -125,7 +152,12 @@ export default function PartnerPage() {
               </ul>
 
               <div className="mt-component">
-                <Button className="w-full">Start Pro Trial</Button>
+                <Button
+                  href="/partner/inquire?tier=pro"
+                  className="w-full"
+                >
+                  Start Pro Trial
+                </Button>
               </div>
             </div>
 
@@ -152,8 +184,12 @@ export default function PartnerPage() {
               </ul>
 
               <div className="mt-component">
-                <Button variant="secondary" className="w-full">
-                  Contact Sales
+                <Button
+                  href="/partner/inquire?tier=premium"
+                  variant="secondary"
+                  className="w-full"
+                >
+                  Contact Us
                 </Button>
               </div>
             </div>
@@ -190,15 +226,14 @@ export default function PartnerPage() {
         <Divider spacing="section" />
 
         {/* CTA */}
-        <section id="contact" className="text-center">
+        <section className="text-center">
           <Heading level={2}>Ready to join the network?</Heading>
           <Text className="mt-element max-w-[500px] mx-auto">
-            Contact us to discuss how Sabrina's Town can help your community
-            share its Revolutionary story with travelers, teachers, and history
-            enthusiasts.
+            Tell us about your organization and the town you serve. We review
+            every inquiry personally.
           </Text>
           <div className="mt-component flex flex-wrap justify-center gap-4">
-            <Button href="/partner#contact">Contact Us</Button>
+            <Button href="/partner/inquire">Submit an Inquiry</Button>
             <Button href="/towns" variant="secondary">
               Browse the Network
             </Button>
@@ -206,6 +241,15 @@ export default function PartnerPage() {
         </section>
       </Container>
     </main>
+  );
+}
+
+function FreeFeature({ children }: { children: React.ReactNode }) {
+  return (
+    <li className="flex items-center gap-2">
+      <span className="text-accent-blue">✓</span>
+      <Text size="small">{children}</Text>
+    </li>
   );
 }
 

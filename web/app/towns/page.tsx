@@ -14,6 +14,8 @@ export const metadata = {
     "Explore all 75 Revolutionary towns in our network — from Lexington to Yorktown. Filter by state and score tier.",
 };
 
+export const dynamic = "force-dynamic";
+
 export default async function TownsPage() {
   const towns = await getRankings({ limit: 75 });
 

@@ -7,6 +7,45 @@ import {
   Divider,
 } from "@/components/ui";
 
+const FEATURED_TOWNS = [
+  {
+    slug: "lexington-ma",
+    name: "Lexington",
+    description: "Where the first shots of the Revolution were fired on April 19, 1775.",
+  },
+  {
+    slug: "concord-ma",
+    name: "Concord",
+    description: "The North Bridge fight that turned a skirmish into a war — and a literary capital that shaped how America remembers it.",
+  },
+  {
+    slug: "boston-ma",
+    name: "Boston",
+    description: "From the Massacre to the Tea Party to the siege — the city where colonial grievance became organized resistance.",
+  },
+  {
+    slug: "salem-ma",
+    name: "Salem",
+    description: "A maritime hub whose privateers and merchants bankrolled the Revolution at sea.",
+  },
+  {
+    slug: "plymouth-ma",
+    name: "Plymouth",
+    description: "The Pilgrim story meets the Revolution — a town whose founding mythology shaped patriot identity.",
+  },
+  {
+    slug: "cambridge-ma",
+    name: "Cambridge",
+    description: "Where Washington took command of the Continental Army and Harvard became a barracks.",
+  },
+];
+
+const CLUSTERS = [
+  "Lexington-Concord Corridor",
+  "Boston Harbor Campaign",
+  "North Shore Maritime Network",
+];
+
 export default function HomePage() {
   return (
     <main>
@@ -15,17 +54,21 @@ export default function HomePage() {
         <Container>
           <Heading level={1}>History is for everyone.</Heading>
           <Text className="mt-element max-w-[620px]">
-            Sabrina's Town is a living network of America's Revolutionary towns
-            — built for travelers who want more than plaques, teachers who need
-            more than textbooks, and towns ready to tell their own stories. We
-            connect 75 communities across 13 states, each scored for historical
-            significance, preservation quality, and visitor experience.
+            Sabrina's Town maps the connections between America's Revolutionary
+            communities — the people who moved between them, the ideas that
+            traveled by letter and pamphlet, the supply lines and escape routes
+            that linked local rebellions into a continental cause. Seventy-five
+            towns, thirteen states, one interconnected story that's still
+            unfolding.
           </Text>
 
           <div className="flex flex-wrap gap-4 mt-component">
             <Button href="/towns">Explore Towns</Button>
-            <Button href="/towns/lexington-ma/teacher" variant="secondary">
-              Teach a Town
+            <Button href="/teach" variant="secondary">
+              For Teachers
+            </Button>
+            <Button href="/compare" variant="secondary">
+              Compare
             </Button>
             <Button href="/partner" variant="secondary">
               Partner With Us
@@ -36,25 +79,24 @@ export default function HomePage() {
 
       <Divider spacing="section" />
 
-      {/* What This Is */}
+      {/* Credibility Block */}
       <section className="py-component">
         <Container>
-          <Heading level={2}>What this is</Heading>
+          <Heading level={2}>Source-tiered research</Heading>
           <Text className="mt-element">
-            Most Revolutionary War resources treat each town as an isolated
-            stop. But the Revolution was a networked event — people moved
-            between places, ideas spread through correspondence, and local
-            actions triggered consequences elsewhere. Sabrina's Town maps these
-            connections.
+            Every claim on this site traces back to a cited source, and every
+            source is graded on a three-tier credibility scale. Tier 1 means
+            primary documents, National Park Service records, peer-reviewed
+            scholarship — the material historians build arguments from. Tier 2
+            covers reputable secondary works: established historians, museum
+            publications, well-sourced journalism. Tier 3 includes general
+            references like Wikipedia and travel guides, included only when
+            corroborated and clearly labeled. You can always see exactly where a
+            fact comes from and how much weight we give it.
           </Text>
-          <Text className="mt-element">
-            Every town in our network links to the people who shaped it, the
-            events that happened there, the themes those events represent, and
-            the routes that connected communities. When you explore Lexington,
-            you'll understand how it connects to Concord, Boston, Philadelphia,
-            and dozens of other places where the same questions about liberty
-            and self-governance played out.
-          </Text>
+          <div className="mt-element">
+            <Link href="/methodology">Read our full methodology →</Link>
+          </div>
 
           {/* Knowledge Graph Diagram */}
           <div className="mt-component p-component bg-bg-secondary rounded-lg">
@@ -97,35 +139,49 @@ export default function HomePage() {
 
       <Divider spacing="section" />
 
-      {/* The 75-Town Network */}
+      {/* Network Block */}
       <section className="py-component">
         <Container>
-          <Heading level={2}>The 75-Town Network</Heading>
+          <Heading level={2}>Follow the story across towns</Heading>
           <Text className="mt-element">
-            From the urban centers where revolutionary ideas fermented to the
-            rural crossroads where militia assembled, our network spans the
-            geography of American independence. Each town is scored across seven
-            dimensions: historical significance, preservation quality,
-            accessibility, interpretive resources, interconnection with other
-            sites, documented stories, and source quality.
+            The Revolution didn't happen in one place. These six Massachusetts
+            towns show how a single region's history branches, converges, and
+            echoes across communities only miles apart.
           </Text>
 
-          {/* Map Placeholder */}
-          <div className="mt-component aspect-[16/9] bg-bg-secondary rounded-lg border border-border-light flex items-center justify-center">
-            <div className="text-center">
-              <Text muted>Interactive map coming soon</Text>
-              <Text size="small" muted className="mt-2">
-                75 towns · 13 states · 1 interconnected story
-              </Text>
-            </div>
+          <div className="mt-component grid md:grid-cols-2 lg:grid-cols-3 gap-component">
+            {FEATURED_TOWNS.map((town) => (
+              <Link
+                key={town.slug}
+                href={`/towns/${town.slug}`}
+                className="block p-element bg-bg-secondary rounded-lg hover:border-accent-blue border border-border-light transition-colors"
+              >
+                <Text className="font-heading font-semibold">{town.name}</Text>
+                <Text size="small" muted className="mt-1">
+                  {town.description}
+                </Text>
+              </Link>
+            ))}
+          </div>
+
+          {/* Cluster labels */}
+          <div className="mt-component flex flex-wrap gap-3">
+            {CLUSTERS.map((cluster) => (
+              <span
+                key={cluster}
+                className="px-3 py-1 text-small bg-bg-secondary rounded-full border border-border-light text-text-muted"
+              >
+                {cluster}
+              </span>
+            ))}
           </div>
 
           <div className="mt-element flex flex-wrap gap-4">
             <Button href="/rankings" size="small">
               View Full Rankings
             </Button>
-            <Button href="/towns/lexington-ma" variant="secondary" size="small">
-              Start with Lexington
+            <Button href="/towns" variant="secondary" size="small">
+              Browse All Towns
             </Button>
           </div>
         </Container>
@@ -133,59 +189,36 @@ export default function HomePage() {
 
       <Divider spacing="section" />
 
-      {/* For Travelers / Teachers / Towns */}
+      {/* Teacher Block */}
       <section className="py-component">
-        <Container size="wide">
-          <Heading level={2} className="text-center">
-            Built for three audiences
-          </Heading>
-
-          <div className="mt-component grid md:grid-cols-3 gap-component">
-            {/* Travelers */}
-            <div className="p-element bg-bg-secondary rounded-lg">
-              <Heading level={3}>For Travelers</Heading>
-              <Text className="mt-element">
-                Skip the tourist traps. Our scoring system identifies which
-                towns offer genuine historical depth versus gift-shop history.
-                Compare destinations before you go. Build itineraries that
-                follow actual Revolutionary routes. Understand what you're
-                looking at when you get there.
-              </Text>
-              <div className="mt-element">
-                <Link href="/towns">Browse all towns →</Link>
-              </div>
-            </div>
-
-            {/* Teachers */}
-            <div className="p-element bg-bg-secondary rounded-lg">
-              <Heading level={3}>For Teachers</Heading>
-              <Text className="mt-element">
-                Every town page includes a complete teacher module: lesson
-                plans, primary source packets, discussion questions, comparative
-                assignments, and quizzes. Materials align with state standards
-                and emphasize critical thinking over memorization. Download
-                everything as PDF.
-              </Text>
-              <div className="mt-element">
-                <Link href="/towns/lexington-ma/teacher">Access teacher resources →</Link>
-              </div>
-            </div>
-
-            {/* Towns */}
-            <div className="p-element bg-bg-secondary rounded-lg">
-              <Heading level={3}>For Towns</Heading>
-              <Text className="mt-element">
-                Tourism boards and historical societies can partner with us to
-                feature their town's story. Licensed partners get embeddable
-                widgets, analytics dashboards, and the ability to suggest
-                updates. Your history, professionally presented, reaching the
-                audiences who care about it.
-              </Text>
-              <div className="mt-element">
-                <Link href="/partner">Become a partner →</Link>
-              </div>
-            </div>
+        <Container>
+          <Heading level={2}>For teachers</Heading>
+          <Text className="mt-element max-w-[620px]">
+            Every town in the network includes a complete teacher module —
+            lesson plans aligned to state standards, curated primary source
+            packets with guided analysis prompts, comparative assignments that
+            connect multiple towns, and ready-to-use quizzes. The materials
+            emphasize critical thinking over memorization: students learn to
+            read primary documents, weigh conflicting accounts, and understand
+            how the same event looked different from different towns.
+          </Text>
+          <div className="mt-element">
+            <Button href="/teach" variant="secondary" size="small">
+              Access Teacher Resources
+            </Button>
           </div>
+        </Container>
+      </section>
+
+      <Divider spacing="section" />
+
+      {/* Partner Block (understated) */}
+      <section className="py-component">
+        <Container>
+          <Text muted>
+            Work for your town's tourism office or historical society?{" "}
+            <Link href="/partner">Learn how to partner with us</Link>.
+          </Text>
         </Container>
       </section>
 
@@ -259,7 +292,10 @@ export default function HomePage() {
               <Link href="/compare">Compare</Link>
               <Link href="/methodology">Methodology</Link>
               <Link href="/changelog">Changelog</Link>
+              <Link href="/teach">Teach</Link>
               <Link href="/partner">Partner</Link>
+              <Link href="/terms">Terms</Link>
+              <Link href="/privacy">Privacy</Link>
             </div>
           </div>
           <Divider spacing="default" />

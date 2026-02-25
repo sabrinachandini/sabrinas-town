@@ -2,11 +2,17 @@
 
 import Fastify, { FastifyInstance } from 'fastify';
 import cors from '@fastify/cors';
+import * as Sentry from '@sentry/node';
 import { registerRoutes } from './routes/index.js';
 import { registerBillingRoutes } from './routes/billing.js';
 import { registerStewardshipRoutes } from './routes/stewardship.js';
 import { registerOrgAnalyticsRoutes } from './routes/orgAnalytics.js';
+import { registerPartnerInquireRoutes } from './routes/partnerInquire.js';
 import { authPlugin } from './middleware/auth.js';
+
+if (process.env.SENTRY_DSN && process.env.NODE_ENV === 'production') {
+  Sentry.init({ dsn: process.env.SENTRY_DSN, tracesSampleRate: 0.1 });
+}
 
 export async function buildApp(): Promise<FastifyInstance> {
   const fastify = Fastify({
@@ -61,6 +67,7 @@ export async function buildApp(): Promise<FastifyInstance> {
   await registerBillingRoutes(fastify);
   await registerStewardshipRoutes(fastify);
   await registerOrgAnalyticsRoutes(fastify);
+  await registerPartnerInquireRoutes(fastify);
 
   // ---------------------------------------------------------------------------
   // Startup env checks (safe — booleans only, no secrets)
@@ -86,8 +93,14 @@ export async function buildApp(): Promise<FastifyInstance> {
       });
     }
 
+    // Report 5xx errors to Sentry
+    const statusCode = error.statusCode || 500;
+    if (statusCode >= 500) {
+      Sentry.captureException(error);
+    }
+
     // Generic errors
-    return reply.status(error.statusCode || 500).send({
+    return reply.status(statusCode).send({
       success: false,
       error: process.env.NODE_ENV === 'production' ? 'Internal server error' : error.message,
     });

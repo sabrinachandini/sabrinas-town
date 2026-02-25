@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
-import { Text } from "@/components/ui";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -37,9 +36,12 @@ export default function RootLayout({
       <body className={`${playfair.variable} ${inter.variable}`}>
         {children}
         <div className="text-center pb-4">
-          <Text size="small" muted>
-            {version}
-          </Text>
+          <a
+            href="/changelog"
+            className="text-small text-text-muted hover:text-text-secondary transition-colors"
+          >
+            v{version}
+          </a>
         </div>
       </body>
     </html>

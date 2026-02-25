@@ -253,8 +253,11 @@ export default async function TeacherPage({ params }: PageProps) {
           </section>
         )}
 
-        <div className="mt-section text-center">
+        <div className="mt-section text-center space-y-2">
           <Text muted>Questions about these materials? <Link href="/partner">Contact us</Link></Text>
+          <Text size="small" muted>
+            See <Link href="/methodology">sources and methodology</Link> for how we research and verify town data.
+          </Text>
         </div>
       </Container>
     </div>

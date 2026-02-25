@@ -10,9 +10,9 @@ import {
 } from "@/components/ui";
 
 export const metadata = {
-  title: "Methodology | Sabrina's Town",
+  title: "Methodology | History Is For Everyone",
   description:
-    "How we select towns, score them, evaluate sources, and decide what changes. Our methodology is public because trust requires transparency.",
+    "How towns are researched, sourced, and updated.",
 };
 
 export default function MethodologyPage() {
@@ -28,6 +28,36 @@ export default function MethodologyPage() {
           changes. We publish this because trust requires transparency — and
           because we want readers to push back when we get things wrong.
         </Text>
+
+        <Divider spacing="section" />
+
+        {/* What is History Is For Everyone */}
+        <section className="max-w-[720px]">
+          <Heading level={2}>What is History Is For Everyone?</Heading>
+          <Text className="mt-element">
+            History Is For Everyone is a public-good research project dedicated
+            to making America's Revolutionary War heritage accessible,
+            trustworthy, and useful — especially for educators. We believe that
+            the stories of the founding era belong to everyone: not just to the
+            well-funded museums or the towns that already appear on every tourist
+            map, but to every community that played a part in the creation of
+            the country. Our work is teacher-first by design. Every town
+            profile, source citation, and scoring decision is made with
+            classroom use in mind, because teachers are the people who turn
+            historical data into understanding.
+          </Text>
+          <Text className="mt-element">
+            The project operates as an open research network. We publish our
+            methodology, our sources, and our scoring rationale so that readers
+            can evaluate our claims for themselves. When we are uncertain, we say
+            so. When our evidence is thin, we label it. When we change a score
+            or revise a narrative, the change is logged publicly. This is not a
+            finished encyclopedia — it is a living, evolving body of work that
+            improves as more people engage with it. If you are a teacher, a
+            local historian, a student, or simply someone who cares about
+            getting the history right, this project exists for you.
+          </Text>
+        </section>
 
         <Divider spacing="section" />
 

@@ -7,6 +7,12 @@ import { concordLessonPlans, concordPrimarySourcePackets, concordTeacherWorkshee
 import { bostonLessonPlans, bostonPrimarySourcePackets, bostonTeacherWorksheets } from './boston.js';
 import { salemLessonPlans, salemPrimarySourcePackets, salemTeacherWorksheets } from './salem.js';
 import { marbleheadLessonPlans, marbleheadPrimarySourcePackets, marbleheadTeacherWorksheets } from './marblehead.js';
+import { cambridgeLessonPlans, cambridgePrimarySourcePackets, cambridgeTeacherWorksheets } from './cambridge.js';
+import { arlingtonLessonPlans, arlingtonPrimarySourcePackets, arlingtonTeacherWorksheets } from './arlington.js';
+import { plymouthLessonPlans, plymouthPrimarySourcePackets, plymouthTeacherWorksheets } from './plymouth.js';
+import { worcesterLessonPlans, worcesterPrimarySourcePackets, worcesterTeacherWorksheets } from './worcester.js';
+import { springfieldLessonPlans, springfieldPrimarySourcePackets, springfieldTeacherWorksheets } from './springfield.js';
+import { morristownLessonPlans, morristownPrimarySourcePackets, morristownTeacherWorksheets } from './morristown.js';
 import { Prisma } from '@prisma/client';
 
 interface TeacherSeedSet {
@@ -46,6 +52,42 @@ const TEACHER_SEED_SETS: TeacherSeedSet[] = [
     lessonPlans: marbleheadLessonPlans,
     primarySourcePackets: marbleheadPrimarySourcePackets,
     teacherWorksheets: marbleheadTeacherWorksheets,
+  },
+  {
+    name: 'Cambridge',
+    lessonPlans: cambridgeLessonPlans,
+    primarySourcePackets: cambridgePrimarySourcePackets,
+    teacherWorksheets: cambridgeTeacherWorksheets,
+  },
+  {
+    name: 'Arlington',
+    lessonPlans: arlingtonLessonPlans,
+    primarySourcePackets: arlingtonPrimarySourcePackets,
+    teacherWorksheets: arlingtonTeacherWorksheets,
+  },
+  {
+    name: 'Plymouth',
+    lessonPlans: plymouthLessonPlans,
+    primarySourcePackets: plymouthPrimarySourcePackets,
+    teacherWorksheets: plymouthTeacherWorksheets,
+  },
+  {
+    name: 'Worcester',
+    lessonPlans: worcesterLessonPlans,
+    primarySourcePackets: worcesterPrimarySourcePackets,
+    teacherWorksheets: worcesterTeacherWorksheets,
+  },
+  {
+    name: 'Springfield',
+    lessonPlans: springfieldLessonPlans,
+    primarySourcePackets: springfieldPrimarySourcePackets,
+    teacherWorksheets: springfieldTeacherWorksheets,
+  },
+  {
+    name: 'Morristown',
+    lessonPlans: morristownLessonPlans,
+    primarySourcePackets: morristownPrimarySourcePackets,
+    teacherWorksheets: morristownTeacherWorksheets,
   },
 ];
 

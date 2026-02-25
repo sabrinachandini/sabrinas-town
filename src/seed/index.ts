@@ -72,6 +72,14 @@ import {
   arlingtonRoutes,
   arlingtonRouteStops,
 } from './arlington.js';
+import {
+  morristownTownUpdate,
+  morristownEvents,
+  morristownPeople,
+  morristownStories,
+  morristownThemeConnections,
+} from './morristown.js';
+import { morristownPlaces } from './newjersey/places/index.js';
 import { lexingtonSources, LEXINGTON_SHARED_SOURCE_IDS } from './lexingtonSources.js';
 import { salemEvents } from './salem.js';
 import { marbleheadEvents } from './marblehead.js';
@@ -79,6 +87,7 @@ import { plymouthEvents } from './plymouth.js';
 import { worcesterEvents } from './worcester.js';
 import { springfieldEvents } from './springfield.js';
 import { seedTeacherContent } from './teacher/index.js';
+import { seedChangelogEntries } from './changelog.js';
 import { computeTownScore } from '../services/scoring.js';
 import { TOP_75_TOWNS, HUB_TOWN_IDS } from '../data/top75.js';
 import { Prisma } from '@prisma/client';
@@ -672,7 +681,83 @@ async function main() {
   }
   console.log(`   ✓ ${arlingtonRouteStops.length} Arlington route stops seeded`);
 
-  // 4f. Seed Salem events (micro-rollout)
+  // 4f. Seed Morristown flagship content (NJ v0)
+  console.log('\n🏛️  Seeding Morristown flagship content...');
+
+  // Morristown town update
+  await prisma.town.update({
+    where: { id: 'us-nj-morristown' },
+    data: morristownTownUpdate,
+  });
+  console.log('   ✓ Morristown town updated');
+
+  // Morristown people
+  for (const person of morristownPeople) {
+    await prisma.person.upsert({
+      where: { id: person.id },
+      update: person,
+      create: person,
+    });
+  }
+  console.log(`   ✓ ${morristownPeople.length} Morristown people seeded`);
+
+  // Morristown events
+  for (const event of morristownEvents) {
+    await prisma.event.upsert({
+      where: { id: event.id },
+      update: {
+        name: event.name,
+        summary: event.summary,
+        significanceWeight: event.significanceWeight,
+      },
+      create: event,
+    });
+  }
+  console.log(`   ✓ ${morristownEvents.length} Morristown events seeded`);
+
+  // Morristown stories
+  for (const story of morristownStories) {
+    const existingStory = await prisma.story.findFirst({
+      where: { id: story.id },
+    });
+
+    if (!existingStory) {
+      await prisma.story.create({
+        data: story,
+      });
+    } else {
+      await prisma.story.update({
+        where: { id: story.id },
+        data: {
+          title: story.title,
+          textVersion: story.textVersion,
+          verificationStatus: story.verificationStatus,
+          audioScript: story.audioScript,
+        },
+      });
+    }
+  }
+  console.log(`   ✓ ${morristownStories.length} Morristown stories seeded`);
+
+  // Morristown places
+  for (const place of morristownPlaces) {
+    await prisma.place.upsert({
+      where: { id: place.id },
+      update: {
+        name: place.name,
+        description: place.description,
+        placeType: place.placeType,
+        lat: place.lat,
+        lng: place.lng,
+        featured: place.featured,
+        displayOrder: place.displayOrder,
+      },
+      create: place,
+    });
+  }
+  console.log(`   ✓ ${morristownPlaces.length} Morristown places seeded`);
+
+  // 4g. Seed Salem events (micro-rollout)
   console.log('\n🏛️  Seeding Salem events...');
   for (const event of salemEvents) {
     await prisma.event.upsert({
@@ -865,6 +950,18 @@ async function main() {
   await upsertEventPerson('event-foot-of-rocks-ambush', 'person-thomas-hadley', 'Militiaman');
   await upsertEventPerson('event-foot-of-rocks-ambush', 'person-john-hicks', 'Militiaman/Victim');
 
+  // Morristown EventPerson connections
+  await upsertEventPerson('event-morristown-first-winter', 'person-george-washington', 'Commander');
+  await upsertEventPerson('event-morristown-first-winter', 'person-alexander-hamilton', 'Aide-de-Camp');
+  await upsertEventPerson('event-morristown-hard-winter', 'person-george-washington', 'Commander');
+  await upsertEventPerson('event-morristown-hard-winter', 'person-alexander-hamilton', 'Aide-de-Camp');
+  await upsertEventPerson('event-morristown-hard-winter', 'person-martha-washington-morristown', 'Headquarters Manager');
+  await upsertEventPerson('event-morristown-hard-winter', 'person-joseph-plumb-martin', 'Private Soldier');
+  await upsertEventPerson('event-morristown-pa-mutiny', 'person-george-washington', 'Commander');
+  await upsertEventPerson('event-morristown-smallpox-inoculation', 'person-george-washington', 'Decision Maker');
+  await upsertEventPerson('event-morristown-arnold-treason', 'person-george-washington', 'Commander');
+  await upsertEventPerson('event-morristown-arnold-treason', 'person-alexander-hamilton', 'Aide-de-Camp');
+
   console.log('   ✓ Event-Person connections created');
 
   // 6. Create all town links (75-town network)
@@ -900,6 +997,11 @@ async function main() {
   // Arlington theme connections
   for (const conn of arlingtonThemeConnections) {
     await upsertTownTheme('us-ma-arlington', conn.themeId, conn.relevanceNote);
+  }
+
+  // Morristown theme connections
+  for (const conn of morristownThemeConnections) {
+    await upsertTownTheme('us-nj-morristown', conn.themeId, conn.relevanceNote);
   }
 
   console.log('   ✓ Town-Theme connections created');
@@ -1032,6 +1134,11 @@ async function main() {
   const changelogCount = await createTownChangeLogEntries();
   console.log(`   ✓ ${changelogCount} changelog entries created`);
 
+  // 12. Seed diverse changelog entries (global + categorized)
+  console.log('\n📝 Seeding diverse changelog entries...');
+  const diverseChangelogCount = await seedChangelogEntries();
+  console.log(`   ✓ ${diverseChangelogCount} diverse changelog entries created`);
+
   // Summary
   console.log('\n====================================');
   console.log('✅ Seed complete!');
@@ -1040,10 +1147,11 @@ Summary:
   - ${themes.length} themes
   - ${sources.length + concordSources.length + bostonSources.length + cambridgeSources.length + arlingtonSources.length} sources
   - ${TOP_75_TOWNS.length} towns (75-town network)
-  - ${lexingtonPeople.length + concordPeople.length + bostonPeople.length + cambridgePeople.length + arlingtonPeople.length} people
-  - ${lexingtonEvents.length + concordEvents.length + bostonEvents.length + cambridgeEvents.length + arlingtonEvents.length + salemEvents.length + marbleheadEvents.length + plymouthEvents.length + worcesterEvents.length + springfieldEvents.length} events
-  - ${lexingtonStories.length + concordStories.length + bostonStories.length + cambridgeStories.length + arlingtonStories.length} stories
+  - ${lexingtonPeople.length + concordPeople.length + bostonPeople.length + cambridgePeople.length + arlingtonPeople.length + morristownPeople.length} people
+  - ${lexingtonEvents.length + concordEvents.length + bostonEvents.length + cambridgeEvents.length + arlingtonEvents.length + morristownEvents.length + salemEvents.length + marbleheadEvents.length + plymouthEvents.length + worcesterEvents.length + springfieldEvents.length} events
+  - ${lexingtonStories.length + concordStories.length + bostonStories.length + cambridgeStories.length + arlingtonStories.length + morristownStories.length} stories
   - ${totalMAPlaces} places (Massachusetts)
+  - ${morristownPlaces.length} places (New Jersey)
   - ${linkResult.created} town links
   - ${1 + bostonRoutes.length + cambridgeRoutes.length + arlingtonRoutes.length} routes
   - 1 organization
@@ -1055,6 +1163,7 @@ Flagship towns:
   - Boston: ${bostonEvents.length} events, ${bostonPeople.length} people, ${bostonStories.length} stories, ${bostonPlaces.length} places
   - Cambridge: ${cambridgeEvents.length} events, ${cambridgePeople.length} people, ${cambridgeStories.length} stories, ${cambridgePlaces.length} places
   - Arlington: ${arlingtonEvents.length} events, ${arlingtonPeople.length} people, ${arlingtonStories.length} stories, ${arlingtonPlaces.length} places
+  - Morristown: ${morristownEvents.length} events, ${morristownPeople.length} people, ${morristownStories.length} stories, ${morristownPlaces.length} places
 
 Micro-rollout towns:
   - Salem: ${salemEvents.length} events, ${salemPlaces.length} places

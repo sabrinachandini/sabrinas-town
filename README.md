@@ -318,6 +318,29 @@ npm run db:studio  # Open Prisma Studio
 | LOG_LEVEL | No | Logging level |
 | SCORE_CONFIG_VERSION | No | Scoring config version |
 
+## Deploying to Vercel + Supabase
+
+1. Set `DATABASE_URL` (pooled, `?pgbouncer=true&connection_limit=1`)
+2. Set `DIRECT_URL` (non-pooled, for migrations)
+3. Run migrations and seed:
+
+```bash
+npx prisma migrate deploy
+npx tsx src/seed/index.ts
+```
+
+4. Run preflight checks:
+
+```bash
+npx tsx src/scripts/preflightTeacherDeploy.ts
+```
+
+5. Run smoke tests (against deployed URL):
+
+```bash
+API_URL=https://your-app.vercel.app npx tsx src/scripts/smokeTestTeacher.ts
+```
+
 ## License
 
 MIT
