@@ -477,6 +477,16 @@ export const arlingtonSources: Prisma.SourceCreateInput[] = [
     credibilityTier: 'TIER1',
     notes: 'Service records of Menotomy participants',
   },
+  // TIER 3 — General reference
+  {
+    id: 'source-arlington-wikipedia-menotomy',
+    type: 'TERTIARY',
+    title: 'Battle of Menotomy - Wikipedia',
+    publisherOrHolder: 'Wikipedia',
+    url: 'https://en.wikipedia.org/wiki/Battle_of_Menotomy',
+    credibilityTier: 'TIER3',
+    notes: 'General reference for the April 19, 1775 fighting in Menotomy (Arlington). Cross-check with scholarly sources.',
+  },
 ];
 
 // Arlington town links

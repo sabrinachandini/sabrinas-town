@@ -517,6 +517,16 @@ export const cambridgeSources: Prisma.SourceCreateInput[] = [
     credibilityTier: 'TIER2',
     notes: 'Biography covering Cambridge service',
   },
+  // TIER 3 — General reference
+  {
+    id: 'source-cambridge-wikipedia-siege',
+    type: 'TERTIARY',
+    title: 'Siege of Boston - Wikipedia',
+    publisherOrHolder: 'Wikipedia',
+    url: 'https://en.wikipedia.org/wiki/Siege_of_Boston',
+    credibilityTier: 'TIER3',
+    notes: 'General reference covering the siege period when Cambridge served as Continental Army headquarters. Cross-check with primary sources.',
+  },
 ];
 
 // Cambridge town links

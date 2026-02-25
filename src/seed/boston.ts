@@ -830,6 +830,26 @@ export const bostonSources: Prisma.SourceCreateInput[] = [
     credibilityTier: 'TIER1',
     notes: 'Rare books and manuscripts from the Revolutionary period.',
   },
+  // TIER 2 — Additional secondary
+  {
+    id: 'source-boston-carp-defiance',
+    type: 'SECONDARY',
+    title: 'Defiance of the Patriots: The Boston Tea Party and the Making of America',
+    publisherOrHolder: 'Yale University Press (Benjamin L. Carp)',
+    publicationDate: new Date('2010-01-01'),
+    credibilityTier: 'TIER2',
+    notes: 'Modern scholarly analysis of the Tea Party\'s causes, participants, and lasting impact on Revolutionary politics.',
+  },
+  // TIER 3 — General reference
+  {
+    id: 'source-boston-wikipedia-tea-party',
+    type: 'TERTIARY',
+    title: 'Boston Tea Party - Wikipedia',
+    publisherOrHolder: 'Wikipedia',
+    url: 'https://en.wikipedia.org/wiki/Boston_Tea_Party',
+    credibilityTier: 'TIER3',
+    notes: 'General reference for the December 1773 protest. Cross-check with scholarly sources for accuracy.',
+  },
 ];
 
 /**

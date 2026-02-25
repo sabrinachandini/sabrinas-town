@@ -545,4 +545,23 @@ export const concordSources: Prisma.SourceCreateInput[] = [
     credibilityTier: 'TIER1',
     notes: 'Documentation on the Emerson parsonage that overlooked North Bridge, now a preserved historic site.',
   },
+  // TIER 2 — Additional secondary
+  {
+    id: 'source-concord-lemisch-jack-tar',
+    type: 'SECONDARY',
+    title: 'Jack Tar vs. John Bull: The Role of New York\'s Seamen in Precipitating the Revolution',
+    publisherOrHolder: 'William and Mary Quarterly (Jesse Lemisch)',
+    credibilityTier: 'TIER2',
+    notes: 'Contextual scholarship on ordinary participants in the Revolution, applicable to Concord\'s minuteman social history.',
+  },
+  // TIER 3 — General reference
+  {
+    id: 'source-concord-wikipedia',
+    type: 'TERTIARY',
+    title: 'Battles of Lexington and Concord - Wikipedia',
+    publisherOrHolder: 'Wikipedia',
+    url: 'https://en.wikipedia.org/wiki/Battles_of_Lexington_and_Concord',
+    credibilityTier: 'TIER3',
+    notes: 'General reference. Useful for quick chronology, should be cross-checked with primary sources.',
+  },
 ];
