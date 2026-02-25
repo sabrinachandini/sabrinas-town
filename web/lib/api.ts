@@ -283,7 +283,58 @@ export async function getRankings(options?: {
   }
 }
 
-export async function getTeacherModule(slug: string) {
+export interface TeacherModuleResponse {
+  town: { id: string; name: string; state: string; slug: string };
+  overview: {
+    title: string;
+    gradeRange: string;
+    estimatedDuration: string;
+    summary: string;
+  };
+  lessonPlan: Record<string, unknown>;
+  primarySources: Array<{
+    id: string;
+    title: string;
+    type: string;
+    sourceInfo: string;
+    url: string | null;
+    analysisPrompts: string[];
+    credibilityTier: string;
+    teacherNarrative?: string;
+  }>;
+  comparativeAssignment: Record<string, unknown>;
+  handouts: Array<{
+    title: string;
+    type: string;
+    description: string;
+    content: string;
+  }>;
+  quiz: {
+    title: string;
+    instructions: string;
+    questions: Array<{
+      id: number;
+      type: string;
+      question: string;
+      options?: string[];
+      correctAnswer: string;
+      explanation: string;
+    }>;
+  };
+  slideOutline: Record<string, unknown>;
+  standards: Record<string, unknown>;
+  relatedTowns: Array<{
+    townId: string;
+    townName: string;
+    connectionType: string;
+    teachingConnection: string;
+  }>;
+  meta?: {
+    contentSource: "curated" | "generated";
+  };
+}
+
+export async function getTeacherModule(slug: string): Promise<TeacherModuleResponse | null> {
   try {
     const res = await fetch(`${API_URL}/towns/${slug}/teacher`, {
       next: { revalidate: 300 }, // Cache for 5 minutes
@@ -295,9 +346,49 @@ export async function getTeacherModule(slug: string) {
     }
 
     const json = await res.json();
+    // Attach contentSource from meta to the data object for convenience
+    if (json.meta?.contentSource && json.data) {
+      json.data.meta = { contentSource: json.meta.contentSource };
+    }
     return json.data;
   } catch (error) {
     console.error("Error fetching teacher module:", error);
+    return null;
+  }
+}
+
+export async function compareTeacherModules(
+  slugA: string,
+  slugB: string
+): Promise<{
+  townA: TeacherModuleResponse;
+  townB: TeacherModuleResponse;
+  comparison: {
+    sharedSourceTypes: string[];
+    suggestedAssignment: {
+      title: string;
+      description: string;
+      guideQuestions: string[];
+    };
+  };
+} | null> {
+  try {
+    const res = await fetch(
+      `${API_URL}/compare/teacher?townA=${encodeURIComponent(slugA)}&townB=${encodeURIComponent(slugB)}`,
+      {
+        next: { revalidate: 300 },
+      }
+    );
+
+    if (!res.ok) {
+      if (res.status === 404) return null;
+      throw new Error(`Failed to compare teacher modules: ${res.status}`);
+    }
+
+    const json = await res.json();
+    return json.data;
+  } catch (error) {
+    console.error("Error comparing teacher modules:", error);
     return null;
   }
 }

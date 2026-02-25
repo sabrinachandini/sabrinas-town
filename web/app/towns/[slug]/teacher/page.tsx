@@ -4,10 +4,15 @@ import {
   Heading,
   Text,
   Link,
-  Button,
   Divider,
 } from "@/components/ui";
-import { EmptyState } from "@/components/town";
+import {
+  EmptyState,
+  ContentSourceBadge,
+  PrimarySourceCard,
+  QuizSection,
+  TeacherHandoutCard,
+} from "@/components/town";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -43,56 +48,55 @@ export default async function TeacherPage({ params }: PageProps) {
     return (
       <EmptyState
         title="Teacher Resources Coming Soon"
-        description="Lesson plans, primary source packets, discussion questions, and classroom assessments for this town are being developed. Check back as we expand our educational resources."
+        description="Lesson plans, primary source packets, discussion questions, and classroom assessments for this town are being developed."
         townSlug={slug}
       />
     );
   }
 
-  const { town, overview, lessonPlan, comparativeAssignment, handouts, quiz } =
-    module;
+  const { town, overview, lessonPlan, comparativeAssignment, handouts, quiz, primarySources } = module;
+  const contentSource = module.meta?.contentSource || "generated";
 
   return (
     <div className="py-section bg-bg-secondary">
       <Container>
-        {/* Intro */}
-        <div className="mb-component">
-          <Text className="text-text-muted max-w-[720px]">
-            Complete classroom resources for teaching {town.name}'s Revolutionary history. All materials align with Common Core and C3 Framework standards.
-          </Text>
+        {/* Header with badge and print link */}
+        <div className="mb-component flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <div className="flex items-center gap-3 mb-2">
+              <ContentSourceBadge contentSource={contentSource} />
+            </div>
+            <Text className="text-text-muted max-w-[720px]">
+              Complete classroom resources for teaching {town.name}&apos;s Revolutionary history.
+            </Text>
+          </div>
+          <Link
+            href={`/towns/${slug}/teacher/print`}
+            target="_blank"
+            className="no-print px-4 py-2 bg-accent-blue text-white rounded-lg hover:bg-accent-blue/90 no-underline text-small font-medium"
+          >
+            Save as PDF
+          </Link>
         </div>
 
         {/* Overview */}
         <section className="bg-bg-primary p-component rounded-lg">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
-              <Text
-                size="small"
-                muted
-                className="uppercase tracking-wide mb-2"
-              >
-                Lesson Overview
-              </Text>
+              <Text size="small" muted className="uppercase tracking-wide mb-2">Lesson Overview</Text>
               <Heading level={2}>{overview.title}</Heading>
             </div>
             <div className="flex flex-wrap gap-4 text-small">
               <div>
-                <Text size="small" muted>
-                  Grade Range
-                </Text>
+                <Text size="small" muted>Grade Range</Text>
                 <Text className="font-medium">{overview.gradeRange}</Text>
               </div>
               <div>
-                <Text size="small" muted>
-                  Duration
-                </Text>
-                <Text className="font-medium">
-                  {overview.estimatedDuration}
-                </Text>
+                <Text size="small" muted>Duration</Text>
+                <Text className="font-medium">{overview.estimatedDuration}</Text>
               </div>
             </div>
           </div>
-
           <Text className="mt-element">{overview.summary}</Text>
         </section>
 
@@ -102,50 +106,24 @@ export default async function TeacherPage({ params }: PageProps) {
         <section className="bg-bg-primary p-component rounded-lg">
           <Heading level={2}>Lesson Plan</Heading>
 
-          {/* Objectives */}
           <div className="mt-component">
             <Heading level={3}>Learning Objectives</Heading>
             <ul className="mt-element space-y-2">
-              {lessonPlan.objectives.map(
-                (objective: string, i: number) => (
-                  <li key={i} className="flex gap-3">
-                    <span className="text-accent-blue font-medium">
-                      {i + 1}.
-                    </span>
-                    <Text as="span">{objective}</Text>
-                  </li>
-                )
-              )}
+              {lessonPlan.objectives?.map((obj: string, i: number) => (
+                <li key={i} className="flex gap-3">
+                  <span className="text-accent-blue font-medium">{i + 1}.</span>
+                  <Text as="span">{obj}</Text>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Essential Questions */}
           <div className="mt-component">
             <Heading level={3}>Essential Questions</Heading>
             <ul className="mt-element space-y-2">
-              {lessonPlan.essentialQuestions.map(
-                (question: string, i: number) => (
-                  <li
-                    key={i}
-                    className="pl-4 border-l-2 border-accent-blue"
-                  >
-                    <Text>{question}</Text>
-                  </li>
-                )
-              )}
-            </ul>
-          </div>
-
-          {/* Materials */}
-          <div className="mt-component">
-            <Heading level={3}>Materials Needed</Heading>
-            <ul className="mt-element grid md:grid-cols-2 gap-2">
-              {lessonPlan.materials.map((material: string, i: number) => (
-                <li key={i} className="flex gap-2">
-                  <span className="text-accent-blue">•</span>
-                  <Text as="span" size="small">
-                    {material}
-                  </Text>
+              {lessonPlan.essentialQuestions?.map((q: string, i: number) => (
+                <li key={i} className="pl-4 border-l-2 border-accent-blue">
+                  <Text>{q}</Text>
                 </li>
               ))}
             </ul>
@@ -153,411 +131,137 @@ export default async function TeacherPage({ params }: PageProps) {
 
           <Divider spacing="default" />
 
-          {/* Lesson Structure */}
+          {/* Lesson structure blocks */}
           <div className="space-y-element">
-            {/* Warm Up */}
-            <div className="p-element bg-bg-secondary rounded-lg">
-              <div className="flex justify-between items-start">
-                <Text className="font-medium">Warm-Up</Text>
-                <Text size="small" muted>
-                  {lessonPlan.warmUp.duration}
-                </Text>
-              </div>
-              <Text size="small" className="mt-2">
-                {lessonPlan.warmUp.activity}
-              </Text>
-            </div>
-
-            {/* Direct Instruction */}
-            <div className="p-element bg-bg-secondary rounded-lg">
-              <div className="flex justify-between items-start">
-                <Text className="font-medium">Direct Instruction</Text>
-                <Text size="small" muted>
-                  {lessonPlan.directInstruction.duration}
-                </Text>
-              </div>
-              <ul className="mt-2 space-y-1">
-                {lessonPlan.directInstruction.content.map(
-                  (item: string, i: number) => (
-                    <li key={i}>
-                      <Text size="small">• {item}</Text>
-                    </li>
-                  )
-                )}
-              </ul>
-            </div>
-
-            {/* Guided Practice */}
-            <div className="p-element bg-bg-secondary rounded-lg">
-              <div className="flex justify-between items-start">
-                <Text className="font-medium">Guided Practice</Text>
-                <Text size="small" muted>
-                  {lessonPlan.guidedPractice.duration}
-                </Text>
-              </div>
-              <ul className="mt-2 space-y-1">
-                {lessonPlan.guidedPractice.activities.map(
-                  (item: string, i: number) => (
-                    <li key={i}>
-                      <Text size="small">• {item}</Text>
-                    </li>
-                  )
-                )}
-              </ul>
-            </div>
-
-            {/* Independent Practice */}
-            <div className="p-element bg-bg-secondary rounded-lg">
-              <div className="flex justify-between items-start">
-                <Text className="font-medium">Independent Practice</Text>
-                <Text size="small" muted>
-                  {lessonPlan.independentPractice.duration}
-                </Text>
-              </div>
-              <Text size="small" className="mt-2">
-                {lessonPlan.independentPractice.assignment}
-              </Text>
-            </div>
-
-            {/* Closure */}
-            <div className="p-element bg-bg-secondary rounded-lg">
-              <div className="flex justify-between items-start">
-                <Text className="font-medium">Closure</Text>
-                <Text size="small" muted>
-                  {lessonPlan.closure.duration}
-                </Text>
-              </div>
-              <Text size="small" className="mt-2">
-                {lessonPlan.closure.activity}
-              </Text>
-            </div>
+            {lessonPlan.warmUp && <LessonBlock title="Warm-Up" duration={lessonPlan.warmUp.duration} content={lessonPlan.warmUp.activity} />}
+            {lessonPlan.directInstruction && <LessonBlock title="Direct Instruction" duration={lessonPlan.directInstruction.duration} items={lessonPlan.directInstruction.content} />}
+            {lessonPlan.guidedPractice && <LessonBlock title="Guided Practice" duration={lessonPlan.guidedPractice.duration} items={lessonPlan.guidedPractice.activities} />}
+            {lessonPlan.independentPractice && <LessonBlock title="Independent Practice" duration={lessonPlan.independentPractice.duration} content={lessonPlan.independentPractice.assignment} />}
+            {lessonPlan.closure && <LessonBlock title="Closure" duration={lessonPlan.closure.duration} content={lessonPlan.closure.activity} />}
           </div>
 
-          {/* Differentiation */}
-          <div className="mt-component">
-            <Heading level={3}>Differentiation Strategies</Heading>
-            <div className="mt-element grid md:grid-cols-3 gap-element">
-              <div>
-                <Text size="small" muted className="uppercase tracking-wide">
-                  Struggling Learners
-                </Text>
-                <Text size="small" className="mt-1">
-                  {lessonPlan.differentiation.struggling}
-                </Text>
-              </div>
-              <div>
-                <Text size="small" muted className="uppercase tracking-wide">
-                  Advanced Learners
-                </Text>
-                <Text size="small" className="mt-1">
-                  {lessonPlan.differentiation.advanced}
-                </Text>
-              </div>
-              <div>
-                <Text size="small" muted className="uppercase tracking-wide">
-                  ELL Support
-                </Text>
-                <Text size="small" className="mt-1">
-                  {lessonPlan.differentiation.ell}
-                </Text>
+          {lessonPlan.differentiation && (
+            <div className="mt-component">
+              <Heading level={3}>Differentiation Strategies</Heading>
+              <div className="mt-element grid md:grid-cols-3 gap-element">
+                {(["struggling", "advanced", "ell"] as const).map((key) => (
+                  <div key={key}>
+                    <Text size="small" muted className="uppercase tracking-wide">
+                      {key === "ell" ? "ELL Support" : key === "struggling" ? "Struggling Learners" : "Advanced Learners"}
+                    </Text>
+                    <Text size="small" className="mt-1">{lessonPlan.differentiation[key]}</Text>
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
+          )}
         </section>
 
         <div className="mt-component" />
+
+        {/* Primary Sources */}
+        {primarySources && primarySources.length > 0 && (
+          <>
+            <section className="bg-bg-primary p-component rounded-lg">
+              <Heading level={2}>Primary Source Packets</Heading>
+              <Text className="mt-element" muted>Expand each source for analysis prompts and teacher narrative.</Text>
+              <div className="mt-component space-y-element">
+                {primarySources.map((source) => (
+                  <PrimarySourceCard key={source.id} {...source} sourceInfo={source.sourceInfo} />
+                ))}
+              </div>
+            </section>
+            <div className="mt-component" />
+          </>
+        )}
 
         {/* Comparative Assignment */}
-        <section className="bg-bg-primary p-component rounded-lg">
-          <Heading level={2}>{comparativeAssignment.title}</Heading>
-          <Text className="mt-element">{comparativeAssignment.description}</Text>
-
-          <div className="mt-component">
-            <Text
-              size="small"
-              muted
-              className="uppercase tracking-wide mb-element"
-            >
-              Compare With
-            </Text>
-            <div className="space-y-element">
-              {comparativeAssignment.compareTowns.map(
-                (compareTown: {
-                  townId: string;
-                  townName: string;
-                  comparisonPoints: string[];
-                }) => (
-                  <div
-                    key={compareTown.townId}
-                    className="p-element bg-bg-secondary rounded-lg"
-                  >
-                    <Text className="font-medium">{compareTown.townName}</Text>
-                    <ul className="mt-2 space-y-1">
-                      {compareTown.comparisonPoints.map((point, i) => (
-                        <li key={i}>
-                          <Text size="small">• {point}</Text>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )
-              )}
-            </div>
-          </div>
-
-          {/* Rubric */}
-          <div className="mt-component">
-            <Text
-              size="small"
-              muted
-              className="uppercase tracking-wide mb-element"
-            >
-              Assessment Rubric
-            </Text>
-            <div className="overflow-x-auto">
-              <table className="w-full text-small">
-                <thead>
-                  <tr className="border-b border-border-light">
-                    <th className="text-left py-2 pr-4 font-medium">
-                      Criteria
-                    </th>
-                    <th className="text-left py-2 pr-4 font-medium text-accent-blue">
-                      Excellent
-                    </th>
-                    <th className="text-left py-2 pr-4 font-medium">
-                      Proficient
-                    </th>
-                    <th className="text-left py-2 font-medium text-text-muted">
-                      Developing
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparativeAssignment.rubric.map(
-                    (
-                      row: {
-                        criteria: string;
-                        excellent: string;
-                        proficient: string;
-                        developing: string;
-                      },
-                      i: number
-                    ) => (
-                      <tr key={i} className="border-b border-border-light">
-                        <td className="py-2 pr-4 font-medium">
-                          {row.criteria}
-                        </td>
-                        <td className="py-2 pr-4">{row.excellent}</td>
-                        <td className="py-2 pr-4">{row.proficient}</td>
-                        <td className="py-2 text-text-muted">
-                          {row.developing}
-                        </td>
-                      </tr>
-                    )
-                  )}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
-        <div className="mt-component" />
+        {comparativeAssignment?.title && (
+          <>
+            <section className="bg-bg-primary p-component rounded-lg">
+              <Heading level={2}>{comparativeAssignment.title}</Heading>
+              <Text className="mt-element">{comparativeAssignment.description}</Text>
+            </section>
+            <div className="mt-component" />
+          </>
+        )}
 
         {/* Handouts */}
-        <section className="bg-bg-primary p-component rounded-lg">
-          <Heading level={2}>Downloadable Handouts</Heading>
-          <Text className="mt-element" muted>
-            Ready-to-print materials for classroom use.
-          </Text>
-
-          <div className="mt-component grid md:grid-cols-2 gap-element">
-            {handouts.map(
-              (handout: {
-                title: string;
-                type: string;
-                description: string;
-              }) => (
-                <div
-                  key={handout.title}
-                  className="p-element bg-bg-secondary rounded-lg"
-                >
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <Text className="font-medium">{handout.title}</Text>
-                      <Text size="small" muted className="mt-1">
-                        {handout.type.replace("_", " ")}
-                      </Text>
-                    </div>
-                    <Button variant="secondary" size="small">
-                      Download
-                    </Button>
-                  </div>
-                  <Text size="small" className="mt-element">
-                    {handout.description}
-                  </Text>
-                </div>
-              )
-            )}
-          </div>
-        </section>
-
-        <div className="mt-component" />
+        {handouts && handouts.length > 0 && (
+          <>
+            <section className="bg-bg-primary p-component rounded-lg">
+              <Heading level={2}>Downloadable Handouts</Heading>
+              <div className="mt-component grid md:grid-cols-2 gap-element">
+                {handouts.map((h) => (
+                  <TeacherHandoutCard key={h.title} {...h} />
+                ))}
+              </div>
+            </section>
+            <div className="mt-component" />
+          </>
+        )}
 
         {/* Quiz */}
-        <section className="bg-bg-primary p-component rounded-lg">
-          <div className="flex justify-between items-start">
-            <div>
-              <Heading level={2}>{quiz.title}</Heading>
-              <Text className="mt-2" muted>
-                {quiz.instructions}
-              </Text>
-            </div>
-            <Button variant="secondary" size="small">
-              Download Quiz
-            </Button>
-          </div>
+        {quiz && quiz.questions?.length > 0 && (
+          <>
+            <QuizSection title={quiz.title} instructions={quiz.instructions} questions={quiz.questions} />
+            <div className="mt-component" />
+          </>
+        )}
 
-          <div className="mt-component space-y-component">
-            {quiz.questions.map(
-              (
-                q: {
-                  id: number;
-                  type: string;
-                  question: string;
-                  options?: string[];
-                  correctAnswer: string;
-                  explanation: string;
-                },
-                i: number
-              ) => (
-                <div
-                  key={q.id}
-                  className="p-element bg-bg-secondary rounded-lg"
-                >
-                  <div className="flex gap-3">
-                    <span className="text-accent-blue font-medium">
-                      {i + 1}.
-                    </span>
-                    <div className="flex-1">
-                      <Text className="font-medium">{q.question}</Text>
-
-                      {q.type === "multiple_choice" && q.options && (
-                        <div className="mt-element space-y-2">
-                          {q.options.map((opt, j) => (
-                            <div key={j} className="flex items-center gap-2">
-                              <span className="w-6 h-6 flex items-center justify-center rounded-full border border-border-light text-small">
-                                {String.fromCharCode(65 + j)}
-                              </span>
-                              <Text size="small">{opt}</Text>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-
-                      {q.type === "true_false" && (
-                        <div className="mt-element flex gap-4">
-                          <div className="flex items-center gap-2">
-                            <span className="w-6 h-6 flex items-center justify-center rounded-full border border-border-light text-small">
-                              T
-                            </span>
-                            <Text size="small">True</Text>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <span className="w-6 h-6 flex items-center justify-center rounded-full border border-border-light text-small">
-                              F
-                            </span>
-                            <Text size="small">False</Text>
-                          </div>
-                        </div>
-                      )}
-
-                      {q.type === "short_answer" && (
-                        <div className="mt-element">
-                          <div className="h-16 border border-border-light rounded bg-bg-primary" />
-                        </div>
-                      )}
-
-                      <details className="mt-element">
-                        <summary className="text-small text-accent-blue cursor-pointer">
-                          Show answer
-                        </summary>
-                        <div className="mt-2 p-element bg-bg-primary rounded">
-                          <Text size="small">
-                            <span className="font-medium">Answer:</span>{" "}
-                            {q.correctAnswer}
-                          </Text>
-                          <Text size="small" muted className="mt-1">
-                            {q.explanation}
-                          </Text>
-                        </div>
-                      </details>
-                    </div>
-                  </div>
-                </div>
-              )
-            )}
-          </div>
-        </section>
-
-        <div className="mt-component" />
-
-        {/* Standards Alignment */}
-        {module.standards && (
+        {/* Standards */}
+        {module.standards?.commonCore && (
           <section className="bg-bg-primary p-component rounded-lg">
             <Heading level={2}>Standards Alignment</Heading>
-            <Text className="mt-element" size="small" muted>
-              {module.standards.note}
-            </Text>
-
+            <Text className="mt-element" size="small" muted>{module.standards.note}</Text>
             <div className="mt-component grid md:grid-cols-2 gap-component">
               <div>
-                <Text
-                  size="small"
-                  muted
-                  className="uppercase tracking-wide mb-2"
-                >
-                  Common Core (ELA/Literacy)
-                </Text>
+                <Text size="small" muted className="uppercase tracking-wide mb-2">Common Core</Text>
                 <ul className="space-y-1">
-                  {module.standards.commonCore.map(
-                    (standard: string, i: number) => (
-                      <li key={i}>
-                        <Text size="small">{standard}</Text>
-                      </li>
-                    )
-                  )}
+                  {(module.standards.commonCore as string[]).map((s: string, i: number) => (
+                    <li key={i}><Text size="small">{s}</Text></li>
+                  ))}
                 </ul>
               </div>
               <div>
-                <Text
-                  size="small"
-                  muted
-                  className="uppercase tracking-wide mb-2"
-                >
-                  C3 Framework
-                </Text>
+                <Text size="small" muted className="uppercase tracking-wide mb-2">C3 Framework</Text>
                 <ul className="space-y-1">
-                  {module.standards.c3Framework.map(
-                    (standard: string, i: number) => (
-                      <li key={i}>
-                        <Text size="small">{standard}</Text>
-                      </li>
-                    )
-                  )}
+                  {(module.standards.c3Framework as string[])?.map((s: string, i: number) => (
+                    <li key={i}><Text size="small">{s}</Text></li>
+                  ))}
                 </ul>
               </div>
             </div>
           </section>
         )}
 
-        {/* Footer CTA */}
         <div className="mt-section text-center">
-          <Text muted>
-            Questions about these materials?{" "}
-            <Link href="/partner">Contact us</Link>
-          </Text>
+          <Text muted>Questions about these materials? <Link href="/partner">Contact us</Link></Text>
         </div>
       </Container>
+    </div>
+  );
+}
+
+/* Helper component for lesson structure blocks */
+function LessonBlock({ title, duration, content, items }: {
+  title: string;
+  duration: string;
+  content?: string;
+  items?: string[];
+}) {
+  return (
+    <div className="p-element bg-bg-secondary rounded-lg">
+      <div className="flex justify-between items-start">
+        <Text className="font-medium">{title}</Text>
+        <Text size="small" muted>{duration}</Text>
+      </div>
+      {content && <Text size="small" className="mt-2">{content}</Text>}
+      {items && (
+        <ul className="mt-2 space-y-1">
+          {items.map((item, i) => <li key={i}><Text size="small">&bull; {item}</Text></li>)}
+        </ul>
+      )}
     </div>
   );
 }

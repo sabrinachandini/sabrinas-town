@@ -78,6 +78,7 @@ import { marbleheadEvents } from './marblehead.js';
 import { plymouthEvents } from './plymouth.js';
 import { worcesterEvents } from './worcester.js';
 import { springfieldEvents } from './springfield.js';
+import { seedTeacherContent } from './teacher/index.js';
 import { computeTownScore } from '../services/scoring.js';
 import { TOP_75_TOWNS, HUB_TOWN_IDS } from '../data/top75.js';
 import { Prisma } from '@prisma/client';
@@ -1009,6 +1010,11 @@ async function main() {
   } else {
     console.log('   ℹ Lexington organization already exists');
   }
+
+  // 9b. Seed curated teacher content for MA towns
+  console.log('\n📚 Seeding curated teacher content...');
+  const teacherResult = await seedTeacherContent();
+  console.log(`   ✓ Total: ${teacherResult.lessonPlans} lesson plans, ${teacherResult.primarySourcePackets} source packets, ${teacherResult.teacherWorksheets} worksheets`);
 
   // 10. Compute scores for hub towns
   console.log('\n📊 Computing scores for hub towns...');

@@ -1,5 +1,6 @@
 // MODEL: Claude Sonnet
 // Teacher service for generating educational content and lesson plans
+// Supports DB-backed curated content with generative fallback
 
 import prisma from '../db/client.js';
 
@@ -27,6 +28,9 @@ export interface TeacherModule {
   slideOutline: SlideOutline;
   standards: StandardsPlaceholder;
   relatedTowns: RelatedTownForTeachers[];
+  meta?: {
+    contentSource: 'curated' | 'generated';
+  };
 }
 
 interface LessonPlan {
@@ -69,6 +73,7 @@ interface PrimarySourceItem {
   url: string | null;
   analysisPrompts: string[];
   credibilityTier: string;
+  teacherNarrative?: string;
 }
 
 interface ComparativeAssignment {
@@ -136,9 +141,180 @@ interface RelatedTownForTeachers {
 }
 
 /**
- * Generate teacher module for a town
+ * Get teacher module for a town: DB-first curated content, with generative fallback
  */
-export async function generateTeacherModule(slug: string): Promise<TeacherModule | null> {
+export async function getTeacherModule(slug: string): Promise<TeacherModule | null> {
+  // Check for curated content in DB
+  const town = await prisma.town.findUnique({
+    where: { slug },
+    include: {
+      lessonPlans: {
+        where: { published: true },
+        orderBy: { displayOrder: 'asc' },
+      },
+      primarySourcePackets: {
+        where: { published: true },
+        orderBy: { displayOrder: 'asc' },
+      },
+      teacherWorksheets: {
+        where: { published: true },
+        orderBy: { displayOrder: 'asc' },
+      },
+      outgoingLinks: {
+        include: { toTown: true },
+        orderBy: { weight: 'desc' },
+        take: 3,
+      },
+    },
+  });
+
+  if (!town) return null;
+
+  // If curated content exists, build from DB
+  if (town.lessonPlans.length > 0) {
+    return buildCuratedModule(town);
+  }
+
+  // Fall back to generative approach
+  return generateTeacherModuleFallback(slug);
+}
+
+/**
+ * Build a curated TeacherModule from DB rows
+ */
+function buildCuratedModule(town: {
+  id: string;
+  name: string;
+  state: string;
+  slug: string;
+  whyMatters: string;
+  lessonPlans: Array<{
+    title: string;
+    gradeRange: string;
+    estimatedDuration: string;
+    summary: string;
+    lessonData: unknown;
+    standards: unknown;
+    comparativeAssignment: unknown;
+    slideOutline: unknown;
+  }>;
+  primarySourcePackets: Array<{
+    id: string;
+    title: string;
+    sourceType: string;
+    publisherOrHolder: string;
+    url: string | null;
+    analysisPrompts: string[];
+    credibilityTier: string;
+    teacherNarrative: string | null;
+  }>;
+  teacherWorksheets: Array<{
+    title: string;
+    worksheetType: string;
+    description: string;
+    content: string;
+    quizData: unknown;
+  }>;
+  outgoingLinks: Array<{
+    toTown: { id: string; name: string };
+    linkType: string;
+    reason: string;
+  }>;
+}): TeacherModule {
+  const firstPlan = town.lessonPlans[0];
+  const lessonData = firstPlan.lessonData as LessonPlan;
+  const standards = (firstPlan.standards || {
+    note: 'Standards alignment should be verified by educators for their specific state/district requirements.',
+    commonCore: [],
+    c3Framework: [],
+    stateStandards: { placeholder: '[STATE STANDARDS TO BE ADDED]', suggestedAlignment: '' },
+  }) as StandardsPlaceholder;
+  const comparativeAssignment = (firstPlan.comparativeAssignment || {
+    title: `Connecting ${town.name} to the Revolutionary Network`,
+    description: `Research how ${town.name}'s Revolutionary story connects to other towns.`,
+    compareTowns: [],
+    rubric: [],
+  }) as ComparativeAssignment;
+  const slideOutline = (firstPlan.slideOutline || {
+    title: `${town.name} and the American Revolution`,
+    slides: [],
+  }) as SlideOutline;
+
+  // Map primary source packets
+  const primarySources: PrimarySourceItem[] = town.primarySourcePackets.map(psp => ({
+    id: psp.id,
+    title: psp.title,
+    type: psp.sourceType,
+    sourceInfo: psp.publisherOrHolder,
+    url: psp.url,
+    analysisPrompts: psp.analysisPrompts,
+    credibilityTier: psp.credibilityTier,
+    teacherNarrative: psp.teacherNarrative || undefined,
+  }));
+
+  // Map worksheets to handouts and quiz
+  const handouts: Handout[] = [];
+  let quiz: Quiz = {
+    title: `${town.name} in the American Revolution`,
+    instructions: 'Answer the following questions based on our study of Revolutionary history.',
+    questions: [],
+  };
+
+  for (const ws of town.teacherWorksheets) {
+    if (ws.worksheetType === 'QUIZ' && ws.quizData) {
+      quiz = ws.quizData as Quiz;
+    } else {
+      const typeMap: Record<string, Handout['type']> = {
+        TIMELINE: 'timeline',
+        GRAPHIC_ORGANIZER: 'graphic_organizer',
+        WORKSHEET: 'worksheet',
+        READING: 'reading',
+      };
+      handouts.push({
+        title: ws.title,
+        type: typeMap[ws.worksheetType] || 'worksheet',
+        description: ws.description,
+        content: ws.content,
+      });
+    }
+  }
+
+  return {
+    town: {
+      id: town.id,
+      name: town.name,
+      state: town.state,
+      slug: town.slug,
+    },
+    overview: {
+      title: firstPlan.title,
+      gradeRange: firstPlan.gradeRange,
+      estimatedDuration: firstPlan.estimatedDuration,
+      summary: firstPlan.summary,
+    },
+    lessonPlan: lessonData,
+    primarySources,
+    comparativeAssignment,
+    handouts,
+    quiz,
+    slideOutline,
+    standards,
+    relatedTowns: town.outgoingLinks.map(link => ({
+      townId: link.toTown.id,
+      townName: link.toTown.name,
+      connectionType: link.linkType,
+      teachingConnection: link.reason,
+    })),
+    meta: {
+      contentSource: 'curated',
+    },
+  };
+}
+
+/**
+ * Generative fallback: generate teacher module from town data
+ */
+export async function generateTeacherModuleFallback(slug: string): Promise<TeacherModule | null> {
   const town = await prisma.town.findUnique({
     where: { slug },
     include: {
@@ -257,6 +433,9 @@ export async function generateTeacherModule(slug: string): Promise<TeacherModule
       connectionType: link.linkType,
       teachingConnection: link.reason,
     })),
+    meta: {
+      contentSource: 'generated',
+    },
   };
 
   return module;

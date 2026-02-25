@@ -3,7 +3,7 @@
 
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
 import { getTownBySlug, getTownStories, getTownPlaces, getTownSources, getGlobalChangelog } from '../services/townService.js';
-import { generateTeacherModule, trackTeacherDownload } from '../services/teacherService.js';
+import { getTeacherModule, trackTeacherDownload } from '../services/teacherService.js';
 import { TownQuerySchema, StorySummarySchema, PlacesQuerySchema } from '../validators/town.js';
 import { optionalEmbedApiKey } from '../middleware/auth.js';
 
@@ -81,7 +81,7 @@ export async function registerTownRoutes(fastify: FastifyInstance): Promise<void
       const { slug } = request.params;
 
       try {
-        const module = await generateTeacherModule(slug);
+        const module = await getTeacherModule(slug);
 
         if (!module) {
           return reply.status(404).send({
@@ -101,6 +101,7 @@ export async function registerTownRoutes(fastify: FastifyInstance): Promise<void
           meta: {
             timestamp: new Date().toISOString(),
             note: 'Teacher module content is intended for educational use.',
+            contentSource: module.meta?.contentSource || 'generated',
           },
         });
       } catch (error) {

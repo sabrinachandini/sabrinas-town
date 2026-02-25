@@ -64,6 +64,11 @@ model Town {
   changeLogEntries ChangeLogEntry[]
   scoreSnapshots  ScoreSnapshot[]
 
+  // Teacher content
+  lessonPlans          LessonPlan[]
+  primarySourcePackets PrimarySourcePacket[]
+  teacherWorksheets    TeacherWorksheet[]
+
   @@index([state])
   @@index([compositeScore(sort: Desc)])
 }
@@ -220,11 +225,12 @@ model Source {
   updatedAt       DateTime        @updatedAt
 
   // Relations (explicit joins for Prisma)
-  sourceTowns     SourceTown[]
-  sourceEvents    SourceEvent[]
-  sourceStories   SourceStory[]
-  sourcePeople    SourcePerson[]
-  updateDeltas    UpdateDelta[]
+  sourceTowns          SourceTown[]
+  sourceEvents         SourceEvent[]
+  sourceStories        SourceStory[]
+  sourcePeople         SourcePerson[]
+  updateDeltas         UpdateDelta[]
+  primarySourcePackets PrimarySourcePacket[]
 }
 
 model Story {
@@ -521,8 +527,93 @@ model ScoreSnapshot {
 }
 
 // ============================================================================
+// TEACHER CONTENT (Curated)
+// ============================================================================
+
+model LessonPlan {
+  id                   String   @id @default(cuid())
+  townId               String
+  town                 Town     @relation(fields: [townId], references: [id])
+
+  title                String
+  gradeRange           String   // "6-8", "9-12", "5-12 (adaptable)"
+  estimatedDuration    String   // "2-3 class periods"
+  summary              String   @db.Text
+  lessonData           Json     // Full lesson plan structure (LessonPlan interface)
+  standards            Json?    // Standards alignment data
+  comparativeAssignment Json?   // Cross-town assignment data
+  slideOutline         Json?    // Presentation outline data
+
+  displayOrder         Int      @default(100)
+  published            Boolean  @default(true)
+
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  @@index([townId])
+  @@index([published])
+}
+
+model PrimarySourcePacket {
+  id                String          @id @default(cuid())
+  townId            String
+  town              Town            @relation(fields: [townId], references: [id])
+
+  title             String
+  description       String          @db.Text
+  sourceId          String?
+  source            Source?         @relation(fields: [sourceId], references: [id])
+  sourceType        String          // "PRIMARY", "SECONDARY", etc.
+  publisherOrHolder String
+  url               String?
+  credibilityTier   String          // "TIER1", "TIER2", "TIER3"
+  analysisPrompts   String[]
+  teacherNarrative  String?         @db.Text  // Long-form educator guidance (Opus)
+  narrativeModel    String?         // "opus" if written by Opus
+
+  displayOrder      Int             @default(100)
+  published         Boolean         @default(true)
+
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+
+  @@index([townId])
+  @@index([published])
+}
+
+model TeacherWorksheet {
+  id              String        @id @default(cuid())
+  townId          String
+  town            Town          @relation(fields: [townId], references: [id])
+
+  title           String
+  worksheetType   WorksheetType
+  description     String        @db.Text
+  content         String        @db.Text  // Markdown content
+  quizData        Json?         // Structured quiz data (for QUIZ type)
+
+  displayOrder    Int           @default(100)
+  published       Boolean       @default(true)
+
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@index([townId])
+  @@index([worksheetType])
+  @@index([published])
+}
+
+// ============================================================================
 // ENUMS
 // ============================================================================
+
+enum WorksheetType {
+  TIMELINE
+  GRAPHIC_ORGANIZER
+  WORKSHEET
+  READING
+  QUIZ
+}
 
 enum DatePrecision {
   DAY

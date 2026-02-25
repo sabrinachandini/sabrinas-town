@@ -14,3 +14,9 @@ export { SectionHeader } from "./SectionHeader";
 export type { SectionHeaderProps } from "./SectionHeader";
 export { TransparencyFooter } from "./TransparencyFooter";
 export type { TransparencyFooterProps } from "./TransparencyFooter";
+
+// Teacher components
+export { ContentSourceBadge } from "./ContentSourceBadge";
+export { PrimarySourceCard } from "./PrimarySourceCard";
+export { QuizSection } from "./QuizSection";
+export { TeacherHandoutCard } from "./TeacherHandoutCard";
