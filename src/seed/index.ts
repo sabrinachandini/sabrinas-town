@@ -135,6 +135,10 @@ import {
   norfolkTownUpdate, norfolkPeople, norfolkEvents, norfolkStories,
   charlottesvilleTownUpdate, charlottesvillePeople, charlottesvilleEvents, charlottesvilleStories,
 } from './virginia/content.js';
+import {
+  harlemHeightsTownUpdate, harlemHeightsPeople, harlemHeightsPlaces, harlemHeightsEvents, harlemHeightsStories, harlemHeightsLessonPlans, harlemHeightsAdditionalLinks,
+  whitePlainsTownUpdate, whitePlainsPeople, whitePlainsPlaces, whitePlainsEvents, whitePlainsStories, whitePlainsLessonPlans, whitePlainsAdditionalLinks,
+} from './sprints/nyc-cluster.js';
 import { computeTownScore } from '../services/scoring.js';
 import { TOP_75_TOWNS, HUB_TOWN_IDS } from '../data/top75.js';
 import { Prisma } from '@prisma/client';
@@ -1344,6 +1348,52 @@ async function main() {
     for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
     for (const story of town.stories) { const ex = await prisma.story.findFirst({ where: { id: story.id! } }); if (!ex) { await prisma.story.create({ data: story }); } else { await prisma.story.update({ where: { id: story.id! }, data: { title: story.title, textVersion: story.textVersion } }); } }
     console.log(`   ✓ ${town.name}: ${town.people.length} people, ${town.events.length} events, ${town.stories.length} stories`);
+  }
+
+  // 21. Sprint 1 — NYC cluster (Harlem Heights, White Plains) — comprehensive expansion
+  console.log('\n🏛️  Sprint 1: NYC cluster comprehensive expansion...');
+  const nycSprintTowns = [
+    { id: 'us-ny-harlem-heights', name: 'Harlem Heights', update: harlemHeightsTownUpdate, people: harlemHeightsPeople, places: harlemHeightsPlaces, events: harlemHeightsEvents, stories: harlemHeightsStories, lessonPlans: harlemHeightsLessonPlans, links: harlemHeightsAdditionalLinks },
+    { id: 'us-ny-white-plains', name: 'White Plains', update: whitePlainsTownUpdate, people: whitePlainsPeople, places: whitePlainsPlaces, events: whitePlainsEvents, stories: whitePlainsStories, lessonPlans: whitePlainsLessonPlans, links: whitePlainsAdditionalLinks },
+  ];
+
+  for (const town of nycSprintTowns) {
+    // Overview
+    await prisma.town.update({ where: { id: town.id }, data: town.update });
+
+    // People + TownPerson
+    for (const { person, connectionNote } of town.people) {
+      await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person });
+      const existing = await prisma.townPerson.findFirst({ where: { townId: town.id, personId: person.id! } });
+      if (!existing) { await prisma.townPerson.create({ data: { town: { connect: { id: town.id } }, person: { connect: { id: person.id! } }, connectionNote } }); }
+    }
+
+    // Places
+    for (const place of town.places) {
+      await prisma.place.upsert({
+        where: { id: place.id! },
+        update: { name: place.name, placeType: place.placeType, description: place.description, lat: place.lat, lng: place.lng, address: place.address, hours: place.hours, admission: place.admission, website: place.website, phone: place.phone, accessibilityNotes: place.accessibilityNotes, parkingNotes: place.parkingNotes, amenities: place.amenities, historicalNote: place.historicalNote, displayOrder: place.displayOrder, featured: place.featured },
+        create: place,
+      });
+    }
+
+    // Events
+    for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
+
+    // Stories
+    for (const story of town.stories) { const ex = await prisma.story.findFirst({ where: { id: story.id! } }); if (!ex) { await prisma.story.create({ data: story }); } else { await prisma.story.update({ where: { id: story.id! }, data: { title: story.title, textVersion: story.textVersion } }); } }
+
+    // Lesson Plans (delete + recreate for idempotency)
+    await prisma.lessonPlan.deleteMany({ where: { townId: town.id } });
+    for (const lp of town.lessonPlans) { await prisma.lessonPlan.create({ data: lp }); }
+
+    // Additional Town Links
+    for (const link of town.links) {
+      const existing = await prisma.townLink.findFirst({ where: { fromTownId: town.id, toTownId: link.toTownId, linkType: link.linkType as any } });
+      if (!existing) { try { await prisma.townLink.create({ data: { fromTown: { connect: { id: town.id } }, toTown: { connect: { id: link.toTownId } }, linkType: link.linkType as any, reason: link.reason, weight: link.weight } }); } catch (e) { /* skip if exists */ } }
+    }
+
+    console.log(`   ✓ ${town.name}: ${town.people.length} people, ${town.places.length} places, ${town.events.length} events, ${town.stories.length} stories, ${town.lessonPlans.length} lesson plans`);
   }
 
   // Summary
