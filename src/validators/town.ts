@@ -144,7 +144,13 @@ export const TownFullResponseSchema = z.object({
   lastUpdatedAt: z.string().datetime(),
   events: z.array(EventSummarySchema).optional(),
   stories: z.array(StorySummarySchema).optional(),
-  places: z.array(PlaceSummarySchema).optional(),
+  // Slimmed places response - full data via GET /towns/:slug/places
+  placesTotals: z.object({
+    total: z.number(),
+    featured: z.number(),
+    byCategory: z.record(z.number()),
+  }).optional(),
+  featuredPlaces: z.array(PlaceSummarySchema).optional(), // Max 6
   linkedTowns: z.array(TownLinkSchema).optional(),
   themes: z
     .array(
@@ -251,6 +257,29 @@ export const RankingsResponseSchema = z.object({
   configVersion: z.string(),
 });
 
+// Places endpoint query params
+export const PlacesQuerySchema = z.object({
+  category: PlaceTypeSchema.optional(),
+  limit: z.coerce.number().int().min(1).max(100).optional(),
+  featuredOnly: z.coerce.boolean().optional(),
+});
+
+// Places endpoint response
+export const PlacesResponseSchema = z.object({
+  town: z.object({
+    id: z.string(),
+    slug: z.string(),
+    name: z.string(),
+  }),
+  totals: z.object({
+    total: z.number(),
+    featured: z.number(),
+    byCategory: z.record(z.number()),
+  }),
+  featured: z.array(PlaceSummarySchema),
+  placesByCategory: z.record(z.array(PlaceSummarySchema)),
+});
+
 export type TownQuery = z.infer<typeof TownQuerySchema>;
 export type TownSummary = z.infer<typeof TownSummarySchema>;
 export type TownFullResponse = z.infer<typeof TownFullResponseSchema>;
@@ -258,3 +287,5 @@ export type CompareQuery = z.infer<typeof CompareQuerySchema>;
 export type CompareResponse = z.infer<typeof CompareResponseSchema>;
 export type RankingsQuery = z.infer<typeof RankingsQuerySchema>;
 export type RankingsResponse = z.infer<typeof RankingsResponseSchema>;
+export type PlacesQuery = z.infer<typeof PlacesQuerySchema>;
+export type PlacesResponse = z.infer<typeof PlacesResponseSchema>;

@@ -85,6 +85,12 @@ export interface ScoreBreakdown {
   }>;
 }
 
+export interface PlacesTotals {
+  total: number;
+  featured: number;
+  byCategory: Record<string, number>;
+}
+
 export interface Town {
   id: string;
   name: string;
@@ -102,7 +108,11 @@ export interface Town {
   lastUpdatedAt: string;
   events: TownEvent[];
   stories: TownStory[];
-  places: TownPlace[];
+  // Slimmed places - use getPlaces() for full data
+  placesTotals?: PlacesTotals;
+  featuredPlaces?: TownPlace[];
+  // Deprecated: full places array (for backwards compat)
+  places?: TownPlace[];
   linkedTowns: LinkedTown[];
   themes: TownTheme[];
   routes: TownRoute[];
@@ -112,6 +122,17 @@ export interface Town {
     summary: string;
     publicNotes: string | null;
   }>;
+}
+
+export interface PlacesResponse {
+  town: {
+    id: string;
+    slug: string;
+    name: string;
+  };
+  totals: PlacesTotals;
+  featured: TownPlace[];
+  placesByCategory: Record<string, TownPlace[]>;
 }
 
 export interface RankedTown {
@@ -293,6 +314,38 @@ export async function compareTowns(
     return json.data;
   } catch (error) {
     console.error("Error comparing towns:", error);
+    return null;
+  }
+}
+
+export async function getPlaces(
+  slug: string,
+  options?: {
+    category?: string;
+    limit?: number;
+    featuredOnly?: boolean;
+  }
+): Promise<PlacesResponse | null> {
+  try {
+    const params = new URLSearchParams();
+    if (options?.category) params.set("category", options.category);
+    if (options?.limit) params.set("limit", options.limit.toString());
+    if (options?.featuredOnly) params.set("featuredOnly", "true");
+
+    const url = `${API_URL}/towns/${slug}/places${params.toString() ? `?${params}` : ""}`;
+    const res = await fetch(url, {
+      next: { revalidate: 60 },
+    });
+
+    if (!res.ok) {
+      if (res.status === 404) return null;
+      throw new Error(`Failed to fetch places: ${res.status}`);
+    }
+
+    const json: ApiResponse<PlacesResponse> = await res.json();
+    return json.data;
+  } catch (error) {
+    console.error("Error fetching places:", error);
     return null;
   }
 }

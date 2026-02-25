@@ -11,6 +11,8 @@ import type {
   StorySummarySchema,
   TownLinkSchema,
   PlaceSummarySchema,
+  PlacesResponse,
+  PlacesQuery,
 } from '../validators/town.js';
 import { z } from 'zod';
 
@@ -150,26 +152,41 @@ export async function getTownBySlug(
     }));
   }
 
-  // Transform places
+  // Transform places (slimmed - only totals and featured)
   if (town.places) {
-    response.places = town.places.map((p): PlaceSummary => ({
-      id: p.id,
-      name: p.name,
-      placeType: p.placeType,
-      description: p.description,
-      lat: p.lat,
-      lng: p.lng,
-      address: p.address,
-      hours: p.hours,
-      admission: p.admission,
-      website: p.website,
-      phone: p.phone,
-      accessibilityNotes: p.accessibilityNotes,
-      parkingNotes: p.parkingNotes,
-      amenities: p.amenities,
-      historicalNote: p.historicalNote,
-      featured: p.featured,
-    }));
+    const byCategory: Record<string, number> = {};
+    const featured: PlaceSummary[] = [];
+
+    for (const p of town.places) {
+      byCategory[p.placeType] = (byCategory[p.placeType] || 0) + 1;
+      if (p.featured && featured.length < 6) {
+        featured.push({
+          id: p.id,
+          name: p.name,
+          placeType: p.placeType,
+          description: p.description,
+          lat: p.lat,
+          lng: p.lng,
+          address: p.address,
+          hours: p.hours,
+          admission: p.admission,
+          website: p.website,
+          phone: p.phone,
+          accessibilityNotes: p.accessibilityNotes,
+          parkingNotes: p.parkingNotes,
+          amenities: p.amenities,
+          historicalNote: p.historicalNote,
+          featured: p.featured,
+        });
+      }
+    }
+
+    response.placesTotals = {
+      total: town.places.length,
+      featured: town.places.filter((p) => p.featured).length,
+      byCategory,
+    };
+    response.featuredPlaces = featured;
   }
 
   // Transform links
@@ -319,4 +336,85 @@ export async function getTownStories(
 export async function townExists(slug: string): Promise<boolean> {
   const count = await prisma.town.count({ where: { slug } });
   return count > 0;
+}
+
+/**
+ * Get places for a town with grouping by category
+ */
+export async function getTownPlaces(
+  slug: string,
+  options: PlacesQuery = {}
+): Promise<PlacesResponse | null> {
+  const { category, limit, featuredOnly } = options;
+
+  const town = await prisma.town.findUnique({
+    where: { slug },
+    select: { id: true, slug: true, name: true },
+  });
+
+  if (!town) return null;
+
+  // Build where clause
+  const whereClause: Prisma.PlaceWhereInput = {
+    townId: town.id,
+    ...(category && { placeType: category }),
+    ...(featuredOnly && { featured: true }),
+  };
+
+  const places = await prisma.place.findMany({
+    where: whereClause,
+    orderBy: [{ featured: 'desc' }, { displayOrder: 'asc' }, { name: 'asc' }],
+    ...(limit && { take: limit }),
+  });
+
+  // Transform places to summaries
+  const transformPlace = (p: typeof places[0]): PlaceSummary => ({
+    id: p.id,
+    name: p.name,
+    placeType: p.placeType,
+    description: p.description,
+    lat: p.lat,
+    lng: p.lng,
+    address: p.address,
+    hours: p.hours,
+    admission: p.admission,
+    website: p.website,
+    phone: p.phone,
+    accessibilityNotes: p.accessibilityNotes,
+    parkingNotes: p.parkingNotes,
+    amenities: p.amenities,
+    historicalNote: p.historicalNote,
+    featured: p.featured,
+  });
+
+  // Separate featured and group by category
+  const featured = places.filter((p) => p.featured).map(transformPlace);
+
+  const placesByCategory: Record<string, PlaceSummary[]> = {};
+  const byCategory: Record<string, number> = {};
+
+  for (const place of places) {
+    const cat = place.placeType;
+    if (!placesByCategory[cat]) {
+      placesByCategory[cat] = [];
+      byCategory[cat] = 0;
+    }
+    placesByCategory[cat].push(transformPlace(place));
+    byCategory[cat]++;
+  }
+
+  return {
+    town: {
+      id: town.id,
+      slug: town.slug,
+      name: town.name,
+    },
+    totals: {
+      total: places.length,
+      featured: featured.length,
+      byCategory,
+    },
+    featured,
+    placesByCategory,
+  };
 }

@@ -2,9 +2,9 @@
 // Town routes: public endpoints for town data
 
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
-import { getTownBySlug, getTownStories } from '../services/townService.js';
+import { getTownBySlug, getTownStories, getTownPlaces } from '../services/townService.js';
 import { generateTeacherModule, trackTeacherDownload } from '../services/teacherService.js';
-import { TownQuerySchema, StorySummarySchema } from '../validators/town.js';
+import { TownQuerySchema, StorySummarySchema, PlacesQuerySchema } from '../validators/town.js';
 import { optionalEmbedApiKey } from '../middleware/auth.js';
 
 export async function registerTownRoutes(fastify: FastifyInstance): Promise<void> {
@@ -148,6 +148,58 @@ export async function registerTownRoutes(fastify: FastifyInstance): Promise<void
         });
       } catch (error) {
         request.log.error(error, 'Error fetching stories');
+        return reply.status(500).send({
+          success: false,
+          error: 'Internal server error',
+        });
+      }
+    }
+  );
+
+  /**
+   * GET /towns/:slug/places
+   * Returns all places for a town, grouped by category with featured highlighted
+   */
+  fastify.get(
+    '/towns/:slug/places',
+    async (
+      request: FastifyRequest<{
+        Params: { slug: string };
+        Querystring: { category?: string; limit?: string; featuredOnly?: string };
+      }>,
+      reply: FastifyReply
+    ) => {
+      const { slug } = request.params;
+
+      // Parse and validate query params
+      const queryResult = PlacesQuerySchema.safeParse(request.query);
+      if (!queryResult.success) {
+        return reply.status(400).send({
+          success: false,
+          error: 'Invalid query parameters',
+          details: queryResult.error.issues,
+        });
+      }
+
+      try {
+        const placesData = await getTownPlaces(slug, queryResult.data);
+
+        if (!placesData) {
+          return reply.status(404).send({
+            success: false,
+            error: `Town not found: ${slug}`,
+          });
+        }
+
+        return reply.send({
+          success: true,
+          data: placesData,
+          meta: {
+            timestamp: new Date().toISOString(),
+          },
+        });
+      } catch (error) {
+        request.log.error(error, 'Error fetching places');
         return reply.status(500).send({
           success: false,
           error: 'Internal server error',

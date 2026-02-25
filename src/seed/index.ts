@@ -13,7 +13,13 @@ import {
   midnightRideStops,
   lexingtonOrganization,
 } from './lexington.js';
-import { lexingtonPlaces } from './lexingtonPlaces.js';
+import {
+  lexingtonPlaces,
+  concordPlaces,
+  bostonPlaces,
+  cambridgePlaces,
+  arlingtonPlaces,
+} from './massachusetts/places/index.js';
 import {
   seedAll75Towns,
   seedTownLinks,
@@ -156,7 +162,48 @@ async function main() {
       create: place,
     });
   }
-  console.log(`   ✓ ${lexingtonPlaces.length} places seeded`);
+  console.log(`   ✓ ${lexingtonPlaces.length} Lexington places seeded`);
+
+  // 4a-2. Seed additional Massachusetts places
+  console.log('\n🗺️  Seeding Massachusetts places...');
+
+  const maPlaceSets = [
+    { name: 'Concord', places: concordPlaces },
+    { name: 'Boston', places: bostonPlaces },
+    { name: 'Cambridge', places: cambridgePlaces },
+    { name: 'Arlington', places: arlingtonPlaces },
+  ];
+
+  for (const { name, places } of maPlaceSets) {
+    for (const place of places) {
+      await prisma.place.upsert({
+        where: { id: place.id },
+        update: {
+          name: place.name,
+          placeType: place.placeType,
+          description: place.description,
+          lat: place.lat,
+          lng: place.lng,
+          address: place.address,
+          hours: place.hours,
+          admission: place.admission,
+          website: place.website,
+          phone: place.phone,
+          accessibilityNotes: place.accessibilityNotes,
+          parkingNotes: place.parkingNotes,
+          amenities: place.amenities,
+          historicalNote: place.historicalNote,
+          displayOrder: place.displayOrder,
+          featured: place.featured,
+        },
+        create: place,
+      });
+    }
+    console.log(`   ✓ ${places.length} ${name} places seeded`);
+  }
+
+  const totalMAPlaces = lexingtonPlaces.length + concordPlaces.length + bostonPlaces.length + cambridgePlaces.length + arlingtonPlaces.length;
+  console.log(`   ✓ Total: ${totalMAPlaces} Massachusetts places\n`);
 
   // 4b. Seed Concord (second flagship)
   console.log('\n🏛️  Seeding Concord flagship content...');
@@ -346,7 +393,7 @@ Summary:
   - ${lexingtonPeople.length + concordPeople.length} people (Lexington + Concord)
   - ${lexingtonEvents.length + concordEvents.length} events (Lexington + Concord)
   - ${lexingtonStories.length + concordStories.length} stories (Lexington + Concord)
-  - ${lexingtonPlaces.length} places (Lexington)
+  - ${totalMAPlaces} places (Massachusetts)
   - ${linkResult.created} town links
   - 1 route with ${midnightRideStops.length} stops
   - 1 organization
@@ -354,7 +401,10 @@ Summary:
 
 Flagship towns:
   - Lexington: ${lexingtonEvents.length} events, ${lexingtonPeople.length} people, ${lexingtonStories.length} stories, ${lexingtonPlaces.length} places
-  - Concord: ${concordEvents.length} events, ${concordPeople.length} people, ${concordStories.length} stories
+  - Concord: ${concordEvents.length} events, ${concordPeople.length} people, ${concordStories.length} stories, ${concordPlaces.length} places
+  - Boston: ${bostonPlaces.length} places
+  - Cambridge: ${cambridgePlaces.length} places
+  - Arlington: ${arlingtonPlaces.length} places
 
 Next steps:
   1. Test the rankings: curl http://localhost:3000/rankings
