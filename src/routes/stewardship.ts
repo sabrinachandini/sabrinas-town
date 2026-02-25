@@ -61,6 +61,17 @@ export async function registerStewardshipRoutes(fastify: FastifyInstance): Promi
       },
     });
 
+    // Non-blocking: record STEWARDSHIP_ACTIVATED event
+    prisma.analyticsEvent.create({
+      data: {
+        orgId: org.id,
+        userId,
+        townId: town.id,
+        eventType: 'STEWARDSHIP_ACTIVATED',
+        metadata: { townSlug: body.townSlug },
+      },
+    }).catch(() => {});
+
     return reply.send({
       success: true,
       stewardship: {

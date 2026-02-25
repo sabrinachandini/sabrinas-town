@@ -573,8 +573,9 @@ model AnalyticsEvent {
   id        String              @id @default(cuid())
   orgId     String?
   org       Organization?       @relation(fields: [orgId], references: [id])
-  townId    String
-  town      Town                @relation(fields: [townId], references: [id])
+  userId    String?
+  townId    String?
+  town      Town?               @relation(fields: [townId], references: [id])
 
   eventType AnalyticsEventType
   timestamp DateTime            @default(now())
@@ -582,6 +583,7 @@ model AnalyticsEvent {
 
   @@index([orgId])
   @@index([townId])
+  @@index([userId])
   @@index([timestamp])
   @@index([eventType])
 }
@@ -816,6 +818,11 @@ enum AnalyticsEventType {
   FAQ_EXPAND
   STORY_LISTEN
   ROUTE_VIEW
+  TOWN_VIEW
+  TEACHER_VIEW
+  PRINT_CLICK
+  CHECKOUT_STARTED
+  STEWARDSHIP_ACTIVATED
 }
 
 enum UpdateDeltaStatus {

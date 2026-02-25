@@ -29,6 +29,12 @@ export function SubscribeButton({
       });
       const data = await res.json();
       if (data.url) {
+        // Fire-and-forget: record CHECKOUT_STARTED
+        fetch(`${API_URL}/api/org-analytics/event`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "X-User-Id": userId },
+          body: JSON.stringify({ orgSlug, eventType: "CHECKOUT_STARTED", metadata: { planTier } }),
+        }).catch(() => {});
         window.location.href = data.url;
       } else {
         console.error("Checkout error:", data);

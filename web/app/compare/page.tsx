@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { compareTowns, getRankings, CompareResponse } from "@/lib/api";
+import { recordOrgEvent } from "@/lib/analytics";
 import {
   Container,
   Heading,
@@ -51,6 +52,9 @@ export default async function ComparePage({ searchParams }: PageProps) {
         </main>
       );
     }
+
+    void recordOrgEvent(townA, 'COMPARE_VIEW');
+    void recordOrgEvent(townB, 'COMPARE_VIEW');
 
     return <ComparisonView comparison={comparison} />;
   }

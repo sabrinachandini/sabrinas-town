@@ -13,9 +13,11 @@ import {
   ManageBillingButton,
   ActivateStewardshipForm,
 } from "./BillingActions";
+import AnalyticsPanel from "./AnalyticsPanel";
 
 interface DashboardPageProps {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<{ range?: string; checkout?: string }>;
 }
 
 export async function generateMetadata({ params }: DashboardPageProps) {
@@ -27,9 +29,12 @@ export async function generateMetadata({ params }: DashboardPageProps) {
 
 export default async function OrgDashboardPage({
   params,
+  searchParams,
 }: DashboardPageProps) {
   const session = await auth();
   const { slug } = await params;
+  const { range: rawRange } = await searchParams;
+  const range: "7d" | "30d" = rawRange === "30d" ? "30d" : "7d";
 
   if (!session?.user) {
     redirect("/login");
@@ -202,6 +207,10 @@ export default async function OrgDashboardPage({
             </div>
           </div>
         </div>
+
+        {hasActiveSub && (
+          <AnalyticsPanel orgId={org.id} range={range} orgSlug={slug} />
+        )}
       </Container>
     </main>
   );

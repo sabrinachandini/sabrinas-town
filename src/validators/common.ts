@@ -58,6 +58,11 @@ export const AnalyticsEventTypeSchema = z.enum([
   'FAQ_EXPAND',
   'STORY_LISTEN',
   'ROUTE_VIEW',
+  'TOWN_VIEW',
+  'TEACHER_VIEW',
+  'PRINT_CLICK',
+  'CHECKOUT_STARTED',
+  'STEWARDSHIP_ACTIVATED',
 ]);
 
 // Date with optional precision indicator

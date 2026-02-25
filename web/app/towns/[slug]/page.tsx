@@ -1,4 +1,5 @@
 import { getTown, getTownSources, Town, TownSource } from "@/lib/api";
+import { recordOrgEvent } from "@/lib/analytics";
 import { Container, Text, Divider, Link } from "@/components/ui";
 import {
   HubCard,
@@ -37,6 +38,8 @@ export default async function TownOverviewPage({ params }: PageProps) {
   if (!town) {
     return null; // Layout handles 404
   }
+
+  void recordOrgEvent(slug, 'TOWN_VIEW');
 
   // Transform data for FeaturedList components
   const placeItems: FeaturedListItem[] = (town.featuredPlaces || [])
@@ -296,6 +299,18 @@ export default async function TownOverviewPage({ params }: PageProps) {
       {/* Section 10: Transparency Footer */}
       <Divider spacing="section" />
       <TransparencyFooter lastUpdatedAt={town.lastUpdatedAt} townSlug={slug} />
+
+      {/* Town Inquiry CTA */}
+      <Container>
+        <div className="mt-section pt-element border-t border-border-light">
+          <Text size="small" muted>
+            Work for this town's tourism board?{" "}
+            <Link href={`/partner/inquire?town=${slug}`}>
+              Inquire about operating this site
+            </Link>
+          </Text>
+        </div>
+      </Container>
     </div>
   );
 }

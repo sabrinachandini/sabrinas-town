@@ -1,4 +1,5 @@
 import { getTeacherModule, getTown } from "@/lib/api";
+import { recordOrgEvent } from "@/lib/analytics";
 import {
   Container,
   Heading,
@@ -44,6 +45,8 @@ export default async function TeacherPage({ params }: PageProps) {
   const { slug } = await params;
   const module = await getTeacherModule(slug);
 
+  void recordOrgEvent(slug, 'TEACHER_VIEW');
+
   if (!module) {
     return (
       <EmptyState
@@ -54,8 +57,12 @@ export default async function TeacherPage({ params }: PageProps) {
     );
   }
 
-  const { town, overview, lessonPlan, comparativeAssignment, handouts, quiz, primarySources } = module;
-  const contentSource = module.meta?.contentSource || "generated";
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const m = module as any;
+  const { town, overview, handouts, quiz, primarySources } = m;
+  const lessonPlan = m.lessonPlan;
+  const comparativeAssignment = m.comparativeAssignment;
+  const contentSource = m.meta?.contentSource || "generated";
 
   return (
     <div className="py-section bg-bg-secondary">
@@ -70,13 +77,14 @@ export default async function TeacherPage({ params }: PageProps) {
               Complete classroom resources for teaching {town.name}&apos;s Revolutionary history.
             </Text>
           </div>
-          <Link
+          <a
             href={`/towns/${slug}/teacher/print`}
             target="_blank"
+            rel="noopener noreferrer"
             className="no-print px-4 py-2 bg-accent-blue text-white rounded-lg hover:bg-accent-blue/90 no-underline text-small font-medium"
           >
             Save as PDF
-          </Link>
+          </a>
         </div>
 
         {/* Overview */}
@@ -104,7 +112,10 @@ export default async function TeacherPage({ params }: PageProps) {
 
         {/* Lesson Plan */}
         <section className="bg-bg-primary p-component rounded-lg">
-          <Heading level={2}>Lesson Plan</Heading>
+          <div className="flex items-center justify-between">
+            <Heading level={2}>Lesson Plan</Heading>
+            <PrintPacketLink slug={slug} />
+          </div>
 
           <div className="mt-component">
             <Heading level={3}>Learning Objectives</Heading>
@@ -163,10 +174,13 @@ export default async function TeacherPage({ params }: PageProps) {
         {primarySources && primarySources.length > 0 && (
           <>
             <section className="bg-bg-primary p-component rounded-lg">
-              <Heading level={2}>Primary Source Packets</Heading>
+              <div className="flex items-center justify-between">
+                <Heading level={2}>Primary Source Packets</Heading>
+                <PrintPacketLink slug={slug} />
+              </div>
               <Text className="mt-element" muted>Expand each source for analysis prompts and teacher narrative.</Text>
               <div className="mt-component space-y-element">
-                {primarySources.map((source) => (
+                {primarySources.map((source: any) => (
                   <PrimarySourceCard key={source.id} {...source} sourceInfo={source.sourceInfo} />
                 ))}
               </div>
@@ -192,7 +206,7 @@ export default async function TeacherPage({ params }: PageProps) {
             <section className="bg-bg-primary p-component rounded-lg">
               <Heading level={2}>Downloadable Handouts</Heading>
               <div className="mt-component grid md:grid-cols-2 gap-element">
-                {handouts.map((h) => (
+                {handouts.map((h: any) => (
                   <TeacherHandoutCard key={h.title} {...h} />
                 ))}
               </div>
@@ -204,21 +218,25 @@ export default async function TeacherPage({ params }: PageProps) {
         {/* Quiz */}
         {quiz && quiz.questions?.length > 0 && (
           <>
+            <div className="flex items-center justify-between mb-2">
+              <div />
+              <PrintPacketLink slug={slug} />
+            </div>
             <QuizSection title={quiz.title} instructions={quiz.instructions} questions={quiz.questions} />
             <div className="mt-component" />
           </>
         )}
 
         {/* Standards */}
-        {module.standards?.commonCore && (
+        {m.standards?.commonCore && (
           <section className="bg-bg-primary p-component rounded-lg">
             <Heading level={2}>Standards Alignment</Heading>
-            <Text className="mt-element" size="small" muted>{module.standards.note}</Text>
+            <Text className="mt-element" size="small" muted>{m.standards.note}</Text>
             <div className="mt-component grid md:grid-cols-2 gap-component">
               <div>
                 <Text size="small" muted className="uppercase tracking-wide mb-2">Common Core</Text>
                 <ul className="space-y-1">
-                  {(module.standards.commonCore as string[]).map((s: string, i: number) => (
+                  {(m.standards.commonCore as string[]).map((s: string, i: number) => (
                     <li key={i}><Text size="small">{s}</Text></li>
                   ))}
                 </ul>
@@ -226,7 +244,7 @@ export default async function TeacherPage({ params }: PageProps) {
               <div>
                 <Text size="small" muted className="uppercase tracking-wide mb-2">C3 Framework</Text>
                 <ul className="space-y-1">
-                  {(module.standards.c3Framework as string[])?.map((s: string, i: number) => (
+                  {(m.standards.c3Framework as string[])?.map((s: string, i: number) => (
                     <li key={i}><Text size="small">{s}</Text></li>
                   ))}
                 </ul>
@@ -240,6 +258,20 @@ export default async function TeacherPage({ params }: PageProps) {
         </div>
       </Container>
     </div>
+  );
+}
+
+/* Print packet link — server component, no client JS */
+function PrintPacketLink({ slug }: { slug: string }) {
+  return (
+    <a
+      href={`/towns/${slug}/teacher/print`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="no-print text-small text-text-muted hover:text-accent-blue"
+    >
+      Print full packet
+    </a>
   );
 }
 

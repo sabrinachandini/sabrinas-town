@@ -5,6 +5,7 @@ import cors from '@fastify/cors';
 import { registerRoutes } from './routes/index.js';
 import { registerBillingRoutes } from './routes/billing.js';
 import { registerStewardshipRoutes } from './routes/stewardship.js';
+import { registerOrgAnalyticsRoutes } from './routes/orgAnalytics.js';
 import { authPlugin } from './middleware/auth.js';
 
 export async function buildApp(): Promise<FastifyInstance> {
@@ -59,6 +60,7 @@ export async function buildApp(): Promise<FastifyInstance> {
   await registerRoutes(fastify);
   await registerBillingRoutes(fastify);
   await registerStewardshipRoutes(fastify);
+  await registerOrgAnalyticsRoutes(fastify);
 
   // ---------------------------------------------------------------------------
   // Startup env checks (safe — booleans only, no secrets)

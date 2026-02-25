@@ -29,3 +29,6 @@ Thumbs.db
 prisma/*.db
 prisma/*.db-journal
 .vercel
+
+# Prevent duplicate lockfile in web/ (root lockfile is authoritative)
+web/package-lock.json
