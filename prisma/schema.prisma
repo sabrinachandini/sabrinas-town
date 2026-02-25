@@ -7,8 +7,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 // ============================================================================
@@ -56,7 +57,8 @@ model Town {
   townPeople    TownPerson[]
 
   // Multi-tenant
-  organizations Organization[]
+  organizations    Organization[]
+  townStewardships TownStewardship[]
 
   // Analytics & Updates
   analyticsEvents AnalyticsEvent[]
@@ -403,19 +405,100 @@ model SourcePerson {
 }
 
 // ============================================================================
+// AUTH (Auth.js v5 / next-auth)
+// ============================================================================
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  passwordHash  String?
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts      Account[]
+  sessions      Session[]
+  orgUsers      OrgUser[]
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expires      DateTime
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// ============================================================================
+// ROLES & ORG MEMBERSHIP
+// ============================================================================
+
+enum OrgRole {
+  ADMIN
+  ORG_OWNER
+  ORG_EDITOR
+  ORG_VIEWER
+}
+
+model OrgUser {
+  id     String  @id @default(cuid())
+  orgId  String
+  org    Organization @relation(fields: [orgId], references: [id], onDelete: Cascade)
+  userId String
+  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role   OrgRole @default(ORG_VIEWER)
+
+  createdAt DateTime @default(now())
+
+  @@unique([orgId, userId])
+  @@index([orgId])
+  @@index([userId])
+}
+
+// ============================================================================
 // MULTI-TENANT / LICENSING
 // ============================================================================
 
 model Organization {
   id              String           @id @default(cuid())
-  townId          String
-  town            Town             @relation(fields: [townId], references: [id])
+  slug            String           @unique
+  townId          String?
+  town            Town?            @relation(fields: [townId], references: [id])
 
   name            String           // "Lexington Tourism Board"
   planTier        PlanTier         @default(STARTER)
   status          OrgStatus        @default(TRIAL)
 
-  embedApiKey     String           @unique
+  embedApiKey     String?          @unique
+  stripeCustomerId String?         @unique
 
   // Branding config
   brandingConfig  Json?            // { logoUrl, primaryColor, secondaryColor, ctaText, ... }
@@ -428,10 +511,58 @@ model Organization {
   updatedAt       DateTime         @updatedAt
 
   // Relations
-  analyticsEvents AnalyticsEvent[]
+  analyticsEvents    AnalyticsEvent[]
+  orgUsers           OrgUser[]
+  townStewardships   TownStewardship[]
+  subscription       OrgSubscription?
 
   @@index([townId])
   @@index([embedApiKey])
+}
+
+model OrgSubscription {
+  id                   String    @id @default(cuid())
+  orgId                String    @unique
+  org                  Organization @relation(fields: [orgId], references: [id], onDelete: Cascade)
+  planTier             PlanTier
+  stripeCustomerId     String
+  stripeSubscriptionId String    @unique
+  stripePriceId        String
+  status               String    // Stripe status: active, past_due, canceled, unpaid, incomplete, etc.
+  currentPeriodEnd     DateTime?
+  cancelAtPeriodEnd    Boolean   @default(false)
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+
+  @@index([stripeCustomerId])
+  @@index([stripeSubscriptionId])
+}
+
+// ============================================================================
+// TOWN STEWARDSHIP
+// ============================================================================
+
+enum StewardshipStatus {
+  ACTIVE
+  PENDING
+  INACTIVE
+}
+
+model TownStewardship {
+  id           String             @id @default(cuid())
+  townId       String
+  town         Town               @relation(fields: [townId], references: [id])
+  orgId        String
+  org          Organization       @relation(fields: [orgId], references: [id])
+  status       StewardshipStatus  @default(PENDING)
+  subdomain    String?
+  customDomain String?
+  createdAt    DateTime           @default(now())
+  updatedAt    DateTime           @updatedAt
+
+  @@unique([townId, orgId])
+  @@index([townId])
+  @@index([orgId])
 }
 
 // ============================================================================
@@ -663,6 +794,8 @@ enum TownLinkType {
 
 enum PlanTier {
   STARTER
+  BASIC
+  PLUS
   PRO
   PREMIUM
 }

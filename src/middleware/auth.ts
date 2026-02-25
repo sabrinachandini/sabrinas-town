@@ -144,17 +144,17 @@ declare module 'fastify' {
   interface FastifyRequest {
     org?: {
       id: string;
-      townId: string;
+      townId: string | null;
       name: string;
-      planTier: 'STARTER' | 'PRO' | 'PREMIUM';
+      planTier: 'STARTER' | 'BASIC' | 'PLUS' | 'PRO' | 'PREMIUM';
       status: 'ACTIVE' | 'TRIAL' | 'PAST_DUE' | 'CANCELED';
-      embedApiKey: string;
+      embedApiKey: string | null;
       brandingConfig: unknown;
       town: {
         id: string;
         slug: string;
         name: string;
-      };
+      } | null;
     } | null;
   }
 }
