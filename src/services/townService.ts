@@ -339,6 +339,73 @@ export async function townExists(slug: string): Promise<boolean> {
 }
 
 /**
+ * Get sources for a town, ordered by credibility tier
+ */
+export async function getTownSources(slug: string) {
+  const town = await prisma.town.findUnique({
+    where: { slug },
+    select: { id: true, slug: true, name: true },
+  });
+
+  if (!town) return null;
+
+  const sources = await prisma.source.findMany({
+    where: { sourceTowns: { some: { town: { slug } } } },
+    select: {
+      id: true,
+      type: true,
+      title: true,
+      publisherOrHolder: true,
+      url: true,
+      credibilityTier: true,
+      notes: true,
+    },
+    orderBy: [{ credibilityTier: 'asc' }, { title: 'asc' }],
+  });
+
+  return {
+    town: { id: town.id, slug: town.slug, name: town.name },
+    totalCount: sources.length,
+    sources,
+  };
+}
+
+/**
+ * Get global changelog entries with optional town filter
+ */
+export async function getGlobalChangelog(options: {
+  town?: string;
+  limit?: number;
+  offset?: number;
+} = {}) {
+  const { town, limit = 50, offset = 0 } = options;
+
+  const where = town ? { town: { slug: town } } : undefined;
+
+  const [entries, total] = await Promise.all([
+    prisma.changeLogEntry.findMany({
+      where,
+      include: { town: { select: { id: true, slug: true, name: true } } },
+      orderBy: { createdAt: 'desc' },
+      take: limit,
+      skip: offset,
+    }),
+    prisma.changeLogEntry.count({ where }),
+  ]);
+
+  return {
+    entries: entries.map((e) => ({
+      id: e.id,
+      createdAt: e.createdAt.toISOString(),
+      summary: e.summary,
+      publicNotes: e.publicNotes,
+      town: { id: e.town.id, slug: e.town.slug, name: e.town.name },
+    })),
+    total,
+  };
+}
+
+/**
  * Get places for a town with grouping by category
  */
 export async function getTownPlaces(

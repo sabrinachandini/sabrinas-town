@@ -257,6 +257,8 @@ export default function HomePage() {
               <Link href="/towns">Towns</Link>
               <Link href="/rankings">Rankings</Link>
               <Link href="/compare">Compare</Link>
+              <Link href="/methodology">Methodology</Link>
+              <Link href="/changelog">Changelog</Link>
               <Link href="/partner">Partner</Link>
             </div>
           </div>

@@ -1,5 +1,5 @@
-import { getTown, Town } from "@/lib/api";
-import { Container, Text, Divider } from "@/components/ui";
+import { getTown, getTownSources, Town, TownSource } from "@/lib/api";
+import { Container, Text, Divider, Link } from "@/components/ui";
 import {
   HubCard,
   FeaturedList,
@@ -29,7 +29,10 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function TownOverviewPage({ params }: PageProps) {
   const { slug } = await params;
-  const town = await getTown(slug);
+  const [town, sourcesData] = await Promise.all([
+    getTown(slug),
+    getTownSources(slug),
+  ]);
 
   if (!town) {
     return null; // Layout handles 404
@@ -254,7 +257,43 @@ export default async function TownOverviewPage({ params }: PageProps) {
         </>
       )}
 
-      {/* Section 9: Transparency Footer */}
+      {/* Section 9: Sources */}
+      <Divider spacing="section" />
+      <section>
+        <Container>
+          <SectionHeader title={`Sources${sourcesData ? ` (${sourcesData.totalCount})` : ""}`} />
+          {sourcesData && sourcesData.sources.length > 0 ? (
+            <>
+              <SourceTierGroup
+                label="Tier 1 — Institutional and Academic"
+                sources={sourcesData.sources.filter((s) => s.credibilityTier === "TIER1")}
+              />
+              <SourceTierGroup
+                label="Tier 2 — Reputable Secondary"
+                sources={sourcesData.sources.filter((s) => s.credibilityTier === "TIER2")}
+              />
+              <SourceTierGroup
+                label="Tier 3 — General Reference"
+                sources={sourcesData.sources.filter((s) => s.credibilityTier === "TIER3")}
+              />
+              <SourceTierGroup
+                label="Pending Evaluation"
+                sources={sourcesData.sources.filter((s) => s.credibilityTier === "TODO")}
+              />
+              <Text size="small" muted className="mt-component">
+                For details on how we evaluate sources, see our{" "}
+                <Link href="/methodology">Methodology</Link>.
+              </Text>
+            </>
+          ) : (
+            <Text muted className="mt-element">
+              Sources being compiled. Check back soon.
+            </Text>
+          )}
+        </Container>
+      </section>
+
+      {/* Section 10: Transparency Footer */}
       <Divider spacing="section" />
       <TransparencyFooter lastUpdatedAt={town.lastUpdatedAt} townSlug={slug} />
     </div>
@@ -291,4 +330,48 @@ function formatEventDate(dateStr: string | null): string {
     year: "numeric",
     month: "short",
   });
+}
+
+// Source tier grouping for the sources section
+function SourceTierGroup({
+  label,
+  sources,
+}: {
+  label: string;
+  sources: TownSource[];
+}) {
+  if (sources.length === 0) return null;
+
+  return (
+    <div className="mt-component">
+      <Text size="small" muted className="uppercase tracking-wide font-medium">
+        {label}
+      </Text>
+      <div className="mt-element space-y-2">
+        {sources.map((source) => (
+          <div key={source.id} className="flex items-start gap-2">
+            <div className="w-1.5 h-1.5 mt-2 rounded-full bg-accent-blue flex-shrink-0" />
+            <div>
+              <Text size="small">
+                {source.url ? (
+                  <Link href={source.url} className="font-medium">
+                    {source.title}
+                  </Link>
+                ) : (
+                  <span className="font-medium">{source.title}</span>
+                )}
+                {" — "}
+                {source.publisherOrHolder}
+              </Text>
+              {source.notes && (
+                <Text size="small" muted>
+                  {source.notes}
+                </Text>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }

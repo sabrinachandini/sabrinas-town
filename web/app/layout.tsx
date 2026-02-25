@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
+import { Text } from "@/components/ui";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -27,10 +28,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const version = process.env.VERCEL_GIT_COMMIT_SHA
+    ? process.env.VERCEL_GIT_COMMIT_SHA.slice(0, 7)
+    : "dev";
+
   return (
     <html lang="en">
       <body className={`${playfair.variable} ${inter.variable}`}>
         {children}
+        <div className="text-center pb-4">
+          <Text size="small" muted>
+            {version}
+          </Text>
+        </div>
       </body>
     </html>
   );

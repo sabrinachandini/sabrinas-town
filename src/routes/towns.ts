@@ -2,7 +2,7 @@
 // Town routes: public endpoints for town data
 
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
-import { getTownBySlug, getTownStories, getTownPlaces } from '../services/townService.js';
+import { getTownBySlug, getTownStories, getTownPlaces, getTownSources, getGlobalChangelog } from '../services/townService.js';
 import { generateTeacherModule, trackTeacherDownload } from '../services/teacherService.js';
 import { TownQuerySchema, StorySummarySchema, PlacesQuerySchema } from '../validators/town.js';
 import { optionalEmbedApiKey } from '../middleware/auth.js';
@@ -200,6 +200,85 @@ export async function registerTownRoutes(fastify: FastifyInstance): Promise<void
         });
       } catch (error) {
         request.log.error(error, 'Error fetching places');
+        return reply.status(500).send({
+          success: false,
+          error: 'Internal server error',
+        });
+      }
+    }
+  );
+
+  /**
+   * GET /towns/:slug/sources
+   * Returns all sources for a town, grouped by credibility tier
+   */
+  fastify.get(
+    '/towns/:slug/sources',
+    async (
+      request: FastifyRequest<{
+        Params: { slug: string };
+      }>,
+      reply: FastifyReply
+    ) => {
+      const { slug } = request.params;
+
+      try {
+        const data = await getTownSources(slug);
+
+        if (!data) {
+          return reply.status(404).send({
+            success: false,
+            error: `Town not found: ${slug}`,
+          });
+        }
+
+        return reply.send({
+          success: true,
+          data,
+          meta: {
+            timestamp: new Date().toISOString(),
+          },
+        });
+      } catch (error) {
+        request.log.error(error, 'Error fetching sources');
+        return reply.status(500).send({
+          success: false,
+          error: 'Internal server error',
+        });
+      }
+    }
+  );
+
+  /**
+   * GET /changelog
+   * Returns global changelog entries, optionally filtered by town
+   */
+  fastify.get(
+    '/changelog',
+    async (
+      request: FastifyRequest<{
+        Querystring: { town?: string; limit?: string; offset?: string };
+      }>,
+      reply: FastifyReply
+    ) => {
+      const { town, limit, offset } = request.query;
+
+      try {
+        const data = await getGlobalChangelog({
+          town,
+          limit: limit ? parseInt(limit, 10) : undefined,
+          offset: offset ? parseInt(offset, 10) : undefined,
+        });
+
+        return reply.send({
+          success: true,
+          data,
+          meta: {
+            timestamp: new Date().toISOString(),
+          },
+        });
+      } catch (error) {
+        request.log.error(error, 'Error fetching changelog');
         return reply.status(500).send({
           success: false,
           error: 'Internal server error',

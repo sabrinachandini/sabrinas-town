@@ -327,6 +327,86 @@ export async function compareTowns(
   }
 }
 
+// Source types
+export interface TownSource {
+  id: string;
+  type: string;
+  title: string;
+  publisherOrHolder: string;
+  url: string | null;
+  credibilityTier: string;
+  notes: string | null;
+}
+
+export interface TownSourcesResponse {
+  town: { id: string; slug: string; name: string };
+  totalCount: number;
+  sources: TownSource[];
+}
+
+// Changelog types
+export interface ChangelogEntry {
+  id: string;
+  createdAt: string;
+  summary: string;
+  publicNotes: string | null;
+  town: { id: string; slug: string; name: string };
+}
+
+export interface ChangelogResponse {
+  entries: ChangelogEntry[];
+  total: number;
+}
+
+export async function getTownSources(
+  slug: string
+): Promise<TownSourcesResponse | null> {
+  try {
+    const res = await fetch(`${API_URL}/towns/${slug}/sources`, {
+      next: { revalidate: 60 },
+    });
+
+    if (!res.ok) {
+      if (res.status === 404) return null;
+      throw new Error(`Failed to fetch sources: ${res.status}`);
+    }
+
+    const json: ApiResponse<TownSourcesResponse> = await res.json();
+    return json.data;
+  } catch (error) {
+    console.error("Error fetching sources:", error);
+    return null;
+  }
+}
+
+export async function getChangelog(options?: {
+  town?: string;
+  limit?: number;
+  offset?: number;
+}): Promise<ChangelogResponse> {
+  try {
+    const params = new URLSearchParams();
+    if (options?.town) params.set("town", options.town);
+    if (options?.limit) params.set("limit", options.limit.toString());
+    if (options?.offset) params.set("offset", options.offset.toString());
+
+    const url = `${API_URL}/changelog${params.toString() ? `?${params}` : ""}`;
+    const res = await fetch(url, {
+      next: { revalidate: 60 },
+    });
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch changelog: ${res.status}`);
+    }
+
+    const json: ApiResponse<ChangelogResponse> = await res.json();
+    return json.data;
+  } catch (error) {
+    console.error("Error fetching changelog:", error);
+    return { entries: [], total: 0 };
+  }
+}
+
 export async function getPlaces(
   slug: string,
   options?: {
