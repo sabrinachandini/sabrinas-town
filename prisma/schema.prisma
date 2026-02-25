@@ -74,6 +74,10 @@ model Town {
   // Partner inquiries
   partnerInquiries PartnerInquiry[]
 
+  // Clusters
+  clusterTowns     ClusterTown[]
+  hubOfClusters    Cluster[]      @relation("ClusterHub")
+
   @@index([state])
   @@index([compositeScore(sort: Desc)])
 }
@@ -890,4 +894,63 @@ model PartnerInquiry {
   @@index([status])
   @@index([createdAt(sort: Desc)])
   @@index([email])
+}
+
+// ============================================================================
+// CLUSTERS (State-based groupings of related towns)
+// ============================================================================
+
+enum ClusterTownRole {
+  HUB
+  CORE
+  SUPPORTING
+}
+
+model Cluster {
+  id         String   @id @default(cuid())
+  slug       String   @unique // e.g., "ma-revolution-ignites"
+  name       String           // e.g., "Massachusetts: Revolution Ignites"
+  state      String           // "MA", "NJ", etc.
+  theme      String           // Short thematic description
+  summary    String   @db.Text // 1–2 paragraphs
+  hubTownId  String?
+  hubTown    Town?    @relation("ClusterHub", fields: [hubTownId], references: [id])
+
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  // Relations
+  clusterTowns    ClusterTown[]
+  bridgesFrom     ClusterBridge[] @relation("BridgeFrom")
+  bridgesTo       ClusterBridge[] @relation("BridgeTo")
+
+  @@index([state])
+}
+
+model ClusterTown {
+  id         String          @id @default(cuid())
+  clusterId  String
+  cluster    Cluster         @relation(fields: [clusterId], references: [id])
+  townId     String
+  town       Town            @relation(fields: [townId], references: [id])
+  role       ClusterTownRole
+  sortOrder  Int             @default(0)
+
+  @@unique([clusterId, townId])
+  @@index([townId])
+}
+
+model ClusterBridge {
+  id              String   @id @default(cuid())
+  fromClusterId   String
+  fromCluster     Cluster  @relation("BridgeFrom", fields: [fromClusterId], references: [id])
+  toClusterId     String
+  toCluster       Cluster  @relation("BridgeTo", fields: [toClusterId], references: [id])
+  label           String   // e.g., "Ten Crucial Days → Political Heart"
+  rationale       String   @db.Text
+  anchorTownIds   Json?    // Optional list of town IDs for quick linking
+
+  createdAt       DateTime @default(now())
+
+  @@unique([fromClusterId, toClusterId])
 }

@@ -88,6 +88,14 @@ import { worcesterEvents } from './worcester.js';
 import { springfieldEvents } from './springfield.js';
 import { seedTeacherContent } from './teacher/index.js';
 import { seedChangelogEntries } from './changelog.js';
+import { seedClusters } from './clusters.js';
+import {
+  salemTownUpdate, salemPeople, salemEvents as salemExpandedEvents, salemStories,
+  plymouthTownUpdate, plymouthPeople, plymouthEvents as plymouthExpandedEvents, plymouthStories,
+  worcesterTownUpdate, worcesterPeople, worcesterEvents as worcesterExpandedEvents, worcesterStories,
+  springfieldTownUpdate, springfieldPeople, springfieldEvents as springfieldExpandedEvents, springfieldStories,
+  marbleheadTownUpdate, marbleheadPeople, marbleheadEvents as marbleheadExpandedEvents, marbleheadStories,
+} from './massachusetts/content.js';
 import { computeTownScore } from '../services/scoring.js';
 import { TOP_75_TOWNS, HUB_TOWN_IDS } from '../data/top75.js';
 import { Prisma } from '@prisma/client';
@@ -1138,6 +1146,61 @@ async function main() {
   console.log('\n📝 Seeding diverse changelog entries...');
   const diverseChangelogCount = await seedChangelogEntries();
   console.log(`   ✓ ${diverseChangelogCount} diverse changelog entries created`);
+
+  // 13. Seed clusters, memberships, and bridges
+  console.log('\n🗺️  Seeding clusters...');
+  const clusterResult = await seedClusters();
+  console.log(`   ✓ ${clusterResult.clusters} clusters seeded`);
+  console.log(`   ✓ ${clusterResult.memberships} cluster-town memberships created`);
+  console.log(`   ✓ ${clusterResult.bridges} cluster bridges created`);
+
+  // 14. MA town content expansion (Salem, Plymouth, Worcester, Springfield, Marblehead)
+  console.log('\n🏛️  Expanding Massachusetts town content...');
+  const maTownExpansions = [
+    { id: 'us-ma-salem', name: 'Salem', update: salemTownUpdate, people: salemPeople, events: salemExpandedEvents, stories: salemStories },
+    { id: 'us-ma-plymouth', name: 'Plymouth', update: plymouthTownUpdate, people: plymouthPeople, events: plymouthExpandedEvents, stories: plymouthStories },
+    { id: 'us-ma-worcester', name: 'Worcester', update: worcesterTownUpdate, people: worcesterPeople, events: worcesterExpandedEvents, stories: worcesterStories },
+    { id: 'us-ma-springfield', name: 'Springfield', update: springfieldTownUpdate, people: springfieldPeople, events: springfieldExpandedEvents, stories: springfieldStories },
+    { id: 'us-ma-marblehead', name: 'Marblehead', update: marbleheadTownUpdate, people: marbleheadPeople, events: marbleheadExpandedEvents, stories: marbleheadStories },
+  ];
+
+  for (const town of maTownExpansions) {
+    // Update town overview
+    await prisma.town.update({ where: { id: town.id }, data: town.update });
+
+    // People
+    for (const person of town.people) {
+      await prisma.person.upsert({
+        where: { id: person.id! },
+        update: { name: person.name, bioShort: person.bioShort, roles: person.roles },
+        create: person,
+      });
+    }
+
+    // Events
+    for (const event of town.events) {
+      await prisma.event.upsert({
+        where: { id: event.id! },
+        update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight },
+        create: event,
+      });
+    }
+
+    // Stories
+    for (const story of town.stories) {
+      const existing = await prisma.story.findFirst({ where: { id: story.id! } });
+      if (!existing) {
+        await prisma.story.create({ data: story });
+      } else {
+        await prisma.story.update({
+          where: { id: story.id! },
+          data: { title: story.title, textVersion: story.textVersion, verificationStatus: story.verificationStatus },
+        });
+      }
+    }
+
+    console.log(`   ✓ ${town.name}: ${town.people.length} people, ${town.events.length} events, ${town.stories.length} stories`);
+  }
 
   // Summary
   console.log('\n====================================');

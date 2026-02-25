@@ -10,6 +10,7 @@ import { registerAdminRoutes } from './admin.js';
 import { registerCompareRoutes } from './compare.js';
 import { registerRankingsRoutes } from './rankings.js';
 import { registerAnalyticsRoutes } from './analytics.js';
+import { registerClusterRoutes } from './clusters.js';
 
 export async function registerRoutes(fastify: FastifyInstance): Promise<void> {
   // Health check with DB status and version
@@ -67,4 +68,5 @@ export async function registerRoutes(fastify: FastifyInstance): Promise<void> {
   await registerCompareRoutes(fastify);
   await registerRankingsRoutes(fastify);
   await registerAnalyticsRoutes(fastify);
+  await registerClusterRoutes(fastify);
 }

@@ -1,4 +1,4 @@
-import { getTown, getTownSources, Town, TownSource } from "@/lib/api";
+import { getTown, getTownSources, getTownClusters, Town, TownSource } from "@/lib/api";
 import { recordOrgEvent } from "@/lib/analytics";
 import { Container, Text, Divider, Link } from "@/components/ui";
 import {
@@ -30,9 +30,10 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function TownOverviewPage({ params }: PageProps) {
   const { slug } = await params;
-  const [town, sourcesData] = await Promise.all([
+  const [town, sourcesData, townClusters] = await Promise.all([
     getTown(slug),
     getTownSources(slug),
+    getTownClusters(slug),
   ]);
 
   if (!town) {
@@ -72,6 +73,19 @@ export default async function TownOverviewPage({ params }: PageProps) {
       <Container>
         <div className="max-w-[720px]">
           <Text className="text-text-muted">{town.execSummary150}</Text>
+          {townClusters.length > 0 && (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {townClusters.map((tc) => (
+                <Link
+                  key={tc.cluster.slug}
+                  href={`/clusters/${tc.cluster.slug}`}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border-default text-small hover:border-accent-blue transition-colors"
+                >
+                  Part of: {tc.cluster.name}
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </Container>
 

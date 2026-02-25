@@ -501,6 +501,110 @@ export async function getChangelog(options?: {
   }
 }
 
+// Cluster types
+export interface ClusterSummary {
+  id: string;
+  slug: string;
+  name: string;
+  state: string;
+  theme: string;
+  hubTown: { id: string; slug: string; name: string; state: string } | null;
+  townCount: number;
+}
+
+export interface ClusterTownEntry {
+  id: string;
+  slug: string;
+  name: string;
+  state: string;
+  heroSummary40: string;
+  execSummary150: string;
+  role: "HUB" | "CORE" | "SUPPORTING";
+  sortOrder: number;
+}
+
+export interface ClusterBridgeEntry {
+  id: string;
+  label: string;
+  rationale: string;
+  direction: "outgoing" | "incoming";
+  cluster: { id: string; slug: string; name: string; state: string; theme: string };
+}
+
+export interface ClusterDetail {
+  id: string;
+  slug: string;
+  name: string;
+  state: string;
+  theme: string;
+  summary: string;
+  hubTown: {
+    id: string;
+    slug: string;
+    name: string;
+    state: string;
+    heroSummary40: string;
+    execSummary150: string;
+    compositeScore: number;
+  } | null;
+  towns: ClusterTownEntry[];
+  bridges: ClusterBridgeEntry[];
+}
+
+export async function getClusters(): Promise<ClusterSummary[]> {
+  try {
+    const res = await fetch(`${API_URL}/clusters`, {
+      next: { revalidate: 60 },
+    });
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch clusters: ${res.status}`);
+    }
+
+    const json: ApiResponse<ClusterSummary[]> = await res.json();
+    return json.data;
+  } catch (error) {
+    console.error("Error fetching clusters:", error);
+    return [];
+  }
+}
+
+export async function getCluster(slug: string): Promise<ClusterDetail | null> {
+  try {
+    const res = await fetch(`${API_URL}/clusters/${slug}`, {
+      next: { revalidate: 60 },
+    });
+
+    if (!res.ok) {
+      if (res.status === 404) return null;
+      throw new Error(`Failed to fetch cluster: ${res.status}`);
+    }
+
+    const json: ApiResponse<ClusterDetail> = await res.json();
+    return json.data;
+  } catch (error) {
+    console.error("Error fetching cluster:", error);
+    return null;
+  }
+}
+
+export async function getTownClusters(
+  slug: string
+): Promise<{ cluster: { slug: string; name: string }; role: string }[]> {
+  try {
+    const res = await fetch(`${API_URL}/towns/${slug}/clusters`, {
+      next: { revalidate: 60 },
+    });
+
+    if (!res.ok) return [];
+
+    const json: ApiResponse<{ cluster: { slug: string; name: string }; role: string }[]> = await res.json();
+    return json.data;
+  } catch {
+    return [];
+  }
+}
+
 export async function getPlaces(
   slug: string,
   options?: {
