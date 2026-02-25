@@ -13,6 +13,8 @@ export { cambridgePlaces } from './cambridge';
 export { arlingtonPlaces } from './arlington';
 export { salemPlaces } from './salem';
 export { marbleheadPlaces } from './marblehead';
+export { plymouthPlaces } from './plymouth';
+export { worcesterPlaces } from './worcester';
 
 // Re-export as a combined array for batch seeding
 import { lexingtonPlaces } from './lexington';
@@ -22,6 +24,8 @@ import { cambridgePlaces } from './cambridge';
 import { arlingtonPlaces } from './arlington';
 import { salemPlaces } from './salem';
 import { marbleheadPlaces } from './marblehead';
+import { plymouthPlaces } from './plymouth';
+import { worcesterPlaces } from './worcester';
 
 export const allMassachusettsPlaces = [
   ...lexingtonPlaces,
@@ -31,6 +35,8 @@ export const allMassachusettsPlaces = [
   ...arlingtonPlaces,
   ...salemPlaces,
   ...marbleheadPlaces,
+  ...plymouthPlaces,
+  ...worcesterPlaces,
 ];
 
 // Town-keyed map for selective seeding
@@ -42,4 +48,6 @@ export const massachusettsPlacesByTown = {
   'us-ma-arlington': arlingtonPlaces,
   'us-ma-salem': salemPlaces,
   'us-ma-marblehead': marbleheadPlaces,
+  'us-ma-plymouth': plymouthPlaces,
+  'us-ma-worcester': worcesterPlaces,
 } as const;

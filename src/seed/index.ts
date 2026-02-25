@@ -21,6 +21,8 @@ import {
   arlingtonPlaces,
   salemPlaces,
   marbleheadPlaces,
+  plymouthPlaces,
+  worcesterPlaces,
 } from './massachusetts/places/index.js';
 import {
   seedAll75Towns,
@@ -71,6 +73,8 @@ import {
 } from './arlington.js';
 import { salemEvents } from './salem.js';
 import { marbleheadEvents } from './marblehead.js';
+import { plymouthEvents } from './plymouth.js';
+import { worcesterEvents } from './worcester.js';
 import { computeTownScore } from '../services/scoring.js';
 import { TOP_75_TOWNS, HUB_TOWN_IDS } from '../data/top75.js';
 
@@ -211,6 +215,8 @@ async function main() {
     { name: 'Arlington', places: arlingtonPlaces },
     { name: 'Salem', places: salemPlaces },
     { name: 'Marblehead', places: marbleheadPlaces },
+    { name: 'Plymouth', places: plymouthPlaces },
+    { name: 'Worcester', places: worcesterPlaces },
   ];
 
   for (const { name, places } of maPlaceSets) {
@@ -241,7 +247,7 @@ async function main() {
     console.log(`   ✓ ${places.length} ${name} places seeded`);
   }
 
-  const totalMAPlaces = lexingtonPlaces.length + concordPlaces.length + bostonPlaces.length + cambridgePlaces.length + arlingtonPlaces.length + salemPlaces.length + marbleheadPlaces.length;
+  const totalMAPlaces = lexingtonPlaces.length + concordPlaces.length + bostonPlaces.length + cambridgePlaces.length + arlingtonPlaces.length + salemPlaces.length + marbleheadPlaces.length + plymouthPlaces.length + worcesterPlaces.length;
   console.log(`   ✓ Total: ${totalMAPlaces} Massachusetts places\n`);
 
   // 4b. Seed Concord (second flagship)
@@ -700,6 +706,36 @@ async function main() {
   }
   console.log(`   ✓ ${marbleheadEvents.length} Marblehead events seeded`);
 
+  // 4h. Seed Plymouth events (micro-rollout)
+  console.log('\n🏛️  Seeding Plymouth events...');
+  for (const event of plymouthEvents) {
+    await prisma.event.upsert({
+      where: { id: event.id },
+      update: {
+        name: event.name,
+        summary: event.summary,
+        significanceWeight: event.significanceWeight,
+      },
+      create: event,
+    });
+  }
+  console.log(`   ✓ ${plymouthEvents.length} Plymouth events seeded`);
+
+  // 4i. Seed Worcester events (micro-rollout)
+  console.log('\n🏛️  Seeding Worcester events...');
+  for (const event of worcesterEvents) {
+    await prisma.event.upsert({
+      where: { id: event.id },
+      update: {
+        name: event.name,
+        summary: event.summary,
+        significanceWeight: event.significanceWeight,
+      },
+      create: event,
+    });
+  }
+  console.log(`   ✓ ${worcesterEvents.length} Worcester events seeded`);
+
   // 5. Create EventPerson connections
   console.log('\n🔗 Creating entity connections...');
 
@@ -947,7 +983,7 @@ Summary:
   - ${sources.length + concordSources.length + bostonSources.length + cambridgeSources.length + arlingtonSources.length} sources
   - ${TOP_75_TOWNS.length} towns (75-town network)
   - ${lexingtonPeople.length + concordPeople.length + bostonPeople.length + cambridgePeople.length + arlingtonPeople.length} people
-  - ${lexingtonEvents.length + concordEvents.length + bostonEvents.length + cambridgeEvents.length + arlingtonEvents.length + salemEvents.length + marbleheadEvents.length} events
+  - ${lexingtonEvents.length + concordEvents.length + bostonEvents.length + cambridgeEvents.length + arlingtonEvents.length + salemEvents.length + marbleheadEvents.length + plymouthEvents.length + worcesterEvents.length} events
   - ${lexingtonStories.length + concordStories.length + bostonStories.length + cambridgeStories.length + arlingtonStories.length} stories
   - ${totalMAPlaces} places (Massachusetts)
   - ${linkResult.created} town links
@@ -965,6 +1001,8 @@ Flagship towns:
 Micro-rollout towns:
   - Salem: ${salemEvents.length} events, ${salemPlaces.length} places
   - Marblehead: ${marbleheadEvents.length} events, ${marbleheadPlaces.length} places
+  - Plymouth: ${plymouthEvents.length} events, ${plymouthPlaces.length} places
+  - Worcester: ${worcesterEvents.length} events, ${worcesterPlaces.length} places
 
 Next steps:
   1. Test the rankings: curl http://localhost:3000/rankings

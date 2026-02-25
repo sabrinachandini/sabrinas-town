@@ -96,19 +96,31 @@ export const TOWN_LINKS_75: TownLinkDef[] = [
   { fromTownId: 'us-ma-marblehead', toTownId: 'us-nh-portsmouth', linkType: 'SHARED_THEME', reason: 'Northern coastal towns whose seafaring populations contributed disproportionately to the Continental forces.', weight: 50 },
   { fromTownId: 'us-ma-marblehead', toTownId: 'us-ny-white-plains', linkType: 'SHARED_EVENT', reason: 'Glover\'s Marblehead regiment fought at the Battle of White Plains in October 1776.', weight: 60 },
 
-  // Plymouth (regional) - 5 links
+  // Plymouth (regional) - 11 links
   { fromTownId: 'us-ma-plymouth', toTownId: 'us-ma-boston', linkType: 'SHARED_THEME', reason: 'Both represent foundational moments in American identity: Pilgrim landing and revolutionary resistance.', weight: 70 },
   { fromTownId: 'us-ma-plymouth', toTownId: 'us-ma-cambridge', linkType: 'SHARED_PERSON', reason: 'Plymouth militia joined the siege of Boston, serving with other Massachusetts troops.', weight: 65 },
   { fromTownId: 'us-ma-plymouth', toTownId: 'us-pa-philadelphia', linkType: 'SHARED_THEME', reason: 'Plymouth symbolized English settlement; Philadelphia symbolized independence from England.', weight: 55 },
   { fromTownId: 'us-ma-plymouth', toTownId: 'us-ma-lexington', linkType: 'SHARED_THEME', reason: 'Both carry symbolic weight in American historical memory, though centuries apart.', weight: 50 },
   { fromTownId: 'us-ma-plymouth', toTownId: 'us-va-williamsburg', linkType: 'COMPARISON', reason: 'Early English settlement sites that became centers of revolutionary activity in their colonies.', weight: 50 },
+  { fromTownId: 'us-ma-plymouth', toTownId: 'us-ma-concord', linkType: 'SHARED_THEME', reason: 'Plymouth militia marched toward Concord after the April 19 alarm, joining the broader Massachusetts response.', weight: 55 },
+  { fromTownId: 'us-ma-plymouth', toTownId: 'us-ri-providence', linkType: 'SHARED_THEME', reason: 'Both colonies traced their founding to groups seeking self-governance outside established authority.', weight: 50 },
+  { fromTownId: 'us-ma-plymouth', toTownId: 'us-ma-salem', linkType: 'GEOGRAPHIC_PROXIMITY', reason: 'Massachusetts coastal towns whose colonial-era economies centered on fishing and Atlantic trade.', weight: 45 },
+  { fromTownId: 'us-ma-plymouth', toTownId: 'us-ma-marblehead', linkType: 'SHARED_THEME', reason: 'Maritime communities that contributed sailors and soldiers to the Continental cause.', weight: 45 },
+  { fromTownId: 'us-ma-plymouth', toTownId: 'us-ny-new-york-city', linkType: 'SHARED_THEME', reason: 'Plymouth militia served in Continental forces deployed to New York during the 1776 campaign.', weight: 50 },
+  { fromTownId: 'us-ma-plymouth', toTownId: 'us-ri-newport', linkType: 'GEOGRAPHIC_PROXIMITY', reason: 'Southeastern New England coastal towns whose economies depended on maritime trade and fishing.', weight: 45 },
 
-  // Worcester (regional) - 5 links
+  // Worcester (regional) - 11 links
   { fromTownId: 'us-ma-worcester', toTownId: 'us-ma-boston', linkType: 'SHARED_THEME', reason: 'Worcester patriots closed royal courts before Lexington, part of the resistance Boston led.', weight: 75 },
   { fromTownId: 'us-ma-worcester', toTownId: 'us-ma-cambridge', linkType: 'SHARED_PERSON', reason: 'Worcester militia served in the Continental Army during the siege of Boston.', weight: 70 },
   { fromTownId: 'us-ma-worcester', toTownId: 'us-ma-springfield', linkType: 'GEOGRAPHIC_PROXIMITY', reason: 'Interior Massachusetts towns that supplied troops and materials throughout the war.', weight: 65 },
   { fromTownId: 'us-ma-worcester', toTownId: 'us-ma-lexington', linkType: 'SHARED_THEME', reason: 'Worcester resistance preceded Lexington; both demonstrated escalating colonial defiance.', weight: 60 },
   { fromTownId: 'us-ma-worcester', toTownId: 'us-pa-york', linkType: 'COMPARISON', reason: 'Interior towns that maintained patriot governance while coastal areas faced occupation threats.', weight: 50 },
+  { fromTownId: 'us-ma-worcester', toTownId: 'us-ma-concord', linkType: 'SHARED_THEME', reason: 'Both towns experienced early confrontations with royal authority over military stores and court jurisdiction.', weight: 60 },
+  { fromTownId: 'us-ma-worcester', toTownId: 'us-pa-philadelphia', linkType: 'SHARED_THEME', reason: 'Worcester\'s court closings helped demonstrate to the Continental Congress that royal governance had collapsed in Massachusetts.', weight: 55 },
+  { fromTownId: 'us-ma-worcester', toTownId: 'us-ma-arlington', linkType: 'SHARED_PERSON', reason: 'Worcester militia companies marched east after the Lexington alarm and served alongside Arlington men in the siege of Boston.', weight: 50 },
+  { fromTownId: 'us-ma-worcester', toTownId: 'us-ny-saratoga-springs', linkType: 'SHARED_PERSON', reason: 'Worcester men served in the Northern Army that defeated Burgoyne at Saratoga in 1777.', weight: 55 },
+  { fromTownId: 'us-ma-worcester', toTownId: 'us-ma-salem', linkType: 'SHARED_THEME', reason: 'Both towns organized resistance to the Massachusetts Government Act independently of Boston in 1774.', weight: 50 },
+  { fromTownId: 'us-ma-worcester', toTownId: 'us-nj-morristown', linkType: 'SHARED_PERSON', reason: 'Worcester soldiers served in Continental units that wintered at Morristown.', weight: 45 },
 
   // Springfield (regional) - 5 links
   { fromTownId: 'us-ma-springfield', toTownId: 'us-ma-worcester', linkType: 'GEOGRAPHIC_PROXIMITY', reason: 'Central Massachusetts towns that supported the war effort with troops and supplies.', weight: 65 },
