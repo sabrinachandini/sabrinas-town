@@ -117,7 +117,7 @@ model Person {
   name                String
   roles               String[]           // ["Patriot", "Silversmith", "Messenger"]
 
-  bioShort            String             @db.VarChar(300)
+  bioShort            String             @db.VarChar(500)
   bioLong             String?            @db.Text
 
   birthYear           Int?

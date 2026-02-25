@@ -124,6 +124,17 @@ import {
   danburyTownUpdate, danburyPeople, danburyEvents, danburyStories,
   grotonTownUpdate, grotonPeople, grotonEvents, grotonStories,
 } from './connecticut/content.js';
+import {
+  newportTownUpdate, newportPeople, newportEvents, newportStories,
+  providenceTownUpdate, providencePeople, providenceEvents, providenceStories,
+} from './rhodeisland/content.js';
+import {
+  williamsburgTownUpdate, williamsburgPeople, williamsburgEvents, williamsburgStories,
+  yorktownTownUpdate, yorktownPeople, yorktownEvents, yorktownStories,
+  richmondTownUpdate, richmondPeople, richmondEvents, richmondStories,
+  norfolkTownUpdate, norfolkPeople, norfolkEvents, norfolkStories,
+  charlottesvilleTownUpdate, charlottesvillePeople, charlottesvilleEvents, charlottesvilleStories,
+} from './virginia/content.js';
 import { computeTownScore } from '../services/scoring.js';
 import { TOP_75_TOWNS, HUB_TOWN_IDS } from '../data/top75.js';
 import { Prisma } from '@prisma/client';
@@ -1295,6 +1306,39 @@ async function main() {
   ];
 
   for (const town of ctTownExpansions) {
+    await prisma.town.update({ where: { id: town.id }, data: town.update });
+    for (const person of town.people) { await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person }); }
+    for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
+    for (const story of town.stories) { const ex = await prisma.story.findFirst({ where: { id: story.id! } }); if (!ex) { await prisma.story.create({ data: story }); } else { await prisma.story.update({ where: { id: story.id! }, data: { title: story.title, textVersion: story.textVersion } }); } }
+    console.log(`   ✓ ${town.name}: ${town.people.length} people, ${town.events.length} events, ${town.stories.length} stories`);
+  }
+
+  // 19. RI town content expansion
+  console.log('\n🏛️  Expanding Rhode Island town content...');
+  const riTownExpansions = [
+    { id: 'us-ri-newport', name: 'Newport', update: newportTownUpdate, people: newportPeople, events: newportEvents, stories: newportStories },
+    { id: 'us-ri-providence', name: 'Providence', update: providenceTownUpdate, people: providencePeople, events: providenceEvents, stories: providenceStories },
+  ];
+
+  for (const town of riTownExpansions) {
+    await prisma.town.update({ where: { id: town.id }, data: town.update });
+    for (const person of town.people) { await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person }); }
+    for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
+    for (const story of town.stories) { const ex = await prisma.story.findFirst({ where: { id: story.id! } }); if (!ex) { await prisma.story.create({ data: story }); } else { await prisma.story.update({ where: { id: story.id! }, data: { title: story.title, textVersion: story.textVersion } }); } }
+    console.log(`   ✓ ${town.name}: ${town.people.length} people, ${town.events.length} events, ${town.stories.length} stories`);
+  }
+
+  // 20. VA town content expansion
+  console.log('\n🏛️  Expanding Virginia town content...');
+  const vaTownExpansions = [
+    { id: 'us-va-williamsburg', name: 'Williamsburg', update: williamsburgTownUpdate, people: williamsburgPeople, events: williamsburgEvents, stories: williamsburgStories },
+    { id: 'us-va-yorktown', name: 'Yorktown', update: yorktownTownUpdate, people: yorktownPeople, events: yorktownEvents, stories: yorktownStories },
+    { id: 'us-va-richmond', name: 'Richmond', update: richmondTownUpdate, people: richmondPeople, events: richmondEvents, stories: richmondStories },
+    { id: 'us-va-norfolk', name: 'Norfolk', update: norfolkTownUpdate, people: norfolkPeople, events: norfolkEvents, stories: norfolkStories },
+    { id: 'us-va-charlottesville', name: 'Charlottesville', update: charlottesvilleTownUpdate, people: charlottesvillePeople, events: charlottesvilleEvents, stories: charlottesvilleStories },
+  ];
+
+  for (const town of vaTownExpansions) {
     await prisma.town.update({ where: { id: town.id }, data: town.update });
     for (const person of town.people) { await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person }); }
     for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
