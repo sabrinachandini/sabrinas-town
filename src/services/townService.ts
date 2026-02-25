@@ -10,12 +10,14 @@ import type {
   EventSummarySchema,
   StorySummarySchema,
   TownLinkSchema,
+  PlaceSummarySchema,
 } from '../validators/town.js';
 import { z } from 'zod';
 
 type EventSummary = z.infer<typeof EventSummarySchema>;
 type StorySummary = z.infer<typeof StorySummarySchema>;
 type TownLink = z.infer<typeof TownLinkSchema>;
+type PlaceSummary = z.infer<typeof PlaceSummarySchema>;
 
 // Full include type for town query
 const townInclude = {
@@ -33,6 +35,9 @@ const townInclude = {
       storyThemes: { include: { theme: true } },
     },
     take: 10,
+  },
+  places: {
+    orderBy: [{ featured: 'desc' }, { displayOrder: 'asc' }],
   },
   outgoingLinks: {
     include: {
@@ -142,6 +147,28 @@ export async function getTownBySlug(
       narratorRole: s.narratorRole,
       excerpt: s.textVersion.slice(0, 200) + (s.textVersion.length > 200 ? '...' : ''),
       tags: s.tags,
+    }));
+  }
+
+  // Transform places
+  if (town.places) {
+    response.places = town.places.map((p): PlaceSummary => ({
+      id: p.id,
+      name: p.name,
+      placeType: p.placeType,
+      description: p.description,
+      lat: p.lat,
+      lng: p.lng,
+      address: p.address,
+      hours: p.hours,
+      admission: p.admission,
+      website: p.website,
+      phone: p.phone,
+      accessibilityNotes: p.accessibilityNotes,
+      parkingNotes: p.parkingNotes,
+      amenities: p.amenities,
+      historicalNote: p.historicalNote,
+      featured: p.featured,
     }));
   }
 

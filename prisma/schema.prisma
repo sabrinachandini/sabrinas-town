@@ -47,6 +47,7 @@ model Town {
   // Relations
   events        Event[]
   stories       Story[]
+  places        Place[]
   outgoingLinks TownLink[] @relation("FromTown")
   incomingLinks TownLink[] @relation("ToTown")
   townThemes    TownTheme[]
@@ -162,6 +163,47 @@ model RouteStop {
   @@unique([routeId, stopOrder])
   @@index([routeId])
   @@index([townId])
+}
+
+model Place {
+  id          String    @id // Stable ID: "lexington-green"
+  townId      String
+  town        Town      @relation(fields: [townId], references: [id])
+
+  name        String
+  placeType   PlaceType
+  description String    @db.Text
+
+  // Location
+  lat         Float?
+  lng         Float?
+  address     String?
+
+  // Visitor information
+  hours       String?   // "Daily 9am-5pm" or "By appointment"
+  admission   String?   // "Free", "$15 adults", etc.
+  website     String?
+  phone       String?
+
+  // Access & amenities
+  accessibilityNotes String?  @db.Text
+  parkingNotes       String?
+  amenities          String[] // ["restrooms", "gift shop", "cafe"]
+
+  // Content
+  historicalNote     String?  @db.Text  // Revolutionary significance
+  images             Json?    // Array of { url, caption, credit }
+
+  // Ordering and visibility
+  displayOrder       Int      @default(100)
+  featured           Boolean  @default(false)
+
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([townId])
+  @@index([placeType])
+  @@index([featured])
 }
 
 model Source {
@@ -557,4 +599,17 @@ enum UpdateDeltaStatus {
   APPLIED
   REJECTED
   ROLLED_BACK
+}
+
+enum PlaceType {
+  BATTLEFIELD      // Battle sites, military positions
+  HISTORIC_HOUSE   // Period homes, taverns
+  MONUMENT         // Statues, markers, memorials
+  MUSEUM           // Museums, visitor centers
+  CEMETERY         // Historic burial grounds
+  CHURCH           // Meeting houses, churches
+  GOVERNMENT       // Town halls, courthouses
+  TAVERN           // Historic taverns, inns
+  LANDMARK         // Other significant locations
+  TRAIL            // Walking paths, routes
 }

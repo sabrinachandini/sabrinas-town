@@ -36,6 +36,19 @@ export const TownLinkTypeSchema = z.enum([
 
 export const UpdateDeltaStatusSchema = z.enum(['PENDING', 'APPLIED', 'REJECTED', 'ROLLED_BACK']);
 
+export const PlaceTypeSchema = z.enum([
+  'BATTLEFIELD',
+  'HISTORIC_HOUSE',
+  'MONUMENT',
+  'MUSEUM',
+  'CEMETERY',
+  'CHURCH',
+  'GOVERNMENT',
+  'TAVERN',
+  'LANDMARK',
+  'TRAIL',
+]);
+
 export const AnalyticsEventTypeSchema = z.enum([
   'PAGE_VIEW',
   'ITINERARY_CLICK',

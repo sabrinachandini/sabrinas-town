@@ -50,6 +50,25 @@ export interface TownRoute {
   totalStops: number;
 }
 
+export interface TownPlace {
+  id: string;
+  name: string;
+  placeType: "BATTLEFIELD" | "HISTORIC_HOUSE" | "MONUMENT" | "MUSEUM" | "CEMETERY" | "CHURCH" | "GOVERNMENT" | "TAVERN" | "LANDMARK" | "TRAIL";
+  description: string;
+  lat: number | null;
+  lng: number | null;
+  address: string | null;
+  hours: string | null;
+  admission: string | null;
+  website: string | null;
+  phone: string | null;
+  accessibilityNotes: string | null;
+  parkingNotes: string | null;
+  amenities: string[];
+  historicalNote: string | null;
+  featured: boolean;
+}
+
 export interface ScoreBreakdown {
   historical: { score: number; subfactors: Record<string, unknown> };
   preservation: { score: number; subfactors: Record<string, unknown> };
@@ -83,6 +102,7 @@ export interface Town {
   lastUpdatedAt: string;
   events: TownEvent[];
   stories: TownStory[];
+  places: TownPlace[];
   linkedTowns: LinkedTown[];
   themes: TownTheme[];
   routes: TownRoute[];

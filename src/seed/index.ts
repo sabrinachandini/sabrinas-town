@@ -13,6 +13,7 @@ import {
   midnightRideStops,
   lexingtonOrganization,
 } from './lexington.js';
+import { lexingtonPlaces } from './lexingtonPlaces.js';
 import {
   seedAll75Towns,
   seedTownLinks,
@@ -129,6 +130,33 @@ async function main() {
     }
   }
   console.log(`   ✓ ${lexingtonStories.length} stories seeded`);
+
+  // Places
+  for (const place of lexingtonPlaces) {
+    await prisma.place.upsert({
+      where: { id: place.id },
+      update: {
+        name: place.name,
+        placeType: place.placeType,
+        description: place.description,
+        lat: place.lat,
+        lng: place.lng,
+        address: place.address,
+        hours: place.hours,
+        admission: place.admission,
+        website: place.website,
+        phone: place.phone,
+        accessibilityNotes: place.accessibilityNotes,
+        parkingNotes: place.parkingNotes,
+        amenities: place.amenities,
+        historicalNote: place.historicalNote,
+        displayOrder: place.displayOrder,
+        featured: place.featured,
+      },
+      create: place,
+    });
+  }
+  console.log(`   ✓ ${lexingtonPlaces.length} places seeded`);
 
   // 4b. Seed Concord (second flagship)
   console.log('\n🏛️  Seeding Concord flagship content...');
@@ -318,13 +346,14 @@ Summary:
   - ${lexingtonPeople.length + concordPeople.length} people (Lexington + Concord)
   - ${lexingtonEvents.length + concordEvents.length} events (Lexington + Concord)
   - ${lexingtonStories.length + concordStories.length} stories (Lexington + Concord)
+  - ${lexingtonPlaces.length} places (Lexington)
   - ${linkResult.created} town links
   - 1 route with ${midnightRideStops.length} stops
   - 1 organization
   - ${changelogCount} changelog entries
 
 Flagship towns:
-  - Lexington: ${lexingtonEvents.length} events, ${lexingtonPeople.length} people, ${lexingtonStories.length} stories
+  - Lexington: ${lexingtonEvents.length} events, ${lexingtonPeople.length} people, ${lexingtonStories.length} stories, ${lexingtonPlaces.length} places
   - Concord: ${concordEvents.length} events, ${concordPeople.length} people, ${concordStories.length} stories
 
 Next steps:

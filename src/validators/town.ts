@@ -7,6 +7,7 @@ import {
   VerificationStatusSchema,
   StoryTypeSchema,
   TownLinkTypeSchema,
+  PlaceTypeSchema,
   GeoSchema,
 } from './common.js';
 
@@ -63,6 +64,26 @@ export const TownLinkSchema = z.object({
   linkType: TownLinkTypeSchema,
   reason: z.string(),
   weight: z.number(),
+});
+
+// Place summary for visitor info
+export const PlaceSummarySchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  placeType: PlaceTypeSchema,
+  description: z.string(),
+  lat: z.number().nullable(),
+  lng: z.number().nullable(),
+  address: z.string().nullable(),
+  hours: z.string().nullable(),
+  admission: z.string().nullable(),
+  website: z.string().nullable(),
+  phone: z.string().nullable(),
+  accessibilityNotes: z.string().nullable(),
+  parkingNotes: z.string().nullable(),
+  amenities: z.array(z.string()),
+  historicalNote: z.string().nullable(),
+  featured: z.boolean(),
 });
 
 // Score breakdown for display
@@ -123,6 +144,7 @@ export const TownFullResponseSchema = z.object({
   lastUpdatedAt: z.string().datetime(),
   events: z.array(EventSummarySchema).optional(),
   stories: z.array(StorySummarySchema).optional(),
+  places: z.array(PlaceSummarySchema).optional(),
   linkedTowns: z.array(TownLinkSchema).optional(),
   themes: z
     .array(
