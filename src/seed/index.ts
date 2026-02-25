@@ -23,6 +23,7 @@ import {
   marbleheadPlaces,
   plymouthPlaces,
   worcesterPlaces,
+  springfieldPlaces,
 } from './massachusetts/places/index.js';
 import {
   seedAll75Towns,
@@ -75,6 +76,7 @@ import { salemEvents } from './salem.js';
 import { marbleheadEvents } from './marblehead.js';
 import { plymouthEvents } from './plymouth.js';
 import { worcesterEvents } from './worcester.js';
+import { springfieldEvents } from './springfield.js';
 import { computeTownScore } from '../services/scoring.js';
 import { TOP_75_TOWNS, HUB_TOWN_IDS } from '../data/top75.js';
 
@@ -217,6 +219,7 @@ async function main() {
     { name: 'Marblehead', places: marbleheadPlaces },
     { name: 'Plymouth', places: plymouthPlaces },
     { name: 'Worcester', places: worcesterPlaces },
+    { name: 'Springfield', places: springfieldPlaces },
   ];
 
   for (const { name, places } of maPlaceSets) {
@@ -247,7 +250,7 @@ async function main() {
     console.log(`   ✓ ${places.length} ${name} places seeded`);
   }
 
-  const totalMAPlaces = lexingtonPlaces.length + concordPlaces.length + bostonPlaces.length + cambridgePlaces.length + arlingtonPlaces.length + salemPlaces.length + marbleheadPlaces.length + plymouthPlaces.length + worcesterPlaces.length;
+  const totalMAPlaces = lexingtonPlaces.length + concordPlaces.length + bostonPlaces.length + cambridgePlaces.length + arlingtonPlaces.length + salemPlaces.length + marbleheadPlaces.length + plymouthPlaces.length + worcesterPlaces.length + springfieldPlaces.length;
   console.log(`   ✓ Total: ${totalMAPlaces} Massachusetts places\n`);
 
   // 4b. Seed Concord (second flagship)
@@ -736,6 +739,21 @@ async function main() {
   }
   console.log(`   ✓ ${worcesterEvents.length} Worcester events seeded`);
 
+  // 4j. Seed Springfield events (micro-rollout)
+  console.log('\n🏛️  Seeding Springfield events...');
+  for (const event of springfieldEvents) {
+    await prisma.event.upsert({
+      where: { id: event.id },
+      update: {
+        name: event.name,
+        summary: event.summary,
+        significanceWeight: event.significanceWeight,
+      },
+      create: event,
+    });
+  }
+  console.log(`   ✓ ${springfieldEvents.length} Springfield events seeded`);
+
   // 5. Create EventPerson connections
   console.log('\n🔗 Creating entity connections...');
 
@@ -983,7 +1001,7 @@ Summary:
   - ${sources.length + concordSources.length + bostonSources.length + cambridgeSources.length + arlingtonSources.length} sources
   - ${TOP_75_TOWNS.length} towns (75-town network)
   - ${lexingtonPeople.length + concordPeople.length + bostonPeople.length + cambridgePeople.length + arlingtonPeople.length} people
-  - ${lexingtonEvents.length + concordEvents.length + bostonEvents.length + cambridgeEvents.length + arlingtonEvents.length + salemEvents.length + marbleheadEvents.length + plymouthEvents.length + worcesterEvents.length} events
+  - ${lexingtonEvents.length + concordEvents.length + bostonEvents.length + cambridgeEvents.length + arlingtonEvents.length + salemEvents.length + marbleheadEvents.length + plymouthEvents.length + worcesterEvents.length + springfieldEvents.length} events
   - ${lexingtonStories.length + concordStories.length + bostonStories.length + cambridgeStories.length + arlingtonStories.length} stories
   - ${totalMAPlaces} places (Massachusetts)
   - ${linkResult.created} town links
@@ -1003,6 +1021,7 @@ Micro-rollout towns:
   - Marblehead: ${marbleheadEvents.length} events, ${marbleheadPlaces.length} places
   - Plymouth: ${plymouthEvents.length} events, ${plymouthPlaces.length} places
   - Worcester: ${worcesterEvents.length} events, ${worcesterPlaces.length} places
+  - Springfield: ${springfieldEvents.length} events, ${springfieldPlaces.length} places
 
 Next steps:
   1. Test the rankings: curl http://localhost:3000/rankings

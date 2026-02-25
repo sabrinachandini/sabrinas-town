@@ -122,12 +122,18 @@ export const TOWN_LINKS_75: TownLinkDef[] = [
   { fromTownId: 'us-ma-worcester', toTownId: 'us-ma-salem', linkType: 'SHARED_THEME', reason: 'Both towns organized resistance to the Massachusetts Government Act independently of Boston in 1774.', weight: 50 },
   { fromTownId: 'us-ma-worcester', toTownId: 'us-nj-morristown', linkType: 'SHARED_PERSON', reason: 'Worcester soldiers served in Continental units that wintered at Morristown.', weight: 45 },
 
-  // Springfield (regional) - 5 links
+  // Springfield (regional) - 11 links
   { fromTownId: 'us-ma-springfield', toTownId: 'us-ma-worcester', linkType: 'GEOGRAPHIC_PROXIMITY', reason: 'Central Massachusetts towns that supported the war effort with troops and supplies.', weight: 65 },
   { fromTownId: 'us-ma-springfield', toTownId: 'us-ma-boston', linkType: 'SHARED_THEME', reason: 'The Springfield Armory supplied weapons to forces fighting for causes Boston championed.', weight: 70 },
   { fromTownId: 'us-ma-springfield', toTownId: 'us-pa-valley-forge', linkType: 'OTHER', reason: 'Springfield manufactured weapons; Valley Forge trained soldiers to use them effectively.', weight: 60 },
   { fromTownId: 'us-ma-springfield', toTownId: 'us-pa-pittsburgh', linkType: 'COMPARISON', reason: 'Both became important military manufacturing and supply centers during and after the war.', weight: 55 },
   { fromTownId: 'us-ma-springfield', toTownId: 'us-ma-cambridge', linkType: 'OTHER', reason: 'Springfield arms eventually equipped the army Washington organized at Cambridge.', weight: 55 },
+  { fromTownId: 'us-ma-springfield', toTownId: 'us-ma-lexington', linkType: 'SHARED_THEME', reason: 'Springfield militia responded to the Lexington alarm and the armory later supplied weapons to forces that had first mobilized that day.', weight: 55 },
+  { fromTownId: 'us-ma-springfield', toTownId: 'us-ma-concord', linkType: 'SHARED_THEME', reason: 'Both towns stored military supplies that British forces sought to seize; Springfield\'s inland location made it safer for long-term production.', weight: 55 },
+  { fromTownId: 'us-ma-springfield', toTownId: 'us-ny-ticonderoga', linkType: 'SHARED_THEME', reason: 'Cannons captured at Ticonderoga passed through western Massachusetts en route to Boston, connecting the region\'s supply networks.', weight: 55 },
+  { fromTownId: 'us-ma-springfield', toTownId: 'us-pa-philadelphia', linkType: 'SHARED_THEME', reason: 'The Continental Congress authorized the armory; Springfield produced the weapons Congress\'s armies carried.', weight: 50 },
+  { fromTownId: 'us-ma-springfield', toTownId: 'us-ny-saratoga-springs', linkType: 'SHARED_THEME', reason: 'Springfield-manufactured weapons equipped Continental forces at the Saratoga campaign.', weight: 50 },
+  { fromTownId: 'us-ma-springfield', toTownId: 'us-nj-morristown', linkType: 'SHARED_THEME', reason: 'Springfield arms supplied Continental troops during the Morristown winter encampments.', weight: 45 },
 
   // ============================================
   // NEW YORK TOWNS (8)
