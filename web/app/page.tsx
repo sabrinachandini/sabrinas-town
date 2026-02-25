@@ -24,7 +24,7 @@ export default function HomePage() {
 
           <div className="flex flex-wrap gap-4 mt-component">
             <Button href="/towns">Explore Towns</Button>
-            <Button href="/teach" variant="secondary">
+            <Button href="/towns/lexington-ma/teacher" variant="secondary">
               Teach a Town
             </Button>
             <Button href="/partner" variant="secondary">
@@ -167,7 +167,7 @@ export default function HomePage() {
                 everything as PDF.
               </Text>
               <div className="mt-element">
-                <Link href="/teach">Access teacher resources →</Link>
+                <Link href="/towns/lexington-ma/teacher">Access teacher resources →</Link>
               </div>
             </div>
 
@@ -201,7 +201,6 @@ export default function HomePage() {
           </Text>
 
           <div className="mt-component space-y-element">
-            {/* Changelog entries - placeholder data */}
             <div className="flex gap-4 items-start">
               <div className="w-2 h-2 mt-2 rounded-full bg-accent-red flex-shrink-0" />
               <div>
@@ -224,17 +223,17 @@ export default function HomePage() {
                   February 24, 2026
                 </Text>
                 <Text>
-                  Network launch — 7 towns seeded with interconnected knowledge
-                  graph. Paul Revere's Midnight Ride route now traceable from
-                  Boston through Lexington to Concord.
+                  Network launch — 25 towns across 7 states seeded with
+                  interconnected knowledge graph. Paul Revere's Midnight Ride
+                  route now traceable from Boston through Lexington to Concord.
                 </Text>
               </div>
             </div>
           </div>
 
           <div className="mt-component">
-            <Button href="/changelog" variant="secondary" size="small">
-              View full changelog
+            <Button href="/towns" variant="secondary" size="small">
+              Browse all towns
             </Button>
           </div>
         </Container>
@@ -255,10 +254,10 @@ export default function HomePage() {
               </Text>
             </div>
             <div className="flex flex-wrap gap-6">
-              <Link href="/about">About</Link>
-              <Link href="/methodology">Methodology</Link>
-              <Link href="/sources">Sources</Link>
-              <Link href="/contact">Contact</Link>
+              <Link href="/towns">Towns</Link>
+              <Link href="/rankings">Rankings</Link>
+              <Link href="/compare">Compare</Link>
+              <Link href="/partner">Partner</Link>
             </div>
           </div>
           <Divider spacing="default" />

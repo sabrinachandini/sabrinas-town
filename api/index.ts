@@ -14,6 +14,10 @@ async function getApp() {
 }
 
 export default async function handler(req: any, res: any) {
+  // Strip /api prefix so Fastify routes (registered without prefix) match
+  if (req.url?.startsWith('/api')) {
+    req.url = req.url.slice(4) || '/';
+  }
   const fastify = await getApp();
   await fastify.ready();
   fastify.server.emit('request', req, res);

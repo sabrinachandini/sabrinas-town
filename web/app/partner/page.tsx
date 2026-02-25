@@ -190,7 +190,7 @@ export default function PartnerPage() {
         <Divider spacing="section" />
 
         {/* CTA */}
-        <section className="text-center">
+        <section id="contact" className="text-center">
           <Heading level={2}>Ready to join the network?</Heading>
           <Text className="mt-element max-w-[500px] mx-auto">
             Contact us to discuss how Sabrina's Town can help your community
@@ -198,7 +198,7 @@ export default function PartnerPage() {
             enthusiasts.
           </Text>
           <div className="mt-component flex flex-wrap justify-center gap-4">
-            <Button href="/contact">Contact Us</Button>
+            <Button href="/partner#contact">Contact Us</Button>
             <Button href="/towns" variant="secondary">
               Browse the Network
             </Button>

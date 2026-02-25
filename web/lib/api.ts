@@ -1,4 +1,13 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+function getApiUrl(): string {
+  // Explicit override (works both server-side and client-side)
+  if (process.env.NEXT_PUBLIC_API_URL) return process.env.NEXT_PUBLIC_API_URL;
+  // On Vercel, use the deployment URL with /api prefix (server-side only)
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}/api`;
+  // Local development — Fastify runs on port 3000 without /api prefix
+  return "http://localhost:3000";
+}
+
+const API_URL = getApiUrl();
 
 export interface TownGeo {
   lat: number;

@@ -205,11 +205,11 @@ export default async function EmbedPage({ params, searchParams }: PageProps) {
               </Text>
             </div>
             <div className="flex gap-4">
-              <Link href="/about" className="text-small">
-                About the Network
+              <Link href="/towns" className="text-small">
+                Browse Towns
               </Link>
-              <Link href="/methodology" className="text-small">
-                Methodology
+              <Link href="/rankings" className="text-small">
+                Rankings
               </Link>
             </div>
           </div>

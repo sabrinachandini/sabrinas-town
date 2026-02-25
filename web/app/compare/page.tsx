@@ -391,7 +391,15 @@ function ComparisonView({ comparison }: { comparison: CompareResponse }) {
             </Text>
           )}
           <div className="mt-component space-y-element">
-            {comparison.suggestedItinerary.stops.map((stop) => (
+            {comparison.suggestedItinerary.stops.map((stop) => {
+              // Map townId to slug using comparison data
+              const slugMap: Record<string, string> = {
+                [comparison.townA.id]: comparison.townA.slug,
+                [comparison.townB.id]: comparison.townB.slug,
+              };
+              const townSlug = slugMap[stop.townId] || stop.townId;
+
+              return (
               <div
                 key={stop.townId}
                 className="flex gap-4"
@@ -406,7 +414,7 @@ function ComparisonView({ comparison }: { comparison: CompareResponse }) {
                 </div>
                 <div className="pb-component">
                   <Link
-                    href={`/towns/${stop.townId.replace("us-", "").replace(/-/g, "-")}`}
+                    href={`/towns/${townSlug}`}
                     className="font-medium hover:text-accent-blue"
                   >
                     {stop.townName}
@@ -428,7 +436,8 @@ function ComparisonView({ comparison }: { comparison: CompareResponse }) {
                   )}
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
           <Text size="small" muted className="mt-component italic">
             {comparison.suggestedItinerary.notes}

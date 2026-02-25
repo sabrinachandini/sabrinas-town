@@ -7,16 +7,25 @@ import {
   Divider,
 } from "@/components/ui";
 
+interface PageProps {
+  searchParams: Promise<{ state?: string }>;
+}
+
 export const metadata = {
   title: "Town Rankings | Sabrina's Town",
   description:
     "All 75 Revolutionary towns ranked by composite score across historical significance, preservation, accessibility, and more.",
 };
 
-export default async function RankingsPage() {
-  const towns = await getRankings({ limit: 75 });
+export default async function RankingsPage({ searchParams }: PageProps) {
+  const params = await searchParams;
+  const stateFilter = params.state || null;
+  const allTowns = await getRankings({ limit: 75 });
+  const towns = stateFilter
+    ? allTowns.filter((t) => t.state === stateFilter)
+    : allTowns;
 
-  // Group by score tier for summary
+  // Group by score tier for summary (based on visible towns)
   const tiers = {
     exceptional: towns.filter((t) => t.compositeScore >= 90),
     excellent: towns.filter(
@@ -31,8 +40,8 @@ export default async function RankingsPage() {
     emerging: towns.filter((t) => t.compositeScore < 40),
   };
 
-  // Get unique states
-  const states = [...new Set(towns.map((t) => t.state))].sort();
+  // Get unique states from all towns (not filtered)
+  const states = [...new Set(allTowns.map((t) => t.state))].sort();
 
   return (
     <main className="py-section">
@@ -84,14 +93,25 @@ export default async function RankingsPage() {
             Filter by state:
           </Text>
           <div className="flex flex-wrap gap-2">
-            <Link href="/rankings" className="px-3 py-1 bg-accent-blue text-white rounded text-small no-underline hover:no-underline">
+            <Link
+              href="/rankings"
+              className={`px-3 py-1 rounded text-small no-underline hover:no-underline ${
+                !stateFilter
+                  ? "bg-accent-blue text-white"
+                  : "bg-bg-secondary hover:bg-border-light"
+              }`}
+            >
               All
             </Link>
             {states.map((state) => (
               <Link
                 key={state}
                 href={`/rankings?state=${state}`}
-                className="px-3 py-1 bg-bg-secondary rounded text-small hover:bg-border-light no-underline"
+                className={`px-3 py-1 rounded text-small no-underline hover:no-underline ${
+                  stateFilter === state
+                    ? "bg-accent-blue text-white"
+                    : "bg-bg-secondary hover:bg-border-light"
+                }`}
               >
                 {state}
               </Link>
@@ -131,7 +151,16 @@ export default async function RankingsPage() {
 
         {towns.length === 0 && (
           <div className="py-section text-center">
-            <Text muted>No towns found.</Text>
+            <Text muted>
+              {stateFilter
+                ? `No towns found in ${stateFilter}. `
+                : "No towns found. "}
+            </Text>
+            {stateFilter && (
+              <Link href="/rankings" className="mt-element inline-block">
+                View all towns
+              </Link>
+            )}
           </div>
         )}
 
@@ -155,7 +184,7 @@ export default async function RankingsPage() {
             visitor resources.
           </Text>
           <div className="mt-element">
-            <Link href="/methodology">Read full methodology →</Link>
+            <Link href="/rankings">Back to top →</Link>
           </div>
         </div>
       </Container>
