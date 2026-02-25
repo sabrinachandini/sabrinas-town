@@ -96,6 +96,28 @@ import {
   springfieldTownUpdate, springfieldPeople, springfieldEvents as springfieldExpandedEvents, springfieldStories,
   marbleheadTownUpdate, marbleheadPeople, marbleheadEvents as marbleheadExpandedEvents, marbleheadStories,
 } from './massachusetts/content.js';
+import {
+  trentonTownUpdate, trentonPeople, trentonEvents, trentonStories,
+  princetonTownUpdate, princetonPeople, princetonEvents as princetonExpandedEvents, princetonStories,
+  monmouthTownUpdate, monmouthPeople, monmouthEvents, monmouthStories,
+  newBrunswickTownUpdate, newBrunswickPeople, newBrunswickEvents, newBrunswickStories,
+  fortLeeTownUpdate, fortLeePeople, fortLeeEvents, fortLeeStories,
+} from './newjersey/content.js';
+import {
+  philadelphiaTownUpdate, philadelphiaPeople, philadelphiaEvents, philadelphiaStories,
+  valleyForgeTownUpdate, valleyForgePeople, valleyForgeEvents, valleyForgeStories,
+  yorkTownUpdate, yorkPeople, yorkEvents, yorkStories,
+  germantownTownUpdate, germantownPeople, germantownEvents, germantownStories,
+  carlisleTownUpdate, carlislePeople, carlisleEvents, carlisleStories,
+  paoliTownUpdate, paoliPeople, paoliEvents, paoliStories,
+} from './pennsylvania/content.js';
+import {
+  saratogaSpringsTownUpdate, saratogaSpringsPeople, saratogaSpringsEvents, saratogaSpringsStories,
+  albanyTownUpdate, albanyPeople, albanyEvents, albanyStories,
+  westPointTownUpdate, westPointPeople, westPointEvents, westPointStories,
+  ticonderogaTownUpdate, ticonderogaPeople, ticonderogaEvents, ticonderogaStories,
+  newYorkCityTownUpdate, newYorkCityPeople, newYorkCityEvents, newYorkCityStories,
+} from './newyork/content.js';
 import { computeTownScore } from '../services/scoring.js';
 import { TOP_75_TOWNS, HUB_TOWN_IDS } from '../data/top75.js';
 import { Prisma } from '@prisma/client';
@@ -1199,6 +1221,61 @@ async function main() {
       }
     }
 
+    console.log(`   ✓ ${town.name}: ${town.people.length} people, ${town.events.length} events, ${town.stories.length} stories`);
+  }
+
+  // 15. NJ town content expansion
+  console.log('\n🏛️  Expanding New Jersey town content...');
+  const njTownExpansions = [
+    { id: 'us-nj-trenton', name: 'Trenton', update: trentonTownUpdate, people: trentonPeople, events: trentonEvents, stories: trentonStories },
+    { id: 'us-nj-princeton', name: 'Princeton', update: princetonTownUpdate, people: princetonPeople, events: princetonExpandedEvents, stories: princetonStories },
+    { id: 'us-nj-monmouth', name: 'Monmouth', update: monmouthTownUpdate, people: monmouthPeople, events: monmouthEvents, stories: monmouthStories },
+    { id: 'us-nj-new-brunswick', name: 'New Brunswick', update: newBrunswickTownUpdate, people: newBrunswickPeople, events: newBrunswickEvents, stories: newBrunswickStories },
+    { id: 'us-nj-fort-lee', name: 'Fort Lee', update: fortLeeTownUpdate, people: fortLeePeople, events: fortLeeEvents, stories: fortLeeStories },
+  ];
+
+  for (const town of njTownExpansions) {
+    await prisma.town.update({ where: { id: town.id }, data: town.update });
+    for (const person of town.people) { await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person }); }
+    for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
+    for (const story of town.stories) { const ex = await prisma.story.findFirst({ where: { id: story.id! } }); if (!ex) { await prisma.story.create({ data: story }); } else { await prisma.story.update({ where: { id: story.id! }, data: { title: story.title, textVersion: story.textVersion } }); } }
+    console.log(`   ✓ ${town.name}: ${town.people.length} people, ${town.events.length} events, ${town.stories.length} stories`);
+  }
+
+  // 16. PA town content expansion
+  console.log('\n🏛️  Expanding Pennsylvania town content...');
+  const paTownExpansions = [
+    { id: 'us-pa-philadelphia', name: 'Philadelphia', update: philadelphiaTownUpdate, people: philadelphiaPeople, events: philadelphiaEvents, stories: philadelphiaStories },
+    { id: 'us-pa-valley-forge', name: 'Valley Forge', update: valleyForgeTownUpdate, people: valleyForgePeople, events: valleyForgeEvents, stories: valleyForgeStories },
+    { id: 'us-pa-york', name: 'York', update: yorkTownUpdate, people: yorkPeople, events: yorkEvents, stories: yorkStories },
+    { id: 'us-pa-germantown', name: 'Germantown', update: germantownTownUpdate, people: germantownPeople, events: germantownEvents, stories: germantownStories },
+    { id: 'us-pa-carlisle', name: 'Carlisle', update: carlisleTownUpdate, people: carlislePeople, events: carlisleEvents, stories: carlisleStories },
+    { id: 'us-pa-paoli', name: 'Paoli', update: paoliTownUpdate, people: paoliPeople, events: paoliEvents, stories: paoliStories },
+  ];
+
+  for (const town of paTownExpansions) {
+    await prisma.town.update({ where: { id: town.id }, data: town.update });
+    for (const person of town.people) { await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person }); }
+    for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
+    for (const story of town.stories) { const ex = await prisma.story.findFirst({ where: { id: story.id! } }); if (!ex) { await prisma.story.create({ data: story }); } else { await prisma.story.update({ where: { id: story.id! }, data: { title: story.title, textVersion: story.textVersion } }); } }
+    console.log(`   ✓ ${town.name}: ${town.people.length} people, ${town.events.length} events, ${town.stories.length} stories`);
+  }
+
+  // 17. NY town content expansion
+  console.log('\n🏛️  Expanding New York town content...');
+  const nyTownExpansions = [
+    { id: 'us-ny-saratoga-springs', name: 'Saratoga Springs', update: saratogaSpringsTownUpdate, people: saratogaSpringsPeople, events: saratogaSpringsEvents, stories: saratogaSpringsStories },
+    { id: 'us-ny-albany', name: 'Albany', update: albanyTownUpdate, people: albanyPeople, events: albanyEvents, stories: albanyStories },
+    { id: 'us-ny-west-point', name: 'West Point', update: westPointTownUpdate, people: westPointPeople, events: westPointEvents, stories: westPointStories },
+    { id: 'us-ny-ticonderoga', name: 'Ticonderoga', update: ticonderogaTownUpdate, people: ticonderogaPeople, events: ticonderogaEvents, stories: ticonderogaStories },
+    { id: 'us-ny-new-york-city', name: 'New York City', update: newYorkCityTownUpdate, people: newYorkCityPeople, events: newYorkCityEvents, stories: newYorkCityStories },
+  ];
+
+  for (const town of nyTownExpansions) {
+    await prisma.town.update({ where: { id: town.id }, data: town.update });
+    for (const person of town.people) { await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person }); }
+    for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
+    for (const story of town.stories) { const ex = await prisma.story.findFirst({ where: { id: story.id! } }); if (!ex) { await prisma.story.create({ data: story }); } else { await prisma.story.update({ where: { id: story.id! }, data: { title: story.title, textVersion: story.textVersion } }); } }
     console.log(`   ✓ ${town.name}: ${town.people.length} people, ${town.events.length} events, ${town.stories.length} stories`);
   }
 
