@@ -72,6 +72,7 @@ import {
   arlingtonRoutes,
   arlingtonRouteStops,
 } from './arlington.js';
+import { lexingtonSources, LEXINGTON_SHARED_SOURCE_IDS } from './lexingtonSources.js';
 import { salemEvents } from './salem.js';
 import { marbleheadEvents } from './marblehead.js';
 import { plymouthEvents } from './plymouth.js';
@@ -206,6 +207,36 @@ async function main() {
     });
   }
   console.log(`   ✓ ${lexingtonPlaces.length} Lexington places seeded`);
+
+  // Lexington-specific sources
+  for (const source of lexingtonSources) {
+    await prisma.source.upsert({
+      where: { id: source.id! },
+      update: source,
+      create: source,
+    });
+  }
+  console.log(`   ✓ ${lexingtonSources.length} Lexington-specific sources seeded`);
+
+  // Link all sources to Lexington (shared + Lexington-specific)
+  const allLexSourceIds = [
+    ...LEXINGTON_SHARED_SOURCE_IDS,
+    ...lexingtonSources.map((s) => s.id!),
+  ];
+  for (const sourceId of allLexSourceIds) {
+    const existing = await prisma.sourceTown.findFirst({
+      where: { sourceId, townId: 'us-ma-lexington' },
+    });
+    if (!existing) {
+      await prisma.sourceTown.create({
+        data: {
+          source: { connect: { id: sourceId } },
+          town: { connect: { id: 'us-ma-lexington' } },
+        },
+      });
+    }
+  }
+  console.log(`   ✓ ${allLexSourceIds.length} Lexington source-town connections created`);
 
   // 4a-2. Seed additional Massachusetts places
   console.log('\n🗺️  Seeding Massachusetts places...');
