@@ -185,4 +185,43 @@ export const arlingtonPlaces: Prisma.PlaceCreateInput[] = [
     accessibilityNotes: 'Standard sidewalks',
     town: { connect: { id: 'us-ma-arlington' } },
   },
+  {
+    id: 'arlington-first-parish',
+    name: 'First Parish Unitarian Universalist',
+    placeType: 'CHURCH',
+    description:
+      'The congregation dates to 1733, though the current building is from 1840. The original meetinghouse would have been a gathering point for the community on April 19, 1775. Town meetings and militia musters often took place at or near the meetinghouse.',
+    address: '630 Massachusetts Avenue, Arlington, MA',
+    website: 'https://firstparish.info/',
+    hours: 'Sunday services; office hours vary',
+    admission: 'Free',
+    displayOrder: 17,
+    amenities: ['Historic congregation', 'Archives'],
+    town: { connect: { id: 'us-ma-arlington' } },
+  },
+  {
+    id: 'captain-samuel-cook-house',
+    name: 'Captain Samuel Cook House Site',
+    placeType: 'HISTORIC_HOUSE',
+    description:
+      'Captain Samuel Cook commanded one of the Menotomy militia companies that mustered on April 19. The site of his home is marked along Massachusetts Avenue, commemorating his role in organizing local response to the British march.',
+    address: 'Massachusetts Avenue, Arlington, MA',
+    admission: 'Free (marker only)',
+    displayOrder: 18,
+    amenities: ['Historic marker'],
+    town: { connect: { id: 'us-ma-arlington' } },
+  },
+  {
+    id: 'spy-pond',
+    name: 'Spy Pond',
+    placeType: 'LANDMARK',
+    description:
+      'Local tradition holds that the pond received its name from colonial scouts who observed British troop movements from its shores. The pond and surrounding park offer views of the terrain that shaped April 19 fighting. Whether the name\'s origin is genuine or apocryphal, it connects the landscape to Revolutionary memory.',
+    address: 'Pond Lane, Arlington, MA',
+    hours: 'Dawn to dusk',
+    admission: 'Free',
+    displayOrder: 19,
+    amenities: ['Walking paths', 'Scenic views'],
+    town: { connect: { id: 'us-ma-arlington' } },
+  },
 ];

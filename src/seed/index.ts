@@ -19,6 +19,8 @@ import {
   bostonPlaces,
   cambridgePlaces,
   arlingtonPlaces,
+  salemPlaces,
+  marbleheadPlaces,
 } from './massachusetts/places/index.js';
 import {
   seedAll75Towns,
@@ -34,6 +36,41 @@ import {
   concordThemeConnections,
   concordSources,
 } from './concord.js';
+import {
+  bostonTownUpdate,
+  bostonEvents,
+  bostonPeople,
+  bostonStories,
+  bostonThemeConnections,
+  bostonSources,
+  bostonTownLinks,
+  bostonRoutes,
+  bostonRouteStops,
+} from './boston.js';
+import {
+  cambridgeTownUpdate,
+  cambridgeEvents,
+  cambridgePeople,
+  cambridgeStories,
+  cambridgeThemeConnections,
+  cambridgeSources,
+  cambridgeTownLinks,
+  cambridgeRoutes,
+  cambridgeRouteStops,
+} from './cambridge.js';
+import {
+  arlingtonTownUpdate,
+  arlingtonEvents,
+  arlingtonPeople,
+  arlingtonStories,
+  arlingtonThemeConnections,
+  arlingtonSources,
+  arlingtonTownLinks,
+  arlingtonRoutes,
+  arlingtonRouteStops,
+} from './arlington.js';
+import { salemEvents } from './salem.js';
+import { marbleheadEvents } from './marblehead.js';
 import { computeTownScore } from '../services/scoring.js';
 import { TOP_75_TOWNS, HUB_TOWN_IDS } from '../data/top75.js';
 
@@ -172,6 +209,8 @@ async function main() {
     { name: 'Boston', places: bostonPlaces },
     { name: 'Cambridge', places: cambridgePlaces },
     { name: 'Arlington', places: arlingtonPlaces },
+    { name: 'Salem', places: salemPlaces },
+    { name: 'Marblehead', places: marbleheadPlaces },
   ];
 
   for (const { name, places } of maPlaceSets) {
@@ -202,7 +241,7 @@ async function main() {
     console.log(`   ✓ ${places.length} ${name} places seeded`);
   }
 
-  const totalMAPlaces = lexingtonPlaces.length + concordPlaces.length + bostonPlaces.length + cambridgePlaces.length + arlingtonPlaces.length;
+  const totalMAPlaces = lexingtonPlaces.length + concordPlaces.length + bostonPlaces.length + cambridgePlaces.length + arlingtonPlaces.length + salemPlaces.length + marbleheadPlaces.length;
   console.log(`   ✓ Total: ${totalMAPlaces} Massachusetts places\n`);
 
   // 4b. Seed Concord (second flagship)
@@ -224,6 +263,22 @@ async function main() {
     });
   }
   console.log(`   ✓ ${concordSources.length} Concord sources seeded`);
+
+  // Concord SourceTown connections (link sources to Concord)
+  for (const source of concordSources) {
+    const existing = await prisma.sourceTown.findFirst({
+      where: { sourceId: source.id, townId: 'us-ma-concord' },
+    });
+    if (!existing) {
+      await prisma.sourceTown.create({
+        data: {
+          source: { connect: { id: source.id } },
+          town: { connect: { id: 'us-ma-concord' } },
+        },
+      });
+    }
+  }
+  console.log(`   ✓ ${concordSources.length} Concord source-town connections created`);
 
   // Concord people
   for (const person of concordPeople) {
@@ -273,6 +328,378 @@ async function main() {
   }
   console.log(`   ✓ ${concordStories.length} Concord stories seeded`);
 
+  // 4c. Seed Boston (third flagship)
+  console.log('\n🏛️  Seeding Boston flagship content...');
+
+  // Update Boston town with full content
+  await prisma.town.update({
+    where: { id: 'us-ma-boston' },
+    data: bostonTownUpdate,
+  });
+  console.log('   ✓ Boston town updated with full content');
+
+  // Boston sources
+  for (const source of bostonSources) {
+    await prisma.source.upsert({
+      where: { id: source.id },
+      update: source,
+      create: source,
+    });
+  }
+  console.log(`   ✓ ${bostonSources.length} Boston sources seeded`);
+
+  // Boston SourceTown connections (link sources to Boston)
+  for (const source of bostonSources) {
+    const existing = await prisma.sourceTown.findFirst({
+      where: { sourceId: source.id, townId: 'us-ma-boston' },
+    });
+    if (!existing) {
+      await prisma.sourceTown.create({
+        data: {
+          source: { connect: { id: source.id } },
+          town: { connect: { id: 'us-ma-boston' } },
+        },
+      });
+    }
+  }
+  console.log(`   ✓ ${bostonSources.length} Boston source-town connections created`);
+
+  // Boston people
+  for (const person of bostonPeople) {
+    await prisma.person.upsert({
+      where: { id: person.id },
+      update: person,
+      create: person,
+    });
+  }
+  console.log(`   ✓ ${bostonPeople.length} Boston people seeded`);
+
+  // Boston events
+  for (const event of bostonEvents) {
+    await prisma.event.upsert({
+      where: { id: event.id },
+      update: {
+        name: event.name,
+        summary: event.summary,
+        significanceWeight: event.significanceWeight,
+      },
+      create: event,
+    });
+  }
+  console.log(`   ✓ ${bostonEvents.length} Boston events seeded`);
+
+  // Boston stories
+  for (const story of bostonStories) {
+    const existingStory = await prisma.story.findFirst({
+      where: { id: story.id },
+    });
+
+    if (!existingStory) {
+      await prisma.story.create({
+        data: story,
+      });
+    } else {
+      await prisma.story.update({
+        where: { id: story.id },
+        data: {
+          title: story.title,
+          textVersion: story.textVersion,
+          verificationStatus: story.verificationStatus,
+          audioScript: story.audioScript,
+        },
+      });
+    }
+  }
+  console.log(`   ✓ ${bostonStories.length} Boston stories seeded`);
+
+  // Boston routes
+  for (const route of bostonRoutes) {
+    await prisma.route.upsert({
+      where: { id: route.id },
+      update: route,
+      create: route,
+    });
+  }
+  console.log(`   ✓ ${bostonRoutes.length} Boston routes seeded`);
+
+  // Boston route stops
+  for (const stop of bostonRouteStops) {
+    await prisma.routeStop.upsert({
+      where: {
+        routeId_stopOrder: {
+          routeId: stop.routeId,
+          stopOrder: stop.stopOrder,
+        },
+      },
+      update: { notes: stop.notes },
+      create: {
+        route: { connect: { id: stop.routeId } },
+        town: { connect: { id: stop.townId } },
+        stopOrder: stop.stopOrder,
+        notes: stop.notes,
+      },
+    });
+  }
+  console.log(`   ✓ ${bostonRouteStops.length} Boston route stops seeded`);
+
+  // 4d. Seed Cambridge (fourth flagship)
+  console.log('\n🏛️  Seeding Cambridge flagship content...');
+
+  // Update Cambridge town with full content
+  await prisma.town.update({
+    where: { id: 'us-ma-cambridge' },
+    data: cambridgeTownUpdate,
+  });
+  console.log('   ✓ Cambridge town updated with full content');
+
+  // Cambridge sources
+  for (const source of cambridgeSources) {
+    await prisma.source.upsert({
+      where: { id: source.id },
+      update: source,
+      create: source,
+    });
+  }
+  console.log(`   ✓ ${cambridgeSources.length} Cambridge sources seeded`);
+
+  // Cambridge SourceTown connections
+  for (const source of cambridgeSources) {
+    const existing = await prisma.sourceTown.findFirst({
+      where: { sourceId: source.id, townId: 'us-ma-cambridge' },
+    });
+    if (!existing) {
+      await prisma.sourceTown.create({
+        data: {
+          source: { connect: { id: source.id } },
+          town: { connect: { id: 'us-ma-cambridge' } },
+        },
+      });
+    }
+  }
+  console.log(`   ✓ ${cambridgeSources.length} Cambridge source-town connections created`);
+
+  // Cambridge people
+  for (const person of cambridgePeople) {
+    await prisma.person.upsert({
+      where: { id: person.id },
+      update: person,
+      create: person,
+    });
+  }
+  console.log(`   ✓ ${cambridgePeople.length} Cambridge people seeded`);
+
+  // Cambridge events
+  for (const event of cambridgeEvents) {
+    await prisma.event.upsert({
+      where: { id: event.id },
+      update: {
+        name: event.name,
+        summary: event.summary,
+        significanceWeight: event.significanceWeight,
+      },
+      create: event,
+    });
+  }
+  console.log(`   ✓ ${cambridgeEvents.length} Cambridge events seeded`);
+
+  // Cambridge stories
+  for (const story of cambridgeStories) {
+    const existingStory = await prisma.story.findFirst({
+      where: { id: story.id },
+    });
+
+    if (!existingStory) {
+      await prisma.story.create({
+        data: story,
+      });
+    } else {
+      await prisma.story.update({
+        where: { id: story.id },
+        data: {
+          title: story.title,
+          textVersion: story.textVersion,
+          verificationStatus: story.verificationStatus,
+          audioScript: story.audioScript,
+        },
+      });
+    }
+  }
+  console.log(`   ✓ ${cambridgeStories.length} Cambridge stories seeded`);
+
+  // Cambridge routes
+  for (const route of cambridgeRoutes) {
+    await prisma.route.upsert({
+      where: { id: route.id },
+      update: route,
+      create: route,
+    });
+  }
+  console.log(`   ✓ ${cambridgeRoutes.length} Cambridge routes seeded`);
+
+  // Cambridge route stops
+  for (const stop of cambridgeRouteStops) {
+    await prisma.routeStop.upsert({
+      where: {
+        routeId_stopOrder: {
+          routeId: stop.routeId,
+          stopOrder: stop.stopOrder,
+        },
+      },
+      update: { notes: stop.notes },
+      create: {
+        route: { connect: { id: stop.routeId } },
+        town: { connect: { id: stop.townId } },
+        stopOrder: stop.stopOrder,
+        notes: stop.notes,
+      },
+    });
+  }
+  console.log(`   ✓ ${cambridgeRouteStops.length} Cambridge route stops seeded`);
+
+  // 4e. Seed Arlington (fifth flagship)
+  console.log('\n🏛️  Seeding Arlington flagship content...');
+
+  // Update Arlington town with full content
+  await prisma.town.update({
+    where: { id: 'us-ma-arlington' },
+    data: arlingtonTownUpdate,
+  });
+  console.log('   ✓ Arlington town updated with full content');
+
+  // Arlington sources
+  for (const source of arlingtonSources) {
+    await prisma.source.upsert({
+      where: { id: source.id },
+      update: source,
+      create: source,
+    });
+  }
+  console.log(`   ✓ ${arlingtonSources.length} Arlington sources seeded`);
+
+  // Arlington SourceTown connections
+  for (const source of arlingtonSources) {
+    const existing = await prisma.sourceTown.findFirst({
+      where: { sourceId: source.id, townId: 'us-ma-arlington' },
+    });
+    if (!existing) {
+      await prisma.sourceTown.create({
+        data: {
+          source: { connect: { id: source.id } },
+          town: { connect: { id: 'us-ma-arlington' } },
+        },
+      });
+    }
+  }
+  console.log(`   ✓ ${arlingtonSources.length} Arlington source-town connections created`);
+
+  // Arlington people
+  for (const person of arlingtonPeople) {
+    await prisma.person.upsert({
+      where: { id: person.id },
+      update: person,
+      create: person,
+    });
+  }
+  console.log(`   ✓ ${arlingtonPeople.length} Arlington people seeded`);
+
+  // Arlington events
+  for (const event of arlingtonEvents) {
+    await prisma.event.upsert({
+      where: { id: event.id },
+      update: {
+        name: event.name,
+        summary: event.summary,
+        significanceWeight: event.significanceWeight,
+      },
+      create: event,
+    });
+  }
+  console.log(`   ✓ ${arlingtonEvents.length} Arlington events seeded`);
+
+  // Arlington stories
+  for (const story of arlingtonStories) {
+    const existingStory = await prisma.story.findFirst({
+      where: { id: story.id },
+    });
+
+    if (!existingStory) {
+      await prisma.story.create({
+        data: story,
+      });
+    } else {
+      await prisma.story.update({
+        where: { id: story.id },
+        data: {
+          title: story.title,
+          textVersion: story.textVersion,
+          verificationStatus: story.verificationStatus,
+          audioScript: story.audioScript,
+        },
+      });
+    }
+  }
+  console.log(`   ✓ ${arlingtonStories.length} Arlington stories seeded`);
+
+  // Arlington routes
+  for (const route of arlingtonRoutes) {
+    await prisma.route.upsert({
+      where: { id: route.id },
+      update: route,
+      create: route,
+    });
+  }
+  console.log(`   ✓ ${arlingtonRoutes.length} Arlington routes seeded`);
+
+  // Arlington route stops
+  for (const stop of arlingtonRouteStops) {
+    await prisma.routeStop.upsert({
+      where: {
+        routeId_stopOrder: {
+          routeId: stop.routeId,
+          stopOrder: stop.stopOrder,
+        },
+      },
+      update: { notes: stop.notes },
+      create: {
+        route: { connect: { id: stop.routeId } },
+        town: { connect: { id: stop.townId } },
+        stopOrder: stop.stopOrder,
+        notes: stop.notes,
+      },
+    });
+  }
+  console.log(`   ✓ ${arlingtonRouteStops.length} Arlington route stops seeded`);
+
+  // 4f. Seed Salem events (micro-rollout)
+  console.log('\n🏛️  Seeding Salem events...');
+  for (const event of salemEvents) {
+    await prisma.event.upsert({
+      where: { id: event.id },
+      update: {
+        name: event.name,
+        summary: event.summary,
+        significanceWeight: event.significanceWeight,
+      },
+      create: event,
+    });
+  }
+  console.log(`   ✓ ${salemEvents.length} Salem events seeded`);
+
+  // 4g. Seed Marblehead events (micro-rollout)
+  console.log('\n🏛️  Seeding Marblehead events...');
+  for (const event of marbleheadEvents) {
+    await prisma.event.upsert({
+      where: { id: event.id },
+      update: {
+        name: event.name,
+        summary: event.summary,
+        significanceWeight: event.significanceWeight,
+      },
+      create: event,
+    });
+  }
+  console.log(`   ✓ ${marbleheadEvents.length} Marblehead events seeded`);
+
   // 5. Create EventPerson connections
   console.log('\n🔗 Creating entity connections...');
 
@@ -301,6 +728,54 @@ async function main() {
   await upsertEventPerson('event-provincial-congress-concord', 'person-james-barrett', 'Member');
   await upsertEventPerson('event-british-retreat-concord', 'person-francis-smith', 'Commander');
 
+  // Boston EventPerson connections
+  await upsertEventPerson('event-boston-massacre', 'person-crispus-attucks', 'Victim');
+  await upsertEventPerson('event-boston-massacre', 'person-thomas-preston', 'Officer');
+  await upsertEventPerson('event-boston-massacre', 'person-john-adams', 'Defense Lawyer');
+  await upsertEventPerson('event-boston-tea-party', 'person-samuel-adams', 'Organizer');
+  await upsertEventPerson('event-boston-tea-party', 'person-george-robert-hewes', 'Participant');
+  await upsertEventPerson('event-old-south-meeting', 'person-samuel-adams', 'Presider');
+  await upsertEventPerson('event-bunker-hill', 'person-joseph-warren', 'Volunteer');
+  await upsertEventPerson('event-bunker-hill', 'person-william-howe', 'Commander');
+  await upsertEventPerson('event-dorchester-heights', 'person-henry-knox', 'Artillery Commander');
+  await upsertEventPerson('event-boston-evacuation', 'person-william-howe', 'Commander');
+  await upsertEventPerson('event-knox-expedition', 'person-henry-knox', 'Leader');
+  await upsertEventPerson('event-stamp-act-riots', 'person-samuel-adams', 'Organizer');
+  await upsertEventPerson('event-faneuil-hall-debates', 'person-samuel-adams', 'Leader');
+
+  // Cambridge EventPerson connections
+  await upsertEventPerson('event-washington-takes-command', 'person-george-washington', 'Commander-in-Chief');
+  await upsertEventPerson('event-washington-takes-command', 'person-artemas-ward', 'Former Commander');
+  await upsertEventPerson('event-siege-cambridge-hq', 'person-george-washington', 'Commander');
+  await upsertEventPerson('event-siege-cambridge-hq', 'person-charles-lee', 'Second in Command');
+  await upsertEventPerson('event-siege-cambridge-hq', 'person-horatio-gates', 'Adjutant General');
+  await upsertEventPerson('event-siege-cambridge-hq', 'person-joseph-reed', 'Secretary');
+  await upsertEventPerson('event-siege-cambridge-hq', 'person-samuel-osgood', 'Aide');
+  await upsertEventPerson('event-vassall-house-headquarters', 'person-george-washington', 'Resident Commander');
+  await upsertEventPerson('event-vassall-house-headquarters', 'person-martha-washington-cambridge', 'Hostess');
+  await upsertEventPerson('event-vassall-house-headquarters', 'person-joseph-reed', 'Staff');
+  await upsertEventPerson('event-council-of-war-october', 'person-george-washington', 'Presiding');
+  await upsertEventPerson('event-council-of-war-october', 'person-nathanael-greene', 'Council Member');
+  await upsertEventPerson('event-council-of-war-october', 'person-israel-putnam', 'Council Member');
+  await upsertEventPerson('event-enlistment-crisis', 'person-george-washington', 'Commander');
+  await upsertEventPerson('event-martha-washington-arrives', 'person-martha-washington-cambridge', 'Arriving');
+  await upsertEventPerson('event-riflemen-arrive', 'person-george-washington', 'Receiving Commander');
+  await upsertEventPerson('event-knox-artillery-plan', 'person-henry-knox', 'Proposer');
+  await upsertEventPerson('event-knox-artillery-plan', 'person-george-washington', 'Approver');
+
+  // Arlington EventPerson connections
+  await upsertEventPerson('event-menotomy-ambush', 'person-benjamin-locke', 'Militia Captain');
+  await upsertEventPerson('event-menotomy-ambush', 'person-lord-percy-arlington', 'British Commander');
+  await upsertEventPerson('event-menotomy-ambush', 'person-samuel-cook', 'Militia Captain');
+  await upsertEventPerson('event-jason-russell-house', 'person-jason-russell', 'Homeowner/Victim');
+  await upsertEventPerson('event-jason-russell-house', 'person-james-miller-arlington', 'Militiaman/Victim');
+  await upsertEventPerson('event-percy-relief-arrives', 'person-lord-percy-arlington', 'Commander');
+  await upsertEventPerson('event-samuel-whittemore-fight', 'person-samuel-whittemore', 'Combatant');
+  await upsertEventPerson('event-menotomy-militia-muster', 'person-benjamin-locke', 'Captain');
+  await upsertEventPerson('event-menotomy-militia-muster', 'person-samuel-cook', 'Captain');
+  await upsertEventPerson('event-foot-of-rocks-ambush', 'person-thomas-hadley', 'Militiaman');
+  await upsertEventPerson('event-foot-of-rocks-ambush', 'person-john-hicks', 'Militiaman/Victim');
+
   console.log('   ✓ Event-Person connections created');
 
   // 6. Create all town links (75-town network)
@@ -323,7 +798,88 @@ async function main() {
     await upsertTownTheme('us-ma-concord', conn.themeId, conn.relevanceNote);
   }
 
+  // Boston theme connections
+  for (const conn of bostonThemeConnections) {
+    await upsertTownTheme('us-ma-boston', conn.themeId, conn.relevanceNote);
+  }
+
+  // Cambridge theme connections
+  for (const conn of cambridgeThemeConnections) {
+    await upsertTownTheme('us-ma-cambridge', conn.themeId, conn.relevanceNote);
+  }
+
+  // Arlington theme connections
+  for (const conn of arlingtonThemeConnections) {
+    await upsertTownTheme('us-ma-arlington', conn.themeId, conn.relevanceNote);
+  }
+
   console.log('   ✓ Town-Theme connections created');
+
+  // Boston-specific town links (in addition to 75-town network links)
+  console.log('\n🔗 Seeding Boston-specific town links...');
+  for (const link of bostonTownLinks) {
+    const existingLink = await prisma.townLink.findFirst({
+      where: {
+        fromTownId: 'us-ma-boston',
+        toTownId: link.toTown.connect?.id,
+        linkType: link.linkType,
+      },
+    });
+    if (!existingLink && link.toTown.connect?.id) {
+      try {
+        await prisma.townLink.create({
+          data: link,
+        });
+      } catch (e) {
+        // Link may already exist from 75-town network, skip
+      }
+    }
+  }
+  console.log(`   ✓ Boston-specific town links processed`);
+
+  // Cambridge-specific town links
+  console.log('\n🔗 Seeding Cambridge-specific town links...');
+  for (const link of cambridgeTownLinks) {
+    const existingLink = await prisma.townLink.findFirst({
+      where: {
+        fromTownId: 'us-ma-cambridge',
+        toTownId: link.toTown.connect?.id,
+        linkType: link.linkType,
+      },
+    });
+    if (!existingLink && link.toTown.connect?.id) {
+      try {
+        await prisma.townLink.create({
+          data: link,
+        });
+      } catch (e) {
+        // Link may already exist, skip
+      }
+    }
+  }
+  console.log(`   ✓ Cambridge-specific town links processed`);
+
+  // Arlington-specific town links
+  console.log('\n🔗 Seeding Arlington-specific town links...');
+  for (const link of arlingtonTownLinks) {
+    const existingLink = await prisma.townLink.findFirst({
+      where: {
+        fromTownId: 'us-ma-arlington',
+        toTownId: link.toTown.connect?.id,
+        linkType: link.linkType,
+      },
+    });
+    if (!existingLink && link.toTown.connect?.id) {
+      try {
+        await prisma.townLink.create({
+          data: link,
+        });
+      } catch (e) {
+        // Link may already exist, skip
+      }
+    }
+  }
+  console.log(`   ✓ Arlington-specific town links processed`);
 
   // 8. Create route and stops
   await prisma.route.upsert({
@@ -388,29 +944,34 @@ async function main() {
   console.log(`
 Summary:
   - ${themes.length} themes
-  - ${sources.length + concordSources.length} sources
+  - ${sources.length + concordSources.length + bostonSources.length + cambridgeSources.length + arlingtonSources.length} sources
   - ${TOP_75_TOWNS.length} towns (75-town network)
-  - ${lexingtonPeople.length + concordPeople.length} people (Lexington + Concord)
-  - ${lexingtonEvents.length + concordEvents.length} events (Lexington + Concord)
-  - ${lexingtonStories.length + concordStories.length} stories (Lexington + Concord)
+  - ${lexingtonPeople.length + concordPeople.length + bostonPeople.length + cambridgePeople.length + arlingtonPeople.length} people
+  - ${lexingtonEvents.length + concordEvents.length + bostonEvents.length + cambridgeEvents.length + arlingtonEvents.length + salemEvents.length + marbleheadEvents.length} events
+  - ${lexingtonStories.length + concordStories.length + bostonStories.length + cambridgeStories.length + arlingtonStories.length} stories
   - ${totalMAPlaces} places (Massachusetts)
   - ${linkResult.created} town links
-  - 1 route with ${midnightRideStops.length} stops
+  - ${1 + bostonRoutes.length + cambridgeRoutes.length + arlingtonRoutes.length} routes
   - 1 organization
   - ${changelogCount} changelog entries
 
 Flagship towns:
   - Lexington: ${lexingtonEvents.length} events, ${lexingtonPeople.length} people, ${lexingtonStories.length} stories, ${lexingtonPlaces.length} places
   - Concord: ${concordEvents.length} events, ${concordPeople.length} people, ${concordStories.length} stories, ${concordPlaces.length} places
-  - Boston: ${bostonPlaces.length} places
-  - Cambridge: ${cambridgePlaces.length} places
-  - Arlington: ${arlingtonPlaces.length} places
+  - Boston: ${bostonEvents.length} events, ${bostonPeople.length} people, ${bostonStories.length} stories, ${bostonPlaces.length} places
+  - Cambridge: ${cambridgeEvents.length} events, ${cambridgePeople.length} people, ${cambridgeStories.length} stories, ${cambridgePlaces.length} places
+  - Arlington: ${arlingtonEvents.length} events, ${arlingtonPeople.length} people, ${arlingtonStories.length} stories, ${arlingtonPlaces.length} places
+
+Micro-rollout towns:
+  - Salem: ${salemEvents.length} events, ${salemPlaces.length} places
+  - Marblehead: ${marbleheadEvents.length} events, ${marbleheadPlaces.length} places
 
 Next steps:
   1. Test the rankings: curl http://localhost:3000/rankings
   2. Test Lexington: curl http://localhost:3000/towns/lexington-ma
   3. Test Concord: curl http://localhost:3000/towns/concord-ma
-  4. Compare: curl http://localhost:3000/compare?townA=lexington-ma&townB=concord-ma
+  4. Test Boston: curl http://localhost:3000/towns/boston-ma
+  5. Compare: curl http://localhost:3000/compare?townA=lexington-ma&townB=boston-ma
 `);
 }
 

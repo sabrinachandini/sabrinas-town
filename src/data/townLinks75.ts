@@ -70,19 +70,31 @@ export const TOWN_LINKS_75: TownLinkDef[] = [
   { fromTownId: 'us-ma-arlington', toTownId: 'us-ma-cambridge', linkType: 'GEOGRAPHIC_PROXIMITY', reason: 'Adjacent towns whose residents served together in the siege forces around Boston.', weight: 70 },
   { fromTownId: 'us-ma-arlington', toTownId: 'us-nj-monmouth', linkType: 'COMPARISON', reason: 'Both saw some of the bloodiest single-day fighting of the war in their respective campaigns.', weight: 55 },
 
-  // Salem (major) - 5 links
+  // Salem (major) - 11 links
   { fromTownId: 'us-ma-salem', toTownId: 'us-ma-boston', linkType: 'GEOGRAPHIC_PROXIMITY', reason: 'North Shore port towns with shared maritime interests and coordinated resistance to British policies.', weight: 75 },
   { fromTownId: 'us-ma-salem', toTownId: 'us-ma-marblehead', linkType: 'GEOGRAPHIC_PROXIMITY', reason: 'Adjacent port towns whose sailors and ships contributed to the naval war.', weight: 80 },
   { fromTownId: 'us-ma-salem', toTownId: 'us-ma-cambridge', linkType: 'SHARED_PERSON', reason: 'Salem men served in the Continental forces headquartered at Cambridge.', weight: 65 },
   { fromTownId: 'us-ma-salem', toTownId: 'us-ct-new-london', linkType: 'SHARED_THEME', reason: 'Both were privateering ports that contributed to the naval war against British commerce.', weight: 60 },
   { fromTownId: 'us-ma-salem', toTownId: 'us-ri-newport', linkType: 'COMPARISON', reason: 'Major New England ports with different wartime experiences: Salem remained free, Newport was occupied.', weight: 55 },
+  { fromTownId: 'us-ma-salem', toTownId: 'us-ma-lexington', linkType: 'SHARED_THEME', reason: 'Salem\'s February 1775 confrontation over military stores foreshadowed the armed resistance at Lexington two months later.', weight: 70 },
+  { fromTownId: 'us-ma-salem', toTownId: 'us-ma-concord', linkType: 'SHARED_THEME', reason: 'Both towns were targets of British attempts to seize colonial military supplies before open conflict began.', weight: 65 },
+  { fromTownId: 'us-ma-salem', toTownId: 'us-nh-portsmouth', linkType: 'GEOGRAPHIC_PROXIMITY', reason: 'Northern New England port towns whose shipbuilding industries supported the Continental naval effort.', weight: 60 },
+  { fromTownId: 'us-ma-salem', toTownId: 'us-pa-philadelphia', linkType: 'SHARED_THEME', reason: 'Salem privateers operated under letters of marque issued by the Continental Congress in Philadelphia.', weight: 55 },
+  { fromTownId: 'us-ma-salem', toTownId: 'us-ma-plymouth', linkType: 'SHARED_THEME', reason: 'Massachusetts coastal towns whose economies depended on maritime trade disrupted by British policies.', weight: 50 },
+  { fromTownId: 'us-ma-salem', toTownId: 'us-ny-new-york-city', linkType: 'SHARED_THEME', reason: 'Salem privateers targeted British supply ships bound for the New York garrison.', weight: 55 },
 
-  // Marblehead (regional) - 5 links
+  // Marblehead (regional) - 11 links
   { fromTownId: 'us-ma-marblehead', toTownId: 'us-ma-salem', linkType: 'GEOGRAPHIC_PROXIMITY', reason: 'Adjacent port towns with shared maritime traditions and wartime contributions.', weight: 80 },
   { fromTownId: 'us-ma-marblehead', toTownId: 'us-ma-boston', linkType: 'SHARED_PERSON', reason: 'Marblehead sailors rowed the evacuation from Long Island and served throughout the war.', weight: 75 },
   { fromTownId: 'us-ma-marblehead', toTownId: 'us-nj-trenton', linkType: 'SHARED_EVENT', reason: 'Marblehead sailors rowed Washington across the Delaware for the Trenton attack.', weight: 85 },
   { fromTownId: 'us-ma-marblehead', toTownId: 'us-ny-new-york-city', linkType: 'SHARED_EVENT', reason: 'Marblehead men rowed the army to safety during the Long Island evacuation.', weight: 70 },
   { fromTownId: 'us-ma-marblehead', toTownId: 'us-ma-cambridge', linkType: 'SHARED_PERSON', reason: 'The Marblehead regiment served in the Continental Army organized at Cambridge.', weight: 65 },
+  { fromTownId: 'us-ma-marblehead', toTownId: 'us-ma-lexington', linkType: 'SHARED_THEME', reason: 'Marblehead militia responded to the Lexington alarm and joined forces pursuing the British retreat.', weight: 60 },
+  { fromTownId: 'us-ma-marblehead', toTownId: 'us-ma-concord', linkType: 'SHARED_THEME', reason: 'Marblehead men marched to Concord after news of the April 19 fighting reached the coast.', weight: 55 },
+  { fromTownId: 'us-ma-marblehead', toTownId: 'us-pa-philadelphia', linkType: 'SHARED_PERSON', reason: 'Elbridge Gerry of Marblehead signed the Declaration of Independence and served in the Continental Congress.', weight: 65 },
+  { fromTownId: 'us-ma-marblehead', toTownId: 'us-ri-newport', linkType: 'SHARED_THEME', reason: 'New England maritime communities whose fishing fleets were disrupted by British naval operations.', weight: 50 },
+  { fromTownId: 'us-ma-marblehead', toTownId: 'us-nh-portsmouth', linkType: 'SHARED_THEME', reason: 'Northern coastal towns whose seafaring populations contributed disproportionately to the Continental forces.', weight: 50 },
+  { fromTownId: 'us-ma-marblehead', toTownId: 'us-ny-white-plains', linkType: 'SHARED_EVENT', reason: 'Glover\'s Marblehead regiment fought at the Battle of White Plains in October 1776.', weight: 60 },
 
   // Plymouth (regional) - 5 links
   { fromTownId: 'us-ma-plymouth', toTownId: 'us-ma-boston', linkType: 'SHARED_THEME', reason: 'Both represent foundational moments in American identity: Pilgrim landing and revolutionary resistance.', weight: 70 },
