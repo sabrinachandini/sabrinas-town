@@ -21,10 +21,10 @@ export const lexingtonTown: Prisma.TownCreateInput = {
   slug: 'lexington-ma',
   lat: 42.4473,
   lng: -71.2245,
-  heroSummary40: 'The birthplace of American liberty',
+  heroSummary40: 'Where the Revolution became real',
   execSummary150:
-    "On Lexington Green, colonial militiamen faced British regulars at dawn on April 19, 1775. The eight who fell became the Revolution's first martyrs.",
-  whyMatters: `Lexington is where the American Revolution became real—where abstract principles of liberty met musket balls and bayonets. Before dawn on April 19, 1775, approximately 77 militiamen assembled on Lexington Green to face nearly 700 British regulars. What happened next remains disputed: someone fired "the shot heard round the world." When the smoke cleared, eight Americans lay dead and ten wounded. The British continued to Concord, but Lexington's sacrifice had already transformed a political crisis into a war for independence.
+    "Before dawn on April 19, 1775, roughly seventy militiamen assembled on Lexington Green to face a British column ten times their size. Eight died in minutes. The political crisis had become a war.",
+  whyMatters: `Lexington is where the American Revolution became real—where abstract principles of liberty met musket balls and bayonets. Before dawn on April 19, 1775, approximately 77 militiamen assembled on Lexington Green to face nearly 700 British regulars. What happened next remains disputed: someone fired first. When the smoke cleared, eight Americans lay dead and ten wounded. The British continued to Concord, but Lexington's sacrifice had already transformed a political crisis into a war for independence.
 
 Why does Lexington matter today? Because it reminds us that liberty has always required ordinary people willing to stand in its defense. The men on Lexington Green were farmers, craftsmen, and shopkeepers. They were fathers, sons, and neighbors. They stood not because victory was assured—it wasn't—but because their community asked it of them.
 
