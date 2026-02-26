@@ -139,6 +139,62 @@ import {
   harlemHeightsTownUpdate, harlemHeightsPeople, harlemHeightsPlaces, harlemHeightsEvents, harlemHeightsStories, harlemHeightsLessonPlans, harlemHeightsAdditionalLinks,
   whitePlainsTownUpdate, whitePlainsPeople, whitePlainsPlaces, whitePlainsEvents, whitePlainsStories, whitePlainsLessonPlans, whitePlainsAdditionalLinks,
 } from './sprints/nyc-cluster.js';
+import {
+  pittsburghTownUpdate, pittsburghPeople, pittsburghPlaces, pittsburghEvents, pittsburghStories, pittsburghLessonPlans, pittsburghAdditionalLinks,
+} from './sprints/pa-pittsburgh.js';
+import {
+  kingstonTownUpdate, kingstonPeople, kingstonPlaces, kingstonEvents, kingstonStories, kingstonLessonPlans, kingstonAdditionalLinks,
+  newburghTownUpdate, newburghPeople, newburghPlaces, newburghEvents, newburghStories, newburghLessonPlans, newburghAdditionalLinks,
+} from './sprints/ny-hudson-valley.js';
+import {
+  stonyPointTownUpdate, stonyPointPeople, stonyPointPlaces, stonyPointEvents, stonyPointStories, stonyPointLessonPlans, stonyPointAdditionalLinks,
+  crownPointTownUpdate, crownPointPeople, crownPointPlaces, crownPointEvents, crownPointStories, crownPointLessonPlans, crownPointAdditionalLinks,
+} from './sprints/ny-forts.js';
+import {
+  doverTownUpdate, doverPeople, doverPlaces, doverEvents, doverStories, doverLessonPlans, doverAdditionalLinks,
+  wilmingtonDeTownUpdate, wilmingtonDePeople, wilmingtonDePlaces, wilmingtonDeEvents, wilmingtonDeStories, wilmingtonDeLessonPlans, wilmingtonDeAdditionalLinks,
+} from './sprints/de-cluster.js';
+import {
+  annapolisTownUpdate, annapolisPeople, annapolisPlaces, annapolisEvents, annapolisStories, annapolisLessonPlans, annapolisAdditionalLinks,
+  baltimoreTownUpdate, baltimorePeople, baltimorePlaces, baltimoreEvents, baltimoreStories, baltimoreLessonPlans, baltimoreAdditionalLinks,
+} from './sprints/md-cluster.js';
+import {
+  alexandriaTownUpdate, alexandriaPeople, alexandriaPlaces, alexandriaEvents, alexandriaStories, alexandriaLessonPlans, alexandriaAdditionalLinks,
+  fredericksburgTownUpdate, fredericksburgPeople, fredericksburgPlaces, fredericksburgEvents, fredericksburgStories, fredericksburgLessonPlans, fredericksburgAdditionalLinks,
+  mountVernonTownUpdate, mountVernonPeople, mountVernonPlaces, mountVernonEvents, mountVernonStories, mountVernonLessonPlans, mountVernonAdditionalLinks,
+} from './sprints/va-northern.js';
+import {
+  portlandTownUpdate, portlandPeople, portlandPlaces, portlandEvents, portlandStories, portlandLessonPlans, portlandAdditionalLinks,
+  castineTownUpdate, castinePeople, castinePlaces, castineEvents, castineStories, castineLessonPlans, castineAdditionalLinks,
+} from './sprints/me-cluster.js';
+import {
+  benningtonTownUpdate, benningtonPeople, benningtonPlaces, benningtonEvents, benningtonStories, benningtonLessonPlans, benningtonAdditionalLinks,
+  brattleboroTownUpdate, brattleboroPeople, brattleboroPlaces, brattleboroEvents, brattleboroStories, brattleboroLessonPlans, brattleboroAdditionalLinks,
+} from './sprints/vt-cluster.js';
+import {
+  exeterTownUpdate, exeterPeople, exeterPlaces, exeterEvents, exeterStories, exeterLessonPlans, exeterAdditionalLinks,
+  portsmouthTownUpdate, portsmouthPeople, portsmouthPlaces, portsmouthEvents, portsmouthStories, portsmouthLessonPlans, portsmouthAdditionalLinks,
+} from './sprints/nh-cluster.js';
+import {
+  charlestonTownUpdate, charlestonPeople, charlestonPlaces, charlestonEvents, charlestonStories, charlestonLessonPlans, charlestonAdditionalLinks,
+  camdenTownUpdate, camdenPeople, camdenPlaces, camdenEvents, camdenStories, camdenLessonPlans, camdenAdditionalLinks,
+  cowpensTownUpdate, cowpensPeople, cowpensPlaces, cowpensEvents, cowpensStories, cowpensLessonPlans, cowpensAdditionalLinks,
+  fortMoultrieTownUpdate, fortMoultriePeople, fortMoultrieePlaces, fortMoultrieEvents, fortMoultrieStories, fortMoultrieeLessonPlans, fortMoultrieAdditionalLinks,
+  hobkirksHillTownUpdate, hobkirksHillPeople, hobkirksHillPlaces, hobkirksHillEvents, hobkirksHillStories, hobkirksHillLessonPlans, hobkirksHillAdditionalLinks,
+} from './sprints/sc-cluster.js';
+import {
+  ninetySixTownUpdate, ninetySixPeople, ninetySixPlaces, ninetySixEvents, ninetySixStories, ninetySixLessonPlans, ninetySixAdditionalLinks,
+  eutawSpringsTownUpdate, eutawSpringsPeople, eutawSpringsPlaces, eutawSpringsEvents, eutawSpringsStories, eutawSpringsLessonPlans, eutawSpringsAdditionalLinks,
+  beaufortTownUpdate, beaufortPeople, beaufortPlaces, beaufortEvents, beaufortStories, beaufortLessonPlans, beaufortAdditionalLinks,
+} from './sprints/sc-remaining.js';
+import {
+  guilfordCourthouseTownUpdate, guilfordCourthousePeople, guilfordCourthousePlaces, guilfordCourthouseEvents, guilfordCourthouseStories, guilfordCourthouseLessonPlans, guilfordCourthouseAdditionalLinks,
+  kingsMountainTownUpdate, kingsMountainPeople, kingsMountainPlaces, kingsMountainEvents, kingsMountainStories, kingsMountainLessonPlans, kingsMountainAdditionalLinks,
+} from './sprints/nc-battles.js';
+import {
+  newBernTownUpdate, newBernPeople, newBernPlaces, newBernEvents, newBernStories, newBernLessonPlans, newBernAdditionalLinks,
+  wilmingtonNcTownUpdate, wilmingtonNcPeople, wilmingtonNcPlaces, wilmingtonNcEvents, wilmingtonNcStories, wilmingtonNcLessonPlans, wilmingtonNcAdditionalLinks,
+} from './sprints/nc-coastal.js';
 import { computeTownScore } from '../services/scoring.js';
 import { TOP_75_TOWNS, HUB_TOWN_IDS } from '../data/top75.js';
 import { Prisma } from '@prisma/client';
@@ -1393,6 +1449,93 @@ async function main() {
       if (!existing) { try { await prisma.townLink.create({ data: { fromTown: { connect: { id: town.id } }, toTown: { connect: { id: link.toTownId } }, linkType: link.linkType as any, reason: link.reason, weight: link.weight } }); } catch (e) { /* skip if exists */ } }
     }
 
+    console.log(`   ✓ ${town.name}: ${town.people.length} people, ${town.places.length} places, ${town.events.length} events, ${town.stories.length} stories, ${town.lessonPlans.length} lesson plans`);
+  }
+
+  // 22. Sprint 7 — Pittsburgh comprehensive expansion
+  console.log('\n🏛️  Sprint 7: Pittsburgh comprehensive expansion...');
+  const pittsburghSprintTowns = [
+    { id: 'us-pa-pittsburgh', name: 'Pittsburgh', update: pittsburghTownUpdate, people: pittsburghPeople, places: pittsburghPlaces, events: pittsburghEvents, stories: pittsburghStories, lessonPlans: pittsburghLessonPlans, links: pittsburghAdditionalLinks },
+  ];
+
+  for (const town of pittsburghSprintTowns) {
+    await prisma.town.update({ where: { id: town.id }, data: town.update });
+    for (const { person, connectionNote } of town.people) {
+      await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person });
+      const existing = await prisma.townPerson.findFirst({ where: { townId: town.id, personId: person.id! } });
+      if (!existing) { await prisma.townPerson.create({ data: { town: { connect: { id: town.id } }, person: { connect: { id: person.id! } }, connectionNote } }); }
+    }
+    for (const place of town.places) {
+      await prisma.place.upsert({ where: { id: place.id! }, update: { name: place.name, placeType: place.placeType, description: place.description, lat: place.lat, lng: place.lng, address: place.address, hours: place.hours, admission: place.admission, website: place.website, phone: place.phone, accessibilityNotes: place.accessibilityNotes, parkingNotes: place.parkingNotes, amenities: place.amenities, historicalNote: place.historicalNote, displayOrder: place.displayOrder, featured: place.featured }, create: place });
+    }
+    for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
+    for (const story of town.stories) { const ex = await prisma.story.findFirst({ where: { id: story.id! } }); if (!ex) { await prisma.story.create({ data: story }); } else { await prisma.story.update({ where: { id: story.id! }, data: { title: story.title, textVersion: story.textVersion } }); } }
+    await prisma.lessonPlan.deleteMany({ where: { townId: town.id } });
+    for (const lp of town.lessonPlans) { await prisma.lessonPlan.create({ data: lp }); }
+    for (const link of town.links) {
+      const existing = await prisma.townLink.findFirst({ where: { fromTownId: town.id, toTownId: link.toTownId, linkType: link.linkType as any } });
+      if (!existing) { try { await prisma.townLink.create({ data: { fromTown: { connect: { id: town.id } }, toTown: { connect: { id: link.toTownId } }, linkType: link.linkType as any, reason: link.reason, weight: link.weight } }); } catch (e) { /* skip */ } }
+    }
+    console.log(`   ✓ ${town.name}: ${town.people.length} people, ${town.places.length} places, ${town.events.length} events, ${town.stories.length} stories, ${town.lessonPlans.length} lesson plans`);
+  }
+
+  // 23. Sprints 2-6 — comprehensive expansion for remaining towns
+  console.log('\n🏛️  Sprints 2-6: Comprehensive expansion (19 towns)...');
+  const sprintTowns = [
+    // Sprint 2: Other NY
+    { id: 'us-ny-kingston', name: 'Kingston', update: kingstonTownUpdate, people: kingstonPeople, places: kingstonPlaces, events: kingstonEvents, stories: kingstonStories, lessonPlans: kingstonLessonPlans, links: kingstonAdditionalLinks },
+    { id: 'us-ny-newburgh', name: 'Newburgh', update: newburghTownUpdate, people: newburghPeople, places: newburghPlaces, events: newburghEvents, stories: newburghStories, lessonPlans: newburghLessonPlans, links: newburghAdditionalLinks },
+    { id: 'us-ny-stony-point', name: 'Stony Point', update: stonyPointTownUpdate, people: stonyPointPeople, places: stonyPointPlaces, events: stonyPointEvents, stories: stonyPointStories, lessonPlans: stonyPointLessonPlans, links: stonyPointAdditionalLinks },
+    { id: 'us-ny-crown-point', name: 'Crown Point', update: crownPointTownUpdate, people: crownPointPeople, places: crownPointPlaces, events: crownPointEvents, stories: crownPointStories, lessonPlans: crownPointLessonPlans, links: crownPointAdditionalLinks },
+    // Sprint 3: SC (5 towns from sc-cluster)
+    { id: 'us-sc-charleston', name: 'Charleston', update: charlestonTownUpdate, people: charlestonPeople, places: charlestonPlaces, events: charlestonEvents, stories: charlestonStories, lessonPlans: charlestonLessonPlans, links: charlestonAdditionalLinks },
+    { id: 'us-sc-camden', name: 'Camden', update: camdenTownUpdate, people: camdenPeople, places: camdenPlaces, events: camdenEvents, stories: camdenStories, lessonPlans: camdenLessonPlans, links: camdenAdditionalLinks },
+    { id: 'us-sc-cowpens', name: 'Cowpens', update: cowpensTownUpdate, people: cowpensPeople, places: cowpensPlaces, events: cowpensEvents, stories: cowpensStories, lessonPlans: cowpensLessonPlans, links: cowpensAdditionalLinks },
+    { id: 'us-sc-fort-moultrie', name: 'Fort Moultrie', update: fortMoultrieTownUpdate, people: fortMoultriePeople, places: fortMoultrieePlaces, events: fortMoultrieEvents, stories: fortMoultrieStories, lessonPlans: fortMoultrieeLessonPlans, links: fortMoultrieAdditionalLinks },
+    { id: 'us-sc-hobkirks-hill', name: "Hobkirk's Hill", update: hobkirksHillTownUpdate, people: hobkirksHillPeople, places: hobkirksHillPlaces, events: hobkirksHillEvents, stories: hobkirksHillStories, lessonPlans: hobkirksHillLessonPlans, links: hobkirksHillAdditionalLinks },
+    { id: 'us-sc-ninety-six', name: 'Ninety Six', update: ninetySixTownUpdate, people: ninetySixPeople, places: ninetySixPlaces, events: ninetySixEvents, stories: ninetySixStories, lessonPlans: ninetySixLessonPlans, links: ninetySixAdditionalLinks },
+    { id: 'us-sc-eutaw-springs', name: 'Eutaw Springs', update: eutawSpringsTownUpdate, people: eutawSpringsPeople, places: eutawSpringsPlaces, events: eutawSpringsEvents, stories: eutawSpringsStories, lessonPlans: eutawSpringsLessonPlans, links: eutawSpringsAdditionalLinks },
+    { id: 'us-sc-beaufort', name: 'Beaufort', update: beaufortTownUpdate, people: beaufortPeople, places: beaufortPlaces, events: beaufortEvents, stories: beaufortStories, lessonPlans: beaufortLessonPlans, links: beaufortAdditionalLinks },
+    // Sprint 4: NC
+    { id: 'us-nc-guilford-courthouse', name: 'Guilford Courthouse', update: guilfordCourthouseTownUpdate, people: guilfordCourthousePeople, places: guilfordCourthousePlaces, events: guilfordCourthouseEvents, stories: guilfordCourthouseStories, lessonPlans: guilfordCourthouseLessonPlans, links: guilfordCourthouseAdditionalLinks },
+    { id: 'us-nc-kings-mountain', name: 'Kings Mountain', update: kingsMountainTownUpdate, people: kingsMountainPeople, places: kingsMountainPlaces, events: kingsMountainEvents, stories: kingsMountainStories, lessonPlans: kingsMountainLessonPlans, links: kingsMountainAdditionalLinks },
+    { id: 'us-nc-new-bern', name: 'New Bern', update: newBernTownUpdate, people: newBernPeople, places: newBernPlaces, events: newBernEvents, stories: newBernStories, lessonPlans: newBernLessonPlans, links: newBernAdditionalLinks },
+    { id: 'us-nc-wilmington', name: 'Wilmington NC', update: wilmingtonNcTownUpdate, people: wilmingtonNcPeople, places: wilmingtonNcPlaces, events: wilmingtonNcEvents, stories: wilmingtonNcStories, lessonPlans: wilmingtonNcLessonPlans, links: wilmingtonNcAdditionalLinks },
+    // Sprint 5: DMV
+    { id: 'us-de-dover', name: 'Dover', update: doverTownUpdate, people: doverPeople, places: doverPlaces, events: doverEvents, stories: doverStories, lessonPlans: doverLessonPlans, links: doverAdditionalLinks },
+    { id: 'us-de-wilmington', name: 'Wilmington DE', update: wilmingtonDeTownUpdate, people: wilmingtonDePeople, places: wilmingtonDePlaces, events: wilmingtonDeEvents, stories: wilmingtonDeStories, lessonPlans: wilmingtonDeLessonPlans, links: wilmingtonDeAdditionalLinks },
+    { id: 'us-md-annapolis', name: 'Annapolis', update: annapolisTownUpdate, people: annapolisPeople, places: annapolisPlaces, events: annapolisEvents, stories: annapolisStories, lessonPlans: annapolisLessonPlans, links: annapolisAdditionalLinks },
+    { id: 'us-md-baltimore', name: 'Baltimore', update: baltimoreTownUpdate, people: baltimorePeople, places: baltimorePlaces, events: baltimoreEvents, stories: baltimoreStories, lessonPlans: baltimoreLessonPlans, links: baltimoreAdditionalLinks },
+    { id: 'us-va-alexandria', name: 'Alexandria', update: alexandriaTownUpdate, people: alexandriaPeople, places: alexandriaPlaces, events: alexandriaEvents, stories: alexandriaStories, lessonPlans: alexandriaLessonPlans, links: alexandriaAdditionalLinks },
+    { id: 'us-va-fredericksburg', name: 'Fredericksburg', update: fredericksburgTownUpdate, people: fredericksburgPeople, places: fredericksburgPlaces, events: fredericksburgEvents, stories: fredericksburgStories, lessonPlans: fredericksburgLessonPlans, links: fredericksburgAdditionalLinks },
+    { id: 'us-va-mount-vernon', name: 'Mount Vernon', update: mountVernonTownUpdate, people: mountVernonPeople, places: mountVernonPlaces, events: mountVernonEvents, stories: mountVernonStories, lessonPlans: mountVernonLessonPlans, links: mountVernonAdditionalLinks },
+    // Sprint 6: Northern New England
+    { id: 'us-me-portland', name: 'Portland', update: portlandTownUpdate, people: portlandPeople, places: portlandPlaces, events: portlandEvents, stories: portlandStories, lessonPlans: portlandLessonPlans, links: portlandAdditionalLinks },
+    { id: 'us-me-castine', name: 'Castine', update: castineTownUpdate, people: castinePeople, places: castinePlaces, events: castineEvents, stories: castineStories, lessonPlans: castineLessonPlans, links: castineAdditionalLinks },
+    { id: 'us-vt-bennington', name: 'Bennington', update: benningtonTownUpdate, people: benningtonPeople, places: benningtonPlaces, events: benningtonEvents, stories: benningtonStories, lessonPlans: benningtonLessonPlans, links: benningtonAdditionalLinks },
+    { id: 'us-vt-brattleboro', name: 'Brattleboro', update: brattleboroTownUpdate, people: brattleboroPeople, places: brattleboroPlaces, events: brattleboroEvents, stories: brattleboroStories, lessonPlans: brattleboroLessonPlans, links: brattleboroAdditionalLinks },
+    { id: 'us-nh-exeter', name: 'Exeter', update: exeterTownUpdate, people: exeterPeople, places: exeterPlaces, events: exeterEvents, stories: exeterStories, lessonPlans: exeterLessonPlans, links: exeterAdditionalLinks },
+    { id: 'us-nh-portsmouth', name: 'Portsmouth', update: portsmouthTownUpdate, people: portsmouthPeople, places: portsmouthPlaces, events: portsmouthEvents, stories: portsmouthStories, lessonPlans: portsmouthLessonPlans, links: portsmouthAdditionalLinks },
+  ];
+
+  for (const town of sprintTowns) {
+    await prisma.town.update({ where: { id: town.id }, data: town.update });
+    for (const { person, connectionNote } of town.people) {
+      await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person });
+      const existing = await prisma.townPerson.findFirst({ where: { townId: town.id, personId: person.id! } });
+      if (!existing) { await prisma.townPerson.create({ data: { town: { connect: { id: town.id } }, person: { connect: { id: person.id! } }, connectionNote } }); }
+    }
+    for (const place of town.places) {
+      await prisma.place.upsert({ where: { id: place.id! }, update: { name: place.name, placeType: place.placeType, description: place.description, lat: place.lat, lng: place.lng, address: place.address, hours: place.hours, admission: place.admission, website: place.website, phone: place.phone, accessibilityNotes: place.accessibilityNotes, parkingNotes: place.parkingNotes, amenities: place.amenities, historicalNote: place.historicalNote, displayOrder: place.displayOrder, featured: place.featured }, create: place });
+    }
+    for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
+    for (const story of town.stories) { const ex = await prisma.story.findFirst({ where: { id: story.id! } }); if (!ex) { await prisma.story.create({ data: story }); } else { await prisma.story.update({ where: { id: story.id! }, data: { title: story.title, textVersion: story.textVersion } }); } }
+    await prisma.lessonPlan.deleteMany({ where: { townId: town.id } });
+    for (const lp of town.lessonPlans) { await prisma.lessonPlan.create({ data: lp }); }
+    for (const link of town.links) {
+      const existing = await prisma.townLink.findFirst({ where: { fromTownId: town.id, toTownId: link.toTownId, linkType: link.linkType as any } });
+      if (!existing) { try { await prisma.townLink.create({ data: { fromTown: { connect: { id: town.id } }, toTown: { connect: { id: link.toTownId } }, linkType: link.linkType as any, reason: link.reason, weight: link.weight } }); } catch (e) { /* skip */ } }
+    }
     console.log(`   ✓ ${town.name}: ${town.people.length} people, ${town.places.length} places, ${town.events.length} events, ${town.stories.length} stories, ${town.lessonPlans.length} lesson plans`);
   }
 
