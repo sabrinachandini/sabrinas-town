@@ -88,6 +88,7 @@ model Event {
   town            Town          @relation(fields: [townId], references: [id])
 
   name            String
+  slug            String?       @unique
   startDate       DateTime?
   endDate         DateTime?
   datePrecision   DatePrecision @default(UNKNOWN)
@@ -185,6 +186,7 @@ model Place {
   town        Town      @relation(fields: [townId], references: [id])
 
   name        String
+  slug        String?   @unique
   placeType   PlaceType
   description String    @db.Text
 
@@ -248,6 +250,7 @@ model Story {
   town                Town               @relation(fields: [townId], references: [id])
 
   title               String
+  slug                String?            @unique
   storyType           StoryType
 
   // For historical voices
@@ -688,6 +691,7 @@ model LessonPlan {
   town                 Town     @relation(fields: [townId], references: [id])
 
   title                String
+  slug                 String?  @unique
   gradeRange           String   // "6-8", "9-12", "5-12 (adaptable)"
   estimatedDuration    String   // "2-3 class periods"
   summary              String   @db.Text

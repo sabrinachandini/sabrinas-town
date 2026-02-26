@@ -2,6 +2,7 @@ import {
   getTown,
   getTownSources,
   getTownClusters,
+  getTownPeople,
   Town,
   TownSource,
 } from "@/lib/api";
@@ -56,9 +57,10 @@ export default async function TownOverviewPage({ params }: PageProps) {
 // ---------------------------------------------------------------------------
 
 async function EditorialTownPage({ slug }: { slug: string }) {
-  const [town, sourcesData] = await Promise.all([
+  const [town, sourcesData, peopleData] = await Promise.all([
     getTown(slug),
     getTownSources(slug),
+    getTownPeople(slug),
   ]);
 
   if (!town) return null;
@@ -66,6 +68,13 @@ async function EditorialTownPage({ slug }: { slug: string }) {
   void recordOrgEvent(slug, "TOWN_VIEW");
 
   const firstParagraph = town.whyMatters.split("\n\n")[0];
+  const people = peopleData?.people ?? [];
+  const featuredPeople = people.slice(0, 3);
+  const featuredPlaces = (town.featuredPlaces ?? []).slice(0, 3);
+  const featuredEvents = [...town.events]
+    .sort((a, b) => b.significanceWeight - a.significanceWeight)
+    .slice(0, 6);
+  const featuredStories = town.stories.slice(0, 2);
 
   const sections = [
     {
@@ -117,6 +126,96 @@ async function EditorialTownPage({ slug }: { slug: string }) {
       <p className="font-body text-body leading-[1.8] text-text-primary mb-16">
         {firstParagraph}
       </p>
+
+      {/* Featured Highlights */}
+      {(featuredPeople.length > 0 || featuredPlaces.length > 0 || featuredEvents.length > 0 || featuredStories.length > 0) && (
+        <div className="mb-16 space-y-10">
+          {featuredPeople.length > 0 && (
+            <div>
+              <p className="text-small text-text-muted font-body uppercase tracking-wide mb-3">People</p>
+              <div className="space-y-0">
+                {featuredPeople.map((person) => (
+                  <a
+                    key={person.id}
+                    href={`/towns/${slug}/people/${person.id}`}
+                    className="flex items-center justify-between py-3 border-b border-border-light last:border-b-0 group"
+                  >
+                    <div>
+                      <p className="font-body font-medium group-hover:text-accent-blue transition-colors">{person.name}</p>
+                      <p className="text-small text-text-muted font-body">{person.roles.join(", ")}</p>
+                    </div>
+                    <span className="text-text-muted group-hover:text-accent-blue transition-colors ml-4 shrink-0">&rarr;</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {featuredPlaces.length > 0 && (
+            <div>
+              <p className="text-small text-text-muted font-body uppercase tracking-wide mb-3">Places</p>
+              <div className="space-y-0">
+                {featuredPlaces.map((place) => (
+                  <a
+                    key={place.id}
+                    href={`/towns/${slug}/visit/${place.id}`}
+                    className="flex items-center justify-between py-3 border-b border-border-light last:border-b-0 group"
+                  >
+                    <p className="font-body font-medium group-hover:text-accent-blue transition-colors">{place.name}</p>
+                    <span className="text-text-muted group-hover:text-accent-blue transition-colors ml-4 shrink-0">&rarr;</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {featuredEvents.length > 0 && (
+            <div>
+              <p className="text-small text-text-muted font-body uppercase tracking-wide mb-3">Key Events</p>
+              <div className="space-y-0">
+                {featuredEvents.map((event) => (
+                  <a
+                    key={event.id}
+                    href={`/towns/${slug}/events/${event.id}`}
+                    className="flex items-center justify-between py-3 border-b border-border-light last:border-b-0 group"
+                  >
+                    <div>
+                      <p className="font-body font-medium group-hover:text-accent-blue transition-colors">{event.name}</p>
+                      <p className="text-small text-text-muted font-body">
+                        {event.startDate
+                          ? new Date(event.startDate).toLocaleDateString("en-US", { year: "numeric", month: "short" })
+                          : ""}
+                      </p>
+                    </div>
+                    <span className="text-text-muted group-hover:text-accent-blue transition-colors ml-4 shrink-0">&rarr;</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {featuredStories.length > 0 && (
+            <div>
+              <p className="text-small text-text-muted font-body uppercase tracking-wide mb-3">Stories</p>
+              <div className="space-y-0">
+                {featuredStories.map((story) => (
+                  <a
+                    key={story.id}
+                    href={`/towns/${slug}/stories/${story.id}`}
+                    className="flex items-center justify-between py-3 border-b border-border-light last:border-b-0 group"
+                  >
+                    <div>
+                      <p className="font-body font-medium group-hover:text-accent-blue transition-colors">{story.title}</p>
+                      <p className="text-small text-text-muted font-body">{story.excerpt}</p>
+                    </div>
+                    <span className="text-text-muted group-hover:text-accent-blue transition-colors ml-4 shrink-0">&rarr;</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
 
       <nav>
         <ul className="space-y-0">

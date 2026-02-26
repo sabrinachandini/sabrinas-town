@@ -81,7 +81,14 @@ function EditorialEventsPage({
                   {formatDate(event.startDate)}
                 </span>
                 <div>
-                  <p className="font-body font-medium">{event.name}</p>
+                  <p className="font-body font-medium">
+                    <a
+                      href={`/towns/${slug}/events/${(event as any).slug || event.id}`}
+                      className="hover:text-accent-blue transition-colors"
+                    >
+                      {event.name}
+                    </a>
+                  </p>
                   {event.summary && (
                     <p className="mt-1 text-small text-text-muted font-body leading-relaxed">
                       {event.summary}

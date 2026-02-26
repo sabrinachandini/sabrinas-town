@@ -2,7 +2,7 @@
 // Town routes: public endpoints for town data
 
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
-import { getTownBySlug, getTownStories, getTownPlaces, getTownSources, getTownPeople, getTownStoryById, getGlobalChangelog } from '../services/townService.js';
+import { getTownBySlug, getTownStories, getTownPlaces, getTownSources, getTownPeople, getTownStoryById, getGlobalChangelog, getTownPersonBySlug, getTownPlaceBySlug, getTownEventBySlug } from '../services/townService.js';
 import { getTeacherModule, trackTeacherDownload } from '../services/teacherService.js';
 import { TownQuerySchema, StorySummarySchema, PlacesQuerySchema } from '../validators/town.js';
 import { optionalEmbedApiKey } from '../middleware/auth.js';
@@ -324,6 +324,129 @@ export async function registerTownRoutes(fastify: FastifyInstance): Promise<void
         });
       } catch (error) {
         request.log.error(error, 'Error fetching story');
+        return reply.status(500).send({
+          success: false,
+          error: 'Internal server error',
+        });
+      }
+    }
+  );
+
+  /**
+   * GET /towns/:slug/people/:id
+   * Returns a single person with events and stories
+   */
+  fastify.get(
+    '/towns/:slug/people/:id',
+    async (
+      request: FastifyRequest<{
+        Params: { slug: string; id: string };
+      }>,
+      reply: FastifyReply
+    ) => {
+      const { slug, id } = request.params;
+
+      try {
+        const data = await getTownPersonBySlug(slug, id);
+
+        if (!data) {
+          return reply.status(404).send({
+            success: false,
+            error: `Person not found`,
+          });
+        }
+
+        return reply.send({
+          success: true,
+          data,
+          meta: {
+            timestamp: new Date().toISOString(),
+          },
+        });
+      } catch (error) {
+        request.log.error(error, 'Error fetching person');
+        return reply.status(500).send({
+          success: false,
+          error: 'Internal server error',
+        });
+      }
+    }
+  );
+
+  /**
+   * GET /towns/:slug/places/:id
+   * Returns a single place with connected events
+   */
+  fastify.get(
+    '/towns/:slug/places/:id',
+    async (
+      request: FastifyRequest<{
+        Params: { slug: string; id: string };
+      }>,
+      reply: FastifyReply
+    ) => {
+      const { slug, id } = request.params;
+
+      try {
+        const data = await getTownPlaceBySlug(slug, id);
+
+        if (!data) {
+          return reply.status(404).send({
+            success: false,
+            error: `Place not found`,
+          });
+        }
+
+        return reply.send({
+          success: true,
+          data,
+          meta: {
+            timestamp: new Date().toISOString(),
+          },
+        });
+      } catch (error) {
+        request.log.error(error, 'Error fetching place');
+        return reply.status(500).send({
+          success: false,
+          error: 'Internal server error',
+        });
+      }
+    }
+  );
+
+  /**
+   * GET /towns/:slug/events/:id
+   * Returns a single event with people and themes
+   */
+  fastify.get(
+    '/towns/:slug/events/:id',
+    async (
+      request: FastifyRequest<{
+        Params: { slug: string; id: string };
+      }>,
+      reply: FastifyReply
+    ) => {
+      const { slug, id } = request.params;
+
+      try {
+        const data = await getTownEventBySlug(slug, id);
+
+        if (!data) {
+          return reply.status(404).send({
+            success: false,
+            error: `Event not found`,
+          });
+        }
+
+        return reply.send({
+          success: true,
+          data,
+          meta: {
+            timestamp: new Date().toISOString(),
+          },
+        });
+      } catch (error) {
+        request.log.error(error, 'Error fetching event');
         return reply.status(500).send({
           success: false,
           error: 'Internal server error',

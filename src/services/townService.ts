@@ -578,3 +578,188 @@ export async function getTownPlaces(
     placesByCategory,
   };
 }
+
+/**
+ * Get a single person by ID with connected events and stories (for Boston detail page)
+ */
+export async function getTownPersonBySlug(townSlug: string, personId: string) {
+  const town = await prisma.town.findUnique({
+    where: { slug: townSlug },
+    select: { id: true, slug: true, name: true },
+  });
+
+  if (!town) return null;
+
+  // Find person and verify they're connected to this town via events
+  const person = await prisma.person.findUnique({
+    where: { id: personId },
+    include: {
+      eventPeople: {
+        where: { event: { townId: town.id } },
+        include: {
+          event: {
+            include: {
+              eventThemes: { include: { theme: true } },
+            },
+          },
+        },
+      },
+      stories: {
+        where: { townId: town.id },
+        select: {
+          id: true,
+          title: true,
+          storyType: true,
+          verificationStatus: true,
+          textVersion: true,
+          tags: true,
+        },
+      },
+    },
+  });
+
+  if (!person || person.eventPeople.length === 0) return null;
+
+  return {
+    id: person.id,
+    name: person.name,
+    roles: person.roles,
+    bioShort: person.bioShort,
+    bioLong: person.bioLong,
+    birthYear: person.birthYear,
+    deathYear: person.deathYear,
+    verificationStatus: person.verificationStatus,
+    events: person.eventPeople.map((ep) => ({
+      id: ep.event.id,
+      name: ep.event.name,
+      startDate: ep.event.startDate?.toISOString() ?? null,
+      datePrecision: ep.event.datePrecision,
+      summary: ep.event.summary,
+      roleInEvent: ep.roleInEvent,
+      themes: ep.event.eventThemes.map((et) => ({
+        id: et.theme.id,
+        name: et.theme.name,
+      })),
+    })),
+    stories: person.stories.map((s) => ({
+      id: s.id,
+      title: s.title,
+      storyType: s.storyType,
+      verificationStatus: s.verificationStatus,
+      excerpt: s.textVersion.slice(0, 200) + (s.textVersion.length > 200 ? '...' : ''),
+      tags: s.tags,
+    })),
+  };
+}
+
+/**
+ * Get a single place by slug with connected events
+ */
+export async function getTownPlaceBySlug(townSlug: string, placeSlug: string) {
+  const town = await prisma.town.findUnique({
+    where: { slug: townSlug },
+    select: { id: true, slug: true, name: true },
+  });
+
+  if (!town) return null;
+
+  // Try slug first, then fall back to id
+  const place = await prisma.place.findFirst({
+    where: {
+      townId: town.id,
+      OR: [{ slug: placeSlug }, { id: placeSlug }],
+    },
+  });
+
+  if (!place) return null;
+
+  // Find events at this location (same town)
+  const connectedEvents = await prisma.event.findMany({
+    where: { townId: town.id },
+    include: {
+      eventPeople: { include: { person: true } },
+      eventThemes: { include: { theme: true } },
+    },
+    orderBy: { startDate: 'asc' },
+  });
+
+  return {
+    id: place.id,
+    name: place.name,
+    slug: place.slug,
+    placeType: place.placeType,
+    description: place.description,
+    lat: place.lat,
+    lng: place.lng,
+    address: place.address,
+    hours: place.hours,
+    admission: place.admission,
+    website: place.website,
+    phone: place.phone,
+    accessibilityNotes: place.accessibilityNotes,
+    parkingNotes: place.parkingNotes,
+    amenities: place.amenities,
+    historicalNote: place.historicalNote,
+    featured: place.featured,
+    connectedEvents: connectedEvents.map((e) => ({
+      id: e.id,
+      name: e.name,
+      slug: (e as any).slug ?? null,
+      startDate: e.startDate?.toISOString() ?? null,
+      summary: e.summary,
+      people: e.eventPeople.map((ep) => ({
+        id: ep.person.id,
+        name: ep.person.name,
+        roleInEvent: ep.roleInEvent,
+      })),
+    })),
+  };
+}
+
+/**
+ * Get a single event by slug with connected people and themes
+ */
+export async function getTownEventBySlug(townSlug: string, eventSlug: string) {
+  const town = await prisma.town.findUnique({
+    where: { slug: townSlug },
+    select: { id: true, slug: true, name: true },
+  });
+
+  if (!town) return null;
+
+  // Try slug first, then fall back to id
+  const event = await prisma.event.findFirst({
+    where: {
+      townId: town.id,
+      OR: [{ slug: eventSlug }, { id: eventSlug }],
+    },
+    include: {
+      eventPeople: { include: { person: true } },
+      eventThemes: { include: { theme: true } },
+    },
+  });
+
+  if (!event) return null;
+
+  return {
+    id: event.id,
+    name: event.name,
+    slug: (event as any).slug ?? null,
+    startDate: event.startDate?.toISOString() ?? null,
+    endDate: event.endDate?.toISOString() ?? null,
+    datePrecision: event.datePrecision,
+    summary: event.summary,
+    significanceWeight: event.significanceWeight,
+    people: event.eventPeople.map((ep) => ({
+      id: ep.person.id,
+      name: ep.person.name,
+      roles: ep.person.roles,
+      bioShort: ep.person.bioShort,
+      roleInEvent: ep.roleInEvent,
+    })),
+    themes: event.eventThemes.map((et) => ({
+      id: et.theme.id,
+      name: et.theme.name,
+    })),
+  };
+}

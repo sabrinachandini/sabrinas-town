@@ -89,6 +89,12 @@ async function EditorialTeacherPage({ slug }: { slug: string }) {
               <p className="mt-3 font-body leading-relaxed">
                 {m.overview.summary}
               </p>
+              <a
+                href={`/towns/${slug}/teacher/lesson`}
+                className="mt-3 inline-block text-small text-accent-blue font-body hover:underline"
+              >
+                View full lesson plan &rarr;
+              </a>
             </EditorialSection>
           )}
 

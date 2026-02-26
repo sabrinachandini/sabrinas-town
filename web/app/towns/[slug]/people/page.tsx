@@ -64,7 +64,12 @@ async function EditorialPeoplePage({ slug }: { slug: string }) {
                 className="py-5 border-b border-border-light last:border-b-0"
               >
                 <h3 className="font-heading text-[1.25rem] tracking-tight">
-                  {person.name}
+                  <a
+                    href={`/towns/${slug}/people/${person.id}`}
+                    className="hover:text-accent-blue transition-colors"
+                  >
+                    {person.name}
+                  </a>
                 </h3>
                 <p className="mt-1 text-small text-text-muted font-body">
                   {[

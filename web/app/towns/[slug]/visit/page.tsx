@@ -96,7 +96,14 @@ function EditorialVisitPage({
                     {i + 1}.
                   </span>
                   <div>
-                    <p className="font-body font-medium">{place.name}</p>
+                    <p className="font-body font-medium">
+                      <a
+                        href={`/towns/${slug}/visit/${(place as any).slug || place.id}`}
+                        className="hover:text-accent-blue transition-colors"
+                      >
+                        {place.name}
+                      </a>
+                    </p>
                     <p className="mt-1 text-small text-text-muted font-body uppercase tracking-wide">
                       {formatPlaceType(place.placeType)}
                       {place.address && <> &middot; {place.address}</>}

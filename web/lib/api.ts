@@ -680,6 +680,152 @@ export async function getTownClusters(
   }
 }
 
+// Entity detail types (for Boston detail pages)
+export interface TownPersonDetail {
+  id: string;
+  name: string;
+  roles: string[];
+  bioShort: string;
+  bioLong: string | null;
+  birthYear: number | null;
+  deathYear: number | null;
+  verificationStatus: string;
+  events: Array<{
+    id: string;
+    name: string;
+    startDate: string | null;
+    datePrecision: string;
+    summary: string;
+    roleInEvent: string | null;
+    themes: Array<{ id: string; name: string }>;
+  }>;
+  stories: Array<{
+    id: string;
+    title: string;
+    storyType: string;
+    verificationStatus: string;
+    excerpt: string;
+    tags: string[];
+  }>;
+}
+
+export interface TownPlaceDetail {
+  id: string;
+  name: string;
+  slug: string | null;
+  placeType: string;
+  description: string;
+  lat: number | null;
+  lng: number | null;
+  address: string | null;
+  hours: string | null;
+  admission: string | null;
+  website: string | null;
+  phone: string | null;
+  accessibilityNotes: string | null;
+  parkingNotes: string | null;
+  amenities: string[];
+  historicalNote: string | null;
+  featured: boolean;
+  connectedEvents: Array<{
+    id: string;
+    name: string;
+    slug: string | null;
+    startDate: string | null;
+    summary: string;
+    people: Array<{
+      id: string;
+      name: string;
+      roleInEvent: string | null;
+    }>;
+  }>;
+}
+
+export interface TownEventDetail {
+  id: string;
+  name: string;
+  slug: string | null;
+  startDate: string | null;
+  endDate: string | null;
+  datePrecision: string;
+  summary: string;
+  significanceWeight: number;
+  people: Array<{
+    id: string;
+    name: string;
+    roles: string[];
+    bioShort: string;
+    roleInEvent: string | null;
+  }>;
+  themes: Array<{ id: string; name: string }>;
+}
+
+export async function getTownPersonDetail(
+  slug: string,
+  personId: string
+): Promise<TownPersonDetail | null> {
+  try {
+    const res = await fetch(`${API_URL}/towns/${slug}/people/${personId}`, {
+      next: { revalidate: 60 },
+    });
+
+    if (!res.ok) {
+      if (res.status === 404) return null;
+      throw new Error(`Failed to fetch person: ${res.status}`);
+    }
+
+    const json: ApiResponse<TownPersonDetail> = await res.json();
+    return json.data;
+  } catch (error) {
+    console.error("Error fetching person detail:", error);
+    return null;
+  }
+}
+
+export async function getTownPlaceDetail(
+  slug: string,
+  placeSlug: string
+): Promise<TownPlaceDetail | null> {
+  try {
+    const res = await fetch(`${API_URL}/towns/${slug}/places/${placeSlug}`, {
+      next: { revalidate: 60 },
+    });
+
+    if (!res.ok) {
+      if (res.status === 404) return null;
+      throw new Error(`Failed to fetch place: ${res.status}`);
+    }
+
+    const json: ApiResponse<TownPlaceDetail> = await res.json();
+    return json.data;
+  } catch (error) {
+    console.error("Error fetching place detail:", error);
+    return null;
+  }
+}
+
+export async function getTownEventDetail(
+  slug: string,
+  eventSlug: string
+): Promise<TownEventDetail | null> {
+  try {
+    const res = await fetch(`${API_URL}/towns/${slug}/events/${eventSlug}`, {
+      next: { revalidate: 60 },
+    });
+
+    if (!res.ok) {
+      if (res.status === 404) return null;
+      throw new Error(`Failed to fetch event: ${res.status}`);
+    }
+
+    const json: ApiResponse<TownEventDetail> = await res.json();
+    return json.data;
+  } catch (error) {
+    console.error("Error fetching event detail:", error);
+    return null;
+  }
+}
+
 export async function getPlaces(
   slug: string,
   options?: {
