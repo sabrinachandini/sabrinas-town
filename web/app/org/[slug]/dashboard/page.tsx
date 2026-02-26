@@ -64,7 +64,8 @@ export default async function OrgDashboardPage({
   const isOwner = userRole === "ORG_OWNER" || userRole === "ADMIN";
   const sub = org.subscription;
   const hasActiveSub = sub?.status === "active";
-  const activeStewardships = org.townStewardships;
+  const activeStewardships: { id: string; town: { name: string; slug: string } }[] =
+    org.townStewardships;
 
   // Fetch towns for stewardship selector
   let towns: { slug: string; name: string }[] = [];

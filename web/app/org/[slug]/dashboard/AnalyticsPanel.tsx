@@ -19,10 +19,11 @@ export default async function AnalyticsPanel({
   startDate.setDate(startDate.getDate() - days);
 
   // Fetch stewarded towns
-  const stewardships = await prisma.townStewardship.findMany({
-    where: { orgId, status: "ACTIVE" },
-    select: { townId: true, town: { select: { name: true } } },
-  });
+  const stewardships: { townId: string; town: { name: string } }[] =
+    await prisma.townStewardship.findMany({
+      where: { orgId, status: "ACTIVE" },
+      select: { townId: true, town: { select: { name: true } } },
+    });
   const stewardedTownIds = stewardships.map((s) => s.townId);
   const townIdToName: Record<string, string> = {};
   for (const s of stewardships) {
@@ -30,21 +31,22 @@ export default async function AnalyticsPanel({
   }
 
   // Query events scoped to org, time range, and stewarded towns (or org-level)
-  const events = await prisma.analyticsEvent.findMany({
-    where: {
-      orgId,
-      timestamp: { gte: startDate },
-      OR: [
-        { townId: { in: stewardedTownIds } },
-        { townId: null as unknown as undefined },
-      ],
-    },
-    select: {
-      eventType: true,
-      townId: true,
-      timestamp: true,
-    },
-  });
+  const events: { eventType: string; townId: string | null; timestamp: Date }[] =
+    await prisma.analyticsEvent.findMany({
+      where: {
+        orgId,
+        timestamp: { gte: startDate },
+        OR: [
+          { townId: { in: stewardedTownIds } },
+          { townId: null as unknown as undefined },
+        ],
+      },
+      select: {
+        eventType: true,
+        townId: true,
+        timestamp: true,
+      },
+    });
 
   // Aggregate by event type
   const byType: Record<string, number> = {};
