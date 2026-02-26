@@ -7,20 +7,26 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate --schema=../prisma/schema.prisma && next build",
+    "build": "cd .. && npx prisma generate && cd web && next build",
     "start": "next start",
     "lint": "eslint",
-    "postinstall": "prisma generate --schema=../prisma/schema.prisma"
+    "postinstall": "cd .. && npx prisma generate || true"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.1",
     "@prisma/client": "^5.22.0",
     "@sentry/nextjs": "^10.40.0",
     "bcryptjs": "^3.0.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.575.0",
+    "maplibre-gl": "^5.19.0",
     "next": "16.1.6",
     "next-auth": "^5.0.0-beta.30",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "tailwind-merge": "^3.5.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
