@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import { getTown } from "@/lib/api";
 import { TownHeader, TownSubnav } from "@/components/town";
 
+const EDITORIAL_SLUGS = new Set(["boston-ma"]);
+
 interface LayoutProps {
   children: React.ReactNode;
   params: Promise<{ slug: string }>;
@@ -13,6 +15,14 @@ export default async function TownLayout({ children, params }: LayoutProps) {
 
   if (!town) {
     notFound();
+  }
+
+  if (EDITORIAL_SLUGS.has(slug)) {
+    return (
+      <div className="min-h-screen bg-bg-primary">
+        <main>{children}</main>
+      </div>
+    );
   }
 
   return (

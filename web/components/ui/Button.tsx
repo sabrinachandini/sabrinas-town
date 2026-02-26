@@ -56,7 +56,7 @@ export function Button({
           className={combinedStyles}
           target="_blank"
           rel="noopener noreferrer"
-          {...(rest as any)}
+          {...(rest as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
         >
           {children}
         </a>
@@ -64,7 +64,7 @@ export function Button({
     }
 
     return (
-      <NextLink href={href} className={combinedStyles} {...(rest as any)}>
+      <NextLink href={href} className={combinedStyles} {...(rest as React.AnchorHTMLAttributes<HTMLAnchorElement>)}>
         {children}
       </NextLink>
     );
