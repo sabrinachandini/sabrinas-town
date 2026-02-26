@@ -15,9 +15,7 @@ The paradox is not accidental. Guilford Courthouse was what military historians 
 
 Greene's battle plan was deliberately structured for strategic survival. He arrayed his force in three lines. The first line, North Carolina militia, was positioned at the wood's edge along the New Garden Road with orders to fire two volleys and fall back — an instruction that recognized both the militia's capabilities and their limits. The second line, Virginia militia under Edward Stevens, held the middle ground. The third line, Continental regulars from Maryland and Virginia, waited on the high ground around the courthouse. Cornwallis would have to fight through all three to claim the field, and each engagement would cost him men he couldn't replace.
 
-The most consequential moment of the battle came when the British line began to buckle at the third line. British Lieutenant Colonel James Webster was mortally wounded attempting to hold the right flank. The 1st Maryland Continental Regiment under Colonel John Gunby initially gave way and then reformed and counterattacked — a recovery under fire that reversed what had looked like a rout and threw the British advance into confusion. To stop the American counterattack, Cornwallis ordered his artillery to fire grapeshot into the melee, accepting that the shot would hit both sides. It did. The advance stopped. The British held the courthouse ground. Greene withdrew in good order.
-
-The battle site today is a national military park preserving the ground where the three lines stood. Walking the terrain makes legible what the documents only partially convey: the density of the forest, the difficulty of coordinating fire across a front that no officer could see in its entirety, the sheer physical challenge of moving formed infantry through woodland under fire. Guilford Courthouse is not the most famous battle of the Revolution. It may be the most consequential one most Americans have never heard of.`,
+The most consequential moment came when the British line began to buckle at the third line. Lieutenant Colonel James Webster was mortally wounded attempting to hold the right flank. The 1st Maryland Continental Regiment under Colonel John Gunby initially gave way and then reformed and counterattacked — a recovery under fire that reversed what had looked like a rout and threw the British advance into confusion. To stop the American counterattack, Cornwallis ordered grapeshot fired into the melee, accepting that the shot would hit both sides. It did. The advance stopped. The British held the courthouse ground. Greene withdrew in good order. Cornwallis won the field and lost the war.`,
 };
 
 // ============================================================================
@@ -33,36 +31,31 @@ export const guilfordCourthousePeople: Array<{
       id: 'person-nathanael-greene',
       name: 'Major General Nathanael Greene',
       roles: ['Continental Army General', 'Southern Department Commander'],
-      bioShort:
-        'Rhode Island Quaker who became Washington\'s most capable general. Appointed to command the Southern Department in December 1780, he rebuilt the shattered army and fought a campaign of strategic attrition that expelled British forces from the Carolinas without winning a single tactical victory. Guilford Courthouse was his masterpiece of planned retreat.',
+      bioShort: 'Rhode Island Quaker who became Washington\'s most capable general. Commanded the Southern Department from December 1780, rebuilding the shattered army and fighting a campaign of strategic attrition that expelled British forces without winning a single tactical victory.',
       birthYear: 1742,
       deathYear: 1786,
       verificationStatus: 'VERIFIED',
     },
-    connectionNote:
-      'Commanded the American forces at Guilford Courthouse on March 15, 1781; designed the three-line defensive formation that bled Cornwallis into strategic paralysis.',
+    connectionNote: 'Commanded the American forces at Guilford Courthouse; designed the three-line defense that bled Cornwallis into strategic paralysis.',
   },
   {
     person: {
       id: 'person-charles-cornwallis',
       name: 'General Lord Charles Cornwallis',
       roles: ['British General', 'Southern Army Commander', 'Lieutenant General'],
-      bioShort:
-        'British general who won the field at Guilford Courthouse but suffered casualties his army could not sustain. His decision to fire grapeshot into his own troops to halt the American counterattack reflected the desperation of his position. He marched to Yorktown seven months later and surrendered.',
+      bioShort: 'British general who won the field at Guilford Courthouse but suffered 27 percent casualties his army could not replace. His grapeshot order into his own troops reflected his desperation. He surrendered at Yorktown seven months later.',
       birthYear: 1738,
       deathYear: 1805,
       verificationStatus: 'VERIFIED',
     },
-    connectionNote:
-      'Commanded the British forces at Guilford Courthouse; his tactical victory over Greene cost him 27 percent of his strength and made the Yorktown campaign inevitable.',
+    connectionNote: 'Commanded British forces at Guilford Courthouse; his tactical victory cost him the strategic capability to continue the Carolina campaign.',
   },
   {
     person: {
       id: 'person-james-webster',
       name: 'Lieutenant Colonel James Webster',
       roles: ['British Infantry Commander', 'Regiment Commander'],
-      bioShort:
-        'British officer commanding the right flank at Guilford Courthouse; mortally wounded rallying troops against the American third line. Cornwallis wept openly at his death on March 23, 1781, calling him the best soldier in the British army.',
+      bioShort: 'British officer commanding the right flank at Guilford Courthouse; mortally wounded rallying troops against the American third line. Cornwallis wept openly at his death on March 23, 1781.',
       birthYear: 1743,
       deathYear: 1781,
       verificationStatus: 'VERIFIED',
@@ -74,8 +67,7 @@ export const guilfordCourthousePeople: Array<{
       id: 'person-william-washington-cavalry',
       name: 'Lieutenant Colonel William Washington',
       roles: ['Continental Army Cavalry Commander', '3rd Continental Light Dragoons'],
-      bioShort:
-        'George Washington\'s distant cousin who commanded Continental cavalry in the Southern Campaign. Active at both Cowpens and Guilford Courthouse, his dragoons covered Greene\'s withdrawal after the battle.',
+      bioShort: 'George Washington\'s distant cousin who commanded Continental cavalry throughout the Southern Campaign. Active at both Cowpens and Guilford Courthouse; his dragoons covered Greene\'s withdrawal.',
       birthYear: 1752,
       deathYear: 1810,
       verificationStatus: 'VERIFIED',
@@ -87,8 +79,7 @@ export const guilfordCourthousePeople: Array<{
       id: 'person-otho-williams',
       name: 'Brigadier General Otho Holland Williams',
       roles: ['Continental Army General', 'Maryland Line Commander', 'Adjutant General'],
-      bioShort:
-        'Maryland officer and Greene\'s most reliable subordinate. Commanded the rear guard at Guilford Courthouse that kept the army intact during withdrawal, preventing Cornwallis from converting tactical victory into strategic annihilation.',
+      bioShort: 'Maryland officer and Greene\'s most reliable subordinate. Commanded the Guilford Courthouse rear guard that kept the army intact during withdrawal, preventing Cornwallis from converting his tactical victory into annihilation.',
       birthYear: 1749,
       deathYear: 1794,
       verificationStatus: 'VERIFIED',
@@ -100,8 +91,7 @@ export const guilfordCourthousePeople: Array<{
       id: 'person-edward-stevens',
       name: 'Brigadier General Edward Stevens',
       roles: ['Virginia Militia General', 'Second Line Commander'],
-      bioShort:
-        'Virginia militia general commanding the second line at Guilford Courthouse. Having seen his men flee at Camden, Stevens this time stationed riflemen behind his own troops with orders to shoot those who ran — a grim lesson from earlier defeat.',
+      bioShort: 'Virginia militia general commanding the second line. Having seen his men flee at Camden, Stevens stationed riflemen behind his own troops with orders to shoot those who ran — a grim lesson learned from earlier defeat.',
       birthYear: 1745,
       deathYear: 1820,
       verificationStatus: 'VERIFIED',
@@ -113,8 +103,7 @@ export const guilfordCourthousePeople: Array<{
       id: 'person-henry-lee-lighthorseharry',
       name: 'Lieutenant Colonel Henry "Light Horse Harry" Lee',
       roles: ['Continental Cavalry Commander', 'Lee\'s Legion Commander'],
-      bioShort:
-        'Virginia cavalry officer commanding Lee\'s Legion throughout the Southern Campaign. Protected the American left flank at Guilford Courthouse and was among the last units off the field. Father of Robert E. Lee; his memoirs are an essential primary source for the campaign.',
+      bioShort: 'Virginia cavalry officer commanding Lee\'s Legion. Protected the American left flank at Guilford Courthouse and was among the last units off the field. Father of Robert E. Lee; his memoirs are an essential Southern Campaign primary source.',
       birthYear: 1756,
       deathYear: 1818,
       verificationStatus: 'VERIFIED',
@@ -126,8 +115,7 @@ export const guilfordCourthousePeople: Array<{
       id: 'person-john-gunby',
       name: 'Colonel John Gunby',
       roles: ['Continental Army Officer', '1st Maryland Regiment Commander'],
-      bioShort:
-        'Commanded the 1st Maryland Regiment at Guilford Courthouse. His regiment\'s initial withdrawal and subsequent counterattack was the battle\'s pivotal third-line moment, forcing Cornwallis to order grapeshot into his own men to halt the American advance.',
+      bioShort: 'Commanded the 1st Maryland at Guilford Courthouse. His regiment\'s initial withdrawal and subsequent counterattack was the battle\'s pivotal moment, forcing Cornwallis to order grapeshot into his own men.',
       birthYear: 1745,
       deathYear: 1807,
       verificationStatus: 'VERIFIED',
@@ -292,8 +280,7 @@ export const guilfordCourthouseEvents: Prisma.EventCreateInput[] = [
     name: 'Fox and Pitt Debate Guilford Courthouse in Parliament',
     startDate: new Date('1781-04-09'),
     datePrecision: 'DAY',
-    summary:
-      'When news of Guilford Courthouse reached London, Charles James Fox rose in Parliament to argue that a victory that produced such casualties was worse than a defeat. William Pitt disputed this characterization. The debate marked the first serious parliamentary questioning of the war\'s continuability and foreshadowed the political crisis that would follow Yorktown.',
+    summary: 'Fox rose in Parliament to argue that a victory producing such casualties was worse than a defeat. Pitt disputed him. The debate marked the first serious parliamentary questioning of the war\'s continuability and foreshadowed the political crisis that followed Yorktown.',
     significanceWeight: 78,
     lat: 51.4996,
     lng: -0.1248,
@@ -304,8 +291,7 @@ export const guilfordCourthouseEvents: Prisma.EventCreateInput[] = [
     name: 'Lieutenant Colonel James Webster Dies of Wounds',
     startDate: new Date('1781-03-23'),
     datePrecision: 'DAY',
-    summary:
-      'Eight days after the battle, Lieutenant Colonel James Webster — one of Cornwallis\'s most trusted officers — died of the wounds he had received leading the British right flank. Cornwallis reportedly wept publicly at his death. Webster\'s loss, along with the other officer casualties, critically weakened British command capacity for the Virginia campaign that followed.',
+    summary: 'Eight days after the battle, Webster died of wounds received leading the British right flank. Cornwallis wept publicly. Webster\'s loss, along with other officer casualties, critically weakened British command capacity for the subsequent Virginia campaign.',
     significanceWeight: 68,
     lat: 36.1283,
     lng: -79.8481,
@@ -316,8 +302,7 @@ export const guilfordCourthouseEvents: Prisma.EventCreateInput[] = [
     name: 'Greene Moves South to Resume the Carolina Campaign',
     startDate: new Date('1781-04-06'),
     datePrecision: 'DAY',
-    summary:
-      'Rather than follow Cornwallis to Wilmington or into Virginia, Greene turned south toward South Carolina to attack the British posts Cornwallis had left behind. This decision — to ignore the British main army and instead dismantle their logistical network — was the strategic insight that made the Southern Campaign\'s outcome possible. By September 1781, Greene had reduced British control to the coastal enclaves around Charleston and Savannah.',
+    summary: 'Rather than follow Cornwallis north, Greene turned south to attack the British posts left behind in SC. Ignoring the main army to dismantle their logistical network was the strategic insight that made the campaign\'s outcome possible. By September 1781, British control was reduced to coastal enclaves.',
     significanceWeight: 92,
     lat: 34.0007,
     lng: -81.0348,
@@ -375,8 +360,7 @@ export const guilfordCourthouseLessonPlans: Prisma.LessonPlanCreateInput[] = [
     title: 'Guilford Courthouse: Can You Win a Battle by Losing It?',
     gradeRange: '7-10',
     estimatedDuration: '2 class periods',
-    summary:
-      'Students use the Battle of Guilford Courthouse to explore the difference between tactical victory and strategic success. Using maps of the three-line deployment, primary accounts from Greene and Cornwallis, and casualty data, students evaluate whether Greene\'s decision to withdraw after a strong performance was a failure or a calculated strategic success. The lesson introduces the concept of Pyrrhic victory and asks students to apply it to other historical contexts.',
+    summary: 'Students use Guilford Courthouse to explore the difference between tactical victory and strategic success. Using deployment maps, primary accounts, and casualty data, students evaluate whether Greene\'s withdrawal was failure or calculated strategy — and apply the concept of Pyrrhic victory to other historical contexts.',
     lessonData: {
       objectives: [
         'Distinguish tactical victory from strategic success',
@@ -420,8 +404,7 @@ export const guilfordCourthouseLessonPlans: Prisma.LessonPlanCreateInput[] = [
     title: 'The Militia Problem: Why Armies Are Hard to Build',
     gradeRange: '9-12',
     estimatedDuration: '2-3 class periods',
-    summary:
-      'The performance of North Carolina militia at Guilford Courthouse — many fled after firing one volley — invites a deeper inquiry into the Continental Army\'s persistent manpower and reliability problem. Students examine why Greene placed militia in the first line knowing many would flee, how Edward Stevens\'s extreme measure of stationing riflemen behind his own troops reflects the limits of voluntary military service, and what Guilford Courthouse reveals about the relationship between republican ideology and the practical demands of fighting a war.',
+    summary: 'The militia\'s performance at Guilford Courthouse invites inquiry into the Continental Army\'s persistent reliability problem. Students examine why Greene placed militia knowing many would flee, how Stevens\'s extreme measure of stationing riflemen behind his own men reflects the limits of voluntary service, and what the battle reveals about republican ideology and military reality.',
     lessonData: {
       objectives: [
         'Analyze structural differences between Continental regulars and state militia',
@@ -475,29 +458,25 @@ export const guilfordCourthouseAdditionalLinks: Array<{
   {
     toTownId: 'us-nc-kings-mountain',
     linkType: 'SHARED_THEME',
-    reason:
-      'Both battles were decisive turning points in the Southern Campaign that destroyed British ability to control the Carolina interior. Kings Mountain (October 1780) eliminated the Loyalist flank force; Guilford Courthouse (March 1781) bled the main British army into strategic paralysis.',
+    reason: 'Both battles destroyed British ability to control the Carolina interior. Kings Mountain (October 1780) eliminated the Loyalist flank; Guilford Courthouse (March 1781) bled the main army into paralysis. Together they define the Southern Campaign\'s turning point.',
     weight: 95,
   },
   {
     toTownId: 'us-sc-cowpens',
     linkType: 'SHARED_PERSON',
-    reason:
-      'Nathanael Greene commanded the Southern Department for both Cowpens (where Daniel Morgan won) and Guilford Courthouse. William Washington\'s cavalry fought at both battles. The tactical lessons of Cowpens — the layered three-line defense — directly shaped Greene\'s deployment at Guilford Courthouse six weeks later.',
+    reason: 'Greene commanded the Southern Department for both battles; William Washington\'s cavalry fought at both. The layered three-line defense at Cowpens directly shaped Greene\'s deployment at Guilford Courthouse six weeks later.',
     weight: 98,
   },
   {
     toTownId: 'us-va-yorktown',
     linkType: 'SHARED_EVENT',
-    reason:
-      'Cornwallis\'s 27 percent casualties at Guilford Courthouse made the Yorktown campaign logistically inevitable: he could not remain in the North Carolina interior and turned north, where Washington and Rochambeau trapped him. Guilford Courthouse is the direct strategic cause of Yorktown.',
+    reason: 'Cornwallis\'s 27 percent casualties made the Yorktown campaign inevitable. Unable to remain in the NC interior, he turned north where Washington and Rochambeau trapped him. Guilford Courthouse is the direct strategic cause of Yorktown.',
     weight: 92,
   },
   {
     toTownId: 'us-sc-camden',
     linkType: 'SHARED_THEME',
-    reason:
-      'Camden (August 1780) was the catastrophe that destroyed the first Southern Army under Gates; Guilford Courthouse was the battle that proved the reconstituted army under Greene could impose strategic defeat even in tactical loss. The two battles bracket the arc of the Southern Campaign\'s recovery.',
+    reason: 'Camden (August 1780) destroyed the first Southern Army under Gates; Guilford Courthouse proved the reconstituted army under Greene could impose strategic defeat even in tactical loss. The two battles bracket the arc of the Southern Campaign\'s recovery.',
     weight: 85,
   },
 ];
@@ -513,9 +492,7 @@ The context requires understanding what had happened in the months before. After
 
 The Overmountain Men took the threat as a call to arms rather than a warning. Colonels Isaac Shelby and John Sevier organized a force from the Watauga settlements and moved east over the mountains to find Ferguson. They were joined by units from Virginia under William Campbell and from the Carolinas under Benjamin Cleveland and Joseph Winston. The assembled force — all volunteer, all mounted, all riflemen — numbered around 900 men when they located Ferguson at Kings Mountain, a narrow ridge rising seventy feet above the surrounding plateau on the North Carolina–South Carolina border.
 
-Ferguson chose the site deliberately. The summit of Kings Mountain, he wrote, was the best defensive position in the world and God Almighty himself could not drive him off it. The Overmountain Men surrounded the base and attacked uphill from multiple directions simultaneously. The defenders' muskets were disadvantaged against rifle fire from tree cover below. Ferguson was shot dead on the mountain, reportedly having had his horse shot from under him twice before his own death. The Loyalist force, unable to retreat and refused quarter by some attackers still furious over the Waxhaws massacre five months earlier, suffered approximately 290 killed and 163 wounded; the remaining 700 surrendered. Patriot casualties were around 90 killed and wounded.
-
-The battle's consequences were disproportionate to its size. Cornwallis, receiving news of Ferguson's destruction, canceled his invasion of North Carolina and withdrew to winter quarters in South Carolina. Thomas Jefferson called Kings Mountain the turn of the tide of success. The backcountry Loyalist movement never recovered; the men who might have secured British control of the interior had been killed or captured by their neighbors. The Overmountain Men disappeared back over the mountains and fought no more battles in the Revolution — but the battle they fought reshaped the war.`,
+Ferguson chose the site deliberately. The summit of Kings Mountain, he wrote, was the best defensive position in the world and God Almighty himself could not drive him off it. The Overmountain Men surrounded the base and attacked uphill from multiple directions simultaneously. The defenders' muskets were disadvantaged against rifle fire from tree cover below. Ferguson was shot dead on the mountain. The Loyalist force, unable to retreat and refused quarter by some attackers still furious over the Waxhaws massacre five months earlier, suffered approximately 290 killed and 163 wounded; the remaining 700 surrendered. Patriot casualties were around 90 killed and wounded. Cornwallis, receiving news of Ferguson's destruction, canceled his invasion of North Carolina and withdrew to winter quarters in South Carolina. Thomas Jefferson called Kings Mountain the turn of the tide of success. The backcountry Loyalist movement never recovered. The Overmountain Men disappeared back over the mountains and fought no more battles in the Revolution — but the battle they fought reshaped the war.`,
 };
 
 // ============================================================================
@@ -531,50 +508,43 @@ export const kingsMountainPeople: Array<{
       id: 'person-patrick-ferguson',
       name: 'Major Patrick Ferguson',
       roles: ['British Army Officer', 'Loyalist Militia Commander', 'Firearms Inventor'],
-      bioShort:
-        'The only British regular officer at Kings Mountain, Ferguson commanded approximately 1,100 Loyalist militia. He invented the Ferguson breech-loading rifle — among the most advanced firearms of the era — and had a reputation as one of the British army\'s most capable officers. His ultimatum to the Overmountain settlements triggered the campaign that killed him.',
+      bioShort: 'The only British regular at Kings Mountain, commanding 1,100 Loyalist militia. Inventor of the Ferguson breech-loading rifle and one of the army\'s most capable officers. His ultimatum to the Overmountain settlements triggered the campaign that killed him.',
       birthYear: 1744,
       deathYear: 1780,
       verificationStatus: 'VERIFIED',
     },
-    connectionNote:
-      'Commanded the Loyalist force at Kings Mountain; killed in the battle while attempting to rally his troops. His death and the destruction of his command ended the British left flank of the Carolina invasion.',
+    connectionNote: 'Commanded the Loyalist force at Kings Mountain; killed attempting to rally his troops. His death ended the British left flank of the Carolina invasion.',
   },
   {
     person: {
       id: 'person-isaac-shelby',
       name: 'Colonel Isaac Shelby',
       roles: ['Overmountain Leader', 'Watauga Settlement Militia Commander', 'First Governor of Kentucky'],
-      bioShort:
-        'One of the two primary organizers of the Overmountain Men. Shelby led the Watauga settlement forces and shared command at Kings Mountain with John Sevier and William Campbell. He later became the first governor of Kentucky. His decision to respond to Ferguson\'s ultimatum with an offensive campaign rather than defensive preparation was the strategic insight that made the battle possible.',
+      bioShort: 'Co-organizer of the Overmountain Men who led Watauga forces at Kings Mountain. His decision to respond to Ferguson\'s ultimatum offensively rather than defensively was the strategic insight that made the battle possible. Later became the first governor of Kentucky.',
       birthYear: 1750,
       deathYear: 1826,
       verificationStatus: 'VERIFIED',
     },
-    connectionNote:
-      'Co-organized the Overmountain Men and co-commanded at Kings Mountain; his aggressive response to Ferguson\'s ultimatum shaped the campaign.',
+    connectionNote: 'Co-organized the Overmountain Men and co-commanded at Kings Mountain; his aggressive response to Ferguson\'s ultimatum shaped the campaign.',
   },
   {
     person: {
       id: 'person-john-sevier',
       name: 'Colonel John Sevier',
       roles: ['Overmountain Leader', 'Watauga Settlement Militia Commander', 'First Governor of Tennessee'],
-      bioShort:
-        'Shelby\'s co-organizer of the Overmountain expedition, commanding the Nolachucky River settlements. Sevier became the first governor of Tennessee and the most celebrated figure of the backcountry Revolution. His mounted riflemen were among the most effective fighters at Kings Mountain, using the mountain\'s wooded slopes to maintain fire superiority over Ferguson\'s musket-armed Loyalists.',
+      bioShort: 'Shelby\'s co-organizer of the Overmountain expedition, commanding the Nolachucky settlements. His riflemen used the wooded slopes to maintain fire superiority over Ferguson\'s musket-armed Loyalists. Became the first governor of Tennessee and most celebrated figure of the backcountry Revolution.',
       birthYear: 1745,
       deathYear: 1815,
       verificationStatus: 'VERIFIED',
     },
-    connectionNote:
-      'Co-organized and co-commanded the Overmountain Men at Kings Mountain; later became the first governor of Tennessee.',
+    connectionNote: 'Co-organized and co-commanded the Overmountain Men at Kings Mountain; later became the first governor of Tennessee.',
   },
   {
     person: {
       id: 'person-william-campbell-km',
       name: 'Colonel William Campbell',
       roles: ['Virginia Militia Commander', 'Overmountain Co-Commander'],
-      bioShort:
-        'Virginia militia colonel who led roughly 400 riflemen — the largest contingent at Kings Mountain — and served as overall commander of the combined Patriot force. His forceful leadership of disparate independent commands directed the encirclement that trapped Ferguson\'s command.',
+      bioShort: 'Virginia militia colonel who led roughly 400 riflemen — the largest contingent at Kings Mountain — and served as overall commander. His forceful leadership of disparate independent commands directed the encirclement that trapped Ferguson\'s command.',
       birthYear: 1745,
       deathYear: 1781,
       verificationStatus: 'VERIFIED',
@@ -586,8 +556,7 @@ export const kingsMountainPeople: Array<{
       id: 'person-benjamin-cleveland',
       name: 'Colonel Benjamin Cleveland',
       roles: ['North Carolina Militia Commander', 'Wilkes County Leader'],
-      bioShort:
-        'Wilkes County, NC militia colonel who contributed roughly 350 men to the Kings Mountain expedition and attacked from the mountain\'s north slope. Known for aggressive prosecution of the backcountry civil war against Loyalists before and after the battle.',
+      bioShort: 'Wilkes County, NC militia colonel who contributed roughly 350 men to Kings Mountain and attacked from the north slope. Known for aggressive prosecution of the backcountry civil war against Loyalists.',
       birthYear: 1738,
       deathYear: 1806,
       verificationStatus: 'VERIFIED',
@@ -599,8 +568,7 @@ export const kingsMountainPeople: Array<{
       id: 'person-joseph-winston',
       name: 'Colonel Joseph Winston',
       roles: ['North Carolina Militia Commander', 'Surry County Leader'],
-      bioShort:
-        'Surry County, NC militia colonel whose contingent joined the encircling assault at Kings Mountain. Winston-Salem, North Carolina takes part of its name from him.',
+      bioShort: 'Surry County, NC militia colonel whose contingent joined the Kings Mountain encirclement. Winston-Salem, NC takes part of its name from him.',
       birthYear: 1746,
       deathYear: 1815,
       verificationStatus: 'VERIFIED',
@@ -612,8 +580,7 @@ export const kingsMountainPeople: Array<{
       id: 'person-virginia-sal',
       name: 'Virginia Sal (Virginia Paul)',
       roles: ['Camp Follower', 'Loyalist Encampment Resident'],
-      bioShort:
-        'One of two women recorded present in Ferguson\'s camp, identified in contemporary accounts as "Virginia Sal" and "Virginia Paul." Killed in the fighting. Their presence and fate represent the invisible world of camp followers whose lives rarely appear in military history.',
+      bioShort: 'One of two women recorded in Ferguson\'s camp — "Virginia Sal" and "Virginia Paul" in contemporary accounts. Killed in the fighting. Their presence represents the invisible world of camp followers whose lives rarely appear in military history.',
       birthYear: null,
       deathYear: 1780,
       verificationStatus: 'ANECDOTAL',
@@ -625,8 +592,7 @@ export const kingsMountainPeople: Array<{
       id: 'person-charles-mcdowell',
       name: 'Colonel Charles McDowell',
       roles: ['Burke and Rutherford County Militia Commander', 'Overmountain Organizer'],
-      bioShort:
-        'NC militia colonel who organized the initial Patriot response to Ferguson\'s advance and helped assemble the Overmountain coalition. Deferred overall command to William Campbell before the battle, recognizing that unified direction was essential to the ad hoc force.',
+      bioShort: 'NC militia colonel who organized the initial Patriot response to Ferguson and helped assemble the Overmountain coalition. Deferred overall command to Campbell, recognizing that unified direction was essential.',
       birthYear: 1743,
       deathYear: 1815,
       verificationStatus: 'VERIFIED',
@@ -712,8 +678,7 @@ export const kingsMountainEvents: Prisma.EventCreateInput[] = [
     name: 'Battle of Kings Mountain',
     startDate: new Date('1780-10-07'),
     datePrecision: 'DAY',
-    summary:
-      'Approximately 900 Patriot riflemen from the Watauga settlements of present-day Tennessee, Virginia, and the Carolinas surrounded and destroyed a 1,100-man Loyalist force under Major Patrick Ferguson on a narrow ridgeline in present-day South Carolina. The battle lasted under an hour. Ferguson was killed; his entire command was killed, wounded, or captured. Patriot losses were roughly 90 killed and wounded. Cornwallis received the news and canceled his invasion of North Carolina.',
+    summary: 'About 900 Patriot riflemen surrounded and destroyed 1,100 Loyalists under Major Patrick Ferguson on a narrow ridge in present-day South Carolina. The battle lasted under an hour. Ferguson was killed; his entire command killed, wounded, or captured. Patriot losses: roughly 90. Cornwallis received the news and canceled his invasion of North Carolina.',
     significanceWeight: 96,
     lat: 35.1327,
     lng: -81.4129,
@@ -724,8 +689,7 @@ export const kingsMountainEvents: Prisma.EventCreateInput[] = [
     name: 'Ferguson\'s Ultimatum to the Overmountain Settlements',
     startDate: new Date('1780-09-10'),
     datePrecision: 'MONTH',
-    summary:
-      'Major Patrick Ferguson sent a message to the Watauga settlements west of the mountains threatening to march over the mountains, hang their leaders, and lay waste to their country if they continued Patriot resistance. The ultimatum had the opposite of its intended effect: it prompted Isaac Shelby and John Sevier to organize an offensive expedition rather than wait for a British attack. Ferguson\'s threat transformed a defensive settlement population into an offensive force.',
+    summary: 'Ferguson sent word to the Watauga settlements: cease resistance or he would march over the mountains, hang their leaders, and lay waste to their country. The ultimatum backfired — Shelby and Sevier organized an offensive expedition rather than wait for a British attack. Ferguson\'s threat transformed a defensive population into the force that killed him.',
     significanceWeight: 80,
     lat: 36.3498,
     lng: -82.2121,
@@ -752,17 +716,6 @@ export const kingsMountainEvents: Prisma.EventCreateInput[] = [
     significanceWeight: 68,
     lat: 36.0600,
     lng: -82.0700,
-    town: { connect: { id: 'us-nc-kings-mountain' } },
-  },
-  {
-    id: 'event-kings-mountain-council-of-war',
-    name: 'Patriot Council of War Selects Campbell as Commander',
-    startDate: new Date('1780-10-06'),
-    datePrecision: 'DAY',
-    summary: 'The evening before the battle, Patriot colonels agreed on William Campbell of Virginia as overall commander — over more senior officers including McDowell. Campbell\'s reputation for decisiveness and the trust of the combined force made his selection the consensus choice for the ad hoc coalition.',
-    significanceWeight: 65,
-    lat: 35.2300,
-    lng: -81.5600,
     town: { connect: { id: 'us-nc-kings-mountain' } },
   },
   {
@@ -820,17 +773,6 @@ export const kingsMountainEvents: Prisma.EventCreateInput[] = [
     lng: -81.7100,
     town: { connect: { id: 'us-nc-kings-mountain' } },
   },
-  {
-    id: 'event-kings-mountain-centennial',
-    name: 'Battle Centennial Celebration',
-    startDate: new Date('1880-10-07'),
-    datePrecision: 'DAY',
-    summary: 'The centennial drew 10,000 visitors including President Hayes, beginning organized preservation efforts. The celebration also reflected reunion-era politics: a battle fought entirely between Americans was an uncomplicated commemoration in a period of sectional reconciliation.',
-    significanceWeight: 58,
-    lat: 35.1327,
-    lng: -81.4129,
-    town: { connect: { id: 'us-nc-kings-mountain' } },
-  },
 ];
 
 // ============================================================================
@@ -883,8 +825,7 @@ export const kingsMountainLessonPlans: Prisma.LessonPlanCreateInput[] = [
     title: 'Kings Mountain: The Revolution as Civil War',
     gradeRange: '7-10',
     estimatedDuration: '2 class periods',
-    summary:
-      'Students use Kings Mountain to examine the Revolutionary War\'s civil war dimension — the conflict between American Patriots and Loyalists that ran through every colony and was most violent in the Carolina backcountry. By analyzing who fought at Kings Mountain (no British regulars), what grievances drove both sides, and what the "quarter controversy" reveals about the limits of military honor in civil conflict, students develop a more complete understanding of what the Revolution actually was for the people who lived through it.',
+    summary: 'Students use Kings Mountain to examine the Revolution\'s civil war dimension. By analyzing who fought (no British regulars), what grievances drove both sides, and what the "quarter controversy" reveals about military honor in civil conflict, students develop a more complete understanding of what the Revolution actually was for the people who lived it.',
     lessonData: {
       objectives: [
         'Identify the civil war dimension of the Revolutionary War, particularly in the Carolina backcountry',
@@ -928,8 +869,7 @@ export const kingsMountainLessonPlans: Prisma.LessonPlanCreateInput[] = [
     title: 'The Overmountain Men: Volunteer Armies and the Limits of Military Service',
     gradeRange: '8-12',
     estimatedDuration: '2 class periods',
-    summary:
-      'The Overmountain Men came over the mountains without orders, fought one battle, and went home. This lesson uses their story to examine what motivates voluntary military service, the difference between conscript armies and citizen-soldiers, and how a force of frontier farmers with no formal military structure defeated a trained militia commanded by one of the British army\'s most capable officers. Students also examine Ferguson\'s tactical decision to take the high ground and evaluate whether it was sound given the specific characteristics of his opponents.',
+    summary: 'The Overmountain Men came over the mountains without orders, fought one battle, and went home. This lesson examines what motivates voluntary military service and how frontier farmers with no formal structure defeated a trained force under one of the army\'s best officers. Students also evaluate Ferguson\'s decision to take the high ground given the specific characteristics of his opponents.',
     lessonData: {
       objectives: [
         'Analyze motivations for voluntary military service in the Overmountain expedition',
@@ -983,29 +923,25 @@ export const kingsMountainAdditionalLinks: Array<{
   {
     toTownId: 'us-nc-guilford-courthouse',
     linkType: 'SHARED_THEME',
-    reason:
-      'Kings Mountain (October 1780) and Guilford Courthouse (March 1781) are the two battles that broke British strategic capability in the Carolina interior. Kings Mountain eliminated Cornwallis\'s Loyalist left flank and forced his winter retreat; Guilford Courthouse bled his main army into paralysis. Together they define the turning of the Southern Campaign.',
+    reason: 'Kings Mountain (October 1780) and Guilford Courthouse (March 1781) are the two battles that broke British strategic capability in the Carolinas. Kings Mountain eliminated Cornwallis\'s Loyalist left flank; Guilford Courthouse bled his main army into paralysis. Together they define the Southern Campaign\'s turning point.',
     weight: 95,
   },
   {
     toTownId: 'us-sc-cowpens',
     linkType: 'SHARED_THEME',
-    reason:
-      'Cowpens (January 1781) followed Kings Mountain in the sequence of Patriot victories that destroyed British offensive capability in the Carolinas. All three battles — Kings Mountain, Cowpens, Guilford Courthouse — are linked as the arc of the Southern Campaign\'s reversal between October 1780 and March 1781.',
+    reason: 'Cowpens (January 1781) followed Kings Mountain in the sequence of Patriot victories destroying British offensive capability. All three — Kings Mountain, Cowpens, Guilford Courthouse — define the arc of the Southern Campaign\'s reversal between October 1780 and March 1781.',
     weight: 90,
   },
   {
     toTownId: 'us-sc-charleston',
     linkType: 'SHARED_EVENT',
-    reason:
-      'Charleston\'s fall in May 1780 and Camden in August 1780 created the crisis that made Kings Mountain necessary. The same Southern Campaign that began with Charleston\'s catastrophic surrender ended with the sequence of Patriot victories that undid British control of the interior — Kings Mountain being the first reversal in that sequence.',
+    reason: 'Charleston\'s fall (May 1780) and Camden (August 1780) created the crisis that made Kings Mountain necessary. The same Southern Campaign that began with Charleston\'s catastrophic surrender ended with the Patriot victories that undid British interior control — Kings Mountain being the first reversal.',
     weight: 85,
   },
   {
     toTownId: 'us-tn-sycamore-shoals',
     linkType: 'SHARED_EVENT',
-    reason:
-      'Sycamore Shoals (present-day Elizabethton, Tennessee) was the muster point where the Overmountain Men assembled on September 25, 1780 before beginning their march to Kings Mountain. The Overmountain Victory National Historic Trail connects the two sites and traces the expedition\'s full route.',
+    reason: 'Sycamore Shoals (present-day Elizabethton, TN) was the muster point where Overmountain Men assembled September 25, 1780 before marching to Kings Mountain. The Overmountain Victory National Historic Trail connects both sites.',
     weight: 92,
   },
 ];
