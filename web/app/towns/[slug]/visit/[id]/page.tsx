@@ -7,7 +7,7 @@ import {
   Prose,
 } from "@/components/editorial";
 
-const EDITORIAL_SLUGS = new Set(["boston-ma"]);
+const EDITORIAL_SLUGS = new Set(["boston-ma", "lexington-ma", "concord-ma", "salem-ma", "worcester-ma", "springfield-ma", "plymouth-ma"]);
 
 const PLACE_TYPE_LABELS: Record<string, string> = {
   BATTLEFIELD: "Battlefield",
