@@ -7,10 +7,10 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "cd .. && npx prisma generate && cd web && next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "eslint",
-    "postinstall": "cd .. && npx prisma generate || true"
+    "postinstall": "prisma generate || true"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.1",
