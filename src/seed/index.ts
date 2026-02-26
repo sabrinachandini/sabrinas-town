@@ -195,6 +195,12 @@ import {
   newBernTownUpdate, newBernPeople, newBernPlaces, newBernEvents, newBernStories, newBernLessonPlans, newBernAdditionalLinks,
   wilmingtonNcTownUpdate, wilmingtonNcPeople, wilmingtonNcPlaces, wilmingtonNcEvents, wilmingtonNcStories, wilmingtonNcLessonPlans, wilmingtonNcAdditionalLinks,
 } from './sprints/nc-coastal.js';
+import {
+  lexingtonTownPersons, lexingtonAdditionalPerson, lexingtonAdditionalEvents,
+  concordTownPersons, concordAdditionalPerson, concordAdditionalEvents,
+  salemTownPersons, salemAdditionalEvents,
+  worcesterTownPersons, springfieldTownPersons, plymouthTownPersons,
+} from './sprints/ma-flagship.js';
 import { computeTownScore } from '../services/scoring.js';
 import { TOP_75_TOWNS, HUB_TOWN_IDS } from '../data/top75.js';
 import { Prisma } from '@prisma/client';
@@ -1537,6 +1543,48 @@ async function main() {
       if (!existing) { try { await prisma.townLink.create({ data: { fromTown: { connect: { id: town.id } }, toTown: { connect: { id: link.toTownId } }, linkType: link.linkType as any, reason: link.reason, weight: link.weight } }); } catch (e) { /* skip */ } }
     }
     console.log(`   ✓ ${town.name}: ${town.people.length} people, ${town.places.length} places, ${town.events.length} events, ${town.stories.length} stories, ${town.lessonPlans.length} lesson plans`);
+  }
+
+  // 24. MA Flagship TownPerson links + gap-closing events/persons
+  console.log('\n🏛️  Linking MA flagship town people + filling event gaps...');
+  // Lexington: add 1 new person + TownPerson links + 4 events
+  await prisma.person.upsert({ where: { id: lexingtonAdditionalPerson.id! }, update: { name: lexingtonAdditionalPerson.name, bioShort: lexingtonAdditionalPerson.bioShort, roles: lexingtonAdditionalPerson.roles }, create: lexingtonAdditionalPerson });
+  for (const tp of lexingtonTownPersons) {
+    const existing = await prisma.townPerson.findFirst({ where: { townId: 'us-ma-lexington', personId: tp.personId } });
+    if (!existing) { await prisma.townPerson.create({ data: { town: { connect: { id: 'us-ma-lexington' } }, person: { connect: { id: tp.personId } }, connectionNote: tp.connectionNote } }); }
+  }
+  for (const event of lexingtonAdditionalEvents) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
+  console.log(`   ✓ Lexington: ${lexingtonTownPersons.length} TownPerson links, ${lexingtonAdditionalEvents.length} new events`);
+
+  // Concord: add 1 new person + TownPerson links + 4 events
+  await prisma.person.upsert({ where: { id: concordAdditionalPerson.id! }, update: { name: concordAdditionalPerson.name, bioShort: concordAdditionalPerson.bioShort, roles: concordAdditionalPerson.roles }, create: concordAdditionalPerson });
+  for (const tp of concordTownPersons) {
+    const existing = await prisma.townPerson.findFirst({ where: { townId: 'us-ma-concord', personId: tp.personId } });
+    if (!existing) { await prisma.townPerson.create({ data: { town: { connect: { id: 'us-ma-concord' } }, person: { connect: { id: tp.personId } }, connectionNote: tp.connectionNote } }); }
+  }
+  for (const event of concordAdditionalEvents) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
+  console.log(`   ✓ Concord: ${concordTownPersons.length} TownPerson links, ${concordAdditionalEvents.length} new events`);
+
+  // Salem: TownPerson links + 2 events
+  for (const tp of salemTownPersons) {
+    const existing = await prisma.townPerson.findFirst({ where: { townId: 'us-ma-salem', personId: tp.personId } });
+    if (!existing) { await prisma.townPerson.create({ data: { town: { connect: { id: 'us-ma-salem' } }, person: { connect: { id: tp.personId } }, connectionNote: tp.connectionNote } }); }
+  }
+  for (const event of salemAdditionalEvents) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
+  console.log(`   ✓ Salem: ${salemTownPersons.length} TownPerson links, ${salemAdditionalEvents.length} new events`);
+
+  // Worcester, Springfield, Plymouth: TownPerson links only
+  const townPersonOnlyTowns = [
+    { id: 'us-ma-worcester', name: 'Worcester', tps: worcesterTownPersons },
+    { id: 'us-ma-springfield', name: 'Springfield', tps: springfieldTownPersons },
+    { id: 'us-ma-plymouth', name: 'Plymouth', tps: plymouthTownPersons },
+  ];
+  for (const town of townPersonOnlyTowns) {
+    for (const tp of town.tps) {
+      const existing = await prisma.townPerson.findFirst({ where: { townId: town.id, personId: tp.personId } });
+      if (!existing) { await prisma.townPerson.create({ data: { town: { connect: { id: town.id } }, person: { connect: { id: tp.personId } }, connectionNote: tp.connectionNote } }); }
+    }
+    console.log(`   ✓ ${town.name}: ${town.tps.length} TownPerson links`);
   }
 
   // Summary
