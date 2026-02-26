@@ -2,7 +2,7 @@
 // Town routes: public endpoints for town data
 
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
-import { getTownBySlug, getTownStories, getTownPlaces, getTownSources, getGlobalChangelog } from '../services/townService.js';
+import { getTownBySlug, getTownStories, getTownPlaces, getTownSources, getTownPeople, getTownStoryById, getGlobalChangelog } from '../services/townService.js';
 import { getTeacherModule, trackTeacherDownload } from '../services/teacherService.js';
 import { TownQuerySchema, StorySummarySchema, PlacesQuerySchema } from '../validators/town.js';
 import { optionalEmbedApiKey } from '../middleware/auth.js';
@@ -242,6 +242,88 @@ export async function registerTownRoutes(fastify: FastifyInstance): Promise<void
         });
       } catch (error) {
         request.log.error(error, 'Error fetching sources');
+        return reply.status(500).send({
+          success: false,
+          error: 'Internal server error',
+        });
+      }
+    }
+  );
+
+  /**
+   * GET /towns/:slug/people
+   * Returns people connected to a town via events
+   */
+  fastify.get(
+    '/towns/:slug/people',
+    async (
+      request: FastifyRequest<{
+        Params: { slug: string };
+      }>,
+      reply: FastifyReply
+    ) => {
+      const { slug } = request.params;
+
+      try {
+        const data = await getTownPeople(slug);
+
+        if (!data) {
+          return reply.status(404).send({
+            success: false,
+            error: `Town not found: ${slug}`,
+          });
+        }
+
+        return reply.send({
+          success: true,
+          data,
+          meta: {
+            timestamp: new Date().toISOString(),
+          },
+        });
+      } catch (error) {
+        request.log.error(error, 'Error fetching people');
+        return reply.status(500).send({
+          success: false,
+          error: 'Internal server error',
+        });
+      }
+    }
+  );
+
+  /**
+   * GET /towns/:slug/stories/:id
+   * Returns a single story with full text
+   */
+  fastify.get(
+    '/towns/:slug/stories/:id',
+    async (
+      request: FastifyRequest<{
+        Params: { slug: string; id: string };
+      }>,
+      reply: FastifyReply
+    ) => {
+      const { slug, id } = request.params;
+
+      try {
+        const data = await getTownStoryById(slug, id);
+
+        if (!data) {
+          return reply.status(404).send({
+            success: false,
+            error: `Story not found`,
+          });
+        }
+
+        return reply.send({
+          success: true,
+          data,
+          meta: {
+            timestamp: new Date().toISOString(),
+          },
+        });
+      } catch (error) {
+        request.log.error(error, 'Error fetching story');
         return reply.status(500).send({
           success: false,
           error: 'Internal server error',

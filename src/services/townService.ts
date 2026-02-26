@@ -419,6 +419,86 @@ export async function getGlobalChangelog(options: {
 }
 
 /**
+ * Get people connected to a town via EventPerson (not TownPerson, which may be empty)
+ */
+export async function getTownPeople(slug: string) {
+  const town = await prisma.town.findUnique({
+    where: { slug },
+    select: { id: true, slug: true, name: true },
+  });
+
+  if (!town) return null;
+
+  const eventPeople = await prisma.eventPerson.findMany({
+    where: { event: { townId: town.id } },
+    include: { person: true },
+  });
+
+  // Deduplicate by person id
+  const personMap = new Map<string, typeof eventPeople[0]['person']>();
+  for (const ep of eventPeople) {
+    if (!personMap.has(ep.person.id)) {
+      personMap.set(ep.person.id, ep.person);
+    }
+  }
+
+  const people = Array.from(personMap.values()).map((p) => ({
+    id: p.id,
+    name: p.name,
+    roles: p.roles,
+    bioShort: p.bioShort,
+    bioLong: p.bioLong,
+    birthYear: p.birthYear,
+    deathYear: p.deathYear,
+    verificationStatus: p.verificationStatus,
+  }));
+
+  return {
+    town: { id: town.id, slug: town.slug, name: town.name },
+    people,
+    count: people.length,
+  };
+}
+
+/**
+ * Get a single story with full textVersion (not truncated)
+ */
+export async function getTownStoryById(slug: string, storyId: string) {
+  const town = await prisma.town.findUnique({
+    where: { slug },
+    select: { id: true, slug: true, name: true },
+  });
+
+  if (!town) return null;
+
+  const story = await prisma.story.findFirst({
+    where: { id: storyId, townId: town.id },
+    include: {
+      subjectPerson: true,
+      storyThemes: { include: { theme: true } },
+    },
+  });
+
+  if (!story) return null;
+
+  return {
+    id: story.id,
+    title: story.title,
+    storyType: story.storyType,
+    verificationStatus: story.verificationStatus,
+    subjectPersonName: story.subjectPerson?.name ?? null,
+    narratorName: story.narratorName,
+    narratorRole: story.narratorRole,
+    textVersion: story.textVersion,
+    tags: story.tags,
+    themes: story.storyThemes.map((st) => ({
+      id: st.theme.id,
+      name: st.theme.name,
+    })),
+  };
+}
+
+/**
  * Get places for a town with grouping by category
  */
 export async function getTownPlaces(

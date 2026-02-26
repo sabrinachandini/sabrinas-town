@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getTown } from "@/lib/api";
 import { TownHeader, TownSubnav } from "@/components/town";
+import { EditorialNav } from "@/components/editorial";
 
 const EDITORIAL_SLUGS = new Set(["boston-ma"]);
 
@@ -20,6 +21,7 @@ export default async function TownLayout({ children, params }: LayoutProps) {
   if (EDITORIAL_SLUGS.has(slug)) {
     return (
       <div className="min-h-screen bg-bg-primary">
+        <EditorialNav slug={slug} />
         <main>{children}</main>
       </div>
     );

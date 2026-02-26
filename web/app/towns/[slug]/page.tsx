@@ -2,8 +2,6 @@ import {
   getTown,
   getTownSources,
   getTownClusters,
-  getTeacherModule,
-  getPlaces,
   Town,
   TownSource,
 } from "@/lib/api";
@@ -21,9 +19,6 @@ import {
 import {
   PageShell,
   PageHeader,
-  EditorialSection,
-  Prose,
-  OnThisPageSelect,
 } from "@/components/editorial";
 
 const EDITORIAL_SLUGS = new Set(["boston-ma"]);
@@ -61,36 +56,54 @@ export default async function TownOverviewPage({ params }: PageProps) {
 // ---------------------------------------------------------------------------
 
 async function EditorialTownPage({ slug }: { slug: string }) {
-  const [town, sourcesData, townClusters, teacherModule, placesData] =
-    await Promise.all([
-      getTown(slug),
-      getTownSources(slug),
-      getTownClusters(slug),
-      getTeacherModule(slug),
-      getPlaces(slug),
-    ]);
+  const [town, sourcesData] = await Promise.all([
+    getTown(slug),
+    getTownSources(slug),
+  ]);
 
   if (!town) return null;
 
   void recordOrgEvent(slug, "TOWN_VIEW");
 
-  const clusterName =
-    townClusters.length > 0 ? townClusters[0].cluster.name : undefined;
+  const firstParagraph = town.whyMatters.split("\n\n")[0];
 
-  const places = placesData
-    ? Object.values(placesData.placesByCategory).flat()
-    : town.featuredPlaces ?? [];
-
-  const sortedEvents = [...town.events].sort((a, b) => {
-    if (!a.startDate) return 1;
-    if (!b.startDate) return -1;
-    return new Date(a.startDate).getTime() - new Date(b.startDate).getTime();
-  });
-
-  const tier1 = sourcesData?.sources.filter((s) => s.credibilityTier === "TIER1") ?? [];
-  const tier2 = sourcesData?.sources.filter((s) => s.credibilityTier === "TIER2") ?? [];
-  const tier3 = sourcesData?.sources.filter((s) => s.credibilityTier === "TIER3") ?? [];
-  const tierTodo = sourcesData?.sources.filter((s) => s.credibilityTier === "TODO") ?? [];
+  const sections = [
+    {
+      label: "History",
+      href: `/towns/${slug}/history`,
+      desc: "The full narrative of what happened here and why it mattered.",
+    },
+    {
+      label: "Timeline",
+      href: `/towns/${slug}/events`,
+      desc: `${town.events.length} documented events in chronological order.`,
+    },
+    {
+      label: "People",
+      href: `/towns/${slug}/people`,
+      desc: "Historical figures connected to this town through documented events.",
+    },
+    {
+      label: "Places",
+      href: `/towns/${slug}/visit`,
+      desc: `${town.placesTotals?.total ?? 0} sites to visit, with hours and planning info.`,
+    },
+    {
+      label: "Stories",
+      href: `/towns/${slug}/stories`,
+      desc: `${town.stories.length} first-person accounts and interpretive voices.`,
+    },
+    {
+      label: "Teacher",
+      href: `/towns/${slug}/teacher`,
+      desc: "Lesson plans, primary sources, and classroom materials.",
+    },
+    {
+      label: "Sources",
+      href: `/towns/${slug}/sources`,
+      desc: `${sourcesData?.totalCount ?? 0} sources organized by credibility tier.`,
+    },
+  ];
 
   return (
     <PageShell>
@@ -99,239 +112,42 @@ async function EditorialTownPage({ slug }: { slug: string }) {
         state={town.state}
         subtitle={town.execSummary150}
         lastUpdated={sourcesData?.lastUpdated ?? town.lastUpdatedAt}
-        cluster={clusterName}
       />
 
-      <OnThisPageSelect />
+      <p className="font-body text-body leading-[1.8] text-text-primary mb-16">
+        {firstParagraph}
+      </p>
 
-      {/* ── Overview ── */}
-      <EditorialSection id="overview" title="Overview">
-        <Prose>
-          {town.whyMatters.split("\n\n").map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
-        </Prose>
-      </EditorialSection>
-
-      {/* ── Timeline ── */}
-      {sortedEvents.length > 0 && (
-        <EditorialSection id="timeline" title="Timeline">
-          <ol className="space-y-0">
-            {sortedEvents.map((event) => (
-              <li
-                key={event.id}
-                className="flex gap-6 py-4 border-b border-border-light last:border-b-0"
+      <nav>
+        <ul className="space-y-0">
+          {sections.map((section) => (
+            <li
+              key={section.label}
+              className="border-b border-border-light last:border-b-0"
+            >
+              <a
+                href={section.href}
+                className="flex items-center justify-between py-5 group"
               >
-                <span className="w-[100px] shrink-0 text-small text-text-muted font-body tabular-nums">
-                  {formatEventDate(event.startDate)}
-                </span>
                 <div>
-                  <p className="font-body font-medium">{event.name}</p>
-                  {event.summary && (
-                    <p className="mt-1 text-small text-text-muted font-body leading-relaxed">
-                      {event.summary}
-                    </p>
-                  )}
-                </div>
-              </li>
-            ))}
-          </ol>
-        </EditorialSection>
-      )}
-
-      {/* ── People ── */}
-      <EditorialSection id="people" title="People">
-        {town.events.some((e) => e.peopleCount > 0) ? (
-          <div className="space-y-0">
-            {town.events
-              .filter((e) => e.peopleCount > 0)
-              .map((event) => (
-                <div
-                  key={event.id}
-                  className="py-4 border-b border-border-light last:border-b-0"
-                >
-                  <p className="font-body font-medium">{event.name}</p>
+                  <p className="font-heading text-[1.25rem] tracking-tight group-hover:text-accent-blue transition-colors">
+                    {section.label}
+                  </p>
                   <p className="mt-1 text-small text-text-muted font-body">
-                    {event.peopleCount}{" "}
-                    {event.peopleCount === 1 ? "person" : "people"} documented
+                    {section.desc}
                   </p>
                 </div>
-              ))}
-            <p className="pt-6 text-small text-text-muted font-body italic">
-              Detailed biographical entries are being compiled. Check back as
-              this section expands.
-            </p>
-          </div>
-        ) : (
-          <p className="text-text-muted font-body">
-            Research is ongoing. People connected to {town.name} will appear
-            here.
-          </p>
-        )}
-      </EditorialSection>
-
-      {/* ── Places ── */}
-      {places.length > 0 && (
-        <EditorialSection id="places" title="Places">
-          <ol className="space-y-0 list-none">
-            {places.map((place, i) => (
-              <li
-                key={place.id}
-                className="py-4 border-b border-border-light last:border-b-0"
-              >
-                <div className="flex gap-4">
-                  <span className="text-small text-text-muted font-body tabular-nums w-6 shrink-0">
-                    {i + 1}.
-                  </span>
-                  <div>
-                    <p className="font-body font-medium">{place.name}</p>
-                    <p className="mt-1 text-small text-text-muted font-body uppercase tracking-wide">
-                      {formatPlaceType(place.placeType)}
-                      {place.address && <> &middot; {place.address}</>}
-                    </p>
-                    {place.description && (
-                      <p className="mt-2 text-small font-body leading-relaxed text-text-primary">
-                        {place.description}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </EditorialSection>
-      )}
-
-      {/* ── Teacher ── */}
-      <EditorialSection id="teacher" title="Teacher">
-        {teacherModule ? (
-          <div className="space-y-0">
-            {(() => {
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              const m = teacherModule as any;
-              const lessonPlan = m.lessonPlan;
-              return (
-                <>
-                  {m.overview && (
-                    <div className="py-4 border-b border-border-light">
-                      <p className="font-body font-medium">{m.overview.title}</p>
-                      <p className="mt-1 text-small text-text-muted font-body">
-                        {m.overview.gradeRange} &middot;{" "}
-                        {m.overview.estimatedDuration}
-                      </p>
-                      <p className="mt-2 font-body leading-relaxed">
-                        {m.overview.summary}
-                      </p>
-                    </div>
-                  )}
-                  {lessonPlan?.objectives && (
-                    <div className="py-4 border-b border-border-light">
-                      <p className="text-small text-text-muted font-body uppercase tracking-wide mb-2">
-                        Learning objectives
-                      </p>
-                      <ul className="space-y-1">
-                        {lessonPlan.objectives.map(
-                          (obj: string, i: number) => (
-                            <li key={i} className="text-small font-body">
-                              {i + 1}. {obj}
-                            </li>
-                          )
-                        )}
-                      </ul>
-                    </div>
-                  )}
-                  <div className="pt-4">
-                    <a
-                      href={`/towns/${slug}/teacher`}
-                      className="text-accent-blue text-small font-body hover:underline"
-                    >
-                      View full lesson plan
-                    </a>
-                    {" · "}
-                    <a
-                      href={`/towns/${slug}/teacher/print`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-accent-blue text-small font-body hover:underline"
-                    >
-                      Print packet
-                    </a>
-                  </div>
-                </>
-              );
-            })()}
-          </div>
-        ) : (
-          <p className="text-text-muted font-body">
-            Teacher resources for {town.name} are being developed.
-          </p>
-        )}
-      </EditorialSection>
-
-      {/* ── Stories ── */}
-      <EditorialSection id="stories" title="Stories">
-        {town.stories.length > 0 ? (
-          <div className="space-y-0">
-            {town.stories.map((story) => (
-              <div
-                key={story.id}
-                className="py-4 border-b border-border-light last:border-b-0"
-              >
-                <p className="font-body font-medium">{story.title}</p>
-                {story.subjectPersonName && (
-                  <p className="mt-1 text-small text-text-muted font-body">
-                    {story.subjectPersonName}
-                  </p>
-                )}
-                <p className="mt-2 font-body leading-relaxed">{story.excerpt}</p>
-                <p className="mt-1 text-small text-text-muted font-body uppercase tracking-wide">
-                  {story.storyType === "HISTORICAL_VOICE"
-                    ? "Historical voice"
-                    : "Modern voice"}
-                  {" · "}
-                  {story.verificationStatus.toLowerCase().replace(/_/g, " ")}
-                </p>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p className="text-text-muted font-body">
-            Stories from {town.name} are being collected.
-          </p>
-        )}
-      </EditorialSection>
-
-      {/* ── Sources ── */}
-      <EditorialSection id="sources" title="Sources">
-        {sourcesData && sourcesData.sources.length > 0 ? (
-          <div className="space-y-8">
-            <EditorialSourceGroup label="Tier 1 — Institutional and Academic" sources={tier1} />
-            <EditorialSourceGroup label="Tier 2 — Reputable Secondary" sources={tier2} />
-            <EditorialSourceGroup label="Tier 3 — General Reference" sources={tier3} />
-            <EditorialSourceGroup label="Pending Evaluation" sources={tierTodo} />
-            <Separator className="bg-border-light" />
-            <p className="text-small text-text-muted font-body">
-              For details on how we evaluate sources, see our{" "}
-              <a href="/methodology" className="text-accent-blue hover:underline">
-                Methodology
+                <span className="text-text-muted group-hover:text-accent-blue transition-colors ml-4 shrink-0">
+                  &rarr;
+                </span>
               </a>
-              .
-            </p>
-          </div>
-        ) : (
-          <p className="text-text-muted font-body">
-            Sources being compiled. Check back soon.
-          </p>
-        )}
-      </EditorialSection>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
-      {/* ── Footer ── */}
       <Separator className="mt-20 mb-10 bg-border-light" />
       <footer className="space-y-4 text-small text-text-muted font-body">
-        <p>
-          This page draws from primary sources and scholarly research. If you
-          notice an error or have additional information, please let us know.
-        </p>
         <p>
           <a
             href={`/changelog?town=${slug}`}
@@ -349,61 +165,6 @@ async function EditorialTownPage({ slug }: { slug: string }) {
         </p>
       </footer>
     </PageShell>
-  );
-}
-
-function EditorialSourceGroup({
-  label,
-  sources,
-}: {
-  label: string;
-  sources: TownSource[];
-}) {
-  if (sources.length === 0) return null;
-  return (
-    <details open className="group">
-      <summary className="cursor-pointer list-none flex items-center gap-2 select-none">
-        <span className="text-text-muted transition-transform group-open:rotate-90 text-small">
-          &#9654;
-        </span>
-        <span className="text-small text-text-muted uppercase tracking-wide font-medium font-body">
-          {label} ({sources.length})
-        </span>
-      </summary>
-      <ul className="mt-4 space-y-2">
-        {sources.map((source) => (
-          <li key={source.id} className="flex items-start gap-2">
-            <span className="w-1.5 h-1.5 mt-2 rounded-full bg-accent-blue shrink-0" />
-            <div>
-              <p className="text-small font-body">
-                {source.url ? (
-                  <a
-                    href={source.url}
-                    className="font-medium text-accent-blue hover:underline"
-                  >
-                    {source.title}
-                  </a>
-                ) : (
-                  <span className="font-medium">{source.title}</span>
-                )}
-                {" — "}
-                {source.publisherOrHolder}
-                {source.notes?.toLowerCase().includes("needs verification") && (
-                  <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-medium bg-amber-100 text-amber-800">
-                    Needs verification
-                  </span>
-                )}
-              </p>
-              {source.notes && (
-                <p className="text-small text-text-muted font-body">
-                  {source.notes}
-                </p>
-              )}
-            </div>
-          </li>
-        ))}
-      </ul>
-    </details>
   );
 }
 

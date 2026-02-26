@@ -1,6 +1,13 @@
 import { getTown, TownStory } from "@/lib/api";
 import { Container, Heading, Text, Divider } from "@/components/ui";
 import { EmptyState } from "@/components/town";
+import {
+  PageShell,
+  PageHeader,
+  EditorialSection,
+} from "@/components/editorial";
+
+const EDITORIAL_SLUGS = new Set(["boston-ma"]);
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -22,11 +29,74 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function StoriesPage({ params }: PageProps) {
   const { slug } = await params;
-  const town = await getTown(slug);
 
-  if (!town) {
-    return null;
+  if (EDITORIAL_SLUGS.has(slug)) {
+    return <EditorialStoriesPage slug={slug} />;
   }
+
+  return <ClassicStoriesPage slug={slug} />;
+}
+
+async function EditorialStoriesPage({ slug }: { slug: string }) {
+  const town = await getTown(slug);
+  if (!town) return null;
+
+  return (
+    <PageShell>
+      <PageHeader
+        name={town.name}
+        state={town.state}
+        subtitle={`First-person accounts and interpretive stories from ${town.name}.`}
+      />
+
+      <EditorialSection id="stories" title={`${town.stories.length} Stories`}>
+        {town.stories.length > 0 ? (
+          <div className="space-y-0">
+            {town.stories.map((story) => (
+              <div
+                key={story.id}
+                className="py-5 border-b border-border-light last:border-b-0"
+              >
+                <p className="font-heading text-[1.25rem] tracking-tight">
+                  {story.title}
+                </p>
+                {story.subjectPersonName && (
+                  <p className="mt-1 text-small text-text-muted font-body">
+                    {story.subjectPersonName}
+                  </p>
+                )}
+                <p className="mt-2 font-body leading-relaxed">
+                  {story.excerpt}
+                </p>
+                <p className="mt-1 text-small text-text-muted font-body uppercase tracking-wide">
+                  {story.storyType === "HISTORICAL_VOICE"
+                    ? "Historical voice"
+                    : "Modern voice"}
+                  {" · "}
+                  {story.verificationStatus.toLowerCase().replace(/_/g, " ")}
+                </p>
+                <a
+                  href={`/towns/${slug}/stories/${story.id}`}
+                  className="mt-2 inline-block text-small text-accent-blue font-body hover:underline"
+                >
+                  Read story &rarr;
+                </a>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="text-text-muted font-body">
+            Stories from {town.name} are being collected.
+          </p>
+        )}
+      </EditorialSection>
+    </PageShell>
+  );
+}
+
+async function ClassicStoriesPage({ slug }: { slug: string }) {
+  const town = await getTown(slug);
+  if (!town) return null;
 
   if (town.stories.length === 0) {
     return (
@@ -47,16 +117,14 @@ export default async function StoriesPage({ params }: PageProps) {
 
   return (
     <div className="py-section">
-      {/* Intro */}
       <Container>
         <Text className="text-text-muted max-w-[720px]">
-          Beyond dates and facts, history lives in stories — the memories, interpretations, and voices that give meaning to what happened. These are {town.name}'s.
+          Beyond dates and facts, history lives in stories — the memories, interpretations, and voices that give meaning to what happened. These are {town.name}&apos;s.
         </Text>
       </Container>
 
       <Divider spacing="section" />
 
-      {/* Story Stats */}
       <section>
         <Container>
           <div className="flex flex-wrap gap-component">
@@ -92,7 +160,6 @@ export default async function StoriesPage({ params }: PageProps) {
         </Container>
       </section>
 
-      {/* Historical Voices */}
       {historicalVoices.length > 0 && (
         <>
           <Divider spacing="section" />
@@ -113,7 +180,6 @@ export default async function StoriesPage({ params }: PageProps) {
         </>
       )}
 
-      {/* Modern Voices */}
       {modernVoices.length > 0 && (
         <>
           <Divider spacing="section" />
@@ -134,7 +200,6 @@ export default async function StoriesPage({ params }: PageProps) {
         </>
       )}
 
-      {/* Verification Note */}
       <Divider spacing="section" />
       <section>
         <Container>

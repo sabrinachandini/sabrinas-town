@@ -1,6 +1,15 @@
 import { getTown } from "@/lib/api";
 import { Container, Heading, Text, Divider } from "@/components/ui";
 import { EmptyState } from "@/components/town";
+import {
+  PageShell,
+  PageHeader,
+  EditorialSection,
+  Prose,
+  ImageWithCaption,
+} from "@/components/editorial";
+
+const EDITORIAL_SLUGS = new Set(["boston-ma"]);
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -28,6 +37,77 @@ export default async function HistoryPage({ params }: PageProps) {
     return null;
   }
 
+  if (EDITORIAL_SLUGS.has(slug)) {
+    return <EditorialHistoryPage slug={slug} town={town} />;
+  }
+
+  return <ClassicHistoryPage slug={slug} town={town} />;
+}
+
+function EditorialHistoryPage({ slug, town }: { slug: string; town: NonNullable<Awaited<ReturnType<typeof getTown>>> }) {
+  return (
+    <PageShell>
+      <PageHeader
+        name={town.name}
+        state={town.state}
+        subtitle={`The Revolutionary War history of ${town.name}.`}
+      />
+
+      <EditorialSection id="narrative" title={`Why ${town.name} Matters`}>
+        <Prose>
+          {town.whyMatters.split("\n\n").map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </Prose>
+      </EditorialSection>
+
+      <ImageWithCaption
+        alt={`Historical illustration of ${town.name}`}
+        caption="Image placeholder — historical imagery will be added as sources are verified."
+      />
+
+      {town.themes.length > 0 && (
+        <EditorialSection id="themes" title="Themes">
+          <div className="grid sm:grid-cols-2 gap-4">
+            {town.themes.map((theme) => (
+              <div
+                key={theme.id}
+                className="py-4 px-5 border border-border-light rounded-lg"
+              >
+                <p className="font-body font-medium">{theme.name}</p>
+                {theme.relevanceNote && (
+                  <p className="mt-1 text-small text-text-muted font-body">
+                    {theme.relevanceNote}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        </EditorialSection>
+      )}
+
+      {town.routes.length > 0 && (
+        <EditorialSection id="routes" title="Historical Routes">
+          <div className="space-y-0">
+            {town.routes.map((route) => (
+              <div
+                key={route.id}
+                className="py-4 border-b border-border-light last:border-b-0"
+              >
+                <p className="font-body font-medium">{route.name}</p>
+                <p className="mt-1 text-small text-text-muted font-body">
+                  Stop {route.stopOrder} of {route.totalStops}
+                </p>
+              </div>
+            ))}
+          </div>
+        </EditorialSection>
+      )}
+    </PageShell>
+  );
+}
+
+function ClassicHistoryPage({ slug, town }: { slug: string; town: NonNullable<Awaited<ReturnType<typeof getTown>>> }) {
   const hasContent = town.whyMatters || town.themes.length > 0 || town.routes.length > 0;
 
   if (!hasContent) {
@@ -42,16 +122,14 @@ export default async function HistoryPage({ params }: PageProps) {
 
   return (
     <div className="py-section">
-      {/* Intro */}
       <Container>
         <Text className="text-text-muted max-w-[720px]">
-          Every town's Revolutionary story is both local and national — shaped by geography, economy, and the particular people who happened to live there. This section explores what makes {town.name}'s history distinctive.
+          Every town&apos;s Revolutionary story is both local and national — shaped by geography, economy, and the particular people who happened to live there. This section explores what makes {town.name}&apos;s history distinctive.
         </Text>
       </Container>
 
       <Divider spacing="section" />
 
-      {/* Why It Matters - Full */}
       <section>
         <Container>
           <Heading level={2}>Why {town.name} matters</Heading>
@@ -63,7 +141,6 @@ export default async function HistoryPage({ params }: PageProps) {
         </Container>
       </section>
 
-      {/* Themes */}
       {town.themes.length > 0 && (
         <>
           <Divider spacing="section" />
@@ -93,7 +170,6 @@ export default async function HistoryPage({ params }: PageProps) {
         </>
       )}
 
-      {/* Historical Routes */}
       {town.routes.length > 0 && (
         <>
           <Divider spacing="section" />

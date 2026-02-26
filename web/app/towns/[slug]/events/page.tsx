@@ -1,6 +1,13 @@
 import { getTown, TownEvent } from "@/lib/api";
 import { Container, Heading, Text, Divider } from "@/components/ui";
 import { EmptyState } from "@/components/town";
+import {
+  PageShell,
+  PageHeader,
+  EditorialSection,
+} from "@/components/editorial";
+
+const EDITORIAL_SLUGS = new Set(["boston-ma"]);
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -28,6 +35,79 @@ export default async function EventsPage({ params }: PageProps) {
     return null;
   }
 
+  if (EDITORIAL_SLUGS.has(slug)) {
+    return <EditorialEventsPage slug={slug} town={town} />;
+  }
+
+  return <ClassicEventsPage slug={slug} town={town} />;
+}
+
+function EditorialEventsPage({
+  slug,
+  town,
+}: {
+  slug: string;
+  town: NonNullable<Awaited<ReturnType<typeof getTown>>>;
+}) {
+  const sortedEvents = [...town.events].sort((a, b) => {
+    if (!a.startDate) return 1;
+    if (!b.startDate) return -1;
+    return new Date(a.startDate).getTime() - new Date(b.startDate).getTime();
+  });
+
+  const formatDate = (dateStr: string | null) => {
+    if (!dateStr) return "";
+    const date = new Date(dateStr);
+    return date.toLocaleDateString("en-US", { year: "numeric", month: "short" });
+  };
+
+  return (
+    <PageShell>
+      <PageHeader
+        name={town.name}
+        state={town.state}
+        subtitle={`${town.events.length} documented events in chronological order.`}
+      />
+
+      <EditorialSection id="timeline" title="Timeline">
+        {sortedEvents.length > 0 ? (
+          <ol className="space-y-0">
+            {sortedEvents.map((event) => (
+              <li
+                key={event.id}
+                className="flex gap-6 py-4 border-b border-border-light last:border-b-0"
+              >
+                <span className="w-[100px] shrink-0 text-small text-text-muted font-body tabular-nums">
+                  {formatDate(event.startDate)}
+                </span>
+                <div>
+                  <p className="font-body font-medium">{event.name}</p>
+                  {event.summary && (
+                    <p className="mt-1 text-small text-text-muted font-body leading-relaxed">
+                      {event.summary}
+                    </p>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ol>
+        ) : (
+          <p className="text-text-muted font-body">
+            Timeline for {town.name} is being researched.
+          </p>
+        )}
+      </EditorialSection>
+    </PageShell>
+  );
+}
+
+function ClassicEventsPage({
+  slug,
+  town,
+}: {
+  slug: string;
+  town: NonNullable<Awaited<ReturnType<typeof getTown>>>;
+}) {
   if (town.events.length === 0) {
     return (
       <EmptyState
@@ -38,30 +118,26 @@ export default async function EventsPage({ params }: PageProps) {
     );
   }
 
-  // Sort events by date (earliest first) for timeline view
   const sortedByDate = [...town.events].sort((a, b) => {
     if (!a.startDate) return 1;
     if (!b.startDate) return -1;
     return new Date(a.startDate).getTime() - new Date(b.startDate).getTime();
   });
 
-  // Sort by significance for alternate view
   const sortedBySignificance = [...town.events].sort(
     (a, b) => b.significanceWeight - a.significanceWeight
   );
 
   return (
     <div className="py-section">
-      {/* Intro */}
       <Container>
         <Text className="text-text-muted max-w-[720px]">
-          History unfolds in sequence. This timeline places {town.name}'s key moments in chronological context, showing how local events connected to the broader war.
+          History unfolds in sequence. This timeline places {town.name}&apos;s key moments in chronological context, showing how local events connected to the broader war.
         </Text>
       </Container>
 
       <Divider spacing="section" />
 
-      {/* Timeline */}
       <section>
         <Container>
           <Heading level={2}>Chronological Timeline</Heading>
@@ -81,7 +157,6 @@ export default async function EventsPage({ params }: PageProps) {
         </Container>
       </section>
 
-      {/* By Significance */}
       <Divider spacing="section" />
       <section>
         <Container>

@@ -2,6 +2,13 @@ import { getTown, getPlaces, TownPlace } from "@/lib/api";
 import { Container, Heading, Text, Divider, Link } from "@/components/ui";
 import { EmptyState } from "@/components/town";
 import { PlacesSection } from "./PlacesSection";
+import {
+  PageShell,
+  PageHeader,
+  EditorialSection,
+} from "@/components/editorial";
+
+const EDITORIAL_SLUGS = new Set(["boston-ma"]);
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -31,6 +38,113 @@ export default async function VisitPage({ params }: PageProps) {
   if (!town) {
     return null;
   }
+
+  if (EDITORIAL_SLUGS.has(slug)) {
+    return <EditorialVisitPage slug={slug} town={town} placesData={placesData} />;
+  }
+
+  return <ClassicVisitPage slug={slug} town={town} placesData={placesData} />;
+}
+
+function EditorialVisitPage({
+  slug,
+  town,
+  placesData,
+}: {
+  slug: string;
+  town: NonNullable<Awaited<ReturnType<typeof getTown>>>;
+  placesData: Awaited<ReturnType<typeof getPlaces>>;
+}) {
+  const places = placesData
+    ? Object.values(placesData.placesByCategory).flat()
+    : town.featuredPlaces ?? [];
+
+  const formatPlaceType = (type: string): string => {
+    const labels: Record<string, string> = {
+      BATTLEFIELD: "Battlefield",
+      HISTORIC_HOUSE: "Historic House",
+      MONUMENT: "Monument",
+      MUSEUM: "Museum",
+      CEMETERY: "Cemetery",
+      CHURCH: "Church",
+      GOVERNMENT: "Government",
+      TAVERN: "Tavern",
+      LANDMARK: "Landmark",
+      TRAIL: "Trail",
+    };
+    return labels[type] || type;
+  };
+
+  return (
+    <PageShell>
+      <PageHeader
+        name={town.name}
+        state={town.state}
+        subtitle={`${placesData?.totals.total ?? places.length} historic sites to visit.`}
+      />
+
+      <EditorialSection id="places" title="Places">
+        {places.length > 0 ? (
+          <ol className="space-y-0 list-none">
+            {places.map((place, i) => (
+              <li
+                key={place.id}
+                className="py-4 border-b border-border-light last:border-b-0"
+              >
+                <div className="flex gap-4">
+                  <span className="text-small text-text-muted font-body tabular-nums w-6 shrink-0">
+                    {i + 1}.
+                  </span>
+                  <div>
+                    <p className="font-body font-medium">{place.name}</p>
+                    <p className="mt-1 text-small text-text-muted font-body uppercase tracking-wide">
+                      {formatPlaceType(place.placeType)}
+                      {place.address && <> &middot; {place.address}</>}
+                    </p>
+                    {place.description && (
+                      <p className="mt-2 text-small font-body leading-relaxed text-text-primary">
+                        {place.description}
+                      </p>
+                    )}
+                    {place.hours && (
+                      <p className="mt-1 text-small text-text-muted font-body">
+                        Hours: {place.hours}
+                      </p>
+                    )}
+                    {place.website && (
+                      <a
+                        href={place.website}
+                        className="mt-1 inline-block text-small text-accent-blue font-body hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Website &rarr;
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+        ) : (
+          <p className="text-text-muted font-body">
+            Places directory for {town.name} is being compiled.
+          </p>
+        )}
+      </EditorialSection>
+    </PageShell>
+  );
+}
+
+function ClassicVisitPage({
+  slug,
+  town,
+  placesData,
+}: {
+  slug: string;
+  town: NonNullable<Awaited<ReturnType<typeof getTown>>>;
+  placesData: Awaited<ReturnType<typeof getPlaces>>;
+}) {
 
   const tourismInfo = town.tourismInfo as {
     placeholder?: boolean;

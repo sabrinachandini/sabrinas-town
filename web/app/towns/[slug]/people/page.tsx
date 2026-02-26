@@ -1,6 +1,13 @@
-import { getTown } from "@/lib/api";
+import { getTown, getTownPeople } from "@/lib/api";
 import { Container, Heading, Text, Divider } from "@/components/ui";
 import { EmptyState } from "@/components/town";
+import {
+  PageShell,
+  PageHeader,
+  EditorialSection,
+} from "@/components/editorial";
+
+const EDITORIAL_SLUGS = new Set(["boston-ma"]);
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -22,17 +29,89 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function PeoplePage({ params }: PageProps) {
   const { slug } = await params;
-  const town = await getTown(slug);
 
-  if (!town) {
-    return null;
+  if (EDITORIAL_SLUGS.has(slug)) {
+    return <EditorialPeoplePage slug={slug} />;
   }
 
-  // Extract unique people from events (we have peopleCount but not detailed people data in this view)
-  const totalPeopleCount = town.events.reduce((sum, e) => sum + e.peopleCount, 0);
-  const hasContent = totalPeopleCount > 0;
+  return <ClassicPeoplePage slug={slug} />;
+}
 
-  if (!hasContent) {
+async function EditorialPeoplePage({ slug }: { slug: string }) {
+  const [town, peopleData] = await Promise.all([
+    getTown(slug),
+    getTownPeople(slug),
+  ]);
+
+  if (!town) return null;
+
+  const people = peopleData?.people ?? [];
+
+  return (
+    <PageShell>
+      <PageHeader
+        name={town.name}
+        state={town.state}
+        subtitle={`Historical figures connected to ${town.name}.`}
+      />
+
+      <EditorialSection id="people" title={`${people.length} People`}>
+        {people.length > 0 ? (
+          <div className="space-y-0">
+            {people.map((person) => (
+              <div
+                key={person.id}
+                className="py-5 border-b border-border-light last:border-b-0"
+              >
+                <h3 className="font-heading text-[1.25rem] tracking-tight">
+                  {person.name}
+                </h3>
+                <p className="mt-1 text-small text-text-muted font-body">
+                  {[
+                    person.birthYear && person.deathYear
+                      ? `${person.birthYear}–${person.deathYear}`
+                      : person.birthYear
+                        ? `b. ${person.birthYear}`
+                        : null,
+                    ...person.roles,
+                  ]
+                    .filter(Boolean)
+                    .join(" · ")}
+                </p>
+                <p className="mt-2 font-body leading-relaxed">
+                  {person.bioShort}
+                </p>
+                {person.bioLong && (
+                  <details className="mt-3">
+                    <summary className="text-small text-accent-blue font-body cursor-pointer hover:underline">
+                      Read more
+                    </summary>
+                    <p className="mt-2 font-body leading-relaxed text-text-primary">
+                      {person.bioLong}
+                    </p>
+                  </details>
+                )}
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="text-text-muted font-body">
+            Research is ongoing. People connected to {town.name} will appear here.
+          </p>
+        )}
+      </EditorialSection>
+    </PageShell>
+  );
+}
+
+async function ClassicPeoplePage({ slug }: { slug: string }) {
+  const town = await getTown(slug);
+
+  if (!town) return null;
+
+  const totalPeopleCount = town.events.reduce((sum, e) => sum + e.peopleCount, 0);
+
+  if (totalPeopleCount === 0) {
     return (
       <EmptyState
         title="People Coming Soon"
@@ -44,7 +123,6 @@ export default async function PeoplePage({ params }: PageProps) {
 
   return (
     <div className="py-section">
-      {/* Intro */}
       <Container>
         <Text className="text-text-muted max-w-[720px]">
           The Revolution was made by individuals, most of whom left little trace in the official record. Here are the people whose lives intersected with {town.name} during the Revolutionary era.
@@ -53,7 +131,6 @@ export default async function PeoplePage({ params }: PageProps) {
 
       <Divider spacing="section" />
 
-      {/* People from Events */}
       <section>
         <Container>
           <Heading level={2}>Figures in the Record</Heading>
@@ -79,7 +156,6 @@ export default async function PeoplePage({ params }: PageProps) {
             </div>
           </div>
 
-          {/* Event-based people listing */}
           <div className="mt-component space-y-element">
             {town.events
               .filter((e) => e.peopleCount > 0)

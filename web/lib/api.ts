@@ -418,6 +418,81 @@ export async function compareTowns(
   }
 }
 
+// People types
+export interface TownPerson {
+  id: string;
+  name: string;
+  roles: string[];
+  bioShort: string;
+  bioLong: string | null;
+  birthYear: number | null;
+  deathYear: number | null;
+  verificationStatus: string;
+}
+
+export interface TownPeopleResponse {
+  town: { id: string; slug: string; name: string };
+  people: TownPerson[];
+  count: number;
+}
+
+// Story detail type (full text, not truncated)
+export interface TownStoryDetail {
+  id: string;
+  title: string;
+  storyType: "HISTORICAL_VOICE" | "MODERN_VOICE";
+  verificationStatus: "VERIFIED" | "ORAL_TRADITION" | "ANECDOTAL" | "UNVERIFIED";
+  subjectPersonName: string | null;
+  narratorName: string | null;
+  narratorRole: string | null;
+  textVersion: string;
+  tags: string[];
+  themes: Array<{ id: string; name: string }>;
+}
+
+export async function getTownPeople(
+  slug: string
+): Promise<TownPeopleResponse | null> {
+  try {
+    const res = await fetch(`${API_URL}/towns/${slug}/people`, {
+      next: { revalidate: 60 },
+    });
+
+    if (!res.ok) {
+      if (res.status === 404) return null;
+      throw new Error(`Failed to fetch people: ${res.status}`);
+    }
+
+    const json: ApiResponse<TownPeopleResponse> = await res.json();
+    return json.data;
+  } catch (error) {
+    console.error("Error fetching people:", error);
+    return null;
+  }
+}
+
+export async function getTownStoryDetail(
+  slug: string,
+  storyId: string
+): Promise<TownStoryDetail | null> {
+  try {
+    const res = await fetch(`${API_URL}/towns/${slug}/stories/${storyId}`, {
+      next: { revalidate: 60 },
+    });
+
+    if (!res.ok) {
+      if (res.status === 404) return null;
+      throw new Error(`Failed to fetch story: ${res.status}`);
+    }
+
+    const json: ApiResponse<TownStoryDetail> = await res.json();
+    return json.data;
+  } catch (error) {
+    console.error("Error fetching story detail:", error);
+    return null;
+  }
+}
+
 // Source types
 export interface TownSource {
   id: string;
