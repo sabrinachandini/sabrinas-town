@@ -23,10 +23,11 @@ export const getOrgContextForTown = cache(
     const userId = session.user.id;
 
     // Get user's org memberships
-    const memberships = await prisma.orgUser.findMany({
-      where: { userId },
-      select: { orgId: true, org: { select: { slug: true } } },
-    });
+    const memberships: { orgId: string; org: { slug: string } }[] =
+      await prisma.orgUser.findMany({
+        where: { userId },
+        select: { orgId: true, org: { select: { slug: true } } },
+      });
 
     if (memberships.length === 0) return null;
 
