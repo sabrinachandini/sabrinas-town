@@ -177,9 +177,6 @@ export default function HomePage() {
           </div>
 
           <div className="mt-element flex flex-wrap gap-4">
-            <Button href="/rankings" size="small">
-              View Full Rankings
-            </Button>
             <Button href="/towns" variant="secondary" size="small">
               Browse All Towns
             </Button>
@@ -288,8 +285,6 @@ export default function HomePage() {
             </div>
             <div className="flex flex-wrap gap-6">
               <Link href="/towns">Towns</Link>
-              <Link href="/rankings">Rankings</Link>
-              <Link href="/compare">Compare</Link>
               <Link href="/methodology">Methodology</Link>
               <Link href="/changelog">Changelog</Link>
               <Link href="/teach">Teach</Link>

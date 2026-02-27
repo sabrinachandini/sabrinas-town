@@ -31,12 +31,6 @@ export default function NotFound() {
             Looking for something specific? Try these:
           </Text>
           <div className="mt-element flex flex-wrap justify-center gap-6">
-            <a href="/rankings" className="text-small">
-              Rankings
-            </a>
-            <a href="/compare" className="text-small">
-              Compare Towns
-            </a>
             <a href="/partner" className="text-small">
               Partner
             </a>

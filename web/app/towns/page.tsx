@@ -4,7 +4,6 @@ import {
   Heading,
   Text,
   Link,
-  Button,
   Divider,
 } from "@/components/ui";
 
@@ -33,19 +32,9 @@ export default async function TownsPage() {
       <Container size="wide">
         <Heading level={1}>Browse Towns</Heading>
         <Text className="mt-element max-w-[620px]">
-          {towns.length} Revolutionary towns across {states.length} states,
-          scored for historical significance, preservation quality, and visitor
-          experience. Select a town to explore its full profile.
+          {towns.length} Revolutionary towns across {states.length} states.
+          Select a town to explore its full profile.
         </Text>
-
-        <div className="mt-element flex flex-wrap gap-4">
-          <Button href="/rankings" size="small" variant="secondary">
-            View Rankings Table
-          </Button>
-          <Button href="/compare" size="small" variant="secondary">
-            Compare Two Towns
-          </Button>
-        </div>
 
         <Divider spacing="section" />
 
@@ -74,39 +63,19 @@ export default async function TownsPage() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-element">
               {townsByState[state]
-                .sort((a, b) => a.rank - b.rank)
+                .sort((a, b) => a.name.localeCompare(b.name))
                 .map((town) => (
                   <Link
                     key={town.id}
                     href={`/towns/${town.slug}`}
                     className="block p-element bg-bg-secondary rounded-lg hover:bg-border-light transition-colors no-underline group"
                   >
-                    <div className="flex items-start justify-between gap-3">
-                      <div className="min-w-0">
-                        <Text className="font-medium group-hover:text-accent-blue transition-colors">
-                          {town.name}
-                        </Text>
-                        <Text size="small" muted className="mt-tight line-clamp-2">
-                          {town.heroSummary40}
-                        </Text>
-                      </div>
-                      <div className="flex-shrink-0 text-right">
-                        <span
-                          className={`font-mono font-medium text-small ${
-                            town.compositeScore >= 75
-                              ? "text-accent-blue"
-                              : town.compositeScore >= 40
-                              ? "text-text-primary"
-                              : "text-text-muted"
-                          }`}
-                        >
-                          {town.compositeScore.toFixed(1)}
-                        </span>
-                        <Text size="small" muted className="mt-tight">
-                          #{town.rank}
-                        </Text>
-                      </div>
-                    </div>
+                    <Text className="font-medium group-hover:text-accent-blue transition-colors">
+                      {town.name}
+                    </Text>
+                    <Text size="small" muted className="mt-tight line-clamp-2">
+                      {town.heroSummary40}
+                    </Text>
                   </Link>
                 ))}
             </div>

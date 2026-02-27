@@ -60,85 +60,12 @@ export default async function UpdatesPage({ params }: PageProps) {
               mono
             />
             <StatusCard
-              label="Composite Score"
-              value={`${town.compositeScore.toFixed(1)} (${town.scoreTier})`}
-            />
-            <StatusCard
               label="Changes Logged"
               value={String(town.recentChanges.length)}
             />
           </div>
         </Container>
       </section>
-
-      {/* Score Breakdown */}
-      {town.scoreBreakdown && (
-        <>
-          <Divider spacing="section" />
-          <section>
-            <Container>
-              <Heading level={2}>Score Breakdown</Heading>
-              <Text className="mt-element text-text-muted max-w-[620px]">
-                How {town.name}'s composite score was calculated across seven dimensions.
-              </Text>
-
-              <div className="mt-component space-y-element">
-                {[
-                  { key: "historical", label: "Historical Significance" },
-                  { key: "preservation", label: "Preservation Quality" },
-                  { key: "accessibility", label: "Visitor Accessibility" },
-                  { key: "interpretation", label: "Interpretation Resources" },
-                  { key: "interconnection", label: "Network Interconnection" },
-                  { key: "stories", label: "Stories Collected" },
-                  { key: "sources", label: "Source Documentation" },
-                ].map(({ key, label }) => {
-                  const breakdown = town.scoreBreakdown?.[key as keyof Omit<typeof town.scoreBreakdown, 'hints'>];
-                  const score = typeof breakdown === 'number' ? breakdown : (breakdown && typeof breakdown === 'object' && 'score' in breakdown ? breakdown.score : 0);
-                  return (
-                    <div key={key} className="p-element bg-bg-secondary rounded-lg">
-                      <div className="flex items-center justify-between">
-                        <Text size="small">{label}</Text>
-                        <div className="flex items-center gap-3">
-                          <div className="w-32 h-2 bg-border-light rounded-full overflow-hidden">
-                            <div
-                              className="h-full bg-accent-blue rounded-full transition-all"
-                              style={{ width: `${score}%` }}
-                            />
-                          </div>
-                          <Text size="small" className="font-mono w-8 text-right">
-                            {score}
-                          </Text>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* Improvement Hints */}
-              {town.scoreBreakdown.hints && town.scoreBreakdown.hints.length > 0 && (
-                <div className="mt-component p-element bg-bg-secondary rounded-lg">
-                  <Text size="small" muted className="uppercase tracking-wide mb-element">
-                    Improvement Opportunities
-                  </Text>
-                  <div className="space-y-element">
-                    {town.scoreBreakdown.hints.map((hint, i) => (
-                      <div key={i}>
-                        <Text size="small" className="font-medium">
-                          {hint.category}: {hint.direction}
-                        </Text>
-                        <Text size="small" muted className="mt-1">
-                          {hint.suggestion}
-                        </Text>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </Container>
-          </section>
-        </>
-      )}
 
       {/* Changelog */}
       <Divider spacing="section" />
