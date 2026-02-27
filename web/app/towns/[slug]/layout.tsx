@@ -3,7 +3,7 @@ import { getTown } from "@/lib/api";
 import { TownHeader, TownSubnav } from "@/components/town";
 import { EditorialNav } from "@/components/editorial";
 
-const EDITORIAL_SLUGS = new Set(["boston-ma", "lexington-ma", "concord-ma", "salem-ma", "worcester-ma", "springfield-ma", "plymouth-ma"]);
+const EDITORIAL_SLUGS = new Set(["boston-ma", "lexington-ma", "concord-ma", "salem-ma", "worcester-ma", "springfield-ma", "plymouth-ma", "trenton-nj", "princeton-nj", "monmouth-nj", "morristown-nj", "elizabeth-nj", "hackensack-nj"]);
 
 interface LayoutProps {
   children: React.ReactNode;
