@@ -1,8 +1,7 @@
 "use client";
 
-import NextLink from "next/link";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Container } from "@/components/ui";
 
 interface TownSubnavProps {
   slug: string;
@@ -11,55 +10,49 @@ interface TownSubnavProps {
 const NAV_ITEMS = [
   { label: "Overview", path: "" },
   { label: "History", path: "/history" },
+  { label: "Timeline", path: "/events" },
   { label: "People", path: "/people" },
-  { label: "Visit", path: "/visit" },
-  { label: "Events", path: "/events" },
-  { label: "Itineraries", path: "/itineraries" },
+  { label: "Places", path: "/visit" },
   { label: "Stories", path: "/stories" },
-  { label: "Teach", path: "/teacher" },
-  { label: "Connected", path: "/connected" },
-  { label: "Updates", path: "/updates" },
+  { label: "Teacher", path: "/teacher" },
+  { label: "Sources", path: "/sources" },
 ] as const;
 
 export function TownSubnav({ slug }: TownSubnavProps) {
   const pathname = usePathname();
-  const basePath = `/towns/${slug}`;
+  const base = `/towns/${slug}`;
 
   const isActive = (itemPath: string) => {
-    const fullPath = `${basePath}${itemPath}`;
+    const href = `${base}${itemPath}`;
     if (itemPath === "") {
-      return pathname === basePath || pathname === `${basePath}/`;
+      return pathname === base || pathname === `${base}/`;
     }
-    return pathname === fullPath || pathname.startsWith(`${fullPath}/`);
+    return pathname === href || pathname.startsWith(`${href}/`);
   };
 
   return (
-    <nav className="bg-bg-secondary border-b border-border-light sticky top-0 z-10">
-      <Container>
-        <div className="overflow-x-auto scrollbar-hide -mx-4 px-4">
-          <div className="flex gap-1 min-w-max py-2">
-            {NAV_ITEMS.map((item) => {
-              const active = isActive(item.path);
-              return (
-                <NextLink
-                  key={item.path}
-                  href={`${basePath}${item.path}`}
-                  className={`
-                    px-4 py-2 text-small font-medium rounded-lg transition-colors whitespace-nowrap
-                    ${
-                      active
-                        ? "bg-accent-blue text-white"
-                        : "text-text-primary hover:bg-bg-primary"
-                    }
-                  `}
+    <nav className="border-b border-border-light bg-bg-primary sticky top-[3.5rem] z-20">
+      <div className="mx-auto max-w-wide px-6 md:px-12 overflow-x-auto">
+        <ul className="flex gap-6 min-w-max py-3 text-[0.9375rem] font-body whitespace-nowrap">
+          {NAV_ITEMS.map(({ label, path }) => {
+            const active = isActive(path);
+            return (
+              <li key={path}>
+                <Link
+                  href={`${base}${path}`}
+                  className={`py-1 transition-colors duration-150 ${
+                    active
+                      ? "text-text-primary font-medium border-b-2 border-accent-blue"
+                      : "text-text-muted hover:text-text-primary"
+                  }`}
                 >
-                  {item.label}
-                </NextLink>
-              );
-            })}
-          </div>
-        </div>
-      </Container>
+                  {label}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </nav>
   );
 }
