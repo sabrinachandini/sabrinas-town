@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return {
-    title: `Connected Towns | ${town.name}, ${town.state} | Sabrina's Town`,
+    title: `Connected Towns | ${town.name}, ${town.state} | History is for Everyone`,
     description: `Towns connected to ${town.name}, ${town.state} through shared events, people, themes, and routes.`,
   };
 }

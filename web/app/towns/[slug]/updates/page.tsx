@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return {
-    title: `Updates | ${town.name}, ${town.state} | Sabrina's Town`,
+    title: `Updates | ${town.name}, ${town.state} | History is for Everyone`,
     description: `Changelog and transparency information for ${town.name}, ${town.state}.`,
   };
 }

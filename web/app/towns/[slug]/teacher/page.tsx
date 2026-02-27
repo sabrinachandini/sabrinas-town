@@ -34,8 +34,8 @@ export async function generateMetadata({ params }: PageProps) {
     const town = await getTown(slug);
     return {
       title: town
-        ? `Teach ${town.name} | Sabrina's Town`
-        : "Teacher Module | Sabrina's Town",
+        ? `Teach ${town.name} | History is for Everyone`
+        : "Teacher Module | History is for Everyone",
       description: town
         ? `Teacher resources for ${town.name}, ${town.state}.`
         : "Teacher resources for Revolutionary War towns.",
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return {
-    title: `Teach ${module.town.name} | Sabrina's Town`,
+    title: `Teach ${module.town.name} | History is for Everyone`,
     description: `Complete teacher resources for ${module.town.name}: lesson plans, primary sources, discussion questions, and assessments.`,
   };
 }

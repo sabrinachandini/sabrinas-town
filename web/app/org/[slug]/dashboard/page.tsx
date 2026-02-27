@@ -23,7 +23,7 @@ interface DashboardPageProps {
 export async function generateMetadata({ params }: DashboardPageProps) {
   const { slug } = await params;
   return {
-    title: `Dashboard — ${slug} | Sabrina's Town`,
+    title: `Dashboard — ${slug} | History is for Everyone`,
   };
 }
 

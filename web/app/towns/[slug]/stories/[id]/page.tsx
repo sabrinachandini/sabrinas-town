@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return {
-    title: `${story.title} | Sabrina's Town`,
+    title: `${story.title} | History is for Everyone`,
     description: story.textVersion.slice(0, 160),
   };
 }

@@ -9,7 +9,7 @@ import {
 } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Teach | Sabrina's Town",
+  title: "Teach | History is for Everyone",
   description:
     "Classroom-ready resources for teaching the American Revolution through local history. Lesson plans, primary sources, quizzes, and comparative assignments aligned to state standards.",
 };
@@ -23,7 +23,7 @@ export default function TeachPage() {
           <Heading level={1}>For Teachers</Heading>
           <div className="mt-element max-w-[720px] space-y-element">
             <Text>
-              Sabrina's Town was built, in part, because the American Revolution
+              History is for Everyone was built, in part, because the American Revolution
               deserves better classroom materials than most teachers currently
               have access to. The standard approach treats each town as an
               isolated fact set — names, dates, outcomes — stripped of the

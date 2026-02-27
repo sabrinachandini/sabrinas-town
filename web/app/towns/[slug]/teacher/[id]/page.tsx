@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return {
-    title: `${module.overview.title} | Teach | Sabrina's Town`,
+    title: `${module.overview.title} | Teach | History is for Everyone`,
     description: module.overview.summary.slice(0, 160),
   };
 }

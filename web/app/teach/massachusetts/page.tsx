@@ -9,7 +9,7 @@ import {
 } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Teach Massachusetts | Sabrina's Town",
+  title: "Teach Massachusetts | History is for Everyone",
   description:
     "Teacher resources for ten Massachusetts towns at the center of the American Revolution. Curated lesson plans, primary sources, and classroom assessments.",
 };

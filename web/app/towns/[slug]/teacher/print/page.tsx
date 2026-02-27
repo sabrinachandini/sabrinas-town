@@ -25,7 +25,7 @@ export default async function TeacherPrintPage({ params }: PageProps) {
 
       {/* Cover page */}
       <section className="text-center mb-16 page-break-after print-section">
-        <p className="print-only text-xs text-gray-400 mb-8">Sabrina&apos;s Town &mdash; Teacher Resources</p>
+        <p className="print-only text-xs text-gray-400 mb-8">History is for Everyone &mdash; Teacher Resources</p>
         <h1 className="text-4xl font-bold font-serif">{overview.title}</h1>
         <p className="text-xl mt-4 text-gray-600">{town.name}, {town.state}</p>
         <div className="mt-8 flex justify-center gap-8 text-sm text-gray-500">
@@ -33,12 +33,12 @@ export default async function TeacherPrintPage({ params }: PageProps) {
           <span>Duration: {overview.estimatedDuration}</span>
         </div>
         <p className="mt-8 max-w-[600px] mx-auto text-sm leading-relaxed">{overview.summary}</p>
-        <p className="mt-12 text-xs text-gray-400">Sabrina&apos;s Town &mdash; American Revolution Tourism Network</p>
+        <p className="mt-12 text-xs text-gray-400">History is for Everyone &mdash; American Revolution Tourism Network</p>
       </section>
 
       {/* Lesson Plan */}
       <section className="print-section mb-12">
-        <p className="print-only text-xs text-gray-400 mb-4">Sabrina&apos;s Town &mdash; Teacher Resources</p>
+        <p className="print-only text-xs text-gray-400 mb-4">History is for Everyone &mdash; Teacher Resources</p>
         <h2 className="text-2xl font-bold font-serif border-b-2 border-gray-300 pb-2">Lesson Plan</h2>
 
         {lessonPlan.objectives && (
@@ -72,7 +72,7 @@ export default async function TeacherPrintPage({ params }: PageProps) {
       {/* Primary Sources */}
       {primarySources && primarySources.length > 0 && (
         <section className="print-section mb-12">
-          <p className="print-only text-xs text-gray-400 mb-4">Sabrina&apos;s Town &mdash; Teacher Resources</p>
+          <p className="print-only text-xs text-gray-400 mb-4">History is for Everyone &mdash; Teacher Resources</p>
           <h2 className="text-2xl font-bold font-serif border-b-2 border-gray-300 pb-2">Primary Sources</h2>
           {primarySources.map((source: any) => (
             <div key={source.id} className="mt-6 page-break-inside-avoid">
@@ -100,7 +100,7 @@ export default async function TeacherPrintPage({ params }: PageProps) {
       {/* Handouts */}
       {handouts && handouts.length > 0 && (
         <section className="print-section mb-12">
-          <p className="print-only text-xs text-gray-400 mb-4">Sabrina&apos;s Town &mdash; Teacher Resources</p>
+          <p className="print-only text-xs text-gray-400 mb-4">History is for Everyone &mdash; Teacher Resources</p>
           <h2 className="text-2xl font-bold font-serif border-b-2 border-gray-300 pb-2">Handouts</h2>
           {handouts.map((h: any) => (
             <div key={h.title} className="mt-6 page-break-inside-avoid">
@@ -116,7 +116,7 @@ export default async function TeacherPrintPage({ params }: PageProps) {
       {quiz && quiz.questions?.length > 0 && (
         <>
           <section className="print-section mb-12">
-            <p className="print-only text-xs text-gray-400 mb-4">Sabrina&apos;s Town &mdash; Teacher Resources</p>
+            <p className="print-only text-xs text-gray-400 mb-4">History is for Everyone &mdash; Teacher Resources</p>
             <h2 className="text-2xl font-bold font-serif border-b-2 border-gray-300 pb-2">{quiz.title}</h2>
             <p className="mt-2 text-sm text-gray-600">{quiz.instructions}</p>
             <div className="mt-4 space-y-6">
@@ -138,7 +138,7 @@ export default async function TeacherPrintPage({ params }: PageProps) {
           </section>
 
           <section className="print-section mb-12">
-            <p className="print-only text-xs text-gray-400 mb-4">Sabrina&apos;s Town &mdash; Teacher Resources</p>
+            <p className="print-only text-xs text-gray-400 mb-4">History is for Everyone &mdash; Teacher Resources</p>
             <h2 className="text-2xl font-bold font-serif border-b-2 border-gray-300 pb-2">Answer Key</h2>
             <div className="mt-4 space-y-4">
               {quiz.questions.map((q: any, i: number) => (
@@ -155,7 +155,7 @@ export default async function TeacherPrintPage({ params }: PageProps) {
       {/* Standards */}
       {(module as any).standards?.commonCore && (
         <section className="print-section mb-12">
-          <p className="print-only text-xs text-gray-400 mb-4">Sabrina&apos;s Town &mdash; Teacher Resources</p>
+          <p className="print-only text-xs text-gray-400 mb-4">History is for Everyone &mdash; Teacher Resources</p>
           <h2 className="text-2xl font-bold font-serif border-b-2 border-gray-300 pb-2">Standards Alignment</h2>
           <div className="mt-4 grid grid-cols-2 gap-8">
             <div>

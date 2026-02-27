@@ -8,9 +8,9 @@ import {
 import { InquiryForm } from "./InquiryForm";
 
 export const metadata = {
-  title: "Inquire About Partnership | Sabrina's Town",
+  title: "Inquire About Partnership | History is for Everyone",
   description:
-    "Interested in operating your town's page on Sabrina's Town? Submit an inquiry.",
+    "Interested in operating your town's page on History is for Everyone? Submit an inquiry.",
 };
 
 export default async function InquirePage({

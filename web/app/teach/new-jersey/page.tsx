@@ -9,7 +9,7 @@ import {
 } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Teach New Jersey | Sabrina's Town",
+  title: "Teach New Jersey | History is for Everyone",
   description:
     "Teacher resources for New Jersey towns at the crossroads of the American Revolution. Curated lesson plans, primary sources, and classroom assessments.",
 };

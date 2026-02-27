@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs";
 import { Container, Heading, Text, Link, Button } from "@/components/ui";
 
 export const metadata = {
-  title: "Sign Up | Sabrina's Town",
+  title: "Sign Up | History is for Everyone",
 };
 
 export default async function SignupPage() {
@@ -58,7 +58,7 @@ export default async function SignupPage() {
         <div className="max-w-[400px] mx-auto">
           <Heading level={1}>Create an account</Heading>
           <Text className="mt-element" muted>
-            Sign up to create and manage your organization on Sabrina's Town.
+            Sign up to create and manage your organization on History is for Everyone.
           </Text>
 
           <form action={handleSignUp} className="mt-component space-y-element">

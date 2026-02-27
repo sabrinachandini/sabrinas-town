@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return {
-    title: `Stories | ${town.name}, ${town.state} | Sabrina's Town`,
+    title: `Stories | ${town.name}, ${town.state} | History is for Everyone`,
     description: `First-person accounts and interpretive stories from ${town.name}, ${town.state}.`,
   };
 }

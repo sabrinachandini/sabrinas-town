@@ -10,9 +10,9 @@ import {
 } from "@/components/ui";
 
 export const metadata = {
-  title: "Terms of Service | Sabrina's Town",
+  title: "Terms of Service | History is for Everyone",
   description:
-    "Terms of Service for Sabrina's Town, an American Revolution tourism and education platform. Covers acceptable use, intellectual property, embed licensing, and liability.",
+    "Terms of Service for History is for Everyone, an American Revolution tourism and education platform. Covers acceptable use, intellectual property, embed licensing, and liability.",
 };
 
 export default function TermsPage() {
@@ -22,7 +22,7 @@ export default function TermsPage() {
         {/* Page Title */}
         <Heading level={1}>Terms of Service</Heading>
         <Text className="mt-element max-w-[720px]">
-          Welcome to Sabrina's Town. These terms govern your use of our website,
+          Welcome to History is for Everyone. These terms govern your use of our website,
           tools, and services. We have tried to write them plainly — if
           something is unclear, reach out and we will do our best to explain.
           Using this site means you agree to these terms, so please read them.
@@ -34,7 +34,7 @@ export default function TermsPage() {
         <section className="max-w-[720px]">
           <Heading level={2}>Acceptance of Terms</Heading>
           <Text className="mt-element">
-            By accessing or using Sabrina's Town — including our website, API,
+            By accessing or using History is for Everyone — including our website, API,
             embeddable widgets, and any associated services — you agree to be
             bound by these Terms of Service. If you do not agree, please do not
             use the site. We may update these terms from time to time, and
@@ -55,7 +55,7 @@ export default function TermsPage() {
         <section className="max-w-[720px]">
           <Heading level={2}>Description of Service</Heading>
           <Text className="mt-element">
-            Sabrina's Town is an American Revolution research network, tourism
+            History is for Everyone is an American Revolution research network, tourism
             guide, and educational resource. We connect and score Revolutionary
             War communities across the original thirteen states, providing town
             profiles, historical research, tourism scores, network
@@ -82,7 +82,7 @@ export default function TermsPage() {
         <section className="max-w-[720px]">
           <Heading level={2}>User Accounts</Heading>
           <Text className="mt-element">
-            Account creation and authentication on Sabrina's Town are handled
+            Account creation and authentication on History is for Everyone are handled
             through NextAuth sessions using email-based login. When you sign in,
             we create a session tied to your email address. We do not store
             passwords — authentication relies on secure, time-limited email
@@ -91,7 +91,7 @@ export default function TermsPage() {
           <Text className="mt-element">
             You are responsible for maintaining the security of the email
             account you use to sign in. If you suspect unauthorized access to
-            your Sabrina's Town account, contact us immediately. We reserve the
+            your History is for Everyone account, contact us immediately. We reserve the
             right to suspend or terminate accounts that appear compromised or
             that violate these terms.
           </Text>
@@ -109,7 +109,7 @@ export default function TermsPage() {
         <section className="max-w-[720px]">
           <Heading level={2}>Acceptable Use</Heading>
           <Text className="mt-element">
-            We built Sabrina's Town to serve researchers, educators, travelers,
+            We built History is for Everyone to serve researchers, educators, travelers,
             and anyone curious about the American Revolution. We ask that you
             use the platform in that spirit. Specifically, you agree not to:
           </Text>
@@ -121,7 +121,7 @@ export default function TermsPage() {
             about our API and partnership options.
           </Text>
           <Text className="mt-element">
-            Misrepresent content from Sabrina's Town as your own original work,
+            Misrepresent content from History is for Everyone as your own original work,
             or present our scores and editorial assessments as official
             government ratings, academic consensus, or anything other than what
             they are: informed editorial judgment by our team. Attribution
@@ -141,7 +141,7 @@ export default function TermsPage() {
         <section className="max-w-[720px]">
           <Heading level={2}>Intellectual Property</Heading>
           <Text className="mt-element">
-            The content on Sabrina's Town — including town profiles, scoring
+            The content on History is for Everyone — including town profiles, scoring
             analysis, network visualizations, written commentary, and original
             research — is the product of our editorial team. This content is
             protected by copyright and represents substantial original work in
@@ -197,7 +197,7 @@ export default function TermsPage() {
         <section className="max-w-[720px]">
           <Heading level={2}>Disclaimers</Heading>
           <Text className="mt-element">
-            Sabrina's Town is an editorial and educational project. Nothing on
+            History is for Everyone is an editorial and educational project. Nothing on
             this site constitutes legal advice, professional historical
             consultation, or official government guidance. Our town scores
             reflect the editorial judgment of our team based on the methodology
@@ -226,13 +226,13 @@ export default function TermsPage() {
         <section className="max-w-[720px]">
           <Heading level={2}>Limitation of Liability</Heading>
           <Text className="mt-element">
-            Sabrina's Town and its team provide this service on an "as is" and
+            History is for Everyone and its team provide this service on an "as is" and
             "as available" basis, without warranties of any kind, whether
             express or implied. We do not warrant that the service will be
             uninterrupted, error-free, or free of harmful components.
           </Text>
           <Text className="mt-element">
-            To the fullest extent permitted by law, Sabrina's Town, its
+            To the fullest extent permitted by law, History is for Everyone, its
             operators, contributors, and partners shall not be liable for any
             indirect, incidental, special, consequential, or punitive damages
             arising from your use of or inability to use the service. This
@@ -260,7 +260,7 @@ export default function TermsPage() {
             make reasonable efforts to notify registered users by email.
           </Text>
           <Text className="mt-element">
-            Your continued use of Sabrina's Town after revised terms are posted
+            Your continued use of History is for Everyone after revised terms are posted
             constitutes acceptance of those changes. If you disagree with any
             revision, your remedy is to stop using the service and, if
             applicable, request deletion of your account.

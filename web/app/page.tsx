@@ -54,7 +54,7 @@ export default function HomePage() {
         <Container>
           <Heading level={1}>History is for everyone.</Heading>
           <Text className="mt-element max-w-[620px]">
-            Sabrina's Town maps the connections between America's Revolutionary
+            History is for Everyone maps the connections between America's Revolutionary
             communities — the people who moved between them, the ideas that
             traveled by letter and pamphlet, the supply lines and escape routes
             that linked local rebellions into a continental cause. Seventy-five
@@ -266,36 +266,6 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <Divider spacing="section" />
-
-      {/* Footer */}
-      <footer className="py-component">
-        <Container>
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-element">
-            <div>
-              <Text className="font-heading text-h3 font-semibold">
-                Sabrina's Town
-              </Text>
-              <Text size="small" muted>
-                American Revolution Tourism Network
-              </Text>
-            </div>
-            <div className="flex flex-wrap gap-6">
-              <Link href="/towns">Towns</Link>
-              <Link href="/methodology">Methodology</Link>
-              <Link href="/changelog">Changelog</Link>
-              <Link href="/teach">Teach</Link>
-              <Link href="/partner">Partner</Link>
-              <Link href="/terms">Terms</Link>
-              <Link href="/privacy">Privacy</Link>
-            </div>
-          </div>
-          <Divider spacing="default" />
-          <Text size="small" muted className="text-center">
-            History is for everyone. Built with care in 2026.
-          </Text>
-        </Container>
-      </footer>
     </main>
   );
 }

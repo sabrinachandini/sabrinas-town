@@ -4,7 +4,7 @@ import prisma from "@/lib/prisma";
 import { Container, Heading, Text, Button } from "@/components/ui";
 
 export const metadata = {
-  title: "Create Organization | Sabrina's Town",
+  title: "Create Organization | History is for Everyone",
 };
 
 export default async function NewOrgPage() {
@@ -75,8 +75,8 @@ export default async function NewOrgPage() {
         <div className="max-w-[500px] mx-auto">
           <Heading level={1}>Create an organization</Heading>
           <Text className="mt-element" muted>
-            Set up your organization to manage your town's presence on Sabrina's
-            Town.
+            Set up your organization to manage your town's presence on History is
+            for Everyone.
           </Text>
 
           <form

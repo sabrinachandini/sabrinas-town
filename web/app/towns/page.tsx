@@ -8,7 +8,7 @@ import {
 } from "@/components/ui";
 
 export const metadata = {
-  title: "Browse Towns | Sabrina's Town",
+  title: "Browse Towns | History is for Everyone",
   description:
     "Explore all 75 Revolutionary towns in our network — from Lexington to Yorktown. Filter by state and score tier.",
 };

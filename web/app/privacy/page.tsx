@@ -10,9 +10,9 @@ import {
 } from "@/components/ui";
 
 export const metadata = {
-  title: "Privacy Policy | Sabrina's Town",
+  title: "Privacy Policy | History is for Everyone",
   description:
-    "How Sabrina's Town handles your data. We collect minimal information, respect your privacy, and explain our practices in plain language.",
+    "How History is for Everyone handles your data. We collect minimal information, respect your privacy, and explain our practices in plain language.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -22,7 +22,7 @@ export default function PrivacyPolicyPage() {
         {/* Introduction */}
         <Heading level={1}>Privacy Policy</Heading>
         <Text className="mt-element max-w-[720px]">
-          Sabrina's Town is an American Revolution tourism and education
+          History is for Everyone is an American Revolution tourism and education
           platform. We believe you should understand exactly what data we
           collect, why we collect it, and what we do with it. This policy is
           written in plain language because privacy matters too much for fine
@@ -132,7 +132,7 @@ export default function PrivacyPolicyPage() {
           <Heading level={2}>Partner Organization Data</Heading>
           <Text className="mt-element">
             Historical societies, tourism boards, and other organizations can
-            partner with Sabrina's Town. During the inquiry and onboarding
+            partner with History is for Everyone. During the inquiry and onboarding
             process, partner organizations provide business contact information
             including organization name and a contact email address. We also
             store the plan tier associated with each partner account.
@@ -187,7 +187,7 @@ export default function PrivacyPolicyPage() {
         <section className="max-w-[720px]">
           <Heading level={2}>Children's Privacy</Heading>
           <Text className="mt-element">
-            Sabrina's Town is not directed at children under the age of 13. We
+            History is for Everyone is not directed at children under the age of 13. We
             do not knowingly collect personal information from children. If you
             believe a child under 13 has provided us with personal data, please
             contact us at{" "}

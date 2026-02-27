@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return {
-    title: `History | ${town.name}, ${town.state} | Sabrina's Town`,
+    title: `History | ${town.name}, ${town.state} | History is for Everyone`,
     description: `The Revolutionary War history of ${town.name}, ${town.state}.`,
   };
 }

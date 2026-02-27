@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return {
-    title: `Itineraries | ${town.name}, ${town.state} | Sabrina's Town`,
+    title: `Itineraries | ${town.name}, ${town.state} | History is for Everyone`,
     description: `Suggested travel itineraries featuring ${town.name}, ${town.state}.`,
   };
 }

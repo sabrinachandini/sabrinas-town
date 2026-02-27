@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return {
-    title: `${person.name} | Sabrina's Town`,
+    title: `${person.name} | History is for Everyone`,
     description: person.bioShort.slice(0, 160),
   };
 }

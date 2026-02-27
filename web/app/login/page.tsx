@@ -3,7 +3,7 @@ import { signIn, auth } from "@/lib/auth";
 import { Container, Heading, Text, Link, Button } from "@/components/ui";
 
 export const metadata = {
-  title: "Sign In | Sabrina's Town",
+  title: "Sign In | History is for Everyone",
 };
 
 export default async function LoginPage({
@@ -33,7 +33,7 @@ export default async function LoginPage({
         <div className="max-w-[400px] mx-auto">
           <Heading level={1}>Sign in</Heading>
           <Text className="mt-element" muted>
-            Sign in to manage your organization on Sabrina's Town.
+            Sign in to manage your organization on History is for Everyone.
           </Text>
 
           {error && (

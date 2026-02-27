@@ -22,7 +22,7 @@ export default function MethodologyPage() {
         {/* Introduction */}
         <Heading level={1}>Methodology</Heading>
         <Text className="mt-element max-w-[720px]">
-          Sabrina's Town scores and connects 75 Revolutionary War communities
+          History is for Everyone scores and connects 75 Revolutionary War communities
           across 13 states. This page explains how we choose those towns, how we
           score them, how we evaluate sources, and how we decide when something
           changes. We publish this because trust requires transparency — and
@@ -96,7 +96,7 @@ export default function MethodologyPage() {
         <section className="max-w-[720px]">
           <Heading level={2}>Link Types</Heading>
           <Text className="mt-element">
-            The network aspect of Sabrina's Town matters as much as individual
+            The network aspect of History is for Everyone matters as much as individual
             profiles. Towns connect to each other through typed links, each
             representing a historically documented relationship. Links are
             weighted by significance and always include a brief explanation of

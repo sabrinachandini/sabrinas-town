@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return {
-    title: `${place.name} | Sabrina's Town`,
+    title: `${place.name} | History is for Everyone`,
     description: place.description.slice(0, 160),
   };
 }

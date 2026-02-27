@@ -7,7 +7,7 @@ import {
 } from "@/components/ui";
 
 export const metadata = {
-  title: "Partner With Us | Sabrina's Town",
+  title: "Partner With Us | History is for Everyone",
   description:
     "Join the Revolutionary Town Network. Tourism boards and historical societies can feature their town's story with professional presentation and analytics.",
 };
@@ -17,7 +17,7 @@ export default function PartnerPage() {
     <main className="py-section">
       <Container>
         {/* Header */}
-        <Heading level={1}>Partner with Sabrina's Town</Heading>
+        <Heading level={1}>Partner with History is for Everyone</Heading>
         <Text className="mt-element max-w-[620px]">
           Every town in this network already has a public profile — scored,
           sourced, and connected to the broader story of the Revolution. That
