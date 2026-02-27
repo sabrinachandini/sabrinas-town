@@ -189,26 +189,6 @@ export default async function ConnectedPage({ params }: PageProps) {
         </Container>
       </section>
 
-      {/* Compare CTA */}
-      <Divider spacing="section" />
-      <section>
-        <Container>
-          <div className="p-component bg-bg-secondary rounded-lg text-center">
-            <Heading level={3}>Explore a Connection</Heading>
-            <Text className="mt-element max-w-[500px] mx-auto">
-              Select any connected town to see a detailed comparison — shared events, people, themes, and a suggested itinerary.
-            </Text>
-            <div className="mt-element">
-              <Link
-                href={`/compare?townA=${slug}`}
-                className="inline-flex items-center justify-center px-6 py-3 border-2 border-accent-blue text-accent-blue font-medium hover:bg-accent-blue hover:text-white transition-colors"
-              >
-                Compare with Another Town
-              </Link>
-            </div>
-          </div>
-        </Container>
-      </section>
     </div>
   );
 }

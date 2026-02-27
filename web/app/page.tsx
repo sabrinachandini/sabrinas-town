@@ -67,9 +67,6 @@ export default function HomePage() {
             <Button href="/teach" variant="secondary">
               For Teachers
             </Button>
-            <Button href="/compare" variant="secondary">
-              Compare
-            </Button>
             <Button href="/partner" variant="secondary">
               Partner With Us
             </Button>
