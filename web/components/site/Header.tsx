@@ -8,9 +8,9 @@ import { Menu, X } from "lucide-react";
 const NAV_LINKS = [
   { label: "Towns", href: "/towns" },
   { label: "Teach", href: "/teach" },
-  { label: "Clusters", href: "/clusters" },
+  { label: "Big Picture", href: "/clusters" },
   { label: "Partner", href: "/partner" },
-  { label: "About", href: "/methodology" },
+  { label: "About", href: "/about" },
 ] as const;
 
 export function Header() {

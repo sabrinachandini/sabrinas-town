@@ -23,7 +23,7 @@ export default async function ClustersPage() {
   return (
     <main className="py-section">
       <Container>
-        <Heading level={1}>Clusters</Heading>
+        <Heading level={1}>The Big Picture</Heading>
         <Text className="mt-element max-w-[620px]">
           The American Revolution did not happen in isolation. These clusters
           group towns by state and story arc — tracing how local events connected
