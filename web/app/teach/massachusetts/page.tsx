@@ -123,43 +123,6 @@ export default async function MassachusettsTeachPage() {
 
       <Divider spacing="section" />
 
-      {/* Recommended Comparisons */}
-      <section className="py-component">
-        <Container>
-          <Heading level={2}>Recommended Comparisons</Heading>
-          <Text className="mt-element" muted>
-            Side-by-side teacher modules with shared analysis prompts and comparative assignments.
-          </Text>
-
-          <div className="mt-component grid sm:grid-cols-2 gap-element">
-            <ComparisonLink
-              townA="boston-ma"
-              townB="cambridge-ma"
-              label="Boston vs Cambridge"
-              description="Besieged city and headquarters town"
-            />
-            <ComparisonLink
-              townA="lexington-ma"
-              townB="arlington-ma"
-              label="Lexington vs Arlington"
-              description="Opening shots and bloodiest fighting"
-            />
-            <ComparisonLink
-              townA="salem-ma"
-              townB="marblehead-ma"
-              label="Salem vs Marblehead"
-              description="North Shore maritime resistance"
-            />
-            <ComparisonLink
-              townA="lexington-ma"
-              townB="concord-ma"
-              label="Lexington vs Concord"
-              description="Dispersal and advance on April 19"
-            />
-          </div>
-        </Container>
-      </section>
-
       <Divider spacing="section" />
 
       {/* Print-Ready Resources */}
@@ -222,28 +185,6 @@ function SequenceCard({
         {description}
       </Text>
     </div>
-  );
-}
-
-function ComparisonLink({
-  townA,
-  townB,
-  label,
-  description,
-}: {
-  townA: string;
-  townB: string;
-  label: string;
-  description: string;
-}) {
-  return (
-    <Link
-      href={`/compare/teacher?townA=${townA}&townB=${townB}`}
-      className="block p-element bg-bg-secondary rounded-lg no-underline hover:bg-bg-secondary/80 transition-colors"
-    >
-      <Text className="font-medium">{label}</Text>
-      <Text size="small" muted>{description}</Text>
-    </Link>
   );
 }
 

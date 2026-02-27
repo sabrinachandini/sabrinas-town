@@ -159,26 +159,6 @@ export default async function ItinerariesPage({ params }: PageProps) {
         </>
       )}
 
-      {/* Compare Tool CTA */}
-      <Divider spacing="section" />
-      <section>
-        <Container>
-          <div className="p-component bg-bg-secondary rounded-lg text-center">
-            <Heading level={3}>Plan a Multi-Town Trip</Heading>
-            <Text className="mt-element max-w-[500px] mx-auto">
-              Use our comparison tool to explore connections between any two towns in the network.
-            </Text>
-            <div className="mt-element">
-              <Link
-                href={`/compare?townA=${slug}`}
-                className="inline-flex items-center justify-center px-6 py-3 border-2 border-accent-blue text-accent-blue font-medium hover:bg-accent-blue hover:text-white transition-colors"
-              >
-                Compare Towns
-              </Link>
-            </div>
-          </div>
-        </Container>
-      </section>
     </div>
   );
 }
