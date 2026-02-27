@@ -9,204 +9,201 @@ import {
 
 const FEATURED_TOWNS = [
   {
+    slug: "boston-ma",
+    name: "Boston",
+    description:
+      "From the Massacre to the Tea Party to the siege — the city where colonial grievance became organized resistance.",
+  },
+  {
     slug: "lexington-ma",
     name: "Lexington",
-    description: "Where the first shots of the Revolution were fired on April 19, 1775.",
+    description:
+      "Where the first shots of the Revolution were fired on April 19, 1775.",
   },
   {
     slug: "concord-ma",
     name: "Concord",
-    description: "The North Bridge fight that turned a skirmish into a war — and a literary capital that shaped how America remembers it.",
+    description:
+      "The North Bridge fight that turned a skirmish into a war — and a literary capital that shaped how America remembers it.",
   },
   {
-    slug: "boston-ma",
-    name: "Boston",
-    description: "From the Massacre to the Tea Party to the siege — the city where colonial grievance became organized resistance.",
+    slug: "saratoga-springs-ny",
+    name: "Saratoga Springs",
+    description:
+      "The turning point that convinced France to join the war and changed everything.",
   },
   {
-    slug: "salem-ma",
-    name: "Salem",
-    description: "A maritime hub whose privateers and merchants bankrolled the Revolution at sea.",
+    slug: "philadelphia-pa",
+    name: "Philadelphia",
+    description:
+      "Where independence was declared, the Constitution drafted, and a new government invented.",
   },
   {
-    slug: "plymouth-ma",
-    name: "Plymouth",
-    description: "The Pilgrim story meets the Revolution — a town whose founding mythology shaped patriot identity.",
+    slug: "yorktown-va",
+    name: "Yorktown",
+    description:
+      "The final siege that ended the war and secured American independence.",
   },
-  {
-    slug: "cambridge-ma",
-    name: "Cambridge",
-    description: "Where Washington took command of the Continental Army and Harvard became a barracks.",
-  },
-];
-
-const CLUSTERS = [
-  "Lexington-Concord Corridor",
-  "Boston Harbor Campaign",
-  "North Shore Maritime Network",
 ];
 
 export default function HomePage() {
   return (
     <main>
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="py-section">
         <Container>
-          <Heading level={1}>History is for everyone.</Heading>
+          <Heading level={1}>
+            Explore the American Revolution, town by town.
+          </Heading>
           <Text className="mt-element max-w-[620px]">
-            History is for Everyone maps the connections between America's Revolutionary
-            communities — the people who moved between them, the ideas that
-            traveled by letter and pamphlet, the supply lines and escape routes
-            that linked local rebellions into a continental cause. Seventy-five
-            towns, thirteen states, one interconnected story that's still
-            unfolding.
+            Walk the battlefields, trace the routes, read the primary sources.
+            Every town's story starts here.
           </Text>
 
-          <div className="flex flex-wrap gap-4 mt-component">
+          <div className="mt-component">
             <Button href="/towns">Explore Towns</Button>
-            <Button href="/teach" variant="secondary">
-              For Teachers
-            </Button>
-            <Button href="/partner" variant="secondary">
-              Partner With Us
-            </Button>
+          </div>
+
+          <div className="mt-element flex flex-wrap gap-x-6 gap-y-2">
+            <Link href="/towns">
+              <Text as="span" size="small" muted>
+                Plan a trip
+              </Text>
+            </Link>
+            <Link href="/towns">
+              <Text as="span" size="small" muted>
+                Find a town
+              </Text>
+            </Link>
+            <Link href="/teach">
+              <Text as="span" size="small" muted>
+                For teachers
+              </Text>
+            </Link>
           </div>
         </Container>
+        <div className="mt-section border-b border-accent-blue" />
       </section>
 
-      <Divider spacing="section" />
-
-      {/* Credibility Block */}
-      <section className="py-component">
+      {/* Featured Towns */}
+      <section className="py-section">
         <Container>
-          <Heading level={2}>Source-tiered research</Heading>
-          <Text className="mt-element">
-            Every claim on this site traces back to a cited source, and every
-            source is graded on a three-tier credibility scale. Tier 1 means
-            primary documents, National Park Service records, peer-reviewed
-            scholarship — the material historians build arguments from. Tier 2
-            covers reputable secondary works: established historians, museum
-            publications, well-sourced journalism. Tier 3 includes general
-            references like Wikipedia and travel guides, included only when
-            corroborated and clearly labeled. You can always see exactly where a
-            fact comes from and how much weight we give it.
-          </Text>
-          <div className="mt-element">
-            <Link href="/methodology">Read our full methodology →</Link>
-          </div>
+          <Heading level={2}>Start here.</Heading>
 
-          {/* Knowledge Graph Diagram */}
-          <div className="mt-component p-component bg-bg-secondary rounded-lg">
-            <Text
-              size="small"
-              muted
-              className="uppercase tracking-wide text-center mb-element"
-            >
-              The Knowledge Graph
-            </Text>
-            <div className="flex flex-wrap items-center justify-center gap-3 text-body font-medium">
-              <span className="px-4 py-2 bg-bg-primary rounded border border-border-light">
-                Town
-              </span>
-              <span className="text-accent-blue">↔</span>
-              <span className="px-4 py-2 bg-bg-primary rounded border border-border-light">
-                Event
-              </span>
-              <span className="text-accent-blue">↔</span>
-              <span className="px-4 py-2 bg-bg-primary rounded border border-border-light">
-                Person
-              </span>
-              <span className="text-accent-blue">↔</span>
-              <span className="px-4 py-2 bg-bg-primary rounded border border-border-light">
-                Theme
-              </span>
-              <span className="text-accent-blue">↔</span>
-              <span className="px-4 py-2 bg-bg-primary rounded border border-border-light">
-                Route
-              </span>
-            </div>
-            <Text size="small" muted className="text-center mt-element">
-              Every entity connects to every other. Follow Paul Revere from
-              Boston to Lexington. Trace the theme of "citizen soldiers" across
-              a dozen towns. See which events share the same cast of characters.
-            </Text>
-          </div>
-        </Container>
-      </section>
-
-      <Divider spacing="section" />
-
-      {/* Network Block */}
-      <section className="py-component">
-        <Container>
-          <Heading level={2}>Follow the story across towns</Heading>
-          <Text className="mt-element">
-            The Revolution didn't happen in one place. These six Massachusetts
-            towns show how a single region's history branches, converges, and
-            echoes across communities only miles apart.
-          </Text>
-
-          <div className="mt-component grid md:grid-cols-2 lg:grid-cols-3 gap-component">
+          <div className="mt-component grid md:grid-cols-2 gap-x-component gap-y-element">
             {FEATURED_TOWNS.map((town) => (
               <Link
                 key={town.slug}
                 href={`/towns/${town.slug}`}
-                className="block p-element bg-bg-secondary rounded-lg hover:border-accent-blue border border-border-light transition-colors"
+                className="block"
               >
-                <Text className="font-heading font-semibold">{town.name}</Text>
+                <Text as="span" className="font-heading font-semibold">
+                  {town.name}
+                </Text>
                 <Text size="small" muted className="mt-1">
                   {town.description}
                 </Text>
               </Link>
             ))}
           </div>
+        </Container>
+      </section>
 
-          {/* Cluster labels */}
-          <div className="mt-component flex flex-wrap gap-3">
-            {CLUSTERS.map((cluster) => (
-              <span
-                key={cluster}
-                className="px-3 py-1 text-small bg-bg-secondary rounded-full border border-border-light text-text-muted"
-              >
-                {cluster}
-              </span>
-            ))}
-          </div>
+      <Divider spacing="section" />
 
-          <div className="mt-element flex flex-wrap gap-4">
-            <Button href="/towns" variant="secondary" size="small">
-              Browse All Towns
-            </Button>
+      {/* Plan Your Visit */}
+      <section className="py-section">
+        <Container>
+          <Heading level={2}>Plan your visit.</Heading>
+
+          <div className="mt-component grid md:grid-cols-3 gap-component">
+            <div>
+              <Heading level={3}>Walkable routes</Heading>
+              <Text size="small" muted className="mt-element">
+                Follow curated itineraries through historic neighborhoods and
+                battlefields.
+              </Text>
+              <div className="mt-element">
+                <Link href="/towns/boston-ma/itineraries">
+                  See Boston itineraries →
+                </Link>
+              </div>
+            </div>
+
+            <div>
+              <Heading level={3}>Historic sites</Heading>
+              <Text size="small" muted className="mt-element">
+                Find the places worth visiting — taverns, meetinghouses, battle
+                greens, and monuments.
+              </Text>
+              <div className="mt-element">
+                <Link href="/towns/lexington-ma/visit">
+                  Visit Lexington →
+                </Link>
+              </div>
+            </div>
+
+            <div>
+              <Heading level={3}>Timeline</Heading>
+              <Text size="small" muted className="mt-element">
+                See what happened and when, from the first protests to the final
+                surrender.
+              </Text>
+              <div className="mt-element">
+                <Link href="/towns/concord-ma/events">
+                  Concord events →
+                </Link>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
 
       <Divider spacing="section" />
 
-      {/* Teacher Block */}
-      <section className="py-component">
+      {/* What Makes This Different */}
+      <section className="py-section">
         <Container>
-          <Heading level={2}>For teachers</Heading>
+          <Heading level={2}>No myths. No ratings. Just the record.</Heading>
+
+          <div className="mt-component max-w-[620px] space-y-element">
+            <Text>
+              — Every claim cites its source, graded by credibility tier.
+            </Text>
+            <Text>
+              — Profiles update transparently — every change is logged.
+            </Text>
+            <Text>
+              — Built for teachers, travelers, and towns themselves.
+            </Text>
+          </div>
+
+          <div className="mt-element">
+            <Link href="/methodology">Read our methodology →</Link>
+          </div>
+        </Container>
+      </section>
+
+      <Divider spacing="section" />
+
+      {/* Teachers */}
+      <section className="py-section">
+        <Container>
+          <Heading level={2}>Teaching this?</Heading>
           <Text className="mt-element max-w-[620px]">
-            Every town in the network includes a complete teacher module —
-            lesson plans aligned to state standards, curated primary source
-            packets with guided analysis prompts, comparative assignments that
-            connect multiple towns, and ready-to-use quizzes. The materials
-            emphasize critical thinking over memorization: students learn to
-            read primary documents, weigh conflicting accounts, and understand
-            how the same event looked different from different towns.
+            Every town includes teacher modules — lesson plans, curated primary
+            source packets, comparative assignments, and ready-to-use quizzes.
+            Built for critical thinking, not memorization.
           </Text>
           <div className="mt-element">
-            <Button href="/teach" variant="secondary" size="small">
-              Access Teacher Resources
-            </Button>
+            <Link href="/teach">Explore teacher resources →</Link>
           </div>
         </Container>
       </section>
 
       <Divider spacing="section" />
 
-      {/* Partner Block (understated) */}
+      {/* For Towns */}
       <section className="py-component">
         <Container>
           <Text muted>
@@ -215,57 +212,6 @@ export default function HomePage() {
           </Text>
         </Container>
       </section>
-
-      <Divider spacing="section" />
-
-      {/* Recently Updated */}
-      <section className="py-component">
-        <Container>
-          <Heading level={2}>Recently updated</Heading>
-          <Text className="mt-element" muted>
-            Our content evolves as new research emerges and communities share
-            their stories. Every change is logged transparently.
-          </Text>
-
-          <div className="mt-component space-y-element">
-            <div className="flex gap-4 items-start">
-              <div className="w-2 h-2 mt-2 rounded-full bg-accent-red flex-shrink-0" />
-              <div>
-                <Text size="small" muted>
-                  February 24, 2026
-                </Text>
-                <Text>
-                  <Link href="/towns/lexington-ma">Lexington, MA</Link> —
-                  Initial town profile published with 6 events, 7 historical
-                  figures, and 5 narrative stories including lesser-known voices
-                  like Prince Estabrook.
-                </Text>
-              </div>
-            </div>
-
-            <div className="flex gap-4 items-start">
-              <div className="w-2 h-2 mt-2 rounded-full bg-accent-blue flex-shrink-0" />
-              <div>
-                <Text size="small" muted>
-                  February 24, 2026
-                </Text>
-                <Text>
-                  Network launch — 25 towns across 7 states seeded with
-                  interconnected knowledge graph. Paul Revere's Midnight Ride
-                  route now traceable from Boston through Lexington to Concord.
-                </Text>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-component">
-            <Button href="/towns" variant="secondary" size="small">
-              Browse all towns
-            </Button>
-          </div>
-        </Container>
-      </section>
-
     </main>
   );
 }
