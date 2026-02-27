@@ -91,10 +91,10 @@ export default function PartnerPage() {
           </Text>
 
           <div className="mt-component grid md:grid-cols-3 gap-component">
-            {/* Starter */}
+            {/* Basic */}
             <div className="p-component bg-bg-secondary rounded-lg">
               <Text size="small" muted className="uppercase tracking-wide">
-                Starter
+                Basic
               </Text>
               <div className="mt-2 flex items-baseline gap-1">
                 <span className="text-h2 font-heading font-bold">Free</span>
@@ -108,13 +108,12 @@ export default function PartnerPage() {
                 <PricingFeature included>Network membership badge</PricingFeature>
                 <PricingFeature included>Teacher module access</PricingFeature>
                 <PricingFeature>Custom branding</PricingFeature>
-                <PricingFeature>Embeddable widgets</PricingFeature>
                 <PricingFeature>Analytics dashboard</PricingFeature>
               </ul>
 
               <div className="mt-component">
                 <Button
-                  href="/partner/inquire?tier=starter"
+                  href="/partner/inquire?tier=BASIC"
                   variant="secondary"
                   className="w-full"
                 >
@@ -123,11 +122,11 @@ export default function PartnerPage() {
               </div>
             </div>
 
-            {/* Pro */}
+            {/* Plus */}
             <div className="p-component bg-bg-secondary rounded-lg border-2 border-accent-blue">
               <div className="flex items-center justify-between">
                 <Text size="small" muted className="uppercase tracking-wide">
-                  Pro
+                  Plus
                 </Text>
                 <span className="px-2 py-0.5 bg-accent-blue text-white text-small rounded">
                   Popular
@@ -142,9 +141,8 @@ export default function PartnerPage() {
               </Text>
 
               <ul className="mt-component space-y-2">
-                <PricingFeature included>Everything in Starter</PricingFeature>
+                <PricingFeature included>Everything in Basic</PricingFeature>
                 <PricingFeature included>Custom branding</PricingFeature>
-                <PricingFeature included>Embeddable widgets</PricingFeature>
                 <PricingFeature included>Basic analytics</PricingFeature>
                 <PricingFeature included>Priority support</PricingFeature>
                 <PricingFeature>Advanced analytics</PricingFeature>
@@ -152,18 +150,18 @@ export default function PartnerPage() {
 
               <div className="mt-component">
                 <Button
-                  href="/partner/inquire?tier=pro"
+                  href="/partner/inquire?tier=PLUS"
                   className="w-full"
                 >
-                  Start Pro Trial
+                  Start Plus Trial
                 </Button>
               </div>
             </div>
 
-            {/* Premium */}
+            {/* Pro */}
             <div className="p-component bg-bg-secondary rounded-lg">
               <Text size="small" muted className="uppercase tracking-wide">
-                Premium
+                Pro
               </Text>
               <div className="mt-2 flex items-baseline gap-1">
                 <span className="text-h2 font-heading font-bold">$299</span>
@@ -174,7 +172,7 @@ export default function PartnerPage() {
               </Text>
 
               <ul className="mt-component space-y-2">
-                <PricingFeature included>Everything in Pro</PricingFeature>
+                <PricingFeature included>Everything in Plus</PricingFeature>
                 <PricingFeature included>Advanced analytics</PricingFeature>
                 <PricingFeature included>API access</PricingFeature>
                 <PricingFeature included>Custom integrations</PricingFeature>
@@ -184,7 +182,7 @@ export default function PartnerPage() {
 
               <div className="mt-component">
                 <Button
-                  href="/partner/inquire?tier=premium"
+                  href="/partner/inquire?tier=PRO"
                   variant="secondary"
                   className="w-full"
                 >

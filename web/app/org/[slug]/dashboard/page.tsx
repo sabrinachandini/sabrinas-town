@@ -136,9 +136,9 @@ export default async function OrgDashboardPage({
                 Choose a Plan
               </Text>
               <div className="mt-element space-y-3">
-                <PlanOption orgSlug={slug} tier="BASIC" price="$3,000" desc="Core stewardship for one town" userId={session.user.id} />
-                <PlanOption orgSlug={slug} tier="PLUS" price="$5,000" desc="Enhanced analytics and branding" userId={session.user.id} />
-                <PlanOption orgSlug={slug} tier="PRO" price="$10,000" desc="Full network access and custom domains" userId={session.user.id} />
+                <PlanOption orgSlug={slug} tier="BASIC" price="Free" desc="Core stewardship for one town" userId={session.user.id} />
+                <PlanOption orgSlug={slug} tier="PLUS" price="$99" desc="Enhanced analytics and branding" userId={session.user.id} />
+                <PlanOption orgSlug={slug} tier="PRO" price="$299" desc="Full network access and custom domains" userId={session.user.id} />
               </div>
             </div>
           )}
