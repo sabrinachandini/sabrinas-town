@@ -3,6 +3,8 @@
 import { getClusters } from "@/lib/api";
 import { Container, Heading, Text, Link, Divider } from "@/components/ui";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Clusters | History Is For Everyone",
   description:

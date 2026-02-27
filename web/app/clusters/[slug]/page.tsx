@@ -3,6 +3,8 @@
 import { getCluster, ClusterTownEntry } from "@/lib/api";
 import { Container, Heading, Text, Link, Divider } from "@/components/ui";
 
+export const dynamic = "force-dynamic";
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
