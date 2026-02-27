@@ -2,7 +2,6 @@ import {
   Container,
   Heading,
   Text,
-  Link,
   Button,
   Divider,
 } from "@/components/ui";
@@ -60,8 +59,8 @@ export default function PartnerPage() {
               description="Your town joins the verified network of Revolutionary sites. Visitors see the 'Official Revolutionary Town Network Member' badge, signaling quality and authenticity."
             />
             <FeatureCard
-              title="Embeddable Widgets"
-              description="Add your town's profile to your website with a single line of code. Widgets match your branding and update automatically as content improves."
+              title="Embeddable Widgets (Coming Soon)"
+              description="Soon you'll be able to add your town's profile to your website with a single line of code. Widgets will match your branding and update automatically."
             />
             <FeatureCard
               title="Analytics Dashboard"
@@ -193,33 +192,6 @@ export default function PartnerPage() {
                 </Button>
               </div>
             </div>
-          </div>
-        </section>
-
-        <Divider spacing="section" />
-
-        {/* Embed Preview */}
-        <section>
-          <Heading level={2}>See it in action</Heading>
-          <Text className="mt-element">
-            Here's what an embedded widget looks like on a partner website.
-          </Text>
-
-          <div className="mt-component p-element bg-bg-secondary rounded-lg">
-            <Text size="small" muted className="mb-element">
-              Preview: Lexington Tourism Board embed
-            </Text>
-            <div className="border border-border-light rounded-lg overflow-hidden">
-              <iframe
-                src="/embed/lexington-ma?partner=true"
-                className="w-full h-[500px] bg-bg-primary"
-                title="Lexington embed preview"
-              />
-            </div>
-          </div>
-
-          <div className="mt-element">
-            <Link href="/embed/lexington-ma">View full embed page →</Link>
           </div>
         </section>
 
