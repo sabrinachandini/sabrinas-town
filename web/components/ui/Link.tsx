@@ -15,7 +15,7 @@ export function Link({
   external = false,
 }: LinkProps) {
   const baseStyles =
-    "text-accent-blue hover:text-accent-blue-hover hover:underline underline-offset-2 transition-colors duration-200";
+    "text-accent-blue hover:text-accent-blue-hover underline decoration-accent-blue hover:decoration-accent-red underline-offset-3 decoration-1 transition-colors duration-200";
 
   if (external) {
     return (

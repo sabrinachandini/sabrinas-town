@@ -6,6 +6,7 @@ import {
   PageHeader,
   EditorialSection,
 } from "@/components/editorial";
+import { Reveal } from "@/lib/scroll";
 
 const EDITORIAL_SLUGS = new Set(["boston-ma", "lexington-ma", "concord-ma", "salem-ma", "worcester-ma", "springfield-ma", "plymouth-ma", "trenton-nj", "princeton-nj", "monmouth-nj", "morristown-nj", "elizabeth-nj", "hackensack-nj"]);
 
@@ -72,11 +73,14 @@ function EditorialEventsPage({
       <EditorialSection id="timeline" title="Timeline">
         {sortedEvents.length > 0 ? (
           <ol className="space-y-0">
-            {sortedEvents.map((event) => (
-              <li
+            {sortedEvents.map((event, index) => (
+              <Reveal
+                as="li"
                 key={event.id}
-                className="flex gap-6 py-4 border-b border-border-light last:border-b-0"
+                delay={index * 60}
+                wrapperClassName="flex gap-6 py-4 border-b border-border-light last:border-b-0"
               >
+                <span className="w-2 h-2 rounded-full bg-accent-red shrink-0 mt-2" />
                 <span className="w-[100px] shrink-0 text-small text-text-muted font-body tabular-nums">
                   {formatDate(event.startDate)}
                 </span>
@@ -95,7 +99,7 @@ function EditorialEventsPage({
                     </p>
                   )}
                 </div>
-              </li>
+              </Reveal>
             ))}
           </ol>
         ) : (
@@ -154,11 +158,12 @@ function ClassicEventsPage({
 
           <div className="mt-component space-y-component">
             {sortedByDate.map((event, index) => (
-              <EventCard
-                key={event.id}
-                event={event}
-                isLast={index === sortedByDate.length - 1}
-              />
+              <Reveal key={event.id} delay={index * 100}>
+                <EventCard
+                  event={event}
+                  isLast={index === sortedByDate.length - 1}
+                />
+              </Reveal>
             ))}
           </div>
         </Container>

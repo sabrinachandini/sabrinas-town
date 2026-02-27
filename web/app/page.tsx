@@ -4,8 +4,8 @@ import {
   Text,
   Link,
   Button,
-  Divider,
 } from "@/components/ui";
+import { Reveal } from "@/lib/scroll";
 
 const FEATURED_TOWNS = [
   {
@@ -85,34 +85,45 @@ export default function HomePage() {
         <div className="mt-section border-b border-accent-blue" />
       </section>
 
+      {/* Section break */}
+      <div className="relative my-section">
+        <div className="border-t border-border-light" />
+        <div className="absolute left-6 md:left-12 top-0 -translate-y-1/2 w-3 h-3 rounded-full bg-accent-red" />
+      </div>
+
       {/* Featured Towns */}
-      <section className="py-section">
+      <Reveal as="section" wrapperClassName="py-section">
         <Container>
           <Heading level={2}>Start here.</Heading>
 
           <div className="mt-component grid md:grid-cols-2 gap-x-component gap-y-element">
-            {FEATURED_TOWNS.map((town) => (
-              <Link
-                key={town.slug}
-                href={`/towns/${town.slug}`}
-                className="block"
-              >
-                <Text as="span" className="font-heading font-semibold">
-                  {town.name}
-                </Text>
-                <Text size="small" muted className="mt-1">
-                  {town.description}
-                </Text>
-              </Link>
+            {FEATURED_TOWNS.map((town, index) => (
+              <Reveal key={town.slug} delay={index * 80}>
+                <Link
+                  href={`/towns/${town.slug}`}
+                  className="block"
+                >
+                  <Text as="span" className="font-heading font-semibold">
+                    {town.name}
+                  </Text>
+                  <Text size="small" muted className="mt-1">
+                    {town.description}
+                  </Text>
+                </Link>
+              </Reveal>
             ))}
           </div>
         </Container>
-      </section>
+      </Reveal>
 
-      <Divider spacing="section" />
+      {/* Section break */}
+      <div className="relative my-section">
+        <div className="border-t border-border-light" />
+        <div className="absolute left-6 md:left-12 top-0 -translate-y-1/2 w-3 h-3 rounded-full bg-accent-blue" />
+      </div>
 
       {/* Plan Your Visit */}
-      <section className="py-section">
+      <Reveal as="section" wrapperClassName="py-section">
         <Container>
           <Heading level={2}>Plan your visit.</Heading>
 
@@ -157,12 +168,16 @@ export default function HomePage() {
             </div>
           </div>
         </Container>
-      </section>
+      </Reveal>
 
-      <Divider spacing="section" />
+      {/* Section break */}
+      <div className="relative my-section">
+        <div className="border-t border-border-light" />
+        <div className="absolute left-6 md:left-12 top-0 -translate-y-1/2 w-3 h-3 rounded-full bg-accent-red" />
+      </div>
 
       {/* What Makes This Different */}
-      <section className="py-section">
+      <Reveal as="section" wrapperClassName="py-section">
         <Container>
           <Heading level={2}>No myths. No ratings. Just the record.</Heading>
 
@@ -182,12 +197,16 @@ export default function HomePage() {
             <Link href="/methodology">Read our methodology →</Link>
           </div>
         </Container>
-      </section>
+      </Reveal>
 
-      <Divider spacing="section" />
+      {/* Section break */}
+      <div className="relative my-section">
+        <div className="border-t border-border-light" />
+        <div className="absolute left-6 md:left-12 top-0 -translate-y-1/2 w-3 h-3 rounded-full bg-accent-blue" />
+      </div>
 
       {/* Teachers */}
-      <section className="py-section">
+      <Reveal as="section" wrapperClassName="py-section">
         <Container>
           <Heading level={2}>Teaching this?</Heading>
           <Text className="mt-element max-w-[620px]">
@@ -199,19 +218,23 @@ export default function HomePage() {
             <Link href="/teach">Explore teacher resources →</Link>
           </div>
         </Container>
-      </section>
+      </Reveal>
 
-      <Divider spacing="section" />
+      {/* Section break */}
+      <div className="relative my-section">
+        <div className="border-t border-border-light" />
+        <div className="absolute left-6 md:left-12 top-0 -translate-y-1/2 w-3 h-3 rounded-full bg-accent-red" />
+      </div>
 
       {/* For Towns */}
-      <section className="py-component">
+      <Reveal as="section" wrapperClassName="py-component">
         <Container>
           <Text muted>
             Work for your town's tourism office or historical society?{" "}
             <Link href="/partner">Learn how to partner with us</Link>.
           </Text>
         </Container>
-      </section>
+      </Reveal>
     </main>
   );
 }

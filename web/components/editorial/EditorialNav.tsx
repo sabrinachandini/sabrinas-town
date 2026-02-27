@@ -35,8 +35,8 @@ export function EditorialNav({ slug }: { slug: string }) {
                   href={href}
                   className={
                     isActive
-                      ? "font-semibold underline underline-offset-4 text-text-primary"
-                      : "text-text-muted hover:text-text-primary transition-colors"
+                      ? "no-underline font-semibold underline underline-offset-4 text-text-primary"
+                      : "no-underline text-text-muted hover:text-text-primary transition-colors"
                   }
                 >
                   {item.label}

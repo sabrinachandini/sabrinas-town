@@ -15,10 +15,10 @@ const config: Config = {
         "text-primary": "#1E1E1E",
         "text-muted": "#6B7280",
         // Accent
-        "accent-blue": "#2C4A7A",
-        "accent-blue-hover": "#3B5F99",
-        "accent-red": "#B03A48",
-        "accent-red-hover": "#C54A57",
+        "accent-blue": "#1B3D6F",
+        "accent-blue-hover": "#264D85",
+        "accent-red": "#C53727",
+        "accent-red-hover": "#D94A3A",
         // Border
         "border-light": "#E2E2E2",
       },

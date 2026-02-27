@@ -40,7 +40,7 @@ export function TownSubnav({ slug }: TownSubnavProps) {
               <li key={path}>
                 <Link
                   href={`${base}${path}`}
-                  className={`py-1 transition-colors duration-150 ${
+                  className={`no-underline py-1 transition-colors duration-150 ${
                     active
                       ? "text-text-primary font-medium border-b-2 border-accent-blue"
                       : "text-text-muted hover:text-text-primary"

@@ -1,4 +1,18 @@
-import { Container, Text, Link, Divider } from "@/components/ui";
+import Image from "next/image";
+import NextLink from "next/link";
+import { Container, Text, Divider } from "@/components/ui";
+
+const FOOTER_LINKS = [
+  { label: "Towns", href: "/towns" },
+  { label: "Big Picture", href: "/clusters" },
+  { label: "Teach", href: "/teach" },
+  { label: "Partner", href: "/partner" },
+  { label: "About", href: "/about" },
+  { label: "Methodology", href: "/methodology" },
+  { label: "Changelog", href: "/changelog" },
+  { label: "Terms", href: "/terms" },
+  { label: "Privacy", href: "/privacy" },
+];
 
 export function Footer() {
   return (
@@ -6,23 +20,29 @@ export function Footer() {
       <Container>
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-element">
           <div>
-            <Text className="font-heading text-h3 font-semibold">
-              History is for Everyone
-            </Text>
-            <Text size="small" muted>
-              American Revolution Research Network
+            <NextLink href="/" className="no-underline">
+              <Image
+                src="/images/logo.png"
+                alt="History is for Everyone"
+                width={200}
+                height={36}
+                className="h-9 w-auto"
+              />
+            </NextLink>
+            <Text size="small" muted className="mt-2">
+              A living network of America&apos;s Revolutionary towns — built for travelers, teachers, and towns themselves.
             </Text>
           </div>
           <div className="flex flex-wrap gap-6">
-            <Link href="/towns">Towns</Link>
-            <Link href="/clusters">Big Picture</Link>
-            <Link href="/teach">Teach</Link>
-            <Link href="/partner">Partner</Link>
-            <Link href="/about">About</Link>
-            <Link href="/methodology">Methodology</Link>
-            <Link href="/changelog">Changelog</Link>
-            <Link href="/terms">Terms</Link>
-            <Link href="/privacy">Privacy</Link>
+            {FOOTER_LINKS.map(({ label, href }) => (
+              <NextLink
+                key={href}
+                href={href}
+                className="no-underline text-accent-blue hover:text-accent-blue-hover transition-colors duration-200 text-small"
+              >
+                {label}
+              </NextLink>
+            ))}
           </div>
         </div>
         <Divider spacing="default" />

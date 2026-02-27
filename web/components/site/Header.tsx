@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -27,12 +28,19 @@ export function Header() {
   return (
     <header className="border-b border-border-light bg-bg-primary">
       <div className="mx-auto max-w-wide px-6 md:px-12 flex items-center justify-between h-14">
-        {/* Wordmark */}
+        {/* Logo */}
         <Link
           href="/"
-          className="font-heading text-[1.125rem] font-semibold tracking-tight text-text-primary hover:text-accent-blue transition-colors"
+          className="no-underline"
         >
-          History is for Everyone
+          <Image
+            src="/images/logo.png"
+            alt="History is for Everyone"
+            width={160}
+            height={28}
+            className="h-7 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -44,7 +52,7 @@ export function Header() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className={`text-[0.9375rem] font-body transition-colors py-1 border-b-2 ${
+                    className={`no-underline text-[0.9375rem] font-body transition-colors py-1 border-b-2 ${
                       active
                         ? "border-accent-blue text-text-primary font-medium"
                         : "border-transparent text-text-muted hover:text-text-primary"
@@ -79,7 +87,7 @@ export function Header() {
                   <Link
                     href={href}
                     onClick={() => setOpen(false)}
-                    className={`block py-2 text-[0.9375rem] font-body transition-colors ${
+                    className={`no-underline block py-2 text-[0.9375rem] font-body transition-colors ${
                       active
                         ? "text-text-primary font-medium"
                         : "text-text-muted hover:text-text-primary"
