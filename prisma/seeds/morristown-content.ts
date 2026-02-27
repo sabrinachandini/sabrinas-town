@@ -292,46 +292,177 @@ SOURCES
     },
   });
 
+  // --- CROSS-REFERENCED PEOPLE (shared across town seeds) ---
+
+  await prisma.person.upsert({
+    where: { id: 'person-alexander-hamilton' },
+    update: {},
+    create: {
+      id: 'person-alexander-hamilton',
+      name: 'Alexander Hamilton',
+      roles: ['Aide-de-camp', 'Treasury Secretary', 'Lawyer'],
+      bioShort: 'Washington\'s chief aide-de-camp who served at Morristown headquarters and courted Elizabeth Schuyler during the 1779-1780 encampment.',
+      birthYear: 1755,
+      deathYear: 1804,
+      verificationStatus: 'VERIFIED',
+    },
+  });
+
+  await prisma.person.upsert({
+    where: { id: 'person-joseph-plumb-martin' },
+    update: {},
+    create: {
+      id: 'person-joseph-plumb-martin',
+      name: 'Joseph Plumb Martin',
+      roles: ['Private', 'Memoirist'],
+      bioShort: 'Connecticut enlisted soldier whose memoir provides the most detailed account of common soldiers\' experience during the Morristown encampments.',
+      birthYear: 1760,
+      deathYear: 1850,
+      verificationStatus: 'VERIFIED',
+    },
+  });
+
+  await prisma.person.upsert({
+    where: { id: 'person-martha-washington-morristown' },
+    update: {},
+    create: {
+      id: 'person-martha-washington-morristown',
+      name: 'Martha Washington',
+      roles: ['First Lady', 'Camp Companion'],
+      bioShort: 'Wife of George Washington who traveled to Morristown for both winter encampments, hosting social gatherings and boosting morale at headquarters.',
+      birthYear: 1731,
+      deathYear: 1802,
+      verificationStatus: 'VERIFIED',
+    },
+  });
+
   console.log('  People seeded.');
 }
 
 // =============================================================================
-// PLACES — Add slugs to 6 existing, create 4 new
+// PLACES — 6 core + 4 new
 // =============================================================================
 
 async function seedPlaces() {
   console.log('  Seeding places...');
 
-  // --- ADD SLUGS TO 6 EXISTING PLACES ---
+  // --- 6 CORE PLACES (upsert to handle both fresh and existing DBs) ---
 
-  await prisma.place.update({
+  await prisma.place.upsert({
     where: { id: 'washingtons-headquarters-museum' },
-    data: { slug: 'washingtons-headquarters-museum' },
+    update: { slug: 'washingtons-headquarters-museum' },
+    create: {
+      id: 'washingtons-headquarters-museum',
+      townId: TOWN_ID,
+      name: "Washington's Headquarters Museum (Ford Mansion)",
+      slug: 'washingtons-headquarters-museum',
+      placeType: 'MUSEUM',
+      description: "The Ford Mansion served as George Washington's headquarters during the winter of 1779-1780, the most severe winter of the eighteenth century. The Georgian-style house, built by Colonel Jacob Ford Jr. in the 1770s, was one of the finest homes in Morristown. Washington used it to coordinate military strategy, manage correspondence with Congress, and host meetings with his officers. The adjacent museum, built in 1937, houses Revolutionary War artifacts and interprets the Morristown encampments.",
+      lat: 40.7678,
+      lng: -74.4697,
+      address: '230 Morris Avenue, Morristown, NJ 07960',
+      hours: 'Wed-Sun 9:30 AM - 5:00 PM',
+      admission: 'Free (National Park Service)',
+      featured: true,
+      historicalNote: "Washington chose the Ford Mansion for its size and location. From here he managed the crisis of the Hard Winter — desertions, supply failures, and near-starvation of his troops at nearby Jockey Hollow.",
+    },
   });
 
-  await prisma.place.update({
+  await prisma.place.upsert({
     where: { id: 'jockey-hollow-encampment' },
-    data: { slug: 'jockey-hollow-encampment' },
+    update: { slug: 'jockey-hollow-encampment' },
+    create: {
+      id: 'jockey-hollow-encampment',
+      townId: TOWN_ID,
+      name: 'Jockey Hollow Encampment Area',
+      slug: 'jockey-hollow-encampment',
+      placeType: 'LANDMARK',
+      description: 'Jockey Hollow was the main encampment site for the Continental Army during the winter of 1779-1780. Approximately 10,000 soldiers built over 1,000 log huts across these wooded hills southwest of Morristown. The area is now part of Morristown National Historical Park, with hiking trails that pass through the brigade encampment sites and reconstructed soldier huts.',
+      lat: 40.7295,
+      lng: -74.5410,
+      address: 'Tempe Wick Road, Morristown, NJ 07960',
+      hours: 'Daily sunrise to sunset',
+      admission: 'Free',
+      featured: true,
+      historicalNote: 'The winter of 1779-1780 brought 28 snowstorms and temperatures that froze New York Harbor solid. Soldiers at Jockey Hollow sometimes went days without food, and desertions reached alarming levels. Yet the army survived, proving its resilience.',
+    },
   });
 
-  await prisma.place.update({
+  await prisma.place.upsert({
     where: { id: 'fort-nonsense' },
-    data: { slug: 'fort-nonsense' },
+    update: { slug: 'fort-nonsense' },
+    create: {
+      id: 'fort-nonsense',
+      townId: TOWN_ID,
+      name: 'Fort Nonsense',
+      slug: 'fort-nonsense',
+      placeType: 'LANDMARK',
+      description: "Fort Nonsense sits atop a hill overlooking Morristown where Washington ordered earthworks built in 1777. Local tradition holds that soldiers considered the fortification pointless — hence the name — though the hilltop actually provided excellent observation of approaches to Morristown from the east. The earthworks have largely disappeared, but the site offers panoramic views and interpretive signs.",
+      lat: 40.7930,
+      lng: -74.4720,
+      address: 'Ann Street, Morristown, NJ 07960',
+      hours: 'Dawn to dusk',
+      admission: 'Free',
+      historicalNote: "Whether the name reflects genuine military skepticism or later folklore, the hilltop position commanded views of the roads approaching Morristown — a genuine tactical advantage during Washington's first winter encampment in 1777.",
+    },
   });
 
-  await prisma.place.update({
+  await prisma.place.upsert({
     where: { id: 'wick-house' },
-    data: { slug: 'wick-house' },
+    update: { slug: 'wick-house' },
+    create: {
+      id: 'wick-house',
+      townId: TOWN_ID,
+      name: 'Wick House',
+      slug: 'wick-house',
+      placeType: 'HISTORIC_HOUSE',
+      description: "The Wick House, a modest farmhouse within Jockey Hollow, served as quarters for Major General Arthur St. Clair during the 1779-1780 encampment. The house is associated with the story of Tempe Wick, the farmer's daughter who reportedly hid her horse from mutinous soldiers. The restored farmhouse with its period garden illustrates civilian life amid military occupation.",
+      lat: 40.7340,
+      lng: -74.5380,
+      address: 'Jockey Hollow Road, Morristown, NJ 07960',
+      hours: 'Seasonally; check NPS website',
+      admission: 'Free',
+      historicalNote: "The Wick family's experience represents the broader impact of military encampment on local civilians, who had to share their resources, endure requisitions, and navigate the tensions between supporting the cause and protecting their own livelihoods.",
+    },
   });
 
-  await prisma.place.update({
+  await prisma.place.upsert({
     where: { id: 'morristown-green' },
-    data: { slug: 'morristown-green' },
+    update: { slug: 'morristown-green' },
+    create: {
+      id: 'morristown-green',
+      townId: TOWN_ID,
+      name: 'Morristown Green',
+      slug: 'morristown-green',
+      placeType: 'LANDMARK',
+      description: "The Morristown Green has been the town's central public space since the colonial era. During the Revolutionary War, it served as a gathering point for troops and townspeople. The green was where the Declaration of Independence was first read publicly in Morristown in 1776, and it remained the civic heart of the community throughout both winter encampments.",
+      lat: 40.7968,
+      lng: -74.4815,
+      address: 'The Green, Morristown, NJ 07960',
+      hours: 'Open 24 hours',
+      admission: 'Free',
+      featured: true,
+      historicalNote: "The Green witnessed both the optimism and the despair of the Revolution — from enthusiastic readings of the Declaration to the sight of ragged, starving soldiers marching past on their way to Jockey Hollow.",
+    },
   });
 
-  await prisma.place.update({
+  await prisma.place.upsert({
     where: { id: 'morristown-presbyterian-church' },
-    data: { slug: 'morristown-presbyterian-church' },
+    update: { slug: 'morristown-presbyterian-church' },
+    create: {
+      id: 'morristown-presbyterian-church',
+      townId: TOWN_ID,
+      name: 'Morristown Presbyterian Church',
+      slug: 'morristown-presbyterian-church',
+      placeType: 'HISTORIC_HOUSE',
+      description: "The Presbyterian Church on the Morristown Green served as both a house of worship and a hospital during the Continental Army encampments. Its minister, Timothy Johnes, was a committed Patriot who used the pulpit to support the revolutionary cause. The current building dates to the early nineteenth century, but the congregation's role during the Revolution is documented in church records and commemorated on site.",
+      lat: 40.7975,
+      lng: -74.4808,
+      address: '57 E Park Place, Morristown, NJ 07960',
+      hours: 'Office hours Mon-Fri; Sunday services',
+      admission: 'Free',
+      historicalNote: "During the encampments, the church served both spiritual and practical functions — hosting worship services for soldiers while also functioning as a smallpox inoculation station and field hospital.",
+    },
   });
 
   // --- 4 NEW PLACES ---
@@ -422,31 +553,81 @@ async function seedPlaces() {
 async function seedEvents() {
   console.log('  Seeding events...');
 
-  // --- ADD SLUGS TO 5 EXISTING EVENTS ---
+  // --- 5 CORE EVENTS (upsert to handle both fresh and existing DBs) ---
 
-  await prisma.event.update({
+  await prisma.event.upsert({
     where: { id: 'event-morristown-hard-winter' },
-    data: { slug: 'hard-winter-1779-1780' },
+    update: { slug: 'hard-winter-1779-1780' },
+    create: {
+      id: 'event-morristown-hard-winter',
+      townId: TOWN_ID,
+      name: 'The Hard Winter at Morristown',
+      slug: 'hard-winter-1779-1780',
+      startDate: new Date('1779-12-01'),
+      datePrecision: 'MONTH',
+      summary: 'The winter of 1779-1780 was the most severe of the eighteenth century. The Continental Army at Jockey Hollow endured 28 snowstorms, sub-zero temperatures, and critical supply shortages. Soldiers went days without food, desertions spiked, and the army nearly dissolved. Yet it survived, demonstrating a resilience that would prove decisive.',
+      significanceWeight: 95,
+    },
   });
 
-  await prisma.event.update({
+  await prisma.event.upsert({
     where: { id: 'event-morristown-pa-mutiny' },
-    data: { slug: 'pennsylvania-line-mutiny-1781' },
+    update: { slug: 'pennsylvania-line-mutiny-1781' },
+    create: {
+      id: 'event-morristown-pa-mutiny',
+      townId: TOWN_ID,
+      name: 'Pennsylvania Line Mutiny',
+      slug: 'pennsylvania-line-mutiny-1781',
+      startDate: new Date('1781-01-01'),
+      datePrecision: 'DAY',
+      summary: 'On New Year\'s Day 1781, approximately 1,500 Pennsylvania soldiers mutinied at their Jockey Hollow encampment, seizing weapons and marching toward Philadelphia to demand back pay and clarification of enlistment terms. The mutiny was the most serious internal crisis the Continental Army faced, exposing the failures of congressional support.',
+      significanceWeight: 90,
+    },
   });
 
-  await prisma.event.update({
+  await prisma.event.upsert({
     where: { id: 'event-morristown-first-winter' },
-    data: { slug: 'first-winter-encampment-1777' },
+    update: { slug: 'first-winter-encampment-1777' },
+    create: {
+      id: 'event-morristown-first-winter',
+      townId: TOWN_ID,
+      name: 'First Winter Encampment at Morristown',
+      slug: 'first-winter-encampment-1777',
+      startDate: new Date('1777-01-06'),
+      datePrecision: 'MONTH',
+      summary: 'After victories at Trenton and Princeton, Washington chose Morristown for his first winter quarters. The town\'s position in the Watchung Mountains provided natural defense, access to supply routes, and distance from British-held New York. About 3,000 troops established camp in and around the town.',
+      significanceWeight: 85,
+    },
   });
 
-  await prisma.event.update({
+  await prisma.event.upsert({
     where: { id: 'event-morristown-smallpox-inoculation' },
-    data: { slug: 'smallpox-inoculation-program' },
+    update: { slug: 'smallpox-inoculation-program' },
+    create: {
+      id: 'event-morristown-smallpox-inoculation',
+      townId: TOWN_ID,
+      name: 'Continental Army Smallpox Inoculation Program',
+      slug: 'smallpox-inoculation-program',
+      startDate: new Date('1777-02-01'),
+      datePrecision: 'MONTH',
+      summary: 'Washington ordered the mass inoculation of Continental Army troops against smallpox during the first Morristown encampment — one of the earliest large-scale military vaccination programs in history. The controversial decision, which temporarily weakened troops during recovery, ultimately preserved the fighting force from the disease that had devastated armies throughout the war.',
+      significanceWeight: 80,
+    },
   });
 
-  await prisma.event.update({
+  await prisma.event.upsert({
     where: { id: 'event-morristown-arnold-treason' },
-    data: { slug: 'arnold-treason-revealed-1780' },
+    update: { slug: 'arnold-treason-revealed-1780' },
+    create: {
+      id: 'event-morristown-arnold-treason',
+      townId: TOWN_ID,
+      name: 'Benedict Arnold\'s Treason Revealed',
+      slug: 'arnold-treason-revealed-1780',
+      startDate: new Date('1780-09-25'),
+      datePrecision: 'DAY',
+      summary: 'News of Benedict Arnold\'s treason reached Washington and his officers, many of whom were based in and around Morristown. Arnold\'s plot to surrender West Point to the British shocked the officer corps and threatened to undermine trust within the army. The capture of British spy John André and Arnold\'s escape to British lines created a crisis that reverberated through the Morristown command structure.',
+      significanceWeight: 75,
+    },
   });
 
   // --- 16 NEW EVENTS ---
