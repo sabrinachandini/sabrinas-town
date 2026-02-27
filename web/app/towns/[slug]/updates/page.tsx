@@ -93,7 +93,7 @@ export default async function UpdatesPage({ params }: PageProps) {
                   { key: "sources", label: "Source Documentation" },
                 ].map(({ key, label }) => {
                   const breakdown = town.scoreBreakdown?.[key as keyof Omit<typeof town.scoreBreakdown, 'hints'>];
-                  const score = breakdown && 'score' in breakdown ? breakdown.score : 0;
+                  const score = typeof breakdown === 'number' ? breakdown : (breakdown && typeof breakdown === 'object' && 'score' in breakdown ? breakdown.score : 0);
                   return (
                     <div key={key} className="p-element bg-bg-secondary rounded-lg">
                       <div className="flex items-center justify-between">
