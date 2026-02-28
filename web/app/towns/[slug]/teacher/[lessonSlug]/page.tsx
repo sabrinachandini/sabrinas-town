@@ -7,14 +7,14 @@ import {
   Prose,
 } from "@/components/editorial";
 
-const EDITORIAL_SLUGS = new Set(["boston-ma", "lexington-ma", "concord-ma", "salem-ma", "worcester-ma", "springfield-ma", "plymouth-ma", "trenton-nj", "princeton-nj", "monmouth-nj", "morristown-nj", "elizabeth-nj", "hackensack-nj"]);
+export const revalidate = 3600;
 
 interface PageProps {
-  params: Promise<{ slug: string; id: string }>;
+  params: Promise<{ slug: string; lessonSlug: string }>;
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { slug, id } = await params;
+  const { slug } = await params;
   const module = await getTeacherModule(slug);
 
   if (!module) {
@@ -28,11 +28,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export default async function LessonDetailPage({ params }: PageProps) {
-  const { slug, id } = await params;
-
-  if (!EDITORIAL_SLUGS.has(slug)) {
-    notFound();
-  }
+  const { slug } = await params;
 
   const [town, module] = await Promise.all([
     getTown(slug),

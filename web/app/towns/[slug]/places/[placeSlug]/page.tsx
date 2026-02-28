@@ -7,7 +7,7 @@ import {
   Prose,
 } from "@/components/editorial";
 
-const EDITORIAL_SLUGS = new Set(["boston-ma", "lexington-ma", "concord-ma", "salem-ma", "worcester-ma", "springfield-ma", "plymouth-ma", "trenton-nj", "princeton-nj", "monmouth-nj", "morristown-nj", "elizabeth-nj", "hackensack-nj"]);
+export const revalidate = 3600;
 
 const PLACE_TYPE_LABELS: Record<string, string> = {
   BATTLEFIELD: "Battlefield",
@@ -23,12 +23,12 @@ const PLACE_TYPE_LABELS: Record<string, string> = {
 };
 
 interface PageProps {
-  params: Promise<{ slug: string; id: string }>;
+  params: Promise<{ slug: string; placeSlug: string }>;
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { slug, id } = await params;
-  const place = await getTownPlaceDetail(slug, id);
+  const { slug, placeSlug } = await params;
+  const place = await getTownPlaceDetail(slug, placeSlug);
 
   if (!place) {
     return { title: "Place Not Found" };
@@ -41,15 +41,11 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export default async function PlaceDetailPage({ params }: PageProps) {
-  const { slug, id } = await params;
-
-  if (!EDITORIAL_SLUGS.has(slug)) {
-    notFound();
-  }
+  const { slug, placeSlug } = await params;
 
   const [town, place] = await Promise.all([
     getTown(slug),
-    getTownPlaceDetail(slug, id),
+    getTownPlaceDetail(slug, placeSlug),
   ]);
 
   if (!town || !place) {
@@ -148,7 +144,7 @@ export default async function PlaceDetailPage({ params }: PageProps) {
                   </span>
                   <div>
                     <a
-                      href={`/towns/${slug}/events/${event.slug || event.id}`}
+                      href={`/towns/${slug}/timeline/${event.slug || event.id}`}
                       className="font-body font-medium hover:text-accent-blue transition-colors"
                     >
                       {event.name}
@@ -167,7 +163,7 @@ export default async function PlaceDetailPage({ params }: PageProps) {
 
       <div className="mt-12 pt-8 border-t border-border-light">
         <a
-          href={`/towns/${slug}/visit`}
+          href={`/towns/${slug}/places`}
           className="text-small text-accent-blue font-body hover:underline"
         >
           &larr; Back to places

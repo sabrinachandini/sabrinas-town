@@ -1,0 +1,20 @@
+{
+  "states": [
+    { "state": "MA", "towns": ["salem-ma","marblehead-ma","worcester-ma","springfield-ma","plymouth-ma"], "priority": 1 },
+    { "state": "CT", "towns": ["new-haven-ct","new-london-ct","groton-ct","danbury-ct"], "priority": 2 },
+    { "state": "RI", "towns": ["newport-ri","providence-ri"], "priority": 2 },
+    { "state": "NH", "towns": ["portsmouth-nh","exeter-nh"], "priority": 2 },
+    { "state": "VT", "towns": ["bennington-vt","brattleboro-vt"], "priority": 2 },
+    { "state": "NY", "towns": ["new-york-city-ny","saratoga-springs-ny","albany-ny","ticonderoga-ny","west-point-ny","white-plains-ny","newburgh-ny","kingston-ny","crown-point-ny","harlem-heights-ny","stony-point-ny"], "priority": 3 },
+    { "state": "NJ", "towns": ["monmouth-nj","new-brunswick-nj","fort-lee-nj","elizabeth-nj","hackensack-nj"], "priority": 3 },
+    { "state": "PA", "towns": ["philadelphia-pa","valley-forge-pa","york-pa","carlisle-pa","paoli-pa","germantown-pa","pittsburgh-pa"], "priority": 3 },
+    { "state": "VA", "towns": ["williamsburg-va","yorktown-va","richmond-va","alexandria-va","fredericksburg-va","norfolk-va","charlottesville-va","mount-vernon-va"], "priority": 4 },
+    { "state": "SC", "towns": ["charleston-sc","camden-sc","cowpens-sc","ninety-six-sc","eutaw-springs-sc","beaufort-sc","hobkirks-hill-sc","fort-moultrie-sc"], "priority": 4 },
+    { "state": "NC", "towns": ["guilford-courthouse-nc","kings-mountain-nc","wilmington-nc","new-bern-nc"], "priority": 4 },
+    { "state": "GA", "towns": ["savannah-ga","augusta-ga"], "priority": 4 },
+    { "state": "MD", "towns": ["annapolis-md","baltimore-md"], "priority": 5 },
+    { "state": "DE", "towns": ["dover-de","wilmington-de"], "priority": 5 },
+    { "state": "ME", "towns": ["castine-me","portland-me"], "priority": 5 },
+    { "state": "FRONTIER", "towns": ["kaskaskia-il","marietta-oh","wheeling-wv"], "priority": 6 }
+  ]
+}

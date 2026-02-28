@@ -15,7 +15,8 @@
     "validate": "tsc --noEmit && prisma validate && tsx src/seed/index.ts --dry-run",
     "db:reset": "prisma migrate reset --force",
     "db:studio": "prisma studio",
-    "generate": "prisma generate"
+    "generate": "prisma generate",
+    "lint:links": "npx tsx web/scripts/validateExternalLinks.ts"
   },
   "keywords": [
     "american-revolution",

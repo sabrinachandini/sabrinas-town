@@ -116,6 +116,7 @@ model Event {
 model Person {
   id                  String             @id // Stable ID: "paul-revere"
   name                String
+  slug                String?            @unique
   roles               String[]           // ["Patriot", "Silversmith", "Messenger"]
 
   bioShort            String             @db.VarChar(500)

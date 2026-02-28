@@ -10,9 +10,9 @@ interface TownSubnavProps {
 const NAV_ITEMS = [
   { label: "Overview", path: "" },
   { label: "History", path: "/history" },
-  { label: "Timeline", path: "/events" },
+  { label: "Timeline", path: "/timeline" },
   { label: "People", path: "/people" },
-  { label: "Places", path: "/visit" },
+  { label: "Places", path: "/places" },
   { label: "Stories", path: "/stories" },
   { label: "Teacher", path: "/teacher" },
   { label: "Sources", path: "/sources" },

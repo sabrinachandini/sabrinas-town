@@ -32,3 +32,4 @@ prisma/*.db-journal
 
 # Prevent duplicate lockfile in web/ (root lockfile is authoritative)
 web/package-lock.json
+.envsabrina

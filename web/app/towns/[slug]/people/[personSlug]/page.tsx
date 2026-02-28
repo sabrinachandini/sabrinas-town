@@ -7,15 +7,15 @@ import {
   Prose,
 } from "@/components/editorial";
 
-const EDITORIAL_SLUGS = new Set(["boston-ma", "lexington-ma", "concord-ma", "salem-ma", "worcester-ma", "springfield-ma", "plymouth-ma", "trenton-nj", "princeton-nj", "monmouth-nj", "morristown-nj", "elizabeth-nj", "hackensack-nj"]);
+export const revalidate = 3600;
 
 interface PageProps {
-  params: Promise<{ slug: string; id: string }>;
+  params: Promise<{ slug: string; personSlug: string }>;
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { slug, id } = await params;
-  const person = await getTownPersonDetail(slug, id);
+  const { slug, personSlug } = await params;
+  const person = await getTownPersonDetail(slug, personSlug);
 
   if (!person) {
     return { title: "Person Not Found" };
@@ -28,15 +28,11 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export default async function PersonDetailPage({ params }: PageProps) {
-  const { slug, id } = await params;
-
-  if (!EDITORIAL_SLUGS.has(slug)) {
-    notFound();
-  }
+  const { slug, personSlug } = await params;
 
   const [town, person] = await Promise.all([
     getTown(slug),
-    getTownPersonDetail(slug, id),
+    getTownPersonDetail(slug, personSlug),
   ]);
 
   if (!town || !person) {
@@ -66,7 +62,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
       </Prose>
 
       {person.events.length > 0 && (
-        <EditorialSection id="in-boston" title={`In ${town.name}`}>
+        <EditorialSection id="in-town" title={`In ${town.name}`}>
           <ol className="space-y-0">
             {person.events
               .sort((a, b) => {
@@ -89,7 +85,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
                   </span>
                   <div>
                     <a
-                      href={`/towns/${slug}/events/${event.id}`}
+                      href={`/towns/${slug}/timeline/${event.id}`}
                       className="font-body font-medium hover:text-accent-blue transition-colors"
                     >
                       {event.name}

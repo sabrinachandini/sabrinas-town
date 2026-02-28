@@ -7,15 +7,15 @@ import {
   Prose,
 } from "@/components/editorial";
 
-const EDITORIAL_SLUGS = new Set(["boston-ma", "lexington-ma", "concord-ma", "salem-ma", "worcester-ma", "springfield-ma", "plymouth-ma", "trenton-nj", "princeton-nj", "monmouth-nj", "morristown-nj", "elizabeth-nj", "hackensack-nj"]);
+export const revalidate = 3600;
 
 interface PageProps {
-  params: Promise<{ slug: string; id: string }>;
+  params: Promise<{ slug: string; eventSlug: string }>;
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { slug, id } = await params;
-  const event = await getTownEventDetail(slug, id);
+  const { slug, eventSlug } = await params;
+  const event = await getTownEventDetail(slug, eventSlug);
 
   if (!event) {
     return { title: "Event Not Found" };
@@ -28,15 +28,11 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export default async function EventDetailPage({ params }: PageProps) {
-  const { slug, id } = await params;
-
-  if (!EDITORIAL_SLUGS.has(slug)) {
-    notFound();
-  }
+  const { slug, eventSlug } = await params;
 
   const [town, event] = await Promise.all([
     getTown(slug),
-    getTownEventDetail(slug, id),
+    getTownEventDetail(slug, eventSlug),
   ]);
 
   if (!town || !event) {
@@ -115,7 +111,7 @@ export default async function EventDetailPage({ params }: PageProps) {
 
       <div className="mt-12 pt-8 border-t border-border-light">
         <a
-          href={`/towns/${slug}/events`}
+          href={`/towns/${slug}/timeline`}
           className="text-small text-accent-blue font-body hover:underline"
         >
           &larr; Back to timeline

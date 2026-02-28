@@ -6,15 +6,15 @@ import {
   Prose,
 } from "@/components/editorial";
 
-const EDITORIAL_SLUGS = new Set(["boston-ma", "lexington-ma", "concord-ma", "salem-ma", "worcester-ma", "springfield-ma", "plymouth-ma", "trenton-nj", "princeton-nj", "monmouth-nj", "morristown-nj", "elizabeth-nj", "hackensack-nj"]);
+export const revalidate = 3600;
 
 interface PageProps {
-  params: Promise<{ slug: string; id: string }>;
+  params: Promise<{ slug: string; storySlug: string }>;
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { slug, id } = await params;
-  const story = await getTownStoryDetail(slug, id);
+  const { slug, storySlug } = await params;
+  const story = await getTownStoryDetail(slug, storySlug);
 
   if (!story) {
     return { title: "Story Not Found" };
@@ -27,15 +27,11 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export default async function StoryDetailPage({ params }: PageProps) {
-  const { slug, id } = await params;
-
-  if (!EDITORIAL_SLUGS.has(slug)) {
-    notFound();
-  }
+  const { slug, storySlug } = await params;
 
   const [town, story] = await Promise.all([
     getTown(slug),
-    getTownStoryDetail(slug, id),
+    getTownStoryDetail(slug, storySlug),
   ]);
 
   if (!town || !story) {
