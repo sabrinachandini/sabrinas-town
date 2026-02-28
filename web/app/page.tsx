@@ -27,22 +27,22 @@ const FEATURED_TOWNS = [
       "The North Bridge fight that turned a skirmish into a war — and a literary capital that shaped how America remembers it.",
   },
   {
-    slug: "saratoga-springs-ny",
-    name: "Saratoga Springs",
+    slug: "trenton-nj",
+    name: "Trenton",
     description:
-      "The turning point that convinced France to join the war and changed everything.",
+      "Washington's daring Christmas crossing of the Delaware — the surprise attack that saved the Revolution.",
   },
   {
-    slug: "philadelphia-pa",
-    name: "Philadelphia",
+    slug: "princeton-nj",
+    name: "Princeton",
     description:
-      "Where independence was declared, the Constitution drafted, and a new government invented.",
+      "Ten days after Trenton, a battlefield victory that proved the Continental Army could stand and fight.",
   },
   {
-    slug: "yorktown-va",
-    name: "Yorktown",
+    slug: "morristown-nj",
+    name: "Morristown",
     description:
-      "The final siege that ended the war and secured American independence.",
+      "Washington's winter headquarters — where the army endured, regrouped, and held the line.",
   },
 ];
 
