@@ -9,6 +9,7 @@ import {
 } from "@/components/ui";
 import {
   EmptyState,
+  ComingSoon,
   ContentSourceBadge,
   PrimarySourceCard,
   QuizSection,
@@ -66,7 +67,7 @@ async function EditorialTeacherPage({ slug }: { slug: string }) {
 
   void recordOrgEvent(slug, 'TEACHER_VIEW');
 
-  if (!town) return null;
+  if (!town) return <ComingSoon slug={slug} section="Teacher" />;
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const m = teacherModule as any;

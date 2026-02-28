@@ -1,6 +1,6 @@
 import { getTown, getTownPeople } from "@/lib/api";
 import { Container, Heading, Text, Divider } from "@/components/ui";
-import { EmptyState } from "@/components/town";
+import { EmptyState, ComingSoon } from "@/components/town";
 import {
   PageShell,
   PageHeader,
@@ -43,7 +43,7 @@ async function EditorialPeoplePage({ slug }: { slug: string }) {
     getTownPeople(slug),
   ]);
 
-  if (!town) return null;
+  if (!town) return <ComingSoon slug={slug} section="People" />;
 
   const people = peopleData?.people ?? [];
 
@@ -112,7 +112,7 @@ async function EditorialPeoplePage({ slug }: { slug: string }) {
 async function ClassicPeoplePage({ slug }: { slug: string }) {
   const town = await getTown(slug);
 
-  if (!town) return null;
+  if (!town) return <ComingSoon slug={slug} section="People" />;
 
   const totalPeopleCount = town.events.reduce((sum, e) => sum + e.peopleCount, 0);
 

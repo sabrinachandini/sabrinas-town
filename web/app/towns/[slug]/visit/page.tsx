@@ -1,6 +1,6 @@
 import { getTown, getPlaces, TownPlace } from "@/lib/api";
 import { Container, Heading, Text, Divider, Link } from "@/components/ui";
-import { EmptyState } from "@/components/town";
+import { EmptyState, ComingSoon } from "@/components/town";
 import { PlacesSection } from "./PlacesSection";
 import {
   PageShell,
@@ -36,7 +36,7 @@ export default async function VisitPage({ params }: PageProps) {
   ]);
 
   if (!town) {
-    return null;
+    return <ComingSoon slug={slug} section="Places" />;
   }
 
   if (EDITORIAL_SLUGS.has(slug)) {

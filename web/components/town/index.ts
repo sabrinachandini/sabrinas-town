@@ -1,5 +1,7 @@
 export { TownSubnav } from "./TownSubnav";
 export { EmptyState } from "./EmptyState";
+export { ComingSoon } from "./ComingSoon";
+export { PeopleSearch } from "./PeopleSearch";
 
 // Hub page components
 export { HubCard } from "./HubCard";

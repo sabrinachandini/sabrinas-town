@@ -6,6 +6,7 @@ import {
   Link,
   Divider,
 } from "@/components/ui";
+import { PeopleSearch } from "@/components/town";
 
 export const metadata = {
   title: "Browse Towns | History is for Everyone",
@@ -35,6 +36,10 @@ export default async function TownsPage() {
           {towns.length} Revolutionary towns across {states.length} states.
           Select a town to explore its full profile.
         </Text>
+
+        <div className="mt-component">
+          <PeopleSearch />
+        </div>
 
         <Divider spacing="section" />
 

@@ -1,6 +1,6 @@
 import { getTown, TownEvent } from "@/lib/api";
 import { Container, Heading, Text, Divider } from "@/components/ui";
-import { EmptyState } from "@/components/town";
+import { EmptyState, ComingSoon } from "@/components/town";
 import {
   PageShell,
   PageHeader,
@@ -33,7 +33,7 @@ export default async function EventsPage({ params }: PageProps) {
   const town = await getTown(slug);
 
   if (!town) {
-    return null;
+    return <ComingSoon slug={slug} section="Timeline" />;
   }
 
   if (EDITORIAL_SLUGS.has(slug)) {

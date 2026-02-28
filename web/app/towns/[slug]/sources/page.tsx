@@ -1,7 +1,7 @@
-import { notFound } from "next/navigation";
 import { getTown, getTownSources, TownSource } from "@/lib/api";
 import { Container, Heading, Text, Link, Divider } from "@/components/ui";
 import { Separator } from "@/components/ui/separator";
+import { ComingSoon } from "@/components/town";
 import {
   PageShell,
   PageHeader,
@@ -37,7 +37,7 @@ export default async function SourcesPage({ params }: PageProps) {
   ]);
 
   if (!town) {
-    notFound();
+    return <ComingSoon slug={slug} section="Sources" />;
   }
 
   if (EDITORIAL_SLUGS.has(slug)) {

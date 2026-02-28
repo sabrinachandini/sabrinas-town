@@ -16,6 +16,7 @@ import {
   MiniTimeline,
   SectionHeader,
   TransparencyFooter,
+  ComingSoon,
 } from "@/components/town";
 import {
   PageShell,
@@ -63,7 +64,7 @@ async function EditorialTownPage({ slug }: { slug: string }) {
     getTownPeople(slug),
   ]);
 
-  if (!town) return null;
+  if (!town) return <ComingSoon slug={slug} />;
 
   void recordOrgEvent(slug, "TOWN_VIEW");
 
@@ -279,7 +280,7 @@ async function ClassicTownPage({ slug }: { slug: string }) {
   ]);
 
   if (!town) {
-    return null;
+    return <ComingSoon slug={slug} />;
   }
 
   void recordOrgEvent(slug, "TOWN_VIEW");

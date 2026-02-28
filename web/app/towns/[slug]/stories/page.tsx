@@ -1,6 +1,6 @@
 import { getTown, TownStory } from "@/lib/api";
 import { Container, Heading, Text, Divider } from "@/components/ui";
-import { EmptyState } from "@/components/town";
+import { EmptyState, ComingSoon } from "@/components/town";
 import {
   PageShell,
   PageHeader,
@@ -39,7 +39,7 @@ export default async function StoriesPage({ params }: PageProps) {
 
 async function EditorialStoriesPage({ slug }: { slug: string }) {
   const town = await getTown(slug);
-  if (!town) return null;
+  if (!town) return <ComingSoon slug={slug} section="Stories" />;
 
   return (
     <PageShell>
@@ -96,7 +96,7 @@ async function EditorialStoriesPage({ slug }: { slug: string }) {
 
 async function ClassicStoriesPage({ slug }: { slug: string }) {
   const town = await getTown(slug);
-  if (!town) return null;
+  if (!town) return <ComingSoon slug={slug} section="Stories" />;
 
   if (town.stories.length === 0) {
     return (
