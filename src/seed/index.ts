@@ -201,6 +201,43 @@ import {
   salemTownPersons, salemAdditionalEvents,
   worcesterTownPersons, springfieldTownPersons, plymouthTownPersons,
 } from './sprints/ma-flagship.js';
+import {
+  newHavenPlaces, newHavenAdditionalEvents, newHavenLessonPlans, newHavenAdditionalLinks,
+  newLondonPlaces, newLondonAdditionalEvents, newLondonLessonPlans, newLondonAdditionalLinks,
+  danburyPlaces, danburyAdditionalEvents, danburyLessonPlans, danburyAdditionalLinks,
+  grotonPlaces, grotonAdditionalEvents, grotonLessonPlans, grotonAdditionalLinks,
+  newportPlaces, newportAdditionalEvents, newportLessonPlans, newportAdditionalLinks,
+  providencePlaces, providenceAdditionalEvents, providenceLessonPlans, providenceAdditionalLinks,
+} from './sprints/ct-ri-expansion.js';
+import {
+  newYorkCityPlaces, newYorkCityAdditionalEvents, newYorkCityLessonPlans,
+  saratogaSpringsPlaces, saratogaSpringsAdditionalEvents, saratogaSpringsLessonPlans,
+  albanyPlaces, albanyAdditionalEvents, albanyLessonPlans, albanyAdditionalLinks,
+  ticonderogaPlaces, ticonderogaAdditionalEvents, ticonderogaLessonPlans, ticonderogaAdditionalLinks,
+  westPointPlaces, westPointAdditionalEvents, westPointLessonPlans, westPointAdditionalLinks,
+} from './sprints/ny-expansion.js';
+import {
+  philadelphiaPlaces, philadelphiaAdditionalEvents, philadelphiaLessonPlans,
+  valleyForgePlaces, valleyForgeAdditionalEvents, valleyForgeLessonPlans, valleyForgeAdditionalLinks,
+  yorkPlaces, yorkAdditionalEvents, yorkLessonPlans, yorkAdditionalLinks,
+  germantownPlaces, germantownAdditionalEvents, germantownLessonPlans, germantownAdditionalLinks,
+  carlislePlaces, carlisleAdditionalEvents, carlisleLessonPlans, carlisleAdditionalLinks,
+  paoliPlaces, paoliAdditionalEvents, paoliLessonPlans, paoliAdditionalLinks,
+} from './sprints/pa-expansion.js';
+import {
+  williamsburgPlaces, williamsburgAdditionalEvents, williamsburgLessonPlans, williamsburgAdditionalLinks,
+  yorktownPlaces, yorktownAdditionalEvents, yorktownLessonPlans, yorktownAdditionalLinks,
+  richmondPlaces, richmondAdditionalEvents, richmondLessonPlans, richmondAdditionalLinks,
+  norfolkPlaces, norfolkAdditionalEvents, norfolkLessonPlans, norfolkAdditionalLinks,
+  charlottesvillePlaces, charlottesvilleAdditionalEvents, charlottesvilleLessonPlans, charlottesvilleAdditionalLinks,
+} from './sprints/va-expansion.js';
+import {
+  fortLeePlaces, fortLeeAdditionalEvents, fortLeeLessonPlans, fortLeeAdditionalLinks,
+  newBrunswickPlaces, newBrunswickAdditionalEvents, newBrunswickLessonPlans, newBrunswickAdditionalLinks,
+  elizabethSources, elizabethAdditionalLinks,
+  hackensackAdditionalPeople, hackensackSources, hackensackAdditionalLinks,
+  monmouthAdditionalLinks,
+} from './sprints/nj-remaining.js';
 import { computeTownScore } from '../services/scoring.js';
 import { TOP_75_TOWNS, HUB_TOWN_IDS } from '../data/top75.js';
 import { Prisma } from '@prisma/client';
@@ -1599,6 +1636,203 @@ async function main() {
     }
   }
   console.log(`   ✓ Hackensack: ${hackensackPersonIds.length} TownPerson links repaired`);
+
+  // 26. CT + RI expansion — places, additional events, lesson plans, links
+  console.log('\n🏛️  CT + RI expansion: places, lesson plans, links...');
+  const ctRiExpansionTowns = [
+    { id: 'us-ct-new-haven', name: 'New Haven', places: newHavenPlaces, events: newHavenAdditionalEvents, lessonPlans: newHavenLessonPlans, links: newHavenAdditionalLinks },
+    { id: 'us-ct-new-london', name: 'New London', places: newLondonPlaces, events: newLondonAdditionalEvents, lessonPlans: newLondonLessonPlans, links: newLondonAdditionalLinks },
+    { id: 'us-ct-danbury', name: 'Danbury', places: danburyPlaces, events: danburyAdditionalEvents, lessonPlans: danburyLessonPlans, links: danburyAdditionalLinks },
+    { id: 'us-ct-groton', name: 'Groton', places: grotonPlaces, events: grotonAdditionalEvents, lessonPlans: grotonLessonPlans, links: grotonAdditionalLinks },
+    { id: 'us-ri-newport', name: 'Newport', places: newportPlaces, events: newportAdditionalEvents, lessonPlans: newportLessonPlans, links: newportAdditionalLinks },
+    { id: 'us-ri-providence', name: 'Providence', places: providencePlaces, events: providenceAdditionalEvents, lessonPlans: providenceLessonPlans, links: providenceAdditionalLinks },
+  ];
+  for (const town of ctRiExpansionTowns) {
+    for (const place of town.places) {
+      await prisma.place.upsert({ where: { id: place.id! }, update: { name: place.name, placeType: place.placeType, description: place.description, lat: place.lat, lng: place.lng, address: place.address, hours: place.hours, admission: place.admission, website: place.website, phone: place.phone, accessibilityNotes: place.accessibilityNotes, parkingNotes: place.parkingNotes, amenities: place.amenities, historicalNote: place.historicalNote, displayOrder: place.displayOrder, featured: place.featured }, create: place });
+    }
+    for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
+    await prisma.lessonPlan.deleteMany({ where: { townId: town.id } });
+    for (const lp of town.lessonPlans) { await prisma.lessonPlan.create({ data: lp }); }
+    for (const link of town.links) {
+      const existing = await prisma.townLink.findFirst({ where: { fromTownId: town.id, toTownId: link.toTownId, linkType: link.linkType as any } });
+      if (!existing) { try { await prisma.townLink.create({ data: { fromTown: { connect: { id: town.id } }, toTown: { connect: { id: link.toTownId } }, linkType: link.linkType as any, reason: link.reason, weight: link.weight } }); } catch (e) { /* skip */ } }
+    }
+    console.log(`   ✓ ${town.name}: ${town.places.length} places, ${town.events.length} events, ${town.lessonPlans.length} lesson plans, ${town.links.length} links`);
+  }
+
+  // 27. NY expansion — places, additional events, lesson plans, links
+  console.log('\n🏛️  NY expansion: places, lesson plans, links...');
+  const nyExpansionTowns = [
+    { id: 'us-ny-new-york-city', name: 'New York City', places: newYorkCityPlaces, events: newYorkCityAdditionalEvents, lessonPlans: newYorkCityLessonPlans, links: [] as Array<{ toTownId: string; linkType: string; reason: string; weight: number }> },
+    { id: 'us-ny-saratoga-springs', name: 'Saratoga Springs', places: saratogaSpringsPlaces, events: saratogaSpringsAdditionalEvents, lessonPlans: saratogaSpringsLessonPlans, links: [] as Array<{ toTownId: string; linkType: string; reason: string; weight: number }> },
+    { id: 'us-ny-albany', name: 'Albany', places: albanyPlaces, events: albanyAdditionalEvents, lessonPlans: albanyLessonPlans, links: albanyAdditionalLinks },
+    { id: 'us-ny-ticonderoga', name: 'Ticonderoga', places: ticonderogaPlaces, events: ticonderogaAdditionalEvents, lessonPlans: ticonderogaLessonPlans, links: ticonderogaAdditionalLinks },
+    { id: 'us-ny-west-point', name: 'West Point', places: westPointPlaces, events: westPointAdditionalEvents, lessonPlans: westPointLessonPlans, links: westPointAdditionalLinks },
+  ];
+  for (const town of nyExpansionTowns) {
+    for (const place of town.places) {
+      await prisma.place.upsert({ where: { id: place.id! }, update: { name: place.name, placeType: place.placeType, description: place.description, lat: place.lat, lng: place.lng, address: place.address, hours: place.hours, admission: place.admission, website: place.website, phone: place.phone, accessibilityNotes: place.accessibilityNotes, parkingNotes: place.parkingNotes, amenities: place.amenities, historicalNote: place.historicalNote, displayOrder: place.displayOrder, featured: place.featured }, create: place });
+    }
+    for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
+    await prisma.lessonPlan.deleteMany({ where: { townId: town.id } });
+    for (const lp of town.lessonPlans) { await prisma.lessonPlan.create({ data: lp }); }
+    for (const link of town.links) {
+      const existing = await prisma.townLink.findFirst({ where: { fromTownId: town.id, toTownId: link.toTownId, linkType: link.linkType as any } });
+      if (!existing) { try { await prisma.townLink.create({ data: { fromTown: { connect: { id: town.id } }, toTown: { connect: { id: link.toTownId } }, linkType: link.linkType as any, reason: link.reason, weight: link.weight } }); } catch (e) { /* skip */ } }
+    }
+    console.log(`   ✓ ${town.name}: ${town.places.length} places, ${town.events.length} events, ${town.lessonPlans.length} lesson plans, ${town.links.length} links`);
+  }
+
+  // 28. PA expansion — places, additional events, lesson plans, links
+  console.log('\n🏛️  PA expansion: places, lesson plans, links...');
+  const paExpansionTowns = [
+    { id: 'us-pa-philadelphia', name: 'Philadelphia', places: philadelphiaPlaces, events: philadelphiaAdditionalEvents, lessonPlans: philadelphiaLessonPlans, links: [] as Array<{ toTownId: string; linkType: string; reason: string; weight: number }> },
+    { id: 'us-pa-valley-forge', name: 'Valley Forge', places: valleyForgePlaces, events: valleyForgeAdditionalEvents, lessonPlans: valleyForgeLessonPlans, links: valleyForgeAdditionalLinks },
+    { id: 'us-pa-york', name: 'York', places: yorkPlaces, events: yorkAdditionalEvents, lessonPlans: yorkLessonPlans, links: yorkAdditionalLinks },
+    { id: 'us-pa-germantown', name: 'Germantown', places: germantownPlaces, events: germantownAdditionalEvents, lessonPlans: germantownLessonPlans, links: germantownAdditionalLinks },
+    { id: 'us-pa-carlisle', name: 'Carlisle', places: carlislePlaces, events: carlisleAdditionalEvents, lessonPlans: carlisleLessonPlans, links: carlisleAdditionalLinks },
+    { id: 'us-pa-paoli', name: 'Paoli', places: paoliPlaces, events: paoliAdditionalEvents, lessonPlans: paoliLessonPlans, links: paoliAdditionalLinks },
+  ];
+  for (const town of paExpansionTowns) {
+    for (const place of town.places) {
+      await prisma.place.upsert({ where: { id: place.id! }, update: { name: place.name, placeType: place.placeType, description: place.description, lat: place.lat, lng: place.lng, address: place.address, hours: place.hours, admission: place.admission, website: place.website, phone: place.phone, accessibilityNotes: place.accessibilityNotes, parkingNotes: place.parkingNotes, amenities: place.amenities, historicalNote: place.historicalNote, displayOrder: place.displayOrder, featured: place.featured }, create: place });
+    }
+    for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
+    await prisma.lessonPlan.deleteMany({ where: { townId: town.id } });
+    for (const lp of town.lessonPlans) { await prisma.lessonPlan.create({ data: lp }); }
+    for (const link of town.links) {
+      const existing = await prisma.townLink.findFirst({ where: { fromTownId: town.id, toTownId: link.toTownId, linkType: link.linkType as any } });
+      if (!existing) { try { await prisma.townLink.create({ data: { fromTown: { connect: { id: town.id } }, toTown: { connect: { id: link.toTownId } }, linkType: link.linkType as any, reason: link.reason, weight: link.weight } }); } catch (e) { /* skip */ } }
+    }
+    console.log(`   ✓ ${town.name}: ${town.places.length} places, ${town.events.length} events, ${town.lessonPlans.length} lesson plans, ${town.links.length} links`);
+  }
+
+  // 29. VA expansion — places, additional events, lesson plans, links
+  console.log('\n🏛️  VA expansion: places, lesson plans, links...');
+  const vaExpansionTowns = [
+    { id: 'us-va-williamsburg', name: 'Williamsburg', places: williamsburgPlaces, events: williamsburgAdditionalEvents, lessonPlans: williamsburgLessonPlans, links: williamsburgAdditionalLinks },
+    { id: 'us-va-yorktown', name: 'Yorktown', places: yorktownPlaces, events: yorktownAdditionalEvents, lessonPlans: yorktownLessonPlans, links: yorktownAdditionalLinks },
+    { id: 'us-va-richmond', name: 'Richmond', places: richmondPlaces, events: richmondAdditionalEvents, lessonPlans: richmondLessonPlans, links: richmondAdditionalLinks },
+    { id: 'us-va-norfolk', name: 'Norfolk', places: norfolkPlaces, events: norfolkAdditionalEvents, lessonPlans: norfolkLessonPlans, links: norfolkAdditionalLinks },
+    { id: 'us-va-charlottesville', name: 'Charlottesville', places: charlottesvillePlaces, events: charlottesvilleAdditionalEvents, lessonPlans: charlottesvilleLessonPlans, links: charlottesvilleAdditionalLinks },
+  ];
+  for (const town of vaExpansionTowns) {
+    for (const place of town.places) {
+      await prisma.place.upsert({ where: { id: place.id! }, update: { name: place.name, placeType: place.placeType, description: place.description, lat: place.lat, lng: place.lng, address: place.address, hours: place.hours, admission: place.admission, website: place.website, phone: place.phone, accessibilityNotes: place.accessibilityNotes, parkingNotes: place.parkingNotes, amenities: place.amenities, historicalNote: place.historicalNote, displayOrder: place.displayOrder, featured: place.featured }, create: place });
+    }
+    for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
+    await prisma.lessonPlan.deleteMany({ where: { townId: town.id } });
+    for (const lp of town.lessonPlans) { await prisma.lessonPlan.create({ data: lp }); }
+    for (const link of town.links) {
+      const existing = await prisma.townLink.findFirst({ where: { fromTownId: town.id, toTownId: link.toTownId, linkType: link.linkType as any } });
+      if (!existing) { try { await prisma.townLink.create({ data: { fromTown: { connect: { id: town.id } }, toTown: { connect: { id: link.toTownId } }, linkType: link.linkType as any, reason: link.reason, weight: link.weight } }); } catch (e) { /* skip */ } }
+    }
+    console.log(`   ✓ ${town.name}: ${town.places.length} places, ${town.events.length} events, ${town.lessonPlans.length} lesson plans, ${town.links.length} links`);
+  }
+
+  // 30. NJ remaining — Fort Lee, New Brunswick (places+events+lessons+links), Elizabeth (sources+links), Hackensack (people+sources+links), Monmouth (links)
+  console.log('\n🏛️  NJ remaining expansion...');
+
+  // Fort Lee + New Brunswick: places + additional events + lesson plans + links
+  const njSprintTowns = [
+    { id: 'us-nj-fort-lee', name: 'Fort Lee', places: fortLeePlaces, events: fortLeeAdditionalEvents, lessonPlans: fortLeeLessonPlans, links: fortLeeAdditionalLinks },
+    { id: 'us-nj-new-brunswick', name: 'New Brunswick', places: newBrunswickPlaces, events: newBrunswickAdditionalEvents, lessonPlans: newBrunswickLessonPlans, links: newBrunswickAdditionalLinks },
+  ];
+  for (const town of njSprintTowns) {
+    for (const place of town.places) {
+      await prisma.place.upsert({ where: { id: place.id! }, update: { name: place.name, placeType: place.placeType, description: place.description, lat: place.lat, lng: place.lng, address: place.address, hours: place.hours, admission: place.admission, website: place.website, phone: place.phone, accessibilityNotes: place.accessibilityNotes, parkingNotes: place.parkingNotes, amenities: place.amenities, historicalNote: place.historicalNote, displayOrder: place.displayOrder, featured: place.featured }, create: place });
+    }
+    for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
+    await prisma.lessonPlan.deleteMany({ where: { townId: town.id } });
+    for (const lp of town.lessonPlans) { await prisma.lessonPlan.create({ data: lp }); }
+    for (const link of town.links) {
+      const existing = await prisma.townLink.findFirst({ where: { fromTownId: town.id, toTownId: link.toTownId, linkType: link.linkType as any } });
+      if (!existing) { try { await prisma.townLink.create({ data: { fromTown: { connect: { id: town.id } }, toTown: { connect: { id: link.toTownId } }, linkType: link.linkType as any, reason: link.reason, weight: link.weight } }); } catch (e) { /* skip */ } }
+    }
+    console.log(`   ✓ ${town.name}: ${town.places.length} places, ${town.events.length} events, ${town.lessonPlans.length} lesson plans, ${town.links.length} links`);
+  }
+
+  // Elizabeth: sources + links
+  const normalizeSourceType = (t: string): any => {
+    const m: Record<string, string> = { GOVERNMENT_DOCUMENT: 'INSTITUTIONAL', SCHOLARLY_BOOK: 'SECONDARY', ARCHIVAL_COLLECTION: 'PRIMARY', DENOMINATIONAL_HISTORY: 'SECONDARY', JOURNAL_ARTICLE: 'SECONDARY', LOCAL_HISTORY: 'SECONDARY', MUSEUM_COLLECTION: 'INSTITUTIONAL', REFERENCE_WORK: 'SECONDARY', NEWSPAPER: 'NEWS' };
+    return m[t] ?? t;
+  };
+  const elizabethRawSources = elizabethSources.map((s) => ({ id: s.source.id, title: s.source.title, publisherOrHolder: s.source.publisherOrHolder, url: s.source.url, credibilityTier: s.source.credibilityTier as any, type: normalizeSourceType(s.source.type) }));
+  await upsertSourcesAndLink('us-nj-elizabeth', elizabethRawSources);
+  for (const link of elizabethAdditionalLinks) {
+    const existing = await prisma.townLink.findFirst({ where: { fromTownId: 'us-nj-elizabeth', toTownId: link.toTownId, linkType: link.linkType as any } });
+    if (!existing) { try { await prisma.townLink.create({ data: { fromTown: { connect: { id: 'us-nj-elizabeth' } }, toTown: { connect: { id: link.toTownId } }, linkType: link.linkType as any, reason: link.reason, weight: link.weight } }); } catch (e) { /* skip */ } }
+  }
+  console.log(`   ✓ Elizabeth: ${elizabethRawSources.length} sources, ${elizabethAdditionalLinks.length} links`);
+
+  // Hackensack: additional people + sources + links
+  for (const { person, connectionNote } of hackensackAdditionalPeople) {
+    await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person });
+    const existing = await prisma.townPerson.findFirst({ where: { townId: 'us-nj-hackensack', personId: person.id! } });
+    if (!existing) { await prisma.townPerson.create({ data: { town: { connect: { id: 'us-nj-hackensack' } }, person: { connect: { id: person.id! } }, connectionNote } }); }
+  }
+  const hackensackRawSources = hackensackSources.map((s) => ({ id: s.source.id, title: s.source.title, publisherOrHolder: s.source.publisherOrHolder, url: s.source.url, credibilityTier: s.source.credibilityTier as any, type: normalizeSourceType(s.source.type) }));
+  await upsertSourcesAndLink('us-nj-hackensack', hackensackRawSources);
+  for (const link of hackensackAdditionalLinks) {
+    const existing = await prisma.townLink.findFirst({ where: { fromTownId: 'us-nj-hackensack', toTownId: link.toTownId, linkType: link.linkType as any } });
+    if (!existing) { try { await prisma.townLink.create({ data: { fromTown: { connect: { id: 'us-nj-hackensack' } }, toTown: { connect: { id: link.toTownId } }, linkType: link.linkType as any, reason: link.reason, weight: link.weight } }); } catch (e) { /* skip */ } }
+  }
+  console.log(`   ✓ Hackensack: ${hackensackAdditionalPeople.length} new people, ${hackensackRawSources.length} sources, ${hackensackAdditionalLinks.length} links`);
+
+  // Monmouth: additional links only
+  for (const link of monmouthAdditionalLinks) {
+    const existing = await prisma.townLink.findFirst({ where: { fromTownId: 'us-nj-monmouth', toTownId: link.toTownId, linkType: link.linkType as any } });
+    if (!existing) { try { await prisma.townLink.create({ data: { fromTown: { connect: { id: 'us-nj-monmouth' } }, toTown: { connect: { id: link.toTownId } }, linkType: link.linkType as any, reason: link.reason, weight: link.weight } }); } catch (e) { /* skip */ } }
+  }
+  console.log(`   ✓ Monmouth: ${monmouthAdditionalLinks.length} additional links`);
+
+  // 31. Gap-closure: Morristown +3 people, Carlisle +1 event, CT/NJ/PA +1 link each
+  console.log('\n🏛️  Gap-closure: Morristown people, Carlisle event, outgoing links...');
+
+  // Morristown: link 3 already-seeded persons (Henry Knox, Nathanael Greene, Friedrich von Steuben)
+  const morristownExtraPersons = [
+    { id: 'person-henry-knox', note: 'General Henry Knox wintered at Morristown 1779-1780 and organized the artillery park at Jockey Hollow.' },
+    { id: 'person-nathanael-greene', note: 'General Nathanael Greene served as quartermaster general and was repeatedly headquartered at Morristown during 1779-1780.' },
+    { id: 'person-valley-forge-friedrich-von-steuben', note: 'Baron Friedrich von Steuben arrived at Morristown in 1779 to continue his training program following Valley Forge, drilling soldiers in the Jockey Hollow encampment.' },
+  ];
+  for (const { id, note } of morristownExtraPersons) {
+    const personExists = await prisma.person.findFirst({ where: { id } });
+    if (personExists) {
+      const existingTP = await prisma.townPerson.findFirst({ where: { townId: 'us-nj-morristown', personId: id } });
+      if (!existingTP) { await prisma.townPerson.create({ data: { town: { connect: { id: 'us-nj-morristown' } }, person: { connect: { id } }, connectionNote: note } }); }
+    }
+  }
+  console.log('   ✓ Morristown: 3 additional TownPerson links');
+
+  // Carlisle: add 1 more event (Mary Hays / Molly Pitcher connection)
+  const existingCarlisleEvent = await prisma.event.findFirst({ where: { id: 'event-carlisle-mary-hays-home' } });
+  if (!existingCarlisleEvent) {
+    await prisma.event.create({ data: {
+      id: 'event-carlisle-mary-hays-home',
+      name: 'Mary Hays McCauley Returns to Carlisle',
+      startDate: new Date('1783-01-01'),
+      datePrecision: 'YEAR',
+      summary: 'Mary Hays McCauley — celebrated as "Molly Pitcher" for her actions at the Battle of Monmouth in June 1778, where she carried water to Continental soldiers and allegedly took over her husband\'s cannon — returned to Carlisle after the war. She had grown up in the region and settled permanently in the borough, where she lived until 1832. Carlisle honored her service with a pension from the Commonwealth of Pennsylvania in 1822, one of the earliest official recognitions of a woman\'s Revolutionary War service. Her grave at Old Graveyard became a pilgrimage site for those commemorating women\'s contributions to the Revolution. The "Molly Pitcher" legend, however conflated with other women at Monmouth, is most firmly anchored to the Carlisle community through Mary Hays, making Carlisle the town most directly associated with one of the Revolution\'s most enduring popular stories.',
+      significanceWeight: 72,
+      town: { connect: { id: 'us-pa-carlisle' } },
+    } });
+  }
+  console.log('   ✓ Carlisle: 1 additional event');
+
+  // Additional outgoing links for 5 towns (each needs +1 to reach ≥6 fromTownId)
+  const gapLinks: Array<{ fromTownId: string; toTownId: string; linkType: string; reason: string; weight: number }> = [
+    { fromTownId: 'us-ct-danbury', toTownId: 'us-ct-new-london', linkType: 'SHARED_THEME', reason: 'Both towns were raided by British forces under Benedict Arnold and William Tryon in separate 1777/1781 coastal-inland operations designed to terrorize Connecticut Patriots and destroy military supplies.', weight: 80 },
+    { fromTownId: 'us-ct-groton', toTownId: 'us-ct-danbury', linkType: 'SHARED_THEME', reason: 'Both towns suffered British raids that destroyed civilian property and military supplies — Danbury in 1777, Groton/New London in 1781 — making them twin symbols of Connecticut\'s civilian sacrifice in the Revolution.', weight: 78 },
+    { fromTownId: 'us-ct-new-london', toTownId: 'us-ri-newport', linkType: 'GEOGRAPHIC_PROXIMITY', reason: 'New London and Newport were the two principal Patriot ports of southern New England, both occupied by British forces and both crucial to privateering and naval operations in Long Island Sound and Narragansett Bay.', weight: 82 },
+    { fromTownId: 'us-nj-new-brunswick', toTownId: 'us-nj-morristown', linkType: 'ROUTE', reason: 'New Brunswick was a key British-controlled town during the 1776-1777 New Jersey campaign; Washington\'s army retreated through the town while Morristown served as the winter refuge — the two towns anchored opposite ends of the critical New Jersey theater.', weight: 85 },
+    { fromTownId: 'us-pa-york', toTownId: 'us-pa-germantown', linkType: 'SHARED_EVENT', reason: 'York served as the Continental Congress\'s refuge after the British occupied Philadelphia following the Battle of Germantown in October 1777 — Germantown\'s fall directly caused Congress to relocate to York.', weight: 88 },
+  ];
+  for (const link of gapLinks) {
+    const existing = await prisma.townLink.findFirst({ where: { fromTownId: link.fromTownId, toTownId: link.toTownId, linkType: link.linkType as any } });
+    if (!existing) { try { await prisma.townLink.create({ data: { fromTown: { connect: { id: link.fromTownId } }, toTown: { connect: { id: link.toTownId } }, linkType: link.linkType as any, reason: link.reason, weight: link.weight } }); } catch (e) { /* skip */ } }
+  }
+  console.log(`   ✓ Gap links: ${gapLinks.length} outgoing links added (Danbury, Groton, New London, New Brunswick, York)`);
 
   // Summary
   console.log('\n====================================');
