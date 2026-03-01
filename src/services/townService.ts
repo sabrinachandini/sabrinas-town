@@ -429,14 +429,19 @@ export async function getTownPeople(slug: string) {
 
   if (!town) return null;
 
+  const personSelect = {
+    id: true, name: true, roles: true, bioShort: true, bioLong: true,
+    birthYear: true, deathYear: true, verificationStatus: true,
+  } as const;
+
   const [eventPeople, townPeople] = await Promise.all([
     prisma.eventPerson.findMany({
       where: { event: { townId: town.id } },
-      include: { person: true },
+      include: { person: { select: personSelect } },
     }),
     prisma.townPerson.findMany({
       where: { townId: town.id },
-      include: { person: true },
+      include: { person: { select: personSelect } },
     }),
   ]);
 
@@ -597,9 +602,9 @@ export async function getTownPersonBySlug(townSlug: string, personId: string) {
 
   if (!town) return null;
 
-  // Find person by slug or id, verify connection via events or TownPerson
+  // Find person by id (slug column may not exist in production DB yet)
   const person = await prisma.person.findFirst({
-    where: { OR: [{ slug: personId }, { id: personId }] },
+    where: { id: personId },
     include: {
       eventPeople: {
         where: { event: { townId: town.id } },
