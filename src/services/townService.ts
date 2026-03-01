@@ -419,7 +419,7 @@ export async function getGlobalChangelog(options: {
 }
 
 /**
- * Get people connected to a town via EventPerson (not TownPerson, which may be empty)
+ * Get people connected to a town via EventPerson or TownPerson (sprint towns use TownPerson only)
  */
 export async function getTownPeople(slug: string) {
   const town = await prisma.town.findUnique({
@@ -429,17 +429,24 @@ export async function getTownPeople(slug: string) {
 
   if (!town) return null;
 
-  const eventPeople = await prisma.eventPerson.findMany({
-    where: { event: { townId: town.id } },
-    include: { person: true },
-  });
+  const [eventPeople, townPeople] = await Promise.all([
+    prisma.eventPerson.findMany({
+      where: { event: { townId: town.id } },
+      include: { person: true },
+    }),
+    prisma.townPerson.findMany({
+      where: { townId: town.id },
+      include: { person: true },
+    }),
+  ]);
 
-  // Deduplicate by person id
+  // Merge and deduplicate by person id
   const personMap = new Map<string, typeof eventPeople[0]['person']>();
   for (const ep of eventPeople) {
-    if (!personMap.has(ep.person.id)) {
-      personMap.set(ep.person.id, ep.person);
-    }
+    if (!personMap.has(ep.person.id)) personMap.set(ep.person.id, ep.person);
+  }
+  for (const tp of townPeople) {
+    if (!personMap.has(tp.person.id)) personMap.set(tp.person.id, tp.person);
   }
 
   const people = Array.from(personMap.values()).map((p) => ({
@@ -580,7 +587,7 @@ export async function getTownPlaces(
 }
 
 /**
- * Get a single person by ID with connected events and stories (for Boston detail page)
+ * Get a single person by slug or id with connected events and stories
  */
 export async function getTownPersonBySlug(townSlug: string, personId: string) {
   const town = await prisma.town.findUnique({
@@ -590,9 +597,9 @@ export async function getTownPersonBySlug(townSlug: string, personId: string) {
 
   if (!town) return null;
 
-  // Find person and verify they're connected to this town via events
-  const person = await prisma.person.findUnique({
-    where: { id: personId },
+  // Find person by slug or id, verify connection via events or TownPerson
+  const person = await prisma.person.findFirst({
+    where: { OR: [{ slug: personId }, { id: personId }] },
     include: {
       eventPeople: {
         where: { event: { townId: town.id } },
@@ -615,10 +622,11 @@ export async function getTownPersonBySlug(townSlug: string, personId: string) {
           tags: true,
         },
       },
+      townPeople: { where: { townId: town.id } },
     },
   });
 
-  if (!person || person.eventPeople.length === 0) return null;
+  if (!person || (person.eventPeople.length === 0 && person.townPeople.length === 0)) return null;
 
   return {
     id: person.id,
