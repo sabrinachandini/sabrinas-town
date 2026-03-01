@@ -530,13 +530,11 @@ async function main() {
   console.log(`   ✓ ${bostonResult.upserted} Boston sources seeded`);
   console.log(`   ✓ ${bostonResult.linked} Boston source-town connections created`);
 
-  // Boston people
+  // Boston people + TownPerson
   for (const person of bostonPeople) {
-    await prisma.person.upsert({
-      where: { id: person.id },
-      update: person,
-      create: person,
-    });
+    await prisma.person.upsert({ where: { id: person.id }, update: person, create: person });
+    const existingTP = await prisma.townPerson.findFirst({ where: { townId: 'us-ma-boston', personId: person.id } });
+    if (!existingTP) await prisma.townPerson.create({ data: { town: { connect: { id: 'us-ma-boston' } }, person: { connect: { id: person.id } } } });
   }
   console.log(`   ✓ ${bostonPeople.length} Boston people seeded`);
 
@@ -623,13 +621,11 @@ async function main() {
   console.log(`   ✓ ${cambridgeResult.upserted} Cambridge sources seeded`);
   console.log(`   ✓ ${cambridgeResult.linked} Cambridge source-town connections created`);
 
-  // Cambridge people
+  // Cambridge people + TownPerson
   for (const person of cambridgePeople) {
-    await prisma.person.upsert({
-      where: { id: person.id },
-      update: person,
-      create: person,
-    });
+    await prisma.person.upsert({ where: { id: person.id }, update: person, create: person });
+    const existingTP = await prisma.townPerson.findFirst({ where: { townId: 'us-ma-cambridge', personId: person.id } });
+    if (!existingTP) await prisma.townPerson.create({ data: { town: { connect: { id: 'us-ma-cambridge' } }, person: { connect: { id: person.id } } } });
   }
   console.log(`   ✓ ${cambridgePeople.length} Cambridge people seeded`);
 
@@ -716,13 +712,11 @@ async function main() {
   console.log(`   ✓ ${arlingtonResult.upserted} Arlington sources seeded`);
   console.log(`   ✓ ${arlingtonResult.linked} Arlington source-town connections created`);
 
-  // Arlington people
+  // Arlington people + TownPerson
   for (const person of arlingtonPeople) {
-    await prisma.person.upsert({
-      where: { id: person.id },
-      update: person,
-      create: person,
-    });
+    await prisma.person.upsert({ where: { id: person.id }, update: person, create: person });
+    const existingTP = await prisma.townPerson.findFirst({ where: { townId: 'us-ma-arlington', personId: person.id } });
+    if (!existingTP) await prisma.townPerson.create({ data: { town: { connect: { id: 'us-ma-arlington' } }, person: { connect: { id: person.id } } } });
   }
   console.log(`   ✓ ${arlingtonPeople.length} Arlington people seeded`);
 
@@ -804,13 +798,11 @@ async function main() {
   });
   console.log('   ✓ Morristown town updated');
 
-  // Morristown people
+  // Morristown people + TownPerson
   for (const person of morristownPeople) {
-    await prisma.person.upsert({
-      where: { id: person.id },
-      update: person,
-      create: person,
-    });
+    await prisma.person.upsert({ where: { id: person.id }, update: person, create: person });
+    const existingTP = await prisma.townPerson.findFirst({ where: { townId: 'us-nj-morristown', personId: person.id } });
+    if (!existingTP) await prisma.townPerson.create({ data: { town: { connect: { id: 'us-nj-morristown' } }, person: { connect: { id: person.id } } } });
   }
   console.log(`   ✓ ${morristownPeople.length} Morristown people seeded`);
 
@@ -1273,13 +1265,15 @@ async function main() {
     // Update town overview
     await prisma.town.update({ where: { id: town.id }, data: town.update });
 
-    // People
+    // People + TownPerson
     for (const person of town.people) {
       await prisma.person.upsert({
         where: { id: person.id! },
         update: { name: person.name, bioShort: person.bioShort, roles: person.roles },
         create: person,
       });
+      const existingTP = await prisma.townPerson.findFirst({ where: { townId: town.id, personId: person.id! } });
+      if (!existingTP) await prisma.townPerson.create({ data: { town: { connect: { id: town.id } }, person: { connect: { id: person.id! } } } });
     }
 
     // Events
@@ -1319,7 +1313,7 @@ async function main() {
 
   for (const town of njTownExpansions) {
     await prisma.town.update({ where: { id: town.id }, data: town.update });
-    for (const person of town.people) { await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person }); }
+    for (const person of town.people) { await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person }); const existingTP = await prisma.townPerson.findFirst({ where: { townId: town.id, personId: person.id! } }); if (!existingTP) await prisma.townPerson.create({ data: { town: { connect: { id: town.id } }, person: { connect: { id: person.id! } } } }); }
     for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
     for (const story of town.stories) { const ex = await prisma.story.findFirst({ where: { id: story.id! } }); if (!ex) { await prisma.story.create({ data: story }); } else { await prisma.story.update({ where: { id: story.id! }, data: { title: story.title, textVersion: story.textVersion } }); } }
     console.log(`   ✓ ${town.name}: ${town.people.length} people, ${town.events.length} events, ${town.stories.length} stories`);
@@ -1338,7 +1332,7 @@ async function main() {
 
   for (const town of paTownExpansions) {
     await prisma.town.update({ where: { id: town.id }, data: town.update });
-    for (const person of town.people) { await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person }); }
+    for (const person of town.people) { await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person }); const existingTP = await prisma.townPerson.findFirst({ where: { townId: town.id, personId: person.id! } }); if (!existingTP) await prisma.townPerson.create({ data: { town: { connect: { id: town.id } }, person: { connect: { id: person.id! } } } }); }
     for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
     for (const story of town.stories) { const ex = await prisma.story.findFirst({ where: { id: story.id! } }); if (!ex) { await prisma.story.create({ data: story }); } else { await prisma.story.update({ where: { id: story.id! }, data: { title: story.title, textVersion: story.textVersion } }); } }
     console.log(`   ✓ ${town.name}: ${town.people.length} people, ${town.events.length} events, ${town.stories.length} stories`);
@@ -1356,7 +1350,7 @@ async function main() {
 
   for (const town of nyTownExpansions) {
     await prisma.town.update({ where: { id: town.id }, data: town.update });
-    for (const person of town.people) { await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person }); }
+    for (const person of town.people) { await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person }); const existingTP = await prisma.townPerson.findFirst({ where: { townId: town.id, personId: person.id! } }); if (!existingTP) await prisma.townPerson.create({ data: { town: { connect: { id: town.id } }, person: { connect: { id: person.id! } } } }); }
     for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
     for (const story of town.stories) { const ex = await prisma.story.findFirst({ where: { id: story.id! } }); if (!ex) { await prisma.story.create({ data: story }); } else { await prisma.story.update({ where: { id: story.id! }, data: { title: story.title, textVersion: story.textVersion } }); } }
     console.log(`   ✓ ${town.name}: ${town.people.length} people, ${town.events.length} events, ${town.stories.length} stories`);
@@ -1373,7 +1367,7 @@ async function main() {
 
   for (const town of ctTownExpansions) {
     await prisma.town.update({ where: { id: town.id }, data: town.update });
-    for (const person of town.people) { await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person }); }
+    for (const person of town.people) { await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person }); const existingTP = await prisma.townPerson.findFirst({ where: { townId: town.id, personId: person.id! } }); if (!existingTP) await prisma.townPerson.create({ data: { town: { connect: { id: town.id } }, person: { connect: { id: person.id! } } } }); }
     for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
     for (const story of town.stories) { const ex = await prisma.story.findFirst({ where: { id: story.id! } }); if (!ex) { await prisma.story.create({ data: story }); } else { await prisma.story.update({ where: { id: story.id! }, data: { title: story.title, textVersion: story.textVersion } }); } }
     console.log(`   ✓ ${town.name}: ${town.people.length} people, ${town.events.length} events, ${town.stories.length} stories`);
@@ -1388,7 +1382,7 @@ async function main() {
 
   for (const town of riTownExpansions) {
     await prisma.town.update({ where: { id: town.id }, data: town.update });
-    for (const person of town.people) { await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person }); }
+    for (const person of town.people) { await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person }); const existingTP = await prisma.townPerson.findFirst({ where: { townId: town.id, personId: person.id! } }); if (!existingTP) await prisma.townPerson.create({ data: { town: { connect: { id: town.id } }, person: { connect: { id: person.id! } } } }); }
     for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
     for (const story of town.stories) { const ex = await prisma.story.findFirst({ where: { id: story.id! } }); if (!ex) { await prisma.story.create({ data: story }); } else { await prisma.story.update({ where: { id: story.id! }, data: { title: story.title, textVersion: story.textVersion } }); } }
     console.log(`   ✓ ${town.name}: ${town.people.length} people, ${town.events.length} events, ${town.stories.length} stories`);
@@ -1406,7 +1400,7 @@ async function main() {
 
   for (const town of vaTownExpansions) {
     await prisma.town.update({ where: { id: town.id }, data: town.update });
-    for (const person of town.people) { await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person }); }
+    for (const person of town.people) { await prisma.person.upsert({ where: { id: person.id! }, update: { name: person.name, bioShort: person.bioShort, roles: person.roles }, create: person }); const existingTP = await prisma.townPerson.findFirst({ where: { townId: town.id, personId: person.id! } }); if (!existingTP) await prisma.townPerson.create({ data: { town: { connect: { id: town.id } }, person: { connect: { id: person.id! } } } }); }
     for (const event of town.events) { await prisma.event.upsert({ where: { id: event.id! }, update: { name: event.name, summary: event.summary, significanceWeight: event.significanceWeight }, create: event }); }
     for (const story of town.stories) { const ex = await prisma.story.findFirst({ where: { id: story.id! } }); if (!ex) { await prisma.story.create({ data: story }); } else { await prisma.story.update({ where: { id: story.id! }, data: { title: story.title, textVersion: story.textVersion } }); } }
     console.log(`   ✓ ${town.name}: ${town.people.length} people, ${town.events.length} events, ${town.stories.length} stories`);
@@ -1586,6 +1580,25 @@ async function main() {
     }
     console.log(`   ✓ ${town.name}: ${town.tps.length} TownPerson links`);
   }
+
+  // 25. Hackensack TownPerson repair (persons exist but TownPerson was never created)
+  console.log('\n🏛️  Hackensack TownPerson repair...');
+  const hackensackPersonIds = [
+    'person-hackensack-dirck-romeyn',
+    'person-hackensack-john-fell',
+    'person-hackensack-john-goetschius',
+    'person-hackensack-sam-enslaved',
+    'person-hackensack-theodosia-prevost',
+    'person-hackensack-anthony-wayne',
+  ];
+  for (const personId of hackensackPersonIds) {
+    const personExists = await prisma.person.findFirst({ where: { id: personId } });
+    if (personExists) {
+      const existingTP = await prisma.townPerson.findFirst({ where: { townId: 'us-nj-hackensack', personId } });
+      if (!existingTP) await prisma.townPerson.create({ data: { town: { connect: { id: 'us-nj-hackensack' } }, person: { connect: { id: personId } } } });
+    }
+  }
+  console.log(`   ✓ Hackensack: ${hackensackPersonIds.length} TownPerson links repaired`);
 
   // Summary
   console.log('\n====================================');
