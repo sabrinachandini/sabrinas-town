@@ -34,10 +34,22 @@ export function requireStripeEnv(): void {
 }
 
 // ---------------------------------------------------------------------------
-// Stripe client singleton
+// Stripe client singleton (lazy — only instantiated when key is available)
 // ---------------------------------------------------------------------------
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-  apiVersion: '2025-04-30.basil' as any,
+let _stripe: Stripe | null = null;
+export function getStripe(): Stripe {
+  if (!_stripe) {
+    const key = process.env.STRIPE_SECRET_KEY;
+    if (!key) throw new Error('STRIPE_SECRET_KEY is not set');
+    _stripe = new Stripe(key, { apiVersion: '2025-04-30.basil' as any });
+  }
+  return _stripe;
+}
+/** @deprecated Use getStripe() — this throws if STRIPE_SECRET_KEY is missing */
+export const stripe = new Proxy({} as Stripe, {
+  get(_t, prop) {
+    return (getStripe() as any)[prop];
+  },
 });
 
 // ---------------------------------------------------------------------------
