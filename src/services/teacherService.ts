@@ -165,6 +165,16 @@ export async function getTeacherModule(slug: string): Promise<TeacherModule | nu
         orderBy: { weight: 'desc' },
         take: 3,
       },
+      // Fallback data for sprint towns that have lesson plans but no source packets/worksheets
+      sourceTowns: {
+        include: { source: true },
+        take: 8,
+      },
+      events: {
+        include: { eventPeople: { include: { person: true } } },
+        orderBy: { significanceWeight: 'desc' },
+        take: 5,
+      },
     },
   });
 
@@ -220,6 +230,21 @@ function buildCuratedModule(town: {
     linkType: string;
     reason: string;
   }>;
+  sourceTowns: Array<{
+    source: {
+      id: string;
+      title: string;
+      type: string;
+      publisherOrHolder: string;
+      url: string | null;
+      credibilityTier: string;
+    };
+  }>;
+  events: Array<{
+    name: string;
+    summary: string;
+    eventPeople: Array<{ person: { name: string; bioShort: string } }>;
+  }>;
 }): TeacherModule {
   const firstPlan = town.lessonPlans[0];
   const lessonData = firstPlan.lessonData as LessonPlan;
@@ -240,25 +265,44 @@ function buildCuratedModule(town: {
     slides: [],
   }) as SlideOutline;
 
-  // Map primary source packets
-  const primarySources: PrimarySourceItem[] = town.primarySourcePackets.map(psp => ({
-    id: psp.id,
-    title: psp.title,
-    type: psp.sourceType,
-    sourceInfo: psp.publisherOrHolder,
-    url: psp.url,
-    analysisPrompts: psp.analysisPrompts,
-    credibilityTier: psp.credibilityTier,
-    teacherNarrative: psp.teacherNarrative || undefined,
-  }));
+  // Map primary source packets — fall back to sourceTowns if none seeded
+  const primarySources: PrimarySourceItem[] = town.primarySourcePackets.length > 0
+    ? town.primarySourcePackets.map(psp => ({
+        id: psp.id,
+        title: psp.title,
+        type: psp.sourceType,
+        sourceInfo: psp.publisherOrHolder,
+        url: psp.url,
+        analysisPrompts: psp.analysisPrompts,
+        credibilityTier: psp.credibilityTier,
+        teacherNarrative: psp.teacherNarrative || undefined,
+      }))
+    : town.sourceTowns.slice(0, 5).map(st => ({
+        id: st.source.id,
+        title: st.source.title,
+        type: st.source.type,
+        sourceInfo: st.source.publisherOrHolder,
+        url: st.source.url,
+        analysisPrompts: generateSourceAnalysisPrompts(st.source.type),
+        credibilityTier: st.source.credibilityTier,
+      }));
 
-  // Map worksheets to handouts and quiz
-  const handouts: Handout[] = [];
-  let quiz: Quiz = {
-    title: `${town.name} in the American Revolution`,
-    instructions: 'Answer the following questions based on our study of Revolutionary history.',
-    questions: [],
-  };
+  // Map worksheets to handouts and quiz — fall back to generated if none seeded
+  const eventPeople = Array.from(
+    new Map(
+      town.events.flatMap(e => e.eventPeople.map(ep => [ep.person.name, ep.person]))
+    ).values()
+  );
+  const handouts: Handout[] = town.teacherWorksheets.length > 0
+    ? []
+    : generateHandouts(town, eventPeople);
+  let quiz: Quiz = town.teacherWorksheets.length > 0
+    ? {
+        title: `${town.name} in the American Revolution`,
+        instructions: 'Answer the following questions based on our study of Revolutionary history.',
+        questions: [],
+      }
+    : generateQuiz(town);
 
   for (const ws of town.teacherWorksheets) {
     if (ws.worksheetType === 'QUIZ' && ws.quizData) {
