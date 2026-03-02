@@ -57,7 +57,7 @@ export async function registerBillingRoutes(fastify: FastifyInstance): Promise<v
   // =======================================================================
   // POST /api/billing/checkout-session
   // =======================================================================
-  fastify.post('/api/billing/checkout-session', async (request, reply) => {
+  fastify.post('/billing/checkout-session', async (request, reply) => {
     const auth = await requireOrgOwner(request as any, reply);
     if (!auth) return; // reply already sent
 
@@ -154,7 +154,7 @@ export async function registerBillingRoutes(fastify: FastifyInstance): Promise<v
   // =======================================================================
   // POST /api/billing/portal-session
   // =======================================================================
-  fastify.post('/api/billing/portal-session', async (request, reply) => {
+  fastify.post('/billing/portal-session', async (request, reply) => {
     const auth = await requireOrgOwner(request as any, reply);
     if (!auth) return;
 
@@ -194,7 +194,7 @@ export async function registerBillingRoutes(fastify: FastifyInstance): Promise<v
   // POST /api/billing/webhook
   // Raw body handling + signature verification
   // =======================================================================
-  fastify.post('/api/billing/webhook', {
+  fastify.post('/billing/webhook', {
     config: {
       // Signal to the rawBody hook that this route needs it
       rawBody: true,

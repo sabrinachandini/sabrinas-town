@@ -5,7 +5,7 @@ import { FastifyInstance } from 'fastify';
 import prisma from '../db/client.js';
 
 export async function registerStewardshipRoutes(fastify: FastifyInstance): Promise<void> {
-  fastify.post('/api/stewardship/activate', async (request, reply) => {
+  fastify.post('/stewardship/activate', async (request, reply) => {
     const userId = request.headers['x-user-id'] as string;
     if (!userId) {
       return reply.status(401).send({ success: false, error: 'Authentication required.' });

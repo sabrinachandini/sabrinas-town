@@ -23,7 +23,7 @@ export async function registerPartnerInquireRoutes(fastify: FastifyInstance): Pr
    * Public endpoint — no auth required
    */
   fastify.post(
-    '/api/partner/inquire',
+    '/partner/inquire',
     async (
       request: FastifyRequest<{ Body: unknown }>,
       reply: FastifyReply

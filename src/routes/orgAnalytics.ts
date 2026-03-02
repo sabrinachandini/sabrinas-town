@@ -54,7 +54,7 @@ export async function registerOrgAnalyticsRoutes(fastify: FastifyInstance): Prom
   // =======================================================================
   // POST /api/org-analytics/event
   // =======================================================================
-  fastify.post('/api/org-analytics/event', async (request, reply) => {
+  fastify.post('/org-analytics/event', async (request, reply) => {
     const bodyResult = OrgAnalyticsEventSchema.safeParse(request.body);
     if (!bodyResult.success) {
       return reply.status(400).send({
@@ -126,7 +126,7 @@ export async function registerOrgAnalyticsRoutes(fastify: FastifyInstance): Prom
   // =======================================================================
   // GET /api/org-analytics/summary
   // =======================================================================
-  fastify.get('/api/org-analytics/summary', async (request, reply) => {
+  fastify.get('/org-analytics/summary', async (request, reply) => {
     const queryResult = OrgAnalyticsSummaryQuerySchema.safeParse(request.query);
     if (!queryResult.success) {
       return reply.status(400).send({
