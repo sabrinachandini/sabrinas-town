@@ -133,7 +133,7 @@ function RankRow({ town }: { town: RankedTown }) {
       {/* Score + rank change */}
       <div className="flex-shrink-0 text-right">
         <Text size="small" className="font-medium tabular-nums">
-          {town.compositeScore.toFixed(1)}
+          {(town.compositeScore ?? 0).toFixed(1)}
         </Text>
         {change !== null && change !== 0 && (
           <Text
