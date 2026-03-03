@@ -1,7 +1,11 @@
 function getApiUrl(): string {
   // Explicit override (works both server-side and client-side)
   if (process.env.NEXT_PUBLIC_API_URL) return process.env.NEXT_PUBLIC_API_URL;
-  // On Vercel, use the deployment URL with /api prefix (server-side only)
+  // On Vercel, prefer the stable production URL over the per-deployment URL.
+  // VERCEL_URL is deployment-specific and may be password-protected (preview protection).
+  // VERCEL_PROJECT_PRODUCTION_URL is always the canonical production domain.
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL)
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/api`;
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}/api`;
   // Local development — Fastify runs on port 3000 without /api prefix
   return "http://localhost:3000";
