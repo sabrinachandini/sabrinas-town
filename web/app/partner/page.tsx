@@ -59,8 +59,8 @@ export default function PartnerPage() {
               description="Your town joins the verified network of Revolutionary sites. Visitors see the 'Official Revolutionary Town Network Member' badge, signaling quality and authenticity."
             />
             <FeatureCard
-              title="Embeddable Widgets (Coming Soon)"
-              description="Soon you'll be able to add your town's profile to your website with a single line of code. Widgets will match your branding and update automatically."
+              title="Embeddable Widgets"
+              description="Add your town's profile to your website with a single line of code. Widgets show your town's score, summary, and a link back to the full profile — and update automatically as content improves."
             />
             <FeatureCard
               title="Analytics Dashboard"
@@ -191,6 +191,35 @@ export default function PartnerPage() {
               </div>
             </div>
           </div>
+        </section>
+
+        <Divider spacing="section" />
+
+        {/* Embed Widget */}
+        <section>
+          <Heading level={2}>Embed your town anywhere</Heading>
+          <Text className="mt-element max-w-[620px]">
+            Drop your town&apos;s widget into any website with one line of HTML.
+            The widget displays your town&apos;s score, summary, and a direct link
+            to its full profile — and updates automatically as content improves.
+          </Text>
+          <div className="mt-component p-element bg-bg-secondary rounded-lg font-mono text-small overflow-x-auto">
+            <pre className="whitespace-pre-wrap break-all text-text-primary">{`<iframe
+  src="https://historyisforeveryone.com/embed/boston-ma"
+  width="420"
+  height="220"
+  frameborder="0"
+  style="border-radius:8px;border:1px solid #e5e7eb;"
+  title="Boston Revolutionary Town Widget"
+></iframe>`}</pre>
+          </div>
+          <Text size="small" muted className="mt-element">
+            Replace <code className="bg-bg-secondary px-1 rounded">boston-ma</code> with your town&apos;s slug.
+            Find your town&apos;s slug on its profile page URL:{" "}
+            <code className="bg-bg-secondary px-1 rounded">
+              historyisforeveryone.com/towns/your-town-slug
+            </code>
+          </Text>
         </section>
 
         <Divider spacing="section" />

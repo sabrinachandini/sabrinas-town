@@ -2,6 +2,7 @@ export { TownSubnav } from "./TownSubnav";
 export { EmptyState } from "./EmptyState";
 export { ComingSoon } from "./ComingSoon";
 export { PeopleSearch } from "./PeopleSearch";
+export { TownFilter } from "./TownFilter";
 
 // Hub page components
 export { HubCard } from "./HubCard";

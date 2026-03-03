@@ -3,30 +3,21 @@ import {
   Container,
   Heading,
   Text,
-  Link,
-  Divider,
 } from "@/components/ui";
-import { PeopleSearch } from "@/components/town";
+import { PeopleSearch, TownFilter } from "@/components/town";
 
 export const metadata = {
   title: "Browse Towns | History is for Everyone",
   description:
-    "Explore all 75 Revolutionary towns in our network — from Lexington to Yorktown. Filter by state and score tier.",
+    "Explore all 77 Revolutionary towns in our network — from Lexington to Yorktown. Filter by state and score tier.",
 };
 
 export const dynamic = "force-dynamic";
 
 export default async function TownsPage() {
-  const towns = await getRankings({ limit: 75 });
+  const towns = await getRankings({ limit: 77 });
 
   const states = [...new Set(towns.map((t) => t.state))].sort();
-
-  // Group towns by state
-  const townsByState: Record<string, typeof towns> = {};
-  for (const town of towns) {
-    if (!townsByState[town.state]) townsByState[town.state] = [];
-    townsByState[town.state].push(town);
-  }
 
   return (
     <main className="py-section">
@@ -37,55 +28,15 @@ export default async function TownsPage() {
           Select a town to explore its full profile.
         </Text>
 
+        {/* People search */}
         <div className="mt-component">
           <PeopleSearch />
         </div>
 
-        <Divider spacing="section" />
-
-        {/* State Quick Nav */}
-        <div className="flex flex-wrap items-center gap-3 mb-component">
-          <Text size="small" muted>
-            Jump to:
-          </Text>
-          {states.map((state) => (
-            <a
-              key={state}
-              href={`#${state}`}
-              className="px-3 py-1 text-small bg-bg-secondary rounded hover:bg-border-light transition-colors"
-            >
-              {state} ({townsByState[state].length})
-            </a>
-          ))}
+        {/* Town filter + grid */}
+        <div className="mt-component">
+          <TownFilter towns={towns} />
         </div>
-
-        {/* Towns Grid by State */}
-        {states.map((state) => (
-          <section key={state} id={state} className="mb-section">
-            <Heading level={2} className="mb-element">
-              {state}
-            </Heading>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-element">
-              {townsByState[state]
-                .sort((a, b) => a.name.localeCompare(b.name))
-                .map((town) => (
-                  <Link
-                    key={town.id}
-                    href={`/towns/${town.slug}`}
-                    className="block p-element bg-bg-secondary rounded-lg hover:bg-border-light transition-colors no-underline group"
-                  >
-                    <Text className="font-medium group-hover:text-accent-blue transition-colors">
-                      {town.name}
-                    </Text>
-                    <Text size="small" muted className="mt-tight line-clamp-2">
-                      {town.heroSummary40}
-                    </Text>
-                  </Link>
-                ))}
-            </div>
-          </section>
-        ))}
 
         {towns.length === 0 && (
           <div className="py-section text-center">
