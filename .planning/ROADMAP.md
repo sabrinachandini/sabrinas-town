@@ -9,7 +9,7 @@ Phases build on the existing v1.1 foundation (75 towns, API, admin, analytics, e
 - [x] **Phase 1: Rename Clusters → Big Picture** - Update user-facing copy in cluster detail pages
 - [x] **Phase 2: Nav Simplification + Inverse Nav** - Dark header/footer, light town subnav
 - [x] **Phase 3: About Page — HIFE Brand** - Rebuilt /about with brand blue/red accents, red section markers, HIFE voice (completed 2026-03-04)
-- [ ] **Phase 4: Homepage Restructure (tourist-first)** - Hero rewrite for tourist CTA, featured towns section, browse-by-state strip
+- [x] **Phase 4: Homepage Restructure (tourist-first)** - Hero rewrite for tourist CTA, featured towns section, browse-by-state strip (completed 2026-03-04)
 - [ ] **Phase 5: Teacher Pages — TPT Style** - TPT-style lesson listing and detail; remove editorial/classic bifurcation
 - [ ] **Phase 6: Inquiry Email** - Resend integration; partner inquiries emailed to sabrina@lexington250.com
 - [ ] **Phase 7: Copy Sweep** - Remove "free" language, remove widget references, update partner/about/homepage copy
