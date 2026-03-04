@@ -1,18 +1,12 @@
 import { getRankings } from "@/lib/api";
-import {
-  Container,
-  Heading,
-  Text,
-  Link,
-  Divider,
-} from "@/components/ui";
+import { Container, Heading, Text, Link, Divider } from "@/components/ui";
 import { PeopleSearch } from "@/components/town";
 import { TownSearchInput } from "./TownSearchInput";
 
 export const metadata = {
   title: "Browse Towns | History is for Everyone",
   description:
-    "Explore all 77 Revolutionary towns in our network — from Lexington to Yorktown. Filter by state and score tier.",
+    "Explore 77 Revolutionary towns across 13 states — from Lexington to Yorktown.",
 };
 
 export const dynamic = "force-dynamic";
@@ -34,7 +28,8 @@ export default async function TownsPage({ searchParams }: PageProps) {
       )
     : towns;
 
-  const states = [...new Set(filtered.map((t) => t.state))].sort();
+  const allStates = [...new Set(towns.map((t) => t.state))].sort();
+  const filteredStates = [...new Set(filtered.map((t) => t.state))].sort();
 
   const townsByState: Record<string, typeof filtered> = {};
   for (const town of filtered) {
@@ -43,85 +38,110 @@ export default async function TownsPage({ searchParams }: PageProps) {
   }
 
   return (
-    <main className="py-section">
-      <Container size="wide">
-        <Heading level={1}>Browse Towns</Heading>
-        <Text className="mt-element max-w-[620px]">
-          {towns.length} Revolutionary towns across{" "}
-          {[...new Set(towns.map((t) => t.state))].length} states. Select a
-          town to explore its full profile.
-        </Text>
+    <main>
+      {/* Hero */}
+      <section className="py-section border-b border-border-light">
+        <Container size="wide">
+          <Heading level={1}>
+            {towns.length} Revolutionary Towns
+          </Heading>
+          <Text className="mt-element max-w-[560px] text-text-muted">
+            Every town where the American Revolution happened — walked, sourced, and connected.
+            Across {allStates.length} states, from New Hampshire to Georgia.
+          </Text>
 
-        {/* People search */}
-        <div className="mt-component">
-          <PeopleSearch />
-        </div>
+          <div className="mt-component flex flex-col sm:flex-row gap-4 items-start">
+            <TownSearchInput initialValue={q} />
+            <div className="self-center">
+              <PeopleSearch />
+            </div>
+          </div>
 
-        {/* Town search */}
-        <div className="mt-component">
-          <TownSearchInput initialValue={q} />
           {query && (
-            <Text size="small" muted className="mt-2">
+            <Text size="small" muted className="mt-3">
               {filtered.length} town{filtered.length !== 1 ? "s" : ""} matching &ldquo;{q}&rdquo;.{" "}
               <Link href="/towns">Clear</Link>
             </Text>
           )}
-        </div>
+        </Container>
+      </section>
 
-        <Divider spacing="section" />
+      {/* State quick-nav */}
+      {!query && allStates.length > 1 && (
+        <section className="py-element border-b border-border-light bg-bg-secondary">
+          <Container size="wide">
+            <div className="flex flex-wrap gap-2">
+              {allStates.map((state) => {
+                const count = towns.filter((t) => t.state === state).length;
+                return (
+                  <a
+                    key={state}
+                    href={`#${state}`}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-small font-body bg-white border border-border-light hover:border-accent-blue hover:text-accent-blue transition-colors no-underline"
+                  >
+                    {state}
+                    <span className="text-[10px] font-medium bg-bg-secondary rounded-full px-1.5 py-0.5 text-text-muted">
+                      {count}
+                    </span>
+                  </a>
+                );
+              })}
+            </div>
+          </Container>
+        </section>
+      )}
 
-        {/* State Quick Nav */}
-        {!query && states.length > 1 && (
-          <div className="flex flex-wrap items-center gap-3 mb-component">
-            <Text size="small" muted>
-              Jump to:
-            </Text>
-            {states.map((state) => (
-              <a
-                key={state}
-                href={`#${state}`}
-                className="px-3 py-1 text-small bg-bg-secondary rounded hover:bg-border-light transition-colors"
-              >
-                {state} ({townsByState[state].length})
-              </a>
-            ))}
-          </div>
-        )}
-
-        {/* Towns Grid by State */}
-        {filtered.length === 0 ? (
-          <div className="py-section text-center">
-            <Text muted>No towns match &ldquo;{q}&rdquo;.</Text>
-          </div>
-        ) : (
-          states.map((state) => (
-            <section key={state} id={state} className="mb-section">
-              <Heading level={2} className="mb-element">
-                {state}
-              </Heading>
-
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-element">
-                {townsByState[state]
-                  .sort((a, b) => a.name.localeCompare(b.name))
-                  .map((town) => (
-                    <Link
-                      key={town.id}
-                      href={`/towns/${town.slug}`}
-                      className="block p-element bg-bg-secondary rounded-lg hover:bg-border-light transition-colors no-underline group"
-                    >
-                      <Text className="font-medium group-hover:text-accent-blue transition-colors">
-                        {town.name}
-                      </Text>
-                      <Text size="small" muted className="mt-tight line-clamp-2">
-                        {town.heroSummary40}
-                      </Text>
-                    </Link>
-                  ))}
+      {/* Towns grid */}
+      <section className="py-section">
+        <Container size="wide">
+          {filtered.length === 0 ? (
+            <div className="py-section text-center">
+              <Text muted>No towns match &ldquo;{q}&rdquo;.</Text>
+              <div className="mt-element">
+                <Link href="/towns">Browse all towns</Link>
               </div>
-            </section>
-          ))
-        )}
-      </Container>
+            </div>
+          ) : (
+            <div className="space-y-section">
+              {filteredStates.map((state, idx) => (
+                <div key={state} id={state}>
+                  {/* State header */}
+                  <div className="flex items-baseline gap-4 mb-component">
+                    <Heading level={2}>{state}</Heading>
+                    <Text size="small" muted as="span">
+                      {townsByState[state].length} town{townsByState[state].length !== 1 ? "s" : ""}
+                    </Text>
+                  </div>
+
+                  {/* Town cards */}
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-element">
+                    {townsByState[state]
+                      .sort((a, b) => a.name.localeCompare(b.name))
+                      .map((town) => (
+                        <Link
+                          key={town.id}
+                          href={`/towns/${town.slug}`}
+                          className="block border-l-2 border-border-light pl-4 py-1 hover:border-accent-blue transition-colors no-underline group"
+                        >
+                          <Text className="font-semibold font-heading group-hover:text-accent-blue transition-colors">
+                            {town.name}
+                          </Text>
+                          <Text size="small" muted className="mt-1 line-clamp-2">
+                            {(town as any).execSummary150 ?? town.heroSummary40}
+                          </Text>
+                        </Link>
+                      ))}
+                  </div>
+
+                  {idx < filteredStates.length - 1 && (
+                    <Divider spacing="section" />
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+        </Container>
+      </section>
     </main>
   );
 }

@@ -4,7 +4,6 @@ import { Container, Text, Divider } from "@/components/ui";
 
 const FOOTER_LINKS = [
   { label: "Towns", href: "/towns" },
-  { label: "Rankings", href: "/rankings" },
   { label: "Big Picture", href: "/clusters" },
   { label: "Teach", href: "/teach" },
   { label: "Partner", href: "/partner" },
