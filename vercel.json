@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
   "env": {
-    "NEXT_PUBLIC_API_URL": "https://sabrinas-town.vercel.app"
+    "NEXT_PUBLIC_API_URL": "https://sabrinas-town.vercel.app/api"
   },
   "builds": [
     {
