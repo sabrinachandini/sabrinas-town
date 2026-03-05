@@ -22,6 +22,13 @@ Phases build on the existing v1.1 foundation (75 towns, API, admin, analytics, e
 **Goal**: Teacher pages feel like Teachers Pay Teachers — structured metadata, preview-first, clear downloads, primary sources listed, print-ready. All towns get the same rendering path (no editorial/classic bifurcation).
 **Depends on**: Phase 4
 **Requirements**: TPT-01, TPT-02, TPT-03, TPT-04, TPT-05
+**Plans:** 3 plans
+
+Plans:
+- [ ] 05-01-PLAN.md — Create `web/components/teacher/` component library (types, 5 components, barrel)
+- [ ] 05-02-PLAN.md — Rewrite teacher listing and detail pages with TPT-style layout + human verification
+- [ ] 05-03-PLAN.md — Update print page spacing/typography and remove as any casts
+
 **Success Criteria**:
   1. `/towns/[slug]/teacher` shows a structured lesson listing for all towns (no EDITORIAL_SLUGS gate)
   2. `/towns/[slug]/teacher/[id]` renders TPT-style with TeacherProductHeader, TeacherProductMeta, PreviewSection, PrimarySourcesList, DownloadsBlock, QuizSection
