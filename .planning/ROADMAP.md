@@ -25,7 +25,7 @@ Phases build on the existing v1.1 foundation (75 towns, API, admin, analytics, e
 **Plans:** 3 plans
 
 Plans:
-- [ ] 05-01-PLAN.md — Create `web/components/teacher/` component library (types, 5 components, barrel)
+- [x] 05-01-PLAN.md — Create `web/components/teacher/` component library (types, 5 components, barrel) — COMPLETE 2026-03-05
 - [ ] 05-02-PLAN.md — Rewrite teacher listing and detail pages with TPT-style layout + human verification
 - [ ] 05-03-PLAN.md — Update print page spacing/typography and remove as any casts
 

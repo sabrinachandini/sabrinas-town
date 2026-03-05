@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: milestone
-status: Ready for next phase
-last_updated: "2026-03-04T20:49:24.078Z"
-last_activity: 2026-03-04 — Completed Phase 04 (homepage tourist-first restructure)
+status: In progress
+last_updated: "2026-03-05T04:54:23.000Z"
+last_activity: 2026-03-05 — Completed Phase 05 Plan 01 (teacher component library)
 progress:
-  total_phases: 1
-  completed_phases: 1
-  total_plans: 1
+  total_phases: 9
+  completed_phases: 4
+  total_plans: 2
   completed_plans: 1
-  percent: 44
+  percent: 50
 ---
 
 # Project State
@@ -21,15 +21,16 @@ See: .planning/PROJECT.md
 See: .planning/ROADMAP.md
 
 **Core value:** 75 Revolutionary War towns, fully documented and connected — built for travelers, teachers, and towns.
-**Current focus:** Phase 5 — (next phase)
+**Current focus:** Phase 5 — Teacher pages TPT style
 
 ## Current Position
 
-Phase: 4 of 9 (COMPLETE)
-Status: Ready for next phase
-Last activity: 2026-03-04 — Completed Phase 04 (homepage tourist-first restructure)
+Phase: 5 of 9 (In progress — Plan 1 of 2 complete)
+Status: In progress
+Last activity: 2026-03-05 — Completed Phase 05 Plan 01 (teacher component library)
+Stopped at: Completed 05-01-PLAN.md
 
-Progress: [████░░░░░░] 44%
+Progress: [█████░░░░░] 50%
 
 ## Accumulated Context
 
@@ -43,6 +44,8 @@ Progress: [████░░░░░░] 44%
 - [Phase 04]: Hero H1 changed to '75 Revolutionary towns. One network.' — tourist-first, not mission statement
 - [Phase 04]: Score badges added inline in featured towns as small muted font-mono text
 - [Phase 04]: Browse-by-state expanded from 5 states to all 13 colonies; Reveal.wrapperClassName used (className prop does not exist on RevealProps)
+- [Phase 05-01]: Double cast (as unknown as Type) required when narrowing Record<string,unknown> to typed interface in TypeScript
+- [Phase 05-01]: PrimarySourceCard does not expose id prop — key={s.id} used for React reconciliation only
 
 ### Blockers/Concerns
 
@@ -53,3 +56,4 @@ None.
 | Phase | Plan | Duration | Tasks | Files |
 |-------|------|----------|-------|-------|
 | 04    | 01   | 29 min   | 1     | 1     |
+| 05    | 01   | 13 min   | 2     | 7     |
