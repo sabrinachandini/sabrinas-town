@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: milestone
 status: In progress
-last_updated: "2026-03-05T04:54:23.000Z"
-last_activity: 2026-03-05 — Completed Phase 05 Plan 01 (teacher component library)
+last_updated: "2026-03-05T05:05:00.000Z"
+last_activity: 2026-03-05 — Completed Phase 05 Plan 02 (teacher pages TPT style)
 progress:
   total_phases: 9
   completed_phases: 4
-  total_plans: 2
-  completed_plans: 1
-  percent: 50
+  total_plans: 3
+  completed_plans: 2
+  percent: 67
 ---
 
 # Project State
@@ -25,12 +25,12 @@ See: .planning/ROADMAP.md
 
 ## Current Position
 
-Phase: 5 of 9 (In progress — Plan 1 of 2 complete)
+Phase: 5 of 9 (In progress — Plan 2 of 3 complete)
 Status: In progress
-Last activity: 2026-03-05 — Completed Phase 05 Plan 01 (teacher component library)
-Stopped at: Completed 05-01-PLAN.md
+Last activity: 2026-03-05 — Completed Phase 05 Plan 02 (teacher pages TPT style)
+Stopped at: Completed 05-02-PLAN.md (awaiting human-verify checkpoint)
 
-Progress: [█████░░░░░] 50%
+Progress: [██████░░░░] 67%
 
 ## Accumulated Context
 
@@ -46,6 +46,9 @@ Progress: [█████░░░░░] 50%
 - [Phase 04]: Browse-by-state expanded from 5 states to all 13 colonies; Reveal.wrapperClassName used (className prop does not exist on RevealProps)
 - [Phase 05-01]: Double cast (as unknown as Type) required when narrowing Record<string,unknown> to typed interface in TypeScript
 - [Phase 05-01]: PrimarySourceCard does not expose id prop — key={s.id} used for React reconciliation only
+- [Phase 05-02]: Listing page shows fallback message (not redirect) when module is null — content may not be available yet for all towns
+- [Phase 05-02]: Detail page redirects to /teach (not notFound()) when module is null — consistent with teacher hub
+- [Phase 05-02]: lessonSlug sentinel pattern: /towns/[slug]/teacher/lesson uses "lesson" as stable sentinel, param ignored in handler with explanatory comment
 
 ### Blockers/Concerns
 
@@ -57,3 +60,4 @@ None.
 |-------|------|----------|-------|-------|
 | 04    | 01   | 29 min   | 1     | 1     |
 | 05    | 01   | 13 min   | 2     | 7     |
+| 05    | 02   | 7 min    | 2     | 2     |

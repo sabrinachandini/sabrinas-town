@@ -22,7 +22,7 @@ Phases build on the existing v1.1 foundation (75 towns, API, admin, analytics, e
 **Goal**: Teacher pages feel like Teachers Pay Teachers — structured metadata, preview-first, clear downloads, primary sources listed, print-ready. All towns get the same rendering path (no editorial/classic bifurcation).
 **Depends on**: Phase 4
 **Requirements**: TPT-01, TPT-02, TPT-03, TPT-04, TPT-05
-**Plans:** 3 plans
+**Plans:** 2/3 plans executed
 
 Plans:
 - [x] 05-01-PLAN.md — Create `web/components/teacher/` component library (types, 5 components, barrel) — COMPLETE 2026-03-05
