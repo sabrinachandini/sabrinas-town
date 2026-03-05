@@ -10,7 +10,7 @@ Phases build on the existing v1.1 foundation (75 towns, API, admin, analytics, e
 - [x] **Phase 2: Nav Simplification + Inverse Nav** - Dark header/footer, light town subnav
 - [x] **Phase 3: About Page — HIFE Brand** - Rebuilt /about with brand blue/red accents, red section markers, HIFE voice (completed 2026-03-04)
 - [x] **Phase 4: Homepage Restructure (tourist-first)** - Hero rewrite for tourist CTA, featured towns section, browse-by-state strip (completed 2026-03-04)
-- [ ] **Phase 5: Teacher Pages — TPT Style** - TPT-style lesson listing and detail; remove editorial/classic bifurcation
+- [x] **Phase 5: Teacher Pages — TPT Style** - TPT-style lesson listing and detail; remove editorial/classic bifurcation (completed 2026-03-05)
 - [ ] **Phase 6: Inquiry Email** - Resend integration; partner inquiries emailed to sabrina@lexington250.com
 - [ ] **Phase 7: Copy Sweep** - Remove "free" language, remove widget references, update partner/about/homepage copy
 - [ ] **Phase 8: Sources Page for All Towns** - Remove EDITORIAL_SLUGS gate from sources route
@@ -22,7 +22,7 @@ Phases build on the existing v1.1 foundation (75 towns, API, admin, analytics, e
 **Goal**: Teacher pages feel like Teachers Pay Teachers — structured metadata, preview-first, clear downloads, primary sources listed, print-ready. All towns get the same rendering path (no editorial/classic bifurcation).
 **Depends on**: Phase 4
 **Requirements**: TPT-01, TPT-02, TPT-03, TPT-04, TPT-05
-**Plans:** 2/3 plans executed
+**Plans:** 3/3 plans complete
 
 Plans:
 - [x] 05-01-PLAN.md — Create `web/components/teacher/` component library (types, 5 components, barrel) — COMPLETE 2026-03-05
