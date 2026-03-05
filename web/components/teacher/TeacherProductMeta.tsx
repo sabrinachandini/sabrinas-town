@@ -6,7 +6,7 @@ interface Props {
 }
 
 export function TeacherProductMeta({ module }: Props) {
-  const standards = module.standards as Standards;
+  const standards = module.standards as unknown as Standards;
 
   const tags: string[] = [];
 

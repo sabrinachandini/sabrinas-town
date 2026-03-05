@@ -9,7 +9,7 @@ interface Props {
 
 function deriveWhatYouGet(module: TeacherModuleResponse): string[] {
   const bullets: string[] = [];
-  const lp = module.lessonPlan as LessonPlan;
+  const lp = module.lessonPlan as unknown as LessonPlan;
 
   if (lp?.warmUp) {
     bullets.push(`Full lesson plan (${module.overview.estimatedDuration})`);
