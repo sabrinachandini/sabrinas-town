@@ -72,7 +72,7 @@ export default async function EventDetailPage({ params }: PageProps) {
                 className="py-4 border-b border-border-light last:border-b-0"
               >
                 <a
-                  href={`/towns/${slug}/people/${person.id}`}
+                  href={`/towns/${slug}/people/${(person as any).slug ?? person.id}`}
                   className="font-body font-medium hover:text-accent-blue transition-colors"
                 >
                   {person.name}

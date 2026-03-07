@@ -329,6 +329,539 @@ button {
   display: none;
 }
 
+/* ─── Worksheet Styles ────────────────────────────────────────── */
+
+.ws-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #111;
+  background: #fff;
+}
+
+/* Cover */
+.ws-cover {
+  text-align: center;
+  padding: 3rem 1rem 4rem;
+}
+.ws-cover-brand {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 2rem;
+}
+.ws-cover-title {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+.ws-cover-location {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+.ws-cover-meta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+.ws-cover-dot { color: #bbb; }
+.ws-cover-summary {
+  max-width: 540px;
+  margin: 0 auto 2.5rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #333;
+}
+.ws-cover-contents {
+  display: inline-block;
+  text-align: left;
+  border: 1.5px solid #111;
+  padding: 1.25rem 1.75rem;
+  min-width: 280px;
+}
+.ws-contents-label {
+  font-size: 0.7rem;
+  font-family: Arial, sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 0.6rem;
+  color: #333;
+}
+.ws-contents-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+.ws-contents-list li::before {
+  content: "✓  ";
+  font-size: 0.8rem;
+  color: #444;
+}
+
+/* Sheet (every non-cover page) */
+.ws-sheet {
+  padding: 1.5rem 0;
+}
+
+/* Student header box */
+.ws-student-header {
+  border: 1.5px solid #111;
+  margin-bottom: 1.5rem;
+}
+.ws-student-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.4rem 0.75rem;
+  background: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 0.75rem;
+}
+.ws-unit-title {
+  font-weight: bold;
+}
+.ws-subtitle {
+  font-weight: normal;
+  opacity: 0.85;
+}
+.ws-brand {
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+.ws-label {
+  margin-right: 0.3rem;
+  opacity: 0.8;
+}
+.ws-student-fields {
+  display: flex;
+  gap: 0;
+  padding: 0.5rem 0.75rem;
+}
+.ws-field {
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-right: 2rem;
+  white-space: nowrap;
+}
+.ws-field-line {
+  display: inline-block;
+  border-bottom: 1px solid #333;
+  width: 160px;
+  height: 1rem;
+}
+.ws-field-line--short {
+  width: 80px;
+}
+
+/* Section headers */
+.ws-section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 1.25rem 0 0.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1.5px solid #111;
+}
+.ws-section-num {
+  font-family: Arial, sans-serif;
+  font-size: 0.7rem;
+  background: #111;
+  color: #fff;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+}
+.ws-section-title {
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Body text */
+.ws-body {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin: 0.4rem 0;
+}
+.ws-directions {
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #444;
+  margin: 0.4rem 0 0.75rem;
+  line-height: 1.5;
+}
+.ws-block {
+  margin-bottom: 1.25rem;
+}
+
+/* Objectives */
+.ws-objective-list {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  padding-left: 1.25rem;
+  margin: 0.4rem 0;
+}
+
+/* Essential questions */
+.ws-eq-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.4rem 0;
+}
+.ws-eq-list li {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  padding: 0.4rem 0.6rem;
+  border-left: 3px solid #111;
+  margin-bottom: 0.4rem;
+}
+
+/* Differentiation grid */
+.ws-diff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+.ws-diff-cell {
+  border: 1px solid #ccc;
+  padding: 0.6rem 0.75rem;
+}
+.ws-diff-label {
+  font-family: Arial, sans-serif;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #333;
+  margin-bottom: 0.4rem;
+}
+
+/* Primary source */
+.ws-source-label {
+  font-family: Arial, sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #555;
+  margin-bottom: 0.75rem;
+}
+.ws-source-box {
+  border: 1.5px solid #111;
+  margin-bottom: 1rem;
+}
+.ws-source-box-header {
+  background: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+}
+.ws-source-box-body {
+  padding: 0.6rem 0.75rem;
+}
+.ws-source-row {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.4;
+}
+.ws-source-key {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  min-width: 80px;
+  color: #333;
+  flex-shrink: 0;
+}
+.ws-source-val {
+  color: #111;
+}
+.ws-teacher-note {
+  background: #f5f5f5;
+  border-left: 3px solid #666;
+  padding: 0.6rem 0.75rem;
+  margin-bottom: 1rem;
+}
+.ws-teacher-note-label {
+  font-family: Arial, sans-serif;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #555;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.ws-reflection {
+  margin-top: 1.25rem;
+}
+
+/* Answer lines */
+.ws-answer-lines {
+  margin: 0.5rem 0 0.25rem;
+  padding-left: 0.5rem;
+}
+.ws-answer-line {
+  border-bottom: 1px solid #aaa;
+  height: 1.8rem;
+  margin-bottom: 0.1rem;
+}
+.ws-answer-label {
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin: 0.5rem 0 0.25rem;
+}
+
+/* Questions */
+.ws-question-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: question-counter;
+}
+.ws-question-item {
+  margin-bottom: 1.5rem;
+  page-break-inside: avoid;
+}
+.ws-question-text {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+/* Multiple choice */
+.ws-mc-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-left: 1.25rem;
+  margin-top: 0.4rem;
+}
+.ws-mc-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+.ws-mc-bubble {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1.5px solid #333;
+  border-radius: 50%;
+  font-family: Arial, sans-serif;
+  font-size: 0.7rem;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+}
+.ws-mc-text { flex: 1; }
+
+/* True / False */
+.ws-tf-options {
+  display: flex;
+  gap: 2rem;
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+}
+.ws-tf-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: Arial, sans-serif;
+  font-size: 0.88rem;
+}
+.ws-tf-bubble {
+  display: inline-block;
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 1.5px solid #333;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Handouts */
+.ws-handout-header {
+  margin-bottom: 0.75rem;
+}
+.ws-handout-title {
+  font-size: 1.35rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+.ws-handout-type {
+  font-family: Arial, sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #666;
+}
+.ws-handout-content {
+  margin-top: 1rem;
+}
+.ws-content-list {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+/* Quiz header */
+.ws-quiz-header {
+  margin-bottom: 1rem;
+}
+.ws-quiz-title {
+  font-size: 1.35rem;
+  font-weight: bold;
+  border-bottom: 2px solid #111;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Answer Key */
+.ws-answer-key {
+  border: 2px dashed #888;
+  padding: 1rem 1.5rem;
+}
+.ws-ak-banner {
+  font-family: Arial, sans-serif;
+  font-size: 0.65rem;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  border: 1.5px solid #111;
+  padding: 0.3rem 0;
+  margin-bottom: 1.25rem;
+  background: #f0f0f0;
+}
+.ws-ak-header {
+  margin-bottom: 1rem;
+}
+.ws-ak-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.ws-ak-subtitle {
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  color: #555;
+}
+.ws-ak-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ws-ak-item {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #ddd;
+}
+.ws-ak-q {
+  display: flex;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+.ws-ak-num { font-weight: bold; flex-shrink: 0; }
+.ws-ak-qtext { color: #444; }
+.ws-ak-a {
+  display: flex;
+  gap: 0.4rem;
+  margin-left: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+.ws-ak-answer-label {
+  font-family: Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #333;
+}
+.ws-ak-answer {
+  font-size: 0.88rem;
+  font-weight: bold;
+  color: #111;
+}
+.ws-ak-explanation {
+  font-size: 0.82rem;
+  color: #555;
+  margin-left: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Standards */
+.ws-standards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 0.75rem;
+}
+.ws-standards-col {}
+.ws-standards-label {
+  font-family: Arial, sans-serif;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #333;
+  margin-bottom: 0.4rem;
+}
+.ws-standards-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ws-standards-list li {
+  font-size: 0.82rem;
+  padding: 0.2rem 0;
+  border-bottom: 1px solid #eee;
+  line-height: 1.4;
+}
+
+/* ─── Print overrides for worksheet ─────────────────────── */
+@media print {
+  .ws-page { max-width: none; padding: 0; }
+  .ws-cover { page-break-after: always; }
+  .ws-mc-bubble, .ws-tf-bubble { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .ws-student-header-top, .ws-source-box-header, .ws-ak-banner,
+  .ws-section-num { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .ws-diff-grid { grid-template-columns: repeat(3, 1fr); }
+  .ws-standards-grid { grid-template-columns: repeat(2, 1fr); }
+  .ws-answer-line { border-bottom: 0.75pt solid #999; }
+  .ws-question-item { page-break-inside: avoid; }
+  .ws-source-box { page-break-inside: avoid; }
+  .ws-ak-item { page-break-inside: avoid; }
+}
+
 /* Responsive Typography */
 @media (max-width: 768px) {
   :root {

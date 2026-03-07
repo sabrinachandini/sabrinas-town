@@ -6,11 +6,50 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
+function StudentHeader({ title, subtitle }: { title: string; subtitle?: string }) {
+  return (
+    <div className="ws-student-header">
+      <div className="ws-student-header-top">
+        <div>
+          <span className="ws-label">Unit:</span>
+          <span className="ws-unit-title">{title}</span>
+          {subtitle && <span className="ws-subtitle"> — {subtitle}</span>}
+        </div>
+        <span className="ws-brand">History is for Everyone</span>
+      </div>
+      <div className="ws-student-fields">
+        <span className="ws-field">Name: <span className="ws-field-line" /></span>
+        <span className="ws-field">Date: <span className="ws-field-line ws-field-line--short" /></span>
+        <span className="ws-field">Period: <span className="ws-field-line ws-field-line--short" /></span>
+      </div>
+    </div>
+  );
+}
+
+function AnswerLines({ count = 4 }: { count?: number }) {
+  return (
+    <div className="ws-answer-lines">
+      {Array.from({ length: count }).map((_, i) => (
+        <div key={i} className="ws-answer-line" />
+      ))}
+    </div>
+  );
+}
+
+function SectionHeader({ number, title }: { number?: number | string; title: string }) {
+  return (
+    <div className="ws-section-header">
+      {number != null && <span className="ws-section-num">{number}</span>}
+      <h2 className="ws-section-title">{title}</h2>
+    </div>
+  );
+}
+
 export default async function TeacherPrintPage({ params }: PageProps) {
   const { slug } = await params;
   const module = await getTeacherModule(slug);
 
-  void recordOrgEvent(slug, 'PRINT_CLICK');
+  void recordOrgEvent(slug, "PRINT_CLICK");
 
   if (!module) {
     return <div className="p-8"><h1>Teacher module not found</h1></div>;
@@ -21,162 +60,328 @@ export default async function TeacherPrintPage({ params }: PageProps) {
   const standards = module.standards as unknown as Standards;
 
   return (
-    <div className="print-page max-w-[800px] mx-auto p-8">
-      {/* Auto-print trigger */}
+    <div className="ws-page">
       <PrintTrigger />
 
-      {/* Cover page */}
-      <section className="text-center mb-20 page-break-after print-section">
-        <p className="print-only text-xs text-gray-400 mb-8">History is for Everyone &mdash; Teacher Resources</p>
-        <h1 className="text-4xl font-bold font-serif">{overview.title}</h1>
-        <p className="text-xl mt-4 text-gray-600">{town.name}, {town.state}</p>
-        <div className="mt-8 flex justify-center gap-8 text-sm text-gray-500">
+      {/* ── Cover ──────────────────────────────────────────── */}
+      <section className="ws-cover page-break-after">
+        <p className="ws-cover-brand">History is for Everyone · American Revolution Network</p>
+        <h1 className="ws-cover-title">{overview.title}</h1>
+        <p className="ws-cover-location">{town.name}, {town.state}</p>
+        <div className="ws-cover-meta">
           <span>Grade Range: {overview.gradeRange}</span>
+          <span className="ws-cover-dot">·</span>
           <span>Duration: {overview.estimatedDuration}</span>
         </div>
-        <p className="mt-8 max-w-[600px] mx-auto text-sm leading-relaxed">{overview.summary}</p>
-        <p className="mt-12 text-xs text-gray-400">History is for Everyone &mdash; American Revolution Tourism Network</p>
+        <p className="ws-cover-summary">{overview.summary}</p>
+
+        <div className="ws-cover-contents">
+          <p className="ws-contents-label">This Packet Includes</p>
+          <ul className="ws-contents-list">
+            {lessonPlan?.objectives?.length > 0 && <li>Lesson Plan &amp; Learning Objectives</li>}
+            {primarySources?.length > 0 && (
+              <li>{primarySources.length} Primary Source Analysis Worksheet{primarySources.length !== 1 ? "s" : ""}</li>
+            )}
+            {handouts?.length > 0 && (
+              <li>{handouts.length} Student Handout{handouts.length !== 1 ? "s" : ""}</li>
+            )}
+            {quiz?.questions?.length > 0 && (
+              <li>Assessment Quiz ({quiz.questions.length} questions)</li>
+            )}
+            {quiz?.questions?.length > 0 && <li>Answer Key (Teacher Copy)</li>}
+            {standards?.commonCore?.length > 0 && <li>Standards Alignment</li>}
+          </ul>
+        </div>
       </section>
 
-      {/* Lesson Plan */}
-      <section className="print-section mb-16">
-        <p className="print-only text-xs text-gray-400 mb-4">History is for Everyone &mdash; Teacher Resources</p>
-        <h2 className="text-2xl font-bold font-serif border-b-2 border-gray-300 pb-2">Lesson Plan</h2>
+      {/* ── Lesson Plan ─────────────────────────────────────── */}
+      {lessonPlan && (
+        <section className="ws-sheet print-section">
+          <StudentHeader title={overview.title} subtitle="Lesson Overview" />
 
-        {lessonPlan.objectives && (
-          <div className="mt-6">
-            <h3 className="text-lg font-semibold">Learning Objectives</h3>
-            <ol className="mt-2 space-y-1 list-decimal list-inside text-sm">
-              {lessonPlan.objectives.map((o, i) => <li key={i}>{o}</li>)}
-            </ol>
-          </div>
-        )}
-
-        {lessonPlan.essentialQuestions && (
-          <div className="mt-6">
-            <h3 className="text-lg font-semibold">Essential Questions</h3>
-            <ul className="mt-2 space-y-1 text-sm">
-              {lessonPlan.essentialQuestions.map((q, i) => (
-                <li key={i} className="pl-4 border-l-2 border-gray-400">{q}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {lessonPlan.warmUp && (
-          <div className="mt-6">
-            <h3 className="text-lg font-semibold">Warm-Up ({lessonPlan.warmUp.duration})</h3>
-            <p className="mt-1 text-sm">{lessonPlan.warmUp.activity}</p>
-          </div>
-        )}
-      </section>
-
-      {/* Primary Sources */}
-      {primarySources && primarySources.length > 0 && (
-        <section className="print-section mb-16">
-          <p className="print-only text-xs text-gray-400 mb-4">History is for Everyone &mdash; Teacher Resources</p>
-          <h2 className="text-2xl font-bold font-serif border-b-2 border-gray-300 pb-2">Primary Sources</h2>
-          {primarySources.map((source) => (
-            <div key={source.id} className="mt-6 page-break-inside-avoid">
-              <h3 className="text-lg font-semibold">{source.title}</h3>
-              <p className="source-citation text-xs text-gray-500">{source.sourceInfo} &middot; {source.credibilityTier}</p>
-              {source.analysisPrompts.length > 0 && (
-                <div className="mt-2">
-                  <p className="text-xs font-semibold uppercase text-gray-500">Analysis Prompts</p>
-                  <ol className="mt-1 space-y-1 list-decimal list-inside text-sm">
-                    {source.analysisPrompts.map((p, i) => <li key={i}>{p}</li>)}
-                  </ol>
-                </div>
-              )}
-              {source.teacherNarrative && (
-                <div className="mt-2">
-                  <p className="text-xs font-semibold uppercase text-gray-500">Teacher Narrative</p>
-                  <p className="mt-1 text-sm leading-relaxed">{source.teacherNarrative}</p>
-                </div>
-              )}
+          {lessonPlan.objectives?.length > 0 && (
+            <div className="ws-block">
+              <SectionHeader title="Learning Objectives" />
+              <p className="ws-directions">By the end of this lesson, students will be able to:</p>
+              <ol className="ws-objective-list">
+                {lessonPlan.objectives.map((o, i) => <li key={i}>{o}</li>)}
+              </ol>
             </div>
-          ))}
+          )}
+
+          {lessonPlan.essentialQuestions?.length > 0 && (
+            <div className="ws-block">
+              <SectionHeader title="Essential Questions" />
+              <p className="ws-directions">Keep these questions in mind throughout the unit:</p>
+              <ul className="ws-eq-list">
+                {lessonPlan.essentialQuestions.map((q, i) => (
+                  <li key={i}>{q}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {lessonPlan.warmUp && (
+            <div className="ws-block">
+              <SectionHeader title={`Warm-Up · ${lessonPlan.warmUp.duration}`} />
+              <p className="ws-body">{lessonPlan.warmUp.activity}</p>
+            </div>
+          )}
+
+          {lessonPlan.differentiation && (
+            <div className="ws-block">
+              <SectionHeader title="Differentiation Strategies" />
+              <div className="ws-diff-grid">
+                <div className="ws-diff-cell">
+                  <p className="ws-diff-label">Struggling Learners</p>
+                  <p className="ws-body">{lessonPlan.differentiation.struggling}</p>
+                </div>
+                <div className="ws-diff-cell">
+                  <p className="ws-diff-label">Advanced Learners</p>
+                  <p className="ws-body">{lessonPlan.differentiation.advanced}</p>
+                </div>
+                <div className="ws-diff-cell">
+                  <p className="ws-diff-label">ELL Support</p>
+                  <p className="ws-body">{lessonPlan.differentiation.ell}</p>
+                </div>
+              </div>
+            </div>
+          )}
         </section>
       )}
 
-      {/* Handouts */}
-      {handouts && handouts.length > 0 && (
-        <section className="print-section mb-16">
-          <p className="print-only text-xs text-gray-400 mb-4">History is for Everyone &mdash; Teacher Resources</p>
-          <h2 className="text-2xl font-bold font-serif border-b-2 border-gray-300 pb-2">Handouts</h2>
-          {handouts.map((h) => (
-            <div key={h.title} className="mt-6 page-break-inside-avoid">
-              <h3 className="text-lg font-semibold">{h.title}</h3>
-              <p className="text-xs text-gray-500">{h.type.replace("_", " ")}</p>
-              <p className="mt-1 text-sm">{h.description}</p>
+      {/* ── Primary Source Analysis Worksheets ─────────────── */}
+      {primarySources?.map((source, si) => (
+        <section key={source.id} className="ws-sheet print-section">
+          <StudentHeader title={overview.title} subtitle="Primary Source Analysis" />
+
+          <div className="ws-source-label">
+            Primary Source {si + 1} of {primarySources.length}
+          </div>
+
+          {/* Source context box */}
+          <div className="ws-source-box">
+            <div className="ws-source-box-header">Document Information</div>
+            <div className="ws-source-box-body">
+              <div className="ws-source-row">
+                <span className="ws-source-key">Document:</span>
+                <span className="ws-source-val">{source.title}</span>
+              </div>
+              <div className="ws-source-row">
+                <span className="ws-source-key">Source:</span>
+                <span className="ws-source-val">{source.sourceInfo}</span>
+              </div>
+              <div className="ws-source-row">
+                <span className="ws-source-key">Type:</span>
+                <span className="ws-source-val">{source.type.replace(/_/g, " ")}</span>
+              </div>
+              <div className="ws-source-row">
+                <span className="ws-source-key">Credibility:</span>
+                <span className="ws-source-val">{source.credibilityTier.replace(/_/g, " ")}</span>
+              </div>
             </div>
-          ))}
+          </div>
+
+          {source.teacherNarrative && (
+            <div className="ws-teacher-note">
+              <span className="ws-teacher-note-label">Background Context</span>
+              <p className="ws-body">{source.teacherNarrative}</p>
+            </div>
+          )}
+
+          {source.analysisPrompts?.length > 0 && (
+            <div className="ws-block">
+              <SectionHeader title="Analysis Questions" />
+              <p className="ws-directions">
+                Read the document carefully, then answer each question in complete sentences.
+              </p>
+              <ol className="ws-question-list">
+                {source.analysisPrompts.map((prompt, pi) => (
+                  <li key={pi} className="ws-question-item">
+                    <p className="ws-question-text">{prompt}</p>
+                    <AnswerLines count={4} />
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
+
+          <div className="ws-reflection">
+            <SectionHeader title="Reflection" />
+            <p className="ws-directions">
+              How does this source connect to the events in {town.name}, {town.state}?
+              What does it reveal about the people involved?
+            </p>
+            <AnswerLines count={5} />
+          </div>
+        </section>
+      ))}
+
+      {/* ── Student Handouts ────────────────────────────────── */}
+      {handouts?.map((h) => (
+        <section key={h.title} className="ws-sheet print-section">
+          <StudentHeader title={overview.title} subtitle={h.title} />
+
+          <div className="ws-handout-header">
+            <h2 className="ws-handout-title">{h.title}</h2>
+            <p className="ws-handout-type">{h.type.replace(/_/g, " ")}</p>
+          </div>
+
+          {h.description && (
+            <p className="ws-directions">{h.description}</p>
+          )}
+
+          {h.content && (
+            <div
+              className="ws-handout-content"
+              dangerouslySetInnerHTML={{ __html: renderHandoutContent(h.content) }}
+            />
+          )}
+        </section>
+      ))}
+
+      {/* ── Quiz ────────────────────────────────────────────── */}
+      {quiz?.questions?.length > 0 && (
+        <section className="ws-sheet print-section">
+          <StudentHeader title={overview.title} subtitle="Assessment" />
+
+          <div className="ws-quiz-header">
+            <h2 className="ws-quiz-title">{quiz.title}</h2>
+            <p className="ws-directions">{quiz.instructions}</p>
+          </div>
+
+          <ol className="ws-question-list">
+            {quiz.questions.map((q, qi) => (
+              <li key={q.id} className="ws-question-item">
+                <p className="ws-question-text">{qi + 1}.&nbsp; {q.question}</p>
+
+                {q.type === "multiple_choice" && q.options && (
+                  <div className="ws-mc-options">
+                    {q.options.map((opt, oi) => (
+                      <label key={oi} className="ws-mc-option">
+                        <span className="ws-mc-bubble">{String.fromCharCode(65 + oi)}</span>
+                        <span className="ws-mc-text">{opt}</span>
+                      </label>
+                    ))}
+                  </div>
+                )}
+
+                {q.type === "true_false" && (
+                  <div className="ws-tf-options">
+                    <label className="ws-tf-option">
+                      <span className="ws-tf-bubble" /> True
+                    </label>
+                    <label className="ws-tf-option">
+                      <span className="ws-tf-bubble" /> False
+                    </label>
+                  </div>
+                )}
+
+                {q.type === "short_answer" && (
+                  <>
+                    <p className="ws-answer-label">Answer:</p>
+                    <AnswerLines count={4} />
+                  </>
+                )}
+              </li>
+            ))}
+          </ol>
         </section>
       )}
 
-      {/* Quiz + Answer Key */}
-      {quiz && quiz.questions?.length > 0 && (
-        <>
-          <section className="print-section mb-16">
-            <p className="print-only text-xs text-gray-400 mb-4">History is for Everyone &mdash; Teacher Resources</p>
-            <h2 className="text-2xl font-bold font-serif border-b-2 border-gray-300 pb-2">{quiz.title}</h2>
-            <p className="mt-2 text-sm text-gray-600">{quiz.instructions}</p>
-            <div className="mt-4 space-y-6">
-              {quiz.questions.map((q, i) => (
-                <div key={q.id}>
-                  <p className="text-sm font-medium">{i + 1}. {q.question}</p>
-                  {q.type === "multiple_choice" && q.options && (
-                    <div className="mt-1 ml-6 space-y-1">
-                      {q.options.map((opt, j) => (
-                        <p key={j} className="text-sm">{String.fromCharCode(65 + j)}. {opt}</p>
-                      ))}
-                    </div>
-                  )}
-                  {q.type === "true_false" && <p className="text-sm ml-6 mt-1">True / False</p>}
-                  {q.type === "short_answer" && <span className="print-answer-line ml-6 mt-2 min-h-[2.5rem] border-b border-gray-300 block" />}
-                </div>
-              ))}
-            </div>
-          </section>
+      {/* ── Answer Key (Teacher Copy) ───────────────────────── */}
+      {quiz?.questions?.length > 0 && (
+        <section className="ws-sheet ws-answer-key print-section">
+          <div className="ws-ak-banner">ANSWER KEY · TEACHER COPY · DO NOT DISTRIBUTE</div>
 
-          <section className="print-section mb-16">
-            <p className="print-only text-xs text-gray-400 mb-4">History is for Everyone &mdash; Teacher Resources</p>
-            <h2 className="text-2xl font-bold font-serif border-b-2 border-gray-300 pb-2">Answer Key</h2>
-            <div className="mt-4 space-y-4">
-              {quiz.questions.map((q, i) => (
-                <div key={q.id} className="text-sm">
-                  <p className="font-medium">{i + 1}. {q.correctAnswer}</p>
-                  <p className="text-gray-600 mt-0.5">{q.explanation}</p>
+          <div className="ws-ak-header">
+            <h2 className="ws-ak-title">{quiz.title}</h2>
+            <p className="ws-ak-subtitle">{overview.title} — {town.name}, {town.state}</p>
+          </div>
+
+          <ol className="ws-ak-list">
+            {quiz.questions.map((q, qi) => (
+              <li key={q.id} className="ws-ak-item">
+                <div className="ws-ak-q">
+                  <span className="ws-ak-num">{qi + 1}.</span>
+                  <span className="ws-ak-qtext">{q.question}</span>
                 </div>
-              ))}
-            </div>
-          </section>
-        </>
+                <div className="ws-ak-a">
+                  <span className="ws-ak-answer-label">Answer:</span>
+                  <span className="ws-ak-answer">{q.correctAnswer}</span>
+                </div>
+                {q.explanation && (
+                  <p className="ws-ak-explanation">{q.explanation}</p>
+                )}
+              </li>
+            ))}
+          </ol>
+        </section>
       )}
 
-      {/* Standards */}
+      {/* ── Standards Alignment ─────────────────────────────── */}
       {standards?.commonCore && (
-        <section className="print-section mb-16">
-          <p className="print-only text-xs text-gray-400 mb-4">History is for Everyone &mdash; Teacher Resources</p>
-          <h2 className="text-2xl font-bold font-serif border-b-2 border-gray-300 pb-2">Standards Alignment</h2>
-          <div className="mt-4 grid grid-cols-2 gap-8">
-            <div>
-              <p className="text-xs font-semibold uppercase text-gray-500">Common Core</p>
-              <ul className="mt-1 space-y-1 text-xs">
-                {standards.commonCore.map((s, i) => <li key={i}>{s}</li>)}
-              </ul>
-            </div>
-            <div>
-              <p className="text-xs font-semibold uppercase text-gray-500">C3 Framework</p>
-              <ul className="mt-1 space-y-1 text-xs">
-                {standards.c3Framework?.map((s, i) => <li key={i}>{s}</li>)}
-              </ul>
-            </div>
+        <section className="ws-sheet print-section">
+          <StudentHeader title={overview.title} subtitle="Standards Alignment" />
+          <SectionHeader title="Standards Addressed" />
+          <div className="ws-standards-grid">
+            {standards.commonCore?.length > 0 && (
+              <div className="ws-standards-col">
+                <p className="ws-standards-label">Common Core ELA</p>
+                <ul className="ws-standards-list">
+                  {standards.commonCore.map((s, i) => <li key={i}>{s}</li>)}
+                </ul>
+              </div>
+            )}
+            {standards.c3Framework?.length > 0 && (
+              <div className="ws-standards-col">
+                <p className="ws-standards-label">C3 Framework</p>
+                <ul className="ws-standards-list">
+                  {standards.c3Framework.map((s, i) => <li key={i}>{s}</li>)}
+                </ul>
+              </div>
+            )}
           </div>
         </section>
       )}
     </div>
   );
+}
+
+/**
+ * Convert plain-text handout content to basic HTML.
+ * Handles: numbered lists, bullet lists, blank lines as paragraphs.
+ */
+function renderHandoutContent(content: string): string {
+  const lines = content.split("\n");
+  const out: string[] = [];
+  let inList = false;
+  let listTag = "";
+
+  const closeList = () => {
+    if (inList) { out.push(`</${listTag}>`); inList = false; listTag = ""; }
+  };
+
+  for (const raw of lines) {
+    const line = raw.trimEnd();
+    if (!line) { closeList(); out.push("<br>"); continue; }
+
+    const numbered = line.match(/^(\d+)[.)]\s+(.*)/);
+    const bulleted = line.match(/^[-•*]\s+(.*)/);
+
+    if (numbered) {
+      if (!inList || listTag !== "ol") { closeList(); out.push('<ol class="ws-content-list">'); inList = true; listTag = "ol"; }
+      out.push(`<li>${numbered[2]}</li>`);
+    } else if (bulleted) {
+      if (!inList || listTag !== "ul") { closeList(); out.push('<ul class="ws-content-list">'); inList = true; listTag = "ul"; }
+      out.push(`<li>${bulleted[1]}</li>`);
+    } else {
+      closeList();
+      out.push(`<p class="ws-body">${line}</p>`);
+    }
+  }
+  closeList();
+  return out.join("");
 }
 
 function PrintTrigger() {

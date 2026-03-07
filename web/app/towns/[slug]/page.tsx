@@ -83,7 +83,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
                 {featuredPeople.map((person) => (
                   <a
                     key={person.id}
-                    href={`/towns/${slug}/people/${(person as any).slug || person.id}`}
+                    href={`/towns/${slug}/people/${person.slug ?? person.id}`}
                     className="flex items-center justify-between py-3 border-b border-border-light last:border-b-0 group"
                   >
                     <div>
@@ -104,7 +104,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
                 {featuredPlaces.map((place) => (
                   <a
                     key={place.id}
-                    href={`/towns/${slug}/places/${(place as any).slug || place.id}`}
+                    href={`/towns/${slug}/places/${place.slug ?? place.id}`}
                     className="flex items-center justify-between py-3 border-b border-border-light last:border-b-0 group"
                   >
                     <p className="font-body font-medium group-hover:text-accent-blue transition-colors">{place.name}</p>
@@ -122,7 +122,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
                 {featuredEvents.map((event) => (
                   <a
                     key={event.id}
-                    href={`/towns/${slug}/timeline/${(event as any).slug || event.id}`}
+                    href={`/towns/${slug}/timeline/${event.slug ?? event.id}`}
                     className="flex items-center justify-between py-3 border-b border-border-light last:border-b-0 group"
                   >
                     <div>

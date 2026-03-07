@@ -1,7 +1,6 @@
 import { getRankings } from "@/lib/api";
 import { Container, Heading, Text, Link, Divider } from "@/components/ui";
-import { PeopleSearch } from "@/components/town";
-import { TownSearchInput } from "./TownSearchInput";
+import { TownSearch } from "./TownSearch";
 
 export const metadata = {
   title: "Browse Towns | History is for Everyone",
@@ -50,11 +49,8 @@ export default async function TownsPage({ searchParams }: PageProps) {
             Across {allStates.length} states, from New Hampshire to Georgia.
           </Text>
 
-          <div className="mt-component flex flex-col sm:flex-row gap-4 items-start">
-            <TownSearchInput initialValue={q} />
-            <div className="self-center">
-              <PeopleSearch />
-            </div>
+          <div className="mt-component">
+            <TownSearch initialValue={q} />
           </div>
 
           {query && (

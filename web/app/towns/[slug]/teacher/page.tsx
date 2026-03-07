@@ -1,6 +1,14 @@
 import { getTeacherModule, getTown } from "@/lib/api";
 import { recordOrgEvent } from "@/lib/analytics";
-import { TeacherProductHeader } from "@/components/teacher";
+import {
+  TeacherProductHeader,
+  TeacherProductMeta,
+  PreviewSection,
+  PrimarySourcesList,
+  DownloadsBlock,
+} from "@/components/teacher";
+import { LessonPlan } from "@/components/teacher/types";
+import { QuizSection } from "@/components/town";
 import { PageShell, PageHeader } from "@/components/editorial";
 
 export const revalidate = 3600;
@@ -62,14 +70,17 @@ export default async function TeacherPage({ params }: PageProps) {
       {teacherModule ? (
         <>
           <TeacherProductHeader module={teacherModule} slug={slug} />
-          <div className="mt-8 pt-4 border-t border-border-light">
-            <a
-              href={`/towns/${slug}/teacher/lesson`}
-              className="inline-block text-small text-accent-blue font-body hover:underline"
-            >
-              View full lesson plan &rarr;
-            </a>
-          </div>
+          <TeacherProductMeta module={teacherModule} />
+          <PreviewSection lessonPlan={teacherModule.lessonPlan as unknown as LessonPlan} />
+          <PrimarySourcesList sources={teacherModule.primarySources} />
+          <DownloadsBlock handouts={teacherModule.handouts} />
+          {teacherModule.quiz?.questions?.length > 0 && (
+            <QuizSection
+              title={teacherModule.quiz.title}
+              instructions={teacherModule.quiz.instructions}
+              questions={teacherModule.quiz.questions}
+            />
+          )}
         </>
       ) : (
         <p className="text-text-muted font-body mt-8">

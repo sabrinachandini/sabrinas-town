@@ -20,6 +20,7 @@ export interface TownGeo {
 
 export interface TownEvent {
   id: string;
+  slug?: string;
   name: string;
   startDate: string | null;
   datePrecision: string;
@@ -65,6 +66,7 @@ export interface TownRoute {
 
 export interface TownPlace {
   id: string;
+  slug?: string;
   name: string;
   placeType: "BATTLEFIELD" | "HISTORIC_HOUSE" | "MONUMENT" | "MUSEUM" | "CEMETERY" | "CHURCH" | "GOVERNMENT" | "TAVERN" | "LANDMARK" | "TRAIL";
   description: string;
@@ -425,6 +427,7 @@ export async function compareTowns(
 // People types
 export interface TownPerson {
   id: string;
+  slug?: string;
   name: string;
   roles: string[];
   bioShort: string;
