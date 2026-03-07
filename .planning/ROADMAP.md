@@ -39,9 +39,15 @@ Plans:
 **Goal**: Partner inquiry form submissions are emailed to sabrina@lexington250.com via Resend
 **Depends on**: Phase 5
 **Requirements**: EMAIL-01
+**Plans:** 1 plan
+
+Plans:
+- [ ] 06-01-PLAN.md — Install resend SDK, add Resend call to partnerInquire.ts, document RESEND_API_KEY in .env.example
+
 **Success Criteria**:
-  1. Submitting partner inquiry form sends email to configured address
-  2. `RESEND_API_KEY` and `INQUIRY_TO_EMAIL` env vars documented in .env.example
+  1. Submitting partner inquiry form sends email to sabrina@lexington250.com
+  2. `RESEND_API_KEY` documented in .env.example with from-address domain verification note
+  3. Route returns 201 regardless of email outcome; response includes `email_sent: boolean`
 
 ### Phase 7: Copy Sweep
 **Goal**: No "free" language or widget/embed mentions anywhere on the site; partner/about copy reframed
