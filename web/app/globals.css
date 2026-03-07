@@ -599,6 +599,25 @@ button {
 .ws-source-val {
   color: #111;
 }
+.ws-source-image {
+  text-align: center;
+  margin: 1rem 0;
+}
+.ws-source-img {
+  max-width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  border: 1px solid #ccc;
+  display: block;
+  margin: 0 auto;
+}
+.ws-source-img-caption {
+  font-family: Arial, sans-serif;
+  font-size: 0.7rem;
+  color: #555;
+  margin-top: 0.35rem;
+  font-style: italic;
+}
 .ws-teacher-note {
   background: #f5f5f5;
   border-left: 3px solid #666;

@@ -182,6 +182,18 @@ export default async function TeacherPrintPage({ params }: PageProps) {
             </div>
           </div>
 
+          {source.url && (
+            <div className="ws-source-image">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={source.url}
+                alt={source.title}
+                className="ws-source-img"
+              />
+              <p className="ws-source-img-caption">{source.title}</p>
+            </div>
+          )}
+
           {source.teacherNarrative && (
             <div className="ws-teacher-note">
               <span className="ws-teacher-note-label">Background Context</span>
