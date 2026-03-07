@@ -12,7 +12,7 @@ Phases build on the existing v1.1 foundation (75 towns, API, admin, analytics, e
 - [x] **Phase 4: Homepage Restructure (tourist-first)** - Hero rewrite for tourist CTA, featured towns section, browse-by-state strip (completed 2026-03-04)
 - [x] **Phase 5: Teacher Pages — TPT Style** - TPT-style lesson listing and detail; remove editorial/classic bifurcation (completed 2026-03-05)
 - [ ] **Phase 6: Inquiry Email** - Resend integration; partner inquiries emailed to sabrina@lexington250.com
-- [ ] **Phase 7: Copy Sweep** - Remove "free" language, remove widget references, update partner/about/homepage copy
+- [x] **Phase 7: Copy Sweep** - Remove "free" language, remove widget references, update partner/about/homepage copy (completed 2026-03-07)
 - [ ] **Phase 8: Sources Page for All Towns** - Remove EDITORIAL_SLUGS gate from sources route
 - [ ] **Phase 9: Stripe Pricing** - Fetch real Stripe Price objects server-side; verified checkout/portal
 
@@ -53,7 +53,7 @@ Plans:
 **Goal**: No "free" language or widget/embed mentions anywhere on the site; partner/about copy reframed
 **Depends on**: Phase 5
 **Requirements**: COPY-01
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 
 Plans:
 - [ ] 07-01-PLAN.md — Sweep "free" and embed/widget language from partner, about, and homepage pages
