@@ -3,7 +3,11 @@
 
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
 import { z } from 'zod';
+import { Resend } from 'resend';
 import prisma from '../db/client.js';
+
+const INQUIRY_TO = 'sabrina@lexington250.com';
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const InquiryBodySchema = z.object({
   name: z.string().min(1).max(200),
@@ -16,6 +20,27 @@ const InquiryBodySchema = z.object({
   sourceUrl: z.string().url().max(500).optional(),
   website: z.string().optional(), // honeypot
 });
+
+function buildPlainTextBody(fields: {
+  name: string;
+  email: string;
+  title?: string | null;
+  organization?: string | null;
+  phone?: string | null;
+  message?: string | null;
+  townSlug?: string | null;
+}): string {
+  const lines: string[] = [
+    `Name: ${fields.name}`,
+    `Email: ${fields.email}`,
+  ];
+  if (fields.title)        lines.push(`Title: ${fields.title}`);
+  if (fields.organization) lines.push(`Organization: ${fields.organization}`);
+  if (fields.phone)        lines.push(`Phone: ${fields.phone}`);
+  if (fields.townSlug)     lines.push(`Town: ${fields.townSlug}`);
+  if (fields.message)      lines.push('', 'Message:', fields.message);
+  return lines.join('\n');
+}
 
 export async function registerPartnerInquireRoutes(fastify: FastifyInstance): Promise<void> {
   /**
@@ -76,9 +101,29 @@ export async function registerPartnerInquireRoutes(fastify: FastifyInstance): Pr
 
         request.log.info({ inquiryId: inquiry.id, email, townSlug }, 'Partner inquiry submitted');
 
+        let emailSent = false;
+        try {
+          const { error: emailError } = await resend.emails.send({
+            from: 'noreply@lexington250.com',
+            to: [INQUIRY_TO],
+            subject: townSlug
+              ? `New Partner Inquiry \u2014 ${name} (${townSlug})`
+              : `New Partner Inquiry \u2014 ${name}`,
+            text: buildPlainTextBody({ name, email, title, organization, phone, message, townSlug }),
+          });
+          if (emailError) {
+            request.log.warn({ emailError }, 'Resend API error on partner inquiry notification');
+          } else {
+            emailSent = true;
+          }
+        } catch (err) {
+          request.log.error(err, 'Resend threw sending partner inquiry notification');
+        }
+
         return reply.status(201).send({
           success: true,
           data: { id: inquiry.id },
+          email_sent: emailSent,
           meta: { timestamp: new Date().toISOString() },
         });
       } catch (error) {
