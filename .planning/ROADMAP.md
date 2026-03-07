@@ -66,6 +66,11 @@ Plans:
 **Goal**: Every town has a working /sources page (no 404 for non-editorial towns)
 **Depends on**: Phase 7
 **Requirements**: SRC-01
+**Plans:** 1 plan
+
+Plans:
+- [ ] 08-01-PLAN.md — Fix empty-state branch in sources/page.tsx to add methodology link and conditional subtitle
+
 **Success Criteria**:
   1. /towns/[slug]/sources returns 200 for all 75 towns
   2. Towns with no sources show placeholder with methodology link
