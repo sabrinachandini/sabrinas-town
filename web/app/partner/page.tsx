@@ -21,29 +21,29 @@ export default function PartnerPage() {
         <Text className="mt-element max-w-[620px]">
           Every town in this network already has a public profile — scored,
           sourced, and connected to the broader story of the Revolution. That
-          profile is free and always will be. Partnership is for the towns that
-          want to go further: to shape how their story is told, to reach
-          teachers and travelers through embeddable tools, and to understand who
-          is engaging with their history. This isn't a claim-your-listing
-          product. It's a stewardship model — your community's history,
-          maintained with the same rigor we apply to every town, with your
-          organization's voice and priorities woven in.
+          profile is open to everyone and always will be. Partnership is for
+          towns that want to go further: to shape how their story is told, to
+          reach teachers and travelers, and to understand who is engaging with
+          their history. This isn't a claim-your-listing product. It's a
+          stewardship model — your community's history, maintained with the same
+          rigor we apply to every town, with your organization's voice and
+          priorities woven in.
         </Text>
 
         <Divider spacing="section" />
 
-        {/* What stays free */}
+        {/* What stays open */}
         <section>
-          <Heading level={2}>What stays free, always</Heading>
+          <Heading level={2}>Open to everyone, always</Heading>
           <Text className="mt-element" muted>
             Partnership adds capabilities on top of a foundation that remains
             open to everyone.
           </Text>
           <ul className="mt-component space-y-2">
-            <FreeFeature>Public town profiles with full historical content</FreeFeature>
-            <FreeFeature>Teacher modules — lesson plans, primary sources, quizzes</FreeFeature>
-            <FreeFeature>Network search and cross-town connections</FreeFeature>
-            <FreeFeature>Source citations and credibility tiers on every claim</FreeFeature>
+            <OpenFeature>Public town profiles with full historical content</OpenFeature>
+            <OpenFeature>Teacher modules — lesson plans, primary sources, quizzes</OpenFeature>
+            <OpenFeature>Network search and cross-town connections</OpenFeature>
+            <OpenFeature>Source citations and credibility tiers on every claim</OpenFeature>
           </ul>
         </section>
 
@@ -59,8 +59,8 @@ export default function PartnerPage() {
               description="Your town joins the verified network of Revolutionary sites. Visitors see the 'Official Revolutionary Town Network Member' badge, signaling quality and authenticity."
             />
             <FeatureCard
-              title="Embeddable Widgets"
-              description="Add your town's profile to your website with a single line of code. Widgets show your town's score, summary, and a link back to the full profile — and update automatically as content improves."
+              title="Content Integration"
+              description="Bring your town's profile into your own digital presence through our partner API. Your data, your design — updated automatically as content improves."
             />
             <FeatureCard
               title="Analytics Dashboard"
@@ -97,7 +97,7 @@ export default function PartnerPage() {
                 Basic
               </Text>
               <div className="mt-2 flex items-baseline gap-1">
-                <span className="text-h2 font-heading font-bold">Free</span>
+                <span className="text-h2 font-heading font-bold">Open</span>
               </div>
               <Text className="mt-element" size="small">
                 For towns exploring the network
@@ -195,35 +195,6 @@ export default function PartnerPage() {
 
         <Divider spacing="section" />
 
-        {/* Embed Widget */}
-        <section>
-          <Heading level={2}>Embed your town anywhere</Heading>
-          <Text className="mt-element max-w-[620px]">
-            Drop your town&apos;s widget into any website with one line of HTML.
-            The widget displays your town&apos;s score, summary, and a direct link
-            to its full profile — and updates automatically as content improves.
-          </Text>
-          <div className="mt-component p-element bg-bg-secondary rounded-lg font-mono text-small overflow-x-auto">
-            <pre className="whitespace-pre-wrap break-all text-text-primary">{`<iframe
-  src="https://historyisforeveryone.com/embed/boston-ma"
-  width="420"
-  height="220"
-  frameborder="0"
-  style="border-radius:8px;border:1px solid #e5e7eb;"
-  title="Boston Revolutionary Town Widget"
-></iframe>`}</pre>
-          </div>
-          <Text size="small" muted className="mt-element">
-            Replace <code className="bg-bg-secondary px-1 rounded">boston-ma</code> with your town&apos;s slug.
-            Find your town&apos;s slug on its profile page URL:{" "}
-            <code className="bg-bg-secondary px-1 rounded">
-              historyisforeveryone.com/towns/your-town-slug
-            </code>
-          </Text>
-        </section>
-
-        <Divider spacing="section" />
-
         {/* CTA */}
         <section className="text-center">
           <Heading level={2}>Ready to join the network?</Heading>
@@ -243,7 +214,7 @@ export default function PartnerPage() {
   );
 }
 
-function FreeFeature({ children }: { children: React.ReactNode }) {
+function OpenFeature({ children }: { children: React.ReactNode }) {
   return (
     <li className="flex items-center gap-2">
       <span className="text-accent-blue">✓</span>

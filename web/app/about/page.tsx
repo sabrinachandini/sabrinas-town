@@ -117,9 +117,9 @@ export default function AboutPage() {
                 cost — events, people, places, stories, and sources. Communities
                 that want a deeper presence can join the{" "}
                 <Link href="/partner">partnership program</Link>, which adds
-                analytics, custom editorial collaboration, and embeddable
-                content for local tourism sites. The core history remains open
-                regardless.
+                analytics, custom editorial collaboration, and a deeper
+                organizational voice in how their town&apos;s story is told. The
+                core history remains open regardless.
               </Text>
             </div>
           </div>

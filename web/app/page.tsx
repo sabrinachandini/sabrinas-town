@@ -181,7 +181,7 @@ export default function HomePage() {
             {[
               { stat: "77 Towns",             detail: "in the network — and growing" },
               { stat: "13 Original States",   detail: "plus frontier territories" },
-              { stat: "Free — Always",        detail: "No paywalls. History is for everyone." },
+              { stat: "Open — Always",        detail: "No paywalls. No login required." },
             ].map(({ stat, detail }) => (
               <div
                 key={stat}
@@ -292,7 +292,7 @@ export default function HomePage() {
               students can actually use.
             </p>
             <p className="font-serif text-[1rem] leading-relaxed text-slate mb-8">
-              Sixteen states covered. Free, always. No login required.
+              Sixteen states covered. No login required.
             </p>
             <Button href="/teach" variant="primary">Explore Teacher Resources</Button>
           </div>
