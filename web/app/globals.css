@@ -8,22 +8,26 @@
 /* Brand: "History is for everyone." */
 
 :root {
-  /* Background Colors */
-  --bg-primary: #F7F5F2;
-  --bg-secondary: #E6EBF2;
+  /* ── Brand Colors ──────────────────────────────── */
+  --navy:    #0D1F3C;
+  --crimson: #BF1A2F;
+  --gold:    #C4923B;
+  --ivory:   #F7F3EC;
+  --cream:   #EDE7D9;
+  --charcoal:#3A3F4A;
+  --slate:   #6B7585;
+  --fog:     #A8B3C4;
 
-  /* Text Colors */
-  --text-primary: #1E1E1E;
-  --text-muted: #6B7280;
-
-  /* Accent Colors */
-  --accent-blue: #1B3D6F;
-  --accent-blue-hover: #264D85;
-  --accent-red: #C53727;
-  --accent-red-hover: #D94A3A;
-
-  /* Border */
-  --border-light: #E2E2E2;
+  /* Legacy aliases (keep existing pages working) */
+  --bg-primary: var(--ivory);
+  --bg-secondary: var(--cream);
+  --text-primary: var(--charcoal);
+  --text-muted: var(--slate);
+  --accent-blue: var(--navy);
+  --accent-blue-hover: #1a3560;
+  --accent-red: var(--crimson);
+  --accent-red-hover: #d4202f;
+  --border-light: #DDD8CE;
 
   /* Typography Scale */
   --font-size-h1: 4rem;      /* 64px */
@@ -76,20 +80,34 @@
 }
 
 @theme inline {
-  /* Colors */
-  --color-bg-primary: var(--bg-primary);
-  --color-bg-secondary: var(--bg-secondary);
-  --color-text-primary: var(--text-primary);
-  --color-text-muted: var(--text-muted);
-  --color-accent-blue: var(--accent-blue);
-  --color-accent-blue-hover: var(--accent-blue-hover);
-  --color-accent-red: var(--accent-red);
-  --color-accent-red-hover: var(--accent-red-hover);
-  --color-border-light: var(--border-light);
+  /* Brand colors */
+  --color-navy:    var(--navy);
+  --color-crimson: var(--crimson);
+  --color-gold:    var(--gold);
+  --color-ivory:   var(--ivory);
+  --color-cream:   var(--cream);
+  --color-charcoal:var(--charcoal);
+  --color-slate:   var(--slate);
+  --color-fog:     var(--fog);
+
+  /* Legacy aliases */
+  --color-bg-primary: var(--ivory);
+  --color-bg-secondary: var(--cream);
+  --color-text-primary: var(--charcoal);
+  --color-text-muted: var(--slate);
+  --color-accent-blue: var(--navy);
+  --color-accent-blue-hover: #1a3560;
+  --color-accent-red: var(--crimson);
+  --color-accent-red-hover: #d4202f;
+  --color-border-light: #DDD8CE;
 
   /* Font Families */
   --font-heading: var(--font-playfair);
-  --font-body: var(--font-inter);
+  --font-display: var(--font-playfair);
+  --font-condensed: var(--font-barlow-condensed);
+  --font-sans: var(--font-barlow);
+  --font-serif: var(--font-lora);
+  --font-body: var(--font-barlow);
 
   /* Font Sizes */
   --font-size-h1: var(--font-size-h1);
@@ -221,8 +239,48 @@ a:hover {
 
 /* Focus States - Accessible */
 :focus-visible {
-  outline: 2px solid var(--accent-blue);
+  outline: 2px solid var(--gold);
   outline-offset: 2px;
+}
+
+/* ── Marquee / Ticker ──────────────────────────── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+/* ── Fade-up entrance ──────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fadeUp 0.6s ease forwards;
+}
+.fade-up-1 { animation-delay: 0ms; }
+.fade-up-2 { animation-delay: 100ms; }
+.fade-up-3 { animation-delay: 200ms; }
+.fade-up-4 { animation-delay: 300ms; }
+@media (prefers-reduced-motion: reduce) {
+  .fade-up, .marquee-track { animation: none; }
+}
+
+/* ── Drop cap ──────────────────────────────────── */
+.drop-cap::first-letter {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: var(--crimson);
+  float: left;
+  line-height: 0.75;
+  margin-right: 0.08em;
+  margin-top: 0.08em;
 }
 
 /* Remove default button styles */
