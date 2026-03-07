@@ -79,6 +79,11 @@ Plans:
 **Goal**: Partner page shows real Stripe Price objects; checkout flow verified end-to-end
 **Depends on**: Phase 7
 **Requirements**: STRIPE-01
+**Plans:** 1 plan
+
+Plans:
+- [ ] 09-01-PLAN.md — Convert partner/page.tsx to async server component; fetch Plus/Pro prices from Stripe with hardcoded fallback; verify next build exits 0
+
 **Success Criteria**:
   1. Partner page prices fetched from Stripe (not hardcoded)
   2. Graceful fallback if STRIPE_SECRET_KEY missing
