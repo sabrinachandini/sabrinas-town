@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: milestone
 status: executing
-stopped_at: Completed Phase 07 (copy-sweep) — VERIFICATION passed 6/6
-last_updated: "2026-03-07T15:00:00.000Z"
-last_activity: 2026-03-07 — Phase 07 complete — open/stewardship language sweep verified
+stopped_at: Completed Phase 08 Plan 01 (sources-page empty-state fix)
+last_updated: "2026-03-07T00:08:00.000Z"
+last_activity: 2026-03-07 — Phase 08 Plan 01 complete — sources page empty-state and conditional subtitle
 progress:
   total_phases: 5
-  completed_phases: 4
-  total_plans: 6
-  completed_plans: 6
-  percent: 89
+  completed_phases: 5
+  total_plans: 7
+  completed_plans: 7
+  percent: 100
 ---
 
 # Project State
@@ -22,15 +22,15 @@ See: .planning/PROJECT.md
 See: .planning/ROADMAP.md
 
 **Core value:** 75 Revolutionary War towns, fully documented and connected — built for travelers, teachers, and towns.
-**Current focus:** Phase 7 complete — Phase 8 next
+**Current focus:** Phase 8 complete
 
 ## Current Position
 
-Phase: 7 of 9 (Complete)
+Phase: 8 of 9 (Complete)
 Status: In progress
-Last activity: 2026-03-07 — Completed Phase 07 Plan 01 (copy-sweep) — free/embed → open/stewardship language
+Last activity: 2026-03-07 — Completed Phase 08 Plan 01 (sources-page) — empty-state placeholder + methodology link
 
-Progress: [████████░░] 82%
+Progress: [██████████] 100%
 
 ## Accumulated Context
 
@@ -52,6 +52,7 @@ Progress: [████████░░] 82%
 - [Phase 05-03]: Double cast (as unknown as Type) required for module.lessonPlan/standards because TeacherModuleResponse types them as Record<string,unknown>
 - [Phase 06]: INQUIRY_TO hard-coded to sabrina@lexington250.com — not an env var; from address noreply@lexington250.com requires domain verification in Resend dashboard
 - [Phase 07-01]: Replaced "free" pricing language with "open" access philosophy; deleted embed iframe section from partner page; FreeFeature renamed to OpenFeature
+- [Phase 08-01]: Sources page subtitle is conditional — shows "Sources being compiled." when empty, "{N} sources…" when present; empty-state branch links to /methodology
 
 ### Blockers/Concerns
 
@@ -67,4 +68,5 @@ None.
 | Phase 05 P03 | 19 min | 2 tasks | 2 files |
 | 06    | 01   | 15 min   | 2     | 4     |
 | 07    | 01   | 10 min   | 2     | 3     |
+| 08    | 01   | 8 min    | 1     | 1     |
 
