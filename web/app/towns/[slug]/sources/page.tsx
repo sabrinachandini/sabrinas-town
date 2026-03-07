@@ -49,7 +49,11 @@ export default async function SourcesPage({ params }: PageProps) {
       <PageHeader
         name={town.name}
         state={town.state}
-        subtitle={`${sourcesData?.totalCount ?? 0} sources organized by credibility tier.`}
+        subtitle={
+          sourcesData && sourcesData.sources.length > 0
+            ? `${sourcesData.totalCount} sources organized by credibility tier.`
+            : "Sources being compiled."
+        }
       />
 
       {sourcesData && sourcesData.sources.length > 0 ? (
@@ -69,9 +73,18 @@ export default async function SourcesPage({ params }: PageProps) {
           </p>
         </div>
       ) : (
-        <p className="text-text-muted font-body">
-          Sources being compiled. Check back soon.
-        </p>
+        <div className="space-y-4">
+          <p className="text-text-muted font-body">
+            Sources for this town are being compiled and verified.
+          </p>
+          <p className="text-small text-text-muted font-body">
+            For details on how we evaluate sources, see our{" "}
+            <a href="/methodology" className="text-accent-blue hover:underline">
+              Methodology
+            </a>
+            .
+          </p>
+        </div>
       )}
     </PageShell>
   );
