@@ -53,6 +53,11 @@ Plans:
 **Goal**: No "free" language or widget/embed mentions anywhere on the site; partner/about copy reframed
 **Depends on**: Phase 5
 **Requirements**: COPY-01
+**Plans:** 1 plan
+
+Plans:
+- [ ] 07-01-PLAN.md — Sweep "free" and embed/widget language from partner, about, and homepage pages
+
 **Success Criteria**:
   1. grep for "free" in user-facing copy returns 0 results on partner/about pages
   2. No widget or embed references in partner copy
