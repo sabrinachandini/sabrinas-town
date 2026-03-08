@@ -3,9 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: milestone
 status: executing
-stopped_at: Completed Phase 08 (sources-page) — VERIFICATION passed 4/4
-last_updated: "2026-03-07T16:00:00.000Z"
-last_activity: 2026-03-07 — Phase 08 complete — sources page empty-state + methodology link verified
+last_updated: "2026-03-08T04:05:27.603Z"
+last_activity: 2026-03-07 — Completed Phase 08 Plan 01 (sources-page) — empty-state placeholder + methodology link
 progress:
   total_phases: 5
   completed_phases: 5
@@ -53,6 +52,9 @@ Progress: [██████████] 100%
 - [Phase 06]: INQUIRY_TO hard-coded to sabrina@lexington250.com — not an env var; from address noreply@lexington250.com requires domain verification in Resend dashboard
 - [Phase 07-01]: Replaced "free" pricing language with "open" access philosophy; deleted embed iframe section from partner page; FreeFeature renamed to OpenFeature
 - [Phase 08-01]: Sources page subtitle is conditional — shows "Sources being compiled." when empty, "{N} sources…" when present; empty-state branch links to /methodology
+- [Phase 09]: Per-request Stripe instantiation inside fetchStripePrices() — avoids startup crashes when STRIPE_SECRET_KEY is unset at build time
+- [Phase 09]: FALLBACK_PRICES returns hardcoded $99/$299 on any error or missing env — partner page never throws at build or render time
+- [Phase 09]: stripe package installed explicitly in web/package.json (not root hoisting) — web build needs explicit dependency
 
 ### Blockers/Concerns
 
@@ -69,4 +71,5 @@ None.
 | 06    | 01   | 15 min   | 2     | 4     |
 | 07    | 01   | 10 min   | 2     | 3     |
 | 08    | 01   | 8 min    | 1     | 1     |
+| Phase 09 P01 | 15min | 2 tasks | 2 files |
 

@@ -14,7 +14,7 @@ Phases build on the existing v1.1 foundation (75 towns, API, admin, analytics, e
 - [ ] **Phase 6: Inquiry Email** - Resend integration; partner inquiries emailed to sabrina@lexington250.com
 - [x] **Phase 7: Copy Sweep** - Remove "free" language, remove widget references, update partner/about/homepage copy (completed 2026-03-07)
 - [ ] **Phase 8: Sources Page for All Towns** - Remove EDITORIAL_SLUGS gate from sources route
-- [ ] **Phase 9: Stripe Pricing** - Fetch real Stripe Price objects server-side; verified checkout/portal
+- [x] **Phase 9: Stripe Pricing** - Fetch real Stripe Price objects server-side; verified checkout/portal (completed 2026-03-08)
 
 ## Phase Details
 
@@ -79,7 +79,7 @@ Plans:
 **Goal**: Partner page shows real Stripe Price objects; checkout flow verified end-to-end
 **Depends on**: Phase 7
 **Requirements**: STRIPE-01
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 
 Plans:
 - [ ] 09-01-PLAN.md — Convert partner/page.tsx to async server component; fetch Plus/Pro prices from Stripe with hardcoded fallback; verify next build exits 0
