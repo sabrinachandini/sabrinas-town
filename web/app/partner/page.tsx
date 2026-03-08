@@ -1,3 +1,4 @@
+import Stripe from 'stripe';
 import {
   Container,
   Heading,
@@ -12,7 +13,51 @@ export const metadata = {
     "Join the Revolutionary Town Network. Tourism boards and historical societies can feature their town's story with professional presentation and analytics.",
 };
 
-export default function PartnerPage() {
+interface PriceData {
+  id: string;
+  unitAmount: number | null;
+  currency: string;
+  nickname: string | null;
+}
+
+const FALLBACK_PRICES = {
+  plus: { id: '', unitAmount: 9900, currency: 'usd', nickname: null } as PriceData,
+  pro:  { id: '', unitAmount: 29900, currency: 'usd', nickname: null } as PriceData,
+};
+
+async function fetchStripePrices(): Promise<{ plus: PriceData; pro: PriceData }> {
+  const secretKey = process.env.STRIPE_SECRET_KEY;
+  const plusId    = process.env.STRIPE_PRICE_PLUS_MONTHLY;
+  const proId     = process.env.STRIPE_PRICE_PRO_MONTHLY;
+
+  if (!secretKey || !plusId || !proId) {
+    return FALLBACK_PRICES;
+  }
+
+  try {
+    const stripe = new Stripe(secretKey, { apiVersion: '2025-04-30.basil' as any });
+    const [plus, pro] = await Promise.all([
+      stripe.prices.retrieve(plusId),
+      stripe.prices.retrieve(proId),
+    ]);
+    return {
+      plus: { id: plus.id, unitAmount: plus.unit_amount, currency: plus.currency, nickname: plus.nickname },
+      pro:  { id: pro.id,  unitAmount: pro.unit_amount,  currency: pro.currency,  nickname: pro.nickname },
+    };
+  } catch {
+    return FALLBACK_PRICES;
+  }
+}
+
+export default async function PartnerPage() {
+  const prices = await fetchStripePrices();
+  const plusDisplay = prices.plus.unitAmount != null
+    ? `$${Math.round(prices.plus.unitAmount / 100)}`
+    : '$99';
+  const proDisplay = prices.pro.unitAmount != null
+    ? `$${Math.round(prices.pro.unitAmount / 100)}`
+    : '$299';
+
   return (
     <main className="py-section">
       <Container>
@@ -133,7 +178,7 @@ export default function PartnerPage() {
                 </span>
               </div>
               <div className="mt-2 flex items-baseline gap-1">
-                <span className="text-h2 font-heading font-bold">$99</span>
+                <span className="text-h2 font-heading font-bold">{plusDisplay}</span>
                 <span className="text-text-muted">/month</span>
               </div>
               <Text className="mt-element" size="small">
@@ -164,7 +209,7 @@ export default function PartnerPage() {
                 Pro
               </Text>
               <div className="mt-2 flex items-baseline gap-1">
-                <span className="text-h2 font-heading font-bold">$299</span>
+                <span className="text-h2 font-heading font-bold">{proDisplay}</span>
                 <span className="text-text-muted">/month</span>
               </div>
               <Text className="mt-element" size="small">
