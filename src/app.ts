@@ -54,7 +54,7 @@ export async function buildApp(): Promise<FastifyInstance> {
 
   // Register CORS
   await fastify.register(cors, {
-    origin: process.env.CORS_ORIGIN || true,
+    origin: process.env.CORS_ORIGIN || 'https://sabrinas-town.vercel.app',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Admin-Token', 'X-Embed-API-Key', 'X-User-Id'],
   });
