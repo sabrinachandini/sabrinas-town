@@ -1,5 +1,4 @@
 import { getTown, getTownSources } from "@/lib/api";
-import { Separator } from "@/components/ui/separator";
 import { ComingSoon } from "@/components/town";
 import {
   PageShell,
@@ -64,10 +63,10 @@ export default async function SourcesPage({ params }: PageProps) {
           <SourceGroup label="Tier 3 — General Reference" sources={tier3} />
           <SourceGroup label="Pending Evaluation" sources={tierTodo} />
 
-          <Separator className="bg-border-light" />
-          <p className="text-small text-text-muted font-body">
+          <div className="h-px bg-[#0e1428]/10 my-8" />
+          <p className="font-ui text-[0.8rem] text-[#0e1428]/50">
             For details on how we evaluate sources, see our{" "}
-            <a href="/methodology" className="text-crimson hover:underline">
+            <a href="/methodology" className="text-[#c8222a] hover:underline">
               Methodology
             </a>
             .
@@ -75,12 +74,12 @@ export default async function SourcesPage({ params }: PageProps) {
         </div>
       ) : (
         <div className="space-y-4">
-          <p className="text-text-muted font-body">
+          <p className="font-editorial text-[#0e1428]/60">
             Sources for this town are being compiled and verified.
           </p>
-          <p className="text-small text-text-muted font-body">
+          <p className="font-ui text-[0.8rem] text-[#0e1428]/50">
             For details on how we evaluate sources, see our{" "}
-            <a href="/methodology" className="text-crimson hover:underline">
+            <a href="/methodology" className="text-[#c8222a] hover:underline">
               Methodology
             </a>
             .

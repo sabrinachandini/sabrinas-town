@@ -8,40 +8,54 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Background
-        "bg-primary": "#F7F5F2",
-        "bg-secondary": "#E6EBF2",
-        // Text
-        "text-primary": "#1E1E1E",
-        "text-muted": "#6B7280",
-        // Accent
-        "accent-blue": "#1B3D6F",
-        "accent-blue-hover": "#264D85",
-        "accent-red": "#C53727",
-        "accent-red-hover": "#D94A3A",
-        // Border
-        "border-light": "#E2E2E2",
+        // New palette
+        navy:  "#0a0e1a",
+        cream: "#f2ece0",
+        red:   "#c8222a",
+        ink:   "#0e1428",
+        // Retain legacy aliases for gradual migration
+        "bg-primary":   "#f2ece0",
+        "bg-secondary": "#e8e2d4",
+        "text-primary": "#0e1428",
+        "text-muted":   "#6b7280",
+        "accent-blue":  "#0a0e1a",
+        "accent-red":   "#c8222a",
+        "border-light": "#ddd8ce",
+        // Homepage tokens (kept for backwards compat)
+        crimson:  "#c8222a",
+        gold:     "#c8222a",
+        fog:      "rgba(255,255,255,0.55)",
+        charcoal: "#0e1428",
+        slate:    "#6b7280",
+        ivory:    "#f2ece0",
       },
       fontFamily: {
-        heading: ["var(--font-playfair)", "Georgia", "serif"],
-        body: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display:   ["var(--font-bebas)", "Impact", "sans-serif"],
+        editorial: ["var(--font-instrument)", "Georgia", "serif"],
+        ui:        ["var(--font-dm)", "system-ui", "sans-serif"],
+        // Legacy aliases
+        heading:   ["var(--font-instrument)", "Georgia", "serif"],
+        body:      ["var(--font-dm)", "system-ui", "sans-serif"],
+        condensed: ["var(--font-bebas)", "Impact", "sans-serif"],
+        serif:     ["var(--font-instrument)", "Georgia", "serif"],
+        sans:      ["var(--font-dm)", "system-ui", "sans-serif"],
       },
       fontSize: {
-        h1: ["4rem", { lineHeight: "1.2", fontWeight: "700" }],
-        h2: ["2.25rem", { lineHeight: "1.2", fontWeight: "600" }],
-        h3: ["1.5rem", { lineHeight: "1.3", fontWeight: "600" }],
-        body: ["1.125rem", { lineHeight: "1.7" }],
-        small: ["0.875rem", { lineHeight: "1.6" }],
+        h1:    ["4rem",    { lineHeight: "1.1", fontWeight: "400" }],
+        h2:    ["2rem",    { lineHeight: "1.15", fontWeight: "400" }],
+        h3:    ["1.5rem",  { lineHeight: "1.25", fontWeight: "400" }],
+        body:  ["1.0625rem", { lineHeight: "1.75" }],
+        small: ["0.875rem",  { lineHeight: "1.6" }],
       },
       spacing: {
-        section: "6rem",
+        section:   "6rem",
         component: "3rem",
-        element: "1.5rem",
-        tight: "0.75rem",
+        element:   "1.5rem",
+        tight:     "0.75rem",
       },
       maxWidth: {
         narrow: "820px",
-        wide: "1200px",
+        wide:   "1200px",
       },
     },
   },

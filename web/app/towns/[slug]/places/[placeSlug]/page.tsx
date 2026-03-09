@@ -79,42 +79,65 @@ export default async function PlaceDetailPage({ params }: PageProps) {
 
       {(place.address || place.hours || place.admission || place.website) && (
         <EditorialSection id="visiting" title="Visiting Today">
-          <div className="space-y-3">
+          {/* Section divider label */}
+          <div className="mb-6 pb-2 border-b border-[#0e1428]/10">
+            <span className="font-display text-[0.9rem] tracking-[0.15em] uppercase text-[#0e1428]/30">
+              Plan Your Visit
+            </span>
+          </div>
+
+          <div className="space-y-4">
             {place.address && (
-              <p className="font-body">
-                <span className="text-small text-text-muted uppercase tracking-wide">Address:</span>{" "}
-                {place.address}
-              </p>
+              <div>
+                <p className="font-ui text-[0.7rem] uppercase tracking-[0.1em] text-[#0e1428]/40 mb-0.5">
+                  Address
+                </p>
+                <p className="font-editorial text-[1rem] text-[#0e1428]">
+                  {place.address}
+                </p>
+              </div>
             )}
             {place.hours && (
-              <p className="font-body">
-                <span className="text-small text-text-muted uppercase tracking-wide">Hours:</span>{" "}
-                {place.hours}
-              </p>
+              <div>
+                <p className="font-ui text-[0.7rem] uppercase tracking-[0.1em] text-[#0e1428]/40 mb-0.5">
+                  Hours
+                </p>
+                <p className="font-editorial text-[1rem] text-[#0e1428]">
+                  {place.hours}
+                </p>
+              </div>
             )}
             {place.admission && (
-              <p className="font-body">
-                <span className="text-small text-text-muted uppercase tracking-wide">Admission:</span>{" "}
-                {place.admission}
-              </p>
+              <div>
+                <p className="font-ui text-[0.7rem] uppercase tracking-[0.1em] text-[#0e1428]/40 mb-0.5">
+                  Admission
+                </p>
+                <p className="font-editorial text-[1rem] text-[#0e1428]">
+                  {place.admission}
+                </p>
+              </div>
             )}
             {place.accessibilityNotes && (
-              <p className="font-body">
-                <span className="text-small text-text-muted uppercase tracking-wide">Accessibility:</span>{" "}
-                {place.accessibilityNotes}
-              </p>
+              <div>
+                <p className="font-ui text-[0.7rem] uppercase tracking-[0.1em] text-[#0e1428]/40 mb-0.5">
+                  Accessibility
+                </p>
+                <p className="font-editorial text-[1rem] text-[#0e1428]">
+                  {place.accessibilityNotes}
+                </p>
+              </div>
             )}
             {place.website && (
-              <p className="font-body">
+              <div>
                 <a
                   href={place.website}
-                  className="text-crimson hover:underline"
+                  className="font-ui text-[0.72rem] tracking-[0.08em] uppercase text-[#c8222a] hover:text-[#0e1428] transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Official website &rarr;
                 </a>
-              </p>
+              </div>
             )}
           </div>
         </EditorialSection>
@@ -122,7 +145,14 @@ export default async function PlaceDetailPage({ params }: PageProps) {
 
       {place.connectedEvents.length > 0 && (
         <EditorialSection id="events" title="Connected Events">
-          <ol className="space-y-0">
+          {/* Section divider label */}
+          <div className="mb-6 pb-2 border-b border-[#0e1428]/10">
+            <span className="font-display text-[0.9rem] tracking-[0.15em] uppercase text-[#0e1428]/30">
+              Timeline
+            </span>
+          </div>
+
+          <div>
             {place.connectedEvents
               .sort((a, b) => {
                 if (!a.startDate) return 1;
@@ -131,11 +161,11 @@ export default async function PlaceDetailPage({ params }: PageProps) {
               })
               .slice(0, 10)
               .map((event) => (
-                <li
+                <div
                   key={event.id}
-                  className="flex gap-6 py-4 border-b border-border-light last:border-b-0"
+                  className="flex gap-6 py-4 border-b border-[#0e1428]/8 last:border-b-0"
                 >
-                  <span className="w-[100px] shrink-0 text-small text-text-muted font-body tabular-nums">
+                  <span className="w-[100px] shrink-0 font-ui text-[0.75rem] text-[#0e1428]/40 tabular-nums">
                     {event.startDate
                       ? new Date(event.startDate).toLocaleDateString("en-US", {
                           year: "numeric",
@@ -146,26 +176,26 @@ export default async function PlaceDetailPage({ params }: PageProps) {
                   <div>
                     <a
                       href={`/towns/${slug}/timeline/${event.slug || event.id}`}
-                      className="font-body font-medium hover:text-crimson transition-colors"
+                      className="font-editorial text-[1rem] text-[#0e1428] hover:text-[#c8222a] transition-colors no-underline"
                     >
                       {event.name}
                     </a>
                     {event.people.length > 0 && (
-                      <p className="mt-1 text-small text-text-muted font-body">
+                      <p className="mt-1 font-ui text-[0.75rem] text-[#0e1428]/40">
                         {event.people.map((p) => p.name).join(", ")}
                       </p>
                     )}
                   </div>
-                </li>
+                </div>
               ))}
-          </ol>
+          </div>
         </EditorialSection>
       )}
 
-      <div className="mt-12 pt-8 border-t border-border-light">
+      <div className="mt-12 pt-8 border-t border-[#0e1428]/8">
         <a
           href={`/towns/${slug}/places`}
-          className="font-condensed font-bold text-[0.72rem] tracking-[0.08em] uppercase text-navy hover:text-crimson transition-colors"
+          className="font-ui text-[0.72rem] tracking-[0.08em] uppercase text-[#0e1428]/50 hover:text-[#c8222a] transition-colors no-underline"
         >
           &larr; Back to places
         </a>

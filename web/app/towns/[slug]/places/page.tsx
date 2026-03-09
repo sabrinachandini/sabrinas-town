@@ -34,10 +34,16 @@ export default async function PlacesPage({ params }: PageProps) {
 
   const formatPlaceType = (type: string): string => {
     const labels: Record<string, string> = {
-      BATTLEFIELD: "Battlefield", HISTORIC_HOUSE: "Historic House",
-      MONUMENT: "Monument", MUSEUM: "Museum", CEMETERY: "Cemetery",
-      CHURCH: "Church", GOVERNMENT: "Government", TAVERN: "Tavern",
-      LANDMARK: "Landmark", TRAIL: "Trail",
+      BATTLEFIELD: "Battlefield",
+      HISTORIC_HOUSE: "Historic House",
+      MONUMENT: "Monument",
+      MUSEUM: "Museum",
+      CEMETERY: "Cemetery",
+      CHURCH: "Church",
+      GOVERNMENT: "Government",
+      TAVERN: "Tavern",
+      LANDMARK: "Landmark",
+      TRAIL: "Trail",
     };
     return labels[type] || type;
   };
@@ -53,46 +59,38 @@ export default async function PlacesPage({ params }: PageProps) {
 
       <EditorialSection id="places" title="Places">
         {places.length > 0 ? (
-          <ol className="space-y-0 list-none">
-            {places.map((place, i) => (
-              <li key={place.id} className="py-4 border-b border-border-light last:border-b-0">
-                <div className="flex gap-4">
-                  <span className="text-small text-text-muted font-body tabular-nums w-6 shrink-0">
-                    {i + 1}.
-                  </span>
-                  <div>
-                    <p className="font-body font-medium">
-                      <a
-                        href={`/towns/${slug}/places/${(place as any).slug || place.id}`}
-                        className="hover:text-crimson transition-colors"
-                      >
-                        {place.name}
-                      </a>
+          <div>
+            {places.map((place) => (
+              <a
+                key={place.id}
+                href={`/towns/${slug}/places/${(place as any).slug || place.id}`}
+                className="flex items-baseline justify-between gap-4 py-5 border-b border-[#0e1428]/8 last:border-b-0 no-underline group"
+              >
+                <div className="min-w-0">
+                  <p className="font-editorial text-[1.375rem] text-[#0e1428] group-hover:text-[#c8222a] transition-colors">
+                    {place.name}
+                  </p>
+
+                  <p className="font-ui text-[0.75rem] text-[#0e1428]/50 uppercase tracking-[0.08em] mt-1">
+                    {formatPlaceType(place.placeType)}
+                    {place.address && <> &middot; {place.address}</>}
+                  </p>
+
+                  {place.description && (
+                    <p className="font-editorial text-[0.95rem] text-[#0e1428]/70 leading-relaxed mt-2">
+                      {place.description}
                     </p>
-                    <p className="mt-1 text-small text-text-muted font-body uppercase tracking-wide">
-                      {formatPlaceType(place.placeType)}
-                      {place.address && <> &middot; {place.address}</>}
-                    </p>
-                    {place.description && (
-                      <p className="mt-2 text-small font-body leading-relaxed text-text-primary">
-                        {place.description}
-                      </p>
-                    )}
-                    {place.hours && (
-                      <p className="mt-1 text-small text-text-muted font-body">Hours: {place.hours}</p>
-                    )}
-                    {place.website && (
-                      <a href={place.website} className="mt-1 inline-block text-small text-crimson font-body hover:underline" target="_blank" rel="noopener noreferrer">
-                        Website &rarr;
-                      </a>
-                    )}
-                  </div>
+                  )}
                 </div>
-              </li>
+
+                <span className="font-display text-[#c8222a] group-hover:translate-x-1 transition-transform shrink-0 text-[1.25rem] leading-none">
+                  &rarr;
+                </span>
+              </a>
             ))}
-          </ol>
+          </div>
         ) : (
-          <p className="text-text-muted font-body">
+          <p className="font-ui text-[0.85rem] text-[#0e1428]/50">
             Places directory for {town.name} is being compiled.
           </p>
         )}

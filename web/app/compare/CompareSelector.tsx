@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { RankedTown } from "@/lib/api";
-import { Button } from "@/components/ui";
 
 interface CompareSelectorProps {
   towns: RankedTown[];
@@ -18,21 +17,19 @@ export default function CompareSelector({ towns }: CompareSelectorProps) {
   const bothSelected = townA !== null && townB !== null && townASlug !== townBSlug;
 
   const selectClass =
-    "w-full border-2 border-navy bg-white font-condensed font-bold text-navy text-[0.85rem] tracking-[0.05em] uppercase px-4 py-3 focus:outline-none focus:border-crimson transition-colors";
+    "w-full border border-[#0e1428]/20 bg-[#f2ece0] font-ui text-[#0e1428] text-[0.85rem] px-4 py-3 focus:outline-none focus:border-[#c8222a] transition-colors";
 
   return (
     <div>
       {/* Selector row */}
-      <section className="bg-cream border-b border-[#DDD8CE] py-8">
-        <div className="mx-auto max-w-[1200px] px-6 md:px-10">
-          <p className="font-condensed font-bold text-[0.75rem] tracking-[0.14em] uppercase text-crimson mb-4">
-            Choose Two Towns
-          </p>
+      <section className="bg-[#f2ece0] border-b border-[#0e1428]/10 py-8 px-8 md:px-16">
+        <div className="mx-auto max-w-[1200px]">
+          <p className="font-ui text-[0.7rem] uppercase tracking-[0.15em] text-[#c8222a] mb-4">Choose Two Towns</p>
           <div className="grid sm:grid-cols-2 gap-4 max-w-[640px]">
             <div>
               <label
                 htmlFor="town-a"
-                className="block font-condensed font-bold text-[0.7rem] tracking-[0.1em] uppercase text-slate mb-2"
+                className="block font-ui text-[0.7rem] uppercase tracking-[0.12em] text-[#0e1428]/40 mb-2"
               >
                 Town A
               </label>
@@ -52,7 +49,7 @@ export default function CompareSelector({ towns }: CompareSelectorProps) {
             <div>
               <label
                 htmlFor="town-b"
-                className="block font-condensed font-bold text-[0.7rem] tracking-[0.1em] uppercase text-slate mb-2"
+                className="block font-ui text-[0.7rem] uppercase tracking-[0.12em] text-[#0e1428]/40 mb-2"
               >
                 Town B
               </label>
@@ -71,7 +68,7 @@ export default function CompareSelector({ towns }: CompareSelectorProps) {
             </div>
           </div>
           {townASlug === townBSlug && (
-            <p className="mt-3 font-condensed text-[0.8rem] text-crimson">
+            <p className="mt-3 font-ui text-[0.8rem] text-[#c8222a]">
               Select two different towns to compare.
             </p>
           )}
@@ -81,44 +78,47 @@ export default function CompareSelector({ towns }: CompareSelectorProps) {
       {/* Comparison panels */}
       {bothSelected && (
         <>
-          <section className="bg-navy py-16">
-            <div className="mx-auto max-w-[1200px] px-6 md:px-10">
-              <div className="grid md:grid-cols-2 gap-px bg-[#1a2a4a]">
+          <section className="bg-[#0a0e1a] py-16 px-8 md:px-16">
+            <div className="mx-auto max-w-[1200px]">
+              <div className="grid md:grid-cols-2 gap-px bg-white/5">
                 {[townA, townB].map((town) => (
-                  <div key={town.id} className="bg-navy p-8">
-                    <p className="font-condensed font-bold text-[0.72rem] tracking-[0.1em] uppercase text-crimson mb-3">
+                  <div key={town.id} className="bg-[#0a0e1a] p-8">
+                    <p className="font-ui text-[0.7rem] uppercase tracking-[0.12em] text-[#c8222a] mb-3">
                       {town.state}
                     </p>
                     <h2
-                      className="font-heading font-black text-white leading-tight mb-3"
+                      className="font-display text-white leading-none mb-4"
                       style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
                     >
                       {town.name}
                     </h2>
-                    <p className="font-serif italic text-fog text-[0.95rem] leading-relaxed mb-4">
+                    <p className="font-editorial italic text-white/50 text-[0.95rem] leading-relaxed mb-6">
                       {town.execSummary150 || town.heroSummary40}
                     </p>
-                    <div className="flex items-center gap-6 mb-6">
+                    <div className="flex items-center gap-8 mb-8 pb-6 border-b border-white/10">
                       <div>
-                        <p className="font-heading font-black text-white text-[1.8rem] leading-none">
+                        <p className="font-display text-white text-[2.5rem] leading-none">
                           {town.compositeScore}
                         </p>
-                        <p className="font-condensed text-[0.65rem] tracking-[0.08em] uppercase text-gold mt-0.5">
+                        <p className="font-ui text-[0.65rem] uppercase tracking-[0.1em] text-white/30 mt-1">
                           Composite Score
                         </p>
                       </div>
                       <div>
-                        <p className="font-heading font-black text-white text-[1.8rem] leading-none">
+                        <p className="font-display text-white text-[2.5rem] leading-none">
                           #{town.rank}
                         </p>
-                        <p className="font-condensed text-[0.65rem] tracking-[0.08em] uppercase text-gold mt-0.5">
+                        <p className="font-ui text-[0.65rem] uppercase tracking-[0.1em] text-white/30 mt-1">
                           National Rank
                         </p>
                       </div>
                     </div>
-                    <Button href={`/towns/${town.slug}`} variant="outline">
+                    <a
+                      href={`/towns/${town.slug}`}
+                      className="no-underline inline-block border border-white/30 text-white font-ui font-medium text-[0.8rem] uppercase tracking-[0.12em] px-6 py-3 hover:border-white hover:bg-white/5 transition-colors"
+                    >
                       Explore {town.name} &rarr;
-                    </Button>
+                    </a>
                   </div>
                 ))}
               </div>
@@ -126,27 +126,21 @@ export default function CompareSelector({ towns }: CompareSelectorProps) {
           </section>
 
           {/* Score comparison bar */}
-          <section className="bg-ivory py-12 border-b border-[#DDD8CE]">
-            <div className="mx-auto max-w-[1200px] px-6 md:px-10">
-              <p className="font-condensed font-bold text-[0.75rem] tracking-[0.14em] uppercase text-crimson mb-6">
-                Score Comparison
-              </p>
+          <section className="bg-[#f2ece0] py-12 px-8 md:px-16 border-b border-[#0e1428]/10">
+            <div className="mx-auto max-w-[1200px]">
+              <p className="font-ui text-[0.7rem] uppercase tracking-[0.15em] text-[#c8222a] mb-6">Score Comparison</p>
               <div className="space-y-6">
                 {[townA, townB].map((town) => {
                   const pct = Math.round((town.compositeScore / 100) * 100);
                   return (
                     <div key={town.id}>
                       <div className="flex justify-between items-baseline mb-1.5">
-                        <span className="font-heading font-bold text-navy text-[0.9rem]">
-                          {town.name}
-                        </span>
-                        <span className="font-heading font-black text-navy text-[1.1rem]">
-                          {town.compositeScore}
-                        </span>
+                        <span className="font-editorial text-[#0e1428] text-[0.95rem]">{town.name}</span>
+                        <span className="font-display text-[#0e1428] text-[1.2rem] leading-none">{town.compositeScore}</span>
                       </div>
-                      <div className="h-2 bg-[#DDD8CE] w-full">
+                      <div className="h-1 bg-[#0e1428]/10 w-full">
                         <div
-                          className="h-2 bg-crimson"
+                          className="h-1 bg-[#c8222a]"
                           style={{ width: `${pct}%` }}
                         />
                       </div>
@@ -158,49 +152,57 @@ export default function CompareSelector({ towns }: CompareSelectorProps) {
           </section>
 
           {/* Shared Connections */}
-          <section className="bg-ivory py-16">
-            <div className="mx-auto max-w-[1200px] px-6 md:px-10">
-              <p className="font-condensed font-bold text-[0.75rem] tracking-[0.14em] uppercase text-crimson mb-4">
-                Shared Connections
-              </p>
-              <h2 className="font-heading font-bold text-navy text-[1.8rem] md:text-[2.2rem] leading-tight mb-4">
+          <section className="bg-[#f2ece0] py-16 px-8 md:px-16">
+            <div className="mx-auto max-w-[1200px]">
+              <p className="font-ui text-[0.7rem] uppercase tracking-[0.15em] text-[#c8222a] mb-4">Shared Connections</p>
+              <h2 className="font-display text-[#0e1428]" style={{ fontSize: "clamp(2rem,4vw,3rem)" }}>
                 {townA.name} &amp; {townB.name}
               </h2>
-              <p className="font-serif text-charcoal text-[1rem] leading-relaxed max-w-[640px]">
+              <div className="border-b border-[#0e1428]/10 my-6" />
+              <p className="font-editorial text-[#0e1428]/70 text-[1rem] leading-relaxed max-w-[640px]">
                 Explore each town&rsquo;s full timeline, people, and places to discover
                 how {townA.name} and {townB.name} are connected through shared events,
                 historical figures, and Revolutionary themes. Use the links below to
                 dive deeper into each town&rsquo;s complete record.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Button href={`/towns/${townA.slug}/timeline`} variant="secondary">
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a
+                  href={`/towns/${townA.slug}/timeline`}
+                  className="no-underline border border-[#0e1428]/20 text-[#0e1428] font-ui font-medium text-[0.8rem] uppercase tracking-[0.12em] px-6 py-3 hover:border-[#c8222a] hover:text-[#c8222a] transition-colors"
+                >
                   {townA.name} Timeline
-                </Button>
-                <Button href={`/towns/${townB.slug}/timeline`} variant="secondary">
+                </a>
+                <a
+                  href={`/towns/${townB.slug}/timeline`}
+                  className="no-underline border border-[#0e1428]/20 text-[#0e1428] font-ui font-medium text-[0.8rem] uppercase tracking-[0.12em] px-6 py-3 hover:border-[#c8222a] hover:text-[#c8222a] transition-colors"
+                >
                   {townB.name} Timeline
-                </Button>
+                </a>
               </div>
             </div>
           </section>
         </>
       )}
 
-      {/* CTA */}
-      <section className="bg-crimson py-16">
-        <div className="mx-auto max-w-[1200px] px-6 md:px-10 text-center">
-          <p className="font-condensed font-bold text-[0.75rem] tracking-[0.14em] uppercase text-white opacity-70 mb-3">
-            Keep Exploring
+      {/* CTA Banner */}
+      <section className="bg-[#0a0e1a] py-20 px-8 md:px-16">
+        <div className="mx-auto max-w-[1200px] flex flex-col md:flex-row items-center justify-between gap-8">
+          <p className="font-display text-white leading-none" style={{ fontSize: "clamp(2rem,4vw,3.5rem)" }}>
+            Every Town Has a <span className="text-[#c8222a]">Story.</span>
           </p>
-          <h2 className="font-heading font-black text-white text-[2rem] md:text-[2.5rem] leading-tight mb-8">
-            Every Town Has a Story
-          </h2>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button href="/rankings" variant="outline">
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="/rankings"
+              className="no-underline border border-white text-white font-ui font-medium text-[0.8rem] uppercase tracking-[0.12em] px-8 py-3 hover:bg-[#c8222a] hover:border-[#c8222a] transition-colors whitespace-nowrap"
+            >
               See All Rankings
-            </Button>
-            <Button href="/towns" variant="outline">
+            </a>
+            <a
+              href="/towns"
+              className="no-underline border border-white/30 text-white/60 font-ui font-medium text-[0.8rem] uppercase tracking-[0.12em] px-8 py-3 hover:border-white hover:text-white transition-colors whitespace-nowrap"
+            >
               Browse All Towns
-            </Button>
+            </a>
           </div>
         </div>
       </section>

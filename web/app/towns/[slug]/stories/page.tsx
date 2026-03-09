@@ -43,41 +43,48 @@ export default async function StoriesPage({ params }: PageProps) {
 
       <EditorialSection id="stories" title={`${town.stories.length} Stories`}>
         {town.stories.length > 0 ? (
-          <div className="space-y-0">
-            {town.stories.map((story) => (
-              <div
-                key={story.id}
-                className="py-5 border-b border-border-light last:border-b-0"
-              >
-                <p className="font-heading text-[1.25rem] tracking-tight">
-                  {story.title}
-                </p>
-                {story.subjectPersonName && (
-                  <p className="mt-1 text-small text-text-muted font-body">
-                    {story.subjectPersonName}
-                  </p>
-                )}
-                <p className="mt-2 font-body leading-relaxed">
-                  {story.excerpt}
-                </p>
-                <p className="mt-1 text-small text-text-muted font-body uppercase tracking-wide">
-                  {story.storyType === "HISTORICAL_VOICE"
-                    ? "Historical voice"
-                    : "Modern voice"}
-                  {" · "}
-                  {story.verificationStatus.toLowerCase().replace(/_/g, " ")}
-                </p>
+          <div>
+            {/* Section label */}
+            <div className="mb-6 pb-3 border-b border-[#0e1428]/10">
+              <p className="font-display text-[1.5rem] text-[#0e1428]/30 tracking-[0.15em] uppercase mb-1">
+                Accounts &amp; Voices
+              </p>
+            </div>
+
+            <div>
+              {town.stories.map((story) => (
                 <a
+                  key={story.id}
                   href={`/towns/${slug}/stories/${story.id}`}
-                  className="mt-2 inline-block text-small text-crimson font-body hover:underline"
+                  className="block py-5 border-b border-[#0e1428]/8 last:border-b-0 no-underline group"
                 >
-                  Read story &rarr;
+                  <span className="font-ui text-[0.65rem] uppercase tracking-[0.12em] text-[#c8222a]">
+                    {story.storyType === "HISTORICAL_VOICE"
+                      ? "Historical Voice"
+                      : "Modern Voice"}
+                  </span>
+
+                  <p className="font-editorial text-[1.375rem] text-[#0e1428] group-hover:text-[#c8222a] transition-colors mt-1 leading-tight">
+                    {story.title}
+                  </p>
+
+                  {story.subjectPersonName && (
+                    <p className="font-ui text-[0.75rem] text-[#0e1428]/50 mt-1">
+                      {story.subjectPersonName}
+                    </p>
+                  )}
+
+                  {story.excerpt && (
+                    <p className="font-editorial text-[0.95rem] text-[#0e1428]/70 leading-relaxed mt-2">
+                      {story.excerpt}
+                    </p>
+                  )}
                 </a>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         ) : (
-          <p className="text-text-muted font-body">
+          <p className="font-ui text-[0.85rem] text-[#0e1428]/50">
             Stories from {town.name} are being collected.
           </p>
         )}

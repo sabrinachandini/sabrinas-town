@@ -17,26 +17,30 @@ export function PageHeader({
 }: PageHeaderProps) {
   if (variant === "bold") {
     return (
-      <header className="bg-navy py-14 md:py-20 mb-0 -mx-6 md:-mx-10 px-6 md:px-10">
-        <p className="font-condensed font-bold text-[0.7rem] tracking-[0.12em] uppercase text-crimson mb-3">
+      <header className="-mx-6 md:-mx-12 -mt-12 md:-mt-16 mb-12 bg-[#0a0e1a] px-8 md:px-16 py-16 md:py-24">
+        <p className="font-ui text-[0.7rem] uppercase tracking-[0.12em] text-white/40 mb-3">
           {state}, USA
           {cluster && (
-            <span className="ml-3 text-fog/70">{cluster}</span>
+            <span className="ml-3 text-white/25">{cluster}</span>
           )}
         </p>
         <h1
-          className="font-heading font-black text-white leading-[1.05]"
-          style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}
+          className="text-white"
+          style={{
+            fontFamily: "var(--font-bebas)",
+            fontSize: "clamp(3rem, 8vw, 7rem)",
+            lineHeight: 0.9,
+          }}
         >
           {name}
         </h1>
         {subtitle && (
-          <p className="mt-4 font-serif italic text-fog text-[1.05rem] leading-relaxed max-w-[600px]">
+          <p className="font-editorial italic text-white/70 text-[1.05rem] mt-6 leading-relaxed max-w-[600px]">
             {subtitle}
           </p>
         )}
         {lastUpdated && (
-          <p className="mt-4 font-condensed text-[0.75rem] text-fog/60 uppercase tracking-wide">
+          <p className="font-ui text-[0.7rem] text-white/30 uppercase mt-4">
             Last updated{" "}
             {new Date(lastUpdated).toLocaleDateString("en-US", {
               year: "numeric",

@@ -1,10 +1,6 @@
 import { getTown, getTownPeople } from "@/lib/api";
 import { ComingSoon } from "@/components/town";
-import {
-  PageShell,
-  PageHeader,
-  EditorialSection,
-} from "@/components/editorial";
+import { PageShell, PageHeader } from "@/components/editorial";
 
 export const revalidate = 3600;
 
@@ -47,56 +43,62 @@ export default async function PeoplePage({ params }: PageProps) {
         variant="bold"
       />
 
-      <EditorialSection id="people" title={`${people.length} People`}>
+      <section className="pt-16 md:pt-20">
+        {/* Section header */}
+        <div className="border-b border-[#0e1428]/10 mb-8">
+          <h2 className="font-display text-[1.5rem] text-[#0e1428]/30 tracking-[0.15em] uppercase mb-1">
+            {people.length} People
+          </h2>
+        </div>
+
         {people.length > 0 ? (
-          <div className="space-y-0">
-            {people.map((person) => (
-              <div
-                key={person.id}
-                className="py-5 border-b border-border-light last:border-b-0"
-              >
-                <h3 className="font-heading text-[1.25rem] tracking-tight">
-                  <a
-                    href={`/towns/${slug}/people/${(person as any).slug || person.id}`}
-                    className="hover:text-crimson transition-colors"
-                  >
-                    {person.name}
-                  </a>
-                </h3>
-                <p className="mt-1 text-small text-text-muted font-body">
-                  {[
-                    person.birthYear && person.deathYear
-                      ? `${person.birthYear}–${person.deathYear}`
-                      : person.birthYear
-                        ? `b. ${person.birthYear}`
-                        : null,
-                    ...person.roles,
-                  ]
-                    .filter(Boolean)
-                    .join(" · ")}
-                </p>
-                <p className="mt-2 font-body leading-relaxed">
-                  {person.bioShort}
-                </p>
-                {person.bioLong && (
-                  <details className="mt-3">
-                    <summary className="text-small text-crimson font-body cursor-pointer hover:underline">
-                      Read more
-                    </summary>
-                    <p className="mt-2 font-body leading-relaxed text-text-primary">
-                      {person.bioLong}
+          <div>
+            {people.map((person) => {
+              const lifespan =
+                person.birthYear && person.deathYear
+                  ? `${person.birthYear}–${person.deathYear}`
+                  : person.birthYear
+                    ? `b. ${person.birthYear}`
+                    : null;
+
+              const meta = [lifespan, ...person.roles].filter(Boolean).join(" · ");
+
+              return (
+                <a
+                  key={person.id}
+                  href={`/towns/${slug}/people/${(person as { slug?: string; id: string }).slug || person.id}`}
+                  className="group block border-b border-[#0e1428]/8 py-5 last:border-b-0 no-underline"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="font-editorial text-[1.375rem] text-[#0e1428] group-hover:text-[#c8222a] group-hover:translate-x-1 transition-all duration-150">
+                      {person.name}
+                    </span>
+                    <span className="font-display text-[#c8222a] text-[1.1rem] leading-none opacity-0 group-hover:opacity-100 transition-opacity duration-150" aria-hidden="true">
+                      &rarr;
+                    </span>
+                  </div>
+
+                  {meta && (
+                    <p className="font-ui text-[0.75rem] text-[#0e1428]/50 uppercase tracking-[0.08em] mt-0.5">
+                      {meta}
                     </p>
-                  </details>
-                )}
-              </div>
-            ))}
+                  )}
+
+                  {person.bioShort && (
+                    <p className="font-editorial text-[0.95rem] text-[#0e1428]/70 leading-relaxed mt-2">
+                      {person.bioShort}
+                    </p>
+                  )}
+                </a>
+              );
+            })}
           </div>
         ) : (
-          <p className="text-text-muted font-body">
+          <p className="font-editorial text-[0.95rem] text-[#0e1428]/60 leading-relaxed">
             Research is ongoing. People connected to {town.name} will appear here.
           </p>
         )}
-      </EditorialSection>
+      </section>
     </PageShell>
   );
 }

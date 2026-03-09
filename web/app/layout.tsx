@@ -1,35 +1,28 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Barlow_Condensed, Barlow, Lora } from "next/font/google";
+import { Bebas_Neue, Instrument_Serif, DM_Sans } from "next/font/google";
 import { Header, Footer } from "@/components/site";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const bebasNeue = Bebas_Neue({
+  variable: "--font-bebas",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "600", "700", "800", "900"],
+  weight: ["400"],
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400"],
   style: ["normal", "italic"],
 });
 
-const barlowCondensed = Barlow_Condensed({
-  variable: "--font-barlow-condensed",
+const dmSans = DM_Sans({
+  variable: "--font-dm",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "600", "700", "800"],
-});
-
-const barlow = Barlow({
-  variable: "--font-barlow",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600"],
-});
-
-const lora = Lora({
-  variable: "--font-lora",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500"],
   style: ["normal", "italic"],
 });
 
@@ -46,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} ${barlowCondensed.variable} ${barlow.variable} ${lora.variable}`}>
+      <body className={`${bebasNeue.variable} ${instrumentSerif.variable} ${dmSans.variable} bg-cream text-ink`}>
         <Header />
         {children}
         <Footer />

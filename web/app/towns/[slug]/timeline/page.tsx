@@ -1,11 +1,6 @@
 import { getTown } from "@/lib/api";
 import { ComingSoon } from "@/components/town";
-import {
-  PageShell,
-  PageHeader,
-  EditorialSection,
-} from "@/components/editorial";
-import { Reveal } from "@/lib/scroll";
+import { PageShell, PageHeader } from "@/components/editorial";
 
 export const revalidate = 3600;
 
@@ -37,7 +32,10 @@ export default async function TimelinePage({ params }: PageProps) {
 
   const formatDate = (dateStr: string | null) => {
     if (!dateStr) return "";
-    return new Date(dateStr).toLocaleDateString("en-US", { year: "numeric", month: "short" });
+    return new Date(dateStr).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+    });
   };
 
   return (
@@ -49,44 +47,47 @@ export default async function TimelinePage({ params }: PageProps) {
         variant="bold"
       />
 
-      <EditorialSection id="timeline" title="Timeline">
+      <div className="mt-8">
+        <div className="border-b border-[#0e1428]/20 pb-3 mb-0">
+          <p className="font-display text-[1.5rem] text-[#0e1428]/30 tracking-[0.15em] uppercase">
+            Timeline
+          </p>
+        </div>
+
         {sortedEvents.length > 0 ? (
           <ol className="space-y-0">
-            {sortedEvents.map((event, index) => (
-              <Reveal
-                as="li"
-                key={event.id}
-                delay={index * 60}
-                wrapperClassName="flex gap-6 py-4 border-b border-border-light last:border-b-0"
-              >
-                <span className="w-2 h-2 rounded-full bg-crimson shrink-0 mt-2" />
-                <span className="w-[100px] shrink-0 text-small text-text-muted font-body tabular-nums">
-                  {formatDate(event.startDate)}
-                </span>
-                <div>
-                  <p className="font-body font-medium">
-                    <a
-                      href={`/towns/${slug}/timeline/${(event as any).slug || event.id}`}
-                      className="hover:text-crimson transition-colors"
-                    >
+            {sortedEvents.map((event) => (
+              <li key={event.id}>
+                <a
+                  href={`/towns/${slug}/timeline/${(event as any).slug || event.id}`}
+                  className="no-underline flex gap-6 py-5 border-b border-[#0e1428]/8 last:border-b-0 group"
+                >
+                  <span className="font-ui text-[0.75rem] text-[#0e1428]/40 tabular-nums w-[90px] shrink-0 pt-0.5">
+                    {formatDate(event.startDate)}
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-editorial text-[1.1rem] text-[#0e1428] group-hover:text-[#c8222a] transition-colors">
                       {event.name}
-                    </a>
-                  </p>
-                  {event.summary && (
-                    <p className="mt-1 text-small text-text-muted font-body leading-relaxed">
-                      {event.summary}
                     </p>
-                  )}
-                </div>
-              </Reveal>
+                    {event.summary && (
+                      <p className="font-editorial text-[0.9rem] text-[#0e1428]/60 leading-relaxed mt-1">
+                        {event.summary}
+                      </p>
+                    )}
+                  </div>
+                  <span className="font-display text-[#c8222a] shrink-0 self-start pt-0.5">
+                    →
+                  </span>
+                </a>
+              </li>
             ))}
           </ol>
         ) : (
-          <p className="text-text-muted font-body">
+          <p className="font-editorial text-[#0e1428]/60 py-6">
             Timeline for {town.name} is being researched.
           </p>
         )}
-      </EditorialSection>
+      </div>
     </PageShell>
   );
 }

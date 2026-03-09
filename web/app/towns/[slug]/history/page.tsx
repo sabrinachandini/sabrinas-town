@@ -3,7 +3,6 @@ import { ComingSoon } from "@/components/town";
 import {
   PageShell,
   PageHeader,
-  EditorialSection,
   Prose,
   ImageWithCaption,
 } from "@/components/editorial";
@@ -45,7 +44,13 @@ export default async function HistoryPage({ params }: PageProps) {
         variant="bold"
       />
 
-      <EditorialSection id="narrative" title={`Why ${town.name} Matters`}>
+      {/* Narrative section */}
+      <div className="mt-8">
+        <div className="border-b border-[#0e1428]/20 pb-3 mb-6">
+          <p className="font-display text-[0.9rem] tracking-[0.15em] uppercase text-[#0e1428]/30">
+            Why {town.name} Matters
+          </p>
+        </div>
         {town.whyMatters ? (
           <Prose>
             {town.whyMatters.split("\n\n").map((p, i) => (
@@ -53,11 +58,11 @@ export default async function HistoryPage({ params }: PageProps) {
             ))}
           </Prose>
         ) : (
-          <p className="text-text-muted font-body">
+          <p className="font-editorial text-[#0e1428]/60">
             The historical narrative for {town.name} is being researched and written.
           </p>
         )}
-      </EditorialSection>
+      </div>
 
       <ImageWithCaption
         alt={`Historical illustration of ${town.name}`}
@@ -65,41 +70,55 @@ export default async function HistoryPage({ params }: PageProps) {
       />
 
       {town.themes.length > 0 && (
-        <EditorialSection id="themes" title="Themes">
-          <div className="grid sm:grid-cols-2 gap-4">
+        <div className="mt-10">
+          <div className="border-b border-[#0e1428]/20 pb-3 mb-0">
+            <p className="font-display text-[0.9rem] tracking-[0.15em] uppercase text-[#0e1428]/30">
+              Themes
+            </p>
+          </div>
+          <div className="space-y-0">
             {town.themes.map((theme) => (
               <div
                 key={theme.id}
-                className="py-4 px-5 border border-border-light rounded-lg"
+                className="py-4 border-b border-[#0e1428]/8 last:border-b-0"
               >
-                <p className="font-body font-medium">{theme.name}</p>
+                <p className="font-editorial text-[1.1rem] text-[#0e1428]">
+                  {theme.name}
+                </p>
                 {theme.relevanceNote && (
-                  <p className="mt-1 text-small text-text-muted font-body">
+                  <p className="font-ui text-[0.85rem] text-[#0e1428]/50 mt-1">
                     {theme.relevanceNote}
                   </p>
                 )}
               </div>
             ))}
           </div>
-        </EditorialSection>
+        </div>
       )}
 
       {town.routes.length > 0 && (
-        <EditorialSection id="routes" title="Historical Routes">
+        <div className="mt-10">
+          <div className="border-b border-[#0e1428]/20 pb-3 mb-0">
+            <p className="font-display text-[0.9rem] tracking-[0.15em] uppercase text-[#0e1428]/30">
+              Historical Routes
+            </p>
+          </div>
           <div className="space-y-0">
             {town.routes.map((route) => (
               <div
                 key={route.id}
-                className="py-4 border-b border-border-light last:border-b-0"
+                className="py-4 border-b border-[#0e1428]/8 last:border-b-0"
               >
-                <p className="font-body font-medium">{route.name}</p>
-                <p className="mt-1 text-small text-text-muted font-body">
+                <p className="font-editorial text-[1.1rem] text-[#0e1428]">
+                  {route.name}
+                </p>
+                <p className="font-ui text-[0.85rem] text-[#0e1428]/50 mt-1">
                   Stop {route.stopOrder} of {route.totalStops}
                 </p>
               </div>
             ))}
           </div>
-        </EditorialSection>
+        </div>
       )}
     </PageShell>
   );

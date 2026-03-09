@@ -1,11 +1,6 @@
 import { notFound } from "next/navigation";
 import { getTown, getTownEventDetail } from "@/lib/api";
-import {
-  PageShell,
-  PageHeader,
-  EditorialSection,
-  Prose,
-} from "@/components/editorial";
+import { PageShell, PageHeader, Prose } from "@/components/editorial";
 
 export const revalidate = 3600;
 
@@ -41,13 +36,14 @@ export default async function EventDetailPage({ params }: PageProps) {
 
   const formatDate = (dateStr: string | null) => {
     if (!dateStr) return null;
-    const date = new Date(dateStr);
-    return date.toLocaleDateString("en-US", {
+    return new Date(dateStr).toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
       day: "numeric",
     });
   };
+
+  const formattedDate = formatDate(event.startDate);
 
   return (
     <PageShell>
@@ -55,8 +51,37 @@ export default async function EventDetailPage({ params }: PageProps) {
         variant="bold"
         name={event.name}
         state={town.state}
-        subtitle={formatDate(event.startDate) ?? undefined}
+        subtitle={formattedDate ?? undefined}
       />
+
+      {/* Metadata strip */}
+      {(formattedDate || event.datePrecision) && (
+        <div className="flex flex-wrap gap-8 mt-4 mb-2">
+          {formattedDate && (
+            <div>
+              <span className="font-ui text-[0.75rem] uppercase tracking-[0.1em] text-[#0e1428]/40 block">
+                Date
+              </span>
+              <span className="font-editorial text-[1rem] text-[#0e1428]">
+                {formattedDate}
+              </span>
+            </div>
+          )}
+          {event.datePrecision && event.datePrecision !== "EXACT" && (
+            <div>
+              <span className="font-ui text-[0.75rem] uppercase tracking-[0.1em] text-[#0e1428]/40 block">
+                Precision
+              </span>
+              <span className="font-editorial text-[1rem] text-[#0e1428] capitalize">
+                {event.datePrecision.toLowerCase()}
+              </span>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Red accent rule */}
+      <div className="w-12 h-[3px] bg-[#c8222a] my-6" />
 
       <Prose>
         {event.summary.split("\n\n").map((p, i) => (
@@ -65,55 +90,62 @@ export default async function EventDetailPage({ params }: PageProps) {
       </Prose>
 
       {event.people.length > 0 && (
-        <EditorialSection id="people" title="People Involved">
+        <div className="mt-10">
+          <p className="font-display text-[0.9rem] tracking-[0.15em] uppercase text-[#0e1428]/30">
+            People Involved
+          </p>
+          <div className="border-b border-[#0e1428]/10 mb-6 mt-2" />
           <div className="space-y-0">
             {event.people.map((person) => (
               <div
                 key={person.id}
-                className="py-4 border-b border-border-light last:border-b-0"
+                className="py-4 border-b border-[#0e1428]/8 last:border-b-0"
               >
                 <a
                   href={`/towns/${slug}/people/${(person as any).slug ?? person.id}`}
-                  className="font-body font-medium hover:text-crimson transition-colors"
+                  className="no-underline"
                 >
-                  {person.name}
-                </a>
-                {person.roleInEvent && (
-                  <span className="ml-2 text-small text-text-muted font-body">
-                    ({person.roleInEvent})
+                  <span className="font-editorial text-[1rem] text-[#0e1428] hover:text-[#c8222a] transition-colors">
+                    {person.name}
                   </span>
-                )}
-                <p className="mt-1 text-small text-text-muted font-body">
-                  {person.roles.join(", ")}
-                </p>
-                <p className="mt-1 text-small font-body leading-relaxed">
+                  {person.roleInEvent && (
+                    <span className="ml-2 font-ui text-[0.7rem] uppercase text-[#0e1428]/40">
+                      ({person.roleInEvent})
+                    </span>
+                  )}
+                </a>
+                <p className="mt-1 font-editorial text-[0.875rem] text-[#0e1428]/60 leading-relaxed">
                   {person.bioShort}
                 </p>
               </div>
             ))}
           </div>
-        </EditorialSection>
+        </div>
       )}
 
       {event.themes.length > 0 && (
-        <EditorialSection id="themes" title="Themes">
+        <div className="mt-10">
+          <p className="font-display text-[0.9rem] tracking-[0.15em] uppercase text-[#0e1428]/30">
+            Themes
+          </p>
+          <div className="border-b border-[#0e1428]/10 mb-6 mt-2" />
           <div className="flex flex-wrap gap-2">
             {event.themes.map((theme) => (
               <span
                 key={theme.id}
-                className="px-3 py-1.5 text-small font-body border border-[#DDD8CE] bg-cream font-condensed text-[0.7rem] tracking-[0.06em] uppercase text-navy"
+                className="font-ui text-[0.7rem] tracking-[0.06em] uppercase text-[#0e1428]/60 border border-[#0e1428]/10 px-2.5 py-1"
               >
                 {theme.name}
               </span>
             ))}
           </div>
-        </EditorialSection>
+        </div>
       )}
 
-      <div className="mt-12 pt-8 border-t border-border-light">
+      <div className="mt-12 pt-8 border-t border-[#0e1428]/10">
         <a
           href={`/towns/${slug}/timeline`}
-          className="font-condensed font-bold text-[0.72rem] tracking-[0.08em] uppercase text-navy hover:text-crimson transition-colors"
+          className="font-ui text-[0.72rem] tracking-[0.08em] uppercase text-[#0e1428]/50 hover:text-[#c8222a] transition-colors no-underline"
         >
           &larr; Back to timeline
         </a>
