@@ -67,38 +67,95 @@ export default async function TownOverviewPage({ params }: PageProps) {
       <div className="bg-navy">
         <div className="mx-auto max-w-[1200px] px-6 md:px-10 pt-10 pb-0">
 
-          {/* Breadcrumb */}
-          <nav className="mb-4" aria-label="Breadcrumb">
-            <ol className="flex items-center gap-2 font-condensed text-[0.75rem] tracking-[0.08em] uppercase text-fog">
-              <li><NextLink href="/" className="no-underline hover:text-white transition-colors">Home</NextLink></li>
-              <li aria-hidden="true" className="text-fog/40">/</li>
-              <li><NextLink href="/towns" className="no-underline hover:text-white transition-colors">Towns</NextLink></li>
-              <li aria-hidden="true" className="text-fog/40">/</li>
-              <li className="text-white">{town.name}</li>
-            </ol>
-          </nav>
+          {/* Hero 2-column grid: left = text, right = Quick Facts + Plan a Visit */}
+          <div className="grid md:grid-cols-[1fr_260px] gap-10 items-start">
 
-          {/* State chip */}
-          <span className="inline-block px-3 py-1 bg-crimson text-white font-condensed font-bold text-[0.7rem] tracking-[0.1em] uppercase mb-4">
-            {town.state}
-          </span>
+            {/* Left: breadcrumb + title + subtitle */}
+            <div>
+              {/* Breadcrumb with inline state badge */}
+              <nav className="mb-4" aria-label="Breadcrumb">
+                <ol className="flex items-center gap-2 font-condensed text-[0.75rem] tracking-[0.08em] uppercase text-fog">
+                  <li><NextLink href="/" className="no-underline hover:text-white transition-colors">Home</NextLink></li>
+                  <li aria-hidden="true" className="text-fog/40">/</li>
+                  <li><NextLink href="/towns" className="no-underline hover:text-white transition-colors">Towns</NextLink></li>
+                  <li aria-hidden="true" className="text-fog/40">/</li>
+                  <li className="text-white">{town.name}</li>
+                  <li aria-hidden="true" className="text-fog/40">·</li>
+                  <li>
+                    <span className="px-2 py-0.5 bg-crimson text-white font-condensed font-bold text-[0.65rem] tracking-[0.1em] uppercase">
+                      {town.state}
+                    </span>
+                  </li>
+                </ol>
+              </nav>
 
-          {/* Town name */}
-          <h1
-            className="font-heading font-black text-white leading-[1.05] mb-4"
-            style={{ fontSize: "clamp(3rem, 8vw, 6rem)" }}
-          >
-            {town.name}
-          </h1>
+              {/* Town name */}
+              <h1
+                className="font-heading font-black text-white leading-[1.05] mb-4"
+                style={{ fontSize: "clamp(3rem, 8vw, 6rem)" }}
+              >
+                {town.name}
+              </h1>
 
-          {/* Subtitle */}
-          {town.execSummary150 && (
-            <p className="font-serif italic text-fog text-[1.05rem] leading-relaxed max-w-[640px] mb-8">
-              {town.execSummary150}
-            </p>
-          )}
+              {/* Subtitle */}
+              {town.execSummary150 && (
+                <p className="font-serif italic text-fog text-[1.05rem] leading-relaxed max-w-[640px] mb-8">
+                  {town.execSummary150}
+                </p>
+              )}
+            </div>
 
-          {/* Tab bar */}
+            {/* Right: Quick Facts card + Plan a Visit — visible on md+ inside hero */}
+            <div className="hidden md:block pt-2 pb-8">
+              {/* Quick Facts */}
+              <div className="bg-navy border border-white/10 text-white mb-4">
+                <div className="px-5 py-3 border-b border-white/10">
+                  <p className="font-condensed font-bold text-[0.7rem] tracking-[0.12em] uppercase" style={{ color: "#C4923B" }}>Quick Facts</p>
+                </div>
+                <div className="px-5 py-4 space-y-3 font-sans text-[0.85rem]">
+                  <div className="flex justify-between gap-3">
+                    <span className="text-fog">State</span>
+                    <span className="text-white font-medium">{town.state}</span>
+                  </div>
+                  <div className="flex justify-between gap-3">
+                    <span className="text-fog">Events</span>
+                    <span className="text-white font-medium">{town.events.length}</span>
+                  </div>
+                  <div className="flex justify-between gap-3">
+                    <span className="text-fog">People</span>
+                    <span className="text-white font-medium">{people.length}</span>
+                  </div>
+                  <div className="flex justify-between gap-3">
+                    <span className="text-fog">Stories</span>
+                    <span className="text-white font-medium">{town.stories.length}</span>
+                  </div>
+                  <div className="flex justify-between gap-3">
+                    <span className="text-fog">Sources</span>
+                    <span className="text-white font-medium">{sourcesData?.totalCount ?? 0}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Plan a Visit */}
+              <div className="bg-navy border border-white/10 px-5 py-4">
+                <p className="font-condensed font-bold text-[0.7rem] tracking-[0.12em] uppercase mb-2" style={{ color: "#C4923B" }}>Plan a Visit</p>
+                <NextLink
+                  href={`/towns/${slug}/places`}
+                  className="no-underline block w-full text-center py-2.5 bg-white text-navy font-condensed font-bold text-[0.78rem] tracking-[0.08em] uppercase hover:bg-fog transition-colors mb-2"
+                >
+                  See Places &rarr;
+                </NextLink>
+                <NextLink
+                  href={`/towns/${slug}/teacher`}
+                  className="no-underline block w-full text-center py-2.5 border border-white/40 text-white font-condensed font-bold text-[0.78rem] tracking-[0.08em] uppercase hover:border-white hover:bg-white/10 transition-colors"
+                >
+                  Teacher Resources
+                </NextLink>
+              </div>
+            </div>
+          </div>
+
+          {/* Tab bar — full width below the 2-col grid */}
           <nav aria-label="Town sections">
             <ol className="flex gap-0 overflow-x-auto">
               {tabs.map((tab, i) => {
@@ -123,12 +180,15 @@ export default async function TownOverviewPage({ params }: PageProps) {
         </div>
       </div>
 
+      {/* Crimson rule between hero and body */}
+      <div className="h-px bg-crimson" aria-hidden="true" />
+
       {/* ── Body: 2-column ────────────────────────────────────── */}
       <div className="bg-ivory">
-        <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-14 grid md:grid-cols-[1fr_280px] gap-12 items-start">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10 pt-10 pb-14 grid md:grid-cols-[1fr_280px] gap-12 items-start">
 
           {/* Main article */}
-          <article>
+          <article className="max-w-[660px]">
             {/* First paragraph with drop cap */}
             <p className="drop-cap font-serif text-[1.05rem] leading-[1.85] text-charcoal mb-8">
               {firstParagraph}
@@ -254,11 +314,11 @@ export default async function TownOverviewPage({ params }: PageProps) {
             </div>
           </article>
 
-          {/* Sidebar */}
+          {/* Sidebar — mobile Quick Facts + Last Updated + section links */}
           <aside className="space-y-5 mt-0">
 
-            {/* Quick Facts */}
-            <div className="bg-navy text-white">
+            {/* Quick Facts — mobile only (hidden on md+, shown in hero on desktop) */}
+            <div className="md:hidden bg-navy text-white">
               <div className="px-5 py-3 border-b border-white/10">
                 <p className="font-condensed font-bold text-[0.7rem] tracking-[0.12em] uppercase" style={{ color: "#C4923B" }}>Quick Facts</p>
               </div>
@@ -296,8 +356,31 @@ export default async function TownOverviewPage({ params }: PageProps) {
               </div>
             )}
 
-            {/* Plan a Visit */}
+            {/* Explore sections */}
             <div className="bg-cream border border-[#DDD8CE] px-5 py-4">
+              <p className="font-condensed font-bold text-[0.7rem] tracking-[0.12em] uppercase text-crimson mb-3">Explore All Sections</p>
+              <ul className="space-y-2">
+                {[
+                  { label: "Timeline", href: `/towns/${slug}/timeline` },
+                  { label: "People", href: `/towns/${slug}/people` },
+                  { label: "Places", href: `/towns/${slug}/places` },
+                  { label: "Stories", href: `/towns/${slug}/stories` },
+                  { label: "Teacher", href: `/towns/${slug}/teacher` },
+                ].map((link) => (
+                  <li key={link.label}>
+                    <NextLink
+                      href={link.href}
+                      className="no-underline font-condensed font-bold text-[0.72rem] tracking-[0.06em] uppercase text-navy hover:text-crimson transition-colors"
+                    >
+                      {link.label} &rarr;
+                    </NextLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Plan a Visit — mobile only */}
+            <div className="md:hidden bg-cream border border-[#DDD8CE] px-5 py-4">
               <p className="font-condensed font-bold text-[0.7rem] tracking-[0.12em] uppercase text-crimson mb-2">Plan a Visit</p>
               <NextLink
                 href={`/towns/${slug}/places`}

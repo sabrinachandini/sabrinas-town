@@ -6,6 +6,7 @@ import {
   EditorialSection,
   Prose,
 } from "@/components/editorial";
+import NextLink from "next/link";
 
 export const revalidate = 3600;
 
@@ -54,6 +55,21 @@ export default async function PersonDetailPage({ params }: PageProps) {
         subtitle={[lifespan, ...person.roles].filter(Boolean).join(" · ")}
       />
 
+      {/* Metadata strip */}
+      <div className="mb-8">
+        {lifespan && (
+          <p className="font-heading font-bold text-[1.1rem] text-navy mb-1">
+            {lifespan}
+          </p>
+        )}
+        {person.roles.length > 0 && (
+          <p className="font-condensed uppercase tracking-wide text-[0.7rem] text-slate mb-0">
+            {person.roles.join(" · ")}
+          </p>
+        )}
+        <div className="h-px bg-crimson w-12 my-6" />
+      </div>
+
       <Prose>
         {person.bioLong ? (
           person.bioLong.split("\n\n").map((p, i) => <p key={i}>{p}</p>)
@@ -74,9 +90,13 @@ export default async function PersonDetailPage({ params }: PageProps) {
               .map((event) => (
                 <li
                   key={event.id}
-                  className="flex gap-6 py-4 border-b border-border-light last:border-b-0"
+                  className="flex gap-4 py-4 border-b border-border-light last:border-b-0"
                 >
-                  <span className="w-[100px] shrink-0 text-small text-text-muted font-body tabular-nums">
+                  {/* Crimson dot */}
+                  <span className="w-2 h-2 bg-crimson rounded-full shrink-0 mt-2" aria-hidden="true" />
+
+                  {/* Date */}
+                  <span className="font-condensed text-[0.75rem] text-slate w-[90px] shrink-0 tabular-nums pt-0.5">
                     {event.startDate
                       ? new Date(event.startDate).toLocaleDateString("en-US", {
                           year: "numeric",
@@ -84,19 +104,21 @@ export default async function PersonDetailPage({ params }: PageProps) {
                         })
                       : ""}
                   </span>
+
+                  {/* Event content */}
                   <div>
-                    <a
+                    <NextLink
                       href={`/towns/${slug}/timeline/${event.id}`}
-                      className="font-body font-medium hover:text-crimson transition-colors"
+                      className="no-underline font-heading font-semibold text-[1rem] text-navy hover:text-crimson transition-colors"
                     >
                       {event.name}
-                    </a>
+                    </NextLink>
                     {event.roleInEvent && (
-                      <span className="ml-2 text-small text-text-muted font-body">
+                      <span className="ml-2 font-condensed text-[0.7rem] text-slate uppercase tracking-wide">
                         ({event.roleInEvent})
                       </span>
                     )}
-                    <p className="mt-1 text-small text-text-muted font-body leading-relaxed">
+                    <p className="font-sans text-[0.875rem] text-slate leading-relaxed mt-1">
                       {event.summary}
                     </p>
                   </div>
@@ -110,30 +132,30 @@ export default async function PersonDetailPage({ params }: PageProps) {
         <EditorialSection id="stories" title="Stories">
           <div className="space-y-4">
             {person.stories.map((story) => (
-              <a
+              <NextLink
                 key={story.id}
                 href={`/towns/${slug}/stories/${story.id}`}
-                className="block py-4 border-b border-border-light last:border-b-0 group"
+                className="no-underline block py-4 border-b border-border-light last:border-b-0 group"
               >
-                <p className="font-body font-medium group-hover:text-crimson transition-colors">
+                <p className="font-heading font-semibold text-[1rem] text-navy group-hover:text-crimson transition-colors">
                   {story.title}
                 </p>
-                <p className="mt-1 text-small text-text-muted font-body">
+                <p className="mt-1 font-sans text-[0.875rem] text-slate leading-relaxed">
                   {story.excerpt}
                 </p>
-              </a>
+              </NextLink>
             ))}
           </div>
         </EditorialSection>
       )}
 
       <div className="mt-12 pt-8 border-t border-border-light">
-        <a
+        <NextLink
           href={`/towns/${slug}/people`}
-          className="font-condensed font-bold text-[0.72rem] tracking-[0.08em] uppercase text-navy hover:text-crimson transition-colors"
+          className="no-underline font-condensed font-bold text-[0.72rem] tracking-[0.08em] uppercase text-navy hover:text-crimson transition-colors"
         >
           &larr; Back to people
-        </a>
+        </NextLink>
       </div>
     </PageShell>
   );
