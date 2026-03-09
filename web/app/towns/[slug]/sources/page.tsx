@@ -63,10 +63,10 @@ export default async function SourcesPage({ params }: PageProps) {
           <SourceGroup label="Tier 3 — General Reference" sources={tier3} />
           <SourceGroup label="Pending Evaluation" sources={tierTodo} />
 
-          <div className="h-px bg-[#0e1428]/10 my-8" />
-          <p className="font-ui text-[0.8rem] text-[#0e1428]/50">
+          <div className="h-px bg-ink/10 my-8" />
+          <p className="font-ui text-[13px] text-ink/50">
             For details on how we evaluate sources, see our{" "}
-            <a href="/methodology" className="text-[#c8222a] hover:underline">
+            <a href="/methodology" className="text-crimson hover:underline">
               Methodology
             </a>
             .
@@ -74,12 +74,12 @@ export default async function SourcesPage({ params }: PageProps) {
         </div>
       ) : (
         <div className="space-y-4">
-          <p className="font-editorial text-[#0e1428]/60">
+          <p className="font-editorial text-ink/60">
             Sources for this town are being compiled and verified.
           </p>
-          <p className="font-ui text-[0.8rem] text-[#0e1428]/50">
+          <p className="font-ui text-[13px] text-ink/50">
             For details on how we evaluate sources, see our{" "}
-            <a href="/methodology" className="text-[#c8222a] hover:underline">
+            <a href="/methodology" className="text-crimson hover:underline">
               Methodology
             </a>
             .

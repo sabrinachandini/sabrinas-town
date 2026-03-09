@@ -16,7 +16,7 @@ export default async function TownLayout({ children, params }: LayoutProps) {
   }
 
   return (
-    <div className="min-h-screen bg-bg-primary">
+    <div className="min-h-screen bg-cream">
       <TownSubnav slug={slug} />
       <main>{children}</main>
     </div>

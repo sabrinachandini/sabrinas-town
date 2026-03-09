@@ -55,24 +55,24 @@ export default async function StoryDetailPage({ params }: PageProps) {
       {/* Byline / dateline strip */}
       <div className="mb-8">
         <div className="flex items-center flex-wrap gap-x-3 gap-y-1">
-          <span className="inline-block px-2.5 py-1 font-ui text-[0.65rem] uppercase tracking-[0.12em] text-white bg-[#c8222a]">
+          <span className="inline-block px-2.5 py-1 font-ui text-[9px] uppercase tracking-[0.12em] text-cream bg-crimson">
             {story.storyType === "HISTORICAL_VOICE"
               ? "Historical Voice"
               : "Modern Voice"}
           </span>
-          <span className="font-ui text-[0.7rem] text-[#0e1428]/40 uppercase tracking-wide ml-2">
+          <span className="font-ui text-[0.7rem] text-ink/40 uppercase tracking-wide ml-2">
             {story.verificationStatus.toLowerCase().replace(/_/g, " ")}
           </span>
         </div>
 
         {story.narratorName && (
-          <p className="font-editorial italic text-[1rem] text-[#0e1428] mt-4">
+          <p className="font-editorial italic text-[16px] text-ink mt-4">
             Narrated by {story.narratorName}
             {story.narratorRole ? ` \u2014 ${story.narratorRole}` : ""}
           </p>
         )}
 
-        <div className="h-px bg-[#c8222a]/20 w-full mt-6 mb-8" aria-hidden="true" />
+        <div className="h-[3px] bg-crimson/20 w-full mt-6 mb-8" aria-hidden="true" />
       </div>
 
       <Prose>
@@ -86,7 +86,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
           {story.tags.map((tag) => (
             <span
               key={tag}
-              className="px-2.5 py-1 border border-[#0e1428]/10 font-ui text-[0.7rem] tracking-[0.06em] uppercase text-[#0e1428]/60"
+              className="font-ui text-[9px] tracking-[0.1em] uppercase text-ink/60 border-2 border-ink/20 px-2.5 py-1"
             >
               {tag}
             </span>
@@ -99,7 +99,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
           {story.themes.map((theme) => (
             <span
               key={theme.id}
-              className="px-2.5 py-1 border border-[#0e1428]/10 font-ui text-[0.7rem] tracking-[0.06em] uppercase text-[#0e1428]/60"
+              className="font-ui text-[9px] tracking-[0.1em] uppercase text-ink/60 border-2 border-ink/20 px-2.5 py-1"
             >
               {theme.name}
             </span>
@@ -107,17 +107,17 @@ export default async function StoryDetailPage({ params }: PageProps) {
         </div>
       )}
 
-      <div className="mt-12 pt-8 border-t border-[#0e1428]/8 flex items-center gap-6">
+      <div className="mt-12 pt-8 border-t border-ink/8 flex items-center gap-6">
         <NextLink
           href={`/towns/${slug}/stories`}
-          className="no-underline font-ui text-[0.72rem] tracking-[0.08em] uppercase text-[#0e1428]/50 hover:text-[#c8222a] transition-colors"
+          className="no-underline font-ui text-[9px] tracking-[0.2em] uppercase text-ink/40 hover:text-crimson transition-colors"
         >
           &larr; Back to stories
         </NextLink>
 
         <NextLink
           href={`/towns/${slug}/stories`}
-          className="no-underline font-ui text-[0.72rem] tracking-[0.08em] uppercase text-[#0e1428]/50 hover:text-[#c8222a] transition-colors"
+          className="no-underline font-ui text-[9px] tracking-[0.2em] uppercase text-ink/40 hover:text-crimson transition-colors"
         >
           More Stories from {town.name} &rarr;
         </NextLink>

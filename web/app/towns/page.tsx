@@ -39,24 +39,26 @@ export default async function TownsPage({ searchParams }: PageProps) {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-[#0a0e1a] py-24 px-8 md:px-16">
+      <section className="bg-ink border-b-4 border-crimson py-24 px-8 md:px-16">
         <div className="mx-auto max-w-[1200px]">
-          <p className="font-ui text-[0.7rem] uppercase tracking-[0.15em] text-white/40 mb-4">The Revolutionary Town Network</p>
-          <h1 className="font-display text-white leading-[0.9]" style={{ fontSize: "clamp(80px,12vw,160px)" }}>
+          <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-cream/35 flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-cream/35 before:block">
+            The Revolutionary Town Network
+          </p>
+          <h1 className="font-display text-cream leading-[0.88]" style={{ fontSize: "clamp(80px,12vw,160px)" }}>
             Revolutionary<br />Towns
           </h1>
-          <p className="font-editorial italic text-white/60 text-[1.1rem] mt-6 max-w-[500px] leading-relaxed">
+          <p className="font-editorial italic text-cream/60 text-[18px] mt-6 max-w-[500px] leading-relaxed">
             Every town where the American Revolution happened — walked, sourced, and connected across all 13 original states.
           </p>
         </div>
       </section>
 
       {/* Search */}
-      <section className="bg-[#f2ece0] py-6 px-8 md:px-16 border-b border-[#0e1428]/10">
+      <section className="bg-[#f8f0d8] border-b-[3px] border-ink py-6 px-8 md:px-16">
         <div className="mx-auto max-w-[1200px]">
           <TownSearch initialValue={q} />
           {query && (
-            <p className="mt-3 font-ui text-[0.8rem] text-[#0e1428]/50">
+            <p className="mt-3 font-ui text-[0.8rem] text-ink/50">
               {filtered.length} town{filtered.length !== 1 ? "s" : ""} matching &ldquo;{q}&rdquo;.{" "}
               <Link href="/towns">Clear</Link>
             </p>
@@ -66,14 +68,14 @@ export default async function TownsPage({ searchParams }: PageProps) {
 
       {/* State quick-nav */}
       {!query && allStates.length > 1 && (
-        <section className="bg-[#f2ece0] py-6 px-8 md:px-16 border-b border-[#0e1428]/10">
+        <section className="bg-[#f8f0d8] border-b border-ink/10 py-6 px-8 md:px-16">
           <div className="mx-auto max-w-[1200px]">
             <div className="flex flex-wrap gap-6">
               {allStates.map((state) => (
                 <a
                   key={state}
                   href={`#${state}`}
-                  className="font-display text-[1rem] text-[#0e1428]/50 hover:text-[#c8222a] border-b border-transparent hover:border-[#c8222a] transition-colors no-underline"
+                  className="font-display text-[16px] text-ink/50 hover:text-crimson border-b border-transparent hover:border-crimson no-underline transition-colors"
                 >
                   {state}
                 </a>
@@ -84,11 +86,11 @@ export default async function TownsPage({ searchParams }: PageProps) {
       )}
 
       {/* Towns by state */}
-      <section className="py-20 bg-[#f2ece0] px-8 md:px-16">
+      <section className="bg-cream py-20 px-8 md:px-16">
         <div className="mx-auto max-w-[1200px]">
           {filtered.length === 0 ? (
             <div className="py-20 text-center">
-              <p className="font-editorial italic text-[#0e1428] text-[1.1rem]">No towns match &ldquo;{q}&rdquo;.</p>
+              <p className="font-editorial italic text-ink text-[1.1rem]">No towns match &ldquo;{q}&rdquo;.</p>
               <div className="mt-6">
                 <Link href="/towns">Browse all towns</Link>
               </div>
@@ -99,12 +101,12 @@ export default async function TownsPage({ searchParams }: PageProps) {
                 <div key={state} id={state}>
                   {/* State header */}
                   <div className="flex items-baseline gap-4 mb-2">
-                    <h2 className="font-display text-[3rem] text-[#0e1428] leading-none">{state}</h2>
-                    <span className="font-ui text-[0.75rem] text-[#0e1428]/40 uppercase tracking-[0.1em]">
+                    <h2 className="font-display text-[48px] text-ink leading-none">{state}</h2>
+                    <span className="font-ui text-[0.75rem] text-ink/40 uppercase tracking-[0.1em]">
                       {townsByState[state].length} town{townsByState[state].length !== 1 ? "s" : ""}
                     </span>
                   </div>
-                  <div className="border-b border-[#0e1428]/10 mb-6" />
+                  <div className="border-b-[3px] border-ink mb-6" />
 
                   {/* Town list */}
                   <div>
@@ -114,17 +116,17 @@ export default async function TownsPage({ searchParams }: PageProps) {
                         <a
                           key={town.id}
                           href={`/towns/${town.slug}`}
-                          className="no-underline flex items-baseline justify-between gap-6 border-b border-[#0e1428]/8 py-4 group"
+                          className="flex items-baseline justify-between gap-6 border-b border-ink/8 py-4 group no-underline"
                         >
                           <div className="flex items-baseline gap-4 min-w-0">
-                            <span className="font-editorial text-[1.2rem] text-[#0e1428] group-hover:text-[#c8222a] transition-colors shrink-0">
+                            <span className="font-editorial text-[20px] text-ink group-hover:text-crimson transition-colors shrink-0">
                               {town.name}
                             </span>
-                            <span className="font-ui text-[0.8rem] text-[#0e1428]/50 truncate hidden sm:block">
+                            <span className="font-ui text-[13px] text-ink/50 truncate hidden sm:block">
                               {(town as any).execSummary150 ?? town.heroSummary40}
                             </span>
                           </div>
-                          <span className="font-ui text-[0.75rem] uppercase tracking-[0.1em] text-[#c8222a] shrink-0">
+                          <span className="font-display text-crimson shrink-0 group-hover:translate-x-1 transition-transform">
                             &rarr;
                           </span>
                         </a>
@@ -138,14 +140,14 @@ export default async function TownsPage({ searchParams }: PageProps) {
       </section>
 
       {/* CTA Banner */}
-      <section className="bg-[#0a0e1a] py-20 px-8 md:px-16 mt-0">
+      <section className="bg-ink border-t-4 border-crimson py-20 px-8 md:px-16">
         <div className="mx-auto max-w-[1200px] flex flex-col md:flex-row items-center justify-between gap-8">
-          <p className="font-display text-white leading-none" style={{ fontSize: "clamp(2rem,4vw,3.5rem)" }}>
-            Teach the <span className="text-[#c8222a]">Revolution.</span>
+          <p className="font-display text-cream leading-none" style={{ fontSize: "clamp(32px,4vw,56px)" }}>
+            Teach the <span className="text-crimson">Revolution.</span>
           </p>
           <a
             href="/teach"
-            className="no-underline border border-white text-white font-ui font-medium text-[0.8rem] uppercase tracking-[0.12em] px-8 py-3 hover:bg-[#c8222a] hover:border-[#c8222a] transition-colors whitespace-nowrap"
+            className="no-underline border-2 border-cream text-cream font-ui font-medium text-[11px] uppercase tracking-[0.12em] px-8 py-3 hover:bg-crimson hover:border-crimson transition-colors whitespace-nowrap"
           >
             Teacher Resources
           </a>

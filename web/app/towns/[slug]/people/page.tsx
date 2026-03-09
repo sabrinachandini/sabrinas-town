@@ -45,10 +45,10 @@ export default async function PeoplePage({ params }: PageProps) {
 
       <section className="pt-16 md:pt-20">
         {/* Section header */}
-        <div className="border-b border-[#0e1428]/10 mb-8">
-          <h2 className="font-display text-[1.5rem] text-[#0e1428]/30 tracking-[0.15em] uppercase mb-1">
+        <div className="border-b-[3px] border-ink pb-3 mb-0">
+          <p className="font-display text-[24px] text-ink/30 tracking-[0.15em] uppercase">
             {people.length} People
-          </h2>
+          </p>
         </div>
 
         {people.length > 0 ? (
@@ -67,34 +67,35 @@ export default async function PeoplePage({ params }: PageProps) {
                 <a
                   key={person.id}
                   href={`/towns/${slug}/people/${(person as { slug?: string; id: string }).slug || person.id}`}
-                  className="group block border-b border-[#0e1428]/8 py-5 last:border-b-0 no-underline"
+                  className="flex items-center justify-between group py-4 border-b border-ink/8 no-underline hover:bg-yellow/10 hover:pl-2 transition-all duration-150"
                 >
-                  <div className="flex items-center justify-between">
-                    <span className="font-editorial text-[1.375rem] text-[#0e1428] group-hover:text-[#c8222a] group-hover:translate-x-1 transition-all duration-150">
+                  <div className="min-w-0">
+                    <span className="font-editorial text-[22px] text-ink group-hover:text-crimson transition-colors">
                       {person.name}
                     </span>
-                    <span className="font-display text-[#c8222a] text-[1.1rem] leading-none opacity-0 group-hover:opacity-100 transition-opacity duration-150" aria-hidden="true">
-                      &rarr;
-                    </span>
+
+                    {meta && (
+                      <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-crimson/60 mt-0.5">
+                        {meta}
+                      </p>
+                    )}
+
+                    {person.bioShort && (
+                      <p className="font-editorial text-[15px] text-ink/60 leading-relaxed mt-2">
+                        {person.bioShort}
+                      </p>
+                    )}
                   </div>
 
-                  {meta && (
-                    <p className="font-ui text-[0.75rem] text-[#0e1428]/50 uppercase tracking-[0.08em] mt-0.5">
-                      {meta}
-                    </p>
-                  )}
-
-                  {person.bioShort && (
-                    <p className="font-editorial text-[0.95rem] text-[#0e1428]/70 leading-relaxed mt-2">
-                      {person.bioShort}
-                    </p>
-                  )}
+                  <span className="font-display text-crimson shrink-0 ml-4" aria-hidden="true">
+                    &rarr;
+                  </span>
                 </a>
               );
             })}
           </div>
         ) : (
-          <p className="font-editorial text-[0.95rem] text-[#0e1428]/60 leading-relaxed">
+          <p className="font-editorial text-[0.95rem] text-ink/60 leading-relaxed">
             Research is ongoing. People connected to {town.name} will appear here.
           </p>
         )}

@@ -46,19 +46,19 @@ export default async function HistoryPage({ params }: PageProps) {
 
       {/* Narrative section */}
       <div className="mt-8">
-        <div className="border-b border-[#0e1428]/20 pb-3 mb-6">
-          <p className="font-display text-[0.9rem] tracking-[0.15em] uppercase text-[#0e1428]/30">
+        <div className="border-b-[3px] border-ink pb-3 mb-6">
+          <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
             Why {town.name} Matters
           </p>
         </div>
         {town.whyMatters ? (
           <Prose>
             {town.whyMatters.split("\n\n").map((p, i) => (
-              <p key={i}>{p}</p>
+              <p key={i} className="font-editorial">{p}</p>
             ))}
           </Prose>
         ) : (
-          <p className="font-editorial text-[#0e1428]/60">
+          <p className="font-editorial text-ink/60">
             The historical narrative for {town.name} is being researched and written.
           </p>
         )}
@@ -71,8 +71,8 @@ export default async function HistoryPage({ params }: PageProps) {
 
       {town.themes.length > 0 && (
         <div className="mt-10">
-          <div className="border-b border-[#0e1428]/20 pb-3 mb-0">
-            <p className="font-display text-[0.9rem] tracking-[0.15em] uppercase text-[#0e1428]/30">
+          <div className="border-b-[3px] border-ink pb-3 mb-0">
+            <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
               Themes
             </p>
           </div>
@@ -80,13 +80,13 @@ export default async function HistoryPage({ params }: PageProps) {
             {town.themes.map((theme) => (
               <div
                 key={theme.id}
-                className="py-4 border-b border-[#0e1428]/8 last:border-b-0"
+                className="py-4 border-b border-ink/8 last:border-b-0"
               >
-                <p className="font-editorial text-[1.1rem] text-[#0e1428]">
+                <p className="font-editorial text-[18px] text-ink">
                   {theme.name}
                 </p>
                 {theme.relevanceNote && (
-                  <p className="font-ui text-[0.85rem] text-[#0e1428]/50 mt-1">
+                  <p className="font-ui text-[13px] text-ink/50 mt-1">
                     {theme.relevanceNote}
                   </p>
                 )}
@@ -98,8 +98,8 @@ export default async function HistoryPage({ params }: PageProps) {
 
       {town.routes.length > 0 && (
         <div className="mt-10">
-          <div className="border-b border-[#0e1428]/20 pb-3 mb-0">
-            <p className="font-display text-[0.9rem] tracking-[0.15em] uppercase text-[#0e1428]/30">
+          <div className="border-b-[3px] border-ink pb-3 mb-0">
+            <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
               Historical Routes
             </p>
           </div>
@@ -107,12 +107,12 @@ export default async function HistoryPage({ params }: PageProps) {
             {town.routes.map((route) => (
               <div
                 key={route.id}
-                className="py-4 border-b border-[#0e1428]/8 last:border-b-0"
+                className="py-4 border-b border-ink/8 last:border-b-0"
               >
-                <p className="font-editorial text-[1.1rem] text-[#0e1428]">
+                <p className="font-editorial text-[18px] text-ink">
                   {route.name}
                 </p>
-                <p className="font-ui text-[0.85rem] text-[#0e1428]/50 mt-1">
+                <p className="font-ui text-[13px] text-ink/50 mt-1">
                   Stop {route.stopOrder} of {route.totalStops}
                 </p>
               </div>

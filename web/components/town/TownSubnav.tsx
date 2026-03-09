@@ -31,19 +31,19 @@ export function TownSubnav({ slug }: TownSubnavProps) {
   };
 
   return (
-    <nav className="border-b border-border-light bg-bg-primary sticky top-[3.5rem] z-20">
-      <div className="mx-auto max-w-wide px-6 md:px-12 overflow-x-auto">
-        <ul className="flex gap-6 min-w-max py-3 text-[0.9375rem] font-body whitespace-nowrap">
+    <nav className="bg-ink border-b-[3px] border-crimson sticky top-[52px] z-20" aria-label="Town sections">
+      <div className="mx-auto max-w-[1200px] px-6 md:px-10 overflow-x-auto">
+        <ul className="flex gap-0 min-w-max">
           {NAV_ITEMS.map(({ label, path }) => {
             const active = isActive(path);
             return (
               <li key={path}>
                 <Link
                   href={`${base}${path}`}
-                  className={`no-underline py-1 transition-colors duration-150 ${
+                  className={`no-underline block px-4 py-3.5 font-ui font-medium text-[10px] uppercase tracking-[0.15em] whitespace-nowrap border-b-2 transition-colors duration-150 ${
                     active
-                      ? "text-text-primary font-medium border-b-2 border-accent-blue"
-                      : "text-text-muted hover:text-text-primary"
+                      ? "text-cream border-crimson"
+                      : "text-cream/40 border-transparent hover:text-cream hover:border-cream/30"
                   }`}
                 >
                   {label}

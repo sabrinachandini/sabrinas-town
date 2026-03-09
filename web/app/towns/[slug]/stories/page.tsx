@@ -45,8 +45,8 @@ export default async function StoriesPage({ params }: PageProps) {
         {town.stories.length > 0 ? (
           <div>
             {/* Section label */}
-            <div className="mb-6 pb-3 border-b border-[#0e1428]/10">
-              <p className="font-display text-[1.5rem] text-[#0e1428]/30 tracking-[0.15em] uppercase mb-1">
+            <div className="border-b-[3px] border-ink pb-3 mb-6">
+              <p className="font-display text-[24px] text-ink/30 tracking-[0.15em] uppercase">
                 Accounts &amp; Voices
               </p>
             </div>
@@ -56,26 +56,26 @@ export default async function StoriesPage({ params }: PageProps) {
                 <a
                   key={story.id}
                   href={`/towns/${slug}/stories/${story.id}`}
-                  className="block py-5 border-b border-[#0e1428]/8 last:border-b-0 no-underline group"
+                  className="block border-[3px] border-ink p-5 mb-3 group hover:bg-[#1a3a72] hover:border-[#1a3a72] transition-colors no-underline"
                 >
-                  <span className="font-ui text-[0.65rem] uppercase tracking-[0.12em] text-[#c8222a]">
+                  <span className="font-ui text-[9px] uppercase tracking-[0.12em] text-crimson group-hover:text-yellow/70 mb-1 block">
                     {story.storyType === "HISTORICAL_VOICE"
                       ? "Historical Voice"
                       : "Modern Voice"}
                   </span>
 
-                  <p className="font-editorial text-[1.375rem] text-[#0e1428] group-hover:text-[#c8222a] transition-colors mt-1 leading-tight">
+                  <p className="font-editorial text-[22px] text-ink group-hover:text-cream transition-colors leading-tight">
                     {story.title}
                   </p>
 
                   {story.subjectPersonName && (
-                    <p className="font-ui text-[0.75rem] text-[#0e1428]/50 mt-1">
+                    <p className="font-ui text-[0.75rem] text-ink/50 group-hover:text-cream/60 mt-1">
                       {story.subjectPersonName}
                     </p>
                   )}
 
                   {story.excerpt && (
-                    <p className="font-editorial text-[0.95rem] text-[#0e1428]/70 leading-relaxed mt-2">
+                    <p className="font-ui text-[13px] text-ink/60 group-hover:text-cream/60 leading-relaxed mt-2">
                       {story.excerpt}
                     </p>
                   )}
@@ -84,7 +84,7 @@ export default async function StoriesPage({ params }: PageProps) {
             </div>
           </div>
         ) : (
-          <p className="font-ui text-[0.85rem] text-[#0e1428]/50">
+          <p className="font-ui text-[0.85rem] text-ink/50">
             Stories from {town.name} are being collected.
           </p>
         )}

@@ -60,37 +60,44 @@ export default async function PlacesPage({ params }: PageProps) {
       <EditorialSection id="places" title="Places">
         {places.length > 0 ? (
           <div>
+            {/* Section header */}
+            <div className="border-b-[3px] border-ink pb-3 mb-0">
+              <p className="font-display text-[24px] text-ink/30 tracking-[0.15em] uppercase">
+                Historic Sites
+              </p>
+            </div>
+
             {places.map((place) => (
               <a
                 key={place.id}
                 href={`/towns/${slug}/places/${(place as any).slug || place.id}`}
-                className="flex items-baseline justify-between gap-4 py-5 border-b border-[#0e1428]/8 last:border-b-0 no-underline group"
+                className="flex items-center justify-between group py-4 border-b border-ink/8 no-underline hover:bg-yellow/10 hover:pl-2 transition-all duration-150"
               >
                 <div className="min-w-0">
-                  <p className="font-editorial text-[1.375rem] text-[#0e1428] group-hover:text-[#c8222a] transition-colors">
+                  <p className="font-editorial text-[22px] text-ink group-hover:text-crimson transition-colors">
                     {place.name}
                   </p>
 
-                  <p className="font-ui text-[0.75rem] text-[#0e1428]/50 uppercase tracking-[0.08em] mt-1">
+                  <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-crimson/60 mt-0.5">
                     {formatPlaceType(place.placeType)}
                     {place.address && <> &middot; {place.address}</>}
                   </p>
 
                   {place.description && (
-                    <p className="font-editorial text-[0.95rem] text-[#0e1428]/70 leading-relaxed mt-2">
+                    <p className="font-editorial text-[15px] text-ink/60 mt-2">
                       {place.description}
                     </p>
                   )}
                 </div>
 
-                <span className="font-display text-[#c8222a] group-hover:translate-x-1 transition-transform shrink-0 text-[1.25rem] leading-none">
+                <span className="font-display text-crimson shrink-0 ml-4 group-hover:translate-x-1 transition-transform">
                   &rarr;
                 </span>
               </a>
             ))}
           </div>
         ) : (
-          <p className="font-ui text-[0.85rem] text-[#0e1428]/50">
+          <p className="font-ui text-[0.85rem] text-ink/50">
             Places directory for {town.name} is being compiled.
           </p>
         )}

@@ -20,6 +20,14 @@
   --slate:   #6b7280;
   --fog:     rgba(255,255,255,0.55);
 
+  /* ── Extended Palette ─────────────────────────── */
+  --blue:   #1a3a72;
+  --yellow: #e8b84b;
+  --green:  #2a5c45;
+  --paper:  #f8f0d8;
+  --rust:   #b5431a;
+  --sky:    #3a7dbf;
+
   /* Legacy aliases (keep existing pages working) */
   --bg-primary: #f2ece0;
   --bg-secondary: #e8e2d4;
@@ -91,6 +99,14 @@
   --color-charcoal:var(--charcoal);
   --color-slate:   var(--slate);
   --color-fog:     var(--fog);
+
+  /* Extended palette */
+  --color-blue:   var(--blue);
+  --color-yellow: var(--yellow);
+  --color-green:  var(--green);
+  --color-paper:  var(--paper);
+  --color-rust:   var(--rust);
+  --color-sky:    var(--sky);
 
   /* Legacy aliases */
   --color-bg-primary: var(--ivory);
@@ -230,19 +246,9 @@ a:hover {
   color: white;
 }
 
-/* Scroll Reveal */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-@media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
-}
+/* Scroll Reveal — disabled in redesign */
+/* .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; } */
+/* .reveal.is-visible { opacity: 1; transform: translateY(0); } */
 
 /* Focus States - Accessible */
 :focus-visible {
@@ -250,33 +256,13 @@ a:hover {
   outline-offset: 2px;
 }
 
-/* ── Marquee / Ticker ──────────────────────────── */
-@keyframes marquee {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 40s linear infinite;
-}
-.marquee-track:hover { animation-play-state: paused; }
+/* ── Marquee / Ticker — disabled in redesign ─────── */
+/* @keyframes marquee { ... } */
+/* .marquee-track { ... } */
 
-/* ── Fade-up entrance ──────────────────────────── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.fade-up {
-  animation: fadeUp 0.6s ease forwards;
-}
-.fade-up-1 { animation-delay: 0ms; }
-.fade-up-2 { animation-delay: 100ms; }
-.fade-up-3 { animation-delay: 200ms; }
-.fade-up-4 { animation-delay: 300ms; }
-@media (prefers-reduced-motion: reduce) {
-  .fade-up, .marquee-track { animation: none; }
-}
+/* ── Fade-up entrance — disabled in redesign ──────── */
+/* @keyframes fadeUp { ... } */
+/* .fade-up { ... } */
 
 /* ── Drop cap ──────────────────────────────────── */
 .drop-cap::first-letter {

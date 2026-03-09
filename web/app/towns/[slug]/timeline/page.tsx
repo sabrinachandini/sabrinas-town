@@ -48,8 +48,8 @@ export default async function TimelinePage({ params }: PageProps) {
       />
 
       <div className="mt-8">
-        <div className="border-b border-[#0e1428]/20 pb-3 mb-0">
-          <p className="font-display text-[1.5rem] text-[#0e1428]/30 tracking-[0.15em] uppercase">
+        <div className="border-b-[3px] border-ink pb-3 mb-0">
+          <p className="font-display text-[24px] text-ink/30 tracking-[0.15em] uppercase">
             Timeline
           </p>
         </div>
@@ -60,22 +60,22 @@ export default async function TimelinePage({ params }: PageProps) {
               <li key={event.id}>
                 <a
                   href={`/towns/${slug}/timeline/${(event as any).slug || event.id}`}
-                  className="no-underline flex gap-6 py-5 border-b border-[#0e1428]/8 last:border-b-0 group"
+                  className="flex gap-6 py-5 border-b border-ink/8 last:border-b-0 group no-underline hover:bg-yellow/10 transition-colors"
                 >
-                  <span className="font-ui text-[0.75rem] text-[#0e1428]/40 tabular-nums w-[90px] shrink-0 pt-0.5">
+                  <span className="font-ui text-[11px] text-ink/40 tabular-nums w-[90px] shrink-0 pt-0.5">
                     {formatDate(event.startDate)}
                   </span>
                   <div className="flex-1 min-w-0">
-                    <p className="font-editorial text-[1.1rem] text-[#0e1428] group-hover:text-[#c8222a] transition-colors">
+                    <p className="font-editorial text-[18px] text-ink group-hover:text-crimson transition-colors">
                       {event.name}
                     </p>
                     {event.summary && (
-                      <p className="font-editorial text-[0.9rem] text-[#0e1428]/60 leading-relaxed mt-1">
+                      <p className="font-editorial text-[14px] text-ink/60 leading-relaxed mt-1">
                         {event.summary}
                       </p>
                     )}
                   </div>
-                  <span className="font-display text-[#c8222a] shrink-0 self-start pt-0.5">
+                  <span className="font-display text-crimson shrink-0 ml-auto self-start pt-0.5">
                     →
                   </span>
                 </a>
@@ -83,7 +83,7 @@ export default async function TimelinePage({ params }: PageProps) {
             ))}
           </ol>
         ) : (
-          <p className="font-editorial text-[#0e1428]/60 py-6">
+          <p className="font-editorial text-ink/60 py-6">
             Timeline for {town.name} is being researched.
           </p>
         )}
