@@ -6,3 +6,5 @@ export { Button } from "./Button";
 export { Divider } from "./Divider";
 export { TownCard } from "./TownCard";
 export { SectionHeader } from "./SectionHeader";
+export { PageHero } from "./PageHero";
+export { StatCard } from "./StatCard";

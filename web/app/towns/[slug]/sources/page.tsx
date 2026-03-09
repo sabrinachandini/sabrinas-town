@@ -54,6 +54,7 @@ export default async function SourcesPage({ params }: PageProps) {
             ? `${sourcesData.totalCount} sources organized by credibility tier.`
             : "Sources being compiled."
         }
+        variant="bold"
       />
 
       {sourcesData && sourcesData.sources.length > 0 ? (
@@ -66,7 +67,7 @@ export default async function SourcesPage({ params }: PageProps) {
           <Separator className="bg-border-light" />
           <p className="text-small text-text-muted font-body">
             For details on how we evaluate sources, see our{" "}
-            <a href="/methodology" className="text-accent-blue hover:underline">
+            <a href="/methodology" className="text-crimson hover:underline">
               Methodology
             </a>
             .
@@ -79,7 +80,7 @@ export default async function SourcesPage({ params }: PageProps) {
           </p>
           <p className="text-small text-text-muted font-body">
             For details on how we evaluate sources, see our{" "}
-            <a href="/methodology" className="text-accent-blue hover:underline">
+            <a href="/methodology" className="text-crimson hover:underline">
               Methodology
             </a>
             .

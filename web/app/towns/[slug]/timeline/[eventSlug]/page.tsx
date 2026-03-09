@@ -52,6 +52,7 @@ export default async function EventDetailPage({ params }: PageProps) {
   return (
     <PageShell>
       <PageHeader
+        variant="bold"
         name={event.name}
         state={town.state}
         subtitle={formatDate(event.startDate) ?? undefined}
@@ -73,7 +74,7 @@ export default async function EventDetailPage({ params }: PageProps) {
               >
                 <a
                   href={`/towns/${slug}/people/${(person as any).slug ?? person.id}`}
-                  className="font-body font-medium hover:text-accent-blue transition-colors"
+                  className="font-body font-medium hover:text-crimson transition-colors"
                 >
                   {person.name}
                 </a>
@@ -100,7 +101,7 @@ export default async function EventDetailPage({ params }: PageProps) {
             {event.themes.map((theme) => (
               <span
                 key={theme.id}
-                className="px-3 py-1.5 text-small font-body border border-border-light rounded"
+                className="px-3 py-1.5 text-small font-body border border-[#DDD8CE] bg-cream font-condensed text-[0.7rem] tracking-[0.06em] uppercase text-navy"
               >
                 {theme.name}
               </span>
@@ -112,7 +113,7 @@ export default async function EventDetailPage({ params }: PageProps) {
       <div className="mt-12 pt-8 border-t border-border-light">
         <a
           href={`/towns/${slug}/timeline`}
-          className="text-small text-accent-blue font-body hover:underline"
+          className="font-condensed font-bold text-[0.72rem] tracking-[0.08em] uppercase text-navy hover:text-crimson transition-colors"
         >
           &larr; Back to timeline
         </a>

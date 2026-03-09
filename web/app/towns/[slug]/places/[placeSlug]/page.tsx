@@ -55,6 +55,7 @@ export default async function PlaceDetailPage({ params }: PageProps) {
   return (
     <PageShell>
       <PageHeader
+        variant="bold"
         name={place.name}
         state={town.state}
         subtitle={PLACE_TYPE_LABELS[place.placeType] || place.placeType}
@@ -107,7 +108,7 @@ export default async function PlaceDetailPage({ params }: PageProps) {
               <p className="font-body">
                 <a
                   href={place.website}
-                  className="text-accent-blue hover:underline"
+                  className="text-crimson hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -145,7 +146,7 @@ export default async function PlaceDetailPage({ params }: PageProps) {
                   <div>
                     <a
                       href={`/towns/${slug}/timeline/${event.slug || event.id}`}
-                      className="font-body font-medium hover:text-accent-blue transition-colors"
+                      className="font-body font-medium hover:text-crimson transition-colors"
                     >
                       {event.name}
                     </a>
@@ -164,7 +165,7 @@ export default async function PlaceDetailPage({ params }: PageProps) {
       <div className="mt-12 pt-8 border-t border-border-light">
         <a
           href={`/towns/${slug}/places`}
-          className="text-small text-accent-blue font-body hover:underline"
+          className="font-condensed font-bold text-[0.72rem] tracking-[0.08em] uppercase text-navy hover:text-crimson transition-colors"
         >
           &larr; Back to places
         </a>

@@ -44,6 +44,7 @@ export default async function PeoplePage({ params }: PageProps) {
         name={town.name}
         state={town.state}
         subtitle={`Historical figures connected to ${town.name}.`}
+        variant="bold"
       />
 
       <EditorialSection id="people" title={`${people.length} People`}>
@@ -57,7 +58,7 @@ export default async function PeoplePage({ params }: PageProps) {
                 <h3 className="font-heading text-[1.25rem] tracking-tight">
                   <a
                     href={`/towns/${slug}/people/${(person as any).slug || person.id}`}
-                    className="hover:text-accent-blue transition-colors"
+                    className="hover:text-crimson transition-colors"
                   >
                     {person.name}
                   </a>
@@ -79,7 +80,7 @@ export default async function PeoplePage({ params }: PageProps) {
                 </p>
                 {person.bioLong && (
                   <details className="mt-3">
-                    <summary className="text-small text-accent-blue font-body cursor-pointer hover:underline">
+                    <summary className="text-small text-crimson font-body cursor-pointer hover:underline">
                       Read more
                     </summary>
                     <p className="mt-2 font-body leading-relaxed text-text-primary">

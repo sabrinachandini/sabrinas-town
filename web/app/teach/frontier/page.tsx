@@ -1,12 +1,8 @@
 import { Metadata } from "next";
 import { getTeacherModule } from "@/lib/api";
-import {
-  Container,
-  Heading,
-  Text,
-  Link,
-  Divider,
-} from "@/components/ui";
+import { Container, Text, Link } from "@/components/ui";
+import { PageHero } from "@/components/ui/PageHero";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export const metadata: Metadata = {
   title: "Teach Frontier | History is for Everyone",
@@ -38,54 +34,42 @@ export default async function FrontierTeachPage() {
 
   return (
     <main>
-      {/* Breadcrumb */}
-      <section className="py-element bg-bg-secondary">
-        <Container>
-          <Text size="small" muted>
-            <Link href="/teach">Teach</Link>
-            {" / "}
-            Frontier
-          </Text>
-        </Container>
-      </section>
+      {/* Hero */}
+      <PageHero
+        bg="navy"
+        overline="Teacher Resources"
+        title="Frontier"
+        body="The Revolution extended far beyond the eastern seaboard. George Rogers Clark's capture of Kaskaskia, the founding of Marietta as the first organized settlement of the Northwest Territory, and Wheeling's frontier forts show how the war reshaped the continent."
+      />
 
-      {/* Intro */}
-      <section className="py-section">
-        <Container>
-          <Heading level={1}>Frontier</Heading>
-          <div className="mt-element max-w-[720px] space-y-element">
-            <Text>
-              The Revolution extended far beyond the eastern seaboard. George
-              Rogers Clark&apos;s capture of Kaskaskia, the founding of Marietta
-              as the first organized settlement of the Northwest Territory, and
-              Wheeling&apos;s frontier forts show how the war reshaped the
-              continent.
-            </Text>
-            <Text>
-              The frontier campaigns are rarely taught, but they decided what
-              kind of country the new United States would become. Clark&apos;s
-              audacious march through the Illinois Country secured American
-              claims to the Northwest Territory at the peace table. The founding
-              of Marietta in 1788 under the Northwest Ordinance — which banned
-              slavery in the territory — set the terms for a century of
-              expansion and conflict. Wheeling&apos;s forts sheltered settlers
-              under constant threat from Native nations who had their own
-              reasons to resist the spread of American power westward.
-            </Text>
-          </div>
-        </Container>
+      {/* Intro body */}
+      <section className="py-16 bg-ivory">
+        <div className="mx-auto max-w-[720px] px-6 md:px-10">
+          <p className="font-serif text-[1.05rem] leading-[1.85] text-charcoal">
+            The frontier campaigns are rarely taught, but they decided what
+            kind of country the new United States would become. Clark&apos;s
+            audacious march through the Illinois Country secured American
+            claims to the Northwest Territory at the peace table. The founding
+            of Marietta in 1788 under the Northwest Ordinance — which banned
+            slavery in the territory — set the terms for a century of
+            expansion and conflict. Wheeling&apos;s forts sheltered settlers
+            under constant threat from Native nations who had their own
+            reasons to resist the spread of American power westward.
+          </p>
+        </div>
       </section>
-
-      <Divider spacing="section" />
 
       {/* Print-Ready Resources */}
-      <section className="py-component">
+      <section className="py-20 bg-white">
         <Container>
-          <Heading level={2}>Print-Ready Resources</Heading>
-          <Text className="mt-element" muted>
+          <SectionHeader
+            overline="Print PDFs"
+            title="Print-Ready Resources"
+          />
+          <p className="text-slate text-[0.95rem] mb-10 -mt-6">
             Complete teacher packets formatted for classroom printing.
-          </Text>
-          <div className="mt-component grid sm:grid-cols-2 md:grid-cols-3 gap-element">
+          </p>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             {modules.filter((m) => m.hasModule).map((m) => (
               <PrintLink key={m.slug} slug={m.slug} name={m.name} curated={m.hasCurated} />
             ))}
@@ -93,20 +77,19 @@ export default async function FrontierTeachPage() {
         </Container>
       </section>
 
-      <Divider spacing="section" />
-
       {/* Coverage Status */}
-      <section className="py-component">
+      <section className="py-20 bg-ivory">
         <Container>
-          <Heading level={2}>Coverage Status</Heading>
-          <Text className="mt-element">
+          <SectionHeader
+            overline="Content Coverage"
+            title="Coverage Status"
+          />
+          <p className="text-charcoal text-[0.95rem] mb-8 -mt-6">
             {curatedCount} of {FRONTIER_TOWNS.length} frontier town
             {FRONTIER_TOWNS.length === 1 ? "" : "s"} ha
             {FRONTIER_TOWNS.length === 1 ? "s" : "ve"} curated teacher resources.
-          </Text>
-          <div className="mt-component">
-            <CoverageList modules={modules} />
-          </div>
+          </p>
+          <CoverageList modules={modules} />
         </Container>
       </section>
     </main>
@@ -127,11 +110,11 @@ function PrintLink({
       href={`/towns/${slug}/teacher/print`}
       target="_blank"
       rel="noopener noreferrer"
-      className="block p-element bg-bg-secondary rounded-lg no-underline hover:bg-bg-secondary/80 transition-colors"
+      className="block p-4 bg-white border border-[#DDD8CE] rounded-lg no-underline hover:border-crimson hover:bg-cream transition-colors"
     >
-      <span className="font-medium text-text-primary">{name}</span>
-      <span className="block text-small text-text-muted mt-1">
-        {curated ? "Curated" : "Generated"} · Print packet
+      <span className="font-medium text-navy">{name}</span>
+      <span className="block text-[0.8rem] text-slate mt-1">
+        {curated ? "Curated" : "Generated"} &middot; Print packet
       </span>
     </a>
   );
@@ -152,7 +135,7 @@ function CoverageList({
       {modules.map((m) => (
         <li key={m.slug} className="flex items-center gap-3">
           <span
-            className={`w-2 h-2 rounded-full flex-shrink-0 ${
+            className={`w-3 h-3 rounded-full flex-shrink-0 ${
               m.hasCurated
                 ? "bg-green-600"
                 : m.hasModule

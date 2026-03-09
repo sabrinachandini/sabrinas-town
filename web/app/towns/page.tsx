@@ -1,5 +1,5 @@
 import { getRankings } from "@/lib/api";
-import { Container, Heading, Text, Link, Divider } from "@/components/ui";
+import { PageHero, SectionHeader, Link } from "@/components/ui";
 import { TownSearch } from "./TownSearch";
 
 export const metadata = {
@@ -39,33 +39,31 @@ export default async function TownsPage({ searchParams }: PageProps) {
   return (
     <main>
       {/* Hero */}
-      <section className="py-section border-b border-border-light">
-        <Container size="wide">
-          <Heading level={1}>
-            {towns.length} Revolutionary Towns
-          </Heading>
-          <Text className="mt-element max-w-[560px] text-text-muted">
-            Every town where the American Revolution happened — walked, sourced, and connected.
-            Across {allStates.length} states, from New Hampshire to Georgia.
-          </Text>
+      <PageHero
+        bg="navy"
+        overline="The Revolutionary Town Network"
+        title={`${towns.length} Revolutionary Towns`}
+        titleEmphasis="Revolutionary"
+        body="Every town where the American Revolution happened — walked, sourced, and connected. Across all 13 original states, from New Hampshire to Georgia."
+      />
 
-          <div className="mt-component">
-            <TownSearch initialValue={q} />
-          </div>
-
+      {/* Search */}
+      <section className="bg-cream border-b border-[#DDD8CE] py-6">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10">
+          <TownSearch initialValue={q} />
           {query && (
-            <Text size="small" muted className="mt-3">
+            <p className="mt-3 font-condensed text-[0.8rem] text-slate">
               {filtered.length} town{filtered.length !== 1 ? "s" : ""} matching &ldquo;{q}&rdquo;.{" "}
               <Link href="/towns">Clear</Link>
-            </Text>
+            </p>
           )}
-        </Container>
+        </div>
       </section>
 
       {/* State quick-nav */}
       {!query && allStates.length > 1 && (
-        <section className="py-element border-b border-border-light bg-bg-secondary">
-          <Container size="wide">
+        <section className="bg-ivory border-b border-[#DDD8CE] py-4">
+          <div className="mx-auto max-w-[1200px] px-6 md:px-10">
             <div className="flex flex-wrap gap-2">
               {allStates.map((state) => {
                 const count = towns.filter((t) => t.state === state).length;
@@ -73,70 +71,65 @@ export default async function TownsPage({ searchParams }: PageProps) {
                   <a
                     key={state}
                     href={`#${state}`}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-small font-body bg-white border border-border-light hover:border-accent-blue hover:text-accent-blue transition-colors no-underline"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 font-condensed font-bold text-[0.72rem] tracking-[0.08em] uppercase text-navy border-b-2 border-transparent hover:border-crimson hover:text-crimson transition-colors no-underline"
                   >
                     {state}
-                    <span className="text-[10px] font-medium bg-bg-secondary rounded-full px-1.5 py-0.5 text-text-muted">
+                    <span className="text-[10px] font-medium text-slate">
                       {count}
                     </span>
                   </a>
                 );
               })}
             </div>
-          </Container>
+          </div>
         </section>
       )}
 
       {/* Towns grid */}
-      <section className="py-section">
-        <Container size="wide">
+      <section className="py-20 bg-ivory">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10">
           {filtered.length === 0 ? (
-            <div className="py-section text-center">
-              <Text muted>No towns match &ldquo;{q}&rdquo;.</Text>
-              <div className="mt-element">
+            <div className="py-20 text-center">
+              <p className="font-serif text-charcoal text-[1.1rem]">No towns match &ldquo;{q}&rdquo;.</p>
+              <div className="mt-6">
                 <Link href="/towns">Browse all towns</Link>
               </div>
             </div>
           ) : (
-            <div className="space-y-section">
-              {filteredStates.map((state, idx) => (
+            <div className="space-y-20">
+              {filteredStates.map((state) => (
                 <div key={state} id={state}>
-                  {/* State header */}
-                  <div className="flex items-baseline gap-4 mb-component">
-                    <Heading level={2}>{state}</Heading>
-                    <Text size="small" muted as="span">
-                      {townsByState[state].length} town{townsByState[state].length !== 1 ? "s" : ""}
-                    </Text>
-                  </div>
+                  <SectionHeader
+                    overline={`${townsByState[state].length} town${townsByState[state].length !== 1 ? "s" : ""}`}
+                    title={state}
+                  />
 
-                  {/* Town cards */}
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-element">
+                  <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#DDD8CE]">
                     {townsByState[state]
                       .sort((a, b) => a.name.localeCompare(b.name))
                       .map((town) => (
-                        <Link
+                        <a
                           key={town.id}
                           href={`/towns/${town.slug}`}
-                          className="block border-l-2 border-border-light pl-4 py-1 hover:border-accent-blue transition-colors no-underline group"
+                          className="no-underline block bg-white p-5 group hover:bg-navy transition-colors duration-200"
                         >
-                          <Text className="font-semibold font-heading group-hover:text-accent-blue transition-colors">
+                          <p className="font-heading font-bold text-[1.05rem] text-charcoal group-hover:text-white transition-colors">
                             {town.name}
-                          </Text>
-                          <Text size="small" muted className="mt-1 line-clamp-2">
+                          </p>
+                          <p className="mt-2 font-sans text-[0.85rem] text-slate group-hover:text-fog transition-colors line-clamp-2">
                             {(town as any).execSummary150 ?? town.heroSummary40}
-                          </Text>
-                        </Link>
+                          </p>
+                          <p className="mt-3 font-condensed font-bold text-[0.7rem] tracking-[0.08em] uppercase text-crimson group-hover:text-gold transition-colors">
+                            Explore &rarr;
+                          </p>
+                        </a>
                       ))}
                   </div>
-
-                  {idx < filteredStates.length - 1 && (
-                    <Divider spacing="section" />
-                  )}
                 </div>
               ))}
             </div>
           )}
-        </Container>
+        </div>
       </section>
     </main>
   );

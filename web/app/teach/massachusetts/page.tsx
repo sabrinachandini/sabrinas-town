@@ -1,12 +1,8 @@
 import { Metadata } from "next";
 import { getTeacherModule } from "@/lib/api";
-import {
-  Container,
-  Heading,
-  Text,
-  Link,
-  Divider,
-} from "@/components/ui";
+import { Container, Text, Link } from "@/components/ui";
+import { PageHero } from "@/components/ui/PageHero";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export const metadata: Metadata = {
   title: "Teach Massachusetts | History is for Everyone",
@@ -30,7 +26,6 @@ const MA_TOWNS = [
 ];
 
 export default async function MassachusettsTeachPage() {
-  // Fetch coverage status for all 10 towns in parallel
   const modules = await Promise.all(
     MA_TOWNS.map(async (town) => {
       const mod = await getTeacherModule(town.slug);
@@ -46,59 +41,44 @@ export default async function MassachusettsTeachPage() {
 
   return (
     <main>
-      {/* Breadcrumb */}
-      <section className="py-element bg-bg-secondary">
-        <Container>
-          <Text size="small" muted>
-            <Link href="/teach">Teach</Link>
-            {" / "}
-            Massachusetts
-          </Text>
-        </Container>
-      </section>
+      {/* Hero */}
+      <PageHero
+        bg="navy"
+        overline="Teacher Resources"
+        title="Massachusetts"
+        body="Massachusetts is where the American Revolution became irreversible. The colony had spent a decade resisting British authority through boycotts, petitions, and political organization, but between 1774 and 1775 that resistance crossed into armed confrontation — and the crossing happened not in one dramatic moment but across dozens of towns, each making its own calculation about what was worth risking and what could no longer be tolerated."
+      />
 
-      {/* Intro */}
-      <section className="py-section">
-        <Container>
-          <Heading level={1}>Massachusetts</Heading>
-          <div className="mt-element max-w-[720px] space-y-element">
-            <Text>
-              Massachusetts is where the American Revolution became
-              irreversible. The colony had spent a decade resisting British
-              authority through boycotts, petitions, and political organization,
-              but between 1774 and 1775 that resistance crossed into armed
-              confrontation — and the crossing happened not in one dramatic
-              moment but across dozens of towns, each making its own calculation
-              about what was worth risking and what could no longer be tolerated.
-            </Text>
-            <Text>
-              The ten towns in this collection represent the geography of that
-              transformation. Lexington and Concord are the famous names, but
-              the bloodiest fighting on April 19 happened in Arlington. The
-              siege of Boston was commanded from Cambridge. Salem and Marblehead
-              built the maritime infrastructure that made resistance viable.
-              Worcester shut down royal courts months before any shots were
-              fired. Springfield armed the Continental Army. Plymouth — the
-              colony&apos;s founding town — had to reconcile its Pilgrim
-              identity with a Revolutionary present. Each town offers students a
-              different angle on the same fundamental question: how does a
-              society decide to break with its government?
-            </Text>
-          </div>
-        </Container>
+      {/* Intro body */}
+      <section className="py-16 bg-ivory">
+        <div className="mx-auto max-w-[720px] px-6 md:px-10">
+          <p className="font-serif text-[1.05rem] leading-[1.85] text-charcoal">
+            The ten towns in this collection represent the geography of that
+            transformation. Lexington and Concord are the famous names, but
+            the bloodiest fighting on April 19 happened in Arlington. The
+            siege of Boston was commanded from Cambridge. Salem and Marblehead
+            built the maritime infrastructure that made resistance viable.
+            Worcester shut down royal courts months before any shots were
+            fired. Springfield armed the Continental Army. Plymouth — the
+            colony&apos;s founding town — had to reconcile its Pilgrim
+            identity with a Revolutionary present. Each town offers students a
+            different angle on the same fundamental question: how does a
+            society decide to break with its government?
+          </p>
+        </div>
       </section>
-
-      <Divider spacing="section" />
 
       {/* Teaching Sequences */}
-      <section className="py-component">
+      <section className="py-20 bg-white">
         <Container>
-          <Heading level={2}>Recommended Teaching Sequences</Heading>
-          <Text className="mt-element" muted>
+          <SectionHeader
+            overline="Recommended Sequences"
+            title="Teaching Sequences"
+          />
+          <p className="text-slate text-[0.95rem] mb-10 -mt-6">
             Multi-town sequences designed to build cumulative understanding across class periods.
-          </Text>
-
-          <div className="mt-component grid md:grid-cols-3 gap-component">
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
             <SequenceCard
               title="The April 19 Sequence"
               towns={["Lexington", "Arlington", "Concord"]}
@@ -121,19 +101,17 @@ export default async function MassachusettsTeachPage() {
         </Container>
       </section>
 
-      <Divider spacing="section" />
-
-      <Divider spacing="section" />
-
       {/* Print-Ready Resources */}
-      <section className="py-component">
+      <section className="py-20 bg-ivory">
         <Container>
-          <Heading level={2}>Print-Ready Resources</Heading>
-          <Text className="mt-element" muted>
+          <SectionHeader
+            overline="Print PDFs"
+            title="Print-Ready Resources"
+          />
+          <p className="text-slate text-[0.95rem] mb-10 -mt-6">
             Complete teacher packets formatted for classroom printing. Each includes lesson plans, source packets, handouts, and quizzes.
-          </Text>
-
-          <div className="mt-component grid sm:grid-cols-2 md:grid-cols-3 gap-element">
+          </p>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             {modules
               .filter((m) => m.hasModule)
               .map((m) => (
@@ -143,19 +121,17 @@ export default async function MassachusettsTeachPage() {
         </Container>
       </section>
 
-      <Divider spacing="section" />
-
       {/* Coverage Status */}
-      <section className="py-component">
+      <section className="py-20 bg-white">
         <Container>
-          <Heading level={2}>Coverage Status</Heading>
-          <Text className="mt-element">
+          <SectionHeader
+            overline="Content Coverage"
+            title="Coverage Status"
+          />
+          <p className="text-charcoal text-[0.95rem] mb-8 -mt-6">
             {curatedCount} of 10 Massachusetts towns have curated teacher resources.
-          </Text>
-
-          <div className="mt-component">
-            <CoverageList modules={modules} />
-          </div>
+          </p>
+          <CoverageList modules={modules} />
         </Container>
       </section>
     </main>
@@ -176,14 +152,16 @@ function SequenceCard({
   description: string;
 }) {
   return (
-    <div className="p-element bg-bg-secondary rounded-lg">
-      <Heading level={3}>{title}</Heading>
-      <Text size="small" muted className="mt-1">
-        {towns.join(" → ")} · {duration}
-      </Text>
-      <Text size="small" className="mt-element">
+    <div className="bg-navy text-white p-6 rounded-lg">
+      <h3 className="font-heading font-bold text-[1.15rem] leading-snug text-crimson">
+        {title}
+      </h3>
+      <p className="font-condensed text-[0.8rem] tracking-wide uppercase text-gold mt-2">
+        {towns.join(" → ")} &middot; {duration}
+      </p>
+      <p className="text-fog text-[0.9rem] leading-relaxed mt-4">
         {description}
-      </Text>
+      </p>
     </div>
   );
 }
@@ -202,11 +180,11 @@ function PrintLink({
       href={`/towns/${slug}/teacher/print`}
       target="_blank"
       rel="noopener noreferrer"
-      className="block p-element bg-bg-secondary rounded-lg no-underline hover:bg-bg-secondary/80 transition-colors"
+      className="block p-4 bg-white border border-[#DDD8CE] rounded-lg no-underline hover:border-crimson hover:bg-cream transition-colors"
     >
-      <span className="font-medium text-text-primary">{name}</span>
-      <span className="block text-small text-text-muted mt-1">
-        {curated ? "Curated" : "Generated"} · Print packet
+      <span className="font-medium text-navy">{name}</span>
+      <span className="block text-[0.8rem] text-slate mt-1">
+        {curated ? "Curated" : "Generated"} &middot; Print packet
       </span>
     </a>
   );
@@ -227,7 +205,7 @@ function CoverageList({
       {modules.map((m) => (
         <li key={m.slug} className="flex items-center gap-3">
           <span
-            className={`w-2 h-2 rounded-full flex-shrink-0 ${
+            className={`w-3 h-3 rounded-full flex-shrink-0 ${
               m.hasCurated
                 ? "bg-green-600"
                 : m.hasModule

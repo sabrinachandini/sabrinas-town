@@ -4,7 +4,8 @@ import {
   Heading,
   Text,
   Button,
-  Divider,
+  PageHero,
+  SectionHeader,
 } from "@/components/ui";
 
 export const metadata = {
@@ -59,46 +60,45 @@ export default async function PartnerPage() {
     : '$299';
 
   return (
-    <main className="py-section">
-      <Container>
-        {/* Header */}
-        <Heading level={1}>Partner with History is for Everyone</Heading>
-        <Text className="mt-element max-w-[620px]">
-          Every town in this network already has a public profile — scored,
-          sourced, and connected to the broader story of the Revolution. That
-          profile is open to everyone and always will be. Partnership is for
-          towns that want to go further: to shape how their story is told, to
-          reach teachers and travelers, and to understand who is engaging with
-          their history. This isn't a claim-your-listing product. It's a
-          stewardship model — your community's history, maintained with the same
-          rigor we apply to every town, with your organization's voice and
-          priorities woven in.
-        </Text>
+    <main>
+      {/* Hero */}
+      <PageHero
+        bg="navy"
+        overline="Partnership Program"
+        title="Partner With Us"
+        titleEmphasis="Partner"
+        body="Every town already has a public profile. Partnership is for communities that want to shape how their story is told, reach teachers and travelers, and understand who is engaging with their history."
+      />
 
-        <Divider spacing="section" />
-
-        {/* What stays open */}
-        <section>
-          <Heading level={2}>Open to everyone, always</Heading>
-          <Text className="mt-element" muted>
+      {/* What stays open */}
+      <section className="py-20 bg-ivory">
+        <Container>
+          <SectionHeader
+            overline="Always Free"
+            title="Open to everyone, always"
+          />
+          <p className="font-serif text-[1.05rem] text-charcoal max-w-[600px] mb-8 -mt-4">
             Partnership adds capabilities on top of a foundation that remains
             open to everyone.
-          </Text>
-          <ul className="mt-component space-y-2">
+          </p>
+          <ul className="space-y-3">
             <OpenFeature>Public town profiles with full historical content</OpenFeature>
             <OpenFeature>Teacher modules — lesson plans, primary sources, quizzes</OpenFeature>
             <OpenFeature>Network search and cross-town connections</OpenFeature>
             <OpenFeature>Source citations and credibility tiers on every claim</OpenFeature>
           </ul>
-        </section>
+        </Container>
+      </section>
 
-        <Divider spacing="section" />
+      {/* What Partners Get */}
+      <section className="py-20 bg-cream">
+        <Container>
+          <SectionHeader
+            overline="Partner Benefits"
+            title="What partners receive"
+          />
 
-        {/* What Partners Get */}
-        <section>
-          <Heading level={2}>What partners receive</Heading>
-
-          <div className="mt-component grid md:grid-cols-2 gap-component">
+          <div className="grid md:grid-cols-2 gap-5">
             <FeatureCard
               title="Official Network Membership"
               description="Your town joins the verified network of Revolutionary sites. Visitors see the 'Official Revolutionary Town Network Member' badge, signaling quality and authenticity."
@@ -124,31 +124,36 @@ export default async function PartnerPage() {
               description="Your town automatically links to related sites through shared events, people, themes, and routes — driving cross-visitation."
             />
           </div>
-        </section>
+        </Container>
+      </section>
 
-        <Divider spacing="section" />
+      {/* Pricing */}
+      <section className="py-20 bg-ivory">
+        <Container>
+          <SectionHeader
+            overline="Pricing"
+            title="Partnership tiers"
+          />
+          <p className="font-serif text-[1.05rem] text-charcoal max-w-[500px] mb-10 -mt-4">
+            Choose the level that fits your organization&apos;s needs.
+          </p>
 
-        {/* Pricing */}
-        <section>
-          <Heading level={2}>Partnership tiers</Heading>
-          <Text className="mt-element" muted>
-            Choose the level that fits your organization's needs.
-          </Text>
-
-          <div className="mt-component grid md:grid-cols-3 gap-component">
+          <div className="grid md:grid-cols-3 gap-6">
             {/* Basic */}
-            <div className="p-component bg-bg-secondary rounded-lg">
-              <Text size="small" muted className="uppercase tracking-wide">
+            <div className="bg-navy text-white p-6">
+              <p className="font-condensed font-bold text-[0.75rem] tracking-[0.14em] uppercase text-gold mb-3">
                 Basic
-              </Text>
-              <div className="mt-2 flex items-baseline gap-1">
-                <span className="text-h2 font-heading font-bold">Open</span>
+              </p>
+              <div className="flex items-baseline gap-1 mb-3">
+                <span className="font-heading font-black text-[2.5rem] text-white leading-none">
+                  Open
+                </span>
               </div>
-              <Text className="mt-element" size="small">
+              <p className="font-serif text-[0.9rem] text-fog mb-6">
                 For towns exploring the network
-              </Text>
+              </p>
 
-              <ul className="mt-component space-y-2">
+              <ul className="space-y-3 mb-8">
                 <PricingFeature included>Basic town profile</PricingFeature>
                 <PricingFeature included>Network membership badge</PricingFeature>
                 <PricingFeature included>Teacher module access</PricingFeature>
@@ -156,36 +161,36 @@ export default async function PartnerPage() {
                 <PricingFeature>Analytics dashboard</PricingFeature>
               </ul>
 
-              <div className="mt-component">
-                <Button
-                  href="/partner/inquire?tier=BASIC"
-                  variant="secondary"
-                  className="w-full"
-                >
-                  Get Started
-                </Button>
-              </div>
+              <Button
+                href="/partner/inquire?tier=BASIC"
+                variant="outline"
+                className="w-full"
+              >
+                Get Started
+              </Button>
             </div>
 
-            {/* Plus */}
-            <div className="p-component bg-bg-secondary rounded-lg border-2 border-accent-blue">
-              <div className="flex items-center justify-between">
-                <Text size="small" muted className="uppercase tracking-wide">
+            {/* Plus — featured */}
+            <div className="bg-navy text-white p-6 border-t-4 border-[#C4923B]">
+              <div className="flex items-center justify-between mb-3">
+                <p className="font-condensed font-bold text-[0.75rem] tracking-[0.14em] uppercase text-gold">
                   Plus
-                </Text>
-                <span className="px-2 py-0.5 bg-accent-blue text-white text-small rounded">
+                </p>
+                <span className="px-2 py-0.5 bg-crimson text-white font-condensed font-bold text-[0.7rem] tracking-wide uppercase">
                   Popular
                 </span>
               </div>
-              <div className="mt-2 flex items-baseline gap-1">
-                <span className="text-h2 font-heading font-bold">{plusDisplay}</span>
-                <span className="text-text-muted">/month</span>
+              <div className="flex items-baseline gap-1 mb-1">
+                <span className="font-heading font-black text-[2.5rem] text-white leading-none">
+                  {plusDisplay}
+                </span>
+                <span className="font-serif text-fog text-[0.9rem]">/month</span>
               </div>
-              <Text className="mt-element" size="small">
+              <p className="font-serif text-[0.9rem] text-fog mb-6">
                 For active tourism boards
-              </Text>
+              </p>
 
-              <ul className="mt-component space-y-2">
+              <ul className="space-y-3 mb-8">
                 <PricingFeature included>Everything in Basic</PricingFeature>
                 <PricingFeature included>Custom branding</PricingFeature>
                 <PricingFeature included>Basic analytics</PricingFeature>
@@ -193,30 +198,31 @@ export default async function PartnerPage() {
                 <PricingFeature>Advanced analytics</PricingFeature>
               </ul>
 
-              <div className="mt-component">
-                <Button
-                  href="/partner/inquire?tier=PLUS"
-                  className="w-full"
-                >
-                  Start Plus Trial
-                </Button>
-              </div>
+              <Button
+                href="/partner/inquire?tier=PLUS"
+                variant="primary"
+                className="w-full"
+              >
+                Start Plus Trial
+              </Button>
             </div>
 
             {/* Pro */}
-            <div className="p-component bg-bg-secondary rounded-lg">
-              <Text size="small" muted className="uppercase tracking-wide">
+            <div className="bg-navy text-white p-6">
+              <p className="font-condensed font-bold text-[0.75rem] tracking-[0.14em] uppercase text-gold mb-3">
                 Pro
-              </Text>
-              <div className="mt-2 flex items-baseline gap-1">
-                <span className="text-h2 font-heading font-bold">{proDisplay}</span>
-                <span className="text-text-muted">/month</span>
+              </p>
+              <div className="flex items-baseline gap-1 mb-1">
+                <span className="font-heading font-black text-[2.5rem] text-white leading-none">
+                  {proDisplay}
+                </span>
+                <span className="font-serif text-fog text-[0.9rem]">/month</span>
               </div>
-              <Text className="mt-element" size="small">
+              <p className="font-serif text-[0.9rem] text-fog mb-6">
                 For regional networks
-              </Text>
+              </p>
 
-              <ul className="mt-component space-y-2">
+              <ul className="space-y-3 mb-8">
                 <PricingFeature included>Everything in Plus</PricingFeature>
                 <PricingFeature included>Advanced analytics</PricingFeature>
                 <PricingFeature included>API access</PricingFeature>
@@ -225,45 +231,51 @@ export default async function PartnerPage() {
                 <PricingFeature included>Multi-town management</PricingFeature>
               </ul>
 
-              <div className="mt-component">
-                <Button
-                  href="/partner/inquire?tier=PRO"
-                  variant="secondary"
-                  className="w-full"
-                >
-                  Contact Us
-                </Button>
-              </div>
+              <Button
+                href="/partner/inquire?tier=PRO"
+                variant="outline"
+                className="w-full"
+              >
+                Contact Us
+              </Button>
             </div>
           </div>
-        </section>
+        </Container>
+      </section>
 
-        <Divider spacing="section" />
-
-        {/* CTA */}
-        <section className="text-center">
-          <Heading level={2}>Ready to join the network?</Heading>
-          <Text className="mt-element max-w-[500px] mx-auto">
-            Tell us about your organization and the town you serve. We review
-            every inquiry personally.
-          </Text>
-          <div className="mt-component flex flex-wrap justify-center gap-4">
-            <Button href="/partner/inquire">Submit an Inquiry</Button>
-            <Button href="/towns" variant="secondary">
-              Browse the Network
-            </Button>
+      {/* Inquiry CTA */}
+      <section className="py-16 bg-crimson">
+        <Container>
+          <div className="text-center">
+            <h2 className="font-heading font-black text-white text-[2rem] md:text-[2.75rem] leading-tight mb-4">
+              Ready to join the network?
+            </h2>
+            <p className="font-serif text-[1.05rem] text-white/80 max-w-[500px] mx-auto mb-10">
+              Tell us about your organization and the town you serve. We review
+              every inquiry personally.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button href="/partner/inquire" variant="outline">
+                Submit an Inquiry
+              </Button>
+              <Button href="/towns" variant="outline">
+                Browse the Network
+              </Button>
+            </div>
           </div>
-        </section>
-      </Container>
+        </Container>
+      </section>
     </main>
   );
 }
 
 function OpenFeature({ children }: { children: React.ReactNode }) {
   return (
-    <li className="flex items-center gap-2">
-      <span className="text-accent-blue">✓</span>
-      <Text size="small">{children}</Text>
+    <li className="flex items-center gap-3">
+      <span className="text-crimson font-bold text-[1rem]" aria-hidden="true">
+        ✓
+      </span>
+      <span className="font-serif text-[1rem] text-charcoal">{children}</span>
     </li>
   );
 }
@@ -276,11 +288,13 @@ function FeatureCard({
   description: string;
 }) {
   return (
-    <div className="p-element bg-bg-secondary rounded-lg">
-      <Heading level={3}>{title}</Heading>
-      <Text className="mt-element" size="small">
+    <div className="bg-cream border border-[#DDD8CE] border-l-4 border-l-crimson p-5">
+      <h3 className="font-heading font-bold text-[1.1rem] text-navy mb-2">
+        {title}
+      </h3>
+      <p className="font-serif text-[0.95rem] text-charcoal leading-relaxed">
         {description}
-      </Text>
+      </p>
     </div>
   );
 }
@@ -293,18 +307,17 @@ function PricingFeature({
   included?: boolean;
 }) {
   return (
-    <li className="flex items-center gap-2">
+    <li className="flex items-center gap-3">
       {included ? (
-        <span className="text-accent-blue">✓</span>
+        <span className="text-gold font-bold text-[1rem]" aria-hidden="true">✓</span>
       ) : (
-        <span className="text-border-light">–</span>
+        <span className="text-white/30 text-[1rem]" aria-hidden="true">–</span>
       )}
-      <Text
-        size="small"
-        className={included ? "" : "text-text-muted"}
+      <span
+        className={`font-serif text-[0.9rem] ${included ? "text-white" : "text-white/40"}`}
       >
         {children}
-      </Text>
+      </span>
     </li>
   );
 }

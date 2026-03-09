@@ -48,6 +48,7 @@ export default async function PlacesPage({ params }: PageProps) {
         name={town.name}
         state={town.state}
         subtitle={`${placesData?.totals.total ?? places.length} historic sites to visit.`}
+        variant="bold"
       />
 
       <EditorialSection id="places" title="Places">
@@ -63,7 +64,7 @@ export default async function PlacesPage({ params }: PageProps) {
                     <p className="font-body font-medium">
                       <a
                         href={`/towns/${slug}/places/${(place as any).slug || place.id}`}
-                        className="hover:text-accent-blue transition-colors"
+                        className="hover:text-crimson transition-colors"
                       >
                         {place.name}
                       </a>
@@ -81,7 +82,7 @@ export default async function PlacesPage({ params }: PageProps) {
                       <p className="mt-1 text-small text-text-muted font-body">Hours: {place.hours}</p>
                     )}
                     {place.website && (
-                      <a href={place.website} className="mt-1 inline-block text-small text-accent-blue font-body hover:underline" target="_blank" rel="noopener noreferrer">
+                      <a href={place.website} className="mt-1 inline-block text-small text-crimson font-body hover:underline" target="_blank" rel="noopener noreferrer">
                         Website &rarr;
                       </a>
                     )}

@@ -83,112 +83,124 @@ export default async function ConnectedPage({ params }: PageProps) {
   });
 
   return (
-    <div className="py-section">
-      {/* Intro */}
-      <Container>
-        <Text className="text-text-muted max-w-[720px]">
-          The Revolution was a network. {town.name} connected to dozens of other places through shared people, events, themes, and routes. This map shows those connections.
-        </Text>
-      </Container>
+    <div>
+      {/* Bold navy hero */}
+      <div className="bg-navy py-16 md:py-20">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10">
+          <p className="font-condensed font-bold text-[0.7rem] tracking-[0.12em] uppercase text-crimson mb-3">
+            {town.state}, USA
+          </p>
+          <h1
+            className="font-heading font-black text-white leading-[1.05]"
+            style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)" }}
+          >
+            Connected Towns
+          </h1>
+          <p className="mt-4 font-serif italic text-fog text-[1.05rem] leading-relaxed max-w-[600px]">
+            The Revolution was a network. {town.name} connected to dozens of other places through shared people, events, themes, and routes. This map shows those connections.
+          </p>
+        </div>
+      </div>
 
-      <Divider spacing="section" />
+      <div className="py-section">
+        <Divider spacing="section" />
 
-      {/* Summary Stats */}
-      <section>
-        <Container>
-          <div className="flex flex-wrap gap-component">
-            <div className="px-4 py-3 bg-bg-secondary rounded-lg">
-              <Text size="small" muted className="uppercase tracking-wide">
-                Connected Towns
-              </Text>
-              <Text className="mt-1 text-h3 font-heading font-bold text-accent-blue">
-                {town.linkedTowns.length}
-              </Text>
+        {/* Summary Stats */}
+        <section>
+          <Container>
+            <div className="flex flex-wrap gap-component">
+              <div className="bg-navy px-6 py-5 rounded-lg">
+                <p className="font-condensed text-gold uppercase tracking-wide text-[0.7rem]">
+                  Connected Towns
+                </p>
+                <p className="mt-2 font-heading font-black text-white text-h3">
+                  {town.linkedTowns.length}
+                </p>
+              </div>
+              <div className="bg-navy px-6 py-5 rounded-lg">
+                <p className="font-condensed text-gold uppercase tracking-wide text-[0.7rem]">
+                  Connection Types
+                </p>
+                <p className="mt-2 font-heading font-black text-white text-h3">
+                  {Object.keys(byType).length}
+                </p>
+              </div>
+              <div className="bg-navy px-6 py-5 rounded-lg">
+                <p className="font-condensed text-gold uppercase tracking-wide text-[0.7rem]">
+                  Strongest Link
+                </p>
+                <p className="mt-2 font-heading font-black text-white text-h3">
+                  {Math.max(...town.linkedTowns.map((l) => l.weight))}%
+                </p>
+              </div>
             </div>
-            <div className="px-4 py-3 bg-bg-secondary rounded-lg">
-              <Text size="small" muted className="uppercase tracking-wide">
-                Connection Types
-              </Text>
-              <Text className="mt-1 text-h3 font-heading font-bold">
-                {Object.keys(byType).length}
-              </Text>
+          </Container>
+        </section>
+
+        {/* All Connections - Flat List by Weight */}
+        <Divider spacing="section" />
+        <section>
+          <Container>
+            <Heading level={2}>All Connections</Heading>
+            <Text className="mt-element text-text-muted max-w-[620px]">
+              Every town in {town.name}'s network, ranked by connection strength.
+            </Text>
+
+            <div className="mt-component space-y-element">
+              {[...town.linkedTowns]
+                .sort((a, b) => b.weight - a.weight)
+                .map((link) => (
+                  <LinkedTownCard key={`${link.townId}-${link.linkType}`} link={link} />
+                ))}
             </div>
-            <div className="px-4 py-3 bg-bg-secondary rounded-lg">
-              <Text size="small" muted className="uppercase tracking-wide">
-                Strongest Link
-              </Text>
-              <Text className="mt-1 text-h3 font-heading font-bold">
-                {Math.max(...town.linkedTowns.map((l) => l.weight))}%
-              </Text>
-            </div>
-          </div>
-        </Container>
-      </section>
+          </Container>
+        </section>
 
-      {/* All Connections - Flat List by Weight */}
-      <Divider spacing="section" />
-      <section>
-        <Container>
-          <Heading level={2}>All Connections</Heading>
-          <Text className="mt-element text-text-muted max-w-[620px]">
-            Every town in {town.name}'s network, ranked by connection strength.
-          </Text>
+        {/* By Connection Type */}
+        <Divider spacing="section" />
+        <section>
+          <Container>
+            <Heading level={2}>By Connection Type</Heading>
 
-          <div className="mt-component space-y-element">
-            {[...town.linkedTowns]
-              .sort((a, b) => b.weight - a.weight)
-              .map((link) => (
-                <LinkedTownCard key={`${link.townId}-${link.linkType}`} link={link} />
-              ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* By Connection Type */}
-      <Divider spacing="section" />
-      <section>
-        <Container>
-          <Heading level={2}>By Connection Type</Heading>
-
-          {Object.entries(byType)
-            .sort(([, a], [, b]) => b.length - a.length)
-            .map(([type, links]) => (
-              <div key={type} className="mt-component">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <Text className="font-medium">
-                      {typeLabels[type]?.label || type}
-                    </Text>
-                    <Text size="small" muted>
-                      {typeLabels[type]?.description || ""}
+            {Object.entries(byType)
+              .sort(([, a], [, b]) => b.length - a.length)
+              .map(([type, links]) => (
+                <div key={type} className="mt-component">
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <Text className="font-medium">
+                        {typeLabels[type]?.label || type}
+                      </Text>
+                      <Text size="small" muted>
+                        {typeLabels[type]?.description || ""}
+                      </Text>
+                    </div>
+                    <Text size="small" className="text-crimson font-mono">
+                      {links.length} {links.length === 1 ? "town" : "towns"}
                     </Text>
                   </div>
-                  <Text size="small" className="text-accent-blue font-mono">
-                    {links.length} {links.length === 1 ? "town" : "towns"}
-                  </Text>
-                </div>
 
-                <div className="mt-element grid sm:grid-cols-2 gap-element">
-                  {links.map((link) => (
-                    <Link
-                      key={link.townId}
-                      href={`/towns/${link.townSlug}`}
-                      className="block p-element bg-bg-secondary rounded-lg border border-border-light hover:border-accent-blue transition-colors"
-                    >
-                      <div className="flex items-start justify-between">
-                        <Text className="font-medium">{link.townName}</Text>
-                        <Text size="small" className="text-accent-blue font-mono">
-                          {link.weight}%
-                        </Text>
-                      </div>
-                    </Link>
-                  ))}
+                  <div className="mt-element grid sm:grid-cols-2 gap-element">
+                    {links.map((link) => (
+                      <Link
+                        key={link.townId}
+                        href={`/towns/${link.townSlug}`}
+                        className="block p-element bg-bg-secondary rounded-lg border border-border-light hover:border-crimson transition-colors"
+                      >
+                        <div className="flex items-start justify-between">
+                          <Text className="font-medium">{link.townName}</Text>
+                          <Text size="small" className="text-crimson font-mono">
+                            {link.weight}%
+                          </Text>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
-        </Container>
-      </section>
-
+              ))}
+          </Container>
+        </section>
+      </div>
     </div>
   );
 }
@@ -215,7 +227,7 @@ function LinkedTownCard({ link }: { link: LinkedTown }) {
             {linkTypeLabels[link.linkType] || link.linkType}
           </Text>
         </div>
-        <Text size="small" className="text-accent-blue font-mono">
+        <Text size="small" className="text-crimson font-mono">
           {link.weight}%
         </Text>
       </div>

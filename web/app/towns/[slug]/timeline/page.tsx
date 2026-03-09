@@ -46,6 +46,7 @@ export default async function TimelinePage({ params }: PageProps) {
         name={town.name}
         state={town.state}
         subtitle={`${town.events.length} documented events in chronological order.`}
+        variant="bold"
       />
 
       <EditorialSection id="timeline" title="Timeline">
@@ -58,7 +59,7 @@ export default async function TimelinePage({ params }: PageProps) {
                 delay={index * 60}
                 wrapperClassName="flex gap-6 py-4 border-b border-border-light last:border-b-0"
               >
-                <span className="w-2 h-2 rounded-full bg-accent-red shrink-0 mt-2" />
+                <span className="w-2 h-2 rounded-full bg-crimson shrink-0 mt-2" />
                 <span className="w-[100px] shrink-0 text-small text-text-muted font-body tabular-nums">
                   {formatDate(event.startDate)}
                 </span>
@@ -66,7 +67,7 @@ export default async function TimelinePage({ params }: PageProps) {
                   <p className="font-body font-medium">
                     <a
                       href={`/towns/${slug}/timeline/${(event as any).slug || event.id}`}
-                      className="hover:text-accent-blue transition-colors"
+                      className="hover:text-crimson transition-colors"
                     >
                       {event.name}
                     </a>

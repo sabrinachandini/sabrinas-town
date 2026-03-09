@@ -41,6 +41,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
   return (
     <PageShell>
       <PageHeader
+        variant="bold"
         name={story.title}
         state={town.state}
         subtitle={
@@ -50,14 +51,18 @@ export default async function StoryDetailPage({ params }: PageProps) {
         }
       />
 
-      <div className="mb-6 flex flex-wrap gap-3 text-small text-text-muted font-body uppercase tracking-wide">
-        <span>
+      <div className="mb-6 flex flex-wrap gap-3">
+        <span className="font-condensed font-bold text-[0.7rem] tracking-[0.08em] uppercase text-crimson">
           {story.storyType === "HISTORICAL_VOICE"
             ? "Historical voice"
             : "Modern voice"}
         </span>
-        <span>&middot;</span>
-        <span>{story.verificationStatus.toLowerCase().replace(/_/g, " ")}</span>
+        <span className="font-condensed font-bold text-[0.7rem] tracking-[0.08em] uppercase text-crimson">
+          &middot;
+        </span>
+        <span className="font-condensed font-bold text-[0.7rem] tracking-[0.08em] uppercase text-crimson">
+          {story.verificationStatus.toLowerCase().replace(/_/g, " ")}
+        </span>
       </div>
 
       {story.narratorName && (
@@ -78,7 +83,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
           {story.tags.map((tag) => (
             <span
               key={tag}
-              className="px-2.5 py-1 text-small font-body border border-border-light rounded"
+              className="px-2.5 py-1 text-small font-body border border-[#DDD8CE] bg-cream font-condensed text-[0.7rem] tracking-[0.06em] uppercase text-navy"
             >
               {tag}
             </span>
@@ -91,7 +96,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
           {story.themes.map((theme) => (
             <span
               key={theme.id}
-              className="px-2.5 py-1 text-small font-body text-text-muted border border-border-light rounded"
+              className="px-2.5 py-1 text-small font-body border border-[#DDD8CE] bg-cream font-condensed text-[0.7rem] tracking-[0.06em] uppercase text-navy"
             >
               {theme.name}
             </span>
@@ -102,7 +107,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
       <div className="mt-12 pt-8 border-t border-border-light">
         <a
           href={`/towns/${slug}/stories`}
-          className="text-small text-accent-blue font-body hover:underline"
+          className="font-condensed font-bold text-[0.72rem] tracking-[0.08em] uppercase text-navy hover:text-crimson transition-colors"
         >
           &larr; Back to stories
         </a>

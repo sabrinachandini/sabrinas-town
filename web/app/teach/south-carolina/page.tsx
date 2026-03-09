@@ -1,12 +1,8 @@
 import { Metadata } from "next";
 import { getTeacherModule } from "@/lib/api";
-import {
-  Container,
-  Heading,
-  Text,
-  Link,
-  Divider,
-} from "@/components/ui";
+import { Container, Text, Link } from "@/components/ui";
+import { PageHero } from "@/components/ui/PageHero";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export const metadata: Metadata = {
   title: "Teach South Carolina | History is for Everyone",
@@ -43,53 +39,41 @@ export default async function SouthCarolinaTeachPage() {
 
   return (
     <main>
-      {/* Breadcrumb */}
-      <section className="py-element bg-bg-secondary">
-        <Container>
-          <Text size="small" muted>
-            <Link href="/teach">Teach</Link>
-            {" / "}
-            South Carolina
-          </Text>
-        </Container>
-      </section>
+      {/* Hero */}
+      <PageHero
+        bg="navy"
+        overline="Teacher Resources"
+        title="South Carolina"
+        body="South Carolina's war was the most brutal in the colonies — a civil war within a war, with Patriot and Loyalist militias fighting in a landscape of isolated plantations and dense backcountry. Enslaved people's labor and knowledge shaped every campaign."
+      />
 
-      {/* Intro */}
-      <section className="py-section">
-        <Container>
-          <Heading level={1}>South Carolina</Heading>
-          <div className="mt-element max-w-[720px] space-y-element">
-            <Text>
-              South Carolina&apos;s war was the most brutal in the colonies —
-              a civil war within a war, with Patriot and Loyalist militias
-              fighting in a landscape of isolated plantations and dense
-              backcountry. Enslaved people&apos;s labor and knowledge shaped
-              every campaign.
-            </Text>
-            <Text>
-              The fall of Charleston in 1780 was the worst American defeat of
-              the entire war, surrendering an entire Continental Army. What
-              followed was a guerrilla war of extraordinary violence — Tarleton&apos;s
-              Quarters, the massacre at Waxhaws, the retaliatory raids by
-              Sumter and Marion. The eight towns in this collection span the
-              Southern campaign from Fort Moultrie&apos;s early defiance in 1776
-              to Nathanael Greene&apos;s grinding war of attrition that wore
-              British strength to nothing without ever winning a decisive battle.
-            </Text>
-          </div>
-        </Container>
+      {/* Intro body */}
+      <section className="py-16 bg-ivory">
+        <div className="mx-auto max-w-[720px] px-6 md:px-10">
+          <p className="font-serif text-[1.05rem] leading-[1.85] text-charcoal">
+            The fall of Charleston in 1780 was the worst American defeat of
+            the entire war, surrendering an entire Continental Army. What
+            followed was a guerrilla war of extraordinary violence — Tarleton&apos;s
+            Quarters, the massacre at Waxhaws, the retaliatory raids by
+            Sumter and Marion. The eight towns in this collection span the
+            Southern campaign from Fort Moultrie&apos;s early defiance in 1776
+            to Nathanael Greene&apos;s grinding war of attrition that wore
+            British strength to nothing without ever winning a decisive battle.
+          </p>
+        </div>
       </section>
-
-      <Divider spacing="section" />
 
       {/* Print-Ready Resources */}
-      <section className="py-component">
+      <section className="py-20 bg-white">
         <Container>
-          <Heading level={2}>Print-Ready Resources</Heading>
-          <Text className="mt-element" muted>
+          <SectionHeader
+            overline="Print PDFs"
+            title="Print-Ready Resources"
+          />
+          <p className="text-slate text-[0.95rem] mb-10 -mt-6">
             Complete teacher packets formatted for classroom printing.
-          </Text>
-          <div className="mt-component grid sm:grid-cols-2 md:grid-cols-3 gap-element">
+          </p>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             {modules.filter((m) => m.hasModule).map((m) => (
               <PrintLink key={m.slug} slug={m.slug} name={m.name} curated={m.hasCurated} />
             ))}
@@ -97,20 +81,19 @@ export default async function SouthCarolinaTeachPage() {
         </Container>
       </section>
 
-      <Divider spacing="section" />
-
       {/* Coverage Status */}
-      <section className="py-component">
+      <section className="py-20 bg-ivory">
         <Container>
-          <Heading level={2}>Coverage Status</Heading>
-          <Text className="mt-element">
+          <SectionHeader
+            overline="Content Coverage"
+            title="Coverage Status"
+          />
+          <p className="text-charcoal text-[0.95rem] mb-8 -mt-6">
             {curatedCount} of {SC_TOWNS.length} South Carolina town
             {SC_TOWNS.length === 1 ? "" : "s"} ha
             {SC_TOWNS.length === 1 ? "s" : "ve"} curated teacher resources.
-          </Text>
-          <div className="mt-component">
-            <CoverageList modules={modules} />
-          </div>
+          </p>
+          <CoverageList modules={modules} />
         </Container>
       </section>
     </main>
@@ -131,11 +114,11 @@ function PrintLink({
       href={`/towns/${slug}/teacher/print`}
       target="_blank"
       rel="noopener noreferrer"
-      className="block p-element bg-bg-secondary rounded-lg no-underline hover:bg-bg-secondary/80 transition-colors"
+      className="block p-4 bg-white border border-[#DDD8CE] rounded-lg no-underline hover:border-crimson hover:bg-cream transition-colors"
     >
-      <span className="font-medium text-text-primary">{name}</span>
-      <span className="block text-small text-text-muted mt-1">
-        {curated ? "Curated" : "Generated"} · Print packet
+      <span className="font-medium text-navy">{name}</span>
+      <span className="block text-[0.8rem] text-slate mt-1">
+        {curated ? "Curated" : "Generated"} &middot; Print packet
       </span>
     </a>
   );
@@ -156,7 +139,7 @@ function CoverageList({
       {modules.map((m) => (
         <li key={m.slug} className="flex items-center gap-3">
           <span
-            className={`w-2 h-2 rounded-full flex-shrink-0 ${
+            className={`w-3 h-3 rounded-full flex-shrink-0 ${
               m.hasCurated
                 ? "bg-green-600"
                 : m.hasModule

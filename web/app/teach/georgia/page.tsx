@@ -1,12 +1,8 @@
 import { Metadata } from "next";
 import { getTeacherModule } from "@/lib/api";
-import {
-  Container,
-  Heading,
-  Text,
-  Link,
-  Divider,
-} from "@/components/ui";
+import { Container, Text, Link } from "@/components/ui";
+import { PageHero } from "@/components/ui/PageHero";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export const metadata: Metadata = {
   title: "Teach Georgia | History is for Everyone",
@@ -37,53 +33,42 @@ export default async function GeorgiaTeachPage() {
 
   return (
     <main>
-      {/* Breadcrumb */}
-      <section className="py-element bg-bg-secondary">
-        <Container>
-          <Text size="small" muted>
-            <Link href="/teach">Teach</Link>
-            {" / "}
-            Georgia
-          </Text>
-        </Container>
-      </section>
+      {/* Hero */}
+      <PageHero
+        bg="navy"
+        overline="Teacher Resources"
+        title="Georgia"
+        body="Georgia was the only colony the British successfully reconquered — and held for years. Savannah's occupation and the failed Franco-American siege teach students about the war's international dimensions and the limits of alliance."
+      />
 
-      {/* Intro */}
-      <section className="py-section">
-        <Container>
-          <Heading level={1}>Georgia</Heading>
-          <div className="mt-element max-w-[720px] space-y-element">
-            <Text>
-              Georgia was the only colony the British successfully reconquered
-              — and held for years. Savannah&apos;s occupation and the failed
-              Franco-American siege teach students about the war&apos;s
-              international dimensions and the limits of alliance.
-            </Text>
-            <Text>
-              The failed Franco-American siege of Savannah in 1779 was one of
-              the war&apos;s costliest defeats, demonstrating that a French
-              alliance was not a guarantee of victory. Augusta changed hands
-              multiple times as Patriot and Loyalist forces fought for control
-              of the backcountry. Georgia&apos;s experience — reconquered,
-              occupied, slowly liberated — offers students a window into what
-              the Revolution looked like when the Patriots were losing, and what
-              it took to rebuild both an army and a civil society in the middle
-              of a war.
-            </Text>
-          </div>
-        </Container>
+      {/* Intro body */}
+      <section className="py-16 bg-ivory">
+        <div className="mx-auto max-w-[720px] px-6 md:px-10">
+          <p className="font-serif text-[1.05rem] leading-[1.85] text-charcoal">
+            The failed Franco-American siege of Savannah in 1779 was one of
+            the war&apos;s costliest defeats, demonstrating that a French
+            alliance was not a guarantee of victory. Augusta changed hands
+            multiple times as Patriot and Loyalist forces fought for control
+            of the backcountry. Georgia&apos;s experience — reconquered,
+            occupied, slowly liberated — offers students a window into what
+            the Revolution looked like when the Patriots were losing, and what
+            it took to rebuild both an army and a civil society in the middle
+            of a war.
+          </p>
+        </div>
       </section>
-
-      <Divider spacing="section" />
 
       {/* Print-Ready Resources */}
-      <section className="py-component">
+      <section className="py-20 bg-white">
         <Container>
-          <Heading level={2}>Print-Ready Resources</Heading>
-          <Text className="mt-element" muted>
+          <SectionHeader
+            overline="Print PDFs"
+            title="Print-Ready Resources"
+          />
+          <p className="text-slate text-[0.95rem] mb-10 -mt-6">
             Complete teacher packets formatted for classroom printing.
-          </Text>
-          <div className="mt-component grid sm:grid-cols-2 md:grid-cols-3 gap-element">
+          </p>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             {modules.filter((m) => m.hasModule).map((m) => (
               <PrintLink key={m.slug} slug={m.slug} name={m.name} curated={m.hasCurated} />
             ))}
@@ -91,20 +76,19 @@ export default async function GeorgiaTeachPage() {
         </Container>
       </section>
 
-      <Divider spacing="section" />
-
       {/* Coverage Status */}
-      <section className="py-component">
+      <section className="py-20 bg-ivory">
         <Container>
-          <Heading level={2}>Coverage Status</Heading>
-          <Text className="mt-element">
+          <SectionHeader
+            overline="Content Coverage"
+            title="Coverage Status"
+          />
+          <p className="text-charcoal text-[0.95rem] mb-8 -mt-6">
             {curatedCount} of {GA_TOWNS.length} Georgia town
             {GA_TOWNS.length === 1 ? "" : "s"} ha
             {GA_TOWNS.length === 1 ? "s" : "ve"} curated teacher resources.
-          </Text>
-          <div className="mt-component">
-            <CoverageList modules={modules} />
-          </div>
+          </p>
+          <CoverageList modules={modules} />
         </Container>
       </section>
     </main>
@@ -125,11 +109,11 @@ function PrintLink({
       href={`/towns/${slug}/teacher/print`}
       target="_blank"
       rel="noopener noreferrer"
-      className="block p-element bg-bg-secondary rounded-lg no-underline hover:bg-bg-secondary/80 transition-colors"
+      className="block p-4 bg-white border border-[#DDD8CE] rounded-lg no-underline hover:border-crimson hover:bg-cream transition-colors"
     >
-      <span className="font-medium text-text-primary">{name}</span>
-      <span className="block text-small text-text-muted mt-1">
-        {curated ? "Curated" : "Generated"} · Print packet
+      <span className="font-medium text-navy">{name}</span>
+      <span className="block text-[0.8rem] text-slate mt-1">
+        {curated ? "Curated" : "Generated"} &middot; Print packet
       </span>
     </a>
   );
@@ -150,7 +134,7 @@ function CoverageList({
       {modules.map((m) => (
         <li key={m.slug} className="flex items-center gap-3">
           <span
-            className={`w-2 h-2 rounded-full flex-shrink-0 ${
+            className={`w-3 h-3 rounded-full flex-shrink-0 ${
               m.hasCurated
                 ? "bg-green-600"
                 : m.hasModule

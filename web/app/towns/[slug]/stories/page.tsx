@@ -38,6 +38,7 @@ export default async function StoriesPage({ params }: PageProps) {
         name={town.name}
         state={town.state}
         subtitle={`First-person accounts and interpretive stories from ${town.name}.`}
+        variant="bold"
       />
 
       <EditorialSection id="stories" title={`${town.stories.length} Stories`}>
@@ -68,7 +69,7 @@ export default async function StoriesPage({ params }: PageProps) {
                 </p>
                 <a
                   href={`/towns/${slug}/stories/${story.id}`}
-                  className="mt-2 inline-block text-small text-accent-blue font-body hover:underline"
+                  className="mt-2 inline-block text-small text-crimson font-body hover:underline"
                 >
                   Read story &rarr;
                 </a>

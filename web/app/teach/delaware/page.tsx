@@ -1,12 +1,8 @@
 import { Metadata } from "next";
 import { getTeacherModule } from "@/lib/api";
-import {
-  Container,
-  Heading,
-  Text,
-  Link,
-  Divider,
-} from "@/components/ui";
+import { Container, Text, Link } from "@/components/ui";
+import { PageHero } from "@/components/ui/PageHero";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export const metadata: Metadata = {
   title: "Teach Delaware | History is for Everyone",
@@ -37,52 +33,41 @@ export default async function DelawareTeachPage() {
 
   return (
     <main>
-      {/* Breadcrumb */}
-      <section className="py-element bg-bg-secondary">
-        <Container>
-          <Text size="small" muted>
-            <Link href="/teach">Teach</Link>
-            {" / "}
-            Delaware
-          </Text>
-        </Container>
-      </section>
+      {/* Hero */}
+      <PageHero
+        bg="navy"
+        overline="Teacher Resources"
+        title="Delaware"
+        body="Delaware's decision to break with Pennsylvania and form its own delegation gave the Continental Congress its key swing vote for independence, and its &quot;Blue Hen&quot; regiment became one of the Continental Army's most celebrated units."
+      />
 
-      {/* Intro */}
-      <section className="py-section">
-        <Container>
-          <Heading level={1}>Delaware</Heading>
-          <div className="mt-element max-w-[720px] space-y-element">
-            <Text>
-              Delaware&apos;s decision to break with Pennsylvania and form its
-              own delegation gave the Continental Congress its key swing vote
-              for independence, and its &quot;Blue Hen&quot; regiment became
-              one of the Continental Army&apos;s most celebrated units.
-            </Text>
-            <Text>
-              The vote for independence on July 2, 1776 was nearly lost when
-              Delaware&apos;s delegation was deadlocked — until Caesar Rodney
-              rode through the night to break the tie. Dover, the state capital,
-              and Wilmington, its largest city, represent the small colony&apos;s
-              outsized contribution to the founding. Delaware&apos;s story teaches
-              students that the margin between independence and continued colonial
-              rule was razor-thin, and that individual decisions at critical
-              moments shaped the outcome of history.
-            </Text>
-          </div>
-        </Container>
+      {/* Intro body */}
+      <section className="py-16 bg-ivory">
+        <div className="mx-auto max-w-[720px] px-6 md:px-10">
+          <p className="font-serif text-[1.05rem] leading-[1.85] text-charcoal">
+            The vote for independence on July 2, 1776 was nearly lost when
+            Delaware&apos;s delegation was deadlocked — until Caesar Rodney
+            rode through the night to break the tie. Dover, the state capital,
+            and Wilmington, its largest city, represent the small colony&apos;s
+            outsized contribution to the founding. Delaware&apos;s story teaches
+            students that the margin between independence and continued colonial
+            rule was razor-thin, and that individual decisions at critical
+            moments shaped the outcome of history.
+          </p>
+        </div>
       </section>
-
-      <Divider spacing="section" />
 
       {/* Print-Ready Resources */}
-      <section className="py-component">
+      <section className="py-20 bg-white">
         <Container>
-          <Heading level={2}>Print-Ready Resources</Heading>
-          <Text className="mt-element" muted>
+          <SectionHeader
+            overline="Print PDFs"
+            title="Print-Ready Resources"
+          />
+          <p className="text-slate text-[0.95rem] mb-10 -mt-6">
             Complete teacher packets formatted for classroom printing.
-          </Text>
-          <div className="mt-component grid sm:grid-cols-2 md:grid-cols-3 gap-element">
+          </p>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             {modules.filter((m) => m.hasModule).map((m) => (
               <PrintLink key={m.slug} slug={m.slug} name={m.name} curated={m.hasCurated} />
             ))}
@@ -90,20 +75,19 @@ export default async function DelawareTeachPage() {
         </Container>
       </section>
 
-      <Divider spacing="section" />
-
       {/* Coverage Status */}
-      <section className="py-component">
+      <section className="py-20 bg-ivory">
         <Container>
-          <Heading level={2}>Coverage Status</Heading>
-          <Text className="mt-element">
+          <SectionHeader
+            overline="Content Coverage"
+            title="Coverage Status"
+          />
+          <p className="text-charcoal text-[0.95rem] mb-8 -mt-6">
             {curatedCount} of {DE_TOWNS.length} Delaware town
             {DE_TOWNS.length === 1 ? "" : "s"} ha
             {DE_TOWNS.length === 1 ? "s" : "ve"} curated teacher resources.
-          </Text>
-          <div className="mt-component">
-            <CoverageList modules={modules} />
-          </div>
+          </p>
+          <CoverageList modules={modules} />
         </Container>
       </section>
     </main>
@@ -124,11 +108,11 @@ function PrintLink({
       href={`/towns/${slug}/teacher/print`}
       target="_blank"
       rel="noopener noreferrer"
-      className="block p-element bg-bg-secondary rounded-lg no-underline hover:bg-bg-secondary/80 transition-colors"
+      className="block p-4 bg-white border border-[#DDD8CE] rounded-lg no-underline hover:border-crimson hover:bg-cream transition-colors"
     >
-      <span className="font-medium text-text-primary">{name}</span>
-      <span className="block text-small text-text-muted mt-1">
-        {curated ? "Curated" : "Generated"} · Print packet
+      <span className="font-medium text-navy">{name}</span>
+      <span className="block text-[0.8rem] text-slate mt-1">
+        {curated ? "Curated" : "Generated"} &middot; Print packet
       </span>
     </a>
   );
@@ -149,7 +133,7 @@ function CoverageList({
       {modules.map((m) => (
         <li key={m.slug} className="flex items-center gap-3">
           <span
-            className={`w-2 h-2 rounded-full flex-shrink-0 ${
+            className={`w-3 h-3 rounded-full flex-shrink-0 ${
               m.hasCurated
                 ? "bg-green-600"
                 : m.hasModule

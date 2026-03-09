@@ -42,6 +42,7 @@ export default async function HistoryPage({ params }: PageProps) {
         name={town.name}
         state={town.state}
         subtitle={`The Revolutionary War history of ${town.name}.`}
+        variant="bold"
       />
 
       <EditorialSection id="narrative" title={`Why ${town.name} Matters`}>

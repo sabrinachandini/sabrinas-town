@@ -48,6 +48,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
   return (
     <PageShell>
       <PageHeader
+        variant="bold"
         name={person.name}
         state={town.state}
         subtitle={[lifespan, ...person.roles].filter(Boolean).join(" · ")}
@@ -86,7 +87,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
                   <div>
                     <a
                       href={`/towns/${slug}/timeline/${event.id}`}
-                      className="font-body font-medium hover:text-accent-blue transition-colors"
+                      className="font-body font-medium hover:text-crimson transition-colors"
                     >
                       {event.name}
                     </a>
@@ -114,7 +115,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
                 href={`/towns/${slug}/stories/${story.id}`}
                 className="block py-4 border-b border-border-light last:border-b-0 group"
               >
-                <p className="font-body font-medium group-hover:text-accent-blue transition-colors">
+                <p className="font-body font-medium group-hover:text-crimson transition-colors">
                   {story.title}
                 </p>
                 <p className="mt-1 text-small text-text-muted font-body">
@@ -129,7 +130,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
       <div className="mt-12 pt-8 border-t border-border-light">
         <a
           href={`/towns/${slug}/people`}
-          className="text-small text-accent-blue font-body hover:underline"
+          className="font-condensed font-bold text-[0.72rem] tracking-[0.08em] uppercase text-navy hover:text-crimson transition-colors"
         >
           &larr; Back to people
         </a>
