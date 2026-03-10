@@ -51,13 +51,13 @@ export default function HomePage() {
           <span className="bg-crimson text-cream font-ui text-[9px] tracking-[0.22em] uppercase px-3 py-1.5 -rotate-1 w-fit mb-6 inline-block">
             The American Revolution, Town by Town
           </span>
-          <h1 className="font-display leading-[0.92] tracking-tight text-ink" style={{ fontSize: "clamp(60px,10vw,120px)" }}>
+          <h1 className="font-editorial italic font-light leading-[0.95] text-ink" style={{ fontSize: "clamp(60px,10vw,120px)" }}>
             History<br />
-            <span className="font-editorial italic text-crimson">is</span><br />
+            <em className="text-crimson not-italic font-normal">is</em><br />
             for<br />
             Everyone
           </h1>
-          <p className="font-editorial italic text-[18px] text-ink/60 max-w-[460px] mt-6">
+          <p className="font-editorial italic text-[18px] text-ink/70 max-w-[460px] mt-6">
             Seventy-seven towns. Sixteen states. One living network.
           </p>
           <div className="flex flex-wrap items-center mt-8 gap-0">
@@ -165,8 +165,8 @@ export default function HomePage() {
             className="flex-1 px-8 py-10 border-l border-cream/10 first:border-l-0 group hover:border-t-[3px] hover:border-t-crimson transition-all"
           >
             <div className="font-display text-[48px] text-cream leading-none">{number}</div>
-            <div className="font-ui text-[10px] uppercase tracking-[0.2em] text-cream/35 mt-2">{label}</div>
-            <div className="font-ui text-[11px] text-cream/20 mt-1">{detail}</div>
+            <div className="font-ui text-[10px] uppercase tracking-[0.2em] text-cream/60 mt-2">{label}</div>
+            <div className="font-ui text-[11px] text-cream/45 mt-1">{detail}</div>
           </div>
         ))}
       </section>
@@ -181,9 +181,9 @@ export default function HomePage() {
           <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-yellow flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-[#e8b84b] before:block">
             Our Mission
           </p>
-          <h2 className="font-display text-cream leading-[0.92]" style={{ fontSize: "clamp(40px,6vw,80px)" }}>
+          <h2 className="font-editorial italic font-light text-cream leading-[1.0]" style={{ fontSize: "clamp(40px,6vw,80px)" }}>
             History isn&apos;t<br />locked in a{" "}
-            <span className="inline-block -rotate-[4deg] text-yellow">museum.</span>
+            <span className="inline-block -rotate-[2deg] not-italic font-normal text-yellow">museum.</span>
           </h2>
         </div>
 
@@ -221,7 +221,7 @@ export default function HomePage() {
           <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
             Start Here
           </p>
-          <h2 className="font-display text-[44px] text-ink leading-none mb-8">Essential Towns</h2>
+          <h2 className="font-editorial italic font-light text-[44px] text-ink leading-none mb-8">Essential Towns</h2>
 
           <ul className="columns-1 sm:columns-2 gap-x-8">
             {ESSENTIAL_TOWNS.map((town) => (
@@ -373,11 +373,11 @@ export default function HomePage() {
             SINCE 1775
           </div>
 
-          <h2 className="font-display text-ink leading-[0.92]" style={{ fontSize: "clamp(40px,6vw,80px)" }}>
+          <h2 className="font-editorial italic font-light text-ink leading-[1.0]" style={{ fontSize: "clamp(40px,6vw,80px)" }}>
             Your town.<br />Our network.
           </h2>
 
-          <p className="font-editorial italic text-ink/60 text-[18px] mt-4 max-w-[500px]">
+          <p className="font-editorial italic text-ink/70 text-[18px] mt-4 max-w-[500px]">
             We partner with tourism offices, historical societies, and preservation organizations
             to tell stories that belong to everyone.
           </p>

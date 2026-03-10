@@ -45,17 +45,6 @@ export default async function TownOverviewPage({ params }: PageProps) {
     .slice(0, 6);
   const featuredStories = town.stories.slice(0, 2);
 
-  const tabs = [
-    { label: "Overview",  href: `/towns/${slug}` },
-    { label: "History",   href: `/towns/${slug}/history` },
-    { label: "Timeline",  href: `/towns/${slug}/timeline` },
-    { label: "People",    href: `/towns/${slug}/people` },
-    { label: "Places",    href: `/towns/${slug}/places` },
-    { label: "Stories",   href: `/towns/${slug}/stories` },
-    { label: "Teacher",   href: `/towns/${slug}/teacher` },
-    { label: "Sources",   href: `/towns/${slug}/sources` },
-  ];
-
   const lastUpdatedStr = sourcesData?.lastUpdated ?? town.lastUpdatedAt;
 
   const sidebarLinks = [
@@ -86,20 +75,20 @@ export default async function TownOverviewPage({ params }: PageProps) {
           <div className="relative z-10">
             {/* Breadcrumb */}
             <nav aria-label="Breadcrumb" className="mb-6">
-              <ol className="flex items-center gap-2 font-ui text-[9px] tracking-[0.2em] uppercase text-cream/30">
+              <ol className="flex items-center gap-2 font-ui text-[9px] tracking-[0.2em] uppercase text-cream/50">
                 <li>
-                  <NextLink href="/" className="no-underline text-cream/30 hover:text-cream/60 transition-colors">
+                  <NextLink href="/" className="no-underline text-cream/50 hover:text-cream/80 transition-colors">
                     Home
                   </NextLink>
                 </li>
                 <li aria-hidden="true">/</li>
                 <li>
-                  <NextLink href="/towns" className="no-underline text-cream/30 hover:text-cream/60 transition-colors">
+                  <NextLink href="/towns" className="no-underline text-cream/50 hover:text-cream/80 transition-colors">
                     Towns
                   </NextLink>
                 </li>
                 <li aria-hidden="true">/</li>
-                <li className="text-cream/60">{town.name}</li>
+                <li className="text-cream/75">{town.name}</li>
               </ol>
             </nav>
 
@@ -137,7 +126,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
                 className={`pr-8 mr-8 ${i > 0 ? "border-l border-cream/10 pl-8" : ""}`}
               >
                 <div className="font-display text-yellow text-[36px] leading-none">{stat.value}</div>
-                <div className="font-ui text-[9px] uppercase tracking-[0.2em] text-cream/35 mt-1">{stat.label}</div>
+                <div className="font-ui text-[9px] uppercase tracking-[0.2em] text-cream/60 mt-1">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -164,29 +153,6 @@ export default async function TownOverviewPage({ params }: PageProps) {
           </svg>
         </div>
       </div>
-
-      {/* ── Tab Nav ──────────────────────────────────────────────── */}
-      <nav aria-label="Town sections" className="bg-ink border-b-[3px] border-crimson sticky top-[52px] z-20 px-8 md:px-16">
-        <ol className="flex gap-0 overflow-x-auto">
-          {tabs.map((tab, i) => {
-            const isActive = i === 0;
-            return (
-              <li key={tab.label}>
-                <NextLink
-                  href={tab.href}
-                  className={`no-underline block px-5 py-3.5 font-ui font-medium text-[10px] uppercase tracking-[0.15em] whitespace-nowrap border-b-2 transition-colors duration-150 ${
-                    isActive
-                      ? "text-cream border-crimson"
-                      : "text-cream/40 border-transparent hover:text-cream hover:border-cream/30"
-                  }`}
-                >
-                  {tab.label}
-                </NextLink>
-              </li>
-            );
-          })}
-        </ol>
-      </nav>
 
       {/* ── Body: cream background ───────────────────────────────── */}
       <div className="bg-cream py-16 px-8 md:px-16">

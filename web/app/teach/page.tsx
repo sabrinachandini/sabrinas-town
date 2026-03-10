@@ -110,13 +110,13 @@ export default function TeachPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-[#0a0e1a] py-24 px-8 md:px-16">
+      <section className="bg-[#2a5c45] py-24 px-8 md:px-16">
         <div className="mx-auto max-w-[1200px]">
-          <p className="font-ui text-[0.7rem] uppercase tracking-[0.15em] text-white/40 mb-4">Classroom-Ready Resources</p>
+          <p className="font-ui text-[0.7rem] uppercase tracking-[0.15em] text-white/70 mb-4">Classroom-Ready Resources</p>
           <h1 className="font-display text-white leading-[0.9]" style={{ fontSize: "clamp(80px,12vw,160px)" }}>
             For Teachers
           </h1>
-          <p className="font-editorial italic text-white/60 text-[1.1rem] mt-6 max-w-[500px] leading-relaxed">
+          <p className="font-editorial italic text-white/85 text-[1.1rem] mt-6 max-w-[500px] leading-relaxed">
             Critical thinking materials for teaching the American Revolution through local history. Every town, every state, built for teachers first.
           </p>
         </div>

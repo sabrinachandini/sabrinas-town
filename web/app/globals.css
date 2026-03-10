@@ -18,7 +18,7 @@
   --charcoal:#0e1428;
   --ink:     #0e1428;
   --slate:   #6b7280;
-  --fog:     rgba(255,255,255,0.55);
+  --fog:     rgba(255,255,255,0.80);
 
   /* ── Extended Palette ─────────────────────────── */
   --blue:   #1a3a72;
@@ -27,6 +27,10 @@
   --paper:  #f8f0d8;
   --rust:   #b5431a;
   --sky:    #3a7dbf;
+
+  /* ── Town Accent System ───────────────────────── */
+  --town-accent:      #1a3a72; /* default: blue */
+  --town-accent-text: #f2ece0;
 
   /* Legacy aliases (keep existing pages working) */
   --bg-primary: #f2ece0;
@@ -182,6 +186,12 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
 }
+
+/* ── Town Accent Scopes ─────────────────────────────────── */
+[data-town-accent="blue"]  { --town-accent: #1a3a72; --town-accent-text: #f2ece0; }
+[data-town-accent="green"] { --town-accent: #2a5c45; --town-accent-text: #f2ece0; }
+[data-town-accent="rust"]  { --town-accent: #b5431a; --town-accent-text: #f2ece0; }
+[data-town-accent="ink"]   { --town-accent: #0e1428; --town-accent-text: #f2ece0; }
 
 /* Base Styles */
 html {

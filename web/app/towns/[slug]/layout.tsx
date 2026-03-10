@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getTown } from "@/lib/api";
-import { TownSubnav } from "@/components/town";
+import { getTownAccent } from "@/lib/townAccent";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -15,9 +15,10 @@ export default async function TownLayout({ children, params }: LayoutProps) {
     notFound();
   }
 
+  const accent = getTownAccent(slug);
+
   return (
-    <div className="min-h-screen bg-cream">
-      <TownSubnav slug={slug} />
+    <div className="min-h-screen bg-cream" data-town-accent={accent}>
       <main>{children}</main>
     </div>
   );
