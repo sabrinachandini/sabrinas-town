@@ -1,4 +1,5 @@
 export { TownSubnav } from "./TownSubnav";
+export { TownHero } from "./TownHero";
 export { EmptyState } from "./EmptyState";
 export { ComingSoon } from "./ComingSoon";
 export { PeopleSearch } from "./PeopleSearch";

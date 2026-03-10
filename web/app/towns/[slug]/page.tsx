@@ -4,7 +4,7 @@ import {
   getTownPeople,
 } from "@/lib/api";
 import { recordOrgEvent } from "@/lib/analytics";
-import { ComingSoon } from "@/components/town";
+import { ComingSoon, TownHero } from "@/components/town";
 import NextLink from "next/link";
 
 export const revalidate = 3600;
@@ -59,100 +59,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
   return (
     <div>
       {/* ── Hero ─────────────────────────────────────────────────── */}
-      <div className="bg-[#1a3a72] min-h-[72vh] grid grid-cols-1 md:grid-cols-[1fr_340px] border-b-4 border-ink">
-
-        {/* LEFT */}
-        <div className="px-8 md:px-16 pt-16 pb-10 flex flex-col justify-between relative overflow-hidden">
-          {/* Ghost state abbrev */}
-          <div
-            className="absolute right-0 top-0 font-display text-white/[0.04] leading-none select-none pointer-events-none"
-            style={{ fontSize: "280px" }}
-            aria-hidden="true"
-          >
-            {town.state.slice(0, 2).toUpperCase()}
-          </div>
-
-          <div className="relative z-10">
-            {/* Breadcrumb */}
-            <nav aria-label="Breadcrumb" className="mb-6">
-              <ol className="flex items-center gap-2 font-ui text-[9px] tracking-[0.2em] uppercase text-cream/50">
-                <li>
-                  <NextLink href="/" className="no-underline text-cream/50 hover:text-cream/80 transition-colors">
-                    Home
-                  </NextLink>
-                </li>
-                <li aria-hidden="true">/</li>
-                <li>
-                  <NextLink href="/towns" className="no-underline text-cream/50 hover:text-cream/80 transition-colors">
-                    Towns
-                  </NextLink>
-                </li>
-                <li aria-hidden="true">/</li>
-                <li className="text-cream/75">{town.name}</li>
-              </ol>
-            </nav>
-
-            {/* Town name */}
-            <h1
-              className="font-display text-cream leading-[0.88] whitespace-nowrap"
-              style={{ fontSize: "clamp(64px, 10vw, 144px)" }}
-            >
-              {town.name}
-            </h1>
-
-            {/* State tilted badge */}
-            <div className="inline-block bg-yellow text-ink font-ui text-[9px] font-semibold tracking-[0.22em] uppercase px-3 py-1.5 border-2 border-ink shadow-[2px_2px_0_#14100a] -rotate-1 mt-4">
-              {town.state}
-            </div>
-
-            {/* Tagline */}
-            {town.execSummary150 && (
-              <p className="font-editorial italic text-cream/65 text-[18px] mt-6 leading-[1.55] max-w-[480px]">
-                {town.execSummary150}
-              </p>
-            )}
-          </div>
-
-          {/* Stats strip */}
-          <div className="flex border-t border-cream/10 mt-10 pt-8 relative z-10">
-            {[
-              { value: town.events.length, label: "Events" },
-              { value: people.length, label: "People" },
-              { value: town.stories.length, label: "Stories" },
-              { value: sourcesData?.totalCount ?? 0, label: "Sources" },
-            ].map((stat, i) => (
-              <div
-                key={stat.label}
-                className={`pr-8 mr-8 ${i > 0 ? "border-l border-cream/10 pl-8" : ""}`}
-              >
-                <div className="font-display text-yellow text-[36px] leading-none">{stat.value}</div>
-                <div className="font-ui text-[9px] uppercase tracking-[0.2em] text-cream/60 mt-1">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* RIGHT — Abstract map panel */}
-        <div className="bg-[#0a0e1a] border-l-4 border-ink relative overflow-hidden hidden md:block">
-          <div className="absolute top-12 left-6 bg-yellow text-ink font-ui text-[9px] font-semibold tracking-[0.22em] uppercase px-3 py-1.5 border-2 border-ink shadow-[2px_2px_0_#14100a] -rotate-[2deg] z-10">
-            {town.state}
-          </div>
-          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 380 500" fill="none" preserveAspectRatio="xMidYMid slice">
-            <path d="M80 80 Q120 160 140 240 Q150 300 170 380" stroke="rgba(58,125,191,0.3)" strokeWidth="6" fill="none" strokeLinecap="round"/>
-            <circle cx="200" cy="260" r="10" fill="#c8222a" opacity="0.7"/>
-            <circle cx="200" cy="260" r="20" fill="none" stroke="#c8222a" strokeWidth="1.5" opacity="0.3"/>
-            <circle cx="200" cy="260" r="34" fill="none" stroke="#c8222a" strokeWidth="1" opacity="0.15"/>
-            <path d="M20 260 Q120 250 200 260 Q280 268 360 250" stroke="rgba(242,230,200,0.12)" strokeWidth="3" fill="none" strokeDasharray="10 6"/>
-            <path d="M300 120 L302 128 L310 128 L304 133 L306 141 L300 136 L294 141 L296 133 L290 128 L298 128 Z" fill="#e8b84b" opacity="0.55"/>
-            <path d="M80 350 L81.5 355 L87 355 L82.5 358.5 L84 364 L80 360.5 L76 364 L77.5 358.5 L73 355 L78.5 355 Z" fill="rgba(242,230,200,0.35)"/>
-            <g transform="translate(330,70)">
-              <line x1="0" y1="-18" x2="0" y2="18" stroke="rgba(242,230,200,0.2)" strokeWidth="1.5"/>
-              <line x1="-18" y1="0" x2="18" y2="0" stroke="rgba(242,230,200,0.2)" strokeWidth="1.5"/>
-              <text x="4" y="-20" fill="rgba(242,230,200,0.35)" fontSize="9" fontFamily="var(--font-dm)" fontWeight="600" letterSpacing="0.1em">N</text>
-            </g>
-          </svg>
-        </div>
-      </div>
+      <TownHero town={town} slug={slug} />
 
       {/* ── Body: cream background ───────────────────────────────── */}
       <div className="bg-cream py-16 px-8 md:px-16">

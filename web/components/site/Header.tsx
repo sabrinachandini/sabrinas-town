@@ -75,7 +75,8 @@ export function Header() {
 
         {/* Row 2: town section tabs */}
         <nav
-          className="border-b-[3px] border-crimson overflow-x-auto"
+          className="border-b-[3px] overflow-x-auto"
+          style={{ borderBottomColor: "var(--town-hero-accent, var(--crimson))" }}
           aria-label="Town sections"
         >
           <div className="mx-auto max-w-[1200px] px-6 md:px-10">
