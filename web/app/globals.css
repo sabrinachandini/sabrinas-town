@@ -21,12 +21,13 @@
   --fog:     rgba(255,255,255,0.80);
 
   /* ── Extended Palette ─────────────────────────── */
-  --blue:   #1a3a72;
-  --yellow: #e8b84b;
-  --green:  #2a5c45;
-  --paper:  #f8f0d8;
-  --rust:   #b5431a;
-  --sky:    #3a7dbf;
+  --blue:     #1a3a72;
+  --yellow:   #e8b84b;
+  --green:    #2a5c45;
+  --paper:    #f8f0d8;
+  --rust:     #b5431a;
+  --sky:      #3a7dbf;
+  --ink-deep: #14100a;
 
   /* ── Town Accent System ───────────────────────── */
   --town-accent:      #1a3a72; /* default: blue */
@@ -185,6 +186,36 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+}
+
+/* ── Wobbly underline for hero "Everyone" ───────────────── */
+.everyone {
+  position: relative;
+  display: inline-block;
+}
+.everyone::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0; right: -20px;
+  height: 6px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='8' viewBox='0 0 400 8'%3E%3Cpath d='M0 6 Q50 1 100 5 Q150 9 200 4 Q250 0 300 5 Q350 9 400 3' stroke='%23cc3322' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x center;
+  background-size: auto 100%;
+}
+
+/* ── Stats ribbon hover bar ──────────────────────────────── */
+.stat-cell {
+  position: relative;
+  overflow: hidden;
+}
+.stat-cell::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; background: #cc3322;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.stat-cell:hover::before {
+  transform: scaleX(1);
 }
 
 /* ── Town Accent Scopes ─────────────────────────────────── */

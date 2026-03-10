@@ -1,396 +1,486 @@
 import NextLink from "next/link";
 
-/* ── Data ──────────────────────────────────────────────────────── */
+/* ── Data ──────────────────────────────────────────────────────────── */
 
-const ESSENTIAL_TOWNS = [
-  { number: 1, slug: "boston-ma",           name: "Boston",       state: "Massachusetts", excerpt: "From the Massacre to the Tea Party — where colonial grievance became organized resistance." },
-  { number: 2, slug: "lexington-ma",        name: "Lexington",    state: "Massachusetts", excerpt: "Where the first shots of the Revolution were fired, before dawn, on April 19, 1775." },
-  { number: 3, slug: "philadelphia-pa",     name: "Philadelphia", state: "Pennsylvania",  excerpt: "Where the Continental Congress met, the Declaration was signed, and the war was argued into being." },
-  { number: 4, slug: "saratoga-springs-ny", name: "Saratoga",     state: "New York",      excerpt: "The turning point. The American victory that brought France into the war." },
-  { number: 5, slug: "yorktown-va",         name: "Yorktown",     state: "Virginia",      excerpt: "The siege that ended the war — Cornwallis surrendered here on October 19, 1781." },
-  { number: 6, slug: "concord-ma",          name: "Concord",      state: "Massachusetts", excerpt: "The North Bridge fight that turned a skirmish into a war." },
+const TOWNS = [
+  { name: "Acton",        slug: "acton-ma" },
+  { name: "Bedford",      slug: "bedford-ma" },
+  { name: "Boston",       slug: "boston-ma" },
+  { name: "Cambridge",    slug: "cambridge-ma" },
+  { name: "Concord",      slug: "concord-ma" },
+  { name: "Danvers",      slug: "danvers-ma" },
+  { name: "Dedham",       slug: "dedham-ma" },
+  { name: "Dover",        slug: "dover-ma" },
+  { name: "Dracut",       slug: "dracut-ma" },
+  { name: "Groton",       slug: "groton-ma" },
+  { name: "Lexington",    slug: "lexington-ma" },
+  { name: "Lincoln",      slug: "lincoln-ma" },
+  { name: "Medford",      slug: "medford-ma" },
+  { name: "Newburyport",  slug: "newburyport-ma" },
+  { name: "Northampton",  slug: "northampton-ma" },
+  { name: "Salem",        slug: "salem-ma" },
+  { name: "Sudbury",      slug: "sudbury-ma" },
+  { name: "Waltham",      slug: "waltham-ma" },
+  { name: "Watertown",    slug: "watertown-ma" },
+  { name: "Wilmington",   slug: "wilmington-ma" },
+  { name: "Worcester",    slug: "worcester-ma" },
 ];
 
-const TICKER_TOWNS = [
-  "Boston", "Lexington", "Concord", "Philadelphia", "Yorktown", "Saratoga",
-  "Trenton", "Valley Forge", "Williamsburg", "Charleston", "Savannah",
-  "Newport", "Providence", "Portsmouth", "Exeter", "Albany", "Kingston",
-  "Annapolis", "Baltimore", "Wilmington", "Camden", "Cowpens", "Guilford",
-  "Crown Point", "Ticonderoga", "West Point", "Princeton", "Morristown",
-  "Germantown", "Paoli", "Carlisle", "York", "Cambridge", "Salem",
-  "Marblehead", "Plymouth", "Springfield", "Bennington", "Fort Lee",
-];
-
-const STATS = [
-  { number: "77",      label: "Towns",       detail: "Across 16 original states" },
-  { number: "250+",    label: "Years",        detail: "Of living history preserved" },
-  { number: "1,000s",  label: "Stories",      detail: "From generals to cobblers" },
-  { number: "1",       label: "Network",      detail: "Connecting it all" },
-];
-
-const TEACHER_FEATURES = [
-  { icon: "📜", title: "Primary Sources", body: "Curated packets with analysis prompts, credibility tiers, and teacher narratives." },
-  { icon: "📋", title: "Lesson Plans", body: "Structured for critical thinking, not memorization. Objectives, warm-ups, and differentiation built in." },
-  { icon: "🖨️", title: "Print-Ready", body: "Worksheets, quizzes with answer keys, and handouts formatted for the classroom." },
-  { icon: "🗺️", title: "16 States", body: "From Massachusetts to the frontier — every theater of the Revolution covered." },
-];
-
-/* ── Page ──────────────────────────────────────────────────────── */
+/* ── Page ──────────────────────────────────────────────────────────── */
 
 export default function HomePage() {
   return (
     <main>
 
-      {/* ─────────────────────────────────────────────────────────── */}
-      {/* 1. HERO                                                     */}
-      {/* ─────────────────────────────────────────────────────────── */}
-      <section className="grid grid-cols-1 md:grid-cols-2 min-h-screen border-b-4 border-ink">
+      {/* ────────────────────────────────────────────────────────────── */}
+      {/* 1. HERO                                                        */}
+      {/* ────────────────────────────────────────────────────────────── */}
+      <section className="grid grid-cols-2 min-h-screen border-b-4 border-[#14100a]">
 
         {/* LEFT */}
-        <div className="bg-cream px-16 py-20 flex flex-col justify-center">
-          <span className="bg-crimson text-cream font-ui text-[9px] tracking-[0.22em] uppercase px-3 py-1.5 -rotate-1 w-fit mb-6 inline-block">
-            The American Revolution, Town by Town
+        <div className="bg-[#f2e6c8] px-10 py-16 flex flex-col justify-center relative z-[3]">
+
+          {/* Eyebrow pill */}
+          <span className="inline-block font-ui text-[9px] font-semibold tracking-[0.3em] uppercase text-[#f2e6c8] bg-[#cc3322] px-3 py-[5px] mb-6 -rotate-1 w-fit">
+            75 Towns · 1 Revolution
           </span>
-          <h1 className="font-editorial italic font-light leading-[0.95] text-ink" style={{ fontSize: "clamp(60px,10vw,120px)" }}>
+
+          {/* H1 */}
+          <h1
+            className="font-editorial font-black text-[#1a3a72] leading-[0.9] tracking-[-0.04em] relative z-10 w-[130%]"
+            style={{ fontSize: "clamp(64px,7.5vw,110px)" }}
+          >
             History<br />
-            <em className="text-crimson not-italic font-normal">is</em><br />
-            for<br />
-            Everyone
+            <em
+              className="font-editorial font-light text-[#cc3322] block"
+              style={{ fontStyle: "italic" }}
+            >
+              is
+            </em>
+            <span className="text-[#14100a] everyone">Everyone</span>
           </h1>
-          <p className="font-editorial italic text-[18px] text-ink/70 max-w-[460px] mt-6">
-            Seventy-seven towns. Sixteen states. One living network.
+
+          {/* Pull quote */}
+          <p className="font-editorial italic font-light text-[22px] leading-[1.4] text-[#4a3c1a] max-w-[340px] mt-8">
+            Seventy-seven towns. The places where ordinary people made history.
           </p>
-          <div className="flex flex-wrap items-center mt-8 gap-0">
+
+          {/* CTA row */}
+          <div className="flex items-center gap-4 mt-9">
             <NextLink
               href="/towns"
-              className="inline-block px-6 py-3 bg-ink text-cream font-ui font-semibold text-[11px] tracking-[0.2em] uppercase shadow-[4px_4px_0_#c8222a] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#c8222a] transition-all duration-100 no-underline"
+              className="font-editorial font-bold text-[14px] tracking-[0.04em] text-[#f2e6c8] bg-[#cc3322] px-7 py-3.5 no-underline inline-block border-[3px] border-[#14100a] shadow-[4px_4px_0_#14100a] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#14100a] transition-all duration-100"
             >
               Explore the Towns
             </NextLink>
             <NextLink
               href="/teach"
-              className="border-2 border-ink text-ink font-ui font-semibold text-[11px] tracking-[0.2em] uppercase px-6 py-3 hover:bg-ink hover:text-cream transition-all duration-100 no-underline inline-block ml-3"
+              className="font-ui text-[11px] font-medium tracking-[0.18em] uppercase text-[#1a3a72] no-underline border-b-2 border-[#1a3a72] pb-0.5"
             >
-              For Teachers &rarr;
+              For Teachers
             </NextLink>
           </div>
         </div>
 
         {/* RIGHT */}
-        <div className="bg-[#1a3a72] border-l-4 border-ink relative overflow-hidden flex flex-col justify-end">
-          {/* Ghost year */}
-          <div
-            className="absolute inset-0 flex items-center justify-center select-none pointer-events-none"
-            aria-hidden="true"
-          >
-            <span className="font-display text-white leading-none" style={{ fontSize: "320px", opacity: 0.05 }}>
-              1775
-            </span>
+        <div className="bg-[#1a3a72] border-l-4 border-[#14100a] relative overflow-hidden flex items-center justify-center">
+
+          {/* Badge 1 */}
+          <div className="absolute top-12 left-8 -rotate-[3deg] font-editorial font-black text-[11px] tracking-[0.1em] uppercase bg-[#e8b84b] text-[#14100a] px-3 py-1.5 border-[2.5px] border-[#14100a] z-[4]">
+            April 19, 1775
           </div>
 
-          {/* Abstract SVG */}
+          {/* Badge 2 */}
+          <div className="absolute bottom-20 right-6 rotate-[2.5deg] font-editorial font-black text-[11px] tracking-[0.1em] uppercase bg-[#e8b84b] text-[#14100a] px-3 py-1.5 border-[2.5px] border-[#14100a] z-[4]">
+            Massachusetts, 1775
+          </div>
+
+          {/* Ghost year */}
+          <div
+            className="absolute bottom-[-20px] right-[-10px] font-editorial font-black text-white/[0.06] leading-none tracking-[-0.05em] z-[1] pointer-events-none select-none"
+            style={{ fontSize: "180px" }}
+            aria-hidden="true"
+          >
+            1775
+          </div>
+
+          {/* Star-map SVG */}
           <svg
-            className="absolute inset-0 w-full h-full"
-            viewBox="0 0 600 700"
+            className="absolute inset-0 w-full h-full z-[1]"
+            viewBox="0 0 500 600"
             fill="none"
             preserveAspectRatio="xMidYMid slice"
             aria-hidden="true"
           >
-            {/* Dashed river-like path */}
-            <path
-              d="M 50 350 Q 200 200 300 350 Q 400 500 550 300"
-              stroke="#7eb8e0"
-              strokeWidth="1.5"
-              strokeDasharray="8 6"
-              opacity="0.25"
-            />
-            {/* Compass crosshair */}
-            <line x1="300" y1="200" x2="300" y2="500" stroke="#e8b84b" strokeWidth="0.8" opacity="0.18" />
-            <line x1="150" y1="350" x2="450" y2="350" stroke="#e8b84b" strokeWidth="0.8" opacity="0.18" />
-            <circle cx="300" cy="350" r="60" stroke="#e8b84b" strokeWidth="0.8" opacity="0.12" />
-            <circle cx="300" cy="350" r="120" stroke="#e8b84b" strokeWidth="0.5" opacity="0.07" />
-            {/* Red dot cluster */}
-            <circle cx="300" cy="350" r="6" fill="#c8222a" opacity="0.7" />
-            <circle cx="340" cy="310" r="3" fill="#c8222a" opacity="0.45" />
-            <circle cx="260" cy="390" r="3" fill="#c8222a" opacity="0.45" />
-            <circle cx="320" cy="400" r="2.5" fill="#c8222a" opacity="0.35" />
-            <circle cx="270" cy="320" r="2.5" fill="#c8222a" opacity="0.35" />
-            {/* Gold stars */}
-            <text x="180" y="200" fill="#e8b84b" fontSize="12" opacity="0.4">&#9733;</text>
-            <text x="420" y="480" fill="#e8b84b" fontSize="10" opacity="0.35">&#9733;</text>
-            <text x="100" y="500" fill="#e8b84b" fontSize="8" opacity="0.3">&#9733;</text>
-            <text x="480" y="160" fill="#e8b84b" fontSize="9" opacity="0.3">&#9733;</text>
-            {/* Cream grid */}
-            {[0, 1, 2, 3, 4, 5].map((i) => (
-              <line key={`hg-${i}`} x1="0" y1={i * 140} x2="600" y2={i * 140} stroke="#f2ece0" strokeWidth="0.4" opacity="0.06" />
-            ))}
-            {[0, 1, 2, 3, 4].map((i) => (
-              <line key={`vg-${i}`} x1={i * 150} y1="0" x2={i * 150} y2="700" stroke="#f2ece0" strokeWidth="0.4" opacity="0.06" />
-            ))}
+            <circle cx="320" cy="280" r="180" fill="rgba(232,184,75,0.07)" />
+            <circle cx="320" cy="280" r="120" fill="rgba(232,184,75,0.06)" />
+            <path d="M180 300 Q190 160 320 150 Q460 140 470 280 Q480 420 340 430 Q190 440 180 300 Z" fill="none" stroke="rgba(242,230,200,0.07)" strokeWidth="2" />
+            <path d="M300 200 L307 221 L330 221 L312 234 L319 255 L300 242 L281 255 L288 234 L270 221 L293 221 Z" fill="#e8b84b" opacity="0.85" />
+            <path d="M130 155 L135 170 L151 170 L138 179 L143 194 L130 185 L117 194 L122 179 L109 170 L125 170 Z" fill="#cc3322" opacity="0.65" />
+            <path d="M405 325 L408 335 L419 335 L411 341 L414 351 L405 345 L396 351 L399 341 L391 335 L402 335 Z" fill="#f2e6c8" opacity="0.45" />
+            <path d="M160 420 L162 426 L169 426 L163 431 L165 437 L160 433 L155 437 L157 431 L151 426 L158 426 Z" fill="#e8b84b" opacity="0.4" />
+            <path d="M430 130 L432 137 L439 137 L433 141 L435 148 L430 144 L425 148 L427 141 L421 137 L428 137 Z" fill="#f2e6c8" opacity="0.3" />
+            <path d="M80 240 L82 246 L88 246 L83 250 L85 256 L80 252 L75 256 L77 250 L72 246 L78 246 Z" fill="#cc3322" opacity="0.3" />
+            <path d="M75 510 Q130 460 165 420 Q205 380 245 348 Q280 318 300 280 Q318 242 300 200" stroke="rgba(242,230,200,0.13)" strokeWidth="2" strokeDasharray="6 5" fill="none" strokeLinecap="round" />
+            <circle cx="165" cy="420" r="5.5" fill="#cc3322" opacity="0.55" />
+            <circle cx="245" cy="348" r="4.5" fill="#e8b84b" opacity="0.5" />
+            <circle cx="300" cy="280" r="7" fill="#cc3322" opacity="0.75" />
+            <circle cx="300" cy="200" r="4" fill="#f2e6c8" opacity="0.45" />
+            <circle cx="75" cy="510" r="3.5" fill="#e8b84b" opacity="0.35" />
+            <line x1="55" y1="96" x2="148" y2="96" stroke="rgba(242,230,200,0.11)" strokeWidth="3.5" strokeLinecap="round" />
+            <line x1="55" y1="106" x2="110" y2="106" stroke="rgba(242,230,200,0.06)" strokeWidth="2" strokeLinecap="round" />
+            <line x1="365" y1="485" x2="465" y2="485" stroke="rgba(242,230,200,0.11)" strokeWidth="3.5" strokeLinecap="round" />
+            <line x1="390" y1="495" x2="465" y2="495" stroke="rgba(242,230,200,0.06)" strokeWidth="2" strokeLinecap="round" />
+            <g transform="translate(420,205) rotate(22)">
+              <rect x="-3" y="-30" width="6" height="60" rx="3" fill="rgba(242,230,200,0.13)" />
+              <rect x="-30" y="-3" width="60" height="6" rx="3" fill="rgba(242,230,200,0.13)" />
+            </g>
           </svg>
 
-          {/* Floating badge top-right */}
-          <div className="absolute top-8 right-8" aria-hidden="true">
-            <span className="inline-block bg-[#e8b84b] text-ink font-ui text-[9px] font-semibold tracking-[0.22em] uppercase px-3 py-1.5 border-2 border-ink shadow-[2px_2px_0_#14100a] -rotate-1">
-              Since 1775
-            </span>
-          </div>
-
-          {/* Floating badge bottom-left */}
-          <div className="absolute bottom-32 left-8" aria-hidden="true">
-            <span className="inline-block bg-[#e8b84b] text-ink font-ui text-[9px] font-semibold tracking-[0.22em] uppercase px-3 py-1.5 border-2 border-ink shadow-[2px_2px_0_#14100a] rotate-1">
-              13 Colonies
-            </span>
-          </div>
-
-          {/* Bottom-anchored stacked type */}
-          <div className="relative z-10 px-10 pb-16 pt-8">
-            <p className="font-display text-cream leading-[0.92]" style={{ fontSize: "clamp(32px,4vw,54px)" }}>
-              77 Towns.<br />One Revolution.
+          {/* Bottom-anchored content block */}
+          <div className="absolute bottom-0 left-0 right-0 h-full z-[3] p-14 flex flex-col justify-end">
+            <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.35)] mb-4">
+              The Shot Heard Round the World
             </p>
-            <p className="font-editorial italic text-[16px] mt-3" style={{ color: "rgba(242,236,224,0.58)" }}>
-              Walked, sourced, and connected.
+            <p
+              className="font-editorial font-black text-[#f2e6c8] leading-[0.92] tracking-[-0.04em]"
+              style={{ fontSize: "clamp(32px,3.5vw,54px)" }}
+            >
+              75 Towns.<br />One Revolution.
+            </p>
+            <div className="w-12 h-[3px] bg-[#cc3322] my-5" />
+            <p className="font-editorial italic font-light text-[16px] leading-[1.65] text-[rgba(242,230,200,0.58)] max-w-[280px]">
+              Every town has a story. Most of them have never been told.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────── */}
-      {/* 2. STATS RIBBON                                             */}
-      {/* ─────────────────────────────────────────────────────────── */}
-      <section className="bg-ink border-b-4 border-crimson flex">
-        {STATS.map(({ number, label, detail }) => (
+      {/* ────────────────────────────────────────────────────────────── */}
+      {/* 2. STATS RIBBON                                               */}
+      {/* ────────────────────────────────────────────────────────────── */}
+      <div className="bg-[#14100a] flex border-b-4 border-[#cc3322] overflow-hidden">
+        {[
+          { number: "13", accent: "✦", label: "Original Colonies" },
+          { number: "75", accent: "",   label: "Towns Documented" },
+          { number: "8",  accent: " yrs", label: "The Conflict Lasted" },
+          { number: "1783", accent: "", label: "Year of Victory" },
+        ].map((stat) => (
           <div
-            key={label}
-            className="flex-1 px-8 py-10 border-l border-cream/10 first:border-l-0 group hover:border-t-[3px] hover:border-t-crimson transition-all"
+            key={stat.label}
+            className="stat-cell flex-1 px-6 py-7 border-r-2 border-[rgba(242,230,200,0.08)] last:border-r-0 flex flex-col gap-1"
           >
-            <div className="font-display text-[48px] text-cream leading-none">{number}</div>
-            <div className="font-ui text-[10px] uppercase tracking-[0.2em] text-cream/60 mt-2">{label}</div>
-            <div className="font-ui text-[11px] text-cream/45 mt-1">{detail}</div>
+            <div className="font-display text-[48px] text-[#f2e6c8] leading-none tracking-[-0.04em]">
+              {stat.number}<span className="text-[#cc3322] text-[0.7em]">{stat.accent}</span>
+            </div>
+            <div className="font-ui text-[10px] font-normal tracking-[0.2em] uppercase text-[rgba(242,230,200,0.4)]">
+              {stat.label}
+            </div>
           </div>
         ))}
+      </div>
+
+      {/* ────────────────────────────────────────────────────────────── */}
+      {/* 3. MANIFESTO                                                  */}
+      {/* ────────────────────────────────────────────────────────────── */}
+      <section className="bg-[#cc3322] py-20 px-10 relative overflow-hidden border-b-4 border-[#14100a]">
+        {/* Ghost circles */}
+        <div className="absolute w-[280px] h-[280px] rounded-full border-[3px] border-[rgba(242,230,200,0.1)] top-[-80px] right-[-80px]" aria-hidden="true" />
+        <div className="absolute w-[180px] h-[180px] rounded-full border-[3px] border-[rgba(242,230,200,0.07)] bottom-[-60px] left-[40%]" aria-hidden="true" />
+
+        <div className="grid grid-cols-2 gap-0 relative z-10">
+          {/* Left */}
+          <div className="pr-10 border-r-[3px] border-[rgba(242,230,200,0.25)]">
+            <h2
+              className="font-editorial font-black text-[#f2e6c8] leading-[0.92] tracking-[-0.04em]"
+              style={{ fontSize: "clamp(48px,5vw,80px)" }}
+            >
+              The War<br />Was Won<br />
+              <span className="inline-block -rotate-[4deg] text-[#e8b84b] origin-left">Here.</span>
+            </h2>
+          </div>
+
+          {/* Right */}
+          <div className="pl-12 flex flex-col justify-between">
+            <p className="font-editorial italic font-light text-[22px] leading-[1.55] text-[rgba(242,230,200,0.85)]">
+              Not on famous battlefields alone. It was won in a farmhouse in Wilmington where a surgeon packed his bag. In a church in Salem where men argued through the night. In a kitchen in Concord where someone hid the powder.
+              <br /><br />
+              This project maps those places. All of them.
+            </p>
+            <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.4)] mt-8 flex items-center gap-3">
+              <span className="w-6 h-[2px] bg-[rgba(242,230,200,0.3)] block" />
+              75 Towns · 8 Years · 1 Revolution
+            </p>
+          </div>
+        </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────── */}
-      {/* 3. MANIFESTO                                                */}
-      {/* ─────────────────────────────────────────────────────────── */}
-      <section className="bg-crimson border-b-4 border-ink grid grid-cols-1 md:grid-cols-2">
+      {/* ────────────────────────────────────────────────────────────── */}
+      {/* 4. TOWNS                                                      */}
+      {/* ────────────────────────────────────────────────────────────── */}
+      <section className="bg-[#f8f0d8] border-b-4 border-[#14100a] grid grid-cols-2">
 
         {/* Left */}
-        <div className="px-16 py-20">
-          <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-yellow flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-[#e8b84b] before:block">
-            Our Mission
+        <div className="px-10 py-16 border-r-4 border-[#14100a]">
+          {/* Kicker */}
+          <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] flex items-center gap-2.5 mb-8">
+            <span className="w-5 h-[2px] bg-[#cc3322] block" />
+            The Map
           </p>
-          <h2 className="font-editorial italic font-light text-cream leading-[1.0]" style={{ fontSize: "clamp(40px,6vw,80px)" }}>
-            History isn&apos;t<br />locked in a{" "}
-            <span className="inline-block -rotate-[2deg] not-italic font-normal text-yellow">museum.</span>
-          </h2>
-        </div>
 
-        {/* Right */}
-        <div className="px-16 py-20 relative border-l-4 border-ink/20 overflow-hidden">
-          {/* Decorative circles */}
-          <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full border border-cream/10" aria-hidden="true" />
-          <div className="absolute -bottom-16 -right-8 w-40 h-40 rounded-full border border-cream/10" aria-hidden="true" />
-
-          <p className="font-editorial italic text-[16px] text-cream/80 leading-[1.8] mb-4 relative z-10">
-            It&apos;s in a harbor where tea was dumped on a December night. It&apos;s on a green
-            where seventy-seven men stood at dawn, outnumbered. It&apos;s in a courthouse, a
-            churchyard, a field that still holds the dead.
-          </p>
-          <p className="font-editorial italic text-[16px] text-cream/80 leading-[1.8] relative z-10">
-            Every claim we make cites its source. Every source is graded by credibility tier.
-            No myths. No paywall. History is for everyone — we mean it.
-          </p>
-          <NextLink
-            href="/about"
-            className="bg-cream text-ink font-ui font-semibold text-[11px] tracking-[0.2em] uppercase px-6 py-3 shadow-[4px_4px_0_#0e1428] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-100 no-underline inline-block mt-8 relative z-10"
+          {/* H2 */}
+          <h2
+            className="font-editorial font-black text-[#14100a] leading-[0.95] tracking-[-0.03em] mb-10"
+            style={{ fontSize: "clamp(36px,4vw,56px)" }}
           >
-            Our Story &rarr;
-          </NextLink>
-        </div>
-      </section>
+            Where It<br />
+            <em className="font-editorial italic font-light text-[#1a3a72]">Happened</em>
+          </h2>
 
-      {/* ─────────────────────────────────────────────────────────── */}
-      {/* 4. TOWNS                                                    */}
-      {/* ─────────────────────────────────────────────────────────── */}
-      <section className="bg-[#f8f0d8] border-b-4 border-ink grid grid-cols-1 md:grid-cols-2">
-
-        {/* Left */}
-        <div className="px-16 py-20">
-          <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
-            Start Here
-          </p>
-          <h2 className="font-editorial italic font-light text-[44px] text-ink leading-none mb-8">Essential Towns</h2>
-
-          <ul className="columns-1 sm:columns-2 gap-x-8">
-            {ESSENTIAL_TOWNS.map((town) => (
-              <li key={town.slug} className="break-inside-avoid">
+          {/* Town grid */}
+          <ul className="grid grid-cols-3 border-t-2 border-[#14100a] list-none m-0 p-0">
+            {TOWNS.map((town) => (
+              <li
+                key={town.slug}
+                className="border-b border-r border-[rgba(20,16,10,0.15)] [&:nth-child(3n)]:border-r-0"
+              >
                 <NextLink
                   href={`/towns/${town.slug}`}
-                  className="no-underline flex items-center gap-2 py-2.5 border-b border-ink/[0.08] hover:bg-[#1a3a72] hover:text-cream px-2 -mx-2 transition-colors group"
+                  className="flex items-center gap-2 px-3 py-2.5 text-[12px] font-ui text-[#14100a] no-underline hover:bg-[#1a3a72] hover:text-[#f2e6c8] transition-colors duration-150 [&:hover_.dot]:bg-[#e8b84b]"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-crimson flex-shrink-0" aria-hidden="true" />
-                  <span className="font-editorial text-[15px] text-ink group-hover:text-cream">
-                    {town.name}
-                  </span>
+                  <span className="dot w-[5px] h-[5px] rounded-full bg-[#cc3322] flex-shrink-0 transition-colors" />
+                  {town.name}
                 </NextLink>
               </li>
             ))}
+            <li className="border-b border-[rgba(20,16,10,0.15)]">
+              <NextLink
+                href="/towns"
+                className="flex items-center gap-2 px-3 py-2.5 text-[12px] font-ui text-[#14100a] no-underline opacity-40 italic"
+              >
+                + 54 more →
+              </NextLink>
+            </li>
           </ul>
-
-          <div className="mt-8">
-            <NextLink
-              href="/towns"
-              className="inline-block px-6 py-3 bg-ink text-cream font-ui font-semibold text-[11px] tracking-[0.2em] uppercase shadow-[4px_4px_0_#c8222a] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#c8222a] transition-all duration-100 no-underline"
-            >
-              All 77 Towns &rarr;
-            </NextLink>
-          </div>
         </div>
 
         {/* Right */}
-        <div className="bg-[#1a3a72] border-l-4 border-ink px-10 py-16 relative overflow-hidden flex flex-col justify-end">
-          {/* Ghost state abbrev */}
-          <div className="absolute top-8 right-8 select-none pointer-events-none font-display text-white/[0.06] leading-none" style={{ fontSize: "160px" }} aria-hidden="true">
+        <div className="bg-[#1a3a72] px-12 py-16 relative overflow-hidden flex flex-col justify-between">
+
+          {/* Tilted tag */}
+          <div className="absolute top-12 right-8 rotate-[3deg] bg-[#e8b84b] text-[#14100a] font-editorial font-bold text-[12px] px-3.5 py-2 border-[2.5px] border-[#14100a] shadow-[3px_3px_0_#14100a] z-[3]">
+            Featured Town
+          </div>
+
+          {/* Ghost state */}
+          <div className="absolute top-[-16px] right-[-20px] font-editorial font-black text-[120px] text-white/[0.05] leading-none pointer-events-none select-none" aria-hidden="true">
             MA
           </div>
 
           <div className="relative z-10">
-            <div className="mb-3">
-              <span className="inline-block bg-[#e8b84b] text-ink font-ui text-[9px] font-semibold tracking-[0.22em] uppercase px-3 py-1.5 border-2 border-ink shadow-[2px_2px_0_#14100a] -rotate-1">
-                Massachusetts
-              </span>
-            </div>
-            <p className="font-display text-cream leading-[0.88]" style={{ fontSize: "80px" }}>
-              Boston
+            <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.4)] mb-5">
+              This Week
             </p>
-            <p className="font-editorial italic text-cream/70 text-[15px] mt-4 leading-relaxed max-w-[340px]">
-              From the Massacre to the Tea Party — where colonial grievance became organized resistance.
+            <h3
+              className="font-editorial font-black text-[#f2e6c8] leading-[0.9] tracking-[-0.04em]"
+              style={{ fontSize: "clamp(48px,5vw,80px)" }}
+            >
+              Concord
+            </h3>
+            <p className="font-editorial font-black text-[#cc3322] text-[72px] leading-none tracking-[-0.04em] mt-4">
+              Apr 19
+            </p>
+            <p className="font-editorial italic font-light text-[18px] leading-[1.6] text-[rgba(242,230,200,0.7)] max-w-[340px] mt-6">
+              The shot heard round the world. But who fired it? Seventy-seven militia stood on a triangular green at dawn. What they knew — and feared — is more complicated than the myth.
             </p>
             <NextLink
-              href="/towns/boston-ma"
-              className="font-ui text-[11px] uppercase tracking-[0.2em] text-yellow hover:text-cream transition-colors mt-6 inline-block no-underline"
+              href="/towns/concord-ma"
+              className="inline-flex items-center gap-2.5 mt-8 font-ui text-[11px] font-semibold tracking-[0.2em] uppercase text-[#f2e6c8] no-underline border-b-2 border-[rgba(242,230,200,0.3)] pb-[3px] w-fit"
             >
-              Explore Boston &rarr;
+              Read the Town →
             </NextLink>
           </div>
+
+          {/* Small stars SVG */}
+          <svg
+            className="absolute bottom-8 left-12 w-[90px] h-[30px] opacity-[0.25] pointer-events-none"
+            viewBox="0 0 90 30"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path d="M10 15 L11 17.8 L14 17.8 L11.7 19.4 L12.6 22.2 L10 20.5 L7.4 22.2 L8.3 19.4 L6 17.8 L9 17.8 Z" fill="#e8b84b" />
+            <path d="M30 8 L30.8 10.4 L33.4 10.4 L31.4 11.9 L32.2 14.3 L30 12.8 L27.8 14.3 L28.6 11.9 L26.6 10.4 L29.2 10.4 Z" fill="#e8b84b" />
+            <path d="M55 18 L55.6 19.8 L57.6 19.8 L56.1 20.9 L56.7 22.7 L55 21.5 L53.3 22.7 L53.9 20.9 L52.4 19.8 L54.4 19.8 Z" fill="#e8b84b" />
+          </svg>
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────── */}
-      {/* 5. QUOTE                                                    */}
-      {/* ─────────────────────────────────────────────────────────── */}
-      <section className="bg-[#2a5c45] border-b-4 border-ink py-24 px-16 relative overflow-hidden">
+      {/* ────────────────────────────────────────────────────────────── */}
+      {/* 5. QUOTE                                                      */}
+      {/* ────────────────────────────────────────────────────────────── */}
+      <section className="bg-[#2a5c45] py-24 px-10 relative overflow-hidden border-b-4 border-[#14100a] flex items-center justify-center">
+
         {/* Ghost quotation mark */}
         <div
-          className="absolute -top-8 left-8 font-display text-cream/[0.06] leading-none select-none pointer-events-none"
-          style={{ fontSize: "240px" }}
+          className="absolute font-editorial font-black text-white/[0.04] top-[-80px] left-5 leading-none z-0 pointer-events-none select-none"
+          style={{ fontSize: "400px" }}
           aria-hidden="true"
         >
           &ldquo;
         </div>
 
-        <blockquote className="font-editorial italic text-[22px] text-cream leading-[1.7] max-w-[760px] relative z-10">
-          <strong className="font-editorial not-italic text-yellow">These are the times that try men&apos;s souls.</strong>{" "}
-          The summer soldier and the sunshine patriot will, in this crisis, shrink from the service
-          of their country; but he that stands it now, deserves the love and thanks of man and woman.
-        </blockquote>
-        <p className="font-ui text-[9px] uppercase tracking-[0.25em] text-cream/40 mt-6 relative z-10">
-          — Thomas Paine, The American Crisis, December 1776
-        </p>
-      </section>
+        {/* Ghost circles */}
+        <div className="absolute w-[500px] h-[500px] rounded-full border-2 border-[rgba(242,230,200,0.08)] top-[-200px] right-[-150px]" aria-hidden="true" />
+        <div className="absolute w-[200px] h-[200px] rounded-full border-2 border-[rgba(242,230,200,0.08)] bottom-[-80px] left-[10%]" aria-hidden="true" />
 
-      {/* ─────────────────────────────────────────────────────────── */}
-      {/* 6. STORIES — 3-column grid                                 */}
-      {/* ─────────────────────────────────────────────────────────── */}
-      <section className="grid grid-cols-1 md:grid-cols-3 border-b-4 border-ink">
-
-        {/* Cell 1 */}
-        <div className="bg-cream border-r-[3px] border-ink p-10 relative overflow-hidden">
-          <div className="absolute top-4 right-6 font-display text-[80px] text-ink/[0.08] leading-none select-none pointer-events-none" aria-hidden="true">
-            1
-          </div>
-          <span className="font-ui text-[9px] uppercase tracking-[0.18em] px-2.5 py-1 border border-ink text-ink inline-block">
-            Primary Sources
-          </span>
-          <h3 className="font-editorial text-[20px] text-ink leading-[1.3] mt-4">
-            {TEACHER_FEATURES[0].title}
-          </h3>
-          <p className="font-ui text-[13px] leading-relaxed mt-3 text-ink/60">
-            {TEACHER_FEATURES[0].body}
-          </p>
-        </div>
-
-        {/* Cell 2 */}
-        <div className="bg-[#1a3a72] border-r-[3px] border-ink p-10 relative overflow-hidden">
-          <div className="absolute top-4 right-6 font-display text-[80px] text-cream/[0.08] leading-none select-none pointer-events-none" aria-hidden="true">
-            2
-          </div>
-          <span className="font-ui text-[9px] uppercase tracking-[0.18em] px-2.5 py-1 border border-cream/30 text-cream/60 inline-block">
-            Lesson Plans
-          </span>
-          <h3 className="font-editorial text-[20px] text-cream leading-[1.3] mt-4">
-            {TEACHER_FEATURES[1].title}
-          </h3>
-          <p className="font-ui text-[13px] leading-relaxed mt-3 text-cream/60">
-            {TEACHER_FEATURES[1].body}
-          </p>
-        </div>
-
-        {/* Cell 3 */}
-        <div className="bg-crimson p-10 relative overflow-hidden">
-          <div className="absolute top-4 right-6 font-display text-[80px] text-cream/[0.08] leading-none select-none pointer-events-none" aria-hidden="true">
-            3
-          </div>
-          <span className="font-ui text-[9px] uppercase tracking-[0.18em] px-2.5 py-1 border border-cream/30 text-cream/60 inline-block">
-            Classroom Ready
-          </span>
-          <h3 className="font-editorial text-[20px] text-cream leading-[1.3] mt-4">
-            {TEACHER_FEATURES[2].title}
-          </h3>
-          <p className="font-ui text-[13px] leading-relaxed mt-3 text-cream/60">
-            {TEACHER_FEATURES[2].body}
-          </p>
+        <div className="relative z-[2] max-w-[960px] text-center">
+          <blockquote>
+            <p
+              className="font-editorial italic font-light text-[#f2e6c8] leading-[1.2] tracking-[-0.02em]"
+              style={{ fontSize: "clamp(28px,3.5vw,52px)" }}
+            >
+              &ldquo;Those who expect to reap the blessings of freedom must, like men, undergo{" "}
+              <strong className="font-editorial font-black not-italic text-[#e8b84b]">
+                the fatigues of supporting it.
+              </strong>&rdquo;
+            </p>
+            <p className="font-ui text-[10px] font-medium tracking-[0.24em] uppercase text-[rgba(242,230,200,0.4)] mt-7 flex items-center justify-center gap-3">
+              <span className="w-8 h-[1px] bg-[rgba(242,230,200,0.25)] block" />
+              Thomas Paine · The American Crisis · 1776
+              <span className="w-8 h-[1px] bg-[rgba(242,230,200,0.25)] block" />
+            </p>
+          </blockquote>
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────── */}
-      {/* 7. CTA                                                      */}
-      {/* ─────────────────────────────────────────────────────────── */}
-      <section className="bg-[#e8b84b] border-y-4 border-ink py-24 px-16 relative overflow-hidden">
+      {/* ────────────────────────────────────────────────────────────── */}
+      {/* 6. STORIES                                                    */}
+      {/* ────────────────────────────────────────────────────────────── */}
+      <section className="bg-[#f2e6c8] border-b-4 border-[#14100a]">
+
+        {/* Header row */}
+        <div className="px-10 py-14 pb-8 flex items-end justify-between border-b-[3px] border-[#14100a]">
+          <h2
+            className="font-editorial font-black text-[#14100a] leading-[0.92] tracking-[-0.04em]"
+            style={{ fontSize: "clamp(36px,4vw,64px)" }}
+          >
+            The <em className="font-editorial italic font-light text-[#cc3322]">Stories</em><br />
+            Nobody Tells
+          </h2>
+          <NextLink
+            href="/towns"
+            className="font-ui text-[10px] font-semibold tracking-[0.2em] uppercase text-[#1a3a72] no-underline border-b-2 border-[#1a3a72] pb-0.5 flex-shrink-0 ml-8 mb-1"
+          >
+            All Stories →
+          </NextLink>
+        </div>
+
+        {/* Cards */}
+        <div className="grid grid-cols-3">
+
+          {/* Card 1 */}
+          <div className="bg-[#f2e6c8] px-9 py-10 border-r-[3px] border-[#14100a] relative overflow-hidden">
+            <div className="absolute top-4 right-5 font-editorial font-black text-[80px] leading-none tracking-[-0.05em] opacity-[0.12] pointer-events-none select-none text-[#14100a]" aria-hidden="true">
+              01
+            </div>
+            <span className="inline-block font-ui text-[9px] font-semibold tracking-[0.24em] uppercase px-2.5 py-1 border-[1.5px] mb-5 text-[#cc3322] border-[#cc3322]">
+              People
+            </span>
+            <h3 className="font-editorial font-black text-[24px] leading-[1.05] tracking-[-0.02em] mb-4 text-[#14100a]">
+              The Surgeon Who Rode Before Revere
+            </h3>
+            <p className="font-ui text-[14px] font-light leading-[1.7] text-[rgba(20,16,10,0.6)]">
+              Samuel Prescott was the only rider who actually made it to Concord. Revere was captured. Dawes turned back. Prescott jumped a stone wall.
+            </p>
+            <NextLink
+              href="/towns/concord-ma"
+              className="inline-flex items-center gap-2 mt-6 font-ui text-[10px] font-semibold tracking-[0.18em] uppercase no-underline pb-0.5 text-[#1a3a72] border-b-[1.5px] border-[#1a3a72]"
+            >
+              Read More
+            </NextLink>
+          </div>
+
+          {/* Card 2 */}
+          <div className="bg-[#1a3a72] px-9 py-10 border-r-[3px] border-[#14100a] relative overflow-hidden">
+            <div className="absolute top-4 right-5 font-editorial font-black text-[80px] leading-none tracking-[-0.05em] opacity-[0.12] pointer-events-none select-none text-[#f2e6c8]" aria-hidden="true">
+              02
+            </div>
+            <span className="inline-block font-ui text-[9px] font-semibold tracking-[0.24em] uppercase px-2.5 py-1 border-[1.5px] mb-5 text-[#e8b84b] border-[#e8b84b]">
+              Places
+            </span>
+            <h3 className="font-editorial font-black text-[24px] leading-[1.05] tracking-[-0.02em] mb-4 text-[#f2e6c8]">
+              The Tavern That Was Really a War Room
+            </h3>
+            <p className="font-ui text-[14px] font-light leading-[1.7] text-[rgba(242,230,200,0.6)]">
+              Every town had one. The public room where men drank cider and planned treason. Buckman Tavern had both — sometimes on the same night.
+            </p>
+            <NextLink
+              href="/towns/lexington-ma"
+              className="inline-flex items-center gap-2 mt-6 font-ui text-[10px] font-semibold tracking-[0.18em] uppercase no-underline pb-0.5 text-[#e8b84b] border-b-[1.5px] border-[#e8b84b]"
+            >
+              Read More
+            </NextLink>
+          </div>
+
+          {/* Card 3 */}
+          <div className="bg-[#cc3322] px-9 py-10 relative overflow-hidden">
+            <div className="absolute top-4 right-5 font-editorial font-black text-[80px] leading-none tracking-[-0.05em] opacity-[0.12] pointer-events-none select-none text-[#f2e6c8]" aria-hidden="true">
+              03
+            </div>
+            <span className="inline-block font-ui text-[9px] font-semibold tracking-[0.24em] uppercase px-2.5 py-1 border-[1.5px] mb-5 text-[#f2e6c8] border-[rgba(242,230,200,0.5)]">
+              Forgotten
+            </span>
+            <h3 className="font-editorial font-black text-[24px] leading-[1.05] tracking-[-0.02em] mb-4 text-[#f2e6c8]">
+              The Women Who Kept the Powder Dry
+            </h3>
+            <p className="font-ui text-[14px] font-light leading-[1.7] text-[rgba(242,230,200,0.65)]">
+              When the men marched out, someone stayed behind. Hid the flax. Buried the pewter. Fed the scouts who came through at midnight. These are their names.
+            </p>
+            <NextLink
+              href="/towns"
+              className="inline-flex items-center gap-2 mt-6 font-ui text-[10px] font-semibold tracking-[0.18em] uppercase no-underline pb-0.5 text-[#f2e6c8] border-b-[1.5px] border-[rgba(242,230,200,0.5)]"
+            >
+              Read More
+            </NextLink>
+          </div>
+        </div>
+      </section>
+
+      {/* ────────────────────────────────────────────────────────────── */}
+      {/* 7. CTA                                                        */}
+      {/* ────────────────────────────────────────────────────────────── */}
+      <section className="bg-[#e8b84b] border-b-4 border-[#14100a] py-20 px-10 grid grid-cols-[1fr_auto] items-center gap-16 relative overflow-hidden">
+
         {/* Ghost "75" */}
         <div
-          className="absolute -top-8 right-8 font-display text-ink/[0.06] leading-none select-none pointer-events-none"
-          style={{ fontSize: "280px" }}
+          className="absolute font-editorial font-black text-[rgba(20,16,10,0.05)] right-[-40px] top-[-60px] leading-none tracking-[-0.06em] z-0 pointer-events-none select-none"
+          style={{ fontSize: "320px" }}
           aria-hidden="true"
         >
           75
         </div>
 
-        <div className="relative z-10">
-          <div className="inline-block border-2 border-crimson text-crimson font-display text-[13px] tracking-[0.2em] -rotate-[8deg] opacity-60 px-4 py-2 mb-8">
-            SINCE 1775
-          </div>
-
-          <h2 className="font-editorial italic font-light text-ink leading-[1.0]" style={{ fontSize: "clamp(40px,6vw,80px)" }}>
-            Your town.<br />Our network.
-          </h2>
-
-          <p className="font-editorial italic text-ink/70 text-[18px] mt-4 max-w-[500px]">
-            We partner with tourism offices, historical societies, and preservation organizations
-            to tell stories that belong to everyone.
-          </p>
-
-          <div className="mt-10">
-            <NextLink
-              href="/partner"
-              className="inline-block px-6 py-3 bg-ink text-cream font-ui font-semibold text-[11px] tracking-[0.2em] uppercase shadow-[4px_4px_0_#c8222a] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#c8222a] transition-all duration-100 no-underline"
-            >
-              Partner With Us &rarr;
-            </NextLink>
-          </div>
+        {/* Tilted stamp */}
+        <div className="absolute top-10 right-[300px] font-editorial font-black text-[11px] tracking-[0.12em] uppercase text-[#cc3322] border-[3px] border-[#cc3322] px-3.5 py-2 -rotate-[8deg] opacity-60 z-[2]">
+          All Welcome
         </div>
+
+        {/* Headline */}
+        <p
+          className="font-editorial font-black text-[#14100a] leading-[0.92] tracking-[-0.04em] relative z-[2]"
+          style={{ fontSize: "clamp(40px,5vw,80px)" }}
+        >
+          Pick a town.<br />
+          <em className="font-editorial italic font-light text-[#cc3322]">Start anywhere.</em>
+        </p>
+
+        {/* Button */}
+        <NextLink
+          href="/towns"
+          className="font-editorial font-bold text-[16px] text-[#f2e6c8] bg-[#14100a] px-10 py-5 no-underline inline-block border-[3px] border-[#14100a] shadow-[6px_6px_0_#cc3322] hover:-translate-x-[3px] hover:-translate-y-[3px] hover:shadow-[9px_9px_0_#cc3322] transition-all duration-100 whitespace-nowrap relative z-[2] flex-shrink-0"
+        >
+          Explore All Towns →
+        </NextLink>
       </section>
 
     </main>
