@@ -12,10 +12,21 @@ interface PageProps {
   searchParams: Promise<{ q?: string }>;
 }
 
+// DB stores two-letter abbreviations — map to display names
+const ABBREV_TO_NAME: Record<string, string> = {
+  MA: "Massachusetts", NJ: "New Jersey", NY: "New York",
+  PA: "Pennsylvania", VA: "Virginia", SC: "South Carolina",
+  CT: "Connecticut", NC: "North Carolina", RI: "Rhode Island",
+  MD: "Maryland", NH: "New Hampshire", GA: "Georgia",
+  VT: "Vermont", DE: "Delaware", ME: "Maine",
+  WV: "West Virginia", OH: "Ohio", IL: "Illinois",
+};
+
 const STATE_ORDER = [
   "Massachusetts", "New Jersey", "New York", "Pennsylvania", "Virginia",
   "South Carolina", "Connecticut", "North Carolina", "Rhode Island",
   "Maryland", "New Hampshire", "Georgia", "Vermont", "Delaware", "Maine",
+  "West Virginia", "Ohio", "Illinois",
 ];
 
 const STATE_IDS: Record<string, string> = {
@@ -24,6 +35,7 @@ const STATE_IDS: Record<string, string> = {
   Connecticut: "ct", "North Carolina": "nc", "Rhode Island": "ri",
   Maryland: "md", "New Hampshire": "nh", Georgia: "ga",
   Vermont: "vt", Delaware: "de", Maine: "me",
+  "West Virginia": "wv", Ohio: "oh", Illinois: "il",
 };
 
 function Squiggle({ width = 340, stroke = "rgba(255,255,255,0.35)", strokeWidth = "2.5" }: {
@@ -59,14 +71,17 @@ export default async function TownsPage({ searchParams }: PageProps) {
     ? towns.filter(
         (t) =>
           t.name.toLowerCase().includes(query) ||
+          (ABBREV_TO_NAME[t.state] ?? t.state).toLowerCase().includes(query) ||
           t.state.toLowerCase().includes(query)
       )
     : towns;
 
+  // Group by full state name (DB returns abbreviations like "MA")
   const townsByState: Record<string, typeof filtered> = {};
   for (const town of filtered) {
-    if (!townsByState[town.state]) townsByState[town.state] = [];
-    townsByState[town.state].push(town);
+    const stateName = ABBREV_TO_NAME[town.state] ?? town.state;
+    if (!townsByState[stateName]) townsByState[stateName] = [];
+    townsByState[stateName].push(town);
   }
 
   const statesToShow = STATE_ORDER.filter((s) => townsByState[s]);
