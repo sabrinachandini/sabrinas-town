@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { Link } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Teach | History is for Everyone",
@@ -10,184 +9,679 @@ export const metadata: Metadata = {
 const STATES = [
   {
     name: "Massachusetts",
-    href: "/teach/massachusetts",
+    slug: "massachusetts",
     description:
       "Ten towns spanning the opening acts of the Revolution — from the shots fired at Lexington and Concord to the siege of Boston, the maritime resistance of the North Shore, and the interior defiance that shut down royal courts before a single battle was fought.",
   },
   {
     name: "New Jersey",
-    href: "/teach/new-jersey",
+    slug: "new-jersey",
     description:
       "The crossroads of the war — from Washington\u2019s desperate crossing of the Delaware to two brutal winters at Morristown that tested the Continental Army to its limits.",
   },
   {
-    name: "Connecticut",
-    href: "/teach/connecticut",
+    name: "Virginia",
+    slug: "virginia",
     description:
-      "Connecticut\u2019s Revolutionary story spans the colony\u2019s maritime economy, Tory loyalists, and the brutal British raid on Danbury that pushed many fence-sitters toward the Patriot cause.",
-  },
-  {
-    name: "Rhode Island",
-    href: "/teach/rhode-island",
-    description:
-      "Newport, occupied by the British for three years, and Providence, which emerged as the Patriot headquarters and naval center — two towns that capture the tension at the heart of the Revolution.",
-  },
-  {
-    name: "New Hampshire",
-    href: "/teach/new-hampshire",
-    description:
-      "New Hampshire struck first — its militia seized Fort William and Mary in December 1774, months before Lexington, making it one of the earliest acts of armed resistance in the colonies.",
-  },
-  {
-    name: "Vermont",
-    href: "/teach/vermont",
-    description:
-      "Vermont in 1777 was a disputed territory claimed by both New York and New Hampshire, and its Green Mountain Boys fought for independence on two fronts: against the British and against colonial authority.",
+      "Virginia produced the Revolution\u2019s most consequential leaders — Washington, Jefferson, Madison, Henry — and its final chapter was written at Yorktown, where the last major British army surrendered in 1781.",
   },
   {
     name: "New York",
-    href: "/teach/new-york",
+    slug: "new-york",
     description:
       "New York was the strategic prize of the entire war. The British held New York City from 1776 to 1783; the Patriot victory at Saratoga brought France into the war; and Washington\u2019s army spent its most desperate years in the Hudson Valley.",
   },
   {
     name: "Pennsylvania",
-    href: "/teach/pennsylvania",
+    slug: "pennsylvania",
     description:
       "Pennsylvania hosted both the Continental Congress and the darkest winter of the war. From the political debates in Philadelphia to the suffering at Valley Forge, the state\u2019s history captures the Revolution at its most fragile.",
   },
   {
-    name: "Virginia",
-    href: "/teach/virginia",
-    description:
-      "Virginia produced the Revolution\u2019s most consequential leaders — Washington, Jefferson, Madison, Henry — and its final chapter was written at Yorktown, where the last major British army surrendered in 1781.",
-  },
-  {
     name: "South Carolina",
-    href: "/teach/south-carolina",
+    slug: "south-carolina",
     description:
       "South Carolina\u2019s war was the most brutal in the colonies — a civil war within a war, with Patriot and Loyalist militias fighting in a landscape of isolated plantations and dense backcountry.",
   },
   {
+    name: "Connecticut",
+    slug: "connecticut",
+    description:
+      "Connecticut\u2019s Revolutionary story spans the colony\u2019s maritime economy, Tory loyalists, and the brutal British raid on Danbury that pushed many fence-sitters toward the Patriot cause.",
+  },
+  {
     name: "North Carolina",
-    href: "/teach/north-carolina",
+    slug: "north-carolina",
     description:
       "North Carolina\u2019s backcountry became the decisive theater of the Southern campaign. The overmountain men at Kings Mountain and Nathanael Greene\u2019s grinding campaign broke British control of the South.",
   },
   {
-    name: "Georgia",
-    href: "/teach/georgia",
+    name: "Rhode Island",
+    slug: "rhode-island",
     description:
-      "Georgia was the only colony the British successfully reconquered — and held for years. Savannah\u2019s occupation and the failed Franco-American siege teach students about the war\u2019s international dimensions and the limits of alliance.",
+      "Newport, occupied by the British for three years, and Providence, which emerged as the Patriot headquarters and naval center — two towns that capture the tension at the heart of the Revolution.",
   },
   {
     name: "Maryland",
-    href: "/teach/maryland",
+    slug: "maryland",
     description:
       "Maryland\u2019s location between the Northern and Southern colonies made it a crucial logistical hub, and its state constitution of 1776 became a model for republican government studied throughout the founding generation.",
   },
   {
+    name: "New Hampshire",
+    slug: "new-hampshire",
+    description:
+      "New Hampshire struck first — its militia seized Fort William and Mary in December 1774, months before Lexington, making it one of the earliest acts of armed resistance in the colonies.",
+  },
+  {
+    name: "Georgia",
+    slug: "georgia",
+    description:
+      "Georgia was the only colony the British successfully reconquered — and held for years. Savannah\u2019s occupation and the failed Franco-American siege teach students about the war\u2019s international dimensions and the limits of alliance.",
+  },
+  {
+    name: "Vermont",
+    slug: "vermont",
+    description:
+      "Vermont in 1777 was a disputed territory claimed by both New York and New Hampshire, and its Green Mountain Boys fought for independence on two fronts: against the British and against colonial authority.",
+  },
+  {
     name: "Delaware",
-    href: "/teach/delaware",
+    slug: "delaware",
     description:
       "Delaware\u2019s decision to break with Pennsylvania and form its own delegation gave the Continental Congress its key swing vote for independence, and its \u201cBlue Hen\u201d regiment became one of the Continental Army\u2019s most celebrated units.",
   },
   {
     name: "Maine",
-    href: "/teach/maine",
+    slug: "maine",
     description:
       "Maine, then part of Massachusetts, suffered some of the war\u2019s earliest British raids — Falmouth (now Portland) was bombarded and burned in 1775 — and its Penobscot Expedition of 1779 was one of the largest American naval disasters.",
   },
-  {
-    name: "Frontier",
-    href: "/teach/frontier",
-    description:
-      "The Revolution extended far beyond the eastern seaboard. George Rogers Clark\u2019s capture of Kaskaskia, the founding of Marietta, and Wheeling\u2019s frontier forts show how the war reshaped the continent.",
-  },
 ];
+
+function Squiggle({ width = 360, stroke = "rgba(255,255,255,0.3)", strokeWidth = "2.5" }: {
+  width?: number; stroke?: string; strokeWidth?: string;
+}) {
+  return (
+    <svg width={width} height="12" viewBox="0 0 340 12" style={{ display: "block" }}>
+      <path
+        d="M0 8 Q21 2 42 8 Q63 14 85 7 Q106 1 127 7 Q148 13 170 7 Q191 2 212 7 Q233 13 255 7 Q276 2 297 7 Q318 13 340 6"
+        stroke={stroke} strokeWidth={strokeWidth} fill="none" strokeLinecap="round"
+      />
+    </svg>
+  );
+}
 
 export default function TeachPage() {
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-[#2a5c45] py-24 px-8 md:px-16">
-        <div className="mx-auto max-w-[1200px]">
-          <p className="font-ui text-[0.7rem] uppercase tracking-[0.15em] text-white/70 mb-4">Classroom-Ready Resources</p>
-          <h1 className="font-display text-white leading-[0.9]" style={{ fontSize: "clamp(80px,12vw,160px)" }}>
-            For Teachers
+      {/* BLUE hero */}
+      <section
+        className="page-pad"
+        style={{
+          background: "var(--blue)",
+          padding: "88px 52px 80px",
+          borderBottom: "4px solid var(--ink)",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* Ghost */}
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            right: -10,
+            top: -20,
+            fontFamily: "var(--font-bebas)",
+            fontSize: 480,
+            lineHeight: 1,
+            color: "rgba(255,255,255,0.06)",
+            pointerEvents: "none",
+            userSelect: "none",
+            zIndex: 0,
+            letterSpacing: "-0.05em",
+          }}
+        >
+          Teach
+        </div>
+
+        <div style={{ position: "relative", zIndex: 1, maxWidth: 700 }}>
+          <p
+            style={{
+              fontFamily: "var(--font-dm)",
+              fontSize: 9,
+              fontWeight: 600,
+              letterSpacing: "0.32em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.5)",
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+              marginBottom: 24,
+            }}
+          >
+            <span
+              style={{
+                width: 16,
+                height: 2,
+                background: "rgba(255,255,255,0.3)",
+                display: "inline-block",
+                flexShrink: 0,
+              }}
+            />
+            For Teachers &amp; Classrooms
+          </p>
+
+          <h1
+            style={{
+              fontFamily: "var(--font-bebas)",
+              fontSize: "clamp(88px, 11vw, 160px)",
+              lineHeight: 0.88,
+              letterSpacing: "-0.05em",
+              margin: 0,
+            }}
+          >
+            <span style={{ color: "white", display: "block" }}>History</span>
+            <span
+              style={{
+                color: "var(--yellow)",
+                display: "block",
+                transform: "rotate(-2deg) translateX(28px)",
+                transformOrigin: "left center",
+              }}
+            >
+              For
+            </span>
+            <span style={{ color: "white", display: "block" }}>Teachers.</span>
           </h1>
-          <p className="font-editorial italic text-white/85 text-[1.1rem] mt-6 max-w-[500px] leading-relaxed">
+
+          <div style={{ marginTop: 28 }}>
+            <Squiggle width={360} stroke="rgba(255,255,255,0.3)" strokeWidth="2.5" />
+          </div>
+
+          <p
+            style={{
+              fontFamily: "var(--font-instrument)",
+              fontStyle: "italic",
+              fontWeight: 300,
+              fontSize: 20,
+              color: "rgba(255,255,255,0.76)",
+              maxWidth: 500,
+              marginTop: 32,
+              lineHeight: 1.55,
+            }}
+          >
             Critical thinking materials for teaching the American Revolution through local history. Every town, every state, built for teachers first.
           </p>
         </div>
       </section>
 
-      {/* State Resources */}
-      <section className="py-20 bg-[#f2ece0] px-8 md:px-16">
-        <div className="mx-auto max-w-[1200px]">
-          <div className="flex items-baseline gap-4 mb-2">
-            <h2 className="font-display text-[3rem] text-[#0e1428] leading-none">Browse by State</h2>
-          </div>
-          <p className="font-editorial italic text-[#0e1428]/60 text-[1rem] mb-2 max-w-[600px]">
-            Teacher resources are organized by state, with curated content prioritized for towns with the richest primary source availability.
-          </p>
-          <div className="border-b border-[#0e1428]/10 mb-8" />
+      {/* RED stats band */}
+      <section
+        className="page-pad"
+        style={{
+          background: "var(--red)",
+          padding: "44px 52px",
+          borderBottom: "4px solid var(--ink)",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* Ghost */}
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            right: 24,
+            top: -12,
+            fontFamily: "var(--font-bebas)",
+            fontSize: 190,
+            lineHeight: 1,
+            color: "rgba(255,255,255,0.07)",
+            pointerEvents: "none",
+            userSelect: "none",
+            zIndex: 0,
+          }}
+        >
+          T1
+        </div>
 
-          <div>
-            {STATES.map((state) => (
-              <div key={state.name} className="border-b border-[#0e1428]/8 py-6">
-                <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-10">
-                  <div className="min-w-[220px]">
-                    <h3 className="font-editorial text-[1.5rem] text-[#0e1428]">{state.name}</h3>
-                  </div>
-                  <div className="flex-1">
-                    <p className="font-ui text-[0.875rem] text-[#0e1428]/60 leading-relaxed mb-3">
-                      {state.description}
-                    </p>
-                    <a
-                      href={state.href}
-                      className="font-ui text-[0.75rem] uppercase tracking-[0.1em] text-[#c8222a] no-underline hover:underline"
-                    >
-                      View Resources &rarr;
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
+        <div
+          style={{
+            position: "relative",
+            zIndex: 1,
+            display: "flex",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: 0,
+          }}
+        >
+          {/* Stat 1 */}
+          <div style={{ padding: "0 44px 0 0", borderRight: "1px solid rgba(255,255,255,0.2)" }}>
+            <div
+              style={{
+                fontFamily: "var(--font-bebas)",
+                fontSize: "clamp(48px, 6vw, 72px)",
+                lineHeight: 1,
+                color: "var(--yellow)",
+              }}
+            >
+              Tier 1
+            </div>
+            <div
+              style={{
+                fontFamily: "var(--font-dm)",
+                fontSize: 11,
+                fontWeight: 600,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.5)",
+                marginTop: 4,
+              }}
+            >
+              Primary sources only
+            </div>
+          </div>
+
+          {/* Stat 2 */}
+          <div
+            style={{
+              padding: "0 44px",
+              borderRight: "1px solid rgba(255,255,255,0.2)",
+            }}
+          >
+            <div
+              style={{
+                fontFamily: "var(--font-bebas)",
+                fontSize: "clamp(48px, 6vw, 72px)",
+                lineHeight: 1,
+                color: "white",
+              }}
+            >
+              77
+            </div>
+            <div
+              style={{
+                fontFamily: "var(--font-dm)",
+                fontSize: 11,
+                fontWeight: 600,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.5)",
+                marginTop: 4,
+              }}
+            >
+              Towns in network
+            </div>
+          </div>
+
+          {/* Stat 3 */}
+          <div style={{ padding: "0 44px", borderRight: "1px solid rgba(255,255,255,0.2)" }}>
+            <div
+              style={{
+                fontFamily: "var(--font-bebas)",
+                fontSize: "clamp(48px, 6vw, 72px)",
+                lineHeight: 1,
+                color: "white",
+              }}
+            >
+              16
+            </div>
+            <div
+              style={{
+                fontFamily: "var(--font-dm)",
+                fontSize: 11,
+                fontWeight: 600,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.5)",
+                marginTop: 4,
+              }}
+            >
+              States covered
+            </div>
+          </div>
+
+          {/* Badge */}
+          <div style={{ padding: "0 44px", marginLeft: "auto" }}>
+            <div
+              style={{
+                background: "var(--cream)",
+                color: "var(--ink)",
+                fontFamily: "var(--font-dm)",
+                fontSize: 9,
+                fontWeight: 700,
+                letterSpacing: "0.24em",
+                textTransform: "uppercase",
+                padding: "9px 18px",
+                border: "2.5px solid var(--ink)",
+                boxShadow: "3px 3px 0 var(--ink)",
+                transform: "rotate(-2deg)",
+                display: "inline-block",
+              }}
+            >
+              Standards Aligned
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Our Approach */}
-      <section className="py-16 bg-[#f2ece0] px-8 md:px-16">
-        <div className="mx-auto max-w-[1200px]">
-          <div className="border-t border-[#0e1428]/10 pt-16">
-            <p className="font-ui text-[0.7rem] uppercase tracking-[0.15em] text-[#0e1428]/40 mb-3">Methodology</p>
-            <h2 className="font-display text-[#0e1428]" style={{ fontSize: "clamp(2.5rem,5vw,4rem)" }}>Our Approach</h2>
+      {/* PAPER state list */}
+      <section
+        className="page-pad"
+        style={{ background: "var(--paper)", padding: "64px 52px 96px" }}
+      >
+        {/* Section intro */}
+        <div style={{ maxWidth: 640, marginBottom: 56 }}>
+          <p
+            style={{
+              fontFamily: "var(--font-dm)",
+              fontSize: 9,
+              fontWeight: 600,
+              letterSpacing: "0.28em",
+              textTransform: "uppercase",
+              color: "var(--red)",
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+              marginBottom: 12,
+            }}
+          >
+            <span
+              style={{
+                width: 16,
+                height: 2,
+                background: "var(--red)",
+                display: "inline-block",
+                flexShrink: 0,
+              }}
+            />
+            Browse by State
+          </p>
+          <h2
+            style={{
+              fontFamily: "var(--font-bebas)",
+              fontSize: "clamp(36px, 4.5vw, 60px)",
+              lineHeight: 0.92,
+              letterSpacing: "-0.04em",
+              color: "var(--ink)",
+              margin: 0,
+            }}
+          >
+            Browse by State
+          </h2>
+          <p
+            style={{
+              fontFamily: "var(--font-instrument)",
+              fontStyle: "italic",
+              fontWeight: 300,
+              fontSize: 18,
+              color: "rgba(20,16,10,0.52)",
+              marginTop: 22,
+              lineHeight: 1.65,
+            }}
+          >
+            Teacher resources organized by state, prioritized for towns with the richest primary source availability.
+          </p>
+        </div>
 
-            {/* Stats row */}
-            <div className="flex flex-wrap gap-12 mt-8 mb-8 pb-8 border-b border-[#0e1428]/10">
-              <div>
-                <span className="font-display text-[3.5rem] text-[#0e1428] leading-none block">Tier 1</span>
-                <span className="font-ui text-[0.75rem] uppercase tracking-[0.1em] text-[#c8222a] block mt-1">Primary Sources</span>
-              </div>
-              <div>
-                <span className="font-display text-[3.5rem] text-[#0e1428] leading-none block">77</span>
-                <span className="font-ui text-[0.75rem] uppercase tracking-[0.1em] text-[#c8222a] block mt-1">Towns Covered</span>
-              </div>
-              <div>
-                <span className="font-display text-[3.5rem] text-[#0e1428] leading-none block">16</span>
-                <span className="font-ui text-[0.75rem] uppercase tracking-[0.1em] text-[#c8222a] block mt-1">States</span>
+        {/* State rows */}
+        {STATES.map((state, i) => (
+          <div
+            key={state.slug}
+            style={{
+              padding: "36px 0",
+              borderBottom: "1px solid rgba(20,16,10,0.08)",
+              display: "grid",
+              gridTemplateColumns: "220px 1fr",
+              gap: 48,
+            }}
+            className="teach-state-row"
+          >
+            {/* Left */}
+            <div>
+              <a
+                href={`/teach/${state.slug}`}
+                className="teach-state-link"
+                style={{
+                  fontFamily: "var(--font-bebas)",
+                  fontSize: "clamp(26px, 3vw, 40px)",
+                  lineHeight: 0.92,
+                  letterSpacing: "-0.03em",
+                  color: "var(--ink)",
+                  textDecoration: "none",
+                  transition: "color 0.15s",
+                  display: "block",
+                }}
+              >
+                {state.name}
+              </a>
+              <div
+                style={{
+                  fontFamily: "var(--font-dm)",
+                  fontSize: 10,
+                  fontWeight: 600,
+                  letterSpacing: "0.18em",
+                  color: "rgba(20,16,10,0.2)",
+                  marginTop: 6,
+                }}
+              >
+                {String(i + 1).padStart(2, "0")} of {STATES.length}
               </div>
             </div>
 
-            <p className="font-editorial text-[1.05rem] text-[#0e1428] max-w-[720px] leading-relaxed mb-6">
-              Every source in our teacher materials is evaluated using a three-tier credibility system. Tier 1 sources include primary documents, National Park Service materials, and peer-reviewed scholarship. Teacher narratives are written to help educators contextualize sources for their students — not to replace the sources themselves.
-            </p>
-            <div className="flex flex-wrap gap-6">
-              <Link href="/methodology">Read our full methodology</Link>
-              <Link href="/methodology#source-tiers">Source credibility tiers</Link>
+            {/* Right */}
+            <div>
+              <p
+                style={{
+                  fontFamily: "var(--font-instrument)",
+                  fontStyle: "italic",
+                  fontWeight: 300,
+                  fontSize: 18,
+                  color: "rgba(20,16,10,0.6)",
+                  lineHeight: 1.65,
+                  marginBottom: 14,
+                }}
+              >
+                {state.description}
+              </p>
+              <a
+                href={`/teach/${state.slug}`}
+                className="teach-view-link"
+                style={{
+                  fontFamily: "var(--font-dm)",
+                  fontSize: 10,
+                  fontWeight: 600,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "var(--red)",
+                  textDecoration: "none",
+                  borderBottom: "1.5px solid rgba(204,51,34,0.3)",
+                  paddingBottom: 2,
+                  transition: "letter-spacing 0.15s, border-color 0.15s",
+                }}
+              >
+                View Resources →
+              </a>
             </div>
+          </div>
+        ))}
+      </section>
+
+      {/* BLUE methodology */}
+      <section
+        className="page-pad"
+        style={{
+          background: "var(--blue)",
+          padding: "80px 52px 88px",
+          borderTop: "4px solid var(--ink)",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* Ghost */}
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            right: -10,
+            bottom: -20,
+            fontFamily: "var(--font-bebas)",
+            fontSize: 380,
+            lineHeight: 1,
+            color: "rgba(255,255,255,0.04)",
+            pointerEvents: "none",
+            userSelect: "none",
+            zIndex: 0,
+            letterSpacing: "-0.05em",
+          }}
+        >
+          Method
+        </div>
+
+        <div style={{ position: "relative", zIndex: 1, maxWidth: 720 }}>
+          <p
+            style={{
+              fontFamily: "var(--font-dm)",
+              fontSize: 9,
+              fontWeight: 600,
+              letterSpacing: "0.32em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.5)",
+              marginBottom: 16,
+            }}
+          >
+            Methodology
+          </p>
+
+          <h2
+            style={{
+              fontFamily: "var(--font-bebas)",
+              fontSize: "clamp(40px, 6vw, 80px)",
+              lineHeight: 0.9,
+              letterSpacing: "-0.04em",
+              color: "white",
+              margin: 0,
+            }}
+          >
+            Our{" "}
+            <span
+              style={{
+                color: "var(--yellow)",
+                display: "inline-block",
+                transform: "rotate(-2deg)",
+                transformOrigin: "left center",
+              }}
+            >
+              Approach.
+            </span>
+          </h2>
+
+          {/* Stats row */}
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 0,
+              padding: "24px 0",
+              borderTop: "1px solid rgba(255,255,255,0.1)",
+              borderBottom: "1px solid rgba(255,255,255,0.1)",
+              margin: "32px 0",
+            }}
+          >
+            {[
+              { num: "Tier 1", label: "Primary Sources" },
+              { num: "77", label: "Towns Covered" },
+              { num: "16", label: "States" },
+            ].map((stat, i) => (
+              <div
+                key={stat.label}
+                style={{
+                  padding: "0 44px",
+                  borderRight: i < 2 ? "1px solid rgba(255,255,255,0.12)" : "none",
+                  paddingLeft: i === 0 ? 0 : 44,
+                }}
+              >
+                <div
+                  style={{
+                    fontFamily: "var(--font-bebas)",
+                    fontSize: 52,
+                    lineHeight: 1,
+                    color: "var(--yellow)",
+                  }}
+                >
+                  {stat.num}
+                </div>
+                <div
+                  style={{
+                    fontFamily: "var(--font-dm)",
+                    fontSize: 11,
+                    fontWeight: 600,
+                    letterSpacing: "0.14em",
+                    textTransform: "uppercase",
+                    color: "rgba(255,255,255,0.45)",
+                    marginTop: 4,
+                  }}
+                >
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p
+            style={{
+              fontFamily: "var(--font-instrument)",
+              fontStyle: "italic",
+              fontWeight: 300,
+              fontSize: 19,
+              color: "rgba(255,255,255,0.65)",
+              lineHeight: 1.7,
+              maxWidth: 680,
+              marginBottom: 28,
+            }}
+          >
+            Every source in our teacher materials is evaluated using a three-tier credibility system. Tier 1 sources include primary documents, National Park Service materials, and peer-reviewed scholarship. Teacher narratives are written to help educators contextualize sources — not to replace them.
+          </p>
+
+          <div style={{ display: "flex", gap: 28, flexWrap: "wrap" }}>
+            <a
+              href="/methodology"
+              className="method-link"
+              style={{
+                fontFamily: "var(--font-dm)",
+                fontSize: 10,
+                fontWeight: 600,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.45)",
+                borderBottom: "1.5px solid rgba(255,255,255,0.18)",
+                paddingBottom: 2,
+                textDecoration: "none",
+                transition: "color 0.15s, border-color 0.15s",
+              }}
+            >
+              Read our full methodology
+            </a>
+            <a
+              href="/methodology#source-tiers"
+              className="method-link"
+              style={{
+                fontFamily: "var(--font-dm)",
+                fontSize: 10,
+                fontWeight: 600,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.45)",
+                borderBottom: "1.5px solid rgba(255,255,255,0.18)",
+                paddingBottom: 2,
+                textDecoration: "none",
+                transition: "color 0.15s, border-color 0.15s",
+              }}
+            >
+              Source credibility tiers
+            </a>
           </div>
         </div>
       </section>

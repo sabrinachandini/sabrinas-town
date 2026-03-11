@@ -1451,3 +1451,20 @@ button {
     @apply hidden!;
   }
 }
+
+/* ── Towns / Teach / Partner page styles ─────────────── */
+.towns-search-input::placeholder { color: rgba(255,255,255,0.3); }
+.towns-search-input:focus { border-bottom-color: rgba(255,255,255,0.7) !important; outline: none; }
+.state-pill:hover { color: white !important; }
+.town-row:hover { padding-left: 8px; }
+.town-row:hover .town-name-text { color: var(--red) !important; }
+.town-row:hover .town-arrow { opacity: 1 !important; }
+@media (max-width: 768px) {
+  .towns-grid { grid-template-columns: 1fr !important; }
+  .page-pad { padding-left: 24px !important; padding-right: 24px !important; }
+}
+.btn-dark { transition: transform 0.1s, box-shadow 0.1s; }
+.btn-dark:hover { transform: translate(-2px,-2px); box-shadow: 7px 7px 0 rgba(255,255,255,0.25) !important; }
+.teach-state-link:hover { color: var(--red) !important; }
+.teach-view-link:hover { letter-spacing: 0.22em; border-bottom-color: var(--red) !important; }
+.method-link:hover { color: white !important; border-bottom-color: rgba(255,255,255,0.6) !important; }

@@ -1,11 +1,9 @@
 import { getRankings } from "@/lib/api";
-import { Link } from "@/components/ui";
-import { TownSearch } from "./TownSearch";
 
 export const metadata = {
   title: "Browse Towns | History is for Everyone",
   description:
-    "Explore Revolutionary towns across 13 states — from Lexington to Yorktown.",
+    "77 towns across 13 original states — every place where the American Revolution happened.",
 };
 
 export const dynamic = "force-dynamic";
@@ -14,9 +12,47 @@ interface PageProps {
   searchParams: Promise<{ q?: string }>;
 }
 
+const STATE_ORDER = [
+  "Massachusetts", "New Jersey", "New York", "Pennsylvania", "Virginia",
+  "South Carolina", "Connecticut", "North Carolina", "Rhode Island",
+  "Maryland", "New Hampshire", "Georgia", "Vermont", "Delaware", "Maine",
+];
+
+const STATE_IDS: Record<string, string> = {
+  Massachusetts: "ma", "New Jersey": "nj", "New York": "ny",
+  Pennsylvania: "pa", Virginia: "va", "South Carolina": "sc",
+  Connecticut: "ct", "North Carolina": "nc", "Rhode Island": "ri",
+  Maryland: "md", "New Hampshire": "nh", Georgia: "ga",
+  Vermont: "vt", Delaware: "de", Maine: "me",
+};
+
+function Squiggle({ width = 340, stroke = "rgba(255,255,255,0.35)", strokeWidth = "2.5" }: {
+  width?: number; stroke?: string; strokeWidth?: string;
+}) {
+  return (
+    <svg width={width} height="12" viewBox="0 0 340 12" style={{ display: "block" }}>
+      <path
+        d="M0 8 Q21 2 42 8 Q63 14 85 7 Q106 1 127 7 Q148 13 170 7 Q191 2 212 7 Q233 13 255 7 Q276 2 297 7 Q318 13 340 6"
+        stroke={stroke} strokeWidth={strokeWidth} fill="none" strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function WavyRule() {
+  return (
+    <svg width="260" height="10" viewBox="0 0 260 10" style={{ display: "block", marginTop: 6 }}>
+      <path
+        d="M0 6 Q16 1 33 6 Q49 11 65 5 Q81 0 98 5 Q114 10 130 5 Q146 1 163 5 Q179 10 195 5 Q211 1 228 5 Q244 10 260 4"
+        stroke="#c8222a" strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.3"
+      />
+    </svg>
+  );
+}
+
 export default async function TownsPage({ searchParams }: PageProps) {
   const { q = "" } = await searchParams;
-  const towns = await getRankings({ limit: 77 });
+  const towns = await getRankings({ limit: 100 });
 
   const query = q.trim().toLowerCase();
   const filtered = query
@@ -27,129 +63,581 @@ export default async function TownsPage({ searchParams }: PageProps) {
       )
     : towns;
 
-  const allStates = [...new Set(towns.map((t) => t.state))].sort();
-  const filteredStates = [...new Set(filtered.map((t) => t.state))].sort();
-
   const townsByState: Record<string, typeof filtered> = {};
   for (const town of filtered) {
     if (!townsByState[town.state]) townsByState[town.state] = [];
     townsByState[town.state].push(town);
   }
 
+  const statesToShow = STATE_ORDER.filter((s) => townsByState[s]);
+
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-ink border-b-4 border-crimson py-24 px-8 md:px-16">
-        <div className="mx-auto max-w-[1200px]">
-          <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-cream/35 flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-cream/35 before:block">
+      {/* RED hero */}
+      <section
+        className="page-pad"
+        style={{
+          background: "var(--red)",
+          padding: "64px 52px 56px",
+          borderBottom: "4px solid var(--ink)",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* Ghost */}
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            right: -10,
+            top: -20,
+            fontFamily: "var(--font-bebas)",
+            fontSize: 460,
+            lineHeight: 1,
+            color: "rgba(255,255,255,0.07)",
+            pointerEvents: "none",
+            userSelect: "none",
+            zIndex: 0,
+            letterSpacing: "-0.05em",
+          }}
+        >
+          Towns
+        </div>
+
+        {/* Content */}
+        <div style={{ position: "relative", zIndex: 1, maxWidth: 700 }}>
+          <p
+            style={{
+              fontFamily: "var(--font-dm)",
+              fontSize: 9,
+              fontWeight: 600,
+              letterSpacing: "0.32em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.55)",
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+              marginBottom: 20,
+            }}
+          >
+            <span
+              style={{
+                width: 20,
+                height: 2,
+                background: "rgba(255,255,255,0.5)",
+                display: "inline-block",
+                flexShrink: 0,
+              }}
+            />
             The Revolutionary Town Network
           </p>
-          <h1 className="font-display text-cream leading-[0.88]" style={{ fontSize: "clamp(80px,12vw,160px)" }}>
-            Revolutionary<br />Towns
+
+          <h1
+            style={{
+              fontFamily: "var(--font-bebas)",
+              fontSize: "clamp(72px, 10vw, 136px)",
+              lineHeight: 0.88,
+              letterSpacing: "-0.05em",
+              color: "white",
+              margin: 0,
+            }}
+          >
+            Every Town.
           </h1>
-          <p className="font-editorial italic text-cream/60 text-[18px] mt-6 max-w-[500px] leading-relaxed">
-            Every town where the American Revolution happened — walked, sourced, and connected across all 13 original states.
+
+          <span
+            style={{
+              fontFamily: "var(--font-bebas)",
+              fontSize: "clamp(72px, 10vw, 136px)",
+              lineHeight: 0.88,
+              letterSpacing: "-0.05em",
+              color: "rgba(255,255,255,0.25)",
+              fontStyle: "italic",
+              display: "block",
+              transform: "rotate(-1.5deg) translateX(20px)",
+              transformOrigin: "left center",
+              marginTop: 4,
+            }}
+          >
+            Everywhere.
+          </span>
+
+          <div style={{ marginTop: 24 }}>
+            <Squiggle width={340} stroke="rgba(255,255,255,0.35)" strokeWidth="2.5" />
+          </div>
+
+          <p
+            style={{
+              fontFamily: "var(--font-instrument)",
+              fontStyle: "italic",
+              fontWeight: 300,
+              fontSize: 19,
+              color: "rgba(255,255,255,0.75)",
+              maxWidth: 460,
+              marginTop: 24,
+              lineHeight: 1.5,
+            }}
+          >
+            77 towns across 13 original states — every place where the American Revolution happened.
           </p>
         </div>
       </section>
 
-      {/* Search */}
-      <section className="bg-[#f8f0d8] border-b-[3px] border-ink py-6 px-8 md:px-16">
-        <div className="mx-auto max-w-[1200px]">
-          <TownSearch initialValue={q} />
-          {query && (
-            <p className="mt-3 font-ui text-[0.8rem] text-ink/50">
-              {filtered.length} town{filtered.length !== 1 ? "s" : ""} matching &ldquo;{q}&rdquo;.{" "}
-              <Link href="/towns">Clear</Link>
-            </p>
+      {/* BLUE search + state nav */}
+      <section
+        style={{
+          background: "var(--blue)",
+          borderBottom: "4px solid var(--ink)",
+        }}
+      >
+        {/* Search row */}
+        <form
+          action="/towns"
+          method="GET"
+          className="page-pad"
+          style={{
+            padding: "18px 52px",
+            borderBottom: "1px solid rgba(255,255,255,0.1)",
+            display: "flex",
+            alignItems: "center",
+            gap: 16,
+          }}
+        >
+          <span
+            style={{
+              fontFamily: "var(--font-dm)",
+              fontSize: 10,
+              fontWeight: 600,
+              letterSpacing: "0.24em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.38)",
+              flexShrink: 0,
+            }}
+          >
+            Search
+          </span>
+          <input
+            type="text"
+            name="q"
+            defaultValue={q}
+            placeholder="Filter towns..."
+            className="towns-search-input"
+            style={{
+              fontFamily: "var(--font-instrument)",
+              fontStyle: "italic",
+              fontSize: 16,
+              color: "white",
+              background: "transparent",
+              border: "none",
+              borderBottom: "2px solid rgba(255,255,255,0.22)",
+              width: 300,
+              padding: "4px 0",
+            }}
+          />
+          {q && (
+            <a
+              href="/towns"
+              style={{
+                fontFamily: "var(--font-dm)",
+                fontSize: 10,
+                color: "rgba(255,255,255,0.5)",
+                textDecoration: "none",
+                letterSpacing: "0.1em",
+              }}
+            >
+              Clear
+            </a>
           )}
+        </form>
+
+        {/* State pills */}
+        <div
+          className="page-pad"
+          style={{ padding: "12px 52px 14px", display: "flex", flexWrap: "wrap", gap: 4 }}
+        >
+          {STATE_ORDER.map((state) => (
+            <a
+              key={state}
+              href={`#${STATE_IDS[state]}`}
+              className="state-pill"
+              style={{
+                fontFamily: "var(--font-bebas)",
+                fontSize: 13,
+                color: "rgba(255,255,255,0.38)",
+                padding: "4px 10px",
+                textDecoration: "none",
+                transition: "color 0.15s",
+              }}
+            >
+              {state}
+            </a>
+          ))}
         </div>
       </section>
 
-      {/* State quick-nav */}
-      {!query && allStates.length > 1 && (
-        <section className="bg-[#f8f0d8] border-b border-ink/10 py-6 px-8 md:px-16">
-          <div className="mx-auto max-w-[1200px]">
-            <div className="flex flex-wrap gap-6">
-              {allStates.map((state) => (
-                <a
-                  key={state}
-                  href={`#${state}`}
-                  className="font-display text-[16px] text-ink/50 hover:text-crimson border-b border-transparent hover:border-crimson no-underline transition-colors"
-                >
-                  {state}
-                </a>
-              ))}
-            </div>
+      {/* PAPER two-column town list */}
+      <section
+        className="page-pad"
+        style={{ background: "var(--paper)", padding: "0 52px 96px" }}
+      >
+        {filtered.length === 0 ? (
+          <div style={{ padding: "80px 0", textAlign: "center" }}>
+            <p
+              style={{
+                fontFamily: "var(--font-instrument)",
+                fontStyle: "italic",
+                fontSize: 18,
+                color: "var(--ink)",
+              }}
+            >
+              No towns match &ldquo;{q}&rdquo;.{" "}
+              <a href="/towns" style={{ color: "var(--red)" }}>
+                Browse all towns
+              </a>
+            </p>
           </div>
-        </section>
-      )}
-
-      {/* Towns by state */}
-      <section className="bg-cream py-20 px-8 md:px-16">
-        <div className="mx-auto max-w-[1200px]">
-          {filtered.length === 0 ? (
-            <div className="py-20 text-center">
-              <p className="font-editorial italic text-ink text-[1.1rem]">No towns match &ldquo;{q}&rdquo;.</p>
-              <div className="mt-6">
-                <Link href="/towns">Browse all towns</Link>
-              </div>
-            </div>
-          ) : (
-            <div className="space-y-20">
-              {filteredStates.map((state) => (
-                <div key={state} id={state}>
-                  {/* State header */}
-                  <div className="flex items-baseline gap-4 mb-2">
-                    <h2 className="font-display text-[48px] text-ink leading-none">{state}</h2>
-                    <span className="font-ui text-[0.75rem] text-ink/40 uppercase tracking-[0.1em]">
-                      {townsByState[state].length} town{townsByState[state].length !== 1 ? "s" : ""}
-                    </span>
+        ) : (
+          <div
+            className="towns-grid"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, 1fr)",
+              gap: "0 72px",
+            }}
+          >
+            {statesToShow.map((state) => {
+              const id = STATE_IDS[state];
+              const stateTowns = (townsByState[state] || []).sort((a, b) =>
+                a.name.localeCompare(b.name)
+              );
+              return (
+                <div key={state} id={id} style={{ paddingTop: 56 }}>
+                  <div style={{ marginBottom: 8 }}>
+                    <h2
+                      style={{
+                        fontFamily: "var(--font-bebas)",
+                        fontSize: "clamp(30px, 3.2vw, 44px)",
+                        lineHeight: 0.92,
+                        letterSpacing: "-0.04em",
+                        color: "var(--ink)",
+                        margin: 0,
+                      }}
+                    >
+                      <span
+                        style={{
+                          color: "var(--red)",
+                          opacity: 0.4,
+                          fontWeight: 300,
+                          marginRight: 4,
+                        }}
+                      >
+                        /
+                      </span>
+                      {state}
+                      <span
+                        style={{
+                          fontSize: 13,
+                          color: "var(--red)",
+                          marginLeft: 10,
+                        }}
+                      >
+                        {stateTowns.length}
+                      </span>
+                    </h2>
+                    <WavyRule />
                   </div>
-                  <div className="border-b-[3px] border-ink mb-6" />
 
-                  {/* Town list */}
                   <div>
-                    {townsByState[state]
-                      .sort((a, b) => a.name.localeCompare(b.name))
-                      .map((town) => (
+                    {stateTowns.map((town) => {
+                      const snippet = (town.execSummary150 ?? town.heroSummary40 ?? "").slice(0, 60);
+                      return (
                         <a
                           key={town.id}
                           href={`/towns/${town.slug}`}
-                          className="flex items-baseline justify-between gap-6 border-b border-ink/8 py-4 group no-underline"
+                          className="town-row"
+                          style={{
+                            display: "flex",
+                            alignItems: "baseline",
+                            padding: "11px 0",
+                            borderBottom: "1px solid rgba(20,16,10,0.07)",
+                            textDecoration: "none",
+                            transition: "padding-left 0.15s",
+                          }}
                         >
-                          <div className="flex items-baseline gap-4 min-w-0">
-                            <span className="font-editorial text-[20px] text-ink group-hover:text-crimson transition-colors shrink-0">
-                              {town.name}
-                            </span>
-                            <span className="font-ui text-[13px] text-ink/50 truncate hidden sm:block">
-                              {(town as any).execSummary150 ?? town.heroSummary40}
-                            </span>
-                          </div>
-                          <span className="font-display text-crimson shrink-0 group-hover:translate-x-1 transition-transform">
-                            &rarr;
+                          <span
+                            className="town-name-text"
+                            style={{
+                              fontFamily: "var(--font-instrument)",
+                              fontStyle: "italic",
+                              fontWeight: 400,
+                              fontSize: "clamp(15px, 1.5vw, 20px)",
+                              letterSpacing: "-0.02em",
+                              color: "var(--ink)",
+                              minWidth: 130,
+                              flexShrink: 0,
+                              transition: "color 0.15s",
+                            }}
+                          >
+                            {town.name}
+                          </span>
+                          <span
+                            style={{
+                              width: 4,
+                              height: 4,
+                              background: "var(--blue)",
+                              opacity: 0.38,
+                              borderRadius: "50%",
+                              margin: "0 13px 3px",
+                              flexShrink: 0,
+                              alignSelf: "center",
+                            }}
+                          />
+                          <span
+                            style={{
+                              fontFamily: "var(--font-instrument)",
+                              fontStyle: "italic",
+                              fontWeight: 300,
+                              fontSize: 13,
+                              color: "rgba(20,16,10,0.42)",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              whiteSpace: "nowrap",
+                              flex: 1,
+                            }}
+                          >
+                            {snippet}
+                          </span>
+                          <span
+                            className="town-arrow"
+                            style={{
+                              color: "var(--red)",
+                              fontSize: 12,
+                              opacity: 0,
+                              marginLeft: 8,
+                              flexShrink: 0,
+                              transition: "opacity 0.15s",
+                            }}
+                          >
+                            →
                           </span>
                         </a>
-                      ))}
+                      );
+                    })}
                   </div>
                 </div>
-              ))}
-            </div>
-          )}
+              );
+            })}
+          </div>
+        )}
+      </section>
+
+      {/* INK interstitial */}
+      <section
+        className="page-pad"
+        style={{
+          background: "var(--ink)",
+          padding: "64px 52px 72px",
+          borderTop: "4px solid var(--ink)",
+          borderBottom: "4px solid var(--ink)",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* Red right edge */}
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            top: 0,
+            right: 0,
+            bottom: 0,
+            width: 6,
+            background: "var(--red)",
+            zIndex: 0,
+          }}
+        />
+        {/* Ghost */}
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            bottom: -28,
+            left: 28,
+            fontFamily: "var(--font-bebas)",
+            fontSize: 300,
+            lineHeight: 1,
+            color: "rgba(255,255,255,0.04)",
+            pointerEvents: "none",
+            userSelect: "none",
+            zIndex: 0,
+          }}
+        >
+          1775
+        </div>
+
+        {/* Content */}
+        <div style={{ position: "relative", zIndex: 1, maxWidth: 640 }}>
+          <p
+            style={{
+              fontFamily: "var(--font-bebas)",
+              fontSize: "clamp(36px, 5vw, 64px)",
+              lineHeight: 0.92,
+              letterSpacing: "-0.04em",
+              color: "white",
+              margin: 0,
+            }}
+          >
+            The war was won{" "}
+            <span
+              style={{
+                color: "#6b8fd4",
+                display: "inline-block",
+                transform: "rotate(-2deg)",
+                transformOrigin: "left center",
+              }}
+            >
+              here.
+            </span>
+            <br />
+            In kitchens, fields,
+            <br />
+            and front doors.
+          </p>
+
+          <div style={{ marginTop: 16 }}>
+            <Squiggle width={220} stroke="rgba(107,143,212,0.5)" strokeWidth="2.5" />
+          </div>
+
+          <p
+            style={{
+              fontFamily: "var(--font-dm)",
+              fontSize: 10,
+              fontWeight: 600,
+              letterSpacing: "0.24em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.28)",
+              marginTop: 24,
+            }}
+          >
+            <span style={{ color: "rgba(255,255,255,0.18)" }}>— </span>
+            History Is For Everyone · The American Revolution
+          </p>
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section className="bg-ink border-t-4 border-crimson py-20 px-8 md:px-16">
-        <div className="mx-auto max-w-[1200px] flex flex-col md:flex-row items-center justify-between gap-8">
-          <p className="font-display text-cream leading-none" style={{ fontSize: "clamp(32px,4vw,56px)" }}>
-            Teach the <span className="text-crimson">Revolution.</span>
+      {/* RED CTA */}
+      <section
+        className="page-pad"
+        style={{
+          background: "var(--red)",
+          padding: "80px 52px 88px",
+          borderTop: "4px solid var(--ink)",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* Ghost */}
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            right: -10,
+            bottom: -30,
+            fontFamily: "var(--font-bebas)",
+            fontSize: 340,
+            lineHeight: 1,
+            color: "rgba(255,255,255,0.07)",
+            pointerEvents: "none",
+            userSelect: "none",
+            zIndex: 0,
+          }}
+        >
+          Teach
+        </div>
+
+        {/* Content */}
+        <div style={{ position: "relative", zIndex: 1, maxWidth: 640 }}>
+          <div
+            style={{
+              display: "inline-block",
+              border: "2.5px solid rgba(255,255,255,0.45)",
+              color: "rgba(255,255,255,0.65)",
+              fontFamily: "var(--font-dm)",
+              fontSize: 9,
+              fontWeight: 700,
+              letterSpacing: "0.28em",
+              textTransform: "uppercase",
+              padding: "7px 14px",
+              transform: "rotate(-2.5deg)",
+              transformOrigin: "left center",
+              marginBottom: 20,
+            }}
+          >
+            Open to Everyone
+          </div>
+
+          <h2
+            style={{
+              fontFamily: "var(--font-bebas)",
+              fontSize: "clamp(56px, 8vw, 100px)",
+              lineHeight: 0.9,
+              letterSpacing: "-0.04em",
+              color: "white",
+              margin: "12px 0 0",
+            }}
+          >
+            Teach the
+            <br />
+            <span
+              style={{
+                fontStyle: "italic",
+                color: "rgba(255,255,255,0.85)",
+                display: "inline-block",
+                transform: "rotate(-1.5deg)",
+                transformOrigin: "left center",
+              }}
+            >
+              Revolution.
+            </span>
+          </h2>
+
+          <div style={{ margin: "20px 0" }}>
+            <Squiggle width={260} stroke="rgba(255,255,255,0.4)" strokeWidth="2.5" />
+          </div>
+
+          <p
+            style={{
+              fontFamily: "var(--font-instrument)",
+              fontStyle: "italic",
+              fontWeight: 300,
+              fontSize: 19,
+              color: "rgba(255,255,255,0.75)",
+              marginBottom: 32,
+              lineHeight: 1.5,
+            }}
+          >
+            Lesson plans, primary sources, and quizzes for every town in the network.
           </p>
+
           <a
             href="/teach"
-            className="no-underline border-2 border-cream text-cream font-ui font-medium text-[11px] uppercase tracking-[0.12em] px-8 py-3 hover:bg-crimson hover:border-crimson transition-colors whitespace-nowrap"
+            className="btn-dark"
+            style={{
+              display: "inline-block",
+              background: "var(--ink)",
+              color: "var(--cream)",
+              fontFamily: "var(--font-dm)",
+              fontSize: 11,
+              fontWeight: 700,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              padding: "16px 36px",
+              border: "2px solid var(--ink)",
+              boxShadow: "5px 5px 0 rgba(255,255,255,0.25)",
+              textDecoration: "none",
+            }}
           >
-            Teacher Resources
+            Teacher Resources →
           </a>
         </div>
       </section>
