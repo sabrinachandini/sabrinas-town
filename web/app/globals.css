@@ -478,9 +478,19 @@
 .town-hero-rwb {
   min-height: calc(100vh - 80px);
   display: grid;
-  grid-template-columns: 300px 1fr 360px;
+  grid-template-columns: 1fr;
   border-bottom: 4px solid var(--ink-deep);
   overflow: hidden;
+}
+@media (min-width: 768px) {
+  .town-hero-rwb {
+    grid-template-columns: 260px 1fr;
+  }
+}
+@media (min-width: 1100px) {
+  .town-hero-rwb {
+    grid-template-columns: 300px 1fr 360px;
+  }
 }
 
 /* RED COLUMN */
@@ -580,11 +590,10 @@
 .cream-breadcrumb a:hover { color: var(--ink-deep); }
 .town-name {
   font-family: var(--font-instrument), serif; font-weight: 900;
-  font-size: clamp(72px, 8.5vw, 140px);
-  line-height: 0.85; letter-spacing: -0.05em;
+  font-size: clamp(48px, 7vw, 140px);
+  line-height: 0.88; letter-spacing: -0.05em;
   color: var(--ink-deep);
   position: relative; z-index: 2;
-  white-space: nowrap;
 }
 .town-name.squiggle::after {
   content: '';
