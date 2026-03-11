@@ -7,7 +7,11 @@ import { Resend } from 'resend';
 import prisma from '../db/client.js';
 
 const INQUIRY_TO = 'sabrina@lexington250.com';
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy — only instantiated when actually sending, so a missing key doesn't crash startup
+function getResend(): Resend | null {
+  if (!process.env.RESEND_API_KEY) return null;
+  return new Resend(process.env.RESEND_API_KEY);
+}
 
 const InquiryBodySchema = z.object({
   name: z.string().min(1).max(200),
@@ -102,7 +106,9 @@ export async function registerPartnerInquireRoutes(fastify: FastifyInstance): Pr
         request.log.info({ inquiryId: inquiry.id, email, townSlug }, 'Partner inquiry submitted');
 
         let emailSent = false;
+        const resend = getResend();
         try {
+          if (!resend) throw new Error('RESEND_API_KEY not configured');
           const { error: emailError } = await resend.emails.send({
             from: 'noreply@lexington250.com',
             to: [INQUIRY_TO],
