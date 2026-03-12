@@ -64,10 +64,15 @@ function WavyRule() {
 
 export default async function TownsPage({ searchParams }: PageProps) {
   const { q = "" } = await searchParams;
-  const towns = await prisma.town.findMany({
-    select: { id: true, name: true, state: true, slug: true, heroSummary40: true, execSummary150: true },
-    orderBy: { name: "asc" },
-  });
+  let towns: { id: string; name: string; state: string; slug: string; heroSummary40: string; execSummary150: string }[] = [];
+  try {
+    towns = await prisma.town.findMany({
+      select: { id: true, name: true, state: true, slug: true, heroSummary40: true, execSummary150: true },
+      orderBy: { name: "asc" },
+    });
+  } catch (err) {
+    console.error("[TownsPage] DB error:", err);
+  }
 
   const query = q.trim().toLowerCase();
   const filtered = query
