@@ -108,7 +108,7 @@ export function Header() {
   /* ── Default: single-row header ─────────────────────────── */
   return (
     <header
-      className={`sticky top-0 z-50 h-[52px] bg-ink border-b-[3px] border-crimson transition-shadow duration-300 ${
+      className={`sticky top-0 z-50 h-[52px] bg-[#1a3a72] border-b-[3px] border-crimson transition-shadow duration-300 ${
         scrolled ? "shadow-lg" : ""
       }`}
     >
@@ -159,7 +159,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <nav className="md:hidden bg-ink border-t border-cream/10" aria-label="Mobile navigation">
+        <nav className="md:hidden bg-[#0e1428] border-t-2 border-crimson" aria-label="Mobile navigation">
           <ul className="px-6 py-4 space-y-1">
             {NAV_LINKS.map(({ label, href }) => {
               const active = isNavActive(href);
