@@ -35,10 +35,10 @@ export default function HomePage() {
       {/* ────────────────────────────────────────────────────────────── */}
       {/* 1. HERO                                                        */}
       {/* ────────────────────────────────────────────────────────────── */}
-      <section className="grid grid-cols-2 min-h-screen border-b-4 border-[#14100a]">
+      <section className="flex flex-col sm:grid sm:grid-cols-2 sm:min-h-screen border-b-4 border-[#14100a]">
 
         {/* LEFT */}
-        <div className="bg-[#f2e6c8] px-10 py-16 flex flex-col justify-center relative z-[3]">
+        <div className="bg-[#f2e6c8] px-5 sm:px-10 py-10 sm:py-16 flex flex-col justify-center relative z-[3]">
 
           {/* Eyebrow pill */}
           <span className="inline-block font-ui text-[9px] font-semibold tracking-[0.3em] uppercase text-[#f2e6c8] bg-[#cc3322] px-3 py-[5px] mb-6 -rotate-1 w-fit">
@@ -47,7 +47,7 @@ export default function HomePage() {
 
           {/* H1 */}
           <h1
-            className="font-editorial font-black text-[#1a3a72] leading-[0.9] tracking-[-0.04em] relative z-10 w-[130%]"
+            className="font-editorial font-black text-[#1a3a72] leading-[0.9] tracking-[-0.04em] relative z-10 sm:w-[130%]"
             style={{ fontSize: "clamp(64px,7.5vw,110px)" }}
           >
             History<br />
@@ -60,38 +60,58 @@ export default function HomePage() {
             <span className="text-[#14100a] everyone">Everyone</span>
           </h1>
 
+          {/* Squiggle under H1 — whimsy */}
+          <svg
+            width="240" height="12" viewBox="0 0 240 12"
+            style={{ display: 'block', margin: '8px 0 0' }}
+            aria-hidden="true"
+          >
+            <path
+              d="M0 8 Q15 2 30 8 Q45 14 60 7 Q75 1 90 7 Q105 13 120 7 Q135 2 150 7 Q165 13 180 7 Q195 2 210 7 Q225 13 240 6"
+              stroke="#cc3322" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0.5"
+            />
+          </svg>
+
           {/* Pull quote */}
           <p className="font-editorial italic font-light text-[22px] leading-[1.4] text-[#4a3c1a] max-w-[340px] mt-8">
             Seventy-seven towns. The places where ordinary people made history.
           </p>
 
-          {/* CTA row */}
-          <div className="flex items-center gap-4 mt-9">
+          {/* CTA row — stacked on mobile */}
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 mt-9">
             <NextLink
               href="/towns"
-              className="font-editorial font-bold text-[14px] tracking-[0.04em] text-[#f2e6c8] bg-[#cc3322] px-7 py-3.5 no-underline inline-block border-[3px] border-[#14100a] shadow-[4px_4px_0_#14100a] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#14100a] transition-all duration-100"
+              className="font-editorial font-bold text-[14px] tracking-[0.04em] text-[#f2e6c8] bg-[#cc3322] px-7 py-3.5 no-underline inline-block border-[3px] border-[#14100a] shadow-[4px_4px_0_#14100a] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#14100a] transition-all duration-100 text-center"
             >
               Explore the Towns
             </NextLink>
             <NextLink
               href="/teach"
-              className="font-ui text-[11px] font-medium tracking-[0.18em] uppercase text-[#1a3a72] no-underline border-b-2 border-[#1a3a72] pb-0.5"
+              className="font-ui text-[11px] font-medium tracking-[0.18em] uppercase text-[#1a3a72] no-underline border-b-2 border-[#1a3a72] pb-0.5 text-center sm:text-left w-fit self-center sm:self-auto"
             >
               For Teachers
             </NextLink>
           </div>
         </div>
 
-        {/* RIGHT */}
-        <div className="bg-[#1a3a72] border-l-4 border-[#14100a] relative overflow-hidden flex items-center justify-center">
+        {/* RIGHT — horizontal strip on mobile, full panel on desktop */}
+        <div className="bg-[#1a3a72] h-[175px] sm:h-auto border-t-4 sm:border-t-0 sm:border-l-4 border-[#14100a] relative overflow-hidden flex items-center justify-center">
+
+          {/* Mobile only: compass + tagline */}
+          <div className="sm:hidden absolute top-2 right-3 font-ui text-[8px] font-semibold tracking-[0.2em] uppercase text-[rgba(242,230,200,0.28)] z-[4]">
+            N ↑
+          </div>
+          <div className="sm:hidden absolute bottom-3 left-4 z-[4]">
+            <p className="font-editorial font-black text-[#f2e6c8] text-[13px] leading-tight">75 / Towns. One Revolution.</p>
+          </div>
 
           {/* Badge 1 */}
-          <div className="absolute top-12 left-8 -rotate-[3deg] font-editorial font-black text-[11px] tracking-[0.1em] uppercase bg-[#e8b84b] text-[#14100a] px-3 py-1.5 border-[2.5px] border-[#14100a] z-[4]">
+          <div className="hidden sm:block absolute top-12 left-8 -rotate-[3deg] font-editorial font-black text-[11px] tracking-[0.1em] uppercase bg-[#e8b84b] text-[#14100a] px-3 py-1.5 border-[2.5px] border-[#14100a] z-[4]">
             April 19, 1775
           </div>
 
           {/* Badge 2 */}
-          <div className="absolute bottom-20 right-6 rotate-[2.5deg] font-editorial font-black text-[11px] tracking-[0.1em] uppercase bg-[#e8b84b] text-[#14100a] px-3 py-1.5 border-[2.5px] border-[#14100a] z-[4]">
+          <div className="hidden sm:block absolute bottom-20 right-6 rotate-[2.5deg] font-editorial font-black text-[11px] tracking-[0.1em] uppercase bg-[#e8b84b] text-[#14100a] px-3 py-1.5 border-[2.5px] border-[#14100a] z-[4]">
             Massachusetts, 1775
           </div>
 
@@ -137,8 +157,8 @@ export default function HomePage() {
             </g>
           </svg>
 
-          {/* Bottom-anchored content block */}
-          <div className="absolute bottom-0 left-0 right-0 h-full z-[3] p-14 flex flex-col justify-end">
+          {/* Bottom-anchored content block — desktop only */}
+          <div className="hidden sm:flex absolute bottom-0 left-0 right-0 h-full z-[3] p-14 flex-col justify-end">
             <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.35)] mb-4">
               The Shot Heard Round the World
             </p>
@@ -153,13 +173,20 @@ export default function HomePage() {
               Every town has a story. Most of them have never been told.
             </p>
           </div>
+
+          {/* Stars — whimsy */}
+          <svg className="absolute top-5 right-5 pointer-events-none z-[4]" width="52" height="52" viewBox="0 0 52 52" fill="none" aria-hidden="true" style={{ opacity: 0.2 }}>
+            <path d="M11 25 L12.4 30 L18 30 L13.5 33.5 L15 39 L11 35.8 L7 39 L8.5 33.5 L4 30 L9.6 30 Z" fill="#e8b84b" />
+            <path d="M38 10 L39 13 L42 13 L39.8 14.8 L40.8 18 L38 16.2 L35.2 18 L36.2 14.8 L34 13 L37 13 Z" fill="#f2e6c8" />
+            <path d="M44 36 L44.7 38.4 L47.3 38.4 L45.2 39.9 L45.9 42.3 L44 41 L42.1 42.3 L42.8 39.9 L40.7 38.4 L43.3 38.4 Z" fill="#e8b84b" />
+          </svg>
         </div>
       </section>
 
       {/* ────────────────────────────────────────────────────────────── */}
       {/* 2. STATS RIBBON                                               */}
       {/* ────────────────────────────────────────────────────────────── */}
-      <div className="bg-[#14100a] flex border-b-4 border-[#cc3322] overflow-hidden">
+      <div className="stats-ribbon bg-[#14100a] flex border-b-4 border-[#cc3322] overflow-hidden">
         {[
           { number: "13", accent: "✦", label: "Original Colonies" },
           { number: "75", accent: "",   label: "Towns Documented" },
@@ -168,14 +195,19 @@ export default function HomePage() {
         ].map((stat) => (
           <div
             key={stat.label}
-            className="stat-cell flex-1 px-6 py-7 border-r-2 border-[rgba(242,230,200,0.08)] last:border-r-0 flex flex-col gap-1"
+            className="stat-cell flex-1 px-4 sm:px-6 py-6 sm:py-7 border-r-2 border-[rgba(242,230,200,0.08)] last:border-r-0 flex flex-col gap-1"
           >
-            <div className="font-display text-[48px] text-[#f2e6c8] leading-none tracking-[-0.04em]">
+            <div className="font-display text-[40px] sm:text-[48px] text-[#f2e6c8] leading-none tracking-[-0.04em]">
               {stat.number}<span className="text-[#cc3322] text-[0.7em]">{stat.accent}</span>
             </div>
             <div className="font-ui text-[10px] font-normal tracking-[0.2em] uppercase text-[rgba(242,230,200,0.4)]">
               {stat.label}
             </div>
+            {/* Tiny squiggle under stat label — whimsy */}
+            <svg width="60" height="7" viewBox="0 0 60 7" aria-hidden="true">
+              <path d="M0 4 Q7 1 15 4 Q22 7 30 3 Q37 0 45 3 Q52 7 60 2"
+                stroke="#e8b84b" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.3" />
+            </svg>
           </div>
         ))}
       </div>
@@ -183,14 +215,21 @@ export default function HomePage() {
       {/* ────────────────────────────────────────────────────────────── */}
       {/* 3. MANIFESTO                                                  */}
       {/* ────────────────────────────────────────────────────────────── */}
-      <section className="bg-[#cc3322] py-20 px-10 relative overflow-hidden border-b-4 border-[#14100a]">
+      <section className="bg-[#cc3322] py-12 sm:py-20 px-5 sm:px-10 relative overflow-hidden border-b-4 border-[#14100a]">
         {/* Ghost circles */}
         <div className="absolute w-[280px] h-[280px] rounded-full border-[3px] border-[rgba(242,230,200,0.1)] top-[-80px] right-[-80px]" aria-hidden="true" />
         <div className="absolute w-[180px] h-[180px] rounded-full border-[3px] border-[rgba(242,230,200,0.07)] bottom-[-60px] left-[40%]" aria-hidden="true" />
 
-        <div className="grid grid-cols-2 gap-0 relative z-10">
+        {/* Stars — whimsy */}
+        <svg className="absolute top-5 right-5 pointer-events-none" width="52" height="52" viewBox="0 0 52 52" fill="none" aria-hidden="true" style={{ opacity: 0.18 }}>
+          <path d="M11 25 L12.4 30 L18 30 L13.5 33.5 L15 39 L11 35.8 L7 39 L8.5 33.5 L4 30 L9.6 30 Z" fill="#e8b84b" />
+          <path d="M38 10 L39 13 L42 13 L39.8 14.8 L40.8 18 L38 16.2 L35.2 18 L36.2 14.8 L34 13 L37 13 Z" fill="#f2e6c8" />
+          <path d="M44 36 L44.7 38.4 L47.3 38.4 L45.2 39.9 L45.9 42.3 L44 41 L42.1 42.3 L42.8 39.9 L40.7 38.4 L43.3 38.4 Z" fill="#e8b84b" />
+        </svg>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 relative z-10">
           {/* Left */}
-          <div className="pr-10 border-r-[3px] border-[rgba(242,230,200,0.25)]">
+          <div className="pr-0 sm:pr-10 pb-8 sm:pb-0 border-b-[3px] sm:border-b-0 sm:border-r-[3px] border-[rgba(242,230,200,0.25)]">
             <h2
               className="font-editorial font-black text-[#f2e6c8] leading-[0.92] tracking-[-0.04em]"
               style={{ fontSize: "clamp(48px,5vw,80px)" }}
@@ -201,13 +240,18 @@ export default function HomePage() {
           </div>
 
           {/* Right */}
-          <div className="pl-12 flex flex-col justify-between">
-            <p className="font-editorial italic font-light text-[22px] leading-[1.55] text-[rgba(242,230,200,0.85)]">
+          <div className="pt-8 sm:pt-0 sm:pl-12 flex flex-col justify-between">
+            <p className="font-editorial italic font-light text-[20px] sm:text-[22px] leading-[1.55] text-[rgba(242,230,200,0.85)]">
               Not on famous battlefields alone. It was won in a farmhouse in Wilmington where a surgeon packed his bag. In a church in Salem where men argued through the night. In a kitchen in Concord where someone hid the powder.
               <br /><br />
               This project maps those places. All of them.
             </p>
-            <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.4)] mt-8 flex items-center gap-3">
+            {/* Squiggle after body copy — whimsy */}
+            <svg width="180" height="10" viewBox="0 0 180 10" style={{ display: 'block', marginTop: '16px' }} aria-hidden="true">
+              <path d="M0 6 Q11 1 22 6 Q33 11 45 5 Q56 0 67 5 Q78 10 90 5 Q101 1 112 5 Q123 10 135 5 Q146 1 157 5 Q168 10 180 4"
+                stroke="rgba(255,255,255,0.3)" strokeWidth="2" fill="none" strokeLinecap="round" />
+            </svg>
+            <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.4)] mt-6 flex items-center gap-3">
               <span className="w-6 h-[2px] bg-[rgba(242,230,200,0.3)] block" />
               75 Towns · 8 Years · 1 Revolution
             </p>
@@ -218,10 +262,10 @@ export default function HomePage() {
       {/* ────────────────────────────────────────────────────────────── */}
       {/* 4. TOWNS                                                      */}
       {/* ────────────────────────────────────────────────────────────── */}
-      <section className="bg-[#f8f0d8] border-b-4 border-[#14100a] grid grid-cols-2">
+      <section className="bg-[#f8f0d8] border-b-4 border-[#14100a] grid grid-cols-1 sm:grid-cols-2">
 
         {/* Left */}
-        <div className="px-10 py-16 border-r-4 border-[#14100a]">
+        <div className="px-5 sm:px-10 py-12 sm:py-16 border-b-4 sm:border-b-0 sm:border-r-4 border-[#14100a]">
           {/* Kicker */}
           <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] flex items-center gap-2.5 mb-8">
             <span className="w-5 h-[2px] bg-[#cc3322] block" />
@@ -236,6 +280,12 @@ export default function HomePage() {
             Where It<br />
             <em className="font-editorial italic font-light text-[#1a3a72]">Happened</em>
           </h2>
+
+          {/* Squiggle under heading — whimsy */}
+          <svg width="200" height="12" viewBox="0 0 200 12" style={{ display: 'block', margin: '10px 0 20px' }} aria-hidden="true">
+            <path d="M0 8 Q12 2 25 8 Q37 14 50 7 Q62 1 75 7 Q87 13 100 7 Q112 2 125 7 Q137 13 150 7 Q162 2 175 7 Q187 13 200 6"
+              stroke="#cc3322" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0.38" />
+          </svg>
 
           {/* Town grid */}
           <ul className="grid grid-cols-3 border-t-2 border-[#14100a] list-none m-0 p-0">
@@ -262,18 +312,31 @@ export default function HomePage() {
               </NextLink>
             </li>
           </ul>
+
+          {/* Dashed rule + View All — whimsy */}
+          <div className="mt-6">
+            <svg width="100%" height="6" viewBox="0 0 300 6" preserveAspectRatio="none" aria-hidden="true">
+              <line x1="0" y1="3" x2="300" y2="3" stroke="rgba(20,16,10,0.15)" strokeWidth="1.5" strokeDasharray="5 4" />
+            </svg>
+            <NextLink
+              href="/towns"
+              className="block w-full sm:w-auto text-center sm:text-left mt-4 font-ui text-[11px] font-semibold tracking-[0.2em] uppercase text-[#1a3a72] no-underline border-b-2 border-[#1a3a72] pb-0.5"
+            >
+              View All Towns →
+            </NextLink>
+          </div>
         </div>
 
         {/* Right */}
-        <div className="bg-[#1a3a72] px-12 py-16 relative overflow-hidden flex flex-col justify-between">
+        <div className="bg-[#1a3a72] px-8 sm:px-12 py-12 sm:py-16 relative overflow-hidden flex flex-col justify-between">
 
           {/* Tilted tag */}
           <div className="absolute top-12 right-8 rotate-[3deg] bg-[#e8b84b] text-[#14100a] font-editorial font-bold text-[12px] px-3.5 py-2 border-[2.5px] border-[#14100a] shadow-[3px_3px_0_#14100a] z-[3]">
             Featured Town
           </div>
 
-          {/* Ghost state */}
-          <div className="absolute top-[-16px] right-[-20px] font-editorial font-black text-[120px] text-white/[0.05] leading-none pointer-events-none select-none" aria-hidden="true">
+          {/* Ghost state — whimsy */}
+          <div className="absolute top-[-16px] right-[-20px] font-editorial font-black text-[100px] sm:text-[120px] text-white/[0.05] leading-none pointer-events-none select-none" aria-hidden="true">
             MA
           </div>
 
@@ -318,7 +381,7 @@ export default function HomePage() {
       {/* ────────────────────────────────────────────────────────────── */}
       {/* 5. QUOTE                                                      */}
       {/* ────────────────────────────────────────────────────────────── */}
-      <section className="bg-[#2a5c45] py-24 px-10 relative overflow-hidden border-b-4 border-[#14100a] flex items-center justify-center">
+      <section className="bg-[#2a5c45] py-16 sm:py-24 px-5 sm:px-10 relative overflow-hidden border-b-4 border-[#14100a] flex items-center justify-center">
 
         {/* Ghost quotation mark */}
         <div
@@ -333,22 +396,35 @@ export default function HomePage() {
         <div className="absolute w-[500px] h-[500px] rounded-full border-2 border-[rgba(242,230,200,0.08)] top-[-200px] right-[-150px]" aria-hidden="true" />
         <div className="absolute w-[200px] h-[200px] rounded-full border-2 border-[rgba(242,230,200,0.08)] bottom-[-80px] left-[10%]" aria-hidden="true" />
 
+        {/* Cross mark — whimsy */}
+        <svg className="absolute bottom-6 right-6 pointer-events-none" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" style={{ opacity: 0.2 }}>
+          <rect x="11.5" y="0" width="5" height="28" rx="2.5" fill="white" />
+          <rect x="0" y="11.5" width="28" height="5" rx="2.5" fill="white" />
+        </svg>
+
         <div className="relative z-[2] max-w-[960px] text-center">
           <blockquote>
             <p
               className="font-editorial italic font-light text-[#f2e6c8] leading-[1.2] tracking-[-0.02em]"
-              style={{ fontSize: "clamp(28px,3.5vw,52px)" }}
+              style={{ fontSize: "clamp(24px,3.5vw,52px)" }}
             >
               &ldquo;Those who expect to reap the blessings of freedom must, like men, undergo{" "}
               <strong className="font-editorial font-black not-italic text-[#e8b84b]">
                 the fatigues of supporting it.
               </strong>&rdquo;
             </p>
-            <p className="font-ui text-[10px] font-medium tracking-[0.24em] uppercase text-[rgba(242,230,200,0.4)] mt-7 flex items-center justify-center gap-3">
-              <span className="w-8 h-[1px] bg-[rgba(242,230,200,0.25)] block" />
-              Thomas Paine · The American Crisis · 1776
-              <span className="w-8 h-[1px] bg-[rgba(242,230,200,0.25)] block" />
-            </p>
+            {/* Squiggle replaces horizontal rule — whimsy */}
+            <div className="flex items-center justify-center gap-3 mt-7">
+              <svg width="32" height="1" viewBox="0 0 32 1" aria-hidden="true">
+                <line x1="0" y1="0.5" x2="32" y2="0.5" stroke="rgba(242,230,200,0.25)" strokeWidth="1" />
+              </svg>
+              <p className="font-ui text-[10px] font-medium tracking-[0.24em] uppercase text-[rgba(242,230,200,0.4)]">
+                Thomas Paine · The American Crisis · 1776
+              </p>
+              <svg width="32" height="1" viewBox="0 0 32 1" aria-hidden="true">
+                <line x1="0" y1="0.5" x2="32" y2="0.5" stroke="rgba(242,230,200,0.25)" strokeWidth="1" />
+              </svg>
+            </div>
           </blockquote>
         </div>
       </section>
@@ -359,7 +435,7 @@ export default function HomePage() {
       <section className="bg-[#f2e6c8] border-b-4 border-[#14100a]">
 
         {/* Header row */}
-        <div className="px-10 py-14 pb-8 flex items-end justify-between border-b-[3px] border-[#14100a]">
+        <div className="px-5 sm:px-10 py-10 sm:py-14 pb-6 sm:pb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between border-b-[3px] border-[#14100a] gap-4">
           <h2
             className="font-editorial font-black text-[#14100a] leading-[0.92] tracking-[-0.04em]"
             style={{ fontSize: "clamp(36px,4vw,64px)" }}
@@ -367,19 +443,24 @@ export default function HomePage() {
             The <em className="font-editorial italic font-light text-[#cc3322]">Stories</em><br />
             Nobody Tells
           </h2>
+          {/* Squiggle under heading — whimsy */}
+          <svg width="200" height="12" viewBox="0 0 200 12" style={{ display: 'block' }} aria-hidden="true" className="sm:hidden">
+            <path d="M0 8 Q12 2 25 8 Q37 14 50 7 Q62 1 75 7 Q87 13 100 7 Q112 2 125 7 Q137 13 150 7 Q162 2 175 7 Q187 13 200 6"
+              stroke="#cc3322" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0.38" />
+          </svg>
           <NextLink
             href="/towns"
-            className="font-ui text-[10px] font-semibold tracking-[0.2em] uppercase text-[#1a3a72] no-underline border-b-2 border-[#1a3a72] pb-0.5 flex-shrink-0 ml-8 mb-1"
+            className="font-ui text-[10px] font-semibold tracking-[0.2em] uppercase text-[#1a3a72] no-underline border-b-2 border-[#1a3a72] pb-0.5 flex-shrink-0 sm:ml-8 sm:mb-1 w-fit"
           >
             All Stories →
           </NextLink>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-3">
+        {/* Cards — stacked on mobile */}
+        <div className="grid grid-cols-1 sm:grid-cols-3">
 
-          {/* Card 1 */}
-          <div className="bg-[#f2e6c8] px-9 py-10 border-r-[3px] border-[#14100a] relative overflow-hidden">
+          {/* Card 1 — red left border on mobile */}
+          <div className="bg-[#f2e6c8] px-7 sm:px-9 py-10 border-b-[3px] sm:border-b-0 sm:border-r-[3px] border-[#14100a] relative overflow-hidden border-l-[5px] border-l-[#cc3322] sm:border-l-0">
             <div className="absolute top-4 right-5 font-editorial font-black text-[80px] leading-none tracking-[-0.05em] opacity-[0.12] pointer-events-none select-none text-[#14100a]" aria-hidden="true">
               01
             </div>
@@ -400,8 +481,8 @@ export default function HomePage() {
             </NextLink>
           </div>
 
-          {/* Card 2 */}
-          <div className="bg-[#1a3a72] px-9 py-10 border-r-[3px] border-[#14100a] relative overflow-hidden">
+          {/* Card 2 — blue left border on mobile */}
+          <div className="bg-[#1a3a72] px-7 sm:px-9 py-10 border-b-[3px] sm:border-b-0 sm:border-r-[3px] border-[#14100a] relative overflow-hidden border-l-[5px] border-l-[#3a6abf] sm:border-l-0">
             <div className="absolute top-4 right-5 font-editorial font-black text-[80px] leading-none tracking-[-0.05em] opacity-[0.12] pointer-events-none select-none text-[#f2e6c8]" aria-hidden="true">
               02
             </div>
@@ -422,8 +503,8 @@ export default function HomePage() {
             </NextLink>
           </div>
 
-          {/* Card 3 */}
-          <div className="bg-[#cc3322] px-9 py-10 relative overflow-hidden">
+          {/* Card 3 — red left border on mobile */}
+          <div className="bg-[#cc3322] px-7 sm:px-9 py-10 relative overflow-hidden border-l-[5px] border-l-[#ff4422] sm:border-l-0">
             <div className="absolute top-4 right-5 font-editorial font-black text-[80px] leading-none tracking-[-0.05em] opacity-[0.12] pointer-events-none select-none text-[#f2e6c8]" aria-hidden="true">
               03
             </div>
@@ -449,7 +530,7 @@ export default function HomePage() {
       {/* ────────────────────────────────────────────────────────────── */}
       {/* 7. CTA                                                        */}
       {/* ────────────────────────────────────────────────────────────── */}
-      <section className="bg-[#e8b84b] border-b-4 border-[#14100a] py-20 px-10 grid grid-cols-[1fr_auto] items-center gap-16 relative overflow-hidden">
+      <section className="bg-[#e8b84b] border-b-4 border-[#14100a] py-14 sm:py-20 px-5 sm:px-10 flex flex-col sm:grid sm:grid-cols-[1fr_auto] sm:items-center gap-8 sm:gap-16 relative overflow-hidden">
 
         {/* Ghost "75" */}
         <div
@@ -461,9 +542,18 @@ export default function HomePage() {
         </div>
 
         {/* Tilted stamp */}
-        <div className="absolute top-10 right-[300px] font-editorial font-black text-[11px] tracking-[0.12em] uppercase text-[#cc3322] border-[3px] border-[#cc3322] px-3.5 py-2 -rotate-[8deg] opacity-60 z-[2]">
+        <div className="absolute top-10 right-[300px] font-editorial font-black text-[11px] tracking-[0.12em] uppercase text-[#cc3322] border-[3px] border-[#cc3322] px-3.5 py-2 -rotate-[8deg] opacity-60 z-[2] hidden sm:block">
           All Welcome
         </div>
+
+        {/* Stars — whimsy */}
+        <svg className="absolute top-5 right-5 pointer-events-none" width="52" height="52" viewBox="0 0 52 52" fill="none" aria-hidden="true" style={{ opacity: 0.18 }}>
+          <path d="M11 25 L12.4 30 L18 30 L13.5 33.5 L15 39 L11 35.8 L7 39 L8.5 33.5 L4 30 L9.6 30 Z" fill="#cc3322" />
+          <path d="M38 10 L39 13 L42 13 L39.8 14.8 L40.8 18 L38 16.2 L35.2 18 L36.2 14.8 L34 13 L37 13 Z" fill="#14100a" />
+        </svg>
+        <svg className="absolute bottom-5 left-5 pointer-events-none" width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true" style={{ opacity: 0.15 }}>
+          <path d="M20 5 L21.8 13.2 L30 14 L21.8 14.8 L23 23 L20 15 L17 23 L18.2 14.8 L10 14 L18.2 13.2 Z" fill="#14100a" />
+        </svg>
 
         {/* Headline */}
         <p
@@ -474,10 +564,10 @@ export default function HomePage() {
           <em className="font-editorial italic font-light text-[#cc3322]">Start anywhere.</em>
         </p>
 
-        {/* Button */}
+        {/* Button — full width on mobile */}
         <NextLink
           href="/towns"
-          className="font-editorial font-bold text-[16px] text-[#f2e6c8] bg-[#14100a] px-10 py-5 no-underline inline-block border-[3px] border-[#14100a] shadow-[6px_6px_0_#cc3322] hover:-translate-x-[3px] hover:-translate-y-[3px] hover:shadow-[9px_9px_0_#cc3322] transition-all duration-100 whitespace-nowrap relative z-[2] flex-shrink-0"
+          className="font-editorial font-bold text-[16px] text-[#f2e6c8] bg-[#14100a] px-10 py-5 no-underline block sm:inline-block text-center border-[3px] border-[#14100a] shadow-[6px_6px_0_#cc3322] hover:-translate-x-[3px] hover:-translate-y-[3px] hover:shadow-[9px_9px_0_#cc3322] transition-all duration-100 whitespace-nowrap relative z-[2] flex-shrink-0"
         >
           Explore All Towns →
         </NextLink>

@@ -297,6 +297,7 @@ export default async function PartnerPage() {
           </p>
 
           <div
+            className="props-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(4, 1fr)",
@@ -638,6 +639,7 @@ export default async function PartnerPage() {
 
         {/* Basic strip */}
         <div
+          className="pricing-strip"
           style={{
             display: "flex",
             alignItems: "flex-start",
@@ -645,7 +647,7 @@ export default async function PartnerPage() {
             borderTop: "2px solid rgba(20,16,10,0.09)",
           }}
         >
-          <div style={{ minWidth: 200, marginRight: 52 }}>
+          <div className="price-left" style={{ minWidth: 200, marginRight: 52 }}>
             <div
               style={{
                 fontFamily: "var(--font-bebas)",
@@ -681,7 +683,7 @@ export default async function PartnerPage() {
             </div>
           </div>
 
-          <div style={{ flex: 1, marginRight: 52 }}>
+          <div className="price-features" style={{ flex: 1, marginRight: 52 }}>
             {[
               { included: true, label: "Basic town profile" },
               { included: true, label: "Network membership badge" },
@@ -750,6 +752,7 @@ export default async function PartnerPage() {
 
         {/* Plus strip (featured) */}
         <div
+          className="pricing-strip"
           style={{
             display: "flex",
             alignItems: "flex-start",
@@ -779,7 +782,7 @@ export default async function PartnerPage() {
             Popular
           </div>
 
-          <div style={{ minWidth: 200, marginRight: 52 }}>
+          <div className="price-left" style={{ minWidth: 200, marginRight: 52 }}>
             <div
               style={{
                 fontFamily: "var(--font-bebas)",
@@ -826,7 +829,7 @@ export default async function PartnerPage() {
             </div>
           </div>
 
-          <div style={{ flex: 1, marginRight: 52 }}>
+          <div className="price-features" style={{ flex: 1, marginRight: 52 }}>
             {[
               { included: true, label: "Everything in Basic" },
               { included: true, label: "Custom branding" },
@@ -895,6 +898,7 @@ export default async function PartnerPage() {
 
         {/* Pro strip */}
         <div
+          className="pricing-strip"
           style={{
             display: "flex",
             alignItems: "flex-start",
@@ -902,7 +906,7 @@ export default async function PartnerPage() {
             borderTop: "2px solid rgba(20,16,10,0.09)",
           }}
         >
-          <div style={{ minWidth: 200, marginRight: 52 }}>
+          <div className="price-left" style={{ minWidth: 200, marginRight: 52 }}>
             <div
               style={{
                 fontFamily: "var(--font-bebas)",
@@ -949,7 +953,7 @@ export default async function PartnerPage() {
             </div>
           </div>
 
-          <div style={{ flex: 1, marginRight: 52 }}>
+          <div className="price-features" style={{ flex: 1, marginRight: 52 }}>
             {[
               { included: true, label: "Everything in Plus" },
               { included: true, label: "Advanced analytics" },

@@ -115,7 +115,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
             right: -10,
             top: -20,
             fontFamily: "var(--font-bebas)",
-            fontSize: 460,
+            fontSize: "clamp(160px, 30vw, 460px)",
             lineHeight: 1,
             color: "rgba(255,255,255,0.07)",
             pointerEvents: "none",
@@ -126,6 +126,39 @@ export default async function TownsPage({ searchParams }: PageProps) {
         >
           Towns
         </div>
+
+        {/* Tilted stamp — whimsy */}
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            top: 24,
+            right: 24,
+            border: "2px solid rgba(255,255,255,0.45)",
+            color: "rgba(255,255,255,0.6)",
+            fontFamily: "var(--font-dm)",
+            fontSize: 8,
+            fontWeight: 700,
+            letterSpacing: "0.28em",
+            textTransform: "uppercase",
+            padding: "6px 12px",
+            transform: "rotate(-2deg)",
+            zIndex: 2,
+          }}
+        >
+          75 Towns · 16 States
+        </div>
+
+        {/* Stars — whimsy */}
+        <svg
+          aria-hidden
+          style={{ position: "absolute", top: 20, right: 80, pointerEvents: "none", opacity: 0.2, zIndex: 2 }}
+          width="52" height="52" viewBox="0 0 52 52" fill="none"
+        >
+          <path d="M11 25 L12.4 30 L18 30 L13.5 33.5 L15 39 L11 35.8 L7 39 L8.5 33.5 L4 30 L9.6 30 Z" fill="#e8b84b" />
+          <path d="M38 10 L39 13 L42 13 L39.8 14.8 L40.8 18 L38 16.2 L35.2 18 L36.2 14.8 L34 13 L37 13 Z" fill="#f2e6c8" />
+          <path d="M44 36 L44.7 38.4 L47.3 38.4 L45.2 39.9 L45.9 42.3 L44 41 L42.1 42.3 L42.8 39.9 L40.7 38.4 L43.3 38.4 Z" fill="#e8b84b" />
+        </svg>
 
         {/* Content */}
         <div style={{ position: "relative", zIndex: 1, maxWidth: 700 }}>
@@ -158,7 +191,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
           <h1
             style={{
               fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(72px, 10vw, 136px)",
+              fontSize: "clamp(64px, 10vw, 136px)",
               lineHeight: 0.88,
               letterSpacing: "-0.05em",
               color: "white",
@@ -171,7 +204,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
           <span
             style={{
               fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(72px, 10vw, 136px)",
+              fontSize: "clamp(64px, 10vw, 136px)",
               lineHeight: 0.88,
               letterSpacing: "-0.05em",
               color: "rgba(255,255,255,0.25)",
@@ -295,6 +328,10 @@ export default async function TownsPage({ searchParams }: PageProps) {
               {state}
             </a>
           ))}
+          {/* Small yellow squiggle at end of state pills — whimsy */}
+          <div style={{ width: "100%", paddingTop: 6 }}>
+            <Squiggle width={120} stroke="#e8b84b" strokeWidth="1.8" />
+          </div>
         </div>
       </section>
 
@@ -546,6 +583,12 @@ export default async function TownsPage({ searchParams }: PageProps) {
             History Is For Everyone · The American Revolution
           </p>
         </div>
+
+        {/* Cross mark — whimsy */}
+        <svg aria-hidden style={{ position: "absolute", bottom: 24, right: 24, opacity: 0.1, pointerEvents: "none" }} width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <rect x="11.5" y="0" width="5" height="28" rx="2.5" fill="white" />
+          <rect x="0" y="11.5" width="28" height="5" rx="2.5" fill="white" />
+        </svg>
       </section>
 
       {/* RED CTA */}
@@ -567,7 +610,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
             right: -10,
             bottom: -30,
             fontFamily: "var(--font-bebas)",
-            fontSize: 340,
+            fontSize: "clamp(120px, 25vw, 340px)",
             lineHeight: 1,
             color: "rgba(255,255,255,0.07)",
             pointerEvents: "none",
@@ -577,6 +620,15 @@ export default async function TownsPage({ searchParams }: PageProps) {
         >
           Teach
         </div>
+
+        {/* Stars — whimsy */}
+        <svg aria-hidden style={{ position: "absolute", top: 20, right: 20, opacity: 0.2, pointerEvents: "none", zIndex: 2 }} width="52" height="52" viewBox="0 0 52 52" fill="none">
+          <path d="M11 25 L12.4 30 L18 30 L13.5 33.5 L15 39 L11 35.8 L7 39 L8.5 33.5 L4 30 L9.6 30 Z" fill="#e8b84b" />
+          <path d="M38 10 L39 13 L42 13 L39.8 14.8 L40.8 18 L38 16.2 L35.2 18 L36.2 14.8 L34 13 L37 13 Z" fill="#f2e6c8" />
+        </svg>
+        <svg aria-hidden style={{ position: "absolute", bottom: 24, left: 24, opacity: 0.15, pointerEvents: "none", zIndex: 2 }} width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <path d="M20 5 L22 15 L32 15 L24 21 L27 31 L20 25 L13 31 L16 21 L8 15 L18 15 Z" fill="#f2e6c8" />
+        </svg>
 
         {/* Content */}
         <div style={{ position: "relative", zIndex: 1, maxWidth: 640 }}>
@@ -646,7 +698,8 @@ export default async function TownsPage({ searchParams }: PageProps) {
             href="/teach"
             className="btn-dark"
             style={{
-              display: "inline-block",
+              display: "block",
+              maxWidth: 300,
               background: "var(--ink)",
               color: "var(--cream)",
               fontFamily: "var(--font-dm)",
@@ -658,6 +711,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
               border: "2px solid var(--ink)",
               boxShadow: "5px 5px 0 rgba(255,255,255,0.25)",
               textDecoration: "none",
+              textAlign: "center",
             }}
           >
             Teacher Resources →

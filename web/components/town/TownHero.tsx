@@ -110,7 +110,7 @@ export function TownHero({ town, slug }: TownHeroProps) {
       </div>
 
       {/* ── COLUMN 3: BLUE ── */}
-      <div className="town-col-blue hidden md:flex">
+      <div className="town-col-blue flex">
         {sig.mapLabel1 && (
           <div
             className="map-label map-label-light"

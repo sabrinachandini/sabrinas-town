@@ -134,7 +134,7 @@ export default function TeachPage() {
             right: -10,
             top: -20,
             fontFamily: "var(--font-bebas)",
-            fontSize: 480,
+            fontSize: "clamp(180px, 35vw, 480px)",
             lineHeight: 1,
             color: "rgba(255,255,255,0.06)",
             pointerEvents: "none",
@@ -144,6 +144,18 @@ export default function TeachPage() {
           }}
         >
           Teach
+        </div>
+
+        {/* Stars — whimsy */}
+        <svg aria-hidden style={{ position: "absolute", top: 20, right: 20, opacity: 0.2, pointerEvents: "none", zIndex: 2 }} width="52" height="52" viewBox="0 0 52 52" fill="none">
+          <path d="M11 25 L12.4 30 L18 30 L13.5 33.5 L15 39 L11 35.8 L7 39 L8.5 33.5 L4 30 L9.6 30 Z" fill="#e8b84b" />
+          <path d="M38 10 L39 13 L42 13 L39.8 14.8 L40.8 18 L38 16.2 L35.2 18 L36.2 14.8 L34 13 L37 13 Z" fill="#f2e6c8" />
+          <path d="M44 36 L44.7 38.4 L47.3 38.4 L45.2 39.9 L45.9 42.3 L44 41 L42.1 42.3 L42.8 39.9 L40.7 38.4 L43.3 38.4 Z" fill="#e8b84b" />
+        </svg>
+
+        {/* Tilted stamp — whimsy */}
+        <div aria-hidden style={{ position: "absolute", top: 24, right: 24, border: "2px solid rgba(255,255,255,0.4)", color: "rgba(255,255,255,0.55)", fontFamily: "var(--font-dm)", fontSize: 8, fontWeight: 700, letterSpacing: "0.28em", textTransform: "uppercase", padding: "6px 12px", transform: "rotate(-2.5deg)", zIndex: 3 }}>
+          For Classrooms
         </div>
 
         <div style={{ position: "relative", zIndex: 1, maxWidth: 700 }}>
@@ -248,6 +260,7 @@ export default function TeachPage() {
         </div>
 
         <div
+          className="zone-red-stats"
           style={{
             position: "relative",
             zIndex: 1,
@@ -258,7 +271,7 @@ export default function TeachPage() {
           }}
         >
           {/* Stat 1 */}
-          <div style={{ padding: "0 44px 0 0", borderRight: "1px solid rgba(255,255,255,0.2)" }}>
+          <div className="m-stat" style={{ padding: "0 44px 0 0", borderRight: "1px solid rgba(255,255,255,0.2)" }}>
             <div
               style={{
                 fontFamily: "var(--font-bebas)",
@@ -282,10 +295,14 @@ export default function TeachPage() {
             >
               Primary sources only
             </div>
+            <svg width="50" height="7" viewBox="0 0 50 7" aria-hidden style={{ marginTop: 4 }}>
+              <path d="M0 4 Q6 1 12 4 Q18 7 25 3 Q31 0 37 3 Q43 7 50 2" stroke="#e8b84b" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.45" />
+            </svg>
           </div>
 
           {/* Stat 2 */}
           <div
+            className="m-stat"
             style={{
               padding: "0 44px",
               borderRight: "1px solid rgba(255,255,255,0.2)",
@@ -314,10 +331,13 @@ export default function TeachPage() {
             >
               Towns in network
             </div>
+            <svg width="50" height="7" viewBox="0 0 50 7" aria-hidden style={{ marginTop: 4 }}>
+              <path d="M0 4 Q6 1 12 4 Q18 7 25 3 Q31 0 37 3 Q43 7 50 2" stroke="#e8b84b" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.45" />
+            </svg>
           </div>
 
           {/* Stat 3 */}
-          <div style={{ padding: "0 44px", borderRight: "1px solid rgba(255,255,255,0.2)" }}>
+          <div className="m-stat" style={{ padding: "0 44px", borderRight: "1px solid rgba(255,255,255,0.2)" }}>
             <div
               style={{
                 fontFamily: "var(--font-bebas)",
@@ -341,6 +361,9 @@ export default function TeachPage() {
             >
               States covered
             </div>
+            <svg width="50" height="7" viewBox="0 0 50 7" aria-hidden style={{ marginTop: 4 }}>
+              <path d="M0 4 Q6 1 12 4 Q18 7 25 3 Q31 0 37 3 Q43 7 50 2" stroke="#e8b84b" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.45" />
+            </svg>
           </div>
 
           {/* Badge */}
@@ -424,6 +447,14 @@ export default function TeachPage() {
           >
             Teacher resources organized by state, prioritized for towns with the richest primary source availability.
           </p>
+        </div>
+
+        {/* Squiggle before state list — whimsy */}
+        <div style={{ marginBottom: 8 }}>
+          <svg width="160" height="12" viewBox="0 0 160 12" aria-hidden style={{ display: "block" }}>
+            <path d="M0 8 Q10 2 20 8 Q30 14 40 7 Q50 1 60 7 Q70 13 80 7 Q90 2 100 7 Q110 13 120 7 Q130 2 140 7 Q150 13 160 6"
+              stroke="#cc3322" strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.35" />
+          </svg>
         </div>
 
         {/* State rows */}

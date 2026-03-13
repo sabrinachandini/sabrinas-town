@@ -1468,3 +1468,82 @@ button {
 .teach-state-link:hover { color: var(--red) !important; }
 .teach-view-link:hover { letter-spacing: 0.22em; border-bottom-color: var(--red) !important; }
 .method-link:hover { color: white !important; border-bottom-color: rgba(255,255,255,0.6) !important; }
+
+/* ── Whimsy Utilities ─────────────────────────────────── */
+.ghost-text {
+  position: absolute; pointer-events: none; user-select: none;
+  font-family: var(--font-bebas), sans-serif; font-weight: 900;
+  line-height: 1; letter-spacing: -0.08em; z-index: 0;
+}
+.layer { position: relative; z-index: 1; }
+
+/* ═══════════════════════════════════════
+   MOBILE RESPONSIVE — ≤ 640px
+═══════════════════════════════════════ */
+@media (max-width: 640px) {
+
+  /* ── Padding scale-down ── */
+  .page-pad {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* ── Ghost text scale-down ── */
+  .bg-ghost { font-size: 180px !important; }
+
+  /* ── Stats ribbon → 2×2 ── */
+  .stats-ribbon {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .stat-cell { border-bottom: 1px solid rgba(242,230,200,0.07) !important; }
+  .stat-cell:nth-child(3), .stat-cell:nth-child(4) { border-bottom: none !important; }
+
+  /* ── Towns two-column → single ── */
+  .towns-grid { grid-template-columns: 1fr !important; }
+  .t-snippet { display: none !important; }
+
+  /* ── Teach state rows → single column ── */
+  .teach-state-row {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  /* ── Teach methodology stats → wrap ── */
+  .m-stats { flex-wrap: wrap !important; }
+  .m-stat { flex: 0 0 calc(50% - 22px) !important; }
+
+  /* ── Partner propositions → 2×2 ── */
+  .props-grid { grid-template-columns: 1fr 1fr !important; }
+
+  /* ── Pricing strips → stacked ── */
+  .pricing-strip {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  .price-left { margin-right: 0 !important; min-width: unset !important; }
+  .price-features { margin-right: 0 !important; }
+
+  /* ── Town hero column borders on mobile ── */
+  .town-col-red, .town-col-cream {
+    border-right: none !important;
+    border-bottom: 4px solid var(--ink-deep) !important;
+  }
+  .town-col-blue {
+    display: flex !important;
+    height: 200px !important;
+    border-right: none !important;
+    border-bottom: 4px solid var(--ink-deep) !important;
+    min-height: unset !important;
+  }
+  .town-hero-rwb { min-height: unset !important; }
+}
+
+/* ═══ Tablet (641–1024px) ═══ */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .page-pad {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+  .props-grid { grid-template-columns: 1fr 1fr; }
+}
