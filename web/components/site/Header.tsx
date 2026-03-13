@@ -122,7 +122,7 @@ export function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
+        <nav className="hidden sm:flex items-center gap-8" aria-label="Main navigation">
           {NAV_LINKS.map(({ label, href }) => {
             const active = isNavActive(href);
             return (
@@ -149,7 +149,7 @@ export function Header() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden p-2 -mr-2 text-cream/70 hover:text-cream transition-colors"
+          className="sm:hidden p-2 -mr-2 text-cream/70 hover:text-cream transition-colors"
           onClick={() => setOpen(!open)}
           aria-label={open ? "Close menu" : "Open menu"}
         >
@@ -159,7 +159,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <nav className="md:hidden bg-[#0e1428] border-t-2 border-crimson" aria-label="Mobile navigation">
+        <nav className="sm:hidden bg-[#0e1428] border-t-2 border-crimson" aria-label="Mobile navigation">
           <ul className="px-6 py-4 space-y-1">
             {NAV_LINKS.map(({ label, href }) => {
               const active = isNavActive(href);
@@ -169,7 +169,7 @@ export function Header() {
                     href={href}
                     onClick={() => setOpen(false)}
                     className={`no-underline block py-2 font-ui font-medium text-[10px] uppercase tracking-[0.2em] transition-colors ${
-                      active ? "text-cream" : "text-cream/55 hover:text-cream"
+                      active ? "text-white" : "text-white/80 hover:text-white"
                     }`}
                   >
                     {label}
