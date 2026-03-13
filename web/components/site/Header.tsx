@@ -54,7 +54,7 @@ export function Header() {
   if (isTownContext) {
     return (
       <header
-        className={`sticky top-0 z-50 bg-ink transition-shadow duration-300 ${
+        className={`sticky top-0 z-50 bg-[#1a3a72] transition-shadow duration-300 ${
           scrolled ? "shadow-lg" : ""
         }`}
       >
