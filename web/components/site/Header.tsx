@@ -129,7 +129,7 @@ export function Header() {
                       href={`/towns/${townSlug}${path}`}
                       onClick={() => setOpen(false)}
                       className={`no-underline block py-2 font-ui font-medium text-[10px] uppercase tracking-[0.2em] transition-colors ${
-                        active ? "text-white" : "text-white/80 hover:text-white"
+                        active ? "text-white" : "text-white hover:text-cream"
                       }`}
                     >
                       {label}
@@ -208,7 +208,7 @@ export function Header() {
                     href={href}
                     onClick={() => setOpen(false)}
                     className={`no-underline block py-2 font-ui font-medium text-[10px] uppercase tracking-[0.2em] transition-colors ${
-                      active ? "text-white" : "text-white/80 hover:text-white"
+                      active ? "text-white" : "text-white hover:text-cream"
                     }`}
                   >
                     {label}
