@@ -52,13 +52,15 @@ export function Header() {
 
   /* ── Town context: 2-row header ─────────────────────────── */
   if (isTownContext) {
+    const activeTab = TOWN_TABS.find(({ path }) => isTownTabActive(path));
+
     return (
       <header
         className={`sticky top-0 z-50 bg-[#1a3a72] transition-shadow duration-300 ${
           scrolled ? "shadow-lg" : ""
         }`}
       >
-        {/* Row 1: back + wordmark */}
+        {/* Row 1: back + wordmark + mobile hamburger */}
         <div className="h-14 border-b border-cream/10 mx-auto max-w-[1200px] px-6 md:px-10 flex items-center justify-between">
           <Link
             href="/towns"
@@ -66,16 +68,29 @@ export function Header() {
           >
             <span aria-hidden="true">←</span> Towns
           </Link>
-          <Link href="/" className="no-underline" aria-label="History is for Everyone — home">
+          <Link href="/" className="no-underline hidden sm:block" aria-label="History is for Everyone — home">
             <span className="font-display text-cream text-[14px] tracking-wide">
               HISTORY IS FOR EVERYONE
             </span>
           </Link>
+          {/* Mobile hamburger — shows active section + icon */}
+          <button
+            className="sm:hidden flex items-center gap-2 p-2 -mr-2 text-cream/70 hover:text-cream transition-colors"
+            onClick={() => setOpen(!open)}
+            aria-label={open ? "Close section menu" : "Open section menu"}
+          >
+            {activeTab && (
+              <span className="font-ui text-[10px] font-medium uppercase tracking-[0.15em] text-cream/55">
+                {activeTab.label}
+              </span>
+            )}
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
 
-        {/* Row 2: town section tabs */}
+        {/* Row 2: town section tabs — desktop only */}
         <nav
-          className="border-b-[3px] overflow-x-auto"
+          className="hidden sm:block border-b-[3px] overflow-x-auto"
           style={{ borderBottomColor: "var(--town-hero-accent, var(--crimson))" }}
           aria-label="Town sections"
         >
@@ -101,6 +116,30 @@ export function Header() {
             </ol>
           </div>
         </nav>
+
+        {/* Mobile section dropdown */}
+        {open && (
+          <nav className="sm:hidden bg-[#0e1428] border-t-2 border-crimson" aria-label="Town sections">
+            <ul className="px-6 py-4 space-y-1">
+              {TOWN_TABS.map(({ label, path }) => {
+                const active = isTownTabActive(path);
+                return (
+                  <li key={path}>
+                    <Link
+                      href={`/towns/${townSlug}${path}`}
+                      onClick={() => setOpen(false)}
+                      className={`no-underline block py-2 font-ui font-medium text-[10px] uppercase tracking-[0.2em] transition-colors ${
+                        active ? "text-white" : "text-white/80 hover:text-white"
+                      }`}
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+        )}
       </header>
     );
   }
