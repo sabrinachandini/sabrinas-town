@@ -119,7 +119,7 @@ export function Header() {
 
         {/* Mobile section dropdown */}
         {open && (
-          <nav className="sm:hidden bg-[#0e1428] border-t-2 border-crimson" aria-label="Town sections">
+          <nav className="mobile-dropdown sm:hidden bg-[#0e1428] border-t-2 border-crimson" aria-label="Town sections">
             <ul className="px-6 py-4 space-y-1">
               {TOWN_TABS.map(({ label, path }) => {
                 const active = isTownTabActive(path);
@@ -198,7 +198,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <nav className="sm:hidden bg-[#0e1428] border-t-2 border-crimson" aria-label="Mobile navigation">
+        <nav className="mobile-dropdown sm:hidden bg-[#0e1428] border-t-2 border-crimson" aria-label="Mobile navigation">
           <ul className="px-6 py-4 space-y-1">
             {NAV_LINKS.map(({ label, href }) => {
               const active = isNavActive(href);
