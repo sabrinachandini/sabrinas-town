@@ -27,6 +27,32 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Who I Am */}
+      <section className="py-20 bg-cream px-8 md:px-16">
+        <div className="mx-auto max-w-[1200px]">
+          <div className="max-w-[720px]">
+            <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+              Who I Am
+            </p>
+            <h2 className="font-display text-[2.5rem] text-ink mb-6">Sabrina Bhattacharjya</h2>
+            <div className="border-b border-ink/10 mb-8" />
+            <p className="font-editorial text-[1.05rem] text-[#0e1428] leading-relaxed mb-5">
+              I&apos;m Sabrina Bhattacharjya, a 15-year-old from Lexington, Massachusetts — the town where
+              the American Revolution began on April 19, 1775. I&apos;m the founder of{" "}
+              <strong>History Is For Everyone</strong>, a platform connecting 75+ Revolutionary War towns
+              for teachers, tourists, and the communities that shaped the Revolution. I also run{" "}
+              <strong>lexington250.com</strong>, a hub for Revolutionary War history with original writing,
+              tourism guides, and merchandise sold at Buckman Tavern.
+            </p>
+            <p className="font-editorial text-[1.05rem] text-[#0e1428] leading-relaxed">
+              I&apos;m also the author of <em>The Midnight Writer</em>, a children&apos;s picture book about
+              Elizabeth Clarke, a 12-year-old eyewitness to the Battle of Lexington. My work has been
+              covered by the <em>New York Times</em>, the BBC, and iHeart Radio.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Why this exists */}
       <section className="py-20 bg-cream px-8 md:px-16">
         <div className="mx-auto max-w-[1200px]">
