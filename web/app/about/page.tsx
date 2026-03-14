@@ -42,12 +42,22 @@ export default function AboutPage() {
               <strong>History Is For Everyone</strong>, a platform connecting 75+ Revolutionary War towns
               for teachers, tourists, and the communities that shaped the Revolution. I also run{" "}
               <strong>lexington250.com</strong>, a hub for Revolutionary War history with original writing,
-              tourism guides, and merchandise sold at Buckman Tavern.
+              tourism guides, and merchandise sold at Buckman Tavern. I&apos;m also the author of{" "}
+              <em>The Midnight Writer</em>, a children&apos;s picture book about Elizabeth Clarke —
+              a 12-year-old eyewitness to the Battle of Lexington — and my work has been covered by the{" "}
+              <em>New York Times</em>, the BBC, and iHeart Radio.
             </p>
-            <p className="font-editorial text-[1.05rem] text-[#0e1428] leading-relaxed">
-              I&apos;m also the author of <em>The Midnight Writer</em>, a children&apos;s picture book about
-              Elizabeth Clarke, a 12-year-old eyewitness to the Battle of Lexington. My work has been
-              covered by the <em>New York Times</em>, the BBC, and iHeart Radio.
+            <p className="font-editorial text-[0.9rem] text-[#0e1428]/50 leading-relaxed border-t border-[#0e1428]/10 pt-5 mt-6">
+              To learn more about Sabrina Bhattacharjya, visit her website at{" "}
+              <a
+                href="https://sabrinachandini.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#c8222a] underline decoration-[#c8222a]/30 underline-offset-2 hover:decoration-[#c8222a] transition-all"
+              >
+                sabrinachandini.com
+              </a>
+              .
             </p>
           </div>
         </div>
