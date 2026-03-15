@@ -170,8 +170,8 @@ export function Header() {
                 href={href}
                 className={`no-underline font-ui text-[10px] font-medium uppercase tracking-[0.2em] transition-colors py-1 border-b-2 ${
                   active
-                    ? "text-cream border-crimson"
-                    : "text-cream/55 border-transparent hover:text-cream"
+                    ? "text-white border-crimson"
+                    : "text-white border-transparent hover:text-cream"
                 }`}
               >
                 {label}

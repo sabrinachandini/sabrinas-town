@@ -57,7 +57,7 @@ export default function HomePage() {
             >
               is
             </em>
-            <span className="text-[#14100a] everyone">Everyone</span>
+            <span className="text-[#14100a] everyone">for Everyone</span>
           </h1>
 
           {/* Squiggle under H1 — whimsy */}

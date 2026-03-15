@@ -212,9 +212,9 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Banner */}
-      <section className="bg-ink border-y-4 border-crimson py-20 px-8 md:px-16">
+      <section className="bg-cream border-y-4 border-crimson py-20 px-8 md:px-16">
         <div className="mx-auto max-w-[1200px] flex flex-col md:flex-row items-center justify-between gap-8">
-          <p className="font-display text-cream leading-none" style={{ fontSize: "clamp(2rem,4vw,3.5rem)" }}>
+          <p className="font-display text-ink leading-none" style={{ fontSize: "clamp(2rem,4vw,3.5rem)" }}>
             Start <span className="text-crimson">Exploring.</span>
           </p>
           <div className="flex flex-wrap gap-4">
