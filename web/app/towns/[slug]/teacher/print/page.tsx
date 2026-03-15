@@ -360,6 +360,16 @@ export default async function TeacherPrintPage({ params }: PageProps) {
   );
 }
 
+/** Escape HTML special characters to prevent XSS. */
+function escapeHtml(text: string): string {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 /**
  * Convert plain-text handout content to basic HTML.
  * Handles: numbered lists, bullet lists, blank lines as paragraphs.
@@ -383,13 +393,13 @@ function renderHandoutContent(content: string): string {
 
     if (numbered) {
       if (!inList || listTag !== "ol") { closeList(); out.push('<ol class="ws-content-list">'); inList = true; listTag = "ol"; }
-      out.push(`<li>${numbered[2]}</li>`);
+      out.push(`<li>${escapeHtml(numbered[2])}</li>`);
     } else if (bulleted) {
       if (!inList || listTag !== "ul") { closeList(); out.push('<ul class="ws-content-list">'); inList = true; listTag = "ul"; }
-      out.push(`<li>${bulleted[1]}</li>`);
+      out.push(`<li>${escapeHtml(bulleted[1])}</li>`);
     } else {
       closeList();
-      out.push(`<p class="ws-body">${line}</p>`);
+      out.push(`<p class="ws-body">${escapeHtml(line)}</p>`);
     }
   }
   closeList();

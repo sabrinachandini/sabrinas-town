@@ -4,6 +4,17 @@ import { useState } from "react";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
 
+const ALLOWED_REDIRECT_HOSTS = ["checkout.stripe.com", "billing.stripe.com"];
+
+function isSafeRedirectUrl(url: string): boolean {
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === "https:" && ALLOWED_REDIRECT_HOSTS.includes(parsed.hostname);
+  } catch {
+    return false;
+  }
+}
+
 // ---------------------------------------------------------------------------
 // SubscribeButton
 // ---------------------------------------------------------------------------
@@ -28,13 +39,13 @@ export function SubscribeButton({
         body: JSON.stringify({ orgSlug, planTier }),
       });
       const data = await res.json();
-      if (data.url) {
+      if (data.url && isSafeRedirectUrl(data.url)) {
         // Fire-and-forget: record CHECKOUT_STARTED
         fetch(`${API_URL}/api/org-analytics/event`, {
           method: "POST",
           headers: { "Content-Type": "application/json", "X-User-Id": userId },
           body: JSON.stringify({ orgSlug, eventType: "CHECKOUT_STARTED", metadata: { planTier } }),
-        }).catch(() => {});
+        }).catch((err) => console.error("Analytics error:", err));
         window.location.href = data.url;
       } else {
         console.error("Checkout error:", data);
@@ -80,7 +91,7 @@ export function ManageBillingButton({
         body: JSON.stringify({ orgSlug }),
       });
       const data = await res.json();
-      if (data.url) {
+      if (data.url && isSafeRedirectUrl(data.url)) {
         window.location.href = data.url;
       } else {
         console.error("Portal error:", data);
