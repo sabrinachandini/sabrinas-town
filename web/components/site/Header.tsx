@@ -69,7 +69,7 @@ export function Header() {
             <span aria-hidden="true">←</span> Towns
           </Link>
           <Link href="/" className="no-underline hidden sm:block" aria-label="History is for Everyone — home">
-            <img src="/logo.png" alt="History is for Everyone" className="h-12 w-auto" />
+            <img src="/logo.png" alt="History is for Everyone" style={{ width: '220px', height: '62px', objectFit: 'cover', objectPosition: 'center 50%' }} />
           </Link>
           {/* Mobile hamburger — shows active section + icon */}
           <button
