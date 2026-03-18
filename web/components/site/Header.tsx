@@ -145,15 +145,15 @@ export function Header() {
   /* ── Default: single-row header ─────────────────────────── */
   return (
     <header
-      className={`sticky top-0 z-50 h-[52px] bg-[#1a3a72] border-b-[3px] border-crimson transition-shadow duration-300 ${
+      className={`sticky top-0 z-50 bg-[#1a3a72] border-b-[3px] border-crimson transition-shadow duration-300 ${
         scrolled ? "shadow-lg" : ""
       }`}
     >
-      <div className="mx-auto max-w-[1200px] px-6 md:px-10 flex items-center justify-between h-full">
+      <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-3 flex items-center justify-between">
 
         {/* Logo */}
         <Link href="/" className="no-underline" aria-label="History is for Everyone — home">
-          <img src="/logo.png" alt="History is for Everyone" className="h-12 w-auto" />
+          <img src="/logo.png" alt="History is for Everyone" className="h-[60px] w-auto" />
         </Link>
 
         {/* Desktop nav */}
