@@ -61,7 +61,7 @@ export function Header() {
         }`}
       >
         {/* Row 1: back + wordmark + mobile hamburger */}
-        <div className="h-14 border-b border-cream/10 mx-auto max-w-[1200px] px-6 md:px-10 flex items-center justify-between">
+        <div className="h-14 mx-auto max-w-[1200px] px-6 md:px-10 flex items-center justify-between">
           <Link
             href="/towns"
             className="no-underline font-ui text-[10px] font-medium uppercase tracking-[0.2em] text-cream/55 hover:text-cream transition-colors flex items-center gap-1.5"
