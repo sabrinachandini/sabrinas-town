@@ -69,8 +69,9 @@ export function Header() {
             <span aria-hidden="true">←</span> Towns
           </Link>
           <Link href="/" className="no-underline hidden sm:block" aria-label="History is for Everyone — home">
-            <span className="font-editorial italic text-cream text-[17px] leading-none">
-              History is for Everyone
+            <span className="flex flex-col font-editorial leading-[1.15]">
+              <span className="text-[#cc3322] text-[16px]">History</span>
+              <span className="text-[#7a9cc0] text-[16px] pl-5">Everyone</span>
             </span>
           </Link>
           {/* Mobile hamburger — shows active section + icon */}
@@ -155,8 +156,9 @@ export function Header() {
 
         {/* Logo */}
         <Link href="/" className="no-underline" aria-label="History is for Everyone — home">
-          <span className="font-editorial italic text-cream text-[18px] leading-none">
-            History is for Everyone
+          <span className="flex flex-col font-editorial leading-[1.15]">
+            <span className="text-[#cc3322] text-[17px]">History</span>
+            <span className="text-[#7a9cc0] text-[17px] pl-5">Everyone</span>
           </span>
         </Link>
 
