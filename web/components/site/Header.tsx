@@ -153,7 +153,7 @@ export function Header() {
 
         {/* Logo */}
         <Link href="/" className="no-underline" aria-label="History is for Everyone — home">
-          <img src="/logo.png" alt="History is for Everyone" className="h-[60px] w-auto" />
+          <img src="/logo.png" alt="History is for Everyone" className="h-[56px] w-auto" />
         </Link>
 
         {/* Desktop nav */}
