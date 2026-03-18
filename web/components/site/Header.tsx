@@ -69,7 +69,7 @@ export function Header() {
             <span aria-hidden="true">←</span> Towns
           </Link>
           <Link href="/" className="no-underline hidden sm:block" aria-label="History is for Everyone — home">
-            <img src="/logo.png" alt="History is for Everyone" className="h-8 w-auto" />
+            <img src="/logo.png" alt="History is for Everyone" className="h-12 w-auto" />
           </Link>
           {/* Mobile hamburger — shows active section + icon */}
           <button
@@ -153,7 +153,7 @@ export function Header() {
 
         {/* Logo */}
         <Link href="/" className="no-underline" aria-label="History is for Everyone — home">
-          <img src="/logo.png" alt="History is for Everyone" className="h-8 w-auto" />
+          <img src="/logo.png" alt="History is for Everyone" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop nav */}
