@@ -191,7 +191,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
           <h1
             style={{
               fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(64px, 10vw, 136px)",
+              fontSize: "clamp(40px, 11vw, 136px)",
               lineHeight: 0.88,
               letterSpacing: "-0.05em",
               color: "white",
@@ -204,7 +204,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
           <span
             style={{
               fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(64px, 10vw, 136px)",
+              fontSize: "clamp(40px, 11vw, 136px)",
               lineHeight: 0.88,
               letterSpacing: "-0.05em",
               color: "rgba(255,255,255,0.25)",
@@ -250,7 +250,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
         <form
           action="/towns"
           method="GET"
-          className="page-pad"
+          className="page-pad towns-search-form"
           style={{
             padding: "18px 52px",
             borderBottom: "1px solid rgba(255,255,255,0.1)",
@@ -286,7 +286,8 @@ export default async function TownsPage({ searchParams }: PageProps) {
               background: "transparent",
               border: "none",
               borderBottom: "2px solid rgba(255,255,255,0.22)",
-              width: 300,
+              flex: 1,
+              minWidth: 0,
               padding: "4px 0",
             }}
           />

@@ -188,7 +188,7 @@ export default function TeachPage() {
           <h1
             style={{
               fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(88px, 11vw, 160px)",
+              fontSize: "clamp(52px, 14vw, 160px)",
               lineHeight: 0.88,
               letterSpacing: "-0.05em",
               margin: 0,
@@ -494,7 +494,7 @@ export default function TeachPage() {
                   fontSize: 10,
                   fontWeight: 600,
                   letterSpacing: "0.18em",
-                  color: "rgba(20,16,10,0.2)",
+                  color: "rgba(20,16,10,0.45)",
                   marginTop: 6,
                 }}
               >

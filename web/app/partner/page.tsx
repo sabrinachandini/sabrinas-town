@@ -134,7 +134,7 @@ export default function PartnerPage() {
           <h1
             style={{
               fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(88px, 11vw, 160px)",
+              fontSize: "clamp(52px, 14vw, 160px)",
               lineHeight: 0.88,
               letterSpacing: "-0.05em",
               margin: 0,
