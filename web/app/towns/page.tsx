@@ -266,7 +266,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
               fontWeight: 600,
               letterSpacing: "0.24em",
               textTransform: "uppercase",
-              color: "rgba(255,255,255,0.38)",
+              color: "rgba(255,255,255,0.75)",
               flexShrink: 0,
             }}
           >
@@ -319,7 +319,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
               style={{
                 fontFamily: "var(--font-bebas)",
                 fontSize: 13,
-                color: "rgba(255,255,255,0.38)",
+                color: "rgba(255,255,255,0.75)",
                 padding: "4px 10px",
                 textDecoration: "none",
                 transition: "color 0.15s",
@@ -575,11 +575,11 @@ export default async function TownsPage({ searchParams }: PageProps) {
               fontWeight: 600,
               letterSpacing: "0.24em",
               textTransform: "uppercase",
-              color: "rgba(255,255,255,0.28)",
+              color: "rgba(255,255,255,0.55)",
               marginTop: 24,
             }}
           >
-            <span style={{ color: "rgba(255,255,255,0.18)" }}>— </span>
+            <span style={{ color: "rgba(255,255,255,0.4)" }}>— </span>
             History Is For Everyone · The American Revolution
           </p>
         </div>

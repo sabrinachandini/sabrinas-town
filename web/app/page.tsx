@@ -159,7 +159,7 @@ export default function HomePage() {
 
           {/* Bottom-anchored content block — desktop only */}
           <div className="hidden sm:flex absolute bottom-0 left-0 right-0 h-full z-[3] p-14 flex-col justify-end">
-            <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.35)] mb-4">
+            <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.65)] mb-4">
               The Shot Heard Round the World
             </p>
             <p
