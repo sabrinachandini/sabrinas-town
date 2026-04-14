@@ -69,7 +69,7 @@ export function Header() {
             <span aria-hidden="true">←</span> Towns
           </Link>
           <Link href="/" className="no-underline hidden sm:block" aria-label="History is for Everyone — home">
-            <span className="font-display uppercase leading-tight text-white text-[20px] tracking-[0.02em]">
+            <span className="font-editorial font-black text-white text-[20px] tracking-[-0.03em] leading-tight">
               History is<br />for Everyone
             </span>
           </Link>
