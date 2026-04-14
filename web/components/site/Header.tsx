@@ -70,7 +70,7 @@ export function Header() {
           </Link>
           <Link href="/" className="no-underline hidden sm:block" aria-label="History is for Everyone — home">
             <span className="font-display uppercase leading-tight text-white text-[20px] tracking-[0.02em]">
-              History is<br /><span style={{ color: "var(--yellow)" }}>for Everyone</span>
+              History is<br />for Everyone
             </span>
           </Link>
           {/* Mobile hamburger — shows active section + icon */}
@@ -156,7 +156,7 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="no-underline" aria-label="History is for Everyone — home">
           <span className="font-display uppercase leading-tight text-white text-[20px] tracking-[0.02em]">
-            History is<br /><span style={{ color: "var(--yellow)" }}>for Everyone</span>
+            History is<br />for Everyone
           </span>
         </Link>
 
