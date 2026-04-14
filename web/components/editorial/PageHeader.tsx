@@ -29,23 +29,23 @@ export function PageHeader({
           {state.slice(0, 2).toUpperCase()}
         </div>
 
-        <p className="font-ui text-[9px] tracking-[0.2em] uppercase text-white/60 mb-4 relative z-10">
+        <p className="font-ui text-[9px] tracking-[0.2em] uppercase text-[rgba(242,230,200,0.6)] mb-4 relative z-10">
           {state}, USA
-          {cluster && <span className="ml-3 text-white/40">{cluster}</span>}
+          {cluster && <span className="ml-3 text-[rgba(242,230,200,0.4)]">{cluster}</span>}
         </p>
         <h1
-          className="font-editorial italic font-light text-white leading-[0.95] relative z-10 whitespace-nowrap"
+          className="font-editorial italic font-light text-[#f2e6c8] leading-[1.05] relative z-10"
           style={{ fontSize: "clamp(40px, 7vw, 96px)" }}
         >
           {name}
         </h1>
         {subtitle && (
-          <p className="font-ui text-[14px] text-white/75 mt-5 leading-relaxed max-w-[600px] relative z-10">
+          <p className="font-ui text-[14px] text-[rgba(242,230,200,0.75)] mt-5 leading-relaxed max-w-[600px] relative z-10">
             {subtitle}
           </p>
         )}
         {lastUpdated && (
-          <p className="font-ui text-[9px] text-white/40 uppercase tracking-[0.1em] mt-4 relative z-10">
+          <p className="font-ui text-[9px] text-[rgba(242,230,200,0.4)] uppercase tracking-[0.1em] mt-4 relative z-10">
             Last updated{" "}
             {new Date(lastUpdated).toLocaleDateString("en-US", {
               year: "numeric",

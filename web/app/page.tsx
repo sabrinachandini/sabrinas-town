@@ -1,34 +1,21 @@
 import NextLink from "next/link";
+import prisma from "@/lib/prisma";
 
-/* ── Data ──────────────────────────────────────────────────────────── */
-
-const TOWNS = [
-  { name: "Acton",        slug: "acton-ma" },
-  { name: "Bedford",      slug: "bedford-ma" },
-  { name: "Boston",       slug: "boston-ma" },
-  { name: "Cambridge",    slug: "cambridge-ma" },
-  { name: "Concord",      slug: "concord-ma" },
-  { name: "Danvers",      slug: "danvers-ma" },
-  { name: "Dedham",       slug: "dedham-ma" },
-  { name: "Dover",        slug: "dover-ma" },
-  { name: "Dracut",       slug: "dracut-ma" },
-  { name: "Groton",       slug: "groton-ma" },
-  { name: "Lexington",    slug: "lexington-ma" },
-  { name: "Lincoln",      slug: "lincoln-ma" },
-  { name: "Medford",      slug: "medford-ma" },
-  { name: "Newburyport",  slug: "newburyport-ma" },
-  { name: "Northampton",  slug: "northampton-ma" },
-  { name: "Salem",        slug: "salem-ma" },
-  { name: "Sudbury",      slug: "sudbury-ma" },
-  { name: "Waltham",      slug: "waltham-ma" },
-  { name: "Watertown",    slug: "watertown-ma" },
-  { name: "Wilmington",   slug: "wilmington-ma" },
-  { name: "Worcester",    slug: "worcester-ma" },
-];
+export const dynamic = "force-dynamic";
 
 /* ── Page ──────────────────────────────────────────────────────────── */
 
-export default function HomePage() {
+export default async function HomePage() {
+  let towns: { name: string; slug: string }[] = [];
+  try {
+    towns = await prisma.town.findMany({
+      where: { state: "MA" },
+      select: { name: true, slug: true },
+      orderBy: { name: "asc" },
+    });
+  } catch {
+    // fall back to empty list — links won't show rather than 404
+  }
   return (
     <main>
 
