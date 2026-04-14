@@ -276,7 +276,7 @@ export default async function HomePage() {
 
           {/* Town grid */}
           <ul className="grid grid-cols-3 border-t-2 border-[#14100a] list-none m-0 p-0">
-            {TOWNS.map((town) => (
+            {towns.map((town) => (
               <li
                 key={town.slug}
                 className="border-b border-r border-[rgba(20,16,10,0.15)] [&:nth-child(3n)]:border-r-0"
