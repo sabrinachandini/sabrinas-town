@@ -306,7 +306,7 @@ export default function HomePage() {
             <li className="border-b border-[rgba(20,16,10,0.15)]">
               <NextLink
                 href="/towns"
-                className="flex items-center gap-2 px-3 py-2.5 text-[12px] font-ui text-[#14100a] no-underline opacity-40 italic"
+                className="flex items-center gap-2 px-3 py-2.5 text-[12px] font-ui text-[#14100a] no-underline opacity-50 italic hover:opacity-100 hover:bg-[#1a3a72] hover:text-[#f2e6c8] transition-all duration-150"
               >
                 + 54 more →
               </NextLink>
@@ -452,7 +452,7 @@ export default function HomePage() {
             href="/towns"
             className="font-ui text-[10px] font-semibold tracking-[0.2em] uppercase text-[#1a3a72] no-underline border-b-2 border-[#1a3a72] pb-0.5 flex-shrink-0 sm:ml-8 sm:mb-1 w-fit"
           >
-            All Stories →
+            Browse All Towns →
           </NextLink>
         </div>
 
@@ -521,7 +521,7 @@ export default function HomePage() {
               href="/towns"
               className="inline-flex items-center gap-2 mt-6 font-ui text-[10px] font-semibold tracking-[0.18em] uppercase no-underline pb-0.5 text-[#f2e6c8] border-b-[1.5px] border-[rgba(242,230,200,0.5)]"
             >
-              Read More
+              Browse Towns →
             </NextLink>
           </div>
         </div>

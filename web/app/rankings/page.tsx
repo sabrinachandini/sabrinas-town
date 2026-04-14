@@ -63,23 +63,23 @@ export default async function RankingsPage() {
         <div className="mx-auto max-w-[1200px] flex flex-wrap gap-12">
           <div>
             <span className="font-display text-[48px] text-yellow leading-none block">{towns.length}</span>
-            <span className="font-ui text-[10px] uppercase tracking-[0.2em] text-cream/35 block mt-1">Towns Ranked</span>
+            <span className="font-ui text-[10px] uppercase tracking-[0.2em] text-cream/60 block mt-1">Towns Ranked</span>
           </div>
           <div>
             <span className="font-display text-[48px] text-yellow leading-none block">{uniqueStates}</span>
-            <span className="font-ui text-[10px] uppercase tracking-[0.2em] text-cream/35 block mt-1">States Covered</span>
+            <span className="font-ui text-[10px] uppercase tracking-[0.2em] text-cream/60 block mt-1">States Covered</span>
           </div>
           <div>
             <span className="font-display text-[48px] text-yellow leading-none block">
               {topTown?.name ?? "—"}
             </span>
-            <span className="font-ui text-[10px] uppercase tracking-[0.2em] text-cream/35 block mt-1">
+            <span className="font-ui text-[10px] uppercase tracking-[0.2em] text-cream/60 block mt-1">
               Highest Ranked{topTown ? ` · Score ${topTown.compositeScore}` : ""}
             </span>
           </div>
           <div>
             <span className="font-display text-[48px] text-yellow leading-none block">7</span>
-            <span className="font-ui text-[10px] uppercase tracking-[0.2em] text-cream/35 block mt-1">Scoring Dimensions</span>
+            <span className="font-ui text-[10px] uppercase tracking-[0.2em] text-cream/60 block mt-1">Scoring Dimensions</span>
           </div>
         </div>
       </section>

@@ -75,7 +75,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
 
             {/* Featured People */}
             {featuredPeople.length > 0 && (
-              <section className="mb-10">
+              <section id="people" className="mb-10">
                 <div className="border-t-[3px] border-ink pt-8 mt-8 mb-6">
                   <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
                     PEOPLE
@@ -114,7 +114,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
 
             {/* Featured Events */}
             {featuredEvents.length > 0 && (
-              <section className="mb-10">
+              <section id="events" className="mb-10">
                 <div className="border-t-[3px] border-ink pt-8 mt-8 mb-6">
                   <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
                     KEY EVENTS
@@ -158,7 +158,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
 
             {/* Featured Places */}
             {featuredPlaces.length > 0 && (
-              <section className="mb-10">
+              <section id="places" className="mb-10">
                 <div className="border-t-[3px] border-ink pt-8 mt-8 mb-6">
                   <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
                     PLACES TO VISIT
@@ -192,7 +192,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
 
             {/* Featured Stories */}
             {featuredStories.length > 0 && (
-              <section className="mb-10">
+              <section id="stories" className="mb-10">
                 <div className="border-t-[3px] border-ink pt-8 mt-8 mb-6">
                   <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
                     STORIES
@@ -230,7 +230,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
             )}
 
             {/* Footer links */}
-            <div className="pt-6 border-t border-ink/10 flex gap-6 font-ui text-[0.8rem] text-ink/40">
+            <div className="pt-6 border-t border-ink/10 flex gap-6 font-ui text-[0.8rem] text-ink/55">
               <NextLink href={`/changelog?town=${slug}`} className="no-underline hover:text-ink/70 transition-colors">
                 View changes for this town
               </NextLink>

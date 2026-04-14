@@ -547,7 +547,7 @@ export default function PartnerPage() {
                     style={{
                       fontFamily: "var(--font-dm)",
                       fontSize: 13,
-                      color: "rgba(255,255,255,0.4)",
+                      color: "rgba(255,255,255,0.65)",
                       lineHeight: 1.65,
                     }}
                   >
