@@ -30,12 +30,14 @@ export default function AboutPage() {
           <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
             About This Project
           </p>
-          <h1
-            className="font-display text-cream leading-[0.88]"
-            style={{ fontSize: "clamp(80px,12vw,140px)" }}
-          >
-            History is for Everyone
-          </h1>
+          <Link href="/" className="no-underline">
+            <h1
+              className="font-display text-cream leading-[0.88] hover:opacity-80 transition-opacity"
+              style={{ fontSize: "clamp(80px,12vw,140px)" }}
+            >
+              History is for Everyone
+            </h1>
+          </Link>
           {/* Squiggle */}
           <svg width="260" height="12" viewBox="0 0 260 12" fill="none" className="mt-3 mb-6" aria-hidden="true">
             <path d="M0 7 Q16 1 32 7 Q48 13 65 6 Q81 0 97 6 Q113 12 130 6 Q146 1 162 6 Q178 12 195 6 Q211 1 228 6 Q244 12 260 5"

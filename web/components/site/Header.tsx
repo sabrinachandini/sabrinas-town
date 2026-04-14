@@ -69,7 +69,9 @@ export function Header() {
             <span aria-hidden="true">←</span> Towns
           </Link>
           <Link href="/" className="no-underline hidden sm:block" aria-label="History is for Everyone — home">
-            <img src="/logo.png" alt="History is for Everyone" style={{ width: '220px', height: '62px', objectFit: 'cover', objectPosition: 'center 50%' }} />
+            <span className="font-display uppercase leading-tight text-white text-[20px] tracking-[0.02em]">
+              History is<br /><span style={{ color: "var(--yellow)" }}>for Everyone</span>
+            </span>
           </Link>
           {/* Mobile hamburger — shows active section + icon */}
           <button
@@ -153,7 +155,9 @@ export function Header() {
 
         {/* Logo */}
         <Link href="/" className="no-underline" aria-label="History is for Everyone — home">
-          <img src="/logo.png" alt="History is for Everyone" style={{ width: '220px', height: '62px', objectFit: 'cover', objectPosition: 'center 50%' }} />
+          <span className="font-display uppercase leading-tight text-white text-[20px] tracking-[0.02em]">
+            History is<br /><span style={{ color: "var(--yellow)" }}>for Everyone</span>
+          </span>
         </Link>
 
         {/* Desktop nav */}
