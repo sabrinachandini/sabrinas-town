@@ -9,7 +9,7 @@ export default async function HomePage() {
   let towns: { name: string; slug: string }[] = [];
   try {
     towns = await prisma.town.findMany({
-      where: { state: "MA" },
+      where: { state: "MA", NOT: { heroSummary40: "" } },
       select: { name: true, slug: true },
       orderBy: { name: "asc" },
     });
