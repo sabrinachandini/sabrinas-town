@@ -69,9 +69,17 @@ export default async function PersonDetailPage({ params }: PageProps) {
           </p>
         )}
         {person.roles.length > 0 && (
-          <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-crimson/60 mt-1">
-            {person.roles.join(" · ")}
-          </p>
+          <div className="flex flex-wrap gap-2 mt-2">
+            {person.roles.map((role) => (
+              <a
+                key={role}
+                href={`/towns?q=${encodeURIComponent(role)}`}
+                className="no-underline font-ui text-[9px] tracking-[0.1em] uppercase text-crimson border-2 border-crimson/30 px-2.5 py-1 hover:bg-crimson hover:text-cream hover:border-crimson transition-colors"
+              >
+                {role}
+              </a>
+            ))}
+          </div>
         )}
         <div className="w-12 h-[3px] bg-crimson my-6" />
       </div>

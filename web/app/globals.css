@@ -666,7 +666,7 @@ body {
 h1, h2, h3 {
   font-family: var(--font-instrument), Georgia, serif;
   line-height: 1.2;
-  color: var(--text-primary);
+  /* color intentionally NOT set here — Tailwind text-* utilities control heading color per-component */
 }
 
 h1 {

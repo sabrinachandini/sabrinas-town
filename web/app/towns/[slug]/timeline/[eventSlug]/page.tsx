@@ -129,12 +129,13 @@ export default async function EventDetailPage({ params }: PageProps) {
           </p>
           <div className="flex flex-wrap gap-2">
             {event.themes.map((theme) => (
-              <span
+              <a
                 key={theme.id}
-                className="font-ui text-[9px] tracking-[0.1em] uppercase text-ink/60 border-2 border-ink/20 px-2.5 py-1"
+                href={`/towns?q=${encodeURIComponent(theme.name)}`}
+                className="no-underline font-ui text-[9px] tracking-[0.1em] uppercase text-ink/60 border-2 border-ink/20 px-2.5 py-1 hover:bg-crimson hover:text-cream hover:border-crimson transition-colors"
               >
                 {theme.name}
-              </span>
+              </a>
             ))}
           </div>
         </div>

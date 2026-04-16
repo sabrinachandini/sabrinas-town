@@ -1,13 +1,5 @@
-// Global changelog page — server component fetching from changelog API
-
 import { getChangelog } from "@/lib/api";
-import {
-  Container,
-  Heading,
-  Text,
-  Link,
-  Divider,
-} from "@/components/ui";
+import NextLink from "next/link";
 
 interface PageProps {
   searchParams: Promise<{ town?: string }>;
@@ -15,16 +7,15 @@ interface PageProps {
 
 export const metadata = {
   title: "Changelog | History Is For Everyone",
-  description:
-    "Updates to town pages, sources, teacher materials, and site infrastructure.",
+  description: "Updates to town pages, sources, teacher materials, and site infrastructure.",
 };
 
-const CATEGORY_LABELS: Record<string, { label: string; color: string }> = {
-  CONTENT: { label: "Content", color: "bg-blue-100 text-blue-800" },
-  SOURCES: { label: "Sources", color: "bg-amber-100 text-amber-800" },
-  TEACHER: { label: "Teacher", color: "bg-green-100 text-green-800" },
-  INFRA: { label: "Infra", color: "bg-purple-100 text-purple-800" },
-  FIX: { label: "Fix", color: "bg-red-100 text-red-800" },
+const CATEGORY_LABELS: Record<string, { label: string; bg: string; text: string }> = {
+  CONTENT: { label: "Content", bg: "#1a3a72", text: "#f2e6c8" },
+  SOURCES: { label: "Sources", bg: "#e8b84b", text: "#14100a" },
+  TEACHER: { label: "Teacher", bg: "#2a5c45", text: "#f2e6c8" },
+  INFRA:   { label: "Infra",   bg: "#14100a", text: "#f2e6c8" },
+  FIX:     { label: "Fix",     bg: "#cc3322", text: "#f2e6c8" },
 };
 
 export default async function ChangelogPage({ searchParams }: PageProps) {
@@ -33,93 +24,107 @@ export default async function ChangelogPage({ searchParams }: PageProps) {
   const data = await getChangelog({ town: townFilter, limit: 50 });
 
   return (
-    <main className="py-section">
-      <Container>
-        <Heading level={1}>Changelog</Heading>
-        <Text className="mt-element max-w-[620px]">
-          Every update to a town profile, score adjustment, or source addition
-          is logged here. We believe transparency is how you build trust with
-          readers. If something changed, you can see when and why.
-        </Text>
+    <main>
+      {/* Hero */}
+      <section className="bg-[#14100a] border-b-4 border-[#cc3322] py-16 px-6 sm:px-16 relative overflow-hidden">
+        <div aria-hidden className="absolute right-[-10px] top-[-30px] font-display leading-none pointer-events-none select-none text-white/[0.03]" style={{ fontSize: "clamp(140px,28vw,380px)", letterSpacing: "-0.05em" }}>
+          Log
+        </div>
+        <svg className="absolute top-5 right-5 pointer-events-none" width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden style={{ opacity: 0.18 }}>
+          <path d="M9 21 L10.2 25.5 L15 25.5 L11.2 28.5 L12.6 33 L9 30.3 L5.4 33 L6.8 28.5 L3 25.5 L7.8 25.5 Z" fill="#e8b84b" />
+          <path d="M32 8 L33 11 L36 11 L33.8 12.8 L34.8 16 L32 14.2 L29.2 16 L30.2 12.8 L28 11 L31 11 Z" fill="#f2e6c8" />
+        </svg>
+        <div className="relative z-10 max-w-[720px]">
+          <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.4)] flex items-center gap-2.5 mb-8">
+            <span className="w-5 h-[2px] bg-[rgba(242,230,200,0.3)] block" />
+            Transparency
+          </p>
+          <h1 className="font-editorial font-black text-[#f2e6c8] leading-[0.92] tracking-[-0.04em]" style={{ fontSize: "clamp(40px,7vw,88px)" }}>
+            Changelog
+          </h1>
+          <div className="w-12 h-[3px] bg-[#cc3322] my-6" />
+          <p className="font-editorial italic font-light text-[17px] leading-[1.65] text-[rgba(242,230,200,0.65)] max-w-[500px]">
+            Every update to a town profile, score adjustment, or source addition is logged here. If something changed, you can see when and why.
+          </p>
+          {townFilter && (
+            <div className="mt-6 flex items-center gap-4">
+              <p className="font-ui text-[11px] text-[rgba(242,230,200,0.5)]">
+                Filtered: <span className="text-[#f2e6c8] font-medium">{townFilter}</span>
+              </p>
+              <NextLink href="/changelog" className="no-underline font-ui text-[10px] uppercase tracking-[0.15em] text-[rgba(242,230,200,0.4)] hover:text-[#f2e6c8] transition-colors">
+                Clear ×
+              </NextLink>
+            </div>
+          )}
+        </div>
+      </section>
 
-        {townFilter && (
-          <div className="mt-element">
-            <Text size="small" muted>
-              Filtered by town:{" "}
-              <span className="font-medium text-text-primary">
-                {townFilter}
-              </span>
-            </Text>
-            <Link href="/changelog" className="text-small mt-1 inline-block">
-              View all changes
-            </Link>
-          </div>
-        )}
-
-        <Divider spacing="section" />
-
-        {data.entries.length > 0 ? (
-          <div className="space-y-element max-w-[720px]">
-            {data.entries.map((entry) => (
-              <div key={entry.id} className="flex gap-4 items-start">
-                <div className="w-2 h-2 mt-2 rounded-full bg-accent-blue flex-shrink-0" />
-                <div>
-                  <div className="flex items-center gap-2">
-                    <Text size="small" muted>
-                      {new Date(entry.createdAt).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })}
-                    </Text>
-                    {entry.category &&
-                      CATEGORY_LABELS[entry.category] && (
-                        <span
-                          className={`inline-block px-1.5 py-0.5 rounded text-[11px] font-medium ${CATEGORY_LABELS[entry.category].color}`}
-                        >
-                          {CATEGORY_LABELS[entry.category].label}
+      {/* Entries */}
+      <section className="bg-[#f2ece0] py-16 px-6 sm:px-16 border-b-4 border-[#14100a]">
+        <div className="mx-auto max-w-[820px]">
+          {data.entries.length > 0 ? (
+            <div className="space-y-0">
+              {data.entries.map((entry) => {
+                const cat = entry.category ? CATEGORY_LABELS[entry.category] : null;
+                return (
+                  <div key={entry.id} className="flex gap-5 py-5 border-b border-[rgba(20,16,10,0.08)] last:border-b-0">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#cc3322] flex-shrink-0 mt-2" />
+                    <div className="min-w-0">
+                      <div className="flex flex-wrap items-center gap-2 mb-1">
+                        <span className="font-ui text-[11px] text-[rgba(20,16,10,0.4)]">
+                          {new Date(entry.createdAt).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
                         </span>
+                        {cat && (
+                          <span className="font-ui text-[9px] tracking-[0.1em] uppercase px-2 py-0.5" style={{ backgroundColor: cat.bg, color: cat.text }}>
+                            {cat.label}
+                          </span>
+                        )}
+                      </div>
+                      <p className="font-editorial text-[17px] text-[#14100a] leading-snug">
+                        {entry.town && (
+                          <>
+                            <NextLink href={`/towns/${entry.town.slug}`} className="no-underline text-[#1a3a72] hover:text-[#cc3322] transition-colors">
+                              {entry.town.name}
+                            </NextLink>
+                            <span className="text-[rgba(20,16,10,0.35)]"> — </span>
+                          </>
+                        )}
+                        {entry.title ?? entry.summary}
+                      </p>
+                      {entry.publicNotes && (
+                        <p className="font-ui text-[12px] text-[rgba(20,16,10,0.5)] leading-relaxed mt-1">
+                          {entry.publicNotes}
+                        </p>
                       )}
+                    </div>
                   </div>
-                  <Text>
-                    {entry.town ? (
-                      <>
-                        <Link href={`/towns/${entry.town.slug}`}>
-                          {entry.town.name}
-                        </Link>
-                        {" — "}
-                      </>
-                    ) : null}
-                    {entry.title ?? entry.summary}
-                  </Text>
-                  {entry.publicNotes && (
-                    <Text size="small" muted className="mt-1">
-                      {entry.publicNotes}
-                    </Text>
-                  )}
-                </div>
-              </div>
-            ))}
+                );
+              })}
+            </div>
+          ) : (
+            <div className="py-20 text-center">
+              <p className="font-display text-[80px] text-[rgba(20,16,10,0.06)] leading-none mb-4">0</p>
+              <p className="font-editorial italic text-[18px] text-[rgba(20,16,10,0.4)]">No changes logged yet.</p>
+            </div>
+          )}
+
+          {data.total > data.entries.length && (
+            <p className="font-ui text-[11px] text-[rgba(20,16,10,0.4)] mt-8">
+              Showing {data.entries.length} of {data.total} entries.
+            </p>
+          )}
+
+          <div className="mt-12 pt-8 border-t-2 border-[rgba(20,16,10,0.1)]">
+            <p className="font-ui text-[11px] text-[rgba(20,16,10,0.4)]">
+              See our{" "}
+              <NextLink href="/methodology" className="text-[#1a3a72] hover:text-[#cc3322] transition-colors no-underline border-b border-[rgba(26,58,114,0.3)]">
+                Methodology
+              </NextLink>{" "}
+              for how data is evaluated.
+            </p>
           </div>
-        ) : (
-          <div className="py-component text-center">
-            <Text muted>No changes logged yet.</Text>
-          </div>
-        )}
-
-        {data.total > data.entries.length && (
-          <Text size="small" muted className="mt-component">
-            Showing {data.entries.length} of {data.total} entries.
-          </Text>
-        )}
-
-        <Divider spacing="section" />
-
-        <Text size="small" muted>
-          See our <Link href="/methodology">Methodology</Link> for how data is
-          evaluated.
-        </Text>
-      </Container>
+        </div>
+      </section>
     </main>
   );
 }
