@@ -66,7 +66,7 @@ export default function MethodologyPage() {
                 label: "Link Types",
                 body: [
                   "Towns connect through typed links, each representing a historically documented relationship. Links are weighted by significance and always include a brief explanation of the connection.",
-                  "Current link types include: shared events (two towns involved in the same military action or political movement), shared people (historical figures active in both locations), shared themes (parallel experiences like "citizen soldiers" or "maritime resistance"), and shared routes (physical paths like the Boston Post Road or Paul Revere's ride).",
+                  "Current link types include: shared events (two towns involved in the same military action or political movement), shared people (historical figures active in both locations), shared themes (parallel experiences like \u201ccitizen soldiers\u201d or \u201cmaritime resistance\u201d), and shared routes (physical paths like the Boston Post Road or Paul Revere\u2019s ride).",
                 ],
               },
               {
