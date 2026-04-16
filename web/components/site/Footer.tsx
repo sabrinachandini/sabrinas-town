@@ -1,10 +1,12 @@
 import NextLink from "next/link";
 
 const NAV_LINKS = [
-  { label: "Towns",   href: "/towns" },
-  { label: "Teach",   href: "/teach" },
-  { label: "Partner", href: "/partner" },
-  { label: "About",   href: "/about" },
+  { label: "Towns",       href: "/towns" },
+  { label: "Teach",       href: "/teach" },
+  { label: "Partner",     href: "/partner" },
+  { label: "Methodology", href: "/methodology" },
+  { label: "Changelog",   href: "/changelog" },
+  { label: "About",       href: "/about" },
 ];
 
 export function Footer() {
