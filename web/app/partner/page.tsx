@@ -4,19 +4,6 @@ export const metadata = {
     "Join the Revolutionary Town Network. Tourism boards and historical societies can feature their town's story with professional presentation and analytics.",
 };
 
-function Squiggle({ width = 380, stroke = "rgba(255,255,255,0.35)", strokeWidth = "2.5" }: {
-  width?: number; stroke?: string; strokeWidth?: string;
-}) {
-  return (
-    <svg width={width} height="12" viewBox="0 0 340 12" style={{ display: "block" }}>
-      <path
-        d="M0 8 Q21 2 42 8 Q63 14 85 7 Q106 1 127 7 Q148 13 170 7 Q191 2 212 7 Q233 13 255 7 Q276 2 297 7 Q318 13 340 6"
-        stroke={stroke} strokeWidth={strokeWidth} fill="none" strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
 const PROPOSITIONS = [
   {
     title: "Shape your story",
@@ -73,234 +60,64 @@ const FREE_FEATURES = [
 export default function PartnerPage() {
   return (
     <main>
-      {/* RED hero */}
-      <section
-        className="page-pad"
-        style={{
-          background: "var(--red)",
-          padding: "88px 52px 80px",
-          borderBottom: "4px solid var(--ink)",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        {/* Ghost */}
-        <div
-          aria-hidden
-          style={{
-            position: "absolute",
-            right: -10,
-            top: -20,
-            fontFamily: "var(--font-bebas)",
-            fontSize: 460,
-            lineHeight: 1,
-            color: "rgba(255,255,255,0.07)",
-            pointerEvents: "none",
-            userSelect: "none",
-            zIndex: 0,
-            letterSpacing: "-0.05em",
-          }}
-        >
+      {/* CRIMSON hero */}
+      <section className="bg-[#cc3322] border-b-4 border-[#14100a] py-20 px-6 sm:px-16 relative overflow-hidden">
+        {/* Ghost watermark */}
+        <div aria-hidden className="absolute right-[-10px] top-[-20px] font-display leading-none pointer-events-none select-none text-white/[0.07]" style={{ fontSize: "clamp(140px,32vw,460px)", letterSpacing: "-0.05em" }}>
           Partner
         </div>
 
-        <div style={{ position: "relative", zIndex: 1, maxWidth: 700 }}>
-          <p
-            style={{
-              fontFamily: "var(--font-dm)",
-              fontSize: 9,
-              fontWeight: 600,
-              letterSpacing: "0.32em",
-              textTransform: "uppercase",
-              color: "rgba(255,255,255,0.5)",
-              display: "flex",
-              alignItems: "center",
-              gap: 12,
-              marginBottom: 24,
-            }}
-          >
-            <span
-              style={{
-                width: 16,
-                height: 2,
-                background: "rgba(255,255,255,0.3)",
-                display: "inline-block",
-                flexShrink: 0,
-              }}
-            />
+        <div className="relative z-10 max-w-[700px]">
+          <p className="font-ui text-[9px] font-semibold tracking-[0.32em] uppercase text-[rgba(255,255,255,0.5)] flex items-center gap-3 mb-6">
+            <span className="w-4 h-[2px] bg-[rgba(255,255,255,0.3)] block flex-shrink-0" />
             Partnership Program
           </p>
 
-          <h1
-            style={{
-              fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(52px, 14vw, 160px)",
-              lineHeight: 0.88,
-              letterSpacing: "-0.05em",
-              margin: 0,
-            }}
-          >
-            <span style={{ color: "white", display: "block" }}>Partner</span>
-            <span
-              style={{
-                color: "var(--yellow)",
-                display: "block",
-                transform: "rotate(-2deg) translateX(28px)",
-                transformOrigin: "left center",
-              }}
-            >
+          <h1 className="font-display leading-[0.88] tracking-[-0.05em] m-0" style={{ fontSize: "clamp(52px,14vw,160px)" }}>
+            <span className="text-white block">Partner</span>
+            <span className="text-[#e8b84b] block" style={{ transform: "rotate(-2deg) translateX(28px)", transformOrigin: "left center" }}>
               With
             </span>
-            <span style={{ color: "white", display: "block" }}>Us.</span>
+            <span className="text-white block">Us.</span>
           </h1>
 
-          <div style={{ marginTop: 28 }}>
-            <Squiggle width={380} stroke="rgba(255,255,255,0.35)" strokeWidth="2.5" />
-          </div>
+          <svg width="380" height="12" viewBox="0 0 340 12" className="block mt-7" aria-hidden>
+            <path d="M0 8 Q21 2 42 8 Q63 14 85 7 Q106 1 127 7 Q148 13 170 7 Q191 2 212 7 Q233 13 255 7 Q276 2 297 7 Q318 13 340 6" stroke="rgba(255,255,255,0.35)" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+          </svg>
 
-          <p
-            style={{
-              fontFamily: "var(--font-instrument)",
-              fontStyle: "italic",
-              fontWeight: 300,
-              fontSize: 20,
-              color: "rgba(255,255,255,0.76)",
-              maxWidth: 500,
-              marginTop: 32,
-              lineHeight: 1.55,
-            }}
-          >
+          <p className="font-editorial italic font-light text-[20px] text-[rgba(255,255,255,0.76)] max-w-[500px] mt-8 leading-[1.55]">
             Every town already has a public profile. Partnership is for communities that want to shape how their story is told, reach teachers and travelers, and understand who is engaging with their history.
           </p>
 
           <a
             href="/partner/inquire"
-            className="btn-dark"
-            style={{
-              display: "inline-block",
-              marginTop: 36,
-              background: "var(--ink)",
-              color: "var(--cream)",
-              fontFamily: "var(--font-dm)",
-              fontSize: 11,
-              fontWeight: 700,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              padding: "16px 36px",
-              border: "2px solid var(--ink)",
-              boxShadow: "5px 5px 0 rgba(255,255,255,0.25)",
-              textDecoration: "none",
-            }}
+            className="no-underline inline-block mt-9 bg-[#14100a] text-[#f2e6c8] font-ui text-[11px] font-bold tracking-[0.18em] uppercase px-9 py-4 border-2 border-[#14100a] hover:bg-[#1a3a72] hover:border-[#1a3a72] transition-colors"
+            style={{ boxShadow: "5px 5px 0 rgba(255,255,255,0.25)" }}
           >
             Submit an Inquiry →
           </a>
         </div>
       </section>
 
-      {/* BLUE propositions */}
-      <section
-        className="page-pad"
-        style={{
-          background: "var(--blue)",
-          padding: "56px 52px",
-          borderBottom: "4px solid var(--ink)",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
+      {/* NAVY propositions */}
+      <section className="bg-[#1a3a72] border-b-4 border-[#14100a] py-14 px-6 sm:px-16 relative overflow-hidden">
         {/* Ghost */}
-        <div
-          aria-hidden
-          style={{
-            position: "absolute",
-            right: 20,
-            top: -10,
-            fontFamily: "var(--font-bebas)",
-            fontSize: 300,
-            lineHeight: 1,
-            color: "rgba(255,255,255,0.04)",
-            pointerEvents: "none",
-            userSelect: "none",
-            zIndex: 0,
-          }}
-        >
+        <div aria-hidden className="absolute right-5 top-[-10px] font-display text-[300px] leading-none text-white/[0.04] pointer-events-none select-none">
           ∞
         </div>
 
-        <div style={{ position: "relative", zIndex: 1 }}>
-          <p
-            style={{
-              fontFamily: "var(--font-dm)",
-              fontSize: 9,
-              fontWeight: 600,
-              letterSpacing: "0.32em",
-              textTransform: "uppercase",
-              color: "rgba(255,255,255,0.42)",
-              display: "flex",
-              alignItems: "center",
-              gap: 12,
-              marginBottom: 28,
-            }}
-          >
-            <span
-              style={{
-                width: 16,
-                height: 2,
-                background: "rgba(255,255,255,0.3)",
-                display: "inline-block",
-                flexShrink: 0,
-              }}
-            />
+        <div className="relative z-10">
+          <p className="font-ui text-[9px] font-semibold tracking-[0.32em] uppercase text-[rgba(255,255,255,0.42)] flex items-center gap-3 mb-7">
+            <span className="w-4 h-[2px] bg-[rgba(255,255,255,0.3)] block flex-shrink-0" />
             What Partnership Adds
           </p>
 
-          <div
-            className="props-grid"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
-              gap: 2,
-            }}
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0.5">
             {PROPOSITIONS.map((prop) => (
-              <div
-                key={prop.title}
-                style={{
-                  background: "rgba(255,255,255,0.05)",
-                  padding: "28px 24px",
-                }}
-              >
-                <div
-                  style={{
-                    fontFamily: "var(--font-bebas)",
-                    fontSize: 20,
-                    color: "var(--yellow)",
-                    marginBottom: 12,
-                  }}
-                >
-                  →
-                </div>
-                <div
-                  style={{
-                    fontFamily: "var(--font-bebas)",
-                    fontSize: 18,
-                    color: "white",
-                    marginBottom: 10,
-                    letterSpacing: "0.02em",
-                  }}
-                >
-                  {prop.title}
-                </div>
-                <div
-                  style={{
-                    fontFamily: "var(--font-instrument)",
-                    fontStyle: "italic",
-                    fontWeight: 300,
-                    fontSize: 15,
-                    color: "rgba(255,255,255,0.58)",
-                    lineHeight: 1.55,
-                  }}
-                >
+              <div key={prop.title} className="bg-white/[0.05] p-7">
+                <div className="font-display text-[20px] text-[#e8b84b] mb-3">→</div>
+                <div className="font-display text-[18px] text-white tracking-[0.02em] mb-2.5">{prop.title}</div>
+                <div className="font-editorial italic font-light text-[15px] text-[rgba(255,255,255,0.58)] leading-[1.55]">
                   {prop.body}
                 </div>
               </div>
@@ -310,121 +127,33 @@ export default function PartnerPage() {
       </section>
 
       {/* CREAM always-free */}
-      <section
-        className="page-pad"
-        style={{
-          background: "var(--cream)",
-          padding: "72px 52px",
-          borderBottom: "4px solid var(--ink)",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
+      <section className="bg-[#f2e6c8] border-b-4 border-[#14100a] py-18 px-6 sm:px-16 relative overflow-hidden">
         {/* Ghost */}
-        <div
-          aria-hidden
-          style={{
-            position: "absolute",
-            right: -10,
-            bottom: -20,
-            fontFamily: "var(--font-bebas)",
-            fontSize: 260,
-            lineHeight: 1,
-            color: "rgba(20,16,10,0.03)",
-            pointerEvents: "none",
-            userSelect: "none",
-            zIndex: 0,
-            letterSpacing: "-0.04em",
-          }}
-        >
+        <div aria-hidden className="absolute right-[-10px] bottom-[-20px] font-display text-[260px] leading-none text-[rgba(20,16,10,0.03)] pointer-events-none select-none tracking-[-0.04em]">
           Open
         </div>
 
-        <div style={{ position: "relative", zIndex: 1, maxWidth: 640 }}>
-          <p
-            style={{
-              fontFamily: "var(--font-dm)",
-              fontSize: 9,
-              fontWeight: 600,
-              letterSpacing: "0.28em",
-              textTransform: "uppercase",
-              color: "var(--red)",
-              marginBottom: 12,
-            }}
-          >
+        <div className="relative z-10 max-w-[640px] py-4">
+          <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] mb-3">
             Always Free
           </p>
 
-          <h2
-            style={{
-              fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(36px, 4.5vw, 60px)",
-              lineHeight: 0.92,
-              letterSpacing: "-0.04em",
-              color: "var(--ink)",
-              margin: 0,
-            }}
-          >
+          <h2 className="font-display leading-[0.92] tracking-[-0.04em] text-[#14100a] m-0" style={{ fontSize: "clamp(36px,4.5vw,60px)" }}>
             Open to everyone,{" "}
-            <span
-              style={{
-                display: "inline-block",
-                transform: "rotate(-2deg)",
-                transformOrigin: "left center",
-                color: "var(--red)",
-              }}
-            >
+            <span className="text-[#cc3322] inline-block" style={{ transform: "rotate(-2deg)", transformOrigin: "left center" }}>
               always.
             </span>
           </h2>
 
-          <p
-            style={{
-              fontFamily: "var(--font-instrument)",
-              fontStyle: "italic",
-              fontWeight: 300,
-              fontSize: 18,
-              color: "rgba(20,16,10,0.52)",
-              margin: "16px 0 32px",
-              maxWidth: 520,
-              lineHeight: 1.65,
-            }}
-          >
+          <p className="font-editorial italic font-light text-[18px] text-[rgba(20,16,10,0.52)] mt-4 mb-8 max-w-[520px] leading-[1.65]">
             Partnership adds capabilities on top of a foundation that remains open to everyone. No paywall on the history.
           </p>
 
           <div>
             {FREE_FEATURES.map((feature) => (
-              <div
-                key={feature}
-                style={{
-                  display: "flex",
-                  alignItems: "baseline",
-                  gap: 12,
-                  padding: "14px 0",
-                  borderBottom: "1px solid rgba(20,16,10,0.08)",
-                }}
-              >
-                <span
-                  style={{
-                    color: "var(--red)",
-                    fontWeight: 900,
-                    fontSize: 13,
-                    fontFamily: "var(--font-dm)",
-                    flexShrink: 0,
-                  }}
-                >
-                  ✓
-                </span>
-                <span
-                  style={{
-                    fontFamily: "var(--font-instrument)",
-                    fontStyle: "italic",
-                    fontWeight: 300,
-                    fontSize: 17,
-                    color: "rgba(20,16,10,0.72)",
-                  }}
-                >
+              <div key={feature} className="flex items-baseline gap-3 py-3.5 border-b border-[rgba(20,16,10,0.08)]">
+                <span className="text-[#cc3322] font-ui font-black text-[13px] flex-shrink-0">✓</span>
+                <span className="font-editorial italic font-light text-[17px] text-[rgba(20,16,10,0.72)]">
                   {feature}
                 </span>
               </div>
@@ -434,125 +163,34 @@ export default function PartnerPage() {
       </section>
 
       {/* INK benefits */}
-      <section
-        className="page-pad"
-        style={{
-          background: "var(--ink)",
-          padding: "72px 52px",
-          borderBottom: "4px solid var(--red)",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
+      <section className="bg-[#14100a] border-b-4 border-[#cc3322] py-18 px-6 sm:px-16 relative overflow-hidden">
         {/* Ghost */}
-        <div
-          aria-hidden
-          style={{
-            position: "absolute",
-            right: -10,
-            bottom: -20,
-            fontFamily: "var(--font-bebas)",
-            fontSize: 360,
-            lineHeight: 1,
-            color: "rgba(255,255,255,0.03)",
-            pointerEvents: "none",
-            userSelect: "none",
-            zIndex: 0,
-            letterSpacing: "-0.05em",
-          }}
-        >
+        <div aria-hidden className="absolute right-[-10px] bottom-[-20px] font-display text-[360px] leading-none text-white/[0.03] pointer-events-none select-none tracking-[-0.05em]">
           Benefits
         </div>
 
-        <div style={{ position: "relative", zIndex: 1 }}>
-          <p
-            style={{
-              fontFamily: "var(--font-dm)",
-              fontSize: 9,
-              fontWeight: 600,
-              letterSpacing: "0.28em",
-              textTransform: "uppercase",
-              color: "var(--red)",
-              marginBottom: 12,
-            }}
-          >
+        <div className="relative z-10 py-4">
+          <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] mb-3">
             Partner Benefits
           </p>
 
-          <h2
-            style={{
-              fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(36px, 4.5vw, 60px)",
-              lineHeight: 0.92,
-              letterSpacing: "-0.04em",
-              color: "white",
-              margin: 0,
-            }}
-          >
+          <h2 className="font-display leading-[0.92] tracking-[-0.04em] text-white m-0" style={{ fontSize: "clamp(36px,4.5vw,60px)" }}>
             What partners receive
           </h2>
 
-          <p
-            style={{
-              fontFamily: "var(--font-instrument)",
-              fontStyle: "italic",
-              fontWeight: 300,
-              fontSize: 17,
-              color: "rgba(255,255,255,0.42)",
-              margin: "22px 0 40px",
-              maxWidth: 520,
-              lineHeight: 1.65,
-            }}
-          >
+          <p className="font-editorial italic font-light text-[17px] text-[rgba(255,255,255,0.42)] mt-5 mb-10 max-w-[520px] leading-[1.65]">
             Six capabilities that set partnered towns apart from standard profiles.
           </p>
 
-          <div style={{ maxWidth: 760 }}>
+          <div className="max-w-[760px]">
             {BENEFITS.map((benefit, i) => (
-              <div
-                key={benefit.title}
-                style={{
-                  display: "flex",
-                  gap: 24,
-                  padding: "26px 0",
-                  borderBottom: "1px solid rgba(255,255,255,0.07)",
-                }}
-              >
-                <div
-                  style={{
-                    fontFamily: "var(--font-bebas)",
-                    fontSize: 13,
-                    color: "var(--yellow)",
-                    opacity: 0.55,
-                    width: 28,
-                    flexShrink: 0,
-                    marginTop: 3,
-                  }}
-                >
+              <div key={benefit.title} className="flex gap-6 py-6 border-b border-white/[0.07]">
+                <div className="font-display text-[13px] text-[#e8b84b] opacity-55 w-7 flex-shrink-0 mt-0.5">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <div>
-                  <div
-                    style={{
-                      fontFamily: "var(--font-instrument)",
-                      fontStyle: "italic",
-                      fontSize: 20,
-                      color: "white",
-                      marginBottom: 6,
-                    }}
-                  >
-                    {benefit.title}
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "var(--font-dm)",
-                      fontSize: 13,
-                      color: "rgba(255,255,255,0.65)",
-                      lineHeight: 1.65,
-                    }}
-                  >
-                    {benefit.body}
-                  </div>
+                  <div className="font-editorial italic text-[20px] text-white mb-1.5">{benefit.title}</div>
+                  <div className="font-ui text-[13px] text-[rgba(255,255,255,0.65)] leading-[1.65]">{benefit.body}</div>
                 </div>
               </div>
             ))}
@@ -561,166 +199,72 @@ export default function PartnerPage() {
       </section>
 
       {/* Inquiry */}
-      <section className="py-20 bg-[#f2ece0] px-8 md:px-16">
-        <div className="mx-auto max-w-[1200px]">
-          <div className="max-w-[720px]">
-            <p className="font-ui text-[0.7rem] uppercase tracking-[0.15em] text-[#0e1428]/40 mb-3">
-              Pricing
-            </p>
-            <h2 className="font-display text-[2.5rem] text-[#0e1428] mb-3">
-              Every partnership is different.
-            </h2>
-            <div className="border-b border-[#0e1428]/10 mb-8" />
-            <p className="font-editorial italic text-[#0e1428]/70 text-[1.05rem] leading-relaxed mb-5">
-              Rather than fixed tiers, I work with each town or organization individually to understand
-              what you actually need — and give you a quote based on that. Some partnerships are simple.
-              Some are more involved. The price should reflect the work, not a pricing page.
-            </p>
-            <p className="font-editorial italic text-[#0e1428]/70 text-[1.05rem] leading-relaxed mb-10">
-              Tell me about your town and what you&apos;re hoping to accomplish. I&apos;ll follow up
-              personally with a proposal.
-            </p>
-            <a
-              href="/partner/inquire"
-              className="no-underline inline-block bg-[#c8222a] border border-[#c8222a] text-white font-ui font-medium text-[0.8rem] uppercase tracking-[0.12em] px-8 py-4 hover:bg-[#a01b22] hover:border-[#a01b22] transition-colors"
-            >
-              Request a Quote →
-            </a>
-          </div>
+      <section className="bg-[#f2ece0] border-b-4 border-[#14100a] py-20 px-6 sm:px-16">
+        <div className="mx-auto max-w-[720px]">
+          <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[rgba(20,16,10,0.4)] mb-3">
+            Pricing
+          </p>
+          <h2 className="font-display text-[#14100a] leading-[0.92] tracking-[-0.04em] mb-4" style={{ fontSize: "clamp(36px,4.5vw,60px)" }}>
+            Every partnership is different.
+          </h2>
+          <div className="w-12 h-[3px] bg-[#cc3322] mb-6" />
+          <p className="font-editorial italic font-light text-[18px] text-[rgba(20,16,10,0.7)] leading-[1.75] mb-5 max-w-[580px]">
+            Rather than fixed tiers, I work with each town or organization individually to understand
+            what you actually need — and give you a quote based on that. Some partnerships are simple.
+            Some are more involved. The price should reflect the work, not a pricing page.
+          </p>
+          <p className="font-editorial italic font-light text-[18px] text-[rgba(20,16,10,0.7)] leading-[1.75] mb-10 max-w-[580px]">
+            Tell me about your town and what you&apos;re hoping to accomplish. I&apos;ll follow up
+            personally with a proposal.
+          </p>
+          <a
+            href="/partner/inquire"
+            className="no-underline inline-block bg-[#cc3322] text-[#f2e6c8] font-ui text-[11px] font-bold tracking-[0.18em] uppercase px-8 py-4 border-2 border-[#cc3322] hover:bg-[#14100a] hover:border-[#14100a] transition-colors"
+          >
+            Request a Quote →
+          </a>
         </div>
       </section>
 
-      {/* RED closing CTA */}
-      <section
-        className="page-pad"
-        style={{
-          background: "var(--red)",
-          padding: "88px 52px 96px",
-          borderTop: "4px solid var(--ink)",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
+      {/* CRIMSON closing CTA */}
+      <section className="bg-[#cc3322] border-t-4 border-[#14100a] py-20 px-6 sm:px-16 relative overflow-hidden">
         {/* Ghost */}
-        <div
-          aria-hidden
-          style={{
-            position: "absolute",
-            right: -10,
-            bottom: -24,
-            fontFamily: "var(--font-bebas)",
-            fontSize: 360,
-            lineHeight: 1,
-            color: "rgba(255,255,255,0.07)",
-            pointerEvents: "none",
-            userSelect: "none",
-            zIndex: 0,
-            letterSpacing: "-0.05em",
-          }}
-        >
+        <div aria-hidden className="absolute right-[-10px] bottom-[-24px] font-display text-[360px] leading-none text-white/[0.07] pointer-events-none select-none tracking-[-0.05em]">
           Join
         </div>
 
-        <div style={{ position: "relative", zIndex: 1, maxWidth: 680 }}>
-          <div
-            style={{
-              display: "inline-block",
-              border: "2.5px solid rgba(255,255,255,0.45)",
-              color: "rgba(255,255,255,0.65)",
-              fontFamily: "var(--font-dm)",
-              fontSize: 9,
-              fontWeight: 700,
-              letterSpacing: "0.28em",
-              textTransform: "uppercase",
-              padding: "7px 14px",
-              transform: "rotate(-2.5deg)",
-              transformOrigin: "left center",
-              marginBottom: 20,
-            }}
-          >
+        <div className="relative z-10 max-w-[680px]">
+          <div className="inline-block border-[2.5px] border-[rgba(255,255,255,0.45)] text-[rgba(255,255,255,0.65)] font-ui text-[9px] font-bold tracking-[0.28em] uppercase px-3.5 py-1.5 mb-5" style={{ transform: "rotate(-2.5deg)", transformOrigin: "left center" }}>
             Join the Network
           </div>
 
-          <h2
-            style={{
-              fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(56px, 8vw, 100px)",
-              lineHeight: 0.9,
-              letterSpacing: "-0.04em",
-              color: "white",
-              margin: "12px 0 0",
-            }}
-          >
+          <h2 className="font-display leading-[0.9] tracking-[-0.04em] text-white mt-3 m-0" style={{ fontSize: "clamp(56px,8vw,100px)" }}>
             Ready to join
             <br />
-            <span
-              style={{
-                fontStyle: "italic",
-                color: "rgba(255,255,255,0.25)",
-                display: "inline-block",
-                transform: "rotate(-1.5deg)",
-                transformOrigin: "left center",
-              }}
-            >
+            <span className="text-white/25 italic inline-block" style={{ transform: "rotate(-1.5deg)", transformOrigin: "left center" }}>
               the network?
             </span>
           </h2>
 
-          <div style={{ margin: "20px 0" }}>
-            <Squiggle width={300} stroke="rgba(255,255,255,0.38)" strokeWidth="2.5" />
-          </div>
+          <svg width="300" height="12" viewBox="0 0 340 12" className="block my-5" aria-hidden>
+            <path d="M0 8 Q21 2 42 8 Q63 14 85 7 Q106 1 127 7 Q148 13 170 7 Q191 2 212 7 Q233 13 255 7 Q276 2 297 7 Q318 13 340 6" stroke="rgba(255,255,255,0.38)" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+          </svg>
 
-          <p
-            style={{
-              fontFamily: "var(--font-instrument)",
-              fontStyle: "italic",
-              fontWeight: 300,
-              fontSize: 19,
-              color: "rgba(255,255,255,0.76)",
-              marginBottom: 36,
-              lineHeight: 1.5,
-            }}
-          >
+          <p className="font-editorial italic font-light text-[19px] text-[rgba(255,255,255,0.76)] mb-9 leading-[1.5]">
             Tell us about your organization and the town you serve. We review every inquiry personally.
           </p>
 
-          <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+          <div className="flex gap-4 flex-wrap">
             <a
               href="/partner/inquire"
-              className="btn-dark"
-              style={{
-                display: "inline-block",
-                background: "var(--ink)",
-                color: "var(--cream)",
-                fontFamily: "var(--font-dm)",
-                fontSize: 11,
-                fontWeight: 700,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                padding: "18px 32px",
-                border: "2px solid var(--ink)",
-                boxShadow: "5px 5px 0 rgba(255,255,255,0.25)",
-                textDecoration: "none",
-              }}
+              className="no-underline inline-block bg-[#14100a] text-[#f2e6c8] font-ui text-[11px] font-bold tracking-[0.18em] uppercase px-8 py-[18px] border-2 border-[#14100a] hover:bg-[#1a3a72] hover:border-[#1a3a72] transition-colors"
+              style={{ boxShadow: "5px 5px 0 rgba(255,255,255,0.25)" }}
             >
               Submit an Inquiry
             </a>
             <a
               href="/towns"
-              style={{
-                display: "inline-block",
-                background: "transparent",
-                color: "rgba(255,255,255,0.65)",
-                fontFamily: "var(--font-dm)",
-                fontSize: 11,
-                fontWeight: 700,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                padding: "18px 32px",
-                border: "2px solid rgba(255,255,255,0.3)",
-                textDecoration: "none",
-                transition: "border-color 0.15s, color 0.15s",
-              }}
+              className="no-underline inline-block bg-transparent text-[rgba(255,255,255,0.65)] font-ui text-[11px] font-bold tracking-[0.18em] uppercase px-8 py-[18px] border-2 border-[rgba(255,255,255,0.3)] hover:border-white/60 hover:text-white transition-colors"
             >
               Browse the Network
             </a>

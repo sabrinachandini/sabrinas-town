@@ -99,291 +99,90 @@ const STATES = [
   },
 ];
 
-function Squiggle({ width = 360, stroke = "rgba(255,255,255,0.3)", strokeWidth = "2.5" }: {
-  width?: number; stroke?: string; strokeWidth?: string;
-}) {
-  return (
-    <svg width={width} height="12" viewBox="0 0 340 12" style={{ display: "block" }}>
-      <path
-        d="M0 8 Q21 2 42 8 Q63 14 85 7 Q106 1 127 7 Q148 13 170 7 Q191 2 212 7 Q233 13 255 7 Q276 2 297 7 Q318 13 340 6"
-        stroke={stroke} strokeWidth={strokeWidth} fill="none" strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
 export default function TeachPage() {
   return (
     <main>
-      {/* BLUE hero */}
-      <section
-        className="page-pad"
-        style={{
-          background: "var(--blue)",
-          padding: "88px 52px 80px",
-          borderBottom: "4px solid var(--ink)",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        {/* Ghost */}
-        <div
-          aria-hidden
-          style={{
-            position: "absolute",
-            right: -10,
-            top: -20,
-            fontFamily: "var(--font-bebas)",
-            fontSize: "clamp(180px, 35vw, 480px)",
-            lineHeight: 1,
-            color: "rgba(255,255,255,0.06)",
-            pointerEvents: "none",
-            userSelect: "none",
-            zIndex: 0,
-            letterSpacing: "-0.05em",
-          }}
-        >
+      {/* NAVY hero */}
+      <section className="bg-[#1a3a72] border-b-4 border-[#14100a] py-20 px-6 sm:px-16 relative overflow-hidden">
+        {/* Ghost watermark */}
+        <div aria-hidden className="absolute right-[-10px] top-[-20px] font-display leading-none pointer-events-none select-none text-white/[0.06]" style={{ fontSize: "clamp(180px,35vw,480px)", letterSpacing: "-0.05em" }}>
           Teach
         </div>
 
-        {/* Stars — whimsy */}
-        <svg aria-hidden style={{ position: "absolute", top: 20, right: 20, opacity: 0.2, pointerEvents: "none", zIndex: 2 }} width="52" height="52" viewBox="0 0 52 52" fill="none">
+        {/* Stars */}
+        <svg aria-hidden className="absolute top-5 right-5 pointer-events-none" style={{ opacity: 0.2 }} width="52" height="52" viewBox="0 0 52 52" fill="none">
           <path d="M11 25 L12.4 30 L18 30 L13.5 33.5 L15 39 L11 35.8 L7 39 L8.5 33.5 L4 30 L9.6 30 Z" fill="#e8b84b" />
           <path d="M38 10 L39 13 L42 13 L39.8 14.8 L40.8 18 L38 16.2 L35.2 18 L36.2 14.8 L34 13 L37 13 Z" fill="#f2e6c8" />
           <path d="M44 36 L44.7 38.4 L47.3 38.4 L45.2 39.9 L45.9 42.3 L44 41 L42.1 42.3 L42.8 39.9 L40.7 38.4 L43.3 38.4 Z" fill="#e8b84b" />
         </svg>
 
-        {/* Tilted stamp — whimsy */}
-        <div aria-hidden style={{ position: "absolute", top: 24, right: 24, border: "2px solid rgba(255,255,255,0.4)", color: "rgba(255,255,255,0.55)", fontFamily: "var(--font-dm)", fontSize: 8, fontWeight: 700, letterSpacing: "0.28em", textTransform: "uppercase", padding: "6px 12px", transform: "rotate(-2.5deg)", zIndex: 3 }}>
+        {/* Tilted stamp */}
+        <div aria-hidden className="absolute top-10 right-10 rotate-[-2.5deg] font-ui font-bold text-[11px] tracking-[0.12em] uppercase text-[rgba(242,230,200,0.55)] border-[2px] border-[rgba(242,230,200,0.4)] px-3 py-1.5 hidden sm:block">
           For Classrooms
         </div>
 
-        <div style={{ position: "relative", zIndex: 1, maxWidth: 700 }}>
-          <p
-            style={{
-              fontFamily: "var(--font-dm)",
-              fontSize: 9,
-              fontWeight: 600,
-              letterSpacing: "0.32em",
-              textTransform: "uppercase",
-              color: "rgba(255,255,255,0.5)",
-              display: "flex",
-              alignItems: "center",
-              gap: 12,
-              marginBottom: 24,
-            }}
-          >
-            <span
-              style={{
-                width: 16,
-                height: 2,
-                background: "rgba(255,255,255,0.3)",
-                display: "inline-block",
-                flexShrink: 0,
-              }}
-            />
+        <div className="relative z-10 max-w-[700px]">
+          <p className="font-ui text-[9px] font-semibold tracking-[0.32em] uppercase text-[rgba(255,255,255,0.5)] flex items-center gap-3 mb-6">
+            <span className="w-4 h-[2px] bg-[rgba(255,255,255,0.3)] block flex-shrink-0" />
             For Teachers &amp; Classrooms
           </p>
 
-          <h1
-            style={{
-              fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(52px, 14vw, 160px)",
-              lineHeight: 0.88,
-              letterSpacing: "-0.05em",
-              margin: 0,
-            }}
-          >
-            <span style={{ color: "white", display: "block" }}>History</span>
-            <span
-              style={{
-                color: "var(--yellow)",
-                display: "block",
-                transform: "rotate(-2deg) translateX(28px)",
-                transformOrigin: "left center",
-              }}
-            >
+          <h1 className="font-display leading-[0.88] tracking-[-0.05em] m-0" style={{ fontSize: "clamp(52px,14vw,160px)" }}>
+            <span className="text-white block">History</span>
+            <span className="text-[#e8b84b] block" style={{ transform: "rotate(-2deg) translateX(28px)", transformOrigin: "left center", display: "block" }}>
               For
             </span>
-            <span style={{ color: "white", display: "block" }}>Teachers.</span>
+            <span className="text-white block">Teachers.</span>
           </h1>
 
-          <div style={{ marginTop: 28 }}>
-            <Squiggle width={360} stroke="rgba(255,255,255,0.3)" strokeWidth="2.5" />
-          </div>
+          <svg width="360" height="12" viewBox="0 0 340 12" className="block mt-7" aria-hidden>
+            <path d="M0 8 Q21 2 42 8 Q63 14 85 7 Q106 1 127 7 Q148 13 170 7 Q191 2 212 7 Q233 13 255 7 Q276 2 297 7 Q318 13 340 6" stroke="rgba(255,255,255,0.3)" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+          </svg>
 
-          <p
-            style={{
-              fontFamily: "var(--font-instrument)",
-              fontStyle: "italic",
-              fontWeight: 300,
-              fontSize: 20,
-              color: "rgba(255,255,255,0.76)",
-              maxWidth: 500,
-              marginTop: 32,
-              lineHeight: 1.55,
-            }}
-          >
+          <p className="font-editorial italic font-light text-[20px] text-[rgba(255,255,255,0.76)] max-w-[500px] mt-8 leading-[1.55]">
             Critical thinking materials for teaching the American Revolution through local history. Every town, every state, built for teachers first.
           </p>
         </div>
       </section>
 
-      {/* RED stats band */}
-      <section
-        className="page-pad"
-        style={{
-          background: "var(--red)",
-          padding: "44px 52px",
-          borderBottom: "4px solid var(--ink)",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
+      {/* CRIMSON stats band */}
+      <section className="bg-[#cc3322] border-b-4 border-[#14100a] py-11 px-6 sm:px-16 relative overflow-hidden">
         {/* Ghost */}
-        <div
-          aria-hidden
-          style={{
-            position: "absolute",
-            right: 24,
-            top: -12,
-            fontFamily: "var(--font-bebas)",
-            fontSize: 190,
-            lineHeight: 1,
-            color: "rgba(255,255,255,0.07)",
-            pointerEvents: "none",
-            userSelect: "none",
-            zIndex: 0,
-          }}
-        >
+        <div aria-hidden className="absolute right-6 top-[-12px] font-display text-[190px] leading-none text-white/[0.07] pointer-events-none select-none">
           T1
         </div>
 
-        <div
-          className="zone-red-stats"
-          style={{
-            position: "relative",
-            zIndex: 1,
-            display: "flex",
-            alignItems: "center",
-            flexWrap: "wrap",
-            gap: 0,
-          }}
-        >
+        <div className="relative z-10 flex items-center flex-wrap gap-0">
           {/* Stat 1 */}
-          <div className="m-stat" style={{ padding: "0 44px 0 0", borderRight: "1px solid rgba(255,255,255,0.2)" }}>
-            <div
-              style={{
-                fontFamily: "var(--font-bebas)",
-                fontSize: "clamp(48px, 6vw, 72px)",
-                lineHeight: 1,
-                color: "var(--yellow)",
-              }}
-            >
-              Tier 1
-            </div>
-            <div
-              style={{
-                fontFamily: "var(--font-dm)",
-                fontSize: 11,
-                fontWeight: 600,
-                letterSpacing: "0.14em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.5)",
-                marginTop: 4,
-              }}
-            >
-              Primary sources only
-            </div>
-            <svg width="50" height="7" viewBox="0 0 50 7" aria-hidden style={{ marginTop: 4 }}>
+          <div className="pr-11 border-r border-white/20">
+            <div className="font-display text-[#e8b84b] leading-none" style={{ fontSize: "clamp(48px,6vw,72px)" }}>Tier 1</div>
+            <div className="font-ui text-[11px] font-semibold tracking-[0.14em] uppercase text-white/50 mt-1">Primary sources only</div>
+            <svg width="50" height="7" viewBox="0 0 50 7" aria-hidden className="mt-1">
               <path d="M0 4 Q6 1 12 4 Q18 7 25 3 Q31 0 37 3 Q43 7 50 2" stroke="#e8b84b" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.45" />
             </svg>
           </div>
 
           {/* Stat 2 */}
-          <div
-            className="m-stat"
-            style={{
-              padding: "0 44px",
-              borderRight: "1px solid rgba(255,255,255,0.2)",
-            }}
-          >
-            <div
-              style={{
-                fontFamily: "var(--font-bebas)",
-                fontSize: "clamp(48px, 6vw, 72px)",
-                lineHeight: 1,
-                color: "white",
-              }}
-            >
-              77
-            </div>
-            <div
-              style={{
-                fontFamily: "var(--font-dm)",
-                fontSize: 11,
-                fontWeight: 600,
-                letterSpacing: "0.14em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.5)",
-                marginTop: 4,
-              }}
-            >
-              Towns in network
-            </div>
-            <svg width="50" height="7" viewBox="0 0 50 7" aria-hidden style={{ marginTop: 4 }}>
+          <div className="px-11 border-r border-white/20">
+            <div className="font-display text-white leading-none" style={{ fontSize: "clamp(48px,6vw,72px)" }}>77</div>
+            <div className="font-ui text-[11px] font-semibold tracking-[0.14em] uppercase text-white/50 mt-1">Towns in network</div>
+            <svg width="50" height="7" viewBox="0 0 50 7" aria-hidden className="mt-1">
               <path d="M0 4 Q6 1 12 4 Q18 7 25 3 Q31 0 37 3 Q43 7 50 2" stroke="#e8b84b" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.45" />
             </svg>
           </div>
 
           {/* Stat 3 */}
-          <div className="m-stat" style={{ padding: "0 44px", borderRight: "1px solid rgba(255,255,255,0.2)" }}>
-            <div
-              style={{
-                fontFamily: "var(--font-bebas)",
-                fontSize: "clamp(48px, 6vw, 72px)",
-                lineHeight: 1,
-                color: "white",
-              }}
-            >
-              16
-            </div>
-            <div
-              style={{
-                fontFamily: "var(--font-dm)",
-                fontSize: 11,
-                fontWeight: 600,
-                letterSpacing: "0.14em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.5)",
-                marginTop: 4,
-              }}
-            >
-              States covered
-            </div>
-            <svg width="50" height="7" viewBox="0 0 50 7" aria-hidden style={{ marginTop: 4 }}>
+          <div className="px-11 border-r border-white/20">
+            <div className="font-display text-white leading-none" style={{ fontSize: "clamp(48px,6vw,72px)" }}>16</div>
+            <div className="font-ui text-[11px] font-semibold tracking-[0.14em] uppercase text-white/50 mt-1">States covered</div>
+            <svg width="50" height="7" viewBox="0 0 50 7" aria-hidden className="mt-1">
               <path d="M0 4 Q6 1 12 4 Q18 7 25 3 Q31 0 37 3 Q43 7 50 2" stroke="#e8b84b" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.45" />
             </svg>
           </div>
 
           {/* Badge */}
-          <div style={{ padding: "0 44px", marginLeft: "auto" }}>
-            <div
-              style={{
-                background: "var(--cream)",
-                color: "var(--ink)",
-                fontFamily: "var(--font-dm)",
-                fontSize: 9,
-                fontWeight: 700,
-                letterSpacing: "0.24em",
-                textTransform: "uppercase",
-                padding: "9px 18px",
-                border: "2.5px solid var(--ink)",
-                boxShadow: "3px 3px 0 var(--ink)",
-                transform: "rotate(-2deg)",
-                display: "inline-block",
-              }}
-            >
+          <div className="px-11 ml-auto">
+            <div className="bg-[#f2e6c8] text-[#14100a] font-ui text-[9px] font-bold tracking-[0.24em] uppercase px-[18px] py-[9px] border-[2.5px] border-[#14100a] inline-block" style={{ boxShadow: "3px 3px 0 #14100a", transform: "rotate(-2deg)" }}>
               Standards Aligned
             </div>
           </div>
@@ -391,69 +190,25 @@ export default function TeachPage() {
       </section>
 
       {/* PAPER state list */}
-      <section
-        className="page-pad"
-        style={{ background: "var(--paper)", padding: "64px 52px 96px" }}
-      >
+      <section className="bg-[#f2ece0] py-16 px-6 sm:px-16">
         {/* Section intro */}
-        <div style={{ maxWidth: 640, marginBottom: 56 }}>
-          <p
-            style={{
-              fontFamily: "var(--font-dm)",
-              fontSize: 9,
-              fontWeight: 600,
-              letterSpacing: "0.28em",
-              textTransform: "uppercase",
-              color: "var(--red)",
-              display: "flex",
-              alignItems: "center",
-              gap: 12,
-              marginBottom: 12,
-            }}
-          >
-            <span
-              style={{
-                width: 16,
-                height: 2,
-                background: "var(--red)",
-                display: "inline-block",
-                flexShrink: 0,
-              }}
-            />
+        <div className="max-w-[640px] mb-14">
+          <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] flex items-center gap-3 mb-3">
+            <span className="w-4 h-[2px] bg-[#cc3322] block flex-shrink-0" />
             Browse by State
           </p>
-          <h2
-            style={{
-              fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(36px, 4.5vw, 60px)",
-              lineHeight: 0.92,
-              letterSpacing: "-0.04em",
-              color: "var(--ink)",
-              margin: 0,
-            }}
-          >
+          <h2 className="font-display leading-[0.92] tracking-[-0.04em] text-[#14100a] m-0" style={{ fontSize: "clamp(36px,4.5vw,60px)" }}>
             Browse by State
           </h2>
-          <p
-            style={{
-              fontFamily: "var(--font-instrument)",
-              fontStyle: "italic",
-              fontWeight: 300,
-              fontSize: 18,
-              color: "rgba(20,16,10,0.52)",
-              marginTop: 22,
-              lineHeight: 1.65,
-            }}
-          >
+          <p className="font-editorial italic font-light text-[18px] text-[rgba(20,16,10,0.52)] mt-5 leading-[1.65]">
             Teacher resources organized by state, prioritized for towns with the richest primary source availability.
           </p>
         </div>
 
-        {/* Squiggle before state list — whimsy */}
-        <div style={{ marginBottom: 8 }}>
-          <svg width="160" height="12" viewBox="0 0 160 12" aria-hidden style={{ display: "block" }}>
-            <path d="M0 8 Q10 2 20 8 Q30 14 40 7 Q50 1 60 7 Q70 13 80 7 Q90 2 100 7 Q110 13 120 7 Q130 2 140 7 Q150 13 160 6"
-              stroke="#cc3322" strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.35" />
+        {/* Squiggle */}
+        <div className="mb-2">
+          <svg width="160" height="12" viewBox="0 0 160 12" aria-hidden className="block">
+            <path d="M0 8 Q10 2 20 8 Q30 14 40 7 Q50 1 60 7 Q70 13 80 7 Q90 2 100 7 Q110 13 120 7 Q130 2 140 7 Q150 13 160 6" stroke="#cc3322" strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.35" />
           </svg>
         </div>
 
@@ -461,77 +216,31 @@ export default function TeachPage() {
         {STATES.map((state, i) => (
           <div
             key={state.slug}
-            style={{
-              padding: "36px 0",
-              borderBottom: "1px solid rgba(20,16,10,0.08)",
-              display: "grid",
-              gridTemplateColumns: "220px 1fr",
-              gap: 48,
-            }}
-            className="teach-state-row"
+            className="py-9 border-b border-[rgba(20,16,10,0.08)] grid gap-12"
+            style={{ gridTemplateColumns: "220px 1fr" }}
           >
             {/* Left */}
             <div>
               <a
                 href={`/teach/${state.slug}`}
-                className="teach-state-link"
-                style={{
-                  fontFamily: "var(--font-bebas)",
-                  fontSize: "clamp(26px, 3vw, 40px)",
-                  lineHeight: 0.92,
-                  letterSpacing: "-0.03em",
-                  color: "var(--ink)",
-                  textDecoration: "none",
-                  transition: "color 0.15s",
-                  display: "block",
-                }}
+                className="no-underline font-display leading-[0.92] tracking-[-0.03em] text-[#14100a] hover:text-[#cc3322] transition-colors block"
+                style={{ fontSize: "clamp(26px,3vw,40px)" }}
               >
                 {state.name}
               </a>
-              <div
-                style={{
-                  fontFamily: "var(--font-dm)",
-                  fontSize: 10,
-                  fontWeight: 600,
-                  letterSpacing: "0.18em",
-                  color: "rgba(20,16,10,0.45)",
-                  marginTop: 6,
-                }}
-              >
+              <div className="font-ui text-[10px] font-semibold tracking-[0.18em] text-[rgba(20,16,10,0.45)] mt-1.5">
                 {String(i + 1).padStart(2, "0")} of {STATES.length}
               </div>
             </div>
 
             {/* Right */}
             <div>
-              <p
-                style={{
-                  fontFamily: "var(--font-instrument)",
-                  fontStyle: "italic",
-                  fontWeight: 300,
-                  fontSize: 18,
-                  color: "rgba(20,16,10,0.6)",
-                  lineHeight: 1.65,
-                  marginBottom: 14,
-                }}
-              >
+              <p className="font-editorial italic font-light text-[18px] text-[rgba(20,16,10,0.6)] leading-[1.65] mb-3.5">
                 {state.description}
               </p>
               <a
                 href={`/teach/${state.slug}`}
-                className="teach-view-link"
-                style={{
-                  fontFamily: "var(--font-dm)",
-                  fontSize: 10,
-                  fontWeight: 600,
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                  color: "var(--red)",
-                  textDecoration: "none",
-                  borderBottom: "1.5px solid rgba(204,51,34,0.3)",
-                  paddingBottom: 2,
-                  transition: "letter-spacing 0.15s, border-color 0.15s",
-                }}
+                className="no-underline font-ui text-[10px] font-semibold tracking-[0.18em] uppercase text-[#cc3322] border-b border-[rgba(204,51,34,0.3)] pb-0.5 hover:border-[#cc3322] transition-colors"
               >
                 View Resources →
               </a>
@@ -540,87 +249,27 @@ export default function TeachPage() {
         ))}
       </section>
 
-      {/* BLUE methodology */}
-      <section
-        className="page-pad"
-        style={{
-          background: "var(--blue)",
-          padding: "80px 52px 88px",
-          borderTop: "4px solid var(--ink)",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
+      {/* NAVY methodology */}
+      <section className="bg-[#1a3a72] border-t-4 border-[#14100a] py-20 px-6 sm:px-16 relative overflow-hidden">
         {/* Ghost */}
-        <div
-          aria-hidden
-          style={{
-            position: "absolute",
-            right: -10,
-            bottom: -20,
-            fontFamily: "var(--font-bebas)",
-            fontSize: 380,
-            lineHeight: 1,
-            color: "rgba(255,255,255,0.04)",
-            pointerEvents: "none",
-            userSelect: "none",
-            zIndex: 0,
-            letterSpacing: "-0.05em",
-          }}
-        >
+        <div aria-hidden className="absolute right-[-10px] bottom-[-20px] font-display text-[380px] leading-none text-white/[0.04] pointer-events-none select-none tracking-[-0.05em]">
           Method
         </div>
 
-        <div style={{ position: "relative", zIndex: 1, maxWidth: 720 }}>
-          <p
-            style={{
-              fontFamily: "var(--font-dm)",
-              fontSize: 9,
-              fontWeight: 600,
-              letterSpacing: "0.32em",
-              textTransform: "uppercase",
-              color: "rgba(255,255,255,0.5)",
-              marginBottom: 16,
-            }}
-          >
+        <div className="relative z-10 max-w-[720px]">
+          <p className="font-ui text-[9px] font-semibold tracking-[0.32em] uppercase text-white/50 mb-4">
             Methodology
           </p>
 
-          <h2
-            style={{
-              fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(40px, 6vw, 80px)",
-              lineHeight: 0.9,
-              letterSpacing: "-0.04em",
-              color: "white",
-              margin: 0,
-            }}
-          >
+          <h2 className="font-display leading-[0.9] tracking-[-0.04em] text-white m-0" style={{ fontSize: "clamp(40px,6vw,80px)" }}>
             Our{" "}
-            <span
-              style={{
-                color: "var(--yellow)",
-                display: "inline-block",
-                transform: "rotate(-2deg)",
-                transformOrigin: "left center",
-              }}
-            >
+            <span className="text-[#e8b84b] inline-block" style={{ transform: "rotate(-2deg)", transformOrigin: "left center" }}>
               Approach.
             </span>
           </h2>
 
           {/* Stats row */}
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: 0,
-              padding: "24px 0",
-              borderTop: "1px solid rgba(255,255,255,0.1)",
-              borderBottom: "1px solid rgba(255,255,255,0.1)",
-              margin: "32px 0",
-            }}
-          >
+          <div className="flex flex-wrap gap-0 py-6 border-t border-white/10 border-b border-white/10 my-8">
             {[
               { num: "Tier 1", label: "Primary Sources" },
               { num: "77", label: "Towns Covered" },
@@ -628,89 +277,23 @@ export default function TeachPage() {
             ].map((stat, i) => (
               <div
                 key={stat.label}
-                style={{
-                  padding: "0 44px",
-                  borderRight: i < 2 ? "1px solid rgba(255,255,255,0.12)" : "none",
-                  paddingLeft: i === 0 ? 0 : 44,
-                }}
+                className={`px-11 ${i === 0 ? "pl-0" : ""} ${i < 2 ? "border-r border-white/[0.12]" : ""}`}
               >
-                <div
-                  style={{
-                    fontFamily: "var(--font-bebas)",
-                    fontSize: 52,
-                    lineHeight: 1,
-                    color: "var(--yellow)",
-                  }}
-                >
-                  {stat.num}
-                </div>
-                <div
-                  style={{
-                    fontFamily: "var(--font-dm)",
-                    fontSize: 11,
-                    fontWeight: 600,
-                    letterSpacing: "0.14em",
-                    textTransform: "uppercase",
-                    color: "rgba(255,255,255,0.45)",
-                    marginTop: 4,
-                  }}
-                >
-                  {stat.label}
-                </div>
+                <div className="font-display text-[52px] text-[#e8b84b] leading-none">{stat.num}</div>
+                <div className="font-ui text-[11px] font-semibold tracking-[0.14em] uppercase text-white/45 mt-1">{stat.label}</div>
               </div>
             ))}
           </div>
 
-          <p
-            style={{
-              fontFamily: "var(--font-instrument)",
-              fontStyle: "italic",
-              fontWeight: 300,
-              fontSize: 19,
-              color: "rgba(255,255,255,0.65)",
-              lineHeight: 1.7,
-              maxWidth: 680,
-              marginBottom: 28,
-            }}
-          >
+          <p className="font-editorial italic font-light text-[19px] text-[rgba(255,255,255,0.65)] leading-[1.7] max-w-[680px] mb-7">
             Every source in our teacher materials is evaluated using a three-tier credibility system. Tier 1 sources include primary documents, National Park Service materials, and peer-reviewed scholarship. Teacher narratives are written to help educators contextualize sources — not to replace them.
           </p>
 
-          <div style={{ display: "flex", gap: 28, flexWrap: "wrap" }}>
-            <a
-              href="/methodology"
-              className="method-link"
-              style={{
-                fontFamily: "var(--font-dm)",
-                fontSize: 10,
-                fontWeight: 600,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.45)",
-                borderBottom: "1.5px solid rgba(255,255,255,0.18)",
-                paddingBottom: 2,
-                textDecoration: "none",
-                transition: "color 0.15s, border-color 0.15s",
-              }}
-            >
+          <div className="flex gap-7 flex-wrap">
+            <a href="/methodology" className="no-underline font-ui text-[10px] font-semibold tracking-[0.18em] uppercase text-white/45 border-b border-white/[0.18] pb-0.5 hover:text-white hover:border-white/50 transition-colors">
               Read our full methodology
             </a>
-            <a
-              href="/methodology#source-tiers"
-              className="method-link"
-              style={{
-                fontFamily: "var(--font-dm)",
-                fontSize: 10,
-                fontWeight: 600,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.45)",
-                borderBottom: "1.5px solid rgba(255,255,255,0.18)",
-                paddingBottom: 2,
-                textDecoration: "none",
-                transition: "color 0.15s, border-color 0.15s",
-              }}
-            >
+            <a href="/methodology#source-tiers" className="no-underline font-ui text-[10px] font-semibold tracking-[0.18em] uppercase text-white/45 border-b border-white/[0.18] pb-0.5 hover:text-white hover:border-white/50 transition-colors">
               Source credibility tiers
             </a>
           </div>

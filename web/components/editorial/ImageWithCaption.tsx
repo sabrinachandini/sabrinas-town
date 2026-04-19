@@ -6,12 +6,11 @@ interface ImageWithCaptionProps {
   caption?: string;
 }
 
-// TODO: Replace placeholders with real images when available in public/
 export function ImageWithCaption({ src, alt, caption }: ImageWithCaptionProps) {
   return (
-    <figure className="my-8">
+    <figure className="my-10">
       {src ? (
-        <div className="aspect-video relative overflow-hidden rounded-lg bg-bg-secondary">
+        <div className="aspect-video relative overflow-hidden border-4 border-[#14100a]">
           <Image
             src={src}
             alt={alt}
@@ -20,14 +19,14 @@ export function ImageWithCaption({ src, alt, caption }: ImageWithCaptionProps) {
           />
         </div>
       ) : (
-        <div className="aspect-video rounded-lg border-2 border-dashed border-border-light bg-bg-secondary flex items-center justify-center">
-          <span className="text-small text-text-muted font-body">
+        <div className="aspect-video border-[3px] border-dashed border-[rgba(20,16,10,0.15)] bg-[#f2ece0] flex items-center justify-center">
+          <span className="font-ui text-[11px] tracking-[0.1em] uppercase text-[rgba(20,16,10,0.35)]">
             {alt}
           </span>
         </div>
       )}
       {caption && (
-        <figcaption className="mt-2 text-small text-text-muted font-body">
+        <figcaption className="mt-2 font-ui text-[11px] text-[rgba(20,16,10,0.45)] leading-relaxed border-l-2 border-[#cc3322] pl-3">
           {caption}
         </figcaption>
       )}

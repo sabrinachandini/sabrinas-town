@@ -65,8 +65,9 @@ export default async function HistoryPage({ params }: PageProps) {
       </div>
 
       <ImageWithCaption
-        alt={`Historical illustration of ${town.name}`}
-        caption="Image placeholder — historical imagery will be added as sources are verified."
+        src="/images/paul-revere-boston-massacre.jpg"
+        alt="Paul Revere's engraving of the Boston Massacre, 1770"
+        caption="Paul Revere, 'The Bloody Massacre Perpetrated in King Street Boston on March 5th 1770' — hand-colored engraving, 1770. Library of Congress. Public domain."
       />
 
       {town.themes.length > 0 && (
