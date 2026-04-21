@@ -2,7 +2,13 @@ import NextLink from "next/link";
 
 export const metadata = {
   title: "Methodology | History Is For Everyone",
-  description: "How towns are researched, sourced, and updated.",
+  description: "How towns are researched, sourced, and scored — our seven-dimension framework for evaluating Revolutionary War sites.",
+  openGraph: {
+    title: "Methodology",
+    description: "How towns are researched, sourced, and scored — our seven-dimension framework.",
+    url: "https://sabrinas-town.vercel.app/methodology",
+  },
+  alternates: { canonical: "https://sabrinas-town.vercel.app/methodology" },
 };
 
 export default function MethodologyPage() {

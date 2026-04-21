@@ -4,6 +4,12 @@ export const metadata = {
   title: "Rankings | History is for Everyone",
   description:
     "All Revolutionary towns ranked across seven dimensions — preservation, documentation, accessibility, significance, education, connections, and research depth.",
+  openGraph: {
+    title: "Town Rankings",
+    description: "All Revolutionary towns ranked across seven dimensions.",
+    url: "https://sabrinas-town.vercel.app/rankings",
+  },
+  alternates: { canonical: "https://sabrinas-town.vercel.app/rankings" },
 };
 
 export const dynamic = "force-dynamic";
