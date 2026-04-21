@@ -1,9 +1,9 @@
 /**
  * Claude-powered content enrichment script.
- * Expands thin whyMatters narratives and event summaries, logs all changes.
+ * Expands town narratives, event summaries, and person bios. Logs all changes.
  *
  * Usage:
- *   ANTHROPIC_API_KEY=sk-ant-... npx tsx scripts/enrich-content.ts [--limit N] [--towns-only] [--events-only]
+ *   npx tsx scripts/enrich-content.ts [--limit N] [--towns-only] [--events-only] [--people-only]
  */
 
 import "dotenv/config";
@@ -15,8 +15,11 @@ const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 const LIMIT = parseInt(process.argv.find((a) => a.startsWith("--limit="))?.split("=")[1] ?? "9999");
 const TOWNS_ONLY = process.argv.includes("--towns-only");
 const EVENTS_ONLY = process.argv.includes("--events-only");
-const MIN_TOWN_LEN = 5000;   // expand if whyMatters shorter than this
-const MIN_EVENT_LEN = 1500;  // expand if event summary shorter than this
+const PEOPLE_ONLY = process.argv.includes("--people-only");
+
+const MIN_TOWN_LEN = 5000;
+const MIN_EVENT_LEN = 2500;  // ~500 words — 3-4 solid paragraphs
+const MIN_PERSON_LEN = 1200; // bioLong threshold
 
 async function expandTownNarrative(limit: number) {
   const towns = await prisma.town.findMany({
@@ -25,22 +28,22 @@ async function expandTownNarrative(limit: number) {
       id: true, name: true, state: true, slug: true, whyMatters: true,
       events: { select: { name: true, startDate: true, significanceWeight: true }, orderBy: { significanceWeight: "desc" }, take: 10 },
       townThemes: { select: { theme: { select: { name: true } } } },
-      townPeople: { select: { person: { select: { name: true, roles: true } } }, take: 5 },
+      townPeople: { select: { person: { select: { name: true, roles: true } }, connectionNote: true }, take: 6 },
     },
     take: limit * 2,
   });
 
   const thin = towns.filter((t) => (t.whyMatters?.length ?? 0) < MIN_TOWN_LEN).slice(0, limit);
-  console.log(`Expanding narratives for ${thin.length} towns...`);
+  console.log(`\n── Towns (${thin.length} need expansion) ──`);
 
   for (const town of thin) {
     const eventList = town.events.map((e) => `- ${e.name}${e.startDate ? ` (${new Date(e.startDate).getFullYear()})` : ""}`).join("\n");
     const themeList = town.townThemes.map((t) => t.theme.name).join(", ");
-    const peopleList = town.townPeople.map((tp) => `${tp.person.name} (${tp.person.roles.join(", ")})`).join("; ");
+    const peopleList = town.townPeople.map((tp) => `${tp.person.name} (${tp.person.roles.join(", ")}${tp.connectionNote ? `; ${tp.connectionNote}` : ""})`).join("; ");
 
     const prompt = `You are a professional historian writing for an American Revolution education network.
 
-Write a comprehensive 1,500-word essay on the Revolutionary War history of ${town.name}, ${town.state}.
+Write a comprehensive essay on the Revolutionary War history of ${town.name}, ${town.state}.
 
 Context:
 - Key events: ${eventList || "None listed"}
@@ -48,23 +51,25 @@ Context:
 - Notable people: ${peopleList || "Various Patriots and Loyalists"}
 
 Requirements:
+- Write EXACTLY 4 substantial paragraphs, each 200–300 words
+- Paragraph 1: Set the scene — what was this town before the Revolution, and why did it matter strategically or socially?
+- Paragraph 2: The war arrives — what specific events, battles, or turning points happened here?
+- Paragraph 3: The people — who was here, what did they do, what choices did they face (include both Patriots and Loyalists where relevant)?
+- Paragraph 4: Legacy — what did this town's experience mean for the Revolution's outcome, and why should students and visitors care today?
 - Write for educated general readers (not academics, not children)
 - Use specific dates, people, and primary-source language where appropriate
-- Cover: what role this town played, key moments, who was there, what was at stake
-- Highlight what makes this town distinctive in the broader Revolutionary story
-- End with why modern visitors, students, or teachers should care about this town
-- Do NOT use headers or bullet points — flowing paragraphs only
+- Do NOT use headers, bullet points, or markdown formatting — flowing prose only
 - Do NOT start with "In the annals of..." or similar clichés`;
 
     try {
       const msg = await client.messages.create({
         model: "claude-opus-4-6",
-        max_tokens: 2500,
+        max_tokens: 3000,
         messages: [{ role: "user", content: prompt }],
       });
 
       const text = (msg.content[0] as any).text as string;
-      if (!text || text.length < 500) { console.log(`  ⚠ Short response for ${town.name}`); continue; }
+      if (!text || text.length < 800) { console.log(`  ⚠ Short response for ${town.name}`); continue; }
 
       await prisma.town.update({
         where: { id: town.id },
@@ -76,9 +81,9 @@ Requirements:
           townId: town.id,
           category: "CONTENT",
           title: `Expanded history narrative for ${town.name}`,
-          summary: `Rewrote the Why ${town.name} Matters essay from ${town.whyMatters?.length ?? 0} to ${text.length} characters using primary-source research.`,
+          summary: `Rewrote the Why ${town.name} Matters essay from ${town.whyMatters?.length ?? 0} to ${text.length} characters.`,
           details: { previousLength: town.whyMatters?.length ?? 0, newLength: text.length, model: "claude-opus-4-6" },
-          publicNotes: `Essay expanded to approximately ${Math.round(text.length / 5)} words covering key events, people, and themes.`,
+          publicNotes: `Essay expanded to approximately ${Math.round(text.length / 5)} words in 4 structured paragraphs.`,
         },
       });
 
@@ -96,7 +101,7 @@ async function expandEventSummaries(limit: number) {
     select: {
       id: true, name: true, summary: true, startDate: true,
       town: { select: { id: true, name: true, state: true } },
-      eventPeople: { select: { person: { select: { name: true, roles: true } }, roleInEvent: true }, take: 5 },
+      eventPeople: { select: { person: { select: { name: true, roles: true } }, roleInEvent: true }, take: 6 },
       eventThemes: { select: { theme: { select: { name: true } } } },
     },
     orderBy: { significanceWeight: "desc" },
@@ -104,14 +109,14 @@ async function expandEventSummaries(limit: number) {
   });
 
   const thin = events.filter((e) => (e.summary?.length ?? 0) < MIN_EVENT_LEN).slice(0, limit);
-  console.log(`Expanding summaries for ${thin.length} events...`);
+  console.log(`\n── Events (${thin.length} need expansion) ──`);
 
   for (const event of thin) {
     const year = event.startDate ? new Date(event.startDate).getFullYear() : "unknown year";
     const peopleList = event.eventPeople.map((ep) => `${ep.person.name}${ep.roleInEvent ? ` (${ep.roleInEvent})` : ""}`).join(", ");
     const themeList = event.eventThemes.map((et) => et.theme.name).join(", ");
 
-    const prompt = `Write a 600-word narrative summary of this Revolutionary War event for an educational website.
+    const prompt = `Write a 4-paragraph narrative summary of this Revolutionary War event for an educational website.
 
 Event: ${event.name}
 Location: ${event.town.name}, ${event.town.state}
@@ -121,41 +126,99 @@ Themes: ${themeList || "Revolutionary War"}
 Current summary: ${event.summary}
 
 Requirements:
-- Expand and deepen the current summary significantly
-- Include historical context — what led up to this, what happened after
-- Name specific people and their roles
-- Explain why this event matters in the broader Revolutionary War story
-- Write in flowing paragraphs, no headers or bullets
+- Write EXACTLY 4 paragraphs, each 150–200 words
+- Paragraph 1: Context — what was the situation leading up to this event?
+- Paragraph 2: What happened — specific sequence of events, decisions, and turning points
+- Paragraph 3: The people — who was there, what roles did they play, what were the human stakes?
+- Paragraph 4: Significance — why did this event matter for the broader war and for history?
+- Write in flowing paragraphs, no headers, bullets, or markdown
 - Be historically accurate — do not invent facts not implied by the current summary`;
 
     try {
       const msg = await client.messages.create({
         model: "claude-opus-4-6",
-        max_tokens: 1200,
+        max_tokens: 1500,
         messages: [{ role: "user", content: prompt }],
       });
 
       const text = (msg.content[0] as any).text as string;
-      if (!text || text.length < 300) continue;
+      if (!text || text.length < 500) continue;
 
-      await prisma.event.update({
-        where: { id: event.id },
-        data: { summary: text },
-      });
+      await prisma.event.update({ where: { id: event.id }, data: { summary: text } });
 
       await prisma.changeLogEntry.create({
         data: {
           townId: event.town.id,
           category: "CONTENT",
           title: `Expanded event summary: ${event.name}`,
-          summary: `Rewrote the summary for "${event.name}" from ${event.summary?.length ?? 0} to ${text.length} characters.`,
+          summary: `Rewrote "${event.name}" summary from ${event.summary?.length ?? 0} to ${text.length} characters in 4 paragraphs.`,
           details: { previousLength: event.summary?.length ?? 0, newLength: text.length, eventId: event.id },
         },
       });
 
-      console.log(`  ✓ ${event.name} (${event.town.name})`);
+      console.log(`  ✓ ${event.name} (${event.town.name}) — ${text.length} chars`);
     } catch (err) {
       console.error(`  ✗ ${event.name}:`, err);
+    }
+    await new Promise((r) => setTimeout(r, 2000));
+  }
+}
+
+async function expandPersonBios(limit: number) {
+  const people = await prisma.person.findMany({
+    where: {
+      OR: [{ bioLong: null }, { bioLong: { equals: "" } }],
+      bioShort: { not: "" },
+    },
+    select: {
+      id: true, name: true, roles: true, bioShort: true, bioLong: true, birthYear: true, deathYear: true,
+      townPeople: { select: { town: { select: { name: true, state: true } }, connectionNote: true }, take: 5 },
+      eventPeople: { select: { event: { select: { name: true, startDate: true } }, roleInEvent: true }, orderBy: { event: { significanceWeight: "desc" } }, take: 5 },
+    },
+    take: limit,
+  });
+
+  const thin = people.filter((p) => (p.bioLong?.length ?? 0) < MIN_PERSON_LEN).slice(0, limit);
+  console.log(`\n── People (${thin.length} need bio expansion) ──`);
+
+  for (const person of thin) {
+    const townList = person.townPeople.map((tp) => `${tp.town.name}, ${tp.town.state}${tp.connectionNote ? ` (${tp.connectionNote})` : ""}`).join("; ");
+    const eventList = person.eventPeople.map((ep) => `${ep.event.name}${ep.event.startDate ? ` (${new Date(ep.event.startDate).getFullYear()})` : ""}${ep.roleInEvent ? `: ${ep.roleInEvent}` : ""}`).join("; ");
+    const lifespan = person.birthYear ? `${person.birthYear}–${person.deathYear ?? "?"}` : "";
+
+    const prompt = `Write a biographical essay for an American Revolution educational website.
+
+Person: ${person.name}${lifespan ? ` (${lifespan})` : ""}
+Roles: ${person.roles.join(", ")}
+Associated towns: ${townList || "Various locations"}
+Key events: ${eventList || "Various Revolutionary War events"}
+Short bio: ${person.bioShort}
+
+Requirements:
+- Write EXACTLY 3 paragraphs, each 150–200 words
+- Paragraph 1: Who were they — background, origins, what brought them into the Revolutionary conflict?
+- Paragraph 2: What they did — their specific actions, decisions, and role in the events listed above
+- Paragraph 3: Legacy — how should students and visitors understand this person's significance today?
+- Write for educated general readers
+- Use specific dates and places where accurate
+- Do NOT use headers or bullet points — flowing prose only
+- Do NOT begin with the person's name as the first word`;
+
+    try {
+      const msg = await client.messages.create({
+        model: "claude-opus-4-6",
+        max_tokens: 1500,
+        messages: [{ role: "user", content: prompt }],
+      });
+
+      const text = (msg.content[0] as any).text as string;
+      if (!text || text.length < 400) { console.log(`  ⚠ Short response for ${person.name}`); continue; }
+
+      await prisma.person.update({ where: { id: person.id }, data: { bioLong: text } });
+
+      console.log(`  ✓ ${person.name} — ${text.length} chars`);
+    } catch (err) {
+      console.error(`  ✗ ${person.name}:`, err);
     }
     await new Promise((r) => setTimeout(r, 2000));
   }
@@ -166,10 +229,14 @@ async function main() {
     console.error("ANTHROPIC_API_KEY not set. Add it to .env or environment.");
     process.exit(1);
   }
-  if (!EVENTS_ONLY) await expandTownNarrative(LIMIT);
-  if (!TOWNS_ONLY) await expandEventSummaries(LIMIT);
+
+  const runAll = !TOWNS_ONLY && !EVENTS_ONLY && !PEOPLE_ONLY;
+  if (runAll || TOWNS_ONLY) await expandTownNarrative(LIMIT);
+  if (runAll || EVENTS_ONLY) await expandEventSummaries(LIMIT);
+  if (runAll || PEOPLE_ONLY) await expandPersonBios(LIMIT);
+
   await prisma.$disconnect();
-  console.log("Done.");
+  console.log("\nDone.");
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });
