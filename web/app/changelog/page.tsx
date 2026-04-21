@@ -8,6 +8,12 @@ interface PageProps {
 export const metadata = {
   title: "Changelog | History Is For Everyone",
   description: "Updates to town pages, sources, teacher materials, and site infrastructure.",
+  openGraph: {
+    title: "Changelog",
+    description: "Updates to town pages, sources, teacher materials, and site infrastructure.",
+    url: "https://sabrinas-town.vercel.app/changelog",
+  },
+  alternates: { canonical: "https://sabrinas-town.vercel.app/changelog" },
 };
 
 const CATEGORY_LABELS: Record<string, { label: string; bg: string; text: string }> = {

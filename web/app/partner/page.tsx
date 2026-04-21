@@ -2,6 +2,12 @@ export const metadata = {
   title: "Partner With Us | History is for Everyone",
   description:
     "Join the Revolutionary Town Network. Tourism boards and historical societies can feature their town's story with professional presentation and analytics.",
+  openGraph: {
+    title: "Partner With Us",
+    description: "Join the Revolutionary Town Network. Tourism boards and historical societies can feature their town's story.",
+    url: "https://sabrinas-town.vercel.app/partner",
+  },
+  alternates: { canonical: "https://sabrinas-town.vercel.app/partner" },
 };
 
 const PROPOSITIONS = [

@@ -15,22 +15,36 @@ const LIMIT = parseInt(process.argv.find((a) => a.startsWith("--limit="))?.split
 const TOWNS_ONLY = process.argv.includes("--towns-only");
 const EVENTS_ONLY = process.argv.includes("--events-only");
 
+const WIKIMEDIA_HEADERS = {
+  "User-Agent": "HistoryIsForEveryone/1.0 (https://sabrinas-town.vercel.app; contact@sabrinas-town.vercel.app) node-fetch/3",
+  "Accept": "application/json",
+};
+
+const delay = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
 // Wikimedia Commons API search
 async function searchWikimedia(query: string): Promise<{ url: string; credit: string } | null> {
   try {
-    const searchUrl = `https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(query)}&srnamespace=6&srlimit=10&format=json&origin=*`;
-    const res = await fetch(searchUrl);
-    const data = await res.json() as any;
+    const searchUrl = `https://commons.wikimedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(query)}&srnamespace=6&srlimit=10&format=json`;
+    const res = await fetch(searchUrl, { headers: WIKIMEDIA_HEADERS });
+    if (!res.ok) return null;
+    const text = await res.text();
+    if (!text.startsWith("{")) return null; // guard against HTML rate-limit pages
+    const data = JSON.parse(text) as any;
     const results: any[] = data?.query?.search ?? [];
 
     for (const result of results) {
       const title: string = result.title as string;
       if (!title.match(/\.(jpg|jpeg|png)$/i)) continue;
 
+      await delay(300); // between search and info requests
       // Get image info + metadata
-      const infoUrl = `https://commons.wikimedia.org/w/api.php?action=query&titles=${encodeURIComponent(title)}&prop=imageinfo&iiprop=url|extmetadata&format=json&origin=*`;
-      const infoRes = await fetch(infoUrl);
-      const infoData = await infoRes.json() as any;
+      const infoUrl = `https://commons.wikimedia.org/w/api.php?action=query&titles=${encodeURIComponent(title)}&prop=imageinfo&iiprop=url|extmetadata&format=json`;
+      const infoRes = await fetch(infoUrl, { headers: WIKIMEDIA_HEADERS });
+      if (!infoRes.ok) continue;
+      const infoText = await infoRes.text();
+      if (!infoText.startsWith("{")) continue;
+      const infoData = JSON.parse(infoText) as any;
       const pages = infoData?.query?.pages ?? {};
       const page = Object.values(pages)[0] as any;
       const imageInfo = page?.imageinfo?.[0];
@@ -78,11 +92,12 @@ async function enrichTownImages(limit: number) {
     for (const q of queries) {
       result = await searchWikimedia(q);
       if (result) break;
-      await new Promise((r) => setTimeout(r, 500));
+      await delay(1500);
     }
 
     if (!result) {
       console.log(`  ⚠ No image found for ${town.name}`);
+      await delay(1000);
       continue;
     }
 
@@ -103,7 +118,7 @@ async function enrichTownImages(limit: number) {
     });
 
     console.log(`  ✓ ${town.name} — ${result.url.slice(0, 80)}...`);
-    await new Promise((r) => setTimeout(r, 600));
+    await delay(2000);
   }
 }
 
@@ -123,7 +138,7 @@ async function enrichEventImages(limit: number) {
     const result = await searchWikimedia(query);
 
     if (!result) {
-      await new Promise((r) => setTimeout(r, 500));
+      await delay(1500);
       continue;
     }
 
@@ -144,7 +159,7 @@ async function enrichEventImages(limit: number) {
     });
 
     console.log(`  ✓ ${event.name}`);
-    await new Promise((r) => setTimeout(r, 600));
+    await delay(2000);
   }
 }
 
