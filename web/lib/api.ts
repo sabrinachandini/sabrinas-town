@@ -2510,7 +2510,7 @@ export async function search(query: string, limit = 30): Promise<SearchResult[]>
       title: e.name,
       subtitle: e.town.name,
       excerpt: e.summary ?? null,
-      href: e.slug ? `/towns/${e.town.slug}/timeline/${e.slug}` : `/towns/${e.town.slug}/timeline`,
+      href: e.slug ? `/events/${e.slug}` : `/towns/${e.town.slug}/timeline`,
     })),
     ...people.map((p) => {
       const town = p.townPeople[0]?.town ?? null;
@@ -2520,7 +2520,7 @@ export async function search(query: string, limit = 30): Promise<SearchResult[]>
         title: p.name,
         subtitle: town?.name ?? "Historical Figure",
         excerpt: p.bioShort ?? null,
-        href: town ? `/towns/${town.slug}/people` : "/towns",
+        href: p.slug ? `/people/${p.slug}` : (town ? `/towns/${town.slug}/people` : "/people"),
       };
     }),
     ...places.map((pl) => ({
@@ -2529,9 +2529,44 @@ export async function search(query: string, limit = 30): Promise<SearchResult[]>
       title: pl.name,
       subtitle: pl.town.name,
       excerpt: pl.description ?? null,
-      href: pl.slug ? `/towns/${pl.town.slug}/places/${pl.slug}` : `/towns/${pl.town.slug}/places`,
+      href: pl.slug ? `/places/${pl.slug}` : `/towns/${pl.town.slug}/places`,
     })),
   ];
 
   return results.slice(0, limit);
 }
+
+// ── Places index ──────────────────────────────────────────────────────────
+
+const PLACE_TYPE_ORDER = ["BATTLEFIELD", "MUSEUM", "HISTORIC_HOUSE", "MONUMENT", "CHURCH", "TAVERN", "CEMETERY", "GOVERNMENT", "LANDMARK", "TRAIL"] as const;
+
+export interface PlaceListItem {
+  id: string;
+  slug: string | null;
+  name: string;
+  placeType: string;
+  featured: boolean;
+  description: string | null;
+  hours: string | null;
+  admission: string | null;
+  town: { slug: string; name: string; state: string };
+}
+
+export async function getAllPlaces(): Promise<PlaceListItem[]> {
+  return prisma.place.findMany({
+    select: {
+      id: true,
+      slug: true,
+      name: true,
+      placeType: true,
+      featured: true,
+      description: true,
+      hours: true,
+      admission: true,
+      town: { select: { slug: true, name: true, state: true } },
+    },
+    orderBy: [{ featured: "desc" }, { name: "asc" }],
+  });
+}
+
+export { PLACE_TYPE_ORDER };

@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/db";
+import { getAllPlaces, PLACE_TYPE_ORDER } from "@/lib/api";
 import NextLink from "next/link";
 import { Metadata } from "next";
 
@@ -28,15 +28,7 @@ const PLACE_TYPE_LABELS: Record<string, string> = {
   TRAIL: "Trails & Paths",
 };
 
-const TYPE_ORDER = ["BATTLEFIELD", "MUSEUM", "HISTORIC_HOUSE", "MONUMENT", "CHURCH", "TAVERN", "CEMETERY", "GOVERNMENT", "LANDMARK", "TRAIL"];
-
-async function getAllPlaces() {
-  const places = await prisma.place.findMany({
-    include: { town: { select: { slug: true, name: true, state: true } } },
-    orderBy: [{ featured: "desc" }, { name: "asc" }],
-  });
-  return places;
-}
+const TYPE_ORDER = [...PLACE_TYPE_ORDER];
 
 export default async function PlacesPage() {
   const places = await getAllPlaces();
