@@ -9,10 +9,6 @@ interface TownNetworkMapProps {
   links: MapLink[];
 }
 
-function scoreToRadius(score: number): number {
-  // score 0–100 → radius 8–14px
-  return 8 + Math.round((score / 100) * 6);
-}
 
 export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
   const router = useRouter();
@@ -67,7 +63,6 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
       {towns
         .filter((t) => t.lat && t.lng)
         .map((town) => {
-          const r = scoreToRadius(town.compositeScore);
           return (
             <MapMarker
               key={town.id}
@@ -77,8 +72,7 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
             >
               <MarkerContent>
                 <div
-                  style={{ width: r * 2, height: r * 2 }}
-                  className="rounded-full bg-[#cc3322] border-2 border-white shadow cursor-pointer hover:scale-125 transition-transform"
+                  className="w-4 h-4 rounded-full bg-[#cc3322] border-2 border-white shadow cursor-pointer hover:scale-125 transition-transform"
                 />
               </MarkerContent>
               <MarkerTooltip>
@@ -92,7 +86,7 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
                     {town.name}
                   </p>
                   <p className="font-ui text-[10px] uppercase tracking-widest text-[#14100a]/50 mb-2">
-                    {town.state} · {town.scoreTier}
+                    {town.state}
                   </p>
                   <p className="font-ui text-[11px] text-[#14100a]/70 leading-relaxed mb-3">
                     {town.execSummary150}

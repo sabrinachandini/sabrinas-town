@@ -103,8 +103,8 @@ export function TownHero({ town, slug }: TownHeroProps) {
             <div className="fact-label">Stories</div>
           </div>
           <div className="cream-fact">
-            <div className="fact-num">{Math.round(town.compositeScore ?? 0)}</div>
-            <div className="fact-label">Significance</div>
+            <div className="fact-num">{town.linkedTowns?.length ?? 0}</div>
+            <div className="fact-label">Connections</div>
           </div>
         </div>
       </div>

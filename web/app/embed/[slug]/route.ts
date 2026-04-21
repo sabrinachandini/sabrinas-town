@@ -3,12 +3,6 @@ import { getTown } from "@/lib/api";
 
 export const revalidate = 3600;
 
-const TIER_LABELS: Record<string, string> = {
-  FOUNDATION: "Foundation Town",
-  CORE: "Core Town",
-  EMERGING: "Emerging Town",
-};
-
 export async function GET(
   _req: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
@@ -21,8 +15,7 @@ export async function GET(
   }
 
   const siteUrl = "https://sabrinas-town.vercel.app";
-  const tierLabel = TIER_LABELS[town.scoreTier] ?? town.scoreTier;
-  const summary = esc((town.execSummary150 ?? town.heroSummary40 ?? "").slice(0, 180));
+  const summary = esc((town.execSummary150 ?? town.heroSummary40 ?? "").slice(0, 200));
   const initial = esc(town.name.charAt(0));
 
   const html = `<!DOCTYPE html>
@@ -52,11 +45,7 @@ export async function GET(
     .eyebrow { font-size: 9px; text-transform: uppercase; letter-spacing: 0.22em; color: rgba(242,230,200,0.4); margin-bottom: 5px; font-weight: 500; }
     .town-name { font-size: clamp(22px, 6vw, 36px); font-weight: 900; color: #f2e6c8; line-height: 0.92; letter-spacing: -0.03em; }
     .body { flex: 1; padding: 16px 22px; display: flex; flex-direction: column; gap: 10px; }
-    .tier { display: inline-block; font-size: 8px; text-transform: uppercase; letter-spacing: 0.18em; color: #cc3322; border: 1.5px solid rgba(204,51,34,0.35); padding: 3px 8px; font-weight: 600; }
-    .score-row { display: flex; align-items: baseline; gap: 5px; }
-    .score-num { font-size: 30px; font-weight: 900; line-height: 1; letter-spacing: -0.04em; color: #14100a; }
-    .score-lbl { font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(20,16,10,0.4); }
-    .accent { width: 28px; height: 2px; background: #cc3322; }
+    .accent { width: 28px; height: 2px; background: #cc3322; margin-bottom: 4px; }
     .summary { font-size: 13px; line-height: 1.6; color: rgba(20,16,10,0.6); flex: 1; }
     .footer { padding: 11px 22px; border-top: 2px solid rgba(20,16,10,0.08); display: flex; align-items: center; justify-content: space-between; gap: 8px; }
     .site-lbl { font-size: 8px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(20,16,10,0.3); }
@@ -72,11 +61,6 @@ export async function GET(
       <h1 class="town-name">${esc(town.name)}</h1>
     </div>
     <div class="body">
-      <span class="tier">${esc(tierLabel)}</span>
-      <div class="score-row">
-        <span class="score-num">${town.compositeScore}</span>
-        <span class="score-lbl">/ 100</span>
-      </div>
       <div class="accent"></div>
       ${summary ? `<p class="summary">${summary}</p>` : ""}
     </div>

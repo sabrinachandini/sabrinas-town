@@ -101,21 +101,7 @@ export default function CompareSelector({ towns, initialSlugA, initialSlugB }: C
                     <p className="font-editorial italic text-white/50 text-[0.95rem] leading-relaxed mb-6">
                       {town.execSummary150 || town.heroSummary40}
                     </p>
-                    <div className="flex items-center gap-8 mb-8 pb-6 border-b border-white/10">
-                      <div>
-                        <p className="font-display text-white text-[2.5rem] leading-none">
-                          {town.compositeScore}
-                        </p>
-                        <p className="font-ui text-[0.65rem] uppercase tracking-[0.1em] text-white/30 mt-1">
-                          Composite Score
-                        </p>
-                      </div>
-                      <div>
-                        <p className="font-ui text-[0.65rem] uppercase tracking-[0.1em] text-white/30 mt-1 uppercase tracking-[0.1em]">
-                          {town.scoreTier}
-                        </p>
-                      </div>
-                    </div>
+                    <div className="mb-8 pb-6 border-b border-white/10" />
                     <a
                       href={`/towns/${town.slug}`}
                       className="no-underline inline-block border border-white/30 text-white font-ui font-medium text-[0.8rem] uppercase tracking-[0.12em] px-6 py-3 hover:border-white hover:bg-white/5 transition-colors"
@@ -128,31 +114,6 @@ export default function CompareSelector({ towns, initialSlugA, initialSlugB }: C
             </div>
           </section>
 
-          {/* Score comparison bar */}
-          <section className="bg-[#f2ece0] py-12 px-8 md:px-16 border-b border-[#0e1428]/10">
-            <div className="mx-auto max-w-[1200px]">
-              <p className="font-ui text-[0.7rem] uppercase tracking-[0.15em] text-[#c8222a] mb-6">Score Comparison</p>
-              <div className="space-y-6">
-                {[townA, townB].map((town) => {
-                  const pct = Math.round((town.compositeScore / 100) * 100);
-                  return (
-                    <div key={town.id}>
-                      <div className="flex justify-between items-baseline mb-1.5">
-                        <span className="font-editorial text-[#0e1428] text-[0.95rem]">{town.name}</span>
-                        <span className="font-display text-[#0e1428] text-[1.2rem] leading-none">{town.compositeScore}</span>
-                      </div>
-                      <div className="h-1 bg-[#0e1428]/10 w-full">
-                        <div
-                          className="h-1 bg-[#c8222a]"
-                          style={{ width: `${pct}%` }}
-                        />
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </section>
 
           {/* Shared Connections */}
           <section className="bg-[#f2ece0] py-16 px-8 md:px-16">
