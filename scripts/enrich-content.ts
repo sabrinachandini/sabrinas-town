@@ -19,7 +19,7 @@ const PEOPLE_ONLY = process.argv.includes("--people-only");
 
 const MIN_TOWN_LEN = 5000;
 const MIN_EVENT_LEN = 2500;  // ~500 words — 3-4 solid paragraphs
-const MIN_PERSON_LEN = 1200; // bioLong threshold
+const MIN_PERSON_LEN = 3000; // ~4 paragraphs minimum
 
 async function expandTownNarrative(limit: number) {
   const towns = await prisma.town.findMany({
@@ -164,63 +164,102 @@ Requirements:
   }
 }
 
+const PROMINENT_ROLES = ["General", "Colonel", "Governor", "President", "Delegate", "Commander", "Admiral", "Major General", "Brigadier General", "Continental Congress"];
+const FAMOUS_NAMES = ["Washington", "Adams", "Jefferson", "Hamilton", "Franklin", "Hancock", "Madison", "Monroe", "Lafayette", "Revere", "Greene", "Knox", "Arnold", "Burgoyne", "Howe", "Cornwallis", "Paine", "Henry", "Marion", "Putnam", "Prescott", "Warren", "Stark", "Morgan", "Lee"];
+
+function getProminenceLevel(person: { name: string; roles: string[]; eventPeople: unknown[] }): "standard" | "prominent" | "famous" {
+  const isFamous = FAMOUS_NAMES.some((n) => person.name.includes(n));
+  if (isFamous) return "famous";
+  const isProminent = person.roles.some((r) => PROMINENT_ROLES.some((p) => r.includes(p))) || person.eventPeople.length >= 4;
+  if (isProminent) return "prominent";
+  return "standard";
+}
+
 async function expandPersonBios(limit: number) {
   const people = await prisma.person.findMany({
-    where: {
-      OR: [{ bioLong: null }, { bioLong: { equals: "" } }],
-      bioShort: { not: "" },
-    },
+    where: { bioShort: { not: "" } },
     select: {
       id: true, name: true, roles: true, bioShort: true, bioLong: true, birthYear: true, deathYear: true,
-      townPeople: { select: { town: { select: { name: true, state: true } }, connectionNote: true }, take: 5 },
-      eventPeople: { select: { event: { select: { name: true, startDate: true } }, roleInEvent: true }, orderBy: { event: { significanceWeight: "desc" } }, take: 5 },
+      townPeople: { select: { town: { select: { name: true, state: true } }, connectionNote: true }, take: 6 },
+      eventPeople: {
+        select: { event: { select: { name: true, startDate: true, significanceWeight: true } }, roleInEvent: true },
+        orderBy: { event: { significanceWeight: "desc" } },
+        take: 10,
+      },
     },
-    take: limit,
+    take: limit * 2,
   });
 
   const thin = people.filter((p) => (p.bioLong?.length ?? 0) < MIN_PERSON_LEN).slice(0, limit);
   console.log(`\n── People (${thin.length} need bio expansion) ──`);
 
   for (const person of thin) {
+    const level = getProminenceLevel(person);
+    const paragraphCount = level === "famous" ? 10 : level === "prominent" ? 6 : 4;
+    const maxTokens = level === "famous" ? 4000 : level === "prominent" ? 2500 : 1800;
+
     const townList = person.townPeople.map((tp) => `${tp.town.name}, ${tp.town.state}${tp.connectionNote ? ` (${tp.connectionNote})` : ""}`).join("; ");
     const eventList = person.eventPeople.map((ep) => `${ep.event.name}${ep.event.startDate ? ` (${new Date(ep.event.startDate).getFullYear()})` : ""}${ep.roleInEvent ? `: ${ep.roleInEvent}` : ""}`).join("; ");
     const lifespan = person.birthYear ? `${person.birthYear}–${person.deathYear ?? "?"}` : "";
 
+    const paragraphGuide = level === "famous"
+      ? `- Paragraph 1: Early life, origins, and formation of character before the Revolution
+- Paragraph 2: How they entered the Revolutionary cause — the turning point
+- Paragraph 3: Their most significant military or political action
+- Paragraph 4: Key battles, decisions, or moments they shaped
+- Paragraph 5: Relationships and alliances that defined their role
+- Paragraph 6: Setbacks, controversies, or moral complexity
+- Paragraph 7: How the war changed them personally
+- Paragraph 8: Their role in the war's resolution or aftermath
+- Paragraph 9: Immediate legacy — how contemporaries saw them
+- Paragraph 10: Why students and visitors today should know this person`
+      : level === "prominent"
+      ? `- Paragraph 1: Origins and background — what shaped them before the conflict
+- Paragraph 2: Entry into the Revolutionary War — their first significant role
+- Paragraph 3: Their most important actions and decisions during the war
+- Paragraph 4: Specific events and turning points they were part of
+- Paragraph 5: Relationships with other figures and how they influenced outcomes
+- Paragraph 6: Legacy — what their story means for understanding the Revolution`
+      : `- Paragraph 1: Who they were — background, origins, what brought them into the conflict
+- Paragraph 2: What they did — specific actions, decisions, and role in the events listed
+- Paragraph 3: The human stakes — what they risked, who they were fighting for
+- Paragraph 4: Legacy — how to understand this person's significance today`;
+
     const prompt = `Write a biographical essay for an American Revolution educational website.
 
 Person: ${person.name}${lifespan ? ` (${lifespan})` : ""}
+Prominence level: ${level}
 Roles: ${person.roles.join(", ")}
 Associated towns: ${townList || "Various locations"}
 Key events: ${eventList || "Various Revolutionary War events"}
 Short bio: ${person.bioShort}
+${person.bioLong ? `Existing bio (expand and improve upon this): ${person.bioLong}` : ""}
 
 Requirements:
-- Write EXACTLY 3 paragraphs, each 150–200 words
-- Paragraph 1: Who were they — background, origins, what brought them into the Revolutionary conflict?
-- Paragraph 2: What they did — their specific actions, decisions, and role in the events listed above
-- Paragraph 3: Legacy — how should students and visitors understand this person's significance today?
-- Write for educated general readers
-- Use specific dates and places where accurate
-- Do NOT use headers or bullet points — flowing prose only
-- Do NOT begin with the person's name as the first word`;
+- Write EXACTLY ${paragraphCount} paragraphs, each 180–220 words
+${paragraphGuide}
+- Write for educated general readers — vivid, specific, not dry
+- Use specific dates and places where historically accurate
+- Do NOT use headers, bullet points, or markdown — flowing prose only
+- Do NOT begin with the person's name as the first word
+- Do NOT invent facts not supported by the bio above`;
 
     try {
       const msg = await client.messages.create({
         model: "claude-opus-4-6",
-        max_tokens: 1500,
+        max_tokens: maxTokens,
         messages: [{ role: "user", content: prompt }],
       });
 
       const text = (msg.content[0] as any).text as string;
-      if (!text || text.length < 400) { console.log(`  ⚠ Short response for ${person.name}`); continue; }
+      if (!text || text.length < 600) { console.log(`  ⚠ Short response for ${person.name} (${text?.length ?? 0} chars)`); continue; }
 
       await prisma.person.update({ where: { id: person.id }, data: { bioLong: text } });
-
-      console.log(`  ✓ ${person.name} — ${text.length} chars`);
+      console.log(`  ✓ [${level}] ${person.name} — ${text.length} chars, ${paragraphCount} paragraphs`);
     } catch (err) {
       console.error(`  ✗ ${person.name}:`, err);
     }
-    await new Promise((r) => setTimeout(r, 2000));
+    await new Promise((r) => setTimeout(r, 2500));
   }
 }
 
