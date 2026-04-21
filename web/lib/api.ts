@@ -2171,6 +2171,289 @@ export async function getMapData(): Promise<{ towns: MapTown[]; links: MapLink[]
   }
 }
 
+// ── Root-level entity lookups (cross-town) ────────────────────────────────
+
+export interface PersonDetail {
+  id: string;
+  slug: string | null;
+  name: string;
+  roles: string[];
+  bioShort: string;
+  bioLong: string | null;
+  imageUrl: string | null;
+  imageCredit: string | null;
+  birthYear: number | null;
+  deathYear: number | null;
+  verificationStatus: string;
+  towns: Array<{ slug: string; name: string; state: string; connectionNote: string | null }>;
+  events: Array<{
+    id: string; slug: string | null; name: string; startDate: string | null;
+    datePrecision: string; summary: string; roleInEvent: string | null;
+    town: { slug: string; name: string };
+    themes: Array<{ id: string; name: string }>;
+  }>;
+  stories: Array<{ id: string; title: string; storyType: string; excerpt: string; town: { slug: string; name: string } }>;
+}
+
+export async function getPersonBySlug(personSlug: string): Promise<PersonDetail | null> {
+  try {
+    const person = await prisma.person.findFirst({
+      where: { OR: [{ slug: personSlug }, { id: personSlug }] },
+      include: {
+        townPeople: { include: { town: { select: { slug: true, name: true, state: true } } } },
+        eventPeople: {
+          include: {
+            event: {
+              include: {
+                town: { select: { slug: true, name: true } },
+                eventThemes: { include: { theme: true } },
+              },
+            },
+          },
+          orderBy: { event: { startDate: "asc" } },
+        },
+        stories: {
+          select: { id: true, title: true, storyType: true, textVersion: true, town: { select: { slug: true, name: true } } },
+          take: 10,
+        },
+      },
+    });
+    if (!person) return null;
+    return {
+      id: person.id,
+      slug: person.slug,
+      name: person.name,
+      roles: person.roles,
+      bioShort: person.bioShort,
+      bioLong: person.bioLong,
+      imageUrl: (person as any).imageUrl ?? null,
+      imageCredit: (person as any).imageCredit ?? null,
+      birthYear: person.birthYear,
+      deathYear: person.deathYear,
+      verificationStatus: person.verificationStatus as string,
+      towns: person.townPeople.map((tp) => ({
+        slug: tp.town.slug,
+        name: tp.town.name,
+        state: tp.town.state,
+        connectionNote: tp.connectionNote ?? null,
+      })),
+      events: person.eventPeople.map((ep) => ({
+        id: ep.event.id,
+        slug: ep.event.slug ?? null,
+        name: ep.event.name,
+        startDate: ep.event.startDate?.toISOString() ?? null,
+        datePrecision: ep.event.datePrecision as string,
+        summary: ep.event.summary,
+        roleInEvent: ep.roleInEvent,
+        town: { slug: ep.event.town.slug, name: ep.event.town.name },
+        themes: ep.event.eventThemes.map((et) => ({ id: et.theme.id, name: et.theme.name })),
+      })),
+      stories: person.stories.map((s) => ({
+        id: s.id,
+        title: s.title,
+        storyType: s.storyType as string,
+        excerpt: s.textVersion.slice(0, 200) + (s.textVersion.length > 200 ? "..." : ""),
+        town: { slug: s.town.slug, name: s.town.name },
+      })),
+    };
+  } catch (error) {
+    console.error("Error fetching person by slug:", error);
+    return null;
+  }
+}
+
+export interface PlaceDetail {
+  id: string; slug: string | null; name: string; placeType: string;
+  description: string; historicalNote: string | null;
+  lat: number | null; lng: number | null; address: string | null;
+  hours: string | null; admission: string | null; website: string | null; phone: string | null;
+  accessibilityNotes: string | null; parkingNotes: string | null; amenities: string[];
+  featured: boolean;
+  town: { slug: string; name: string; state: string };
+  connectedEvents: Array<{ id: string; slug: string | null; name: string; startDate: string | null; summary: string; people: Array<{ id: string; name: string; roleInEvent: string | null }> }>;
+}
+
+export async function getPlaceBySlug(placeSlug: string): Promise<PlaceDetail | null> {
+  try {
+    const place = await prisma.place.findFirst({
+      where: { OR: [{ slug: placeSlug }, { id: placeSlug }] },
+      include: {
+        town: { select: { slug: true, name: true, state: true } },
+      },
+    });
+    if (!place) return null;
+    const connectedEvents = await prisma.event.findMany({
+      where: { townId: place.townId },
+      include: { eventPeople: { include: { person: true } } },
+      orderBy: { startDate: "asc" },
+      take: 20,
+    });
+    return {
+      id: place.id, slug: place.slug ?? null, name: place.name, placeType: place.placeType as string,
+      description: place.description, historicalNote: place.historicalNote ?? null,
+      lat: place.lat ?? null, lng: place.lng ?? null, address: place.address ?? null,
+      hours: place.hours ?? null, admission: place.admission ?? null,
+      website: place.website ?? null, phone: place.phone ?? null,
+      accessibilityNotes: place.accessibilityNotes ?? null, parkingNotes: place.parkingNotes ?? null,
+      amenities: place.amenities, featured: place.featured,
+      town: place.town,
+      connectedEvents: connectedEvents.map((e) => ({
+        id: e.id, slug: e.slug ?? null, name: e.name,
+        startDate: e.startDate?.toISOString() ?? null, summary: e.summary,
+        people: e.eventPeople.map((ep) => ({ id: ep.person.id, name: ep.person.name, roleInEvent: ep.roleInEvent })),
+      })),
+    };
+  } catch (error) {
+    console.error("Error fetching place by slug:", error);
+    return null;
+  }
+}
+
+export interface EventDetail {
+  id: string; slug: string | null; name: string;
+  startDate: string | null; endDate: string | null; datePrecision: string;
+  summary: string; significanceWeight: number;
+  imageUrl: string | null; imageCredit: string | null;
+  videoId: string | null; videoSource: string | null;
+  town: { slug: string; name: string; state: string };
+  people: Array<{ id: string; slug: string | null; name: string; roles: string[]; bioShort: string; imageUrl: string | null; roleInEvent: string | null }>;
+  themes: Array<{ id: string; name: string }>;
+  relatedEvents: Array<{ id: string; slug: string | null; name: string; startDate: string | null; town: { slug: string; name: string } }>;
+}
+
+export async function getEventBySlug(eventSlug: string): Promise<EventDetail | null> {
+  try {
+    const event = await prisma.event.findFirst({
+      where: { OR: [{ slug: eventSlug }, { id: eventSlug }] },
+      include: {
+        town: { select: { slug: true, name: true, state: true } },
+        eventPeople: { include: { person: true } },
+        eventThemes: { include: { theme: true } },
+      },
+    });
+    if (!event) return null;
+    const relatedEvents = await prisma.event.findMany({
+      where: { townId: event.townId, id: { not: event.id } },
+      select: { id: true, slug: true, name: true, startDate: true, town: { select: { slug: true, name: true } } },
+      orderBy: { significanceWeight: "desc" },
+      take: 5,
+    });
+    return {
+      id: event.id, slug: event.slug ?? null, name: event.name,
+      startDate: event.startDate?.toISOString() ?? null,
+      endDate: event.endDate?.toISOString() ?? null,
+      datePrecision: event.datePrecision as string,
+      summary: event.summary, significanceWeight: event.significanceWeight,
+      imageUrl: event.imageUrl ?? null, imageCredit: event.imageCredit ?? null,
+      videoId: event.videoId ?? null, videoSource: event.videoSource ?? null,
+      town: event.town,
+      people: event.eventPeople.map((ep) => ({
+        id: ep.person.id, slug: ep.person.slug ?? null, name: ep.person.name,
+        roles: ep.person.roles, bioShort: ep.person.bioShort,
+        imageUrl: (ep.person as any).imageUrl ?? null, roleInEvent: ep.roleInEvent,
+      })),
+      themes: event.eventThemes.map((et) => ({ id: et.theme.id, name: et.theme.name })),
+      relatedEvents: relatedEvents.map((e) => ({
+        id: e.id, slug: e.slug ?? null, name: e.name,
+        startDate: e.startDate?.toISOString() ?? null,
+        town: { slug: e.town.slug, name: e.town.name },
+      })),
+    };
+  } catch (error) {
+    console.error("Error fetching event by slug:", error);
+    return null;
+  }
+}
+
+export async function getAllPeople(options?: { limit?: number; role?: string }): Promise<Array<{
+  id: string; slug: string | null; name: string; roles: string[];
+  bioShort: string; imageUrl: string | null; birthYear: number | null; deathYear: number | null;
+  primaryTown: { slug: string; name: string; state: string } | null;
+}>> {
+  try {
+    const people = await prisma.person.findMany({
+      where: options?.role ? { roles: { has: options.role } } : undefined,
+      include: { townPeople: { include: { town: { select: { slug: true, name: true, state: true } } }, take: 1 } },
+      orderBy: { name: "asc" },
+      take: options?.limit ?? 500,
+    });
+    return people.map((p) => ({
+      id: p.id, slug: p.slug ?? null, name: p.name, roles: p.roles,
+      bioShort: p.bioShort, imageUrl: (p as any).imageUrl ?? null,
+      birthYear: p.birthYear, deathYear: p.deathYear,
+      primaryTown: p.townPeople[0]?.town ?? null,
+    }));
+  } catch (error) {
+    console.error("Error fetching all people:", error);
+    return [];
+  }
+}
+
+export async function getAllEvents(options?: { month?: number; limit?: number; minSignificance?: number }): Promise<Array<{
+  id: string; slug: string | null; name: string; startDate: string | null;
+  summary: string; significanceWeight: number; imageUrl: string | null;
+  town: { slug: string; name: string; state: string };
+  themes: Array<{ id: string; name: string }>;
+}>> {
+  try {
+    const where: any = {};
+    if (options?.minSignificance) where.significanceWeight = { gte: options.minSignificance };
+    if (options?.month) {
+      const start = new Date(1775, options.month - 1, 1);
+      const end = new Date(1800, options.month - 1 + 1, 0);
+      where.startDate = { gte: start, lte: end };
+    }
+    const events = await prisma.event.findMany({
+      where,
+      include: {
+        town: { select: { slug: true, name: true, state: true } },
+        eventThemes: { include: { theme: true } },
+      },
+      orderBy: [{ significanceWeight: "desc" }, { startDate: "asc" }],
+      take: options?.limit ?? 200,
+    });
+    return events.map((e) => ({
+      id: e.id, slug: e.slug ?? null, name: e.name,
+      startDate: e.startDate?.toISOString() ?? null,
+      summary: e.summary, significanceWeight: e.significanceWeight,
+      imageUrl: e.imageUrl ?? null,
+      town: e.town,
+      themes: e.eventThemes.map((et) => ({ id: et.theme.id, name: et.theme.name })),
+    }));
+  } catch (error) {
+    console.error("Error fetching all events:", error);
+    return [];
+  }
+}
+
+export async function getAllLocalEvents(): Promise<Array<{
+  id: string; name: string; description: string | null; category: string;
+  recurrence: string; month: number | null; day: number | null; endDay: number | null;
+  dateNote: string | null; eventDate: string | null; venue: string | null;
+  url: string | null; admission: string | null; featured: boolean;
+  town: { slug: string; name: string; state: string };
+}>> {
+  try {
+    const events = await prisma.localEvent.findMany({
+      include: { town: { select: { slug: true, name: true, state: true } } },
+      orderBy: [{ featured: "desc" }, { month: "asc" }, { day: "asc" }],
+    });
+    return events.map((e) => ({
+      id: e.id, name: e.name, description: e.description ?? null,
+      category: e.category as string, recurrence: e.recurrence as string,
+      month: e.month ?? null, day: e.day ?? null, endDay: e.endDay ?? null,
+      dateNote: e.dateNote ?? null,
+      eventDate: e.eventDate?.toISOString() ?? null,
+      venue: e.venue ?? null, url: e.url ?? null, admission: e.admission ?? null,
+      featured: e.featured,
+      town: e.town,
+    }));
+  } catch (error) {
+    console.error("Error fetching all local events:", error);
+    return [];
+  }
+}
+
 // ── Search ────────────────────────────────────────────────────────────────
 
 export interface SearchResult {
