@@ -21,9 +21,15 @@ export async function generateMetadata({ params }: PageProps) {
     return { title: "Person Not Found" };
   }
 
+  const title = person.name;
+  const description = person.bioShort.slice(0, 160);
+  const url = `https://sabrinas-town.vercel.app/towns/${slug}/people/${personSlug}`;
   return {
-    title: `${person.name} | History is for Everyone`,
-    description: person.bioShort.slice(0, 160),
+    title,
+    description,
+    openGraph: { title, description, url },
+    twitter: { card: "summary_large_image" as const, title, description },
+    alternates: { canonical: url },
   };
 }
 

@@ -34,9 +34,15 @@ export async function generateMetadata({ params }: PageProps) {
     return { title: "Place Not Found" };
   }
 
+  const title = place.name;
+  const description = place.description.slice(0, 160);
+  const url = `https://sabrinas-town.vercel.app/towns/${slug}/places/${placeSlug}`;
   return {
-    title: `${place.name} | History is for Everyone`,
-    description: place.description.slice(0, 160),
+    title,
+    description,
+    openGraph: { title, description, url },
+    twitter: { card: "summary_large_image" as const, title, description },
+    alternates: { canonical: url },
   };
 }
 
