@@ -149,7 +149,7 @@ export default async function ConnectedPage({ params }: PageProps) {
           <Container>
             <Heading level={2}>All Connections</Heading>
             <Text className="mt-element text-text-muted max-w-[620px]">
-              Every town in {town.name}'s network, ranked by connection strength.
+              Every town in {town.name}'s network, sorted by connection strength.
             </Text>
 
             <div className="mt-component space-y-element">

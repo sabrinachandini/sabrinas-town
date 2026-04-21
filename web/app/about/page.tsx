@@ -171,10 +171,9 @@ export default function AboutPage() {
                     Browse the <Link href="/towns">town network</Link> to find
                     communities with a strong preservation score, accessible
                     battlefields, and stories that connect to the bigger arc of the
-                    war. Use the{" "}
-                    <Link href="/rankings">rankings</Link> to compare towns across
-                    seven dimensions — or the compare tool to plan a multi-stop
-                    itinerary. Every town page links to real places, documented
+                    war. Use the <Link href="/compare">compare tool</Link> to put
+                    two towns side by side, or the <Link href="/map">network map</Link> to
+                    see how they connect. Every town page links to real places, documented
                     events, and the people who were there.
                   </p>
                 </div>

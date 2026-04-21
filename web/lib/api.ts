@@ -158,9 +158,17 @@ export interface RankedTown {
   execSummary150: string;
   compositeScore: number;
   scoreTier: string;
-  rank: number;
-  previousRank: number | null;
-  rankChange: number | null;
+}
+
+export interface OnThisDayEvent {
+  id: string;
+  name: string;
+  slug: string | null;
+  summary: string;
+  startDate: string;
+  year: number;
+  town: { name: string; state: string; slug: string };
+  themes: { id: string; name: string }[];
 }
 
 export interface ApiResponse<T> {
@@ -948,15 +956,50 @@ export async function getRankings(options?: {
       },
     });
 
-    return towns.map((town, index) => ({
+    return towns.map((town) => ({
       ...town,
       scoreTier: getScoreTier(town.compositeScore),
-      rank: index + 1,
-      previousRank: null,
-      rankChange: null,
     }));
   } catch (error) {
-    console.error("Error fetching rankings:", error);
+    console.error("Error fetching towns:", error);
+    return [];
+  }
+}
+
+export async function getOnThisDay(month: number, day: number): Promise<OnThisDayEvent[]> {
+  try {
+    const events = await prisma.event.findMany({
+      where: { startDate: { not: null } },
+      select: {
+        id: true,
+        name: true,
+        slug: true,
+        summary: true,
+        startDate: true,
+        significanceWeight: true,
+        town: { select: { name: true, state: true, slug: true } },
+        eventThemes: { include: { theme: { select: { id: true, name: true } } } },
+      },
+      orderBy: { significanceWeight: "desc" },
+    });
+
+    return events
+      .filter((e) => {
+        const d = new Date(e.startDate!);
+        return d.getUTCMonth() + 1 === month && d.getUTCDate() === day;
+      })
+      .map((e) => ({
+        id: e.id,
+        name: e.name,
+        slug: e.slug,
+        summary: e.summary ?? "",
+        startDate: e.startDate!.toISOString(),
+        year: new Date(e.startDate!).getUTCFullYear(),
+        town: e.town,
+        themes: e.eventThemes.map((et) => ({ id: et.theme.id, name: et.theme.name })),
+      }));
+  } catch (error) {
+    console.error("Error fetching on-this-day events:", error);
     return [];
   }
 }

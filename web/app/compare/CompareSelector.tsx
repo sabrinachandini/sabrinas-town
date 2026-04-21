@@ -111,11 +111,8 @@ export default function CompareSelector({ towns, initialSlugA, initialSlugB }: C
                         </p>
                       </div>
                       <div>
-                        <p className="font-display text-white text-[2.5rem] leading-none">
-                          #{town.rank}
-                        </p>
-                        <p className="font-ui text-[0.65rem] uppercase tracking-[0.1em] text-white/30 mt-1">
-                          National Rank
+                        <p className="font-ui text-[0.65rem] uppercase tracking-[0.1em] text-white/30 mt-1 uppercase tracking-[0.1em]">
+                          {town.scoreTier}
                         </p>
                       </div>
                     </div>
@@ -198,16 +195,16 @@ export default function CompareSelector({ towns, initialSlugA, initialSlugB }: C
           </p>
           <div className="flex flex-wrap gap-4">
             <a
-              href="/rankings"
+              href="/towns"
               className="no-underline border border-white text-white font-ui font-medium text-[0.8rem] uppercase tracking-[0.12em] px-8 py-3 hover:bg-[#c8222a] hover:border-[#c8222a] transition-colors whitespace-nowrap"
             >
-              See All Rankings
+              Browse All Towns
             </a>
             <a
-              href="/towns"
+              href="/map"
               className="no-underline border border-white/30 text-white/60 font-ui font-medium text-[0.8rem] uppercase tracking-[0.12em] px-8 py-3 hover:border-white hover:text-white transition-colors whitespace-nowrap"
             >
-              Browse All Towns
+              View Network Map
             </a>
           </div>
         </div>

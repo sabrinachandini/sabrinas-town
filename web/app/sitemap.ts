@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
-import { getRankings, type RankedTown } from "@/lib/api";
+import { getRankings } from "@/lib/api";
+import type { RankedTown } from "@/lib/api";
 
 const BASE = "https://sabrinas-town.vercel.app";
 
