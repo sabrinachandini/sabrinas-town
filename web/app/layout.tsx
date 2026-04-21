@@ -27,9 +27,22 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "History is for Everyone | American Revolution Research Network",
+  metadataBase: new URL("https://sabrinas-town.vercel.app"),
+  title: {
+    default: "History is for Everyone | American Revolution Research Network",
+    template: "%s | History is for Everyone",
+  },
   description:
     "A living network of America's Revolutionary towns — built for travelers, teachers, and towns themselves. History is for everyone.",
+  openGraph: {
+    type: "website",
+    siteName: "History is for Everyone",
+    description:
+      "A living network of America's Revolutionary towns — built for travelers, teachers, and towns themselves.",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({

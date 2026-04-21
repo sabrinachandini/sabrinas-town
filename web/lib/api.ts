@@ -440,6 +440,8 @@ export interface TownEventDetail {
   themes: Array<{ id: string; name: string }>;
   imageUrl: string | null;
   imageCredit: string | null;
+  videoId: string | null;
+  videoSource: string | null;
 }
 
 export interface TeacherModuleResponse {
@@ -1939,6 +1941,8 @@ export async function getTownEventDetail(
       themes: event.eventThemes.map((et) => ({ id: et.theme.id, name: et.theme.name })),
       imageUrl: event.imageUrl ?? null,
       imageCredit: event.imageCredit ?? null,
+      videoId: event.videoId ?? null,
+      videoSource: event.videoSource ?? null,
     };
   } catch (error) {
     console.error("Error fetching event detail:", error);
@@ -2016,6 +2020,67 @@ export async function getPlaces(
     };
   } catch (error) {
     console.error("Error fetching places:", error);
+    return null;
+  }
+}
+
+// ── Map data ─────────────────────────────────────────────────────────────────
+
+export interface MapTown {
+  id: string;
+  name: string;
+  state: string;
+  slug: string;
+  lat: number | null;
+  lng: number | null;
+  compositeScore: number;
+  scoreTier: string;
+  execSummary150: string;
+}
+
+export interface MapLink {
+  fromSlug: string;
+  toSlug: string;
+  linkType: string;
+  weight: number;
+}
+
+export async function getMapData(): Promise<{ towns: MapTown[]; links: MapLink[] } | null> {
+  try {
+    const [towns, links] = await Promise.all([
+      prisma.town.findMany({
+        select: {
+          id: true, name: true, state: true, slug: true,
+          lat: true, lng: true, compositeScore: true, execSummary150: true,
+        },
+        orderBy: { compositeScore: "desc" },
+      }),
+      prisma.townLink.findMany({
+        select: {
+          fromTown: { select: { slug: true } },
+          toTown: { select: { slug: true } },
+          linkType: true,
+          weight: true,
+        },
+      }),
+    ]);
+
+    return {
+      towns: towns.map((t) => ({
+        ...t,
+        lat: t.lat ?? null,
+        lng: t.lng ?? null,
+        scoreTier: getScoreTier(t.compositeScore),
+      })),
+      links: links.map((l) => ({
+        fromSlug: l.fromTown.slug,
+        toSlug: l.toTown.slug,
+        linkType: l.linkType as string,
+        weight: l.weight,
+      })),
+    };
+  } catch (error) {
+    console.error("Error fetching map data:", error);
     return null;
   }
 }

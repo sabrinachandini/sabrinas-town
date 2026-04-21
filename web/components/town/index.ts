@@ -22,3 +22,6 @@ export { ContentSourceBadge } from "./ContentSourceBadge";
 export { PrimarySourceCard } from "./PrimarySourceCard";
 export { QuizSection } from "./QuizSection";
 export { TeacherHandoutCard } from "./TeacherHandoutCard";
+
+// Map
+export { TownNetworkMap } from "./TownNetworkMap";

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getTown, getTownEventDetail } from "@/lib/api";
-import { PageShell, PageHeader, Prose, ImageWithCaption } from "@/components/editorial";
+import { EVENT_VIDEOS } from "@/lib/videos";
+import { PageShell, PageHeader, Prose, ImageWithCaption, YouTubeEmbed } from "@/components/editorial";
 
 export const revalidate = 3600;
 
@@ -96,6 +97,20 @@ export default async function EventDetailPage({ params }: PageProps) {
           caption={event.imageCredit ?? undefined}
         />
       )}
+
+      {(() => {
+        const vid = (event.videoId && event.videoSource)
+          ? { videoId: event.videoId, title: event.name, source: event.videoSource, description: undefined }
+          : EVENT_VIDEOS[event.id];
+        return vid ? (
+          <YouTubeEmbed
+            videoId={vid.videoId}
+            title={vid.title}
+            source={vid.source}
+            description={vid.description}
+          />
+        ) : null;
+      })()}
 
       {event.people.length > 0 && (
         <div className="mt-10">

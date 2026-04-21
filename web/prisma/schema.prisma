@@ -104,6 +104,10 @@ model Event {
   imageUrl        String?  // Wikimedia Commons or local path
   imageCredit     String?  // Attribution string
 
+  // Video
+  videoId         String?  // YouTube video ID (11 chars)
+  videoSource     String?  // "ken-burns" | "liberty-kids" | "other"
+
   // Optional geo (for events at specific locations within town)
   lat             Float?
   lng             Float?
