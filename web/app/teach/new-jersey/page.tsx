@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   title: "Teach New Jersey | History is for Everyone",
   description:
     "Teacher resources for New Jersey towns at the crossroads of the American Revolution. Curated lesson plans, primary sources, and classroom assessments.",
+  openGraph: {
+    title: "Teach New Jersey | History is for Everyone",
+    description: "Teacher resources for New Jersey towns at the crossroads of the American Revolution. Curated lesson plans, primary sources, and classroom assessments.",
+    url: "https://sabrinas-town.vercel.app/teach/new-jersey",
+  },
+  alternates: { canonical: "https://sabrinas-town.vercel.app/teach/new-jersey" },
 };
 
 export const dynamic = "force-dynamic";

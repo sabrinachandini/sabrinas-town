@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   title: "Teach Massachusetts | History is for Everyone",
   description:
     "Teacher resources for ten Massachusetts towns at the center of the American Revolution. Curated lesson plans, primary sources, and classroom assessments.",
+  openGraph: {
+    title: "Teach Massachusetts | History is for Everyone",
+    description: "Teacher resources for ten Massachusetts towns at the center of the American Revolution. Curated lesson plans, primary sources, and classroom assessments.",
+    url: "https://sabrinas-town.vercel.app/teach/massachusetts",
+  },
+  alternates: { canonical: "https://sabrinas-town.vercel.app/teach/massachusetts" },
 };
 
 export const dynamic = "force-dynamic";

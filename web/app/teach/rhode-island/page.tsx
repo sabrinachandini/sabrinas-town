@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   title: "Teach Rhode Island | History is for Everyone",
   description:
     "Teacher resources for Rhode Island towns in the American Revolution. Curated lesson plans, primary sources, and classroom assessments.",
+  openGraph: {
+    title: "Teach Rhode Island | History is for Everyone",
+    description: "Teacher resources for Rhode Island towns in the American Revolution. Curated lesson plans, primary sources, and classroom assessments.",
+    url: "https://sabrinas-town.vercel.app/teach/rhode-island",
+  },
+  alternates: { canonical: "https://sabrinas-town.vercel.app/teach/rhode-island" },
 };
 
 export const dynamic = "force-dynamic";

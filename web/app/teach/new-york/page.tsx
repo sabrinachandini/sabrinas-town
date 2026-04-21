@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   title: "Teach New York | History is for Everyone",
   description:
     "Teacher resources for New York towns in the American Revolution. Curated lesson plans, primary sources, and classroom assessments.",
+  openGraph: {
+    title: "Teach New York | History is for Everyone",
+    description: "Teacher resources for New York towns in the American Revolution. Curated lesson plans, primary sources, and classroom assessments.",
+    url: "https://sabrinas-town.vercel.app/teach/new-york",
+  },
+  alternates: { canonical: "https://sabrinas-town.vercel.app/teach/new-york" },
 };
 
 export const dynamic = "force-dynamic";

@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   title: "Teach Frontier | History is for Everyone",
   description:
     "Teacher resources for frontier towns in the American Revolution. Curated lesson plans, primary sources, and classroom assessments.",
+  openGraph: {
+    title: "Teach Frontier | History is for Everyone",
+    description: "Teacher resources for frontier towns in the American Revolution. Curated lesson plans, primary sources, and classroom assessments.",
+    url: "https://sabrinas-town.vercel.app/teach/frontier",
+  },
+  alternates: { canonical: "https://sabrinas-town.vercel.app/teach/frontier" },
 };
 
 export const dynamic = "force-dynamic";

@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   title: "Teach South Carolina | History is for Everyone",
   description:
     "Teacher resources for South Carolina towns in the American Revolution. Curated lesson plans, primary sources, and classroom assessments.",
+  openGraph: {
+    title: "Teach South Carolina | History is for Everyone",
+    description: "Teacher resources for South Carolina towns in the American Revolution. Curated lesson plans, primary sources, and classroom assessments.",
+    url: "https://sabrinas-town.vercel.app/teach/south-carolina",
+  },
+  alternates: { canonical: "https://sabrinas-town.vercel.app/teach/south-carolina" },
 };
 
 export const dynamic = "force-dynamic";

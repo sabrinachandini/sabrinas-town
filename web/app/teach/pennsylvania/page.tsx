@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   title: "Teach Pennsylvania | History is for Everyone",
   description:
     "Teacher resources for Pennsylvania towns in the American Revolution. Curated lesson plans, primary sources, and classroom assessments.",
+  openGraph: {
+    title: "Teach Pennsylvania | History is for Everyone",
+    description: "Teacher resources for Pennsylvania towns in the American Revolution. Curated lesson plans, primary sources, and classroom assessments.",
+    url: "https://sabrinas-town.vercel.app/teach/pennsylvania",
+  },
+  alternates: { canonical: "https://sabrinas-town.vercel.app/teach/pennsylvania" },
 };
 
 export const dynamic = "force-dynamic";
