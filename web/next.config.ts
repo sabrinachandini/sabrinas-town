@@ -3,6 +3,11 @@ import path from "path";
 import { withSentryConfig } from "@sentry/nextjs";
 
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "upload.wikimedia.org" },
+    ],
+  },
   turbopack: {
     root: path.resolve(__dirname, ".."),
   },

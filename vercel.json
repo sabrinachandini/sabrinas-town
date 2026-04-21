@@ -15,8 +15,12 @@
     }
   ],
   "routes": [
+    { "src": "/api/cron/(.*)", "dest": "/web/api/cron/$1" },
     { "src": "/api/(.*)", "dest": "/api/index.ts" },
     { "src": "/((?!api/).*)", "dest": "/web/$1", "continue": true },
     { "handle": "filesystem" }
+  ],
+  "crons": [
+    { "path": "/api/cron/content-refresh", "schedule": "0 6 * * 0" }
   ]
 }

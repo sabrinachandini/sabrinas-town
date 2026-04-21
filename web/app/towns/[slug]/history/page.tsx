@@ -64,11 +64,13 @@ export default async function HistoryPage({ params }: PageProps) {
         )}
       </div>
 
-      <ImageWithCaption
-        src="/images/paul-revere-boston-massacre.jpg"
-        alt="Paul Revere's engraving of the Boston Massacre, 1770"
-        caption="Paul Revere, 'The Bloody Massacre Perpetrated in King Street Boston on March 5th 1770' — hand-colored engraving, 1770. Library of Congress. Public domain."
-      />
+      {(town.imageUrl || true) && (
+        <ImageWithCaption
+          src={town.imageUrl ?? "/images/paul-revere-boston-massacre.jpg"}
+          alt={town.imageUrl ? `Historical image of ${town.name}` : "Paul Revere's engraving of the Boston Massacre, 1770"}
+          caption={town.imageCredit ?? "Paul Revere, 'The Bloody Massacre Perpetrated in King Street Boston on March 5th 1770' — hand-colored engraving, 1770. Library of Congress. Public domain."}
+        />
+      )}
 
       {town.themes.length > 0 && (
         <div className="mt-10">

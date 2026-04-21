@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getTown, getTownEventDetail } from "@/lib/api";
-import { PageShell, PageHeader, Prose } from "@/components/editorial";
+import { PageShell, PageHeader, Prose, ImageWithCaption } from "@/components/editorial";
 
 export const revalidate = 3600;
 
@@ -88,6 +88,14 @@ export default async function EventDetailPage({ params }: PageProps) {
           <p key={i}>{p}</p>
         ))}
       </Prose>
+
+      {event.imageUrl && (
+        <ImageWithCaption
+          src={event.imageUrl}
+          alt={event.name}
+          caption={event.imageCredit ?? undefined}
+        />
+      )}
 
       {event.people.length > 0 && (
         <div className="mt-10">

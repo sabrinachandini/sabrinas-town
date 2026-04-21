@@ -30,6 +30,7 @@
     "node": "22.x"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.90.0",
     "@fastify/cors": "^9.0.1",
     "@prisma/client": "^5.10.0",
     "@sentry/node": "^10.40.0",

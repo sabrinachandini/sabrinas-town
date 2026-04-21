@@ -40,6 +40,10 @@ model Town {
   scoreBreakdown      Json?    // { historical: 95, preservation: 80, accessibility: 70, ... }
   scoreConfigVersion  String   @default("1.0.0")
 
+  // Media
+  imageUrl      String?  // Primary historical image URL (Wikimedia Commons or local)
+  imageCredit   String?  // Attribution: "Artist, Title, Year. Source. License."
+
   // Timestamps
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
@@ -95,6 +99,10 @@ model Event {
 
   summary         String        @db.Text
   significanceWeight Int        @default(50) // 0-100 scale
+
+  // Media
+  imageUrl        String?  // Wikimedia Commons or local path
+  imageCredit     String?  // Attribution string
 
   // Optional geo (for events at specific locations within town)
   lat             Float?

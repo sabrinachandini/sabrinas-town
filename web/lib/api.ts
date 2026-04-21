@@ -120,6 +120,8 @@ export interface Town {
   scoreTier: string;
   scoreBreakdown: ScoreBreakdown | null;
   lastUpdatedAt: string;
+  imageUrl: string | null;
+  imageCredit: string | null;
   events: TownEvent[];
   stories: TownStory[];
   placesTotals?: PlacesTotals;
@@ -436,6 +438,8 @@ export interface TownEventDetail {
     roleInEvent: string | null;
   }>;
   themes: Array<{ id: string; name: string }>;
+  imageUrl: string | null;
+  imageCredit: string | null;
 }
 
 export interface TeacherModuleResponse {
@@ -858,6 +862,8 @@ export async function getTown(slug: string): Promise<Town | null> {
       scoreTier: getScoreTier(town.compositeScore),
       scoreBreakdown: town.scoreBreakdown as ScoreBreakdown | null,
       lastUpdatedAt: town.lastUpdatedAt.toISOString(),
+      imageUrl: town.imageUrl ?? null,
+      imageCredit: town.imageCredit ?? null,
       events: town.events.map((e) => ({
         id: e.id,
         slug: e.slug ?? undefined,
@@ -1931,6 +1937,8 @@ export async function getTownEventDetail(
         roleInEvent: ep.roleInEvent,
       })),
       themes: event.eventThemes.map((et) => ({ id: et.theme.id, name: et.theme.name })),
+      imageUrl: event.imageUrl ?? null,
+      imageCredit: event.imageCredit ?? null,
     };
   } catch (error) {
     console.error("Error fetching event detail:", error);
