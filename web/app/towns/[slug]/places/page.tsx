@@ -16,9 +16,16 @@ export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
   const town = await getTown(slug);
   if (!town) return { title: "Visit | Town Not Found" };
+  const title = `Places | ${town.name}, ${town.state}`;
+  const description = `Plan your visit to ${town.name}, ${town.state} — historic sites, hours, and trip planning.`;
+  const url = `https://sabrinas-town.vercel.app/towns/${slug}/places`;
+  const images = town.imageUrl ? [{ url: town.imageUrl, width: 1200, height: 630 }] : undefined;
   return {
-    title: `Visit | ${town.name}, ${town.state} | History is for Everyone`,
-    description: `Plan your visit to ${town.name}, ${town.state} — sites, hours, and trip planning information.`,
+    title,
+    description,
+    openGraph: { title, description, url, images },
+    twitter: { card: "summary_large_image", title, description, images: town.imageUrl ? [town.imageUrl] : undefined },
+    alternates: { canonical: url },
   };
 }
 

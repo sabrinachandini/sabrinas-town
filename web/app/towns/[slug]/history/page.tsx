@@ -6,6 +6,7 @@ import {
   Prose,
   ImageWithCaption,
 } from "@/components/editorial";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 export const revalidate = 3600;
 
@@ -21,9 +22,16 @@ export async function generateMetadata({ params }: PageProps) {
     return { title: "History | Town Not Found" };
   }
 
+  const title = `History | ${town.name}, ${town.state}`;
+  const description = `The Revolutionary War history of ${town.name}, ${town.state}.`;
+  const url = `https://sabrinas-town.vercel.app/towns/${slug}/history`;
+  const images = town.imageUrl ? [{ url: town.imageUrl, width: 1200, height: 630 }] : undefined;
   return {
-    title: `History | ${town.name}, ${town.state} | History is for Everyone`,
-    description: `The Revolutionary War history of ${town.name}, ${town.state}.`,
+    title,
+    description,
+    openGraph: { title, description, url, images },
+    twitter: { card: "summary_large_image", title, description, images: town.imageUrl ? [town.imageUrl] : undefined },
+    alternates: { canonical: url },
   };
 }
 
@@ -35,8 +43,20 @@ export default async function HistoryPage({ params }: PageProps) {
     return <ComingSoon slug={slug} section="History" />;
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: `The Revolutionary War History of ${town.name}, ${town.state}`,
+    description: `The Revolutionary War history of ${town.name}, ${town.state}.`,
+    url: `https://sabrinas-town.vercel.app/towns/${town.slug}/history`,
+    publisher: { "@type": "Organization", name: "History is for Everyone", url: "https://sabrinas-town.vercel.app" },
+    dateModified: town.lastUpdatedAt,
+    ...(town.imageUrl ? { image: town.imageUrl } : {}),
+  };
+
   return (
     <PageShell>
+      <JsonLd data={jsonLd} />
       <PageHeader
         name={town.name}
         state={town.state}

@@ -12,9 +12,16 @@ export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
   const town = await getTown(slug);
   if (!town) return { title: "Events | Town Not Found" };
+  const title = `Timeline | ${town.name}, ${town.state}`;
+  const description = `Timeline of Revolutionary War events in ${town.name}, ${town.state}.`;
+  const url = `https://sabrinas-town.vercel.app/towns/${slug}/timeline`;
+  const images = town.imageUrl ? [{ url: town.imageUrl, width: 1200, height: 630 }] : undefined;
   return {
-    title: `Events | ${town.name}, ${town.state} | History is for Everyone`,
-    description: `Timeline of Revolutionary War events in ${town.name}, ${town.state}.`,
+    title,
+    description,
+    openGraph: { title, description, url, images },
+    twitter: { card: "summary_large_image", title, description, images: town.imageUrl ? [town.imageUrl] : undefined },
+    alternates: { canonical: url },
   };
 }
 

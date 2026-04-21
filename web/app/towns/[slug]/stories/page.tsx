@@ -20,9 +20,16 @@ export async function generateMetadata({ params }: PageProps) {
     return { title: "Stories | Town Not Found" };
   }
 
+  const title = `Stories | ${town.name}, ${town.state}`;
+  const description = `First-person accounts and interpretive stories from ${town.name}, ${town.state}.`;
+  const url = `https://sabrinas-town.vercel.app/towns/${slug}/stories`;
+  const images = town.imageUrl ? [{ url: town.imageUrl, width: 1200, height: 630 }] : undefined;
   return {
-    title: `Stories | ${town.name}, ${town.state} | History is for Everyone`,
-    description: `First-person accounts and interpretive stories from ${town.name}, ${town.state}.`,
+    title,
+    description,
+    openGraph: { title, description, url, images },
+    twitter: { card: "summary_large_image", title, description, images: town.imageUrl ? [town.imageUrl] : undefined },
+    alternates: { canonical: url },
   };
 }
 

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getTown, getTownEventDetail } from "@/lib/api";
 import { EVENT_VIDEOS } from "@/lib/videos";
 import { PageShell, PageHeader, Prose, ImageWithCaption, YouTubeEmbed } from "@/components/editorial";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 export const revalidate = 3600;
 
@@ -17,9 +18,16 @@ export async function generateMetadata({ params }: PageProps) {
     return { title: "Event Not Found" };
   }
 
+  const title = event.name;
+  const description = event.summary.slice(0, 160);
+  const url = `https://sabrinas-town.vercel.app/towns/${slug}/timeline/${eventSlug}`;
+  const images = event.imageUrl ? [{ url: event.imageUrl, width: 1200, height: 630 }] : undefined;
   return {
-    title: `${event.name} | History is for Everyone`,
-    description: event.summary.slice(0, 160),
+    title,
+    description,
+    openGraph: { title, description, url, images },
+    twitter: { card: "summary_large_image", title, description, images: event.imageUrl ? [event.imageUrl] : undefined },
+    alternates: { canonical: url },
   };
 }
 
@@ -46,8 +54,22 @@ export default async function EventDetailPage({ params }: PageProps) {
 
   const formattedDate = formatDate(event.startDate);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: event.name,
+    description: event.summary.slice(0, 300),
+    url: `https://sabrinas-town.vercel.app/towns/${slug}/timeline/${eventSlug}`,
+    ...(event.startDate ? { startDate: event.startDate } : {}),
+    ...(event.endDate ? { endDate: event.endDate } : {}),
+    location: { "@type": "Place", name: town.name, address: { "@type": "PostalAddress", addressRegion: town.state, addressCountry: "US" } },
+    organizer: { "@type": "Organization", name: "History is for Everyone", url: "https://sabrinas-town.vercel.app" },
+    ...(event.imageUrl ? { image: event.imageUrl } : {}),
+  };
+
   return (
     <PageShell>
+      <JsonLd data={jsonLd} />
       <PageHeader
         variant="bold"
         name={event.name}

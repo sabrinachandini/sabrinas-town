@@ -4,6 +4,7 @@ import {
   getTownPeople,
   getLocalEvents,
 } from "@/lib/api";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { recordOrgEvent } from "@/lib/analytics";
 import { ComingSoon, TownHero } from "@/components/town";
 import NextLink from "next/link";
@@ -18,9 +19,16 @@ export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
   const town = await getTown(slug);
   if (!town) return { title: "Town Not Found" };
+  const title = `${town.name}, ${town.state}`;
+  const description = town.execSummary150;
+  const url = `https://sabrinas-town.vercel.app/towns/${slug}`;
+  const images = town.imageUrl ? [{ url: town.imageUrl, width: 1200, height: 630 }] : undefined;
   return {
-    title: `${town.name}, ${town.state} | History Is For Everyone`,
-    description: town.execSummary150,
+    title,
+    description,
+    openGraph: { title, description, url, images },
+    twitter: { card: "summary_large_image", title, description, images: town.imageUrl ? [town.imageUrl] : undefined },
+    alternates: { canonical: url },
   };
 }
 
@@ -58,8 +66,21 @@ export default async function TownOverviewPage({ params }: PageProps) {
     { label: "Sources",   href: `/towns/${slug}/sources` },
   ];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TouristDestination",
+    name: town.name,
+    description: town.execSummary150,
+    url: `https://sabrinas-town.vercel.app/towns/${slug}`,
+    ...(town.geo ? { geo: { "@type": "GeoCoordinates", latitude: town.geo.lat, longitude: town.geo.lng } } : {}),
+    ...(town.imageUrl ? { image: town.imageUrl } : {}),
+    touristType: "History & Culture",
+    address: { "@type": "PostalAddress", addressRegion: town.state, addressCountry: "US" },
+  };
+
   return (
     <div>
+      <JsonLd data={jsonLd} />
       {/* ── Hero ─────────────────────────────────────────────────── */}
       <TownHero town={town} slug={slug} />
 
