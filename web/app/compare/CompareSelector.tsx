@@ -5,11 +5,17 @@ import { RankedTown } from "@/lib/api";
 
 interface CompareSelectorProps {
   towns: RankedTown[];
+  initialSlugA?: string;
+  initialSlugB?: string;
 }
 
-export default function CompareSelector({ towns }: CompareSelectorProps) {
-  const [townASlug, setTownASlug] = useState<string>(towns[0]?.slug ?? "");
-  const [townBSlug, setTownBSlug] = useState<string>(towns[1]?.slug ?? "");
+export default function CompareSelector({ towns, initialSlugA, initialSlugB }: CompareSelectorProps) {
+  const [townASlug, setTownASlug] = useState<string>(
+    initialSlugA && towns.find((t) => t.slug === initialSlugA) ? initialSlugA : (towns[0]?.slug ?? "")
+  );
+  const [townBSlug, setTownBSlug] = useState<string>(
+    initialSlugB && towns.find((t) => t.slug === initialSlugB) ? initialSlugB : (towns[1]?.slug ?? "")
+  );
 
   const townA = towns.find((t) => t.slug === townASlug) ?? null;
   const townB = towns.find((t) => t.slug === townBSlug) ?? null;

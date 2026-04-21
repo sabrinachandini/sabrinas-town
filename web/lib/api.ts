@@ -2127,3 +2127,85 @@ export async function getMapData(): Promise<{ towns: MapTown[]; links: MapLink[]
     return null;
   }
 }
+
+// ── Search ────────────────────────────────────────────────────────────────
+
+export interface SearchResult {
+  type: "town" | "event" | "person" | "place";
+  id: string;
+  title: string;
+  subtitle: string;
+  excerpt: string | null;
+  href: string;
+  score?: number;
+}
+
+export async function search(query: string, limit = 30): Promise<SearchResult[]> {
+  if (!query || query.trim().length < 2) return [];
+  const q = query.trim();
+  const contains = { contains: q, mode: "insensitive" as const };
+
+  const [towns, events, people, places] = await Promise.all([
+    prisma.town.findMany({
+      where: { OR: [{ name: contains }, { whyMatters: contains }, { heroSummary40: contains }, { execSummary150: contains }] },
+      select: { id: true, name: true, state: true, slug: true, execSummary150: true },
+      take: 10,
+    }),
+    prisma.event.findMany({
+      where: { OR: [{ name: contains }, { summary: contains }] },
+      select: { id: true, name: true, summary: true, slug: true, town: { select: { name: true, slug: true } } },
+      orderBy: { significanceWeight: "desc" },
+      take: 10,
+    }),
+    prisma.person.findMany({
+      where: { OR: [{ name: contains }, { bioShort: contains }, { bioLong: contains }] },
+      select: { id: true, name: true, bioShort: true, slug: true, townPeople: { select: { town: { select: { name: true, slug: true } } }, take: 1 } },
+      take: 8,
+    }),
+    prisma.place.findMany({
+      where: { OR: [{ name: contains }, { description: contains }] },
+      select: { id: true, name: true, description: true, slug: true, town: { select: { name: true, slug: true } } },
+      take: 8,
+    }),
+  ]);
+
+  const results: SearchResult[] = [
+    ...towns.map((t) => ({
+      type: "town" as const,
+      id: t.id,
+      title: t.name,
+      subtitle: t.state,
+      excerpt: t.execSummary150 ?? null,
+      href: `/towns/${t.slug}`,
+    })),
+    ...events.map((e) => ({
+      type: "event" as const,
+      id: e.id,
+      title: e.name,
+      subtitle: e.town.name,
+      excerpt: e.summary ?? null,
+      href: e.slug ? `/towns/${e.town.slug}/timeline/${e.slug}` : `/towns/${e.town.slug}/timeline`,
+    })),
+    ...people.map((p) => {
+      const town = p.townPeople[0]?.town ?? null;
+      return {
+        type: "person" as const,
+        id: p.id,
+        title: p.name,
+        subtitle: town?.name ?? "Historical Figure",
+        excerpt: p.bioShort ?? null,
+        href: town ? `/towns/${town.slug}/people` : "/towns",
+      };
+    }),
+    ...places.map((pl) => ({
+      type: "place" as const,
+      id: pl.id,
+      title: pl.name,
+      subtitle: pl.town.name,
+      excerpt: pl.description ?? null,
+      href: pl.slug ? `/towns/${pl.town.slug}/places/${pl.slug}` : `/towns/${pl.town.slug}/places`,
+    })),
+  ];
+
+  return results.slice(0, limit);
+}

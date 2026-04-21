@@ -182,6 +182,16 @@ export function Header() {
             );
           })}
           <Link
+            href="/search"
+            className="no-underline text-cream/60 hover:text-cream transition-colors p-1"
+            aria-label="Search"
+          >
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden>
+              <circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" strokeWidth="2" />
+              <path d="M13 13l4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </Link>
+          <Link
             href="/towns"
             className="no-underline ml-2 bg-yellow text-ink font-ui text-[10px] font-semibold uppercase tracking-[0.2em] px-4 py-2 border-2 border-ink hover:bg-cream transition-colors"
           >

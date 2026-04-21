@@ -253,12 +253,15 @@ export default async function TownOverviewPage({ params }: PageProps) {
             )}
 
             {/* Footer links */}
-            <div className="pt-6 border-t border-ink/10 flex gap-6 font-ui text-[0.8rem] text-ink/55">
+            <div className="pt-6 border-t border-ink/10 flex flex-wrap gap-6 font-ui text-[0.8rem] text-ink/55">
               <NextLink href={`/changelog?town=${slug}`} className="no-underline hover:text-ink/70 transition-colors">
                 View changes for this town
               </NextLink>
+              <NextLink href={`/compare?a=${slug}`} className="no-underline hover:text-crimson transition-colors">
+                Compare with another town →
+              </NextLink>
               <NextLink href={`/partner/inquire?town=${slug}`} className="no-underline hover:text-ink/70 transition-colors">
-                Inquire about operating this site
+                Inquire about partnering
               </NextLink>
             </div>
           </article>

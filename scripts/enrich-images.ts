@@ -56,9 +56,12 @@ async function searchWikimedia(query: string): Promise<{ url: string; credit: st
       const year = parseInt(dateStr.slice(0, 4));
 
       // Only use pre-1928 works or explicitly free licenses
-      const isFree = license.includes("PD") || license.includes("CC0") || license.includes("Public domain");
+      const licenseLow = license.toLowerCase();
+      const isFree = licenseLow.includes("pd") || licenseLow.includes("cc0") || licenseLow.includes("public domain") || licenseLow.includes("cc-pd");
       const isPreCopyright = !isNaN(year) && year < 1928;
-      if (!isFree && !isPreCopyright) continue;
+      // Also accept images with no date metadata — assume historical on Commons if no license flag
+      const noLicenseFlag = !license;
+      if (!isFree && !isPreCopyright && !noLicenseFlag) continue;
 
       const artist: string = (meta.Artist?.value as string)?.replace(/<[^>]+>/g, "").trim() ?? "Unknown";
       const credit = `${artist}${dateStr ? `, ${dateStr.slice(0, 4)}` : ""}. Wikimedia Commons. ${license || "Public domain"}.`;
