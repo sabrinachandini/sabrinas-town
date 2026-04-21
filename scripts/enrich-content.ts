@@ -77,6 +77,7 @@ Requirements:
           category: "CONTENT",
           title: `Expanded history narrative for ${town.name}`,
           summary: `Rewrote the Why ${town.name} Matters essay from ${town.whyMatters?.length ?? 0} to ${text.length} characters using primary-source research.`,
+          details: { previousLength: town.whyMatters?.length ?? 0, newLength: text.length, model: "claude-opus-4-6" },
           publicNotes: `Essay expanded to approximately ${Math.round(text.length / 5)} words covering key events, people, and themes.`,
         },
       });
@@ -148,6 +149,7 @@ Requirements:
           category: "CONTENT",
           title: `Expanded event summary: ${event.name}`,
           summary: `Rewrote the summary for "${event.name}" from ${event.summary?.length ?? 0} to ${text.length} characters.`,
+          details: { previousLength: event.summary?.length ?? 0, newLength: text.length, eventId: event.id },
         },
       });
 

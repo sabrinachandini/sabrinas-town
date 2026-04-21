@@ -97,6 +97,7 @@ async function enrichTownImages(limit: number) {
         category: "SOURCES",
         title: `Added historical image for ${town.name}`,
         summary: `Added a public-domain Wikimedia Commons image to the ${town.name} history page.`,
+        details: { source: "Wikimedia Commons", url: result.url },
         publicNotes: result.credit,
       },
     });
@@ -137,6 +138,7 @@ async function enrichEventImages(limit: number) {
         category: "SOURCES",
         title: `Added image for event: ${event.name}`,
         summary: `Added a public-domain image to the event page for "${event.name}" in ${event.town.name}.`,
+        details: { source: "Wikimedia Commons", url: result.url, eventId: event.id },
         publicNotes: result.credit,
       },
     });
