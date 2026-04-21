@@ -1769,7 +1769,7 @@ export async function getTownPersonDetail(
     if (!town) return null;
 
     const person = await prisma.person.findFirst({
-      where: { id: personId },
+      where: { OR: [{ id: personId }, { slug: personId }] },
       include: {
         eventPeople: {
           where: { event: { townId: town.id } },
