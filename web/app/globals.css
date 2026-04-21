@@ -876,7 +876,7 @@ button {
 /* Ink header bar across the top of the cover */
 .ws-cover-topbar {
   width: 100%;
-  background: #14100a;
+  background: #1a3a72;
   padding: 0.55rem 1.75rem;
   display: flex;
   align-items: center;
@@ -1086,28 +1086,28 @@ button {
 
 /* ── Body text ──────────────────────────────────────────────────── */
 .ws-body {
-  font-size: 0.88rem;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  line-height: 1.75;
   margin: 0.4rem 0;
-  color: rgba(20,16,10,0.8);
+  color: rgba(20,16,10,0.85);
 }
 .ws-directions {
   font-family: var(--font-dm), Arial, sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   font-style: italic;
-  color: rgba(20,16,10,0.5);
+  color: rgba(20,16,10,0.55);
   margin: 0.4rem 0 0.8rem;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 .ws-block { margin-bottom: 1.4rem; }
 
 /* ── Objectives ─────────────────────────────────────────────────── */
 .ws-objective-list {
-  font-size: 0.88rem;
-  line-height: 1.75;
+  font-size: 0.95rem;
+  line-height: 1.8;
   padding-left: 1.3rem;
   margin: 0.4rem 0;
-  color: rgba(20,16,10,0.8);
+  color: rgba(20,16,10,0.85);
 }
 
 /* ── Essential questions ────────────────────────────────────────── */
@@ -1281,10 +1281,10 @@ button {
   padding-left: 0.25rem;
 }
 .ws-question-text {
-  font-size: 0.88rem;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.65;
   font-weight: 600;
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.5rem;
   color: #14100a;
 }
 

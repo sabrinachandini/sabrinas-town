@@ -86,9 +86,9 @@ async function enrichTownImages(limit: number) {
 
   for (const town of towns) {
     const queries = [
-      `${town.name} ${town.state} Revolutionary War colonial`,
-      `${town.name} ${town.state} 1775 1776 historical`,
-      `${town.name} Massachusetts colonial engraving`,
+      `${town.name} ${town.state} 1775 historical image`,
+      `${town.name} American Revolution painting engraving`,
+      `${town.name} ${town.state} 1776 Revolutionary War`,
     ];
 
     let result: { url: string; credit: string } | null = null;
@@ -137,7 +137,7 @@ async function enrichEventImages(limit: number) {
 
   for (const event of events) {
     const year = event.startDate ? new Date(event.startDate).getFullYear() : "";
-    const query = `${event.name} ${event.town.name} ${year} colonial Revolutionary War`;
+    const query = `${event.name} ${year} painting engraving historical image`;
     const result = await searchWikimedia(query);
 
     if (!result) {

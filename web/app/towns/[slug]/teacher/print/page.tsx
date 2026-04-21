@@ -1,9 +1,10 @@
 import { getTeacherModule } from "@/lib/api";
 import { recordOrgEvent } from "@/lib/analytics";
-import { LessonPlan, Standards } from "@/components/teacher/types";
+import { LessonPlan } from "@/components/teacher/types";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<{ mode?: string }>;
 }
 
 function StudentHeader({ title, subtitle }: { title: string; subtitle?: string }) {
@@ -45,10 +46,12 @@ function SectionHeader({ number, title }: { number?: number | string; title: str
   );
 }
 
-export default async function TeacherPrintPage({ params }: PageProps) {
+export default async function TeacherPrintPage({ params, searchParams }: PageProps) {
   const { slug } = await params;
-  const module = await getTeacherModule(slug);
+  const { mode } = await searchParams;
+  const isTeacherMode = mode === "teacher";
 
+  const module = await getTeacherModule(slug);
   void recordOrgEvent(slug, "PRINT_CLICK");
 
   if (!module) {
@@ -57,19 +60,18 @@ export default async function TeacherPrintPage({ params }: PageProps) {
 
   const { town, overview, primarySources, handouts, quiz } = module;
   const lessonPlan = module.lessonPlan as unknown as LessonPlan;
-  const standards = module.standards as unknown as Standards;
 
   return (
     <div className="ws-page">
       <PrintTrigger />
 
-      {/* ── Cover ──────────────────────────────────────────── */}
+      {/* ── Cover ──────────────────────────────────────────────────────── */}
       <section className="ws-cover page-break-after">
         <div className="ws-cover-topbar">
           <span className="ws-cover-topbar-brand">History is for Everyone</span>
           <span className="ws-cover-topbar-series">American Revolution Network</span>
         </div>
-        <p className="ws-cover-brand">Teacher Resource Packet</p>
+        <p className="ws-cover-brand">{isTeacherMode ? "Teacher Resource Packet" : "Student Worksheet Packet"}</p>
         <h1 className="ws-cover-title">{overview.title}</h1>
         <div className="ws-cover-rule" />
         <p className="ws-cover-location">{town.name}, {town.state}</p>
@@ -83,31 +85,30 @@ export default async function TeacherPrintPage({ params }: PageProps) {
         <div className="ws-cover-contents">
           <p className="ws-contents-label">This Packet Includes</p>
           <ul className="ws-contents-list">
-            {lessonPlan?.objectives?.length > 0 && <li>Lesson Plan &amp; Learning Objectives</li>}
+            {lessonPlan?.objectives?.length > 0 && <li>Learning Objectives &amp; Essential Questions</li>}
             {primarySources?.length > 0 && (
               <li>{primarySources.length} Primary Source Analysis Worksheet{primarySources.length !== 1 ? "s" : ""}</li>
             )}
             {handouts?.length > 0 && (
-              <li>{handouts.length} Student Handout{handouts.length !== 1 ? "s" : ""}</li>
+              <li>{handouts.length} Reading &amp; Activity Handout{handouts.length !== 1 ? "s" : ""}</li>
             )}
             {quiz?.questions?.length > 0 && (
               <li>Assessment Quiz ({quiz.questions.length} questions)</li>
             )}
-            {quiz?.questions?.length > 0 && <li>Answer Key (Teacher Copy)</li>}
-            {standards?.commonCore?.length > 0 && <li>Standards Alignment</li>}
+            {isTeacherMode && quiz?.questions?.length > 0 && <li>Answer Key</li>}
           </ul>
         </div>
       </section>
 
-      {/* ── Lesson Plan ─────────────────────────────────────── */}
-      {lessonPlan && (
+      {/* ── Lesson Overview (student-facing portion only) ─────────────── */}
+      {lessonPlan && (lessonPlan.objectives?.length > 0 || lessonPlan.essentialQuestions?.length > 0) && (
         <section className="ws-sheet print-section">
           <StudentHeader title={overview.title} subtitle="Lesson Overview" />
 
           {lessonPlan.objectives?.length > 0 && (
             <div className="ws-block">
               <SectionHeader title="Learning Objectives" />
-              <p className="ws-directions">By the end of this lesson, students will be able to:</p>
+              <p className="ws-directions">By the end of this unit, you will be able to:</p>
               <ol className="ws-objective-list">
                 {lessonPlan.objectives.map((o, i) => <li key={i}>{o}</li>)}
               </ol>
@@ -117,7 +118,7 @@ export default async function TeacherPrintPage({ params }: PageProps) {
           {lessonPlan.essentialQuestions?.length > 0 && (
             <div className="ws-block">
               <SectionHeader title="Essential Questions" />
-              <p className="ws-directions">Keep these questions in mind throughout the unit:</p>
+              <p className="ws-directions">Keep these questions in mind as you work through this packet:</p>
               <ul className="ws-eq-list">
                 {lessonPlan.essentialQuestions.map((q, i) => (
                   <li key={i}>{q}</li>
@@ -126,14 +127,15 @@ export default async function TeacherPrintPage({ params }: PageProps) {
             </div>
           )}
 
-          {lessonPlan.warmUp && (
+          {/* Teacher-only: differentiation + warm-up notes */}
+          {isTeacherMode && lessonPlan.warmUp && (
             <div className="ws-block">
               <SectionHeader title={`Warm-Up · ${lessonPlan.warmUp.duration}`} />
               <p className="ws-body">{lessonPlan.warmUp.activity}</p>
             </div>
           )}
 
-          {lessonPlan.differentiation && (
+          {isTeacherMode && lessonPlan.differentiation && (
             <div className="ws-block">
               <SectionHeader title="Differentiation Strategies" />
               <div className="ws-diff-grid">
@@ -155,7 +157,7 @@ export default async function TeacherPrintPage({ params }: PageProps) {
         </section>
       )}
 
-      {/* ── Primary Source Analysis Worksheets ─────────────── */}
+      {/* ── Primary Source Analysis Worksheets ────────────────────────── */}
       {primarySources?.map((source, si) => (
         <section key={source.id} className="ws-sheet print-section">
           <StudentHeader title={overview.title} subtitle="Primary Source Analysis" />
@@ -164,25 +166,20 @@ export default async function TeacherPrintPage({ params }: PageProps) {
             Primary Source {si + 1} of {primarySources.length}
           </div>
 
-          {/* Source context box */}
           <div className="ws-source-box">
             <div className="ws-source-box-header">Document Information</div>
             <div className="ws-source-box-body">
               <div className="ws-source-row">
-                <span className="ws-source-key">Document:</span>
+                <span className="ws-source-key">Document</span>
                 <span className="ws-source-val">{source.title}</span>
               </div>
               <div className="ws-source-row">
-                <span className="ws-source-key">Source:</span>
+                <span className="ws-source-key">Source</span>
                 <span className="ws-source-val">{source.sourceInfo}</span>
               </div>
               <div className="ws-source-row">
-                <span className="ws-source-key">Type:</span>
+                <span className="ws-source-key">Type</span>
                 <span className="ws-source-val">{source.type.replace(/_/g, " ")}</span>
-              </div>
-              <div className="ws-source-row">
-                <span className="ws-source-key">Credibility:</span>
-                <span className="ws-source-val">{source.credibilityTier.replace(/_/g, " ")}</span>
               </div>
             </div>
           </div>
@@ -190,11 +187,7 @@ export default async function TeacherPrintPage({ params }: PageProps) {
           {source.url && (
             <div className="ws-source-image">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={source.url}
-                alt={source.title}
-                className="ws-source-img"
-              />
+              <img src={source.url} alt={source.title} className="ws-source-img" />
               <p className="ws-source-img-caption">{source.title}</p>
             </div>
           )}
@@ -226,15 +219,14 @@ export default async function TeacherPrintPage({ params }: PageProps) {
           <div className="ws-reflection">
             <SectionHeader title="Reflection" />
             <p className="ws-directions">
-              How does this source connect to the events in {town.name}, {town.state}?
-              What does it reveal about the people involved?
+              How does this source connect to what happened in {town.name}, {town.state}? What does it tell you about the people involved?
             </p>
             <AnswerLines count={5} />
           </div>
         </section>
       ))}
 
-      {/* ── Student Handouts ────────────────────────────────── */}
+      {/* ── Student Handouts ──────────────────────────────────────────── */}
       {handouts?.map((h) => (
         <section key={h.title} className="ws-sheet print-section">
           <StudentHeader title={overview.title} subtitle={h.title} />
@@ -244,9 +236,7 @@ export default async function TeacherPrintPage({ params }: PageProps) {
             <p className="ws-handout-type">{h.type.replace(/_/g, " ")}</p>
           </div>
 
-          {h.description && (
-            <p className="ws-directions">{h.description}</p>
-          )}
+          {h.description && <p className="ws-directions">{h.description}</p>}
 
           {h.content && (
             <div
@@ -257,7 +247,7 @@ export default async function TeacherPrintPage({ params }: PageProps) {
         </section>
       ))}
 
-      {/* ── Quiz ────────────────────────────────────────────── */}
+      {/* ── Quiz ──────────────────────────────────────────────────────── */}
       {quiz?.questions?.length > 0 && (
         <section className="ws-sheet print-section">
           <StudentHeader title={overview.title} subtitle="Assessment" />
@@ -285,12 +275,8 @@ export default async function TeacherPrintPage({ params }: PageProps) {
 
                 {q.type === "true_false" && (
                   <div className="ws-tf-options">
-                    <label className="ws-tf-option">
-                      <span className="ws-tf-bubble" /> True
-                    </label>
-                    <label className="ws-tf-option">
-                      <span className="ws-tf-bubble" /> False
-                    </label>
+                    <label className="ws-tf-option"><span className="ws-tf-bubble" /> True</label>
+                    <label className="ws-tf-option"><span className="ws-tf-bubble" /> False</label>
                   </div>
                 )}
 
@@ -306,8 +292,8 @@ export default async function TeacherPrintPage({ params }: PageProps) {
         </section>
       )}
 
-      {/* ── Answer Key (Teacher Copy) ───────────────────────── */}
-      {quiz?.questions?.length > 0 && (
+      {/* ── Answer Key — teacher mode only ────────────────────────────── */}
+      {isTeacherMode && quiz?.questions?.length > 0 && (
         <section className="ws-sheet ws-answer-key print-section">
           <div className="ws-ak-banner">ANSWER KEY · TEACHER COPY · DO NOT DISTRIBUTE</div>
 
@@ -335,37 +321,10 @@ export default async function TeacherPrintPage({ params }: PageProps) {
           </ol>
         </section>
       )}
-
-      {/* ── Standards Alignment ─────────────────────────────── */}
-      {standards?.commonCore && (
-        <section className="ws-sheet print-section">
-          <StudentHeader title={overview.title} subtitle="Standards Alignment" />
-          <SectionHeader title="Standards Addressed" />
-          <div className="ws-standards-grid">
-            {standards.commonCore?.length > 0 && (
-              <div className="ws-standards-col">
-                <p className="ws-standards-label">Common Core ELA</p>
-                <ul className="ws-standards-list">
-                  {standards.commonCore.map((s, i) => <li key={i}>{s}</li>)}
-                </ul>
-              </div>
-            )}
-            {standards.c3Framework?.length > 0 && (
-              <div className="ws-standards-col">
-                <p className="ws-standards-label">C3 Framework</p>
-                <ul className="ws-standards-list">
-                  {standards.c3Framework.map((s, i) => <li key={i}>{s}</li>)}
-                </ul>
-              </div>
-            )}
-          </div>
-        </section>
-      )}
     </div>
   );
 }
 
-/** Escape HTML special characters to prevent XSS. */
 function escapeHtml(text: string): string {
   return text
     .replace(/&/g, "&amp;")
@@ -375,10 +334,6 @@ function escapeHtml(text: string): string {
     .replace(/'/g, "&#39;");
 }
 
-/**
- * Convert plain-text handout content to basic HTML.
- * Handles: numbered lists, bullet lists, blank lines as paragraphs.
- */
 function renderHandoutContent(content: string): string {
   const lines = content.split("\n");
   const out: string[] = [];
@@ -415,7 +370,7 @@ function PrintTrigger() {
   return (
     <script
       dangerouslySetInnerHTML={{
-        __html: `window.addEventListener('load', function() { setTimeout(function() { window.print(); }, 1000); });`,
+        __html: `window.addEventListener('load', function() { setTimeout(function() { window.print(); }, 800); });`,
       }}
     />
   );

@@ -337,7 +337,7 @@ export default async function TeacherPage({ params }: PageProps) {
 
           {/* ── QUIZ PREVIEW ───────────────────────────────────────── */}
           {teacherModule.quiz?.questions?.length > 0 && (
-            <section className="bg-[#14100a] border-b-4 border-[#cc3322] py-16 px-8 md:px-16">
+            <section className="bg-[#1a3a72] border-b-4 border-[#14100a] py-16 px-8 md:px-16">
               <div className="max-w-[1200px] mx-auto">
                 <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-[#cc3322] flex items-center gap-2.5 mb-4">
                   <span className="w-4 h-[2px] bg-[#cc3322] block" />
@@ -392,11 +392,19 @@ export default async function TeacherPage({ params }: PageProps) {
                   className="no-underline bg-[#f2e6c8] text-[#14100a] font-ui font-bold text-[9px] uppercase tracking-[0.2em] px-8 py-4 border-[2.5px] border-[#14100a] hover:bg-[#e8b84b] transition-colors whitespace-nowrap text-center"
                   style={{ boxShadow: "4px 4px 0 #14100a" }}
                 >
-                  Download &amp; Print Packet →
+                  Student Copy →
+                </a>
+                <a
+                  href={`/towns/${slug}/teacher/print?mode=teacher`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="no-underline border border-[#f2e6c8]/30 text-[#f2e6c8]/70 font-ui text-[9px] uppercase tracking-[0.2em] px-8 py-3 hover:border-[#f2e6c8] hover:text-[#f2e6c8] transition-colors whitespace-nowrap text-center"
+                >
+                  Teacher Copy (with Answer Key) →
                 </a>
                 <a
                   href={`/towns/${slug}`}
-                  className="no-underline font-ui text-[9px] uppercase tracking-[0.18em] text-[#f2e6c8]/50 text-center hover:text-[#f2e6c8] transition-colors"
+                  className="no-underline font-ui text-[9px] uppercase tracking-[0.18em] text-[#f2e6c8]/40 text-center hover:text-[#f2e6c8] transition-colors"
                 >
                   ← Back to {town.name}
                 </a>

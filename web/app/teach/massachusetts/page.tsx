@@ -121,10 +121,10 @@ export default async function MassachusettsTeachPage() {
             Teacher Resources
           </p>
           <h1
-            className="font-display text-[#f2e6c8] leading-[0.88] tracking-[-0.02em]"
-            style={{ fontSize: "clamp(60px,12vw,150px)" }}
+            className="font-display text-[#f2e6c8] leading-[0.88] tracking-[-0.02em] whitespace-nowrap"
+            style={{ fontSize: "clamp(42px,8vw,120px)" }}
           >
-            Massa-<br />chusetts
+            Massachusetts
           </h1>
 
           <svg
