@@ -39,9 +39,11 @@ export const metadata: Metadata = {
     siteName: "History is for Everyone",
     description:
       "A living network of America's Revolutionary towns — built for travelers, teachers, and towns themselves.",
+    images: [{ url: "/images/paul-revere-boston-massacre.jpg", width: 1200, height: 630, alt: "History is for Everyone" }],
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/images/paul-revere-boston-massacre.jpg"],
   },
 };
 

@@ -17,9 +17,15 @@ export async function generateMetadata({ params }: PageProps) {
     return { title: "Cluster Not Found" };
   }
 
+  const title = cluster.name;
+  const description = cluster.theme;
+  const url = `https://sabrinas-town.vercel.app/clusters/${slug}`;
   return {
-    title: `${cluster.name} | History Is For Everyone`,
-    description: cluster.theme,
+    title,
+    description,
+    openGraph: { title, description, url },
+    twitter: { card: "summary_large_image" as const, title, description },
+    alternates: { canonical: url },
   };
 }
 

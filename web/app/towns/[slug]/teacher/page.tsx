@@ -33,9 +33,15 @@ export async function generateMetadata({ params }: PageProps) {
     };
   }
 
+  const title = `Teach ${module.town.name}`;
+  const description = `Complete teacher resources for ${module.town.name}: lesson plans, primary sources, discussion questions, and assessments.`;
+  const url = `https://sabrinas-town.vercel.app/towns/${slug}/teacher`;
   return {
-    title: `Teach ${module.town.name} | History is for Everyone`,
-    description: `Complete teacher resources for ${module.town.name}: lesson plans, primary sources, discussion questions, and assessments.`,
+    title,
+    description,
+    openGraph: { title, description, url },
+    twitter: { card: "summary_large_image" as const, title, description },
+    alternates: { canonical: url },
   };
 }
 

@@ -14,9 +14,15 @@ export async function generateMetadata({ params }: PageProps) {
     return { title: "Connected | Town Not Found" };
   }
 
+  const title = `Connected Towns | ${town.name}, ${town.state}`;
+  const description = `Towns connected to ${town.name}, ${town.state} through shared events, people, themes, and routes.`;
+  const url = `https://sabrinas-town.vercel.app/towns/${slug}/connected`;
   return {
-    title: `Connected Towns | ${town.name}, ${town.state} | History is for Everyone`,
-    description: `Towns connected to ${town.name}, ${town.state} through shared events, people, themes, and routes.`,
+    title,
+    description,
+    openGraph: { title, description, url },
+    twitter: { card: "summary_large_image" as const, title, description },
+    alternates: { canonical: url },
   };
 }
 
