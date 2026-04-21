@@ -18,9 +18,45 @@ export const dynamic = "force-dynamic";
 
 const NJ_TOWNS = [
   { slug: "morristown-nj", name: "Morristown" },
+  { slug: "trenton-nj", name: "Trenton" },
+  { slug: "princeton-nj", name: "Princeton" },
+  { slug: "fort-lee-nj", name: "Fort Lee" },
+  { slug: "new-brunswick-nj", name: "New Brunswick" },
+  { slug: "elizabeth-nj", name: "Elizabeth" },
+  { slug: "hackensack-nj", name: "Hackensack" },
+  { slug: "monmouth-nj", name: "Monmouth" },
 ];
 
-const COMING_SOON = ["Trenton", "Princeton", "Monmouth", "New Brunswick", "Fort Lee"];
+const SEQUENCES = [
+  {
+    title: "The Ten Crucial Days",
+    towns: ["Trenton", "Princeton"],
+    duration: "3–4 class periods",
+    description:
+      "In the last week of December 1776, the Continental Army crossed the Delaware in a blizzard and destroyed a Hessian garrison at Trenton — then turned around, crossed again, and defeated a British rear guard at Princeton ten days later. These two engagements transformed a collapsing campaign into a war that would last six more years. This sequence puts students inside Washington's decision-making: the army was dissolving, enlistments were expiring, and a defeat would almost certainly have ended the Revolution.",
+  },
+  {
+    title: "The Long Retreat",
+    towns: ["Fort Lee", "Hackensack", "New Brunswick"],
+    duration: "2–3 class periods",
+    description:
+      "The fall of 1776 was the low point of the Revolution. After losing New York, Washington's army fled south across New Jersey — abandoning Fort Lee, passing through Hackensack, and retreating through New Brunswick — with British and Hessian forces in close pursuit. Civilians in these towns faced immediate choices about loyalty, accommodation, and survival. This sequence examines what collapse looked like on the ground and how the army and civilian population held together under pressure.",
+  },
+  {
+    title: "Endurance",
+    towns: ["Morristown"],
+    duration: "2–3 class periods",
+    description:
+      "Morristown was the Continental Army's winter headquarters twice — in 1777 when smallpox threatened to destroy the army from within, and in 1779–80 during the worst winter of the eighteenth century. Both encampments tested whether the army could survive without money, supplies, or adequate food. This sequence focuses on the home-front economy of war: how local communities provisioned (and sometimes resented) an army camped in their towns for months at a stretch.",
+  },
+  {
+    title: "The Battle of Monmouth",
+    towns: ["Monmouth"],
+    duration: "1–2 class periods",
+    description:
+      "The June 1778 battle at Monmouth Courthouse was the last major engagement in the Northern theater — and one of the most chaotic of the war. General Charles Lee ordered an unauthorized retreat, Washington confronted him on the field, and the Continental Army held its ground against a professional British force for the first time. Monmouth is also the battle most associated with Mary Ludwig Hays (Molly Pitcher), whose story raises questions about women's roles and how military legends are made.",
+  },
+];
 
 export default async function NewJerseyTeachPage() {
   const modules = await Promise.all(
@@ -64,7 +100,7 @@ export default async function NewJerseyTeachPage() {
             <path d="M0 8 Q20 2 40 8 Q60 14 80 7 Q100 1 120 7 Q140 13 160 7 Q180 2 200 7 Q220 13 240 7 Q260 2 280 7 Q300 13 320 6" stroke="rgba(255,255,255,0.25)" strokeWidth="2.5" fill="none" strokeLinecap="round" />
           </svg>
           <p className="font-editorial italic font-light text-[19px] text-[rgba(255,255,255,0.65)] max-w-[580px] leading-[1.65]">
-            New Jersey was the crossroads of the American Revolution — more battles were fought here than in any other colony, from Washington's desperate Delaware crossing to the brutal winters at Morristown.
+            New Jersey was the crossroads of the American Revolution — more battles were fought here than in any other colony, from Washington&apos;s desperate Delaware crossing to the brutal winters at Morristown.
           </p>
         </div>
       </section>
@@ -74,9 +110,9 @@ export default async function NewJerseyTeachPage() {
         <div aria-hidden className="absolute right-4 top-[-12px] font-display text-[190px] leading-none text-white/[0.06] pointer-events-none select-none">NJ</div>
         <div className="relative z-10 flex items-center flex-wrap gap-0 max-w-[1200px] mx-auto">
           {[
-            { num: String(NJ_TOWNS.length), label: "Towns Available" },
+            { num: String(NJ_TOWNS.length), label: "Towns" },
             { num: String(moduleCount), label: "With Full Packets" },
-            { num: String(COMING_SOON.length) + "+", label: "Towns Coming Soon" },
+            { num: String(SEQUENCES.length), label: "Teaching Sequences" },
           ].map((stat, i) => (
             <div key={stat.label} className={`pr-10 ${i > 0 ? "px-10" : ""} ${i < 2 ? "border-r border-white/20" : ""}`}>
               <div className="font-display text-[#e8b84b] leading-none" style={{ fontSize: "clamp(44px,5.5vw,68px)" }}>{stat.num}</div>
@@ -100,11 +136,38 @@ export default async function NewJerseyTeachPage() {
           </div>
           <div className="space-y-5">
             <p className="font-editorial italic font-light text-[18px] text-[#14100a]/70 leading-[1.75]">
-              New Jersey's geography made it a perpetual battleground: situated between the British stronghold of New York and the Continental Congress in Philadelphia, its roads, rivers, and towns saw constant military movement across seven years of war.
+              New Jersey&apos;s geography made it a perpetual battleground: situated between the British stronghold of New York and the Continental Congress in Philadelphia, its roads, rivers, and towns saw constant military movement across seven years of war.
             </p>
             <p className="font-ui text-[14px] text-[#14100a]/60 leading-relaxed">
-              Its civilian population endured occupation, foraging, and the daily disruption of armies marching through their communities. Morristown was the Continental Army's winter headquarters twice — the first in 1777 when smallpox and starvation threatened to end the army, and again in 1779–80 when the worst winter of the century nearly accomplished what the British could not. Teaching New Jersey means teaching the war as it was actually experienced: not a series of glorious victories but a long, grinding contest of endurance.
+              Its civilian population endured occupation, foraging, and the daily disruption of armies marching through their communities. Morristown was the Continental Army&apos;s winter headquarters twice — the first in 1777 when smallpox and starvation threatened to end the army, and again in 1779–80 when the worst winter of the century nearly accomplished what the British could not. Teaching New Jersey means teaching the war as it was actually experienced: not a series of glorious victories but a long, grinding contest of endurance.
             </p>
+            <p className="font-ui text-[14px] text-[#14100a]/60 leading-relaxed">
+              New Jersey also holds the Revolution&apos;s sharpest loyalist-patriot divide. Bergen County towns like Hackensack and Fort Lee sat in a zone where British raiding parties and Patriot militias both demanded loyalty — and punished the wrong answer. The Monmouth battle in 1778 closed out the Northern theater with a chaotic, hard-fought draw that showed how far the Continental Army had come since the desperate winter of 1776.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── TEACHING SEQUENCES ────────────────────────────────────── */}
+      <section className="bg-[#1a3a72] border-b-4 border-[#14100a] py-16 px-8 md:px-16 relative overflow-hidden">
+        <div aria-hidden className="absolute right-[-10px] bottom-[-20px] font-display text-[280px] leading-none text-white/[0.04] pointer-events-none select-none tracking-[-0.05em]">SEQ</div>
+        <div className="relative z-10 max-w-[1200px] mx-auto">
+          <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-[#e8b84b] flex items-center gap-2.5 mb-4">
+            <span className="w-4 h-[2px] bg-[#e8b84b] block" />Classroom Sequences
+          </p>
+          <h2 className="font-display text-[#f2e6c8] leading-[0.92] mb-10" style={{ fontSize: "clamp(32px,4vw,52px)" }}>Teaching Sequences</h2>
+          <div className="grid md:grid-cols-2 gap-5">
+            {SEQUENCES.map((seq, i) => (
+              <div key={seq.title} className="bg-white/[0.05] border border-white/10 p-7 relative">
+                <span className="absolute top-5 right-5 font-display text-[42px] leading-none text-white/[0.07] pointer-events-none select-none">{String(i + 1).padStart(2, "0")}</span>
+                <div className="flex items-baseline gap-3 mb-2 flex-wrap">
+                  <h3 className="font-display text-[#f2e6c8] text-[22px] leading-tight">{seq.title}</h3>
+                  <span className="font-ui text-[9px] uppercase tracking-[0.14em] text-[#e8b84b]/70">{seq.duration}</span>
+                </div>
+                <p className="font-ui text-[9px] uppercase tracking-[0.14em] text-white/30 mb-3">{seq.towns.join(" → ")}</p>
+                <p className="font-editorial italic text-[14px] text-white/55 leading-[1.75]">{seq.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -135,16 +198,6 @@ export default async function NewJerseyTeachPage() {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Coming soon band */}
-          <div className="mt-10 pt-8 border-t border-[#14100a]/10">
-            <p className="font-ui text-[9px] uppercase tracking-[0.22em] text-[#14100a]/40 mb-4">Additional towns coming soon</p>
-            <div className="flex flex-wrap gap-3">
-              {COMING_SOON.map((name) => (
-                <span key={name} className="font-ui text-[11px] uppercase tracking-[0.12em] text-[#14100a]/35 border border-[#14100a]/12 px-3 py-1.5">{name}</span>
-              ))}
-            </div>
           </div>
         </div>
       </section>
