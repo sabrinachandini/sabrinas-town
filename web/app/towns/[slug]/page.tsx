@@ -2,6 +2,7 @@ import {
   getTown,
   getTownSources,
   getTownPeople,
+  getLocalEvents,
 } from "@/lib/api";
 import { recordOrgEvent } from "@/lib/analytics";
 import { ComingSoon, TownHero } from "@/components/town";
@@ -26,10 +27,11 @@ export async function generateMetadata({ params }: PageProps) {
 export default async function TownOverviewPage({ params }: PageProps) {
   const { slug } = await params;
 
-  const [town, sourcesData, peopleData] = await Promise.all([
+  const [town, sourcesData, peopleData, localEvents] = await Promise.all([
     getTown(slug),
     getTownSources(slug),
     getTownPeople(slug),
+    getLocalEvents(slug),
   ]);
 
   if (!town) return <ComingSoon slug={slug} />;
@@ -333,6 +335,94 @@ export default async function TownOverviewPage({ params }: PageProps) {
           </aside>
         </div>
       </div>
+
+      {/* ── Upcoming Events Agenda ───────────────────────────────── */}
+      {localEvents.length > 0 && (
+        <div className="bg-[#1a3a72] py-14 px-8 md:px-16">
+          <div className="mx-auto max-w-[1200px]">
+            <div className="flex items-end justify-between mb-8">
+              <div>
+                <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-cream/40 mb-2">
+                  Plan Your Visit
+                </p>
+                <h2 className="font-display text-cream text-[clamp(28px,4vw,44px)] leading-none tracking-[-0.02em]">
+                  Upcoming Events
+                </h2>
+              </div>
+              <NextLink
+                href={`/towns/${slug}/events`}
+                className="no-underline font-ui text-[10px] uppercase tracking-[0.15em] text-cream/50 hover:text-cream transition-colors flex items-center gap-1.5"
+              >
+                All Events <span aria-hidden="true">→</span>
+              </NextLink>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                ...localEvents.filter((e) => e.featured),
+                ...localEvents.filter((e) => !e.featured),
+              ]
+                .slice(0, 3)
+                .map((evt) => {
+                  const MONTH_SHORT = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                  return (
+                    <NextLink
+                      key={evt.id}
+                      href={evt.url ?? `/towns/${slug}/events`}
+                      target={evt.url ? "_blank" : undefined}
+                      rel={evt.url ? "noopener noreferrer" : undefined}
+                      className="no-underline group flex gap-4 bg-white/5 border border-white/10 hover:bg-white/10 hover:border-cream/30 transition-colors p-5"
+                    >
+                      {/* Date badge */}
+                      <div className="flex-shrink-0 text-center w-12">
+                        {evt.month ? (
+                          <>
+                            <p className="font-ui text-[9px] uppercase tracking-[0.1em] text-cream/40">
+                              {MONTH_SHORT[evt.month]}
+                            </p>
+                            {evt.day && (
+                              <p className="font-display text-[28px] leading-none text-cream">
+                                {evt.day}
+                              </p>
+                            )}
+                          </>
+                        ) : (
+                          <p className="font-ui text-[9px] uppercase tracking-[0.1em] text-cream/30 mt-1">
+                            Annual
+                          </p>
+                        )}
+                      </div>
+
+                      {/* Info */}
+                      <div className="flex-1 min-w-0">
+                        <p className="font-ui text-[9px] uppercase tracking-[0.12em] text-crimson mb-1">
+                          {evt.category}
+                        </p>
+                        <p className="font-editorial text-cream text-[17px] leading-snug group-hover:text-yellow transition-colors line-clamp-2">
+                          {evt.name}
+                        </p>
+                        {evt.venue && (
+                          <p className="font-ui text-[10px] text-cream/40 mt-1 truncate">
+                            {evt.venue}
+                          </p>
+                        )}
+                      </div>
+                    </NextLink>
+                  );
+                })}
+            </div>
+
+            <div className="mt-6 text-center">
+              <NextLink
+                href={`/towns/${slug}/events`}
+                className="no-underline inline-block font-ui text-[10px] uppercase tracking-[0.2em] font-semibold text-cream border border-cream/30 px-6 py-2.5 hover:bg-cream/10 transition-colors"
+              >
+                View All Events for {town.name}
+              </NextLink>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ── Bottom Banner ────────────────────────────────────────── */}
       <section className="bg-ink border-t-4 border-crimson py-20 px-8 md:px-16">

@@ -20,6 +20,7 @@ const TOWN_TABS = [
   { label: "Timeline", path: "/timeline" },
   { label: "People", path: "/people" },
   { label: "Places", path: "/places" },
+  { label: "Events", path: "/events" },
   { label: "Stories", path: "/stories" },
   { label: "Teacher", path: "/teacher" },
   { label: "Sources", path: "/sources" },

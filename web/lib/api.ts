@@ -2045,6 +2045,49 @@ export interface MapLink {
   weight: number;
 }
 
+// ── Local / real-world events ─────────────────────────────────────────────
+
+export interface LocalEvent {
+  id: string;
+  name: string;
+  description: string;
+  category: string;
+  recurrence: string;
+  month: number | null;
+  day: number | null;
+  endDay: number | null;
+  dateNote: string | null;
+  eventDate: string | null;
+  venue: string | null;
+  url: string | null;
+  admission: string | null;
+  featured: boolean;
+}
+
+export async function getLocalEvents(slug: string): Promise<LocalEvent[]> {
+  try {
+    const town = await prisma.town.findUnique({
+      where: { slug },
+      select: {
+        localEvents: {
+          orderBy: [
+            { featured: "desc" },
+            { month: "asc" },
+            { day: "asc" },
+          ],
+        },
+      },
+    });
+    return (town?.localEvents ?? []).map((e) => ({
+      ...e,
+      eventDate: e.eventDate?.toISOString() ?? null,
+    }));
+  } catch (error) {
+    console.error("Error fetching local events:", error);
+    return [];
+  }
+}
+
 export async function getMapData(): Promise<{ towns: MapTown[]; links: MapLink[] } | null> {
   try {
     const [towns, links] = await Promise.all([
