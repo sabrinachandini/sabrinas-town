@@ -854,332 +854,421 @@ button {
 }
 
 /* ─── Worksheet Styles ────────────────────────────────────────── */
+/*  Design: brand-aligned — navy headers, crimson accents, warm ivory  */
 
 .ws-page {
-  max-width: 800px;
+  max-width: 820px;
   margin: 0 auto;
   padding: 2rem;
-  font-family: Georgia, "Times New Roman", serif;
-  color: #111;
-  background: #fff;
+  font-family: var(--font-instrument), Georgia, serif;
+  color: #14100a;
+  background: #fdfaf4;
 }
 
-/* Cover */
+/* ── Cover ──────────────────────────────────────────────────────── */
 .ws-cover {
-  text-align: center;
-  padding: 3rem 1rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 3.5rem;
 }
-.ws-cover-brand {
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
+
+/* Ink header bar across the top of the cover */
+.ws-cover-topbar {
+  width: 100%;
+  background: #14100a;
+  padding: 0.55rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+.ws-cover-topbar-brand {
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #666;
-  margin-bottom: 2rem;
+  color: rgba(242,230,200,0.7);
+}
+.ws-cover-topbar-series {
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(242,230,200,0.35);
+}
+
+.ws-cover-brand {
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #cc3322;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.ws-cover-brand::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background: #cc3322;
+  flex-shrink: 0;
 }
 .ws-cover-title {
-  font-size: 2rem;
-  font-weight: bold;
-  line-height: 1.25;
+  font-family: var(--font-bebas), var(--font-instrument), Georgia, serif;
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+  color: #14100a;
+  text-align: center;
   margin-bottom: 0.5rem;
 }
 .ws-cover-location {
-  font-size: 1.1rem;
-  color: #444;
-  margin-bottom: 1rem;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #1a3a72;
+  margin-bottom: 0.5rem;
 }
+
+/* Crimson rule under title */
+.ws-cover-rule {
+  width: 48px;
+  height: 3px;
+  background: #cc3322;
+  margin: 0.9rem auto 1.2rem;
+}
+
 .ws-cover-meta {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  font-size: 0.85rem;
-  color: #555;
-  margin-bottom: 1.5rem;
+  gap: 0.5rem;
+  align-items: center;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.78rem;
+  color: rgba(20,16,10,0.5);
+  margin-bottom: 1.6rem;
 }
-.ws-cover-dot { color: #bbb; }
+.ws-cover-dot { color: #cc3322; }
 .ws-cover-summary {
-  max-width: 540px;
-  margin: 0 auto 2.5rem;
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: #333;
+  max-width: 520px;
+  margin: 0 auto 2rem;
+  font-size: 0.93rem;
+  line-height: 1.75;
+  color: rgba(20,16,10,0.65);
+  text-align: center;
 }
+
+/* Contents box — left border in crimson */
 .ws-cover-contents {
   display: inline-block;
   text-align: left;
-  border: 1.5px solid #111;
-  padding: 1.25rem 1.75rem;
-  min-width: 280px;
+  border: 1.5px solid rgba(20,16,10,0.15);
+  border-left: 4px solid #cc3322;
+  padding: 1.1rem 1.6rem;
+  min-width: 300px;
+  background: rgba(255,255,255,0.55);
 }
 .ws-contents-label {
-  font-size: 0.7rem;
-  font-family: Arial, sans-serif;
-  letter-spacing: 0.1em;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  font-weight: bold;
-  margin-bottom: 0.6rem;
-  color: #333;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  color: #1a3a72;
 }
 .ws-contents-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.8;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.83rem;
+  line-height: 1.9;
+  color: rgba(20,16,10,0.7);
 }
 .ws-contents-list li::before {
   content: "✓  ";
-  font-size: 0.8rem;
-  color: #444;
+  font-size: 0.75rem;
+  color: #cc3322;
+  font-weight: 700;
 }
 
-/* Sheet (every non-cover page) */
+/* ── Sheet (every non-cover page) ───────────────────────────────── */
 .ws-sheet {
-  padding: 1.5rem 0;
+  padding: 1.75rem 0;
 }
 
-/* Student header box */
+/* ── Student header box ─────────────────────────────────────────── */
 .ws-student-header {
-  border: 1.5px solid #111;
-  margin-bottom: 1.5rem;
+  border: 1.5px solid rgba(20,16,10,0.2);
+  margin-bottom: 1.75rem;
+  border-left: 4px solid #1a3a72;
 }
 .ws-student-header-top {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 0.4rem 0.75rem;
-  background: #111;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  font-size: 0.75rem;
+  padding: 0.45rem 0.85rem;
+  background: #1a3a72;
+  color: #f2e6c8;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.72rem;
 }
-.ws-unit-title {
-  font-weight: bold;
-}
-.ws-subtitle {
-  font-weight: normal;
-  opacity: 0.85;
-}
+.ws-unit-title { font-weight: 700; }
+.ws-subtitle { font-weight: 400; opacity: 0.8; }
 .ws-brand {
-  font-size: 0.65rem;
-  letter-spacing: 0.05em;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  opacity: 0.75;
+  opacity: 0.6;
 }
-.ws-label {
-  margin-right: 0.3rem;
-  opacity: 0.8;
-}
+.ws-label { margin-right: 0.3rem; opacity: 0.7; }
 .ws-student-fields {
   display: flex;
   gap: 0;
-  padding: 0.5rem 0.75rem;
+  padding: 0.55rem 0.85rem;
+  background: rgba(255,255,255,0.6);
 }
 .ws-field {
-  font-family: Arial, sans-serif;
-  font-size: 0.8rem;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.78rem;
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  margin-right: 2rem;
+  margin-right: 2.25rem;
   white-space: nowrap;
+  color: rgba(20,16,10,0.7);
 }
 .ws-field-line {
   display: inline-block;
-  border-bottom: 1px solid #333;
-  width: 160px;
+  border-bottom: 1px solid rgba(20,16,10,0.25);
+  width: 150px;
   height: 1rem;
 }
-.ws-field-line--short {
-  width: 80px;
-}
+.ws-field-line--short { width: 76px; }
 
-/* Section headers */
+/* ── Section headers ────────────────────────────────────────────── */
 .ws-section-header {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  margin: 1.25rem 0 0.6rem;
-  padding-bottom: 0.3rem;
-  border-bottom: 1.5px solid #111;
+  gap: 0.65rem;
+  margin: 1.4rem 0 0.7rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #1a3a72;
 }
 .ws-section-num {
-  font-family: Arial, sans-serif;
-  font-size: 0.7rem;
-  background: #111;
-  color: #fff;
-  padding: 0.15rem 0.5rem;
-  border-radius: 2px;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  background: #1a3a72;
+  color: #f2e6c8;
+  padding: 0.18rem 0.55rem;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
 }
 .ws-section-title {
-  font-family: Arial, sans-serif;
-  font-size: 0.85rem;
-  font-weight: bold;
-  letter-spacing: 0.05em;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: #1a3a72;
   margin: 0;
 }
 
-/* Body text */
+/* ── Body text ──────────────────────────────────────────────────── */
 .ws-body {
-  font-size: 0.9rem;
-  line-height: 1.65;
+  font-size: 0.88rem;
+  line-height: 1.7;
   margin: 0.4rem 0;
+  color: rgba(20,16,10,0.8);
 }
 .ws-directions {
-  font-family: Arial, sans-serif;
-  font-size: 0.8rem;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.78rem;
   font-style: italic;
-  color: #444;
-  margin: 0.4rem 0 0.75rem;
-  line-height: 1.5;
+  color: rgba(20,16,10,0.5);
+  margin: 0.4rem 0 0.8rem;
+  line-height: 1.55;
 }
-.ws-block {
-  margin-bottom: 1.25rem;
-}
+.ws-block { margin-bottom: 1.4rem; }
 
-/* Objectives */
+/* ── Objectives ─────────────────────────────────────────────────── */
 .ws-objective-list {
-  font-size: 0.9rem;
-  line-height: 1.7;
-  padding-left: 1.25rem;
+  font-size: 0.88rem;
+  line-height: 1.75;
+  padding-left: 1.3rem;
   margin: 0.4rem 0;
+  color: rgba(20,16,10,0.8);
 }
 
-/* Essential questions */
+/* ── Essential questions ────────────────────────────────────────── */
 .ws-eq-list {
   list-style: none;
   padding: 0;
   margin: 0.4rem 0;
 }
 .ws-eq-list li {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  padding: 0.4rem 0.6rem;
-  border-left: 3px solid #111;
-  margin-bottom: 0.4rem;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  padding: 0.5rem 0.75rem;
+  border-left: 3px solid #cc3322;
+  background: rgba(204,51,34,0.03);
+  margin-bottom: 0.5rem;
+  color: rgba(20,16,10,0.8);
 }
 
-/* Differentiation grid */
+/* ── Differentiation grid ───────────────────────────────────────── */
 .ws-diff-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
+  gap: 0.8rem;
   margin-top: 0.5rem;
 }
 .ws-diff-cell {
-  border: 1px solid #ccc;
-  padding: 0.6rem 0.75rem;
+  border: 1px solid rgba(20,16,10,0.12);
+  border-top: 3px solid #1a3a72;
+  padding: 0.65rem 0.8rem;
+  background: rgba(255,255,255,0.5);
 }
 .ws-diff-label {
-  font-family: Arial, sans-serif;
-  font-size: 0.7rem;
-  font-weight: bold;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #333;
+  letter-spacing: 0.08em;
+  color: #1a3a72;
   margin-bottom: 0.4rem;
 }
 
-/* Primary source */
+/* ── Primary source ─────────────────────────────────────────────── */
 .ws-source-label {
-  font-family: Arial, sans-serif;
-  font-size: 0.7rem;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #555;
-  margin-bottom: 0.75rem;
+  letter-spacing: 0.12em;
+  color: #cc3322;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.ws-source-label::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 2px;
+  background: #cc3322;
 }
 .ws-source-box {
-  border: 1.5px solid #111;
-  margin-bottom: 1rem;
+  border: 1.5px solid rgba(20,16,10,0.15);
+  margin-bottom: 1.1rem;
+  border-top: none;
 }
 .ws-source-box-header {
-  background: #111;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  font-size: 0.7rem;
-  font-weight: bold;
-  letter-spacing: 0.08em;
+  background: #1a3a72;
+  color: #f2e6c8;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 0.3rem 0.75rem;
+  padding: 0.35rem 0.85rem;
 }
 .ws-source-box-body {
-  padding: 0.6rem 0.75rem;
+  padding: 0.7rem 0.85rem;
+  background: rgba(255,255,255,0.55);
 }
 .ws-source-row {
   display: flex;
   gap: 0.5rem;
-  font-size: 0.85rem;
-  margin-bottom: 0.25rem;
-  line-height: 1.4;
+  font-size: 0.83rem;
+  margin-bottom: 0.3rem;
+  line-height: 1.45;
+  align-items: baseline;
 }
 .ws-source-key {
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  min-width: 80px;
-  color: #333;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.72rem;
+  min-width: 72px;
+  color: #1a3a72;
   flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
-.ws-source-val {
-  color: #111;
-}
+.ws-source-val { color: rgba(20,16,10,0.85); }
 .ws-source-image {
   text-align: center;
   margin: 1rem 0;
+  padding: 0 0.85rem;
 }
 .ws-source-img {
   max-width: 100%;
-  max-height: 420px;
+  max-height: 400px;
   object-fit: contain;
-  border: 1px solid #ccc;
+  border: 1.5px solid rgba(20,16,10,0.12);
   display: block;
   margin: 0 auto;
 }
 .ws-source-img-caption {
-  font-family: Arial, sans-serif;
-  font-size: 0.7rem;
-  color: #555;
-  margin-top: 0.35rem;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.68rem;
+  color: rgba(20,16,10,0.45);
+  margin-top: 0.4rem;
   font-style: italic;
 }
+
+/* Teacher note — crimson left accent, amber tint */
 .ws-teacher-note {
-  background: #f5f5f5;
-  border-left: 3px solid #666;
-  padding: 0.6rem 0.75rem;
-  margin-bottom: 1rem;
+  background: rgba(232,184,75,0.08);
+  border-left: 4px solid #cc3322;
+  padding: 0.65rem 0.85rem;
+  margin-bottom: 1.1rem;
 }
 .ws-teacher-note-label {
-  font-family: Arial, sans-serif;
-  font-size: 0.7rem;
-  font-weight: bold;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #555;
+  letter-spacing: 0.1em;
+  color: #cc3322;
   display: block;
-  margin-bottom: 0.3rem;
-}
-.ws-reflection {
-  margin-top: 1.25rem;
+  margin-bottom: 0.35rem;
 }
 
-/* Answer lines */
+.ws-reflection { margin-top: 1.4rem; }
+
+/* ── Answer lines ───────────────────────────────────────────────── */
 .ws-answer-lines {
-  margin: 0.5rem 0 0.25rem;
-  padding-left: 0.5rem;
+  margin: 0.6rem 0 0.3rem;
+  padding-left: 0.25rem;
 }
 .ws-answer-line {
-  border-bottom: 1px solid #aaa;
-  height: 1.8rem;
-  margin-bottom: 0.1rem;
+  border-bottom: 1px solid rgba(20,16,10,0.18);
+  height: 1.9rem;
+  margin-bottom: 0;
 }
 .ws-answer-label {
-  font-family: Arial, sans-serif;
-  font-size: 0.8rem;
-  font-weight: bold;
-  margin: 0.5rem 0 0.25rem;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1a3a72;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0.55rem 0 0.25rem;
 }
 
-/* Questions */
+/* ── Questions ──────────────────────────────────────────────────── */
 .ws-question-list {
   list-style: none;
   padding: 0;
@@ -1187,219 +1276,230 @@ button {
   counter-reset: question-counter;
 }
 .ws-question-item {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.6rem;
   page-break-inside: avoid;
+  padding-left: 0.25rem;
 }
 .ws-question-text {
-  font-size: 0.9rem;
-  line-height: 1.55;
-  font-weight: 500;
-  margin-bottom: 0.4rem;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+  color: #14100a;
 }
 
 /* Multiple choice */
 .ws-mc-options {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
-  padding-left: 1.25rem;
-  margin-top: 0.4rem;
+  gap: 0.4rem;
+  padding-left: 1.3rem;
+  margin-top: 0.45rem;
 }
 .ws-mc-option {
   display: flex;
   align-items: flex-start;
-  gap: 0.5rem;
-  font-size: 0.88rem;
-  line-height: 1.4;
+  gap: 0.55rem;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: rgba(20,16,10,0.8);
 }
 .ws-mc-bubble {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.25rem;
-  height: 1.25rem;
-  border: 1.5px solid #333;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 1.5px solid #1a3a72;
   border-radius: 50%;
-  font-family: Arial, sans-serif;
-  font-size: 0.7rem;
-  font-weight: bold;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #1a3a72;
   flex-shrink: 0;
-  margin-top: 0.05rem;
+  margin-top: 0.08rem;
 }
 .ws-mc-text { flex: 1; }
 
 /* True / False */
 .ws-tf-options {
   display: flex;
-  gap: 2rem;
-  padding-left: 1.25rem;
-  margin-top: 0.5rem;
+  gap: 2.25rem;
+  padding-left: 1.3rem;
+  margin-top: 0.55rem;
 }
 .ws-tf-option {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-family: Arial, sans-serif;
-  font-size: 0.88rem;
+  gap: 0.55rem;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.86rem;
+  color: rgba(20,16,10,0.75);
 }
 .ws-tf-bubble {
   display: inline-block;
-  width: 1.1rem;
-  height: 1.1rem;
-  border: 1.5px solid #333;
+  width: 1.05rem;
+  height: 1.05rem;
+  border: 1.5px solid #1a3a72;
   border-radius: 50%;
   flex-shrink: 0;
 }
 
-/* Handouts */
-.ws-handout-header {
-  margin-bottom: 0.75rem;
-}
+/* ── Handouts ───────────────────────────────────────────────────── */
+.ws-handout-header { margin-bottom: 0.85rem; }
 .ws-handout-title {
-  font-size: 1.35rem;
-  font-weight: bold;
-  margin-bottom: 0.2rem;
+  font-family: var(--font-bebas), var(--font-instrument), serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: #14100a;
+  margin-bottom: 0.25rem;
 }
 .ws-handout-type {
-  font-family: Arial, sans-serif;
-  font-size: 0.7rem;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #666;
+  letter-spacing: 0.12em;
+  color: #cc3322;
 }
-.ws-handout-content {
-  margin-top: 1rem;
-}
+.ws-handout-content { margin-top: 1rem; }
 .ws-content-list {
-  font-size: 0.9rem;
-  line-height: 1.7;
+  font-size: 0.88rem;
+  line-height: 1.75;
   padding-left: 1.5rem;
   margin: 0.5rem 0;
+  color: rgba(20,16,10,0.8);
 }
 
-/* Quiz header */
-.ws-quiz-header {
-  margin-bottom: 1rem;
-}
+/* ── Quiz header ────────────────────────────────────────────────── */
+.ws-quiz-header { margin-bottom: 1.1rem; }
 .ws-quiz-title {
-  font-size: 1.35rem;
-  font-weight: bold;
-  border-bottom: 2px solid #111;
-  padding-bottom: 0.3rem;
-  margin-bottom: 0.4rem;
+  font-family: var(--font-bebas), var(--font-instrument), serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: #14100a;
+  border-bottom: 2px solid #1a3a72;
+  padding-bottom: 0.35rem;
+  margin-bottom: 0.45rem;
 }
 
-/* Answer Key */
+/* ── Answer Key ─────────────────────────────────────────────────── */
 .ws-answer-key {
-  border: 2px dashed #888;
-  padding: 1rem 1.5rem;
+  border: 2px solid rgba(204,51,34,0.3);
+  padding: 1.1rem 1.6rem;
+  background: rgba(204,51,34,0.02);
 }
 .ws-ak-banner {
-  font-family: Arial, sans-serif;
-  font-size: 0.65rem;
-  font-weight: bold;
-  letter-spacing: 0.12em;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   text-align: center;
-  border: 1.5px solid #111;
-  padding: 0.3rem 0;
-  margin-bottom: 1.25rem;
-  background: #f0f0f0;
+  padding: 0.4rem 0;
+  margin-bottom: 1.35rem;
+  background: #cc3322;
+  color: #f2e6c8;
 }
-.ws-ak-header {
-  margin-bottom: 1rem;
-}
+.ws-ak-header { margin-bottom: 1.1rem; }
 .ws-ak-title {
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-family: var(--font-bebas), var(--font-instrument), serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: #14100a;
 }
 .ws-ak-subtitle {
-  font-family: Arial, sans-serif;
-  font-size: 0.8rem;
-  color: #555;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.75rem;
+  color: rgba(20,16,10,0.45);
+  margin-top: 0.15rem;
 }
-.ws-ak-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+.ws-ak-list { list-style: none; padding: 0; margin: 0; }
 .ws-ak-item {
-  padding: 0.6rem 0;
-  border-bottom: 1px solid #ddd;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(20,16,10,0.08);
 }
 .ws-ak-q {
   display: flex;
-  gap: 0.4rem;
-  font-size: 0.85rem;
-  margin-bottom: 0.25rem;
+  gap: 0.45rem;
+  font-size: 0.83rem;
+  margin-bottom: 0.3rem;
+  color: rgba(20,16,10,0.65);
 }
-.ws-ak-num { font-weight: bold; flex-shrink: 0; }
-.ws-ak-qtext { color: #444; }
+.ws-ak-num { font-weight: 700; flex-shrink: 0; color: #1a3a72; }
+.ws-ak-qtext { color: rgba(20,16,10,0.6); }
 .ws-ak-a {
   display: flex;
-  gap: 0.4rem;
+  gap: 0.45rem;
   margin-left: 1.1rem;
   margin-bottom: 0.2rem;
+  align-items: baseline;
 }
 .ws-ak-answer-label {
-  font-family: Arial, sans-serif;
-  font-size: 0.75rem;
-  font-weight: bold;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #333;
+  letter-spacing: 0.08em;
+  color: #cc3322;
+  flex-shrink: 0;
 }
 .ws-ak-answer {
   font-size: 0.88rem;
-  font-weight: bold;
-  color: #111;
+  font-weight: 700;
+  color: #14100a;
 }
 .ws-ak-explanation {
-  font-size: 0.82rem;
-  color: #555;
+  font-size: 0.8rem;
+  color: rgba(20,16,10,0.5);
   margin-left: 1.1rem;
-  line-height: 1.5;
+  line-height: 1.55;
+  font-style: italic;
 }
 
-/* Standards */
+/* ── Standards ──────────────────────────────────────────────────── */
 .ws-standards-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin-top: 0.75rem;
+  gap: 1.75rem;
+  margin-top: 0.85rem;
 }
 .ws-standards-col {}
 .ws-standards-label {
-  font-family: Arial, sans-serif;
-  font-size: 0.7rem;
-  font-weight: bold;
+  font-family: var(--font-dm), Arial, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #333;
-  margin-bottom: 0.4rem;
+  letter-spacing: 0.1em;
+  color: #1a3a72;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid #1a3a72;
 }
-.ws-standards-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+.ws-standards-list { list-style: none; padding: 0; margin: 0; }
 .ws-standards-list li {
-  font-size: 0.82rem;
-  padding: 0.2rem 0;
-  border-bottom: 1px solid #eee;
-  line-height: 1.4;
+  font-size: 0.8rem;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid rgba(20,16,10,0.06);
+  line-height: 1.45;
+  color: rgba(20,16,10,0.7);
 }
 
 /* ─── Print overrides for worksheet ─────────────────────── */
 @media print {
-  .ws-page { max-width: none; padding: 0; }
+  .ws-page { max-width: none; padding: 0; background: #fdfaf4; }
   .ws-cover { page-break-after: always; }
   .ws-mc-bubble, .ws-tf-bubble { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .ws-student-header-top, .ws-source-box-header, .ws-ak-banner,
-  .ws-section-num { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .ws-section-num, .ws-cover-topbar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .ws-diff-cell { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .ws-teacher-note { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .ws-diff-grid { grid-template-columns: repeat(3, 1fr); }
   .ws-standards-grid { grid-template-columns: repeat(2, 1fr); }
-  .ws-answer-line { border-bottom: 0.75pt solid #999; }
+  .ws-answer-line { border-bottom: 0.75pt solid rgba(20,16,10,0.2); }
   .ws-question-item { page-break-inside: avoid; }
   .ws-source-box { page-break-inside: avoid; }
   .ws-ak-item { page-break-inside: avoid; }

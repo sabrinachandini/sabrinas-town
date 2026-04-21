@@ -65,13 +65,18 @@ export default async function TeacherPrintPage({ params }: PageProps) {
 
       {/* ── Cover ──────────────────────────────────────────── */}
       <section className="ws-cover page-break-after">
-        <p className="ws-cover-brand">History is for Everyone · American Revolution Network</p>
+        <div className="ws-cover-topbar">
+          <span className="ws-cover-topbar-brand">History is for Everyone</span>
+          <span className="ws-cover-topbar-series">American Revolution Network</span>
+        </div>
+        <p className="ws-cover-brand">Teacher Resource Packet</p>
         <h1 className="ws-cover-title">{overview.title}</h1>
+        <div className="ws-cover-rule" />
         <p className="ws-cover-location">{town.name}, {town.state}</p>
         <div className="ws-cover-meta">
-          <span>Grade Range: {overview.gradeRange}</span>
+          <span>Grades {overview.gradeRange}</span>
           <span className="ws-cover-dot">·</span>
-          <span>Duration: {overview.estimatedDuration}</span>
+          <span>{overview.estimatedDuration}</span>
         </div>
         <p className="ws-cover-summary">{overview.summary}</p>
 

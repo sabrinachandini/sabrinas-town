@@ -1,5 +1,6 @@
 import NextLink from "next/link";
 import prisma from "@/lib/prisma";
+import { getOnThisDay } from "@/lib/api";
 
 export const dynamic = "force-dynamic";
 
@@ -15,6 +16,18 @@ export default async function HomePage() {
     });
   } catch {
     // fall back to empty list — links won't show rather than 404
+  }
+
+  const now = new Date();
+  const otdMonth = now.getUTCMonth() + 1;
+  const otdDay = now.getUTCDate();
+  const otdMonthName = now.toLocaleDateString("en-US", { month: "long", timeZone: "UTC" });
+  const otdDayNum = now.toLocaleDateString("en-US", { day: "numeric", timeZone: "UTC" });
+  let otdEvents: Awaited<ReturnType<typeof getOnThisDay>> = [];
+  try {
+    otdEvents = await getOnThisDay(otdMonth, otdDay);
+  } catch {
+    // non-fatal — widget just won't show events
   }
   return (
     <main>
@@ -198,6 +211,53 @@ export default async function HomePage() {
           </div>
         ))}
       </div>
+
+      {/* ────────────────────────────────────────────────────────────── */}
+      {/* ON THIS DAY — compact callout strip                           */}
+      {/* ────────────────────────────────────────────────────────────── */}
+      <NextLink
+        href="/on-this-day"
+        className="no-underline block bg-[#14100a] border-b-4 border-[#cc3322] hover:bg-[#1a1208] transition-colors group"
+        aria-label={`On This Day — ${otdMonthName} ${otdDayNum}: see Revolutionary War events`}
+      >
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-10 py-7 sm:py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+          {/* Left: date badge + headline */}
+          <div className="flex items-center gap-5">
+            {/* Date badge */}
+            <div className="bg-[#cc3322] px-3 py-2.5 text-center min-w-[58px] flex-shrink-0">
+              <p className="font-display text-[28px] text-[#f2e6c8] leading-none">{otdDayNum}</p>
+              <p className="font-ui text-[7px] uppercase tracking-[0.12em] text-[#f2e6c8]/60 mt-0.5">{otdMonthName.slice(0, 3)}</p>
+            </div>
+            {/* Text */}
+            <div>
+              <p className="font-ui text-[8px] uppercase tracking-[0.24em] text-[#cc3322] mb-1.5">On This Day in the Revolution</p>
+              {otdEvents.length > 0 ? (
+                <>
+                  <p className="font-editorial italic text-[16px] sm:text-[18px] text-[#f2e6c8]/85 leading-snug max-w-[420px]">
+                    {otdEvents[0].name}
+                    <span className="font-ui not-italic text-[11px] text-[#f2e6c8]/35 ml-2 align-middle">
+                      {otdEvents[0].year} · {otdEvents[0].town.name}
+                    </span>
+                  </p>
+                  {otdEvents.length > 1 && (
+                    <p className="font-ui text-[10px] text-[#f2e6c8]/30 mt-1">
+                      +{otdEvents.length - 1} more event{otdEvents.length > 2 ? "s" : ""} on {otdMonthName} {otdDayNum}
+                    </p>
+                  )}
+                </>
+              ) : (
+                <p className="font-editorial italic text-[17px] text-[#f2e6c8]/40 leading-snug">
+                  No documented events on {otdMonthName} {otdDayNum}
+                </p>
+              )}
+            </div>
+          </div>
+          {/* Right: CTA */}
+          <span className="font-ui text-[9px] uppercase tracking-[0.2em] text-[#f2e6c8]/50 border border-[#f2e6c8]/15 px-5 py-2.5 group-hover:border-[#cc3322] group-hover:text-[#cc3322] transition-colors whitespace-nowrap flex-shrink-0 sm:self-center">
+            See All Events →
+          </span>
+        </div>
+      </NextLink>
 
       {/* ────────────────────────────────────────────────────────────── */}
       {/* 3. MANIFESTO                                                  */}
