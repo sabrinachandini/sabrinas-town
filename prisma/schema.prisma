@@ -82,8 +82,42 @@ model Town {
   clusterTowns     ClusterTown[]
   hubOfClusters    Cluster[]      @relation("ClusterHub")
 
+  // Local / visitor events
+  localEvents      LocalEvent[]
+  emailSignups     EmailSignup[]
+
   @@index([state])
   @@index([compositeScore(sort: Desc)])
+}
+
+model LocalEvent {
+  id          String   @id @default(cuid())
+  townId      String
+  town        Town     @relation(fields: [townId], references: [id])
+
+  name        String
+  description String   @db.Text
+  category    String   // "reenactment" | "festival" | "ceremony" | "tour" | "lecture" | "exhibition"
+
+  // Timing — annual events use month/day; one-time events use eventDate
+  recurrence  String   @default("annual")  // "annual" | "one-time" | "monthly"
+  month       Int?     // 1–12
+  day         Int?     // day of month
+  endDay      Int?     // last day (multi-day events)
+  dateNote    String?  // Human note: "Third weekend in April" or "Every Saturday May–Oct"
+  eventDate   DateTime? // Specific date for one-time events
+
+  // Logistics
+  venue       String?
+  url         String?
+  admission   String?  // "Free" | "$15/adult" | "Varies"
+  featured    Boolean  @default(false)
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([townId])
+  @@index([month])
 }
 
 model Event {
@@ -970,4 +1004,19 @@ model ClusterBridge {
   createdAt       DateTime @default(now())
 
   @@unique([fromClusterId, toClusterId])
+}
+
+// ── Email Signups ─────────────────────────────────────────────────────────
+
+model EmailSignup {
+  id        String   @id @default(cuid())
+  email     String
+  townId    String?
+  town      Town?    @relation(fields: [townId], references: [id])
+  source    String   @default("events") // "events" | "homepage" | "teach"
+  createdAt DateTime @default(now())
+
+  @@unique([email, townId])
+  @@index([townId])
+  @@index([email])
 }
