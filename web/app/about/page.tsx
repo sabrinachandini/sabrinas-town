@@ -16,9 +16,9 @@ export default function AboutPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-ink border-b-4 border-crimson py-24 px-8 md:px-16 relative overflow-hidden">
+      <section className="bg-ink border-b-4 border-crimson py-12 sm:py-24 px-5 sm:px-8 md:px-16 relative overflow-hidden">
         {/* Star scatter */}
-        <svg className="absolute top-8 right-12 opacity-20 pointer-events-none" width="180" height="140" aria-hidden="true">
+        <svg className="absolute top-8 right-12 opacity-20 pointer-events-none hidden sm:block" width="180" height="140" aria-hidden="true">
           {[
             [22,18],[54,8],[90,30],[130,12],[160,40],[14,70],[70,55],[110,68],[148,80],
             [38,100],[85,90],[135,105],[170,65],[50,125],[100,118],[145,130],
@@ -27,7 +27,7 @@ export default function AboutPage() {
           ))}
         </svg>
         {/* Cross mark */}
-        <svg className="absolute bottom-10 left-[60%] opacity-10 pointer-events-none" width="24" height="24" aria-hidden="true">
+        <svg className="absolute bottom-10 left-[60%] opacity-10 pointer-events-none hidden sm:block" width="24" height="24" aria-hidden="true">
           <line x1="12" y1="0" x2="12" y2="24" stroke="white" strokeWidth="2" strokeLinecap="round"/>
           <line x1="0" y1="12" x2="24" y2="12" stroke="white" strokeWidth="2" strokeLinecap="round"/>
         </svg>
@@ -39,7 +39,7 @@ export default function AboutPage() {
           <Link href="/" className="no-underline">
             <h1
               className="font-display text-cream leading-[0.88] hover:opacity-80 transition-opacity"
-              style={{ fontSize: "clamp(80px,12vw,140px)" }}
+              style={{ fontSize: "clamp(52px,12vw,140px)" }}
             >
               History is for Everyone
             </h1>
@@ -56,7 +56,7 @@ export default function AboutPage() {
       </section>
 
       {/* Who I Am */}
-      <section className="py-20 bg-cream px-8 md:px-16 relative overflow-hidden">
+      <section className="py-12 sm:py-20 bg-cream px-5 sm:px-8 md:px-16 relative overflow-hidden">
         {/* Ghost text */}
         <span className="absolute right-0 top-4 font-display text-[clamp(80px,14vw,160px)] text-ink/[0.04] leading-none select-none pointer-events-none uppercase">
           1775
@@ -75,7 +75,7 @@ export default function AboutPage() {
             <div className="border-b border-ink/10 mb-8" />
 
             {/* Stamp */}
-            <div className="float-right ml-6 mb-4 mt-1 rotate-3 border-2 border-crimson/60 px-3 py-2 font-ui text-[9px] font-bold uppercase tracking-[0.2em] text-crimson/70 select-none">
+            <div className="hidden sm:block float-right ml-6 mb-4 mt-1 rotate-3 border-2 border-crimson/60 px-3 py-2 font-ui text-[9px] font-bold uppercase tracking-[0.2em] text-crimson/70 select-none">
               Lexington, MA<br />Est. 1775
             </div>
 
@@ -107,7 +107,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why this exists */}
-      <section className="py-20 bg-cream px-8 md:px-16">
+      <section className="py-12 sm:py-20 bg-cream px-5 sm:px-8 md:px-16">
         <div className="mx-auto max-w-[1200px]">
           <div className="max-w-[720px]">
             <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
@@ -147,7 +147,7 @@ export default function AboutPage() {
       </section>
 
       {/* How to use this */}
-      <section className="py-20 bg-[#f8f0d8] px-8 md:px-16">
+      <section className="py-12 sm:py-20 bg-[#f8f0d8] px-5 sm:px-8 md:px-16">
         <div className="mx-auto max-w-[1200px]">
           <div className="max-w-[720px]">
             <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
@@ -217,9 +217,9 @@ export default function AboutPage() {
       </section>
 
       {/* What we believe */}
-      <section className="py-20 bg-[#1a3a72] px-8 md:px-16 relative overflow-hidden">
+      <section className="py-12 sm:py-20 bg-[#1a3a72] px-5 sm:px-8 md:px-16 relative overflow-hidden">
         {/* Star scatter */}
-        <svg className="absolute top-6 right-10 opacity-15 pointer-events-none" width="160" height="120" aria-hidden="true">
+        <svg className="absolute top-6 right-10 opacity-15 pointer-events-none hidden sm:block" width="160" height="120" aria-hidden="true">
           {[
             [18,12],[50,6],[88,22],[125,8],[150,35],[10,60],[65,48],[105,62],[145,75],
             [35,92],[80,85],[130,98],[160,55],
@@ -228,11 +228,11 @@ export default function AboutPage() {
           ))}
         </svg>
         {/* Cross marks */}
-        <svg className="absolute bottom-12 right-[20%] opacity-10 pointer-events-none" width="20" height="20" aria-hidden="true">
+        <svg className="absolute bottom-12 right-[20%] opacity-10 pointer-events-none hidden sm:block" width="20" height="20" aria-hidden="true">
           <line x1="10" y1="0" x2="10" y2="20" stroke="white" strokeWidth="2" strokeLinecap="round"/>
           <line x1="0" y1="10" x2="20" y2="10" stroke="white" strokeWidth="2" strokeLinecap="round"/>
         </svg>
-        <svg className="absolute top-[40%] left-[5%] opacity-10 pointer-events-none" width="16" height="16" aria-hidden="true">
+        <svg className="absolute top-[40%] left-[5%] opacity-10 pointer-events-none hidden sm:block" width="16" height="16" aria-hidden="true">
           <line x1="8" y1="0" x2="8" y2="16" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
           <line x1="0" y1="8" x2="16" y2="8" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
         </svg>
@@ -270,7 +270,7 @@ export default function AboutPage() {
               ].map(({ num, head, body }) => (
                 <li key={num} className="flex gap-6">
                   <span
-                    className="font-display text-[3rem] text-crimson leading-none shrink-0 select-none"
+                    className="font-display text-[2rem] sm:text-[3rem] text-crimson leading-none shrink-0 select-none"
                     aria-hidden="true"
                   >
                     {num}
@@ -287,7 +287,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Banner */}
-      <section className="bg-cream border-y-4 border-crimson py-20 px-8 md:px-16 relative overflow-hidden">
+      <section className="bg-cream border-y-4 border-crimson py-12 sm:py-20 px-5 sm:px-8 md:px-16 relative overflow-hidden">
         {/* Decorative dashes */}
         <svg className="absolute left-0 top-1/2 -translate-y-1/2 opacity-10 pointer-events-none" width="60" height="4" aria-hidden="true">
           <line x1="0" y1="2" x2="60" y2="2" stroke="#0e1428" strokeWidth="2" strokeDasharray="6 4"/>

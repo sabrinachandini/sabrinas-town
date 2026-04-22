@@ -103,7 +103,7 @@ export default function TeachPage() {
   return (
     <main>
       {/* NAVY hero */}
-      <section className="bg-[#1a3a72] border-b-4 border-[#14100a] py-20 px-6 sm:px-16 relative overflow-hidden">
+      <section className="bg-[#1a3a72] border-b-4 border-[#14100a] py-12 sm:py-20 px-5 sm:px-16 relative overflow-hidden">
         {/* Ghost watermark */}
         <div aria-hidden className="absolute right-[-10px] top-[-20px] font-display leading-none pointer-events-none select-none text-white/[0.06]" style={{ fontSize: "clamp(180px,35vw,480px)", letterSpacing: "-0.05em" }}>
           Teach
@@ -139,23 +139,23 @@ export default function TeachPage() {
             <path d="M0 8 Q21 2 42 8 Q63 14 85 7 Q106 1 127 7 Q148 13 170 7 Q191 2 212 7 Q233 13 255 7 Q276 2 297 7 Q318 13 340 6" stroke="rgba(255,255,255,0.3)" strokeWidth="2.5" fill="none" strokeLinecap="round" />
           </svg>
 
-          <p className="font-editorial italic font-light text-[20px] text-[rgba(255,255,255,0.76)] max-w-[500px] mt-8 leading-[1.55]">
+          <p className="font-editorial italic font-light text-[16px] sm:text-[20px] text-[rgba(255,255,255,0.76)] max-w-[500px] mt-8 leading-[1.55]">
             Critical thinking materials for teaching the American Revolution through local history. Every town, every state, built for teachers first.
           </p>
         </div>
       </section>
 
       {/* CRIMSON stats band */}
-      <section className="bg-[#cc3322] border-b-4 border-[#14100a] py-11 px-6 sm:px-16 relative overflow-hidden">
+      <section className="bg-[#cc3322] border-b-4 border-[#14100a] py-8 sm:py-11 px-5 sm:px-16 relative overflow-hidden">
         {/* Ghost */}
-        <div aria-hidden className="absolute right-6 top-[-12px] font-display text-[190px] leading-none text-white/[0.07] pointer-events-none select-none">
+        <div aria-hidden className="absolute right-6 top-[-12px] font-display text-[190px] leading-none text-white/[0.07] pointer-events-none select-none hidden sm:block">
           T1
         </div>
 
-        <div className="relative z-10 flex items-center flex-wrap gap-0">
+        <div className="relative z-10 flex flex-wrap gap-8 sm:gap-0 items-start sm:items-center">
           {/* Stat 1 */}
-          <div className="pr-11 border-r border-white/20">
-            <div className="font-display text-[#e8b84b] leading-none" style={{ fontSize: "clamp(48px,6vw,72px)" }}>Tier 1</div>
+          <div className="sm:pr-11 sm:border-r border-white/20">
+            <div className="font-display text-[#e8b84b] leading-none" style={{ fontSize: "clamp(40px,6vw,72px)" }}>Tier 1</div>
             <div className="font-ui text-[11px] font-semibold tracking-[0.14em] uppercase text-white/50 mt-1">Primary sources only</div>
             <svg width="50" height="7" viewBox="0 0 50 7" aria-hidden className="mt-1">
               <path d="M0 4 Q6 1 12 4 Q18 7 25 3 Q31 0 37 3 Q43 7 50 2" stroke="#e8b84b" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.45" />
@@ -163,8 +163,8 @@ export default function TeachPage() {
           </div>
 
           {/* Stat 2 */}
-          <div className="px-11 border-r border-white/20">
-            <div className="font-display text-white leading-none" style={{ fontSize: "clamp(48px,6vw,72px)" }}>77</div>
+          <div className="sm:px-11 sm:border-r border-white/20">
+            <div className="font-display text-white leading-none" style={{ fontSize: "clamp(40px,6vw,72px)" }}>77</div>
             <div className="font-ui text-[11px] font-semibold tracking-[0.14em] uppercase text-white/50 mt-1">Towns in network</div>
             <svg width="50" height="7" viewBox="0 0 50 7" aria-hidden className="mt-1">
               <path d="M0 4 Q6 1 12 4 Q18 7 25 3 Q31 0 37 3 Q43 7 50 2" stroke="#e8b84b" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.45" />
@@ -172,8 +172,8 @@ export default function TeachPage() {
           </div>
 
           {/* Stat 3 */}
-          <div className="px-11 border-r border-white/20">
-            <div className="font-display text-white leading-none" style={{ fontSize: "clamp(48px,6vw,72px)" }}>16</div>
+          <div className="sm:px-11 sm:border-r border-white/20">
+            <div className="font-display text-white leading-none" style={{ fontSize: "clamp(40px,6vw,72px)" }}>16</div>
             <div className="font-ui text-[11px] font-semibold tracking-[0.14em] uppercase text-white/50 mt-1">States covered</div>
             <svg width="50" height="7" viewBox="0 0 50 7" aria-hidden className="mt-1">
               <path d="M0 4 Q6 1 12 4 Q18 7 25 3 Q31 0 37 3 Q43 7 50 2" stroke="#e8b84b" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.45" />
@@ -181,7 +181,7 @@ export default function TeachPage() {
           </div>
 
           {/* Badge */}
-          <div className="px-11 ml-auto">
+          <div className="sm:px-11 sm:ml-auto">
             <div className="bg-[#f2e6c8] text-[#14100a] font-ui text-[9px] font-bold tracking-[0.24em] uppercase px-[18px] py-[9px] border-[2.5px] border-[#14100a] inline-block" style={{ boxShadow: "3px 3px 0 #14100a", transform: "rotate(-2deg)" }}>
               Standards Aligned
             </div>
@@ -190,17 +190,17 @@ export default function TeachPage() {
       </section>
 
       {/* PAPER state list */}
-      <section className="bg-[#f2ece0] py-16 px-6 sm:px-16">
+      <section className="bg-[#f2ece0] py-10 sm:py-16 px-5 sm:px-16">
         {/* Section intro */}
-        <div className="max-w-[640px] mb-14">
+        <div className="max-w-[640px] mb-10 sm:mb-14">
           <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] flex items-center gap-3 mb-3">
             <span className="w-4 h-[2px] bg-[#cc3322] block flex-shrink-0" />
             Browse by State
           </p>
-          <h2 className="font-display leading-[0.92] tracking-[-0.04em] text-[#14100a] m-0" style={{ fontSize: "clamp(36px,4.5vw,60px)" }}>
+          <h2 className="font-display leading-[0.92] tracking-[-0.04em] text-[#14100a] m-0" style={{ fontSize: "clamp(32px,4.5vw,60px)" }}>
             Browse by State
           </h2>
-          <p className="font-editorial italic font-light text-[18px] text-[rgba(20,16,10,0.52)] mt-5 leading-[1.65]">
+          <p className="font-editorial italic font-light text-[16px] sm:text-[18px] text-[rgba(20,16,10,0.52)] mt-5 leading-[1.65]">
             Teacher resources organized by state, prioritized for towns with the richest primary source availability.
           </p>
         </div>
@@ -216,8 +216,7 @@ export default function TeachPage() {
         {STATES.map((state, i) => (
           <div
             key={state.slug}
-            className="py-9 border-b border-[rgba(20,16,10,0.08)] grid gap-12"
-            style={{ gridTemplateColumns: "220px 1fr" }}
+            className="py-7 sm:py-9 border-b border-[rgba(20,16,10,0.08)] grid grid-cols-1 sm:grid-cols-[220px_1fr] gap-1 sm:gap-12"
           >
             {/* Left */}
             <div>
@@ -235,7 +234,7 @@ export default function TeachPage() {
 
             {/* Right */}
             <div>
-              <p className="font-editorial italic font-light text-[18px] text-[rgba(20,16,10,0.6)] leading-[1.65] mb-3.5">
+              <p className="font-editorial italic font-light text-[16px] sm:text-[18px] text-[rgba(20,16,10,0.6)] leading-[1.65] mb-3.5">
                 {state.description}
               </p>
               <a
@@ -250,7 +249,7 @@ export default function TeachPage() {
       </section>
 
       {/* NAVY methodology */}
-      <section className="bg-[#1a3a72] border-t-4 border-[#14100a] py-20 px-6 sm:px-16 relative overflow-hidden">
+      <section className="bg-[#1a3a72] border-t-4 border-[#14100a] py-12 sm:py-20 px-5 sm:px-16 relative overflow-hidden">
         {/* Ghost */}
         <div aria-hidden className="absolute right-[-10px] bottom-[-20px] font-display text-[380px] leading-none text-white/[0.04] pointer-events-none select-none tracking-[-0.05em]">
           Method
@@ -269,7 +268,7 @@ export default function TeachPage() {
           </h2>
 
           {/* Stats row */}
-          <div className="flex flex-wrap gap-0 py-6 border-t border-white/10 border-b border-white/10 my-8">
+          <div className="flex flex-wrap gap-8 sm:gap-0 py-6 border-t border-white/10 border-b border-white/10 my-8">
             {[
               { num: "Tier 1", label: "Primary Sources" },
               { num: "77", label: "Towns Covered" },
@@ -277,15 +276,15 @@ export default function TeachPage() {
             ].map((stat, i) => (
               <div
                 key={stat.label}
-                className={`px-11 ${i === 0 ? "pl-0" : ""} ${i < 2 ? "border-r border-white/[0.12]" : ""}`}
+                className={`sm:px-11 ${i === 0 ? "sm:pl-0" : ""} ${i < 2 ? "sm:border-r border-white/[0.12]" : ""}`}
               >
-                <div className="font-display text-[52px] text-[#e8b84b] leading-none">{stat.num}</div>
+                <div className="font-display text-[40px] sm:text-[52px] text-[#e8b84b] leading-none">{stat.num}</div>
                 <div className="font-ui text-[11px] font-semibold tracking-[0.14em] uppercase text-white/45 mt-1">{stat.label}</div>
               </div>
             ))}
           </div>
 
-          <p className="font-editorial italic font-light text-[19px] text-[rgba(255,255,255,0.65)] leading-[1.7] max-w-[680px] mb-7">
+          <p className="font-editorial italic font-light text-[16px] sm:text-[19px] text-[rgba(255,255,255,0.65)] leading-[1.7] max-w-[680px] mb-7">
             Every source in our teacher materials is evaluated using a three-tier credibility system. Tier 1 sources include primary documents, National Park Service materials, and peer-reviewed scholarship. Teacher narratives are written to help educators contextualize sources — not to replace them.
           </p>
 
