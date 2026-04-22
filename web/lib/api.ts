@@ -2567,20 +2567,25 @@ export interface PlaceListItem {
 }
 
 export async function getAllPlaces(): Promise<PlaceListItem[]> {
-  return prisma.place.findMany({
-    select: {
-      id: true,
-      slug: true,
-      name: true,
-      placeType: true,
-      featured: true,
-      description: true,
-      hours: true,
-      admission: true,
-      town: { select: { slug: true, name: true, state: true } },
-    },
-    orderBy: [{ featured: "desc" }, { name: "asc" }],
-  });
+  try {
+    return await prisma.place.findMany({
+      select: {
+        id: true,
+        slug: true,
+        name: true,
+        placeType: true,
+        featured: true,
+        description: true,
+        hours: true,
+        admission: true,
+        town: { select: { slug: true, name: true, state: true } },
+      },
+      orderBy: [{ featured: "desc" }, { name: "asc" }],
+    });
+  } catch (error) {
+    console.error("Error fetching all places:", error);
+    return [];
+  }
 }
 
 export { PLACE_TYPE_ORDER };
