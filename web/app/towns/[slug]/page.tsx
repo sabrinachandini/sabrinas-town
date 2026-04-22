@@ -84,6 +84,32 @@ export default async function TownOverviewPage({ params }: PageProps) {
       {/* ── Hero ─────────────────────────────────────────────────── */}
       <TownHero town={town} slug={slug} />
 
+      {/* ── Significance strip ───────────────────────────────────── */}
+      <div className="bg-[#14100a] border-b border-[#f2e6c8]/8 px-8 md:px-16 py-3">
+        <div className="mx-auto max-w-[1200px] flex flex-wrap items-center gap-x-8 gap-y-1">
+          <span className="font-ui text-[8px] uppercase tracking-[0.22em] text-[#e8b84b]">
+            {town.scoreTier}
+          </span>
+          <div className="flex items-center gap-1.5">
+            <div className="w-20 h-[2px] bg-[#f2e6c8]/10">
+              <div className="h-full bg-[#cc3322]" style={{ width: `${town.compositeScore}%` }} />
+            </div>
+            <span className="font-ui text-[8px] text-[#f2e6c8]/30 uppercase tracking-[0.1em]">
+              {town.compositeScore}/100
+            </span>
+          </div>
+          {[
+            { n: people.length, label: "People" },
+            { n: town.events.length, label: "Events" },
+            { n: town.stories.length, label: "Stories" },
+          ].map((s) => (
+            <span key={s.label} className="font-ui text-[8px] uppercase tracking-[0.12em] text-[#f2e6c8]/30">
+              <span className="text-[#f2e6c8]/60 mr-1">{s.n}</span>{s.label}
+            </span>
+          ))}
+        </div>
+      </div>
+
       {/* ── Body: cream background ───────────────────────────────── */}
       <div className="bg-cream py-16 px-8 md:px-16">
         <div className="mx-auto max-w-[1200px] grid md:grid-cols-[1fr_260px] gap-16 items-start">
@@ -118,17 +144,31 @@ export default async function TownOverviewPage({ params }: PageProps) {
                     <NextLink
                       key={person.id}
                       href={`/towns/${slug}/people/${person.slug ?? person.id}`}
-                      className="no-underline flex items-center justify-between group py-4 border-b border-ink/8 hover:bg-yellow/10 hover:pl-2 transition-all duration-150"
+                      className="no-underline flex items-center gap-4 group py-4 border-b border-ink/8 hover:bg-yellow/10 hover:pl-2 transition-all duration-150"
                     >
-                      <div>
-                        <p className="font-editorial text-[22px] text-ink group-hover:text-crimson transition-colors">
+                      {/* Portrait */}
+                      <div className="flex-shrink-0 w-10 h-10 rounded-full overflow-hidden bg-ink/8 border border-ink/10">
+                        {person.imageUrl ? (
+                          <img
+                            src={person.imageUrl}
+                            alt={person.name}
+                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center font-display text-[14px] text-ink/30">
+                            {person.name.charAt(0)}
+                          </div>
+                        )}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="font-editorial text-[22px] text-ink group-hover:text-crimson transition-colors leading-tight">
                           {person.name}
                         </p>
                         <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-crimson/60 mt-0.5">
                           {person.roles.join(", ")}
                         </p>
                       </div>
-                      <span className="text-crimson ml-4 flex-shrink-0 font-display">&rarr;</span>
+                      <span className="text-crimson ml-2 flex-shrink-0 font-display">&rarr;</span>
                     </NextLink>
                   ))}
                 </div>
@@ -265,31 +305,6 @@ export default async function TownOverviewPage({ params }: PageProps) {
 
           {/* Sidebar */}
           <aside className="space-y-8 mt-0">
-
-            {/* On This Page */}
-            <div>
-              <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-ink/30 mb-3">
-                On This Page
-              </p>
-              <ul>
-                {[
-                  { label: "People", id: "people" },
-                  { label: "Key Events", id: "events" },
-                  { label: "Places", id: "places" },
-                  { label: "Stories", id: "stories" },
-                ].map((item) => (
-                  <li key={item.label}>
-                    <a
-                      href={`#${item.id}`}
-                      className="no-underline flex items-center gap-2 py-2.5 border-b border-ink/8 font-ui text-[13px] text-ink hover:text-crimson transition-colors"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-crimson flex-shrink-0" />
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
 
             {/* Explore All Sections */}
             <div>

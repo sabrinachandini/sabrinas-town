@@ -262,6 +262,7 @@ export interface TownPerson {
   birthYear: number | null;
   deathYear: number | null;
   verificationStatus: string;
+  imageUrl?: string | null;
 }
 
 export interface TownPeopleResponse {
@@ -1485,6 +1486,7 @@ export async function getTownPeople(slug: string): Promise<TownPeopleResponse | 
 
     const personSelect = {
       id: true,
+      slug: true,
       name: true,
       roles: true,
       bioShort: true,
@@ -1492,6 +1494,7 @@ export async function getTownPeople(slug: string): Promise<TownPeopleResponse | 
       birthYear: true,
       deathYear: true,
       verificationStatus: true,
+      imageUrl: true,
     } as const;
 
     const [eventPeople, townPeople] = await Promise.all([
@@ -1515,6 +1518,7 @@ export async function getTownPeople(slug: string): Promise<TownPeopleResponse | 
 
     const people = Array.from(personMap.values()).map((p) => ({
       id: p.id,
+      slug: p.slug ?? undefined,
       name: p.name,
       roles: p.roles,
       bioShort: p.bioShort,
@@ -1522,6 +1526,7 @@ export async function getTownPeople(slug: string): Promise<TownPeopleResponse | 
       birthYear: p.birthYear,
       deathYear: p.deathYear,
       verificationStatus: p.verificationStatus as string,
+      imageUrl: (p as any).imageUrl ?? null,
     }));
 
     return {

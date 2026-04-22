@@ -99,7 +99,7 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
     <div className="relative w-full h-full" style={{ minHeight: 600 }}>
 
       {/* ── State filter pills ── */}
-      <div className="absolute top-3 left-3 z-20 flex flex-wrap gap-1.5 max-w-[calc(100%-320px)]">
+      <div className="absolute top-3 left-3 z-20 flex flex-wrap gap-1.5 max-w-[calc(100%-16px)] sm:max-w-[calc(100%-320px)]">
         <button
           onClick={() => { setActiveState(null); setSelectedSlug(null); }}
           className={`font-ui text-[8px] uppercase tracking-[0.14em] px-2.5 py-1 border transition-colors whitespace-nowrap shadow-sm ${
@@ -200,7 +200,7 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
 
       {/* ── Sidebar panel ── */}
       <div
-        className={`absolute top-0 right-0 h-full w-[300px] bg-[#14100a] border-l-2 border-[#cc3322] z-20 flex flex-col overflow-hidden transition-transform duration-200 ease-out`}
+        className={`absolute top-0 right-0 h-full w-full sm:w-[300px] bg-[#14100a] border-l-2 border-[#cc3322] z-20 flex flex-col overflow-hidden transition-transform duration-200 ease-out`}
         style={{ transform: selectedTown ? "translateX(0)" : "translateX(100%)" }}
       >
         {selectedTown && (
@@ -288,7 +288,7 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
       </div>
 
       {/* ── Legend (bottom-left) ── */}
-      <div className="absolute bottom-8 left-3 z-10 bg-white/90 border border-[#14100a]/10 px-4 py-3 shadow-sm">
+      <div className={`absolute bottom-8 left-3 z-10 bg-white/90 border border-[#14100a]/10 px-4 py-3 shadow-sm ${selectedTown ? "hidden sm:block" : ""}`}>
         <p className="font-ui text-[7px] uppercase tracking-[0.16em] text-[#14100a]/40 mb-2">Significance</p>
         <div className="space-y-1.5">
           {Object.entries(TIER_COLORS).map(([tier, color]) => (
