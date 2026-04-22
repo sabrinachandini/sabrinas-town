@@ -62,31 +62,33 @@ export function Header() {
           scrolled ? "shadow-lg" : ""
         }`}
       >
-        {/* Row 1: back + wordmark + mobile hamburger */}
-        <div className="h-14 mx-auto max-w-[1200px] px-6 md:px-10 flex items-center justify-between">
-          <Link
-            href="/towns"
-            className="no-underline font-ui text-[10px] font-medium uppercase tracking-[0.2em] text-cream/55 hover:text-cream transition-colors flex items-center gap-1.5"
-          >
-            <span aria-hidden="true">←</span> Towns
+        {/* Row 1: logo LEFT + back link + mobile hamburger */}
+        <div className="h-14 mx-auto max-w-[1200px] pr-6 md:pr-10 flex items-center justify-between">
+          {/* Logo — left side with 5px margin */}
+          <Link href="/" className="no-underline ml-[5px]" aria-label="History is for Everyone — home">
+            <img src="/logo-lockup-town.svg" alt="History is for Everyone" className="h-[42px] w-auto" />
           </Link>
-          <Link href="/" className="no-underline hidden sm:block" aria-label="History is for Everyone — home">
-            {/* Star-only mark: compact for town context header */}
-            <img src="/logo-star.svg" alt="History is for Everyone" className="h-8 w-8" />
-          </Link>
-          {/* Mobile hamburger — shows active section + icon */}
-          <button
-            className="sm:hidden flex items-center gap-2 p-2 -mr-2 text-cream/70 hover:text-cream transition-colors"
-            onClick={() => setOpen(!open)}
-            aria-label={open ? "Close section menu" : "Open section menu"}
-          >
-            {activeTab && (
-              <span className="font-ui text-[10px] font-medium uppercase tracking-[0.15em] text-cream/55">
-                {activeTab.label}
-              </span>
-            )}
-            {open ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          {/* Right: back to towns (desktop) + mobile hamburger */}
+          <div className="flex items-center gap-3">
+            <Link
+              href="/towns"
+              className="no-underline hidden sm:flex font-ui text-[10px] font-medium uppercase tracking-[0.2em] text-cream/55 hover:text-cream transition-colors items-center gap-1.5"
+            >
+              <span aria-hidden="true">←</span> Towns
+            </Link>
+            <button
+              className="sm:hidden flex items-center gap-2 p-2 -mr-2 text-cream/70 hover:text-cream transition-colors"
+              onClick={() => setOpen(!open)}
+              aria-label={open ? "Close section menu" : "Open section menu"}
+            >
+              {activeTab && (
+                <span className="font-ui text-[10px] font-medium uppercase tracking-[0.15em] text-cream/55">
+                  {activeTab.label}
+                </span>
+              )}
+              {open ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
 
         {/* Row 2: town section tabs — desktop only */}
