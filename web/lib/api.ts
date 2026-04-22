@@ -2097,6 +2097,7 @@ export interface MapLink {
   toSlug: string;
   linkType: string;
   weight: number;
+  reason: string;
 }
 
 // ── Local / real-world events ─────────────────────────────────────────────
@@ -2158,6 +2159,7 @@ export async function getMapData(): Promise<{ towns: MapTown[]; links: MapLink[]
           toTown: { select: { slug: true } },
           linkType: true,
           weight: true,
+          reason: true,
         },
       }),
     ]);
@@ -2174,6 +2176,7 @@ export async function getMapData(): Promise<{ towns: MapTown[]; links: MapLink[]
         toSlug: l.toTown.slug,
         linkType: l.linkType as string,
         weight: l.weight,
+        reason: l.reason,
       })),
     };
   } catch (error) {

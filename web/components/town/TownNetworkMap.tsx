@@ -78,21 +78,31 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
       const to = bySlug[l.toSlug];
       if (!from?.lat || !from?.lng || !to?.lat || !to?.lng) return false;
       if (!visibleSlugs.has(l.fromSlug) || !visibleSlugs.has(l.toSlug)) return false;
+      // Default view: only draw strong connections to avoid clutter
+      const touchesSelected = selectedSlug && (l.fromSlug === selectedSlug || l.toSlug === selectedSlug);
+      if (!touchesSelected && l.weight < 65) return false;
       const key = [l.fromSlug, l.toSlug].sort().join("--");
       if (seen.has(key)) return false;
       seen.add(key);
       return true;
     });
-  }, [links, bySlug, visibleSlugs]);
+  }, [links, bySlug, visibleSlugs, selectedSlug]);
 
-  // Connected towns list for sidebar
+  // Connected towns list for sidebar (with reasons)
   const connectedTowns = useMemo(() => {
     if (!selectedTown) return [];
     return links
       .filter((l) => l.fromSlug === selectedTown.slug || l.toSlug === selectedTown.slug)
-      .map((l) => bySlug[l.fromSlug === selectedTown.slug ? l.toSlug : l.fromSlug])
-      .filter((t): t is MapTown => !!t && visibleSlugs.has(t.slug))
-      .slice(0, 5);
+      .map((l) => ({
+        town: bySlug[l.fromSlug === selectedTown.slug ? l.toSlug : l.fromSlug],
+        reason: l.reason,
+        weight: l.weight,
+      }))
+      .filter((item): item is { town: MapTown; reason: string; weight: number } =>
+        !!item.town && visibleSlugs.has(item.town.slug)
+      )
+      .sort((a, b) => b.weight - a.weight)
+      .slice(0, 6);
   }, [links, selectedTown, bySlug, visibleSlugs]);
 
   return (
@@ -244,22 +254,28 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
 
             {/* Connected towns */}
             {connectedTowns.length > 0 && (
-              <div className="px-6 py-4 border-b border-[#f2e6c8]/8">
+              <div className="px-6 py-4 border-b border-[#f2e6c8]/8 overflow-y-auto flex-1">
                 <p className="font-ui text-[8px] uppercase tracking-[0.16em] text-[#f2e6c8]/22 mb-3">
                   Connected Towns
                 </p>
-                <div className="space-y-0.5">
-                  {connectedTowns.map((t) => (
-                    <button
-                      key={t.slug}
-                      onClick={() => setSelectedSlug(t.slug)}
-                      className="flex items-center gap-2 w-full text-left py-1.5 group"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#cc3322]/40 flex-shrink-0 group-hover:bg-[#cc3322] transition-colors" />
-                      <span className="font-ui text-[11px] text-[#f2e6c8]/45 group-hover:text-[#e8b84b] transition-colors">
-                        {t.name}, {t.state}
-                      </span>
-                    </button>
+                <div className="space-y-3">
+                  {connectedTowns.map(({ town: t, reason }) => (
+                    <div key={t.slug}>
+                      <button
+                        onClick={() => setSelectedSlug(t.slug)}
+                        className="flex items-center gap-2 w-full text-left group"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#cc3322]/40 flex-shrink-0 group-hover:bg-[#cc3322] transition-colors" />
+                        <span className="font-ui text-[11px] text-[#f2e6c8]/60 group-hover:text-[#e8b84b] transition-colors">
+                          {t.name}, {t.state}
+                        </span>
+                      </button>
+                      {reason && (
+                        <p className="font-editorial italic text-[11px] text-[#f2e6c8]/30 leading-snug mt-0.5 pl-3.5 line-clamp-2">
+                          {reason}
+                        </p>
+                      )}
+                    </div>
                   ))}
                 </div>
               </div>
