@@ -5,6 +5,7 @@ import {
   PageHeader,
   EditorialSection,
 } from "@/components/editorial";
+import NextLink from "next/link";
 
 export const revalidate = 3600;
 
@@ -40,9 +41,18 @@ export default async function PlacesPage({ params }: PageProps) {
 
   if (!town) return <ComingSoon slug={slug} section="Places" />;
 
-  const places = placesData
+  const allPlaces = placesData
     ? Object.values(placesData.placesByCategory).flat()
     : town.featuredPlaces ?? [];
+
+  // Only show places that are outdoors or verifiably open to the public.
+  // Historic houses with no hours/admission info are assumed private residences.
+  const places = allPlaces.filter((place) => {
+    if (place.placeType === "HISTORIC_HOUSE") {
+      return place.hours !== null || place.admission !== null;
+    }
+    return true;
+  });
 
   const formatPlaceType = (type: string): string => {
     const labels: Record<string, string> = {
@@ -80,10 +90,10 @@ export default async function PlacesPage({ params }: PageProps) {
             </div>
 
             {places.map((place) => (
-              <a
+              <NextLink
                 key={place.id}
-                href={`/towns/${slug}/places/${(place as any).slug || place.id}`}
-                className="flex items-center justify-between group py-4 border-b border-ink/8 no-underline hover:bg-yellow/10 hover:pl-2 transition-all duration-150"
+                href={`/towns/${slug}/places/${place.slug || place.id}`}
+                className="flex items-center justify-between group py-4 border-b border-ink/8 no-underline hover:bg-ink/5 hover:pl-2 transition-all duration-150"
               >
                 <div className="min-w-0">
                   <p className="font-editorial text-[22px] text-ink group-hover:text-crimson transition-colors">
@@ -120,7 +130,7 @@ export default async function PlacesPage({ params }: PageProps) {
                 <span className="font-display text-crimson shrink-0 ml-4 group-hover:translate-x-1 transition-transform">
                   &rarr;
                 </span>
-              </a>
+              </NextLink>
             ))}
           </div>
         ) : (

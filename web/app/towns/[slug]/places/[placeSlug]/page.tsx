@@ -1,5 +1,18 @@
 import { notFound } from "next/navigation";
-import { getTown, getTownPlaceDetail } from "@/lib/api";
+import { getTown, getTownPlaceDetail, getRankings, getPlaces } from "@/lib/api";
+
+export async function generateStaticParams() {
+  const towns = await getRankings({ limit: 500 });
+  const params: { slug: string; placeSlug: string }[] = [];
+  for (const town of towns ?? []) {
+    const placesData = await getPlaces(town.slug);
+    const places = placesData ? Object.values(placesData.placesByCategory).flat() : [];
+    for (const place of places) {
+      if (place.slug) params.push({ slug: town.slug, placeSlug: place.slug });
+    }
+  }
+  return params;
+}
 import {
   PageShell,
   PageHeader,

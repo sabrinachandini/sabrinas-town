@@ -30,7 +30,19 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
-const SIDE_ROLE_ORDER = ["General", "Colonel", "Commander", "Governor", "Patriot", "Loyalist", "Spy", "Silversmith", "Printer", "Merchant"];
+const PATRIOT_ROLES = new Set([
+  "Patriot", "General", "Colonel", "Major", "Captain", "Lieutenant", "Commander",
+  "Minuteman", "Militiaman", "Continental", "Soldier", "Spy", "Intelligence Gatherer",
+  "Silversmith", "Printer", "Merchant", "Statesman", "Physician", "Politician",
+  "Patriot Leader", "Political Organizer", "Delegate", "Farmer", "Messenger",
+  "Artisan", "Blacksmith", "Innkeeper", "Minister", "Militia Captain",
+  "Town Meeting Leader", "Continental Congress Delegate", "Veteran", "Witness",
+]);
+
+const LOYALIST_ROLES = new Set([
+  "Loyalist", "Tory", "British", "British Officer", "British Soldier",
+  "Royal Governor", "Crown Official",
+]);
 
 export default async function PeoplePage({ params }: PageProps) {
   const { slug } = await params;
@@ -39,9 +51,8 @@ export default async function PeoplePage({ params }: PageProps) {
 
   const people = peopleData?.people ?? [];
 
-  // Group by side/allegiance based on roles
-  const patriots = people.filter((p) => (p.roles ?? []).some((r) => ["Patriot", "General", "Colonel", "Commander", "Minuteman", "Continental", "Spy", "Silversmith", "Printer", "Merchant", "Statesman", "Physician"].includes(r)));
-  const loyalists = people.filter((p) => (p.roles ?? []).some((r) => ["Loyalist", "Tory", "British"].includes(r)));
+  const loyalists = people.filter((p) => (p.roles ?? []).some((r) => LOYALIST_ROLES.has(r)));
+  const patriots = people.filter((p) => !loyalists.includes(p) && (p.roles ?? []).some((r) => PATRIOT_ROLES.has(r)));
   const others = people.filter((p) => !patriots.includes(p) && !loyalists.includes(p));
 
   return (
