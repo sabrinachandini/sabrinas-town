@@ -78,7 +78,7 @@ export default async function NewJerseyTeachPage() {
   return (
     <div>
       {/* ── HERO ──────────────────────────────────────────────────── */}
-      <section className="bg-[#1a3a72] border-b-4 border-[#14100a] py-20 px-8 md:px-16 relative overflow-hidden">
+      <section className="bg-[#1a3a72] border-b-4 border-[#14100a] py-12 sm:py-20 px-5 sm:px-8 md:px-16 relative overflow-hidden">
         <div aria-hidden className="absolute right-[-10px] top-[-20px] font-display leading-none pointer-events-none select-none text-white/[0.04]" style={{ fontSize: "clamp(160px,28vw,360px)", letterSpacing: "-0.05em" }}>NJ</div>
         <svg aria-hidden className="absolute top-6 right-6 pointer-events-none" style={{ opacity: 0.18 }} width="52" height="52" viewBox="0 0 52 52" fill="none">
           <path d="M11 25 L12.4 30 L18 30 L13.5 33.5 L15 39 L11 35.8 L7 39 L8.5 33.5 L4 30 L9.6 30 Z" fill="#e8b84b" />
@@ -106,7 +106,7 @@ export default async function NewJerseyTeachPage() {
       </section>
 
       {/* ── STATS BAND ────────────────────────────────────────────── */}
-      <section className="bg-[#cc3322] border-b-4 border-[#14100a] py-10 px-8 md:px-16 relative overflow-hidden">
+      <section className="bg-[#cc3322] border-b-4 border-[#14100a] py-10 px-5 sm:px-8 md:px-16 relative overflow-hidden">
         <div aria-hidden className="absolute right-4 top-[-12px] font-display text-[190px] leading-none text-white/[0.06] pointer-events-none select-none">NJ</div>
         <div className="relative z-10 flex items-center flex-wrap gap-0 max-w-[1200px] mx-auto">
           {[
@@ -127,7 +127,7 @@ export default async function NewJerseyTeachPage() {
       </section>
 
       {/* ── NARRATIVE ─────────────────────────────────────────────── */}
-      <section className="bg-[#f2e6c8] border-b-4 border-[#14100a] py-16 px-8 md:px-16">
+      <section className="bg-[#f2e6c8] border-b-4 border-[#14100a] py-10 sm:py-16 px-5 sm:px-8 md:px-16">
         <div className="max-w-[1200px] mx-auto grid md:grid-cols-[1fr_2fr] gap-12">
           <div>
             <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-[#cc3322] flex items-center gap-2.5 mb-4"><span className="w-4 h-[2px] bg-[#cc3322] block" />The Context</p>
@@ -149,7 +149,7 @@ export default async function NewJerseyTeachPage() {
       </section>
 
       {/* ── TEACHING SEQUENCES ────────────────────────────────────── */}
-      <section className="bg-[#1a3a72] border-b-4 border-[#14100a] py-16 px-8 md:px-16 relative overflow-hidden">
+      <section className="bg-[#1a3a72] border-b-4 border-[#14100a] py-10 sm:py-16 px-5 sm:px-8 md:px-16 relative overflow-hidden">
         <div aria-hidden className="absolute right-[-10px] bottom-[-20px] font-display text-[280px] leading-none text-white/[0.04] pointer-events-none select-none tracking-[-0.05em]">SEQ</div>
         <div className="relative z-10 max-w-[1200px] mx-auto">
           <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-[#e8b84b] flex items-center gap-2.5 mb-4">
@@ -173,7 +173,7 @@ export default async function NewJerseyTeachPage() {
       </section>
 
       {/* ── TOWN RESOURCE LIST ────────────────────────────────────── */}
-      <section className="bg-[#f2e6c8] border-b-4 border-[#14100a] py-16 px-8 md:px-16">
+      <section className="bg-[#f2e6c8] border-b-4 border-[#14100a] py-10 sm:py-16 px-5 sm:px-8 md:px-16">
         <div className="max-w-[1200px] mx-auto">
           <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-[#cc3322] flex items-center gap-2.5 mb-4"><span className="w-4 h-[2px] bg-[#cc3322] block" />Town Resources</p>
           <h2 className="font-display text-[#14100a] leading-[0.92] mb-2" style={{ fontSize: "clamp(32px,4vw,52px)" }}>Print-Ready Packets</h2>
@@ -203,7 +203,7 @@ export default async function NewJerseyTeachPage() {
       </section>
 
       {/* ── METHODOLOGY ───────────────────────────────────────────── */}
-      <section className="bg-[#1a3a72] py-16 px-8 md:px-16 relative overflow-hidden">
+      <section className="bg-[#1a3a72] py-10 sm:py-16 px-5 sm:px-8 md:px-16 relative overflow-hidden">
         <div aria-hidden className="absolute right-[-10px] bottom-[-20px] font-display text-[320px] leading-none text-white/[0.04] pointer-events-none select-none tracking-[-0.05em]">T1</div>
         <div className="relative z-10 max-w-[720px] mx-auto">
           <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-[#f2e6c8]/35 mb-4">Source Standards</p>

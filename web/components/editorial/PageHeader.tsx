@@ -18,7 +18,7 @@ export function PageHeader({
   if (variant === "bold") {
     return (
       <header
-        className="-mx-8 md:-mx-16 -mt-16 mb-12 px-8 md:px-16 py-16 md:py-20 border-b-4 border-ink relative overflow-hidden"
+        className="-mx-5 sm:-mx-8 md:-mx-16 -mt-10 sm:-mt-16 mb-8 sm:mb-12 px-5 sm:px-8 md:px-16 py-12 sm:py-16 md:py-20 border-b-4 border-ink relative overflow-hidden"
         style={{ backgroundColor: "var(--town-accent, #1a3a72)" }}
       >
         {/* Ghost state abbreviation */}

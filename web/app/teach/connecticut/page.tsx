@@ -60,7 +60,7 @@ export default async function ConnecticutTeachPage() {
   return (
     <div>
       {/* ── HERO ──────────────────────────────────────────────────── */}
-      <section className="bg-[#1a3a72] border-b-4 border-[#14100a] py-20 px-8 md:px-16 relative overflow-hidden">
+      <section className="bg-[#1a3a72] border-b-4 border-[#14100a] py-12 sm:py-20 px-5 sm:px-8 md:px-16 relative overflow-hidden">
         <div
           aria-hidden
           className="absolute right-[-10px] top-[-20px] font-display leading-none pointer-events-none select-none text-white/[0.04]"
@@ -128,7 +128,7 @@ export default async function ConnecticutTeachPage() {
       </section>
 
       {/* ── STATS BAND ────────────────────────────────────────────── */}
-      <section className="bg-[#cc3322] border-b-4 border-[#14100a] py-10 px-8 md:px-16 relative overflow-hidden">
+      <section className="bg-[#cc3322] border-b-4 border-[#14100a] py-10 px-5 sm:px-8 md:px-16 relative overflow-hidden">
         <div
           aria-hidden
           className="absolute right-4 top-[-12px] font-display text-[190px] leading-none text-white/[0.06] pointer-events-none select-none"
@@ -168,7 +168,7 @@ export default async function ConnecticutTeachPage() {
       </section>
 
       {/* ── NARRATIVE ─────────────────────────────────────────────── */}
-      <section className="bg-[#f2e6c8] border-b-4 border-[#14100a] py-16 px-8 md:px-16">
+      <section className="bg-[#f2e6c8] border-b-4 border-[#14100a] py-10 sm:py-16 px-5 sm:px-8 md:px-16">
         <div className="max-w-[1200px] mx-auto grid md:grid-cols-[1fr_2fr] gap-12">
           <div>
             <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-[#cc3322] flex items-center gap-2.5 mb-4">
@@ -199,7 +199,7 @@ export default async function ConnecticutTeachPage() {
       </section>
 
       {/* ── TEACHING SEQUENCES ────────────────────────────────────── */}
-      <section className="bg-[#14100a] border-b-4 border-[#cc3322] py-16 px-8 md:px-16">
+      <section className="bg-[#14100a] border-b-4 border-[#cc3322] py-10 sm:py-16 px-5 sm:px-8 md:px-16">
         <div className="max-w-[1200px] mx-auto">
           <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-[#cc3322] flex items-center gap-2.5 mb-4">
             <span className="w-4 h-[2px] bg-[#cc3322] block" />
@@ -231,7 +231,7 @@ export default async function ConnecticutTeachPage() {
       </section>
 
       {/* ── TOWN RESOURCE LIST ────────────────────────────────────── */}
-      <section className="bg-[#f2e6c8] border-b-4 border-[#14100a] py-16 px-8 md:px-16">
+      <section className="bg-[#f2e6c8] border-b-4 border-[#14100a] py-10 sm:py-16 px-5 sm:px-8 md:px-16">
         <div className="max-w-[1200px] mx-auto">
           <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-[#cc3322] flex items-center gap-2.5 mb-4">
             <span className="w-4 h-[2px] bg-[#cc3322] block" />
@@ -297,7 +297,7 @@ export default async function ConnecticutTeachPage() {
       </section>
 
       {/* ── METHODOLOGY ───────────────────────────────────────────── */}
-      <section className="bg-[#1a3a72] py-16 px-8 md:px-16 relative overflow-hidden">
+      <section className="bg-[#1a3a72] py-10 sm:py-16 px-5 sm:px-8 md:px-16 relative overflow-hidden">
         <div
           aria-hidden
           className="absolute right-[-10px] bottom-[-20px] font-display text-[320px] leading-none text-white/[0.04] pointer-events-none select-none tracking-[-0.05em]"

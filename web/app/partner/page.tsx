@@ -67,7 +67,7 @@ export default function PartnerPage() {
   return (
     <main>
       {/* CRIMSON hero */}
-      <section className="bg-[#cc3322] border-b-4 border-[#14100a] py-20 px-6 sm:px-16 relative overflow-hidden">
+      <section className="bg-[#cc3322] border-b-4 border-[#14100a] py-12 sm:py-20 px-5 sm:px-16 relative overflow-hidden">
         {/* Ghost watermark */}
         <div aria-hidden className="absolute right-[-10px] top-[-20px] font-display leading-none pointer-events-none select-none text-white/[0.07]" style={{ fontSize: "clamp(140px,32vw,460px)", letterSpacing: "-0.05em" }}>
           Partner
@@ -91,13 +91,13 @@ export default function PartnerPage() {
             <path d="M0 8 Q21 2 42 8 Q63 14 85 7 Q106 1 127 7 Q148 13 170 7 Q191 2 212 7 Q233 13 255 7 Q276 2 297 7 Q318 13 340 6" stroke="rgba(255,255,255,0.35)" strokeWidth="2.5" fill="none" strokeLinecap="round" />
           </svg>
 
-          <p className="font-editorial italic font-light text-[20px] text-[rgba(255,255,255,0.76)] max-w-[500px] mt-8 leading-[1.55]">
+          <p className="font-editorial italic font-light text-[16px] sm:text-[20px] text-[rgba(255,255,255,0.76)] max-w-[500px] mt-8 leading-[1.55]">
             Every town already has a public profile. Partnership is for communities that want to shape how their story is told, reach teachers and travelers, and understand who is engaging with their history.
           </p>
 
           <a
             href="/partner/inquire"
-            className="no-underline inline-block mt-9 bg-[#14100a] text-[#f2e6c8] font-ui text-[11px] font-bold tracking-[0.18em] uppercase px-9 py-4 border-2 border-[#14100a] hover:bg-[#1a3a72] hover:border-[#1a3a72] transition-colors"
+            className="no-underline block sm:inline-block mt-9 bg-[#14100a] text-[#f2e6c8] font-ui text-[11px] font-bold tracking-[0.18em] uppercase px-9 py-4 border-2 border-[#14100a] hover:bg-[#1a3a72] hover:border-[#1a3a72] transition-colors text-center sm:text-left"
             style={{ boxShadow: "5px 5px 0 rgba(255,255,255,0.25)" }}
           >
             Submit an Inquiry →
@@ -106,7 +106,7 @@ export default function PartnerPage() {
       </section>
 
       {/* NAVY propositions */}
-      <section className="bg-[#1a3a72] border-b-4 border-[#14100a] py-14 px-6 sm:px-16 relative overflow-hidden">
+      <section className="bg-[#1a3a72] border-b-4 border-[#14100a] py-10 sm:py-14 px-5 sm:px-16 relative overflow-hidden">
         {/* Ghost */}
         <div aria-hidden className="absolute right-5 top-[-10px] font-display text-[300px] leading-none text-white/[0.04] pointer-events-none select-none">
           ∞
@@ -133,7 +133,7 @@ export default function PartnerPage() {
       </section>
 
       {/* CREAM always-free */}
-      <section className="bg-[#f2e6c8] border-b-4 border-[#14100a] py-18 px-6 sm:px-16 relative overflow-hidden">
+      <section className="bg-[#f2e6c8] border-b-4 border-[#14100a] py-12 sm:py-16 px-5 sm:px-16 relative overflow-hidden">
         {/* Ghost */}
         <div aria-hidden className="absolute right-[-10px] bottom-[-20px] font-display text-[260px] leading-none text-[rgba(20,16,10,0.03)] pointer-events-none select-none tracking-[-0.04em]">
           Open
@@ -169,7 +169,7 @@ export default function PartnerPage() {
       </section>
 
       {/* INK benefits */}
-      <section className="bg-[#14100a] border-b-4 border-[#cc3322] py-18 px-6 sm:px-16 relative overflow-hidden">
+      <section className="bg-[#14100a] border-b-4 border-[#cc3322] py-12 sm:py-16 px-5 sm:px-16 relative overflow-hidden">
         {/* Ghost */}
         <div aria-hidden className="absolute right-[-10px] bottom-[-20px] font-display text-[360px] leading-none text-white/[0.03] pointer-events-none select-none tracking-[-0.05em]">
           Benefits
@@ -205,7 +205,7 @@ export default function PartnerPage() {
       </section>
 
       {/* Inquiry */}
-      <section className="bg-[#f2ece0] border-b-4 border-[#14100a] py-20 px-6 sm:px-16">
+      <section className="bg-[#f2ece0] border-b-4 border-[#14100a] py-12 sm:py-20 px-5 sm:px-16">
         <div className="mx-auto max-w-[720px]">
           <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[rgba(20,16,10,0.4)] mb-3">
             Pricing
@@ -233,7 +233,7 @@ export default function PartnerPage() {
       </section>
 
       {/* CRIMSON closing CTA */}
-      <section className="bg-[#cc3322] border-t-4 border-[#14100a] py-20 px-6 sm:px-16 relative overflow-hidden">
+      <section className="bg-[#cc3322] border-t-4 border-[#14100a] py-12 sm:py-20 px-5 sm:px-16 relative overflow-hidden">
         {/* Ghost */}
         <div aria-hidden className="absolute right-[-10px] bottom-[-24px] font-display text-[360px] leading-none text-white/[0.07] pointer-events-none select-none tracking-[-0.05em]">
           Join
@@ -260,17 +260,17 @@ export default function PartnerPage() {
             Tell us about your organization and the town you serve. We review every inquiry personally.
           </p>
 
-          <div className="flex gap-4 flex-wrap">
+          <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="/partner/inquire"
-              className="no-underline inline-block bg-[#14100a] text-[#f2e6c8] font-ui text-[11px] font-bold tracking-[0.18em] uppercase px-8 py-[18px] border-2 border-[#14100a] hover:bg-[#1a3a72] hover:border-[#1a3a72] transition-colors"
+              className="no-underline block text-center bg-[#14100a] text-[#f2e6c8] font-ui text-[11px] font-bold tracking-[0.18em] uppercase px-8 py-[18px] border-2 border-[#14100a] hover:bg-[#1a3a72] hover:border-[#1a3a72] transition-colors"
               style={{ boxShadow: "5px 5px 0 rgba(255,255,255,0.25)" }}
             >
               Submit an Inquiry
             </a>
             <a
               href="/towns"
-              className="no-underline inline-block bg-transparent text-[rgba(255,255,255,0.65)] font-ui text-[11px] font-bold tracking-[0.18em] uppercase px-8 py-[18px] border-2 border-[rgba(255,255,255,0.3)] hover:border-white/60 hover:text-white transition-colors"
+              className="no-underline block text-center bg-transparent text-[rgba(255,255,255,0.65)] font-ui text-[11px] font-bold tracking-[0.18em] uppercase px-8 py-[18px] border-2 border-[rgba(255,255,255,0.3)] hover:border-white/60 hover:text-white transition-colors"
             >
               Browse the Network
             </a>

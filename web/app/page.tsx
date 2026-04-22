@@ -213,51 +213,75 @@ export default async function HomePage() {
       </div>
 
       {/* ────────────────────────────────────────────────────────────── */}
-      {/* ON THIS DAY — compact callout strip                           */}
+      {/* ON THIS DAY — full section                                    */}
       {/* ────────────────────────────────────────────────────────────── */}
-      <NextLink
-        href="/on-this-day"
-        className="no-underline block bg-[#14100a] border-b-4 border-[#cc3322] hover:bg-[#1a1208] transition-colors group"
-        aria-label={`On This Day — ${otdMonthName} ${otdDayNum}: see Revolutionary War events`}
-      >
-        <div className="max-w-[1200px] mx-auto px-5 sm:px-10 py-7 sm:py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
-          {/* Left: date badge + headline */}
-          <div className="flex items-center gap-5">
-            {/* Date badge */}
-            <div className="bg-[#cc3322] px-3 py-2.5 text-center min-w-[58px] flex-shrink-0">
-              <p className="font-display text-[28px] text-[#f2e6c8] leading-none">{otdDayNum}</p>
-              <p className="font-ui text-[7px] uppercase tracking-[0.12em] text-[#f2e6c8]/60 mt-0.5">{otdMonthName.slice(0, 3)}</p>
-            </div>
-            {/* Text */}
-            <div>
-              <p className="font-ui text-[8px] uppercase tracking-[0.24em] text-[#cc3322] mb-1.5">On This Day in the Revolution</p>
-              {otdEvents.length > 0 ? (
-                <>
-                  <p className="font-editorial italic text-[16px] sm:text-[18px] text-[#f2e6c8]/85 leading-snug max-w-[420px]">
-                    {otdEvents[0].name}
-                    <span className="font-ui not-italic text-[11px] text-[#f2e6c8]/35 ml-2 align-middle">
-                      {otdEvents[0].year} · {otdEvents[0].town.name}
-                    </span>
-                  </p>
-                  {otdEvents.length > 1 && (
-                    <p className="font-ui text-[10px] text-[#f2e6c8]/30 mt-1">
-                      +{otdEvents.length - 1} more event{otdEvents.length > 2 ? "s" : ""} on {otdMonthName} {otdDayNum}
-                    </p>
-                  )}
-                </>
-              ) : (
-                <p className="font-editorial italic text-[17px] text-[#f2e6c8]/40 leading-snug">
-                  No documented events on {otdMonthName} {otdDayNum}
-                </p>
-              )}
-            </div>
-          </div>
-          {/* Right: CTA */}
-          <span className="font-ui text-[9px] uppercase tracking-[0.2em] text-[#f2e6c8]/50 border border-[#f2e6c8]/15 px-5 py-2.5 group-hover:border-[#cc3322] group-hover:text-[#cc3322] transition-colors whitespace-nowrap flex-shrink-0 sm:self-center">
-            See All Events →
-          </span>
+      <section className="bg-[#14100a] border-b-4 border-[#cc3322] py-14 sm:py-20 px-5 sm:px-10 relative overflow-hidden">
+        {/* Ghost day number watermark */}
+        <div
+          aria-hidden
+          className="absolute right-[-0.05em] top-[-0.1em] font-display leading-none pointer-events-none select-none text-white/[0.035]"
+          style={{ fontSize: "clamp(160px,32vw,380px)" }}
+        >
+          {otdDayNum}
         </div>
-      </NextLink>
+
+        <div className="relative z-10 max-w-[1200px] mx-auto">
+          {/* Kicker */}
+          <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-[#cc3322] flex items-center gap-2 mb-6 before:content-[''] before:w-4 before:h-[2px] before:bg-[#cc3322] before:block">
+            On This Day in the Revolution
+          </p>
+
+          {/* Date heading */}
+          <h2
+            className="font-display text-[#f2e6c8] leading-[0.9] tracking-[-0.03em] mb-8"
+            style={{ fontSize: "clamp(44px,8vw,100px)" }}
+          >
+            {otdMonthName} {otdDayNum}
+          </h2>
+
+          {otdEvents.length > 0 ? (
+            <div className="border-t border-[rgba(242,230,200,0.10)]">
+              {otdEvents.slice(0, 3).map((event) => (
+                <NextLink
+                  key={event.id}
+                  href={`/towns/${event.town.slug}/timeline/${(event as { slug?: string }).slug ?? event.id}`}
+                  className="no-underline flex gap-4 sm:gap-6 py-6 border-b border-[rgba(242,230,200,0.07)] group hover:bg-[rgba(242,230,200,0.02)] transition-colors -mx-5 sm:-mx-10 px-5 sm:px-10"
+                >
+                  {/* Year badge */}
+                  <div className="bg-[#cc3322] px-2.5 sm:px-3 py-2 text-center min-w-[52px] sm:min-w-[60px] flex-shrink-0 self-start">
+                    <p className="font-display text-[20px] sm:text-[24px] text-[#f2e6c8] leading-none">{event.year}</p>
+                    <p className="font-ui text-[7px] uppercase tracking-[0.1em] text-[#f2e6c8]/55 mt-0.5">{otdMonthName.slice(0, 3)}</p>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-display text-[clamp(17px,2.5vw,26px)] text-[#f2e6c8] group-hover:text-[#cc3322] transition-colors leading-tight tracking-[-0.02em]">
+                      {event.name}
+                    </p>
+                    <p className="font-ui text-[10px] uppercase tracking-[0.12em] text-[#cc3322]/70 mt-1">
+                      {event.town.name}, {event.town.state}
+                    </p>
+                    {event.summary && (
+                      <p className="font-ui text-[12px] sm:text-[13px] text-[#f2e6c8]/40 leading-relaxed mt-1.5 line-clamp-2">
+                        {event.summary}
+                      </p>
+                    )}
+                  </div>
+                </NextLink>
+              ))}
+            </div>
+          ) : (
+            <p className="font-editorial italic text-[18px] text-[#f2e6c8]/35 border-t border-[rgba(242,230,200,0.08)] pt-8">
+              No documented events recorded on {otdMonthName} {otdDayNum} — but the war never stopped.
+            </p>
+          )}
+
+          <NextLink
+            href="/on-this-day"
+            className="no-underline inline-flex items-center gap-2 mt-8 font-ui text-[10px] font-semibold tracking-[0.2em] uppercase text-[#f2e6c8]/45 border border-[rgba(242,230,200,0.15)] px-6 py-3 hover:border-[#cc3322] hover:text-[#cc3322] transition-colors"
+          >
+            See all events on {otdMonthName} {otdDayNum} →
+          </NextLink>
+        </div>
+      </section>
 
       {/* ────────────────────────────────────────────────────────────── */}
       {/* 3. MANIFESTO                                                  */}

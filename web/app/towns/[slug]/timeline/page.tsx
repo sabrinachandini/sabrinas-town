@@ -70,7 +70,7 @@ export default async function TimelinePage({ params }: PageProps) {
     <div className="bg-[#f2e6c8] min-h-screen">
 
       {/* ── Hero ── */}
-      <section className="bg-[#1a3a72] border-b-4 border-[#14100a] py-20 px-8 md:px-16 relative overflow-hidden">
+      <section className="bg-[#1a3a72] border-b-4 border-[#14100a] py-12 sm:py-20 px-5 sm:px-8 md:px-16 relative overflow-hidden">
         <div
           aria-hidden
           className="absolute right-[-0.05em] bottom-[-0.15em] font-display leading-none text-white/[0.04] pointer-events-none select-none"
@@ -107,7 +107,7 @@ export default async function TimelinePage({ params }: PageProps) {
       </section>
 
       {/* ── Stats band ── */}
-      <section className="bg-[#cc3322] border-b-4 border-[#14100a] py-4 px-8 md:px-16 flex flex-wrap gap-8 items-center">
+      <section className="bg-[#cc3322] border-b-4 border-[#14100a] py-4 px-5 sm:px-8 md:px-16 flex flex-wrap gap-6 sm:gap-8 items-center">
         {[
           { n: sortedEvents.length, label: "Events" },
           { n: years.filter((y) => y !== "Undated").length, label: "Years" },
@@ -123,7 +123,7 @@ export default async function TimelinePage({ params }: PageProps) {
       {/* ── Year nav ── */}
       {years.length > 1 && (
         <div className="border-b border-[#14100a]/10 bg-[#f2e6c8] sticky top-0 z-10 overflow-x-auto">
-          <div className="max-w-[1200px] mx-auto px-8 md:px-16 flex gap-6 py-3">
+          <div className="max-w-[1200px] mx-auto px-5 sm:px-8 md:px-16 flex gap-6 py-3">
             {years.map((year) => (
               <a key={year} href={`#year-${year}`} className="no-underline font-ui text-[9px] uppercase tracking-[0.12em] text-[#14100a]/40 hover:text-[#cc3322] transition-colors whitespace-nowrap">
                 {year} <span className="text-[#14100a]/25">({byYear[year].length})</span>
@@ -305,7 +305,7 @@ export default async function TimelinePage({ params }: PageProps) {
       </div>
 
       {/* ── Back to town ── */}
-      <div className="border-t-4 border-[#14100a] bg-[#14100a] py-8 px-8 md:px-16">
+      <div className="border-t-4 border-[#14100a] bg-[#14100a] py-8 px-5 sm:px-8 md:px-16">
         <div className="max-w-[1200px] mx-auto">
           <NextLink href={`/towns/${slug}`} className="no-underline font-ui text-[9px] uppercase tracking-[0.2em] text-[#f2e6c8]/40 hover:text-[#f2e6c8] transition-colors">
             ← Back to {town.name}
