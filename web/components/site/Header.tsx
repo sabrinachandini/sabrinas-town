@@ -63,10 +63,10 @@ export function Header() {
         }`}
       >
         {/* Row 1: logo LEFT + back link + mobile hamburger */}
-        <div className="h-14 mx-auto max-w-[1200px] pr-6 md:pr-10 flex items-center justify-between">
-          {/* Logo — left side with 5px margin */}
-          <Link href="/" className="no-underline ml-[5px]" aria-label="History is for Everyone — home">
-            <img src="/logo-lockup-town.svg" alt="History is for Everyone" className="h-[42px] w-auto" />
+        <div className="h-20 mx-auto max-w-[1200px] pr-6 md:pr-10 flex items-center justify-between">
+          {/* Logo — top left */}
+          <Link href="/" className="no-underline ml-[5px] flex-shrink-0" aria-label="History is for Everyone — home">
+            <img src="/logo-lockup-town.svg" alt="History is for Everyone" className="h-[64px] w-auto" />
           </Link>
           {/* Right: back to towns (desktop) + mobile hamburger */}
           <div className="flex items-center gap-3">
@@ -154,11 +154,14 @@ export function Header() {
         scrolled ? "shadow-lg" : ""
       }`}
     >
-      <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-3 flex items-center justify-between">
+      <div className="mx-auto max-w-[1200px] px-4 md:px-10 py-2 flex items-center justify-between">
 
-        {/* Logo — LEFT, 5px margin, desktop only */}
-        <Link href="/" className="no-underline hidden sm:flex items-center ml-[5px]" aria-label="History is for Everyone — home">
-          <img src="/logo-horizontal.svg" alt="History is for Everyone" className="h-[94px] w-auto" />
+        {/* Logo — TOP LEFT, always visible */}
+        <Link href="/" className="no-underline ml-[5px] flex-shrink-0" aria-label="History is for Everyone — home">
+          {/* Mobile: stacked lockup */}
+          <img src="/logo-lockup-town.svg" alt="History is for Everyone" className="h-[64px] w-auto sm:hidden" />
+          {/* Desktop: horizontal lockup */}
+          <img src="/logo-horizontal.svg" alt="History is for Everyone" className="h-[110px] w-auto hidden sm:block" />
         </Link>
 
         {/* Desktop nav — RIGHT */}
