@@ -27,9 +27,9 @@ function slugify(str: string): string {
 async function upsertTheme(name: string): Promise<string> {
   const slug = slugify(name);
   const theme = await prisma.theme.upsert({
-    where: { slug },
+    where: { id: slug },
     update: {},
-    create: { id: slug, slug, name, description: name },
+    create: { id: slug, name, description: name },
   });
   return theme.id;
 }
