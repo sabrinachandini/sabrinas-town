@@ -1,9 +1,9 @@
 /**
  * Claude-powered content enrichment script.
- * Expands town narratives, event summaries, and person bios. Logs all changes.
+ * Expands town narratives, hero summaries, event summaries, and person bios.
  *
  * Usage:
- *   npx tsx scripts/enrich-content.ts [--limit N] [--towns-only] [--events-only] [--people-only]
+ *   npx tsx scripts/enrich-content.ts [--limit N] [--towns-only] [--events-only] [--people-only] [--summaries-only]
  */
 
 import "dotenv/config";
@@ -16,10 +16,71 @@ const LIMIT = parseInt(process.argv.find((a) => a.startsWith("--limit="))?.split
 const TOWNS_ONLY = process.argv.includes("--towns-only");
 const EVENTS_ONLY = process.argv.includes("--events-only");
 const PEOPLE_ONLY = process.argv.includes("--people-only");
+const SUMMARIES_ONLY = process.argv.includes("--summaries-only");
 
 const MIN_TOWN_LEN = 5000;
-const MIN_EVENT_LEN = 2500;  // ~500 words — 3-4 solid paragraphs
-const MIN_PERSON_LEN = 3000; // ~4 paragraphs minimum
+const MIN_EVENT_LEN = 2500;
+const MIN_PERSON_LEN = 8000; // raised — forces re-expansion of all previously thin bios
+
+async function expandTownSummaries(limit: number) {
+  const towns = await prisma.town.findMany({
+    where: { whyMatters: { not: undefined } },
+    select: {
+      id: true, name: true, state: true, slug: true,
+      heroSummary40: true, execSummary150: true, whyMatters: true,
+    },
+    take: limit * 2,
+  });
+
+  const thin = towns.filter((t) =>
+    (t.heroSummary40?.length ?? 0) < 30 || (t.execSummary150?.length ?? 0) < 60
+  ).slice(0, limit);
+
+  console.log(`\n── Town Summaries (${thin.length} need hero/exec summary) ──`);
+
+  for (const town of thin) {
+    const context = town.whyMatters?.slice(0, 800) ?? town.name;
+
+    const prompt = `Write two very short summaries for ${town.name}, ${town.state} based on this context:
+
+"${context}"
+
+Output EXACTLY this format (no extra text):
+HERO: [one punchy phrase, 5–8 words, capturing the town's defining Revolutionary War moment or identity — e.g. "Where the shot heard round the world rang out" or "The port that choked British commerce"]
+EXEC: [2–3 sentences, ~120–140 characters total, suitable for a map tooltip or town card — vivid and specific]`;
+
+    try {
+      const msg = await client.messages.create({
+        model: "claude-opus-4-6",
+        max_tokens: 200,
+        messages: [{ role: "user", content: prompt }],
+      });
+
+      const text = (msg.content[0] as any).text as string;
+      const heroMatch = text.match(/HERO:\s*(.+)/);
+      const execMatch = text.match(/EXEC:\s*([\s\S]+)/);
+
+      const hero = heroMatch?.[1]?.trim().slice(0, 59) ?? "";
+      const exec = execMatch?.[1]?.trim().slice(0, 199) ?? "";
+
+      if (!hero) { console.log(`  ⚠ No hero for ${town.name}`); continue; }
+
+      await prisma.town.update({
+        where: { id: town.id },
+        data: {
+          ...(hero ? { heroSummary40: hero } : {}),
+          ...(exec ? { execSummary150: exec } : {}),
+          lastUpdatedAt: new Date(),
+        },
+      });
+
+      console.log(`  ✓ ${town.name} — "${hero}"`);
+    } catch (err) {
+      console.error(`  ✗ ${town.name}:`, err);
+    }
+    await new Promise((r) => setTimeout(r, 1500));
+  }
+}
 
 async function expandTownNarrative(limit: number) {
   const towns = await prisma.town.findMany({
@@ -196,11 +257,12 @@ async function expandPersonBios(limit: number) {
   for (const person of thin) {
     const level = getProminenceLevel(person);
     const paragraphCount = level === "famous" ? 10 : level === "prominent" ? 6 : 4;
-    const maxTokens = level === "famous" ? 4000 : level === "prominent" ? 2500 : 1800;
+    const maxTokens = level === "famous" ? 5000 : level === "prominent" ? 3500 : 2500;
 
     const townList = person.townPeople.map((tp) => `${tp.town.name}, ${tp.town.state}${tp.connectionNote ? ` (${tp.connectionNote})` : ""}`).join("; ");
     const eventList = person.eventPeople.map((ep) => `${ep.event.name}${ep.event.startDate ? ` (${new Date(ep.event.startDate).getFullYear()})` : ""}${ep.roleInEvent ? `: ${ep.roleInEvent}` : ""}`).join("; ");
     const lifespan = person.birthYear ? `${person.birthYear}–${person.deathYear ?? "?"}` : "";
+    const primaryTown = person.townPeople[0]?.town;
 
     const paragraphGuide = level === "famous"
       ? `- Paragraph 1: Early life, origins, and formation of character before the Revolution
@@ -225,7 +287,13 @@ async function expandPersonBios(limit: number) {
 - Paragraph 3: The human stakes — what they risked, who they were fighting for
 - Paragraph 4: Legacy — how to understand this person's significance today`;
 
-    const prompt = `Write a biographical essay for an American Revolution educational website.
+    const whyMattersSection = primaryTown
+      ? `WHY ${person.name.toUpperCase()} MATTERS${primaryTown ? ` TO ${primaryTown.name.toUpperCase()}` : ""}
+[1 paragraph, 80–120 words: why students and visitors should know this person — what their story teaches us about the Revolution, and what connection they have to the places in this network]`
+      : `WHY ${person.name.toUpperCase()} MATTERS
+[1 paragraph, 80–120 words: why students and visitors should know this person — what their story teaches us about the Revolution]`;
+
+    const prompt = `Write a biographical article for an American Revolution educational website.
 
 Person: ${person.name}${lifespan ? ` (${lifespan})` : ""}
 Prominence level: ${level}
@@ -235,14 +303,25 @@ Key events: ${eventList || "Various Revolutionary War events"}
 Short bio: ${person.bioShort}
 ${person.bioLong ? `Existing bio (expand and improve upon this): ${person.bioLong}` : ""}
 
-Requirements:
-- Write EXACTLY ${paragraphCount} paragraphs, each 180–220 words
+Output EXACTLY this structure:
+
+[MAIN BIO — ${paragraphCount} paragraphs, each 180–220 words]
 ${paragraphGuide}
+
+${whyMattersSection}
+
+TIMELINE
+[5–10 bullet points of key life dates, format: "- YYYY: Event description"]
+
+SOURCES
+[3–5 real, verifiable sources — books, primary documents, or reputable archives. Format: "- Author. Title. Publisher, Year." or "- Institution. Document title. URL."]
+
+Additional requirements:
 - Write for educated general readers — vivid, specific, not dry
 - Use specific dates and places where historically accurate
-- Do NOT use headers, bullet points, or markdown — flowing prose only
 - Do NOT begin with the person's name as the first word
-- Do NOT invent facts not supported by the bio above`;
+- Do NOT invent facts not supported by the bio above
+- The TIMELINE and SOURCES sections must use the exact header words shown above`;
 
     try {
       const msg = await client.messages.create({
@@ -269,7 +348,8 @@ async function main() {
     process.exit(1);
   }
 
-  const runAll = !TOWNS_ONLY && !EVENTS_ONLY && !PEOPLE_ONLY;
+  const runAll = !TOWNS_ONLY && !EVENTS_ONLY && !PEOPLE_ONLY && !SUMMARIES_ONLY;
+  if (runAll || SUMMARIES_ONLY) await expandTownSummaries(LIMIT);
   if (runAll || TOWNS_ONLY) await expandTownNarrative(LIMIT);
   if (runAll || EVENTS_ONLY) await expandEventSummaries(LIMIT);
   if (runAll || PEOPLE_ONLY) await expandPersonBios(LIMIT);

@@ -257,10 +257,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
               <NextLink href={`/changelog?town=${slug}`} className="no-underline hover:text-ink/70 transition-colors">
                 View changes for this town
               </NextLink>
-              <NextLink href={`/compare?a=${slug}`} className="no-underline hover:text-crimson transition-colors">
-                Compare with another town →
-              </NextLink>
-              <NextLink href={`/partner/inquire?town=${slug}`} className="no-underline hover:text-ink/70 transition-colors">
+<NextLink href={`/partner/inquire?town=${slug}`} className="no-underline hover:text-ink/70 transition-colors">
                 Inquire about partnering
               </NextLink>
             </div>

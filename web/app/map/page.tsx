@@ -5,13 +5,13 @@ import { TownNetworkMap } from "@/components/town/TownNetworkMap";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Interactive Map",
+  title: "Interactive Map | History is for Everyone",
   description:
-    "Explore the network of 78 American Revolutionary towns — their locations, connections, and significance across the thirteen colonies.",
+    "Explore the network of American Revolutionary towns — their locations, connections, and significance across the thirteen colonies.",
   openGraph: {
     title: "Interactive Map | History is for Everyone",
     description:
-      "78 Revolutionary War towns mapped with their historical connections across the thirteen colonies.",
+      "Revolutionary War towns mapped with their historical connections across the thirteen colonies.",
     url: "https://sabrinas-town.vercel.app/map",
   },
   alternates: { canonical: "https://sabrinas-town.vercel.app/map" },
@@ -23,45 +23,48 @@ export default async function MapPage() {
   const links = data?.links ?? [];
 
   const townsWithCoords = towns.filter((t) => t.lat && t.lng).length;
+  const stateCount = new Set(towns.map((t) => t.state)).size;
 
   return (
-    <main className="flex flex-col" style={{ minHeight: "calc(100vh - 64px)" }}>
-      {/* Header strip */}
-      <div className="bg-[#1a3a72] text-white px-6 py-5">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-end gap-1 sm:gap-6">
-          <h1 className="font-display text-[28px] sm:text-[36px] leading-none tracking-wide uppercase text-white">
-            Town Network
-          </h1>
-          <p className="font-ui text-[11px] tracking-[0.12em] uppercase text-white/60 pb-0.5">
-            {townsWithCoords} towns · {links.length} connections
-          </p>
+    <main className="flex flex-col" style={{ height: "calc(100vh - 64px)" }}>
+
+      {/* ── Header ── */}
+      <div className="bg-[#14100a] border-b-4 border-[#cc3322] px-6 md:px-10 py-5 flex-shrink-0 relative overflow-hidden">
+        <div
+          aria-hidden
+          className="absolute right-[-0.04em] top-[-0.2em] font-display leading-none text-white/[0.04] pointer-events-none select-none"
+          style={{ fontSize: "clamp(5rem,10vw,8rem)" }}
+        >
+          MAP
+        </div>
+        <div className="relative z-10 max-w-[1200px] mx-auto flex items-end justify-between gap-6">
+          <div>
+            <p className="font-ui text-[8px] uppercase tracking-[0.28em] text-[#e8b84b] mb-1">
+              Town Network
+            </p>
+            <h1 className="font-display text-[#f2e6c8] text-[clamp(20px,3vw,32px)] leading-none tracking-[-0.02em]">
+              The Revolutionary Map
+            </h1>
+          </div>
+          {/* Stats */}
+          <div className="hidden sm:flex items-center gap-6">
+            {[
+              { n: townsWithCoords, label: "Towns" },
+              { n: stateCount, label: "States" },
+              { n: links.length, label: "Connections" },
+            ].map((s) => (
+              <div key={s.label} className="text-right">
+                <p className="font-display text-[#e8b84b] text-[1.6rem] leading-none">{s.n}</p>
+                <p className="font-ui text-[8px] uppercase tracking-[0.1em] text-[#f2e6c8]/30 mt-0.5">{s.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Map — fills remaining viewport */}
-      <div className="flex-1 relative" style={{ minHeight: "600px" }}>
+      {/* ── Map fills remaining height ── */}
+      <div className="flex-1 relative overflow-hidden">
         <TownNetworkMap towns={towns} links={links} />
-      </div>
-
-      {/* Legend */}
-      <div className="bg-[#f2e6c8] border-t border-[#14100a]/10 px-6 py-3">
-        <div className="max-w-6xl mx-auto flex flex-wrap gap-6 items-center">
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-[#cc3322] border border-white shadow-sm" />
-            <span className="font-ui text-[10px] uppercase tracking-widest text-[#14100a]/60">
-              Town (size = significance)
-            </span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-[2px] bg-[#1a3a72] opacity-50" />
-            <span className="font-ui text-[10px] uppercase tracking-widest text-[#14100a]/60">
-              Historical connection
-            </span>
-          </div>
-          <span className="font-ui text-[10px] text-[#14100a]/40 ml-auto">
-            Click any marker to explore
-          </span>
-        </div>
       </div>
     </main>
   );
