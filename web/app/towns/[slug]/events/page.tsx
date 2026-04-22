@@ -73,7 +73,7 @@ export default async function TownEventsPage({ params, searchParams }: PageProps
   return (
     <div className="bg-cream min-h-screen">
       {/* Header */}
-      <div className="bg-[#1a3a72] py-10 px-8 md:px-16">
+      <div className="bg-[#1a3a72] py-10 px-5 sm:px-8 md:px-16">
         <div className="mx-auto max-w-[1200px]">
           <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-cream/50 mb-2">
             {town.name}, {town.state}
@@ -106,7 +106,7 @@ export default async function TownEventsPage({ params, searchParams }: PageProps
         </div>
       </div>
 
-      <div className="mx-auto max-w-[1200px] px-8 md:px-16 py-16">
+      <div className="mx-auto max-w-[1200px] px-5 sm:px-8 md:px-16 py-10 sm:py-16">
         {events.length === 0 ? (
           <div className="text-center py-24">
             <p className="font-editorial text-[24px] text-ink/40 mb-4">No events listed yet</p>

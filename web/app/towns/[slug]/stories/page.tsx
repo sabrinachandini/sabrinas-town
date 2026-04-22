@@ -42,7 +42,7 @@ export default async function StoriesPage({ params }: PageProps) {
   return (
     <div className="bg-cream min-h-screen">
       {/* Hero */}
-      <div className="bg-[#1a3a72] border-b-4 border-[#cc3322] py-14 px-8 md:px-16 relative overflow-hidden">
+      <div className="bg-[#1a3a72] border-b-4 border-[#cc3322] py-10 sm:py-14 px-5 sm:px-8 md:px-16 relative overflow-hidden">
         <div aria-hidden className="absolute right-0 top-0 font-display text-[240px] leading-none text-white/[0.04] pointer-events-none select-none tracking-[-0.04em]">
           {town.state.slice(0, 2).toUpperCase()}
         </div>
@@ -62,7 +62,7 @@ export default async function StoriesPage({ params }: PageProps) {
       </div>
 
       {/* Body */}
-      <div className="mx-auto max-w-[1200px] px-8 md:px-16 py-16">
+      <div className="mx-auto max-w-[1200px] px-5 sm:px-8 md:px-16 py-10 sm:py-16">
         {stories.length === 0 ? (
           <div className="py-20 text-center">
             <p className="font-display text-[80px] text-ink/5 leading-none mb-4">"</p>
@@ -103,7 +103,7 @@ export default async function StoriesPage({ params }: PageProps) {
                             {story.title}
                           </p>
                           {story.excerpt && (
-                            <p className="font-ui text-[12px] text-ink/50 leading-relaxed mt-2 line-clamp-2">
+                            <p className="font-ui text-[14px] text-ink/50 leading-relaxed mt-2 line-clamp-2">
                               {story.excerpt}
                             </p>
                           )}

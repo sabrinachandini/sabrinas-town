@@ -117,7 +117,7 @@ export default async function SearchPage({ searchParams }: PageProps) {
                             </span>
                           </div>
                           {result.excerpt && (
-                            <p className="font-ui text-[12px] text-[rgba(20,16,10,0.5)] leading-relaxed line-clamp-2">
+                            <p className="font-ui text-[14px] text-[rgba(20,16,10,0.5)] leading-relaxed line-clamp-2">
                               {result.excerpt}
                             </p>
                           )}

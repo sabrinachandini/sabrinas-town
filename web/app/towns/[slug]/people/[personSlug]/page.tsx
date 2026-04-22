@@ -59,7 +59,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
       <JsonLd data={jsonLd} />
 
       {/* Hero */}
-      <div className="bg-[#1a3a72] border-b-4 border-[#cc3322] py-16 px-8 md:px-16 relative overflow-hidden">
+      <div className="bg-[#1a3a72] border-b-4 border-[#cc3322] py-10 sm:py-16 px-5 sm:px-8 md:px-16 relative overflow-hidden">
         {/* Ghost initial */}
         <div aria-hidden className="absolute right-0 top-[-10px] font-display leading-none text-white/[0.04] pointer-events-none select-none" style={{ fontSize: "clamp(120px,22vw,300px)" }}>
           {person.name.charAt(0)}
@@ -76,7 +76,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
           <div className="grid md:grid-cols-[1fr_auto] gap-8 items-end">
             <div>
               {lifespan && (
-                <p className="font-display text-[#4A6A9B] text-[clamp(18px,2.5vw,28px)] leading-none mb-4 tracking-[0.02em]">
+                <p className="font-display text-cream/60 text-[clamp(18px,2.5vw,28px)] leading-none mb-4 tracking-[0.02em]">
                   {lifespan}
                 </p>
               )}
@@ -121,7 +121,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
       </div>
 
       {/* Body */}
-      <div className="mx-auto max-w-[1200px] px-8 md:px-16 py-16">
+      <div className="mx-auto max-w-[1200px] px-5 sm:px-8 md:px-16 py-10 sm:py-16">
         <div className="grid md:grid-cols-[1fr_260px] gap-16 items-start">
 
           {/* Main column */}

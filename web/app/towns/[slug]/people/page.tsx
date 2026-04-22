@@ -58,7 +58,7 @@ export default async function PeoplePage({ params }: PageProps) {
   return (
     <div className="bg-cream min-h-screen">
       {/* Hero */}
-      <div className="bg-[#1a3a72] border-b-4 border-[#cc3322] py-14 px-8 md:px-16 relative overflow-hidden">
+      <div className="bg-[#1a3a72] border-b-4 border-[#cc3322] py-10 sm:py-14 px-5 sm:px-8 md:px-16 relative overflow-hidden">
         <div aria-hidden className="absolute right-0 top-0 font-display text-[240px] leading-none text-white/[0.04] pointer-events-none select-none tracking-[-0.04em]">
           {town.state.slice(0, 2).toUpperCase()}
         </div>
@@ -76,7 +76,7 @@ export default async function PeoplePage({ params }: PageProps) {
       </div>
 
       {/* Body */}
-      <div className="mx-auto max-w-[1200px] px-8 md:px-16 py-16">
+      <div className="mx-auto max-w-[1200px] px-5 sm:px-8 md:px-16 py-10 sm:py-16">
         {people.length === 0 ? (
           <div className="py-20 text-center">
             <p className="font-display text-[80px] text-ink/5 leading-none mb-4">?</p>
@@ -113,7 +113,7 @@ export default async function PeoplePage({ params }: PageProps) {
                               {person.name}
                             </p>
                             {lifespan && (
-                              <p className="font-display text-[15px] text-crimson group-hover:text-[#4A6A9B] transition-colors mt-0.5">
+                              <p className="font-display text-[15px] text-crimson group-hover:text-cream/60 transition-colors mt-0.5">
                                 {lifespan}
                               </p>
                             )}
@@ -123,14 +123,14 @@ export default async function PeoplePage({ params }: PageProps) {
                         {person.roles.length > 0 && (
                           <div className="flex flex-wrap gap-1.5 mb-3">
                             {person.roles.slice(0, 3).map((role) => (
-                              <span key={role} className="font-ui text-[10px] uppercase tracking-[0.12em] text-crimson/70 group-hover:text-[#4A6A9B]/70 border border-crimson/20 group-hover:border-[#4A6A9B]/20 px-1.5 py-0.5 transition-colors">
+                              <span key={role} className="font-ui text-[10px] uppercase tracking-[0.12em] text-crimson/70 group-hover:text-cream/50 border border-crimson/20 group-hover:border-cream/20 px-1.5 py-0.5 transition-colors">
                                 {role}
                               </span>
                             ))}
                           </div>
                         )}
                         {person.bioShort && (
-                          <p className="font-ui text-[12px] text-ink/55 group-hover:text-cream/55 leading-relaxed line-clamp-3 transition-colors">
+                          <p className="font-ui text-[14px] text-ink/55 group-hover:text-cream/55 leading-relaxed line-clamp-3 transition-colors">
                             {person.bioShort}
                           </p>
                         )}
