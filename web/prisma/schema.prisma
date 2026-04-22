@@ -166,6 +166,9 @@ model Person {
   bioShort            String             @db.VarChar(500)
   bioLong             String?            @db.Text
 
+  imageUrl            String?
+  imageCredit         String?
+
   birthYear           Int?
   deathYear           Int?
   verificationStatus  VerificationStatus @default(VERIFIED)

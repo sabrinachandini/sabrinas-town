@@ -1526,7 +1526,7 @@ export async function getTownPeople(slug: string): Promise<TownPeopleResponse | 
       birthYear: p.birthYear,
       deathYear: p.deathYear,
       verificationStatus: p.verificationStatus as string,
-      imageUrl: (p as any).imageUrl ?? null,
+      imageUrl: p.imageUrl ?? null,
     }));
 
     return {
@@ -2231,7 +2231,7 @@ export async function getPersonBySlug(personSlug: string): Promise<PersonDetail 
       roles: person.roles,
       bioShort: person.bioShort,
       bioLong: person.bioLong,
-      imageUrl: (person as any).imageUrl ?? null,
+      imageUrl: person.imageUrl ?? null,
       imageCredit: (person as any).imageCredit ?? null,
       birthYear: person.birthYear,
       deathYear: person.deathYear,
@@ -2355,7 +2355,7 @@ export async function getEventBySlug(eventSlug: string): Promise<EventDetail | n
       people: event.eventPeople.map((ep) => ({
         id: ep.person.id, slug: ep.person.slug ?? null, name: ep.person.name,
         roles: ep.person.roles, bioShort: ep.person.bioShort,
-        imageUrl: (ep.person as any).imageUrl ?? null, roleInEvent: ep.roleInEvent,
+        imageUrl: ep.person.imageUrl ?? null, roleInEvent: ep.roleInEvent,
       })),
       themes: event.eventThemes.map((et) => ({ id: et.theme.id, name: et.theme.name })),
       relatedEvents: relatedEvents.map((e) => ({
@@ -2384,7 +2384,7 @@ export async function getAllPeople(options?: { limit?: number; role?: string }):
     });
     return people.map((p) => ({
       id: p.id, slug: p.slug ?? null, name: p.name, roles: p.roles,
-      bioShort: p.bioShort, imageUrl: (p as any).imageUrl ?? null,
+      bioShort: p.bioShort, imageUrl: p.imageUrl ?? null,
       birthYear: p.birthYear, deathYear: p.deathYear,
       primaryTown: p.townPeople[0]?.town ?? null,
     }));
