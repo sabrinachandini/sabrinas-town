@@ -62,7 +62,8 @@ export default function AboutPage() {
           1775
         </span>
         <div className="mx-auto max-w-[1200px] relative">
-          <div className="max-w-[720px]">
+          <div className="grid md:grid-cols-[1fr_300px] gap-10 md:gap-16 items-start">
+            <div>
             <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
               Who I Am
             </p>
@@ -73,11 +74,6 @@ export default function AboutPage() {
                 stroke="#cc3322" strokeWidth="2" strokeLinecap="round" opacity="0.4"/>
             </svg>
             <div className="border-b border-ink/10 mb-8" />
-
-            {/* Stamp */}
-            <div className="hidden sm:block float-right ml-6 mb-4 mt-1 rotate-3 border-2 border-crimson/60 px-3 py-2 font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-crimson/70 select-none">
-              Lexington, MA<br />Est. 1775
-            </div>
 
             <p className="font-editorial text-[1.05rem] text-[#0e1428] leading-relaxed mb-5">
               I&apos;m Sabrina Bhattacharjya, a 15-year-old from Lexington, Massachusetts — the town where
@@ -90,7 +86,7 @@ export default function AboutPage() {
               a 12-year-old eyewitness to the Battle of Lexington — and my work has been covered by the{" "}
               <em>New York Times</em>, the BBC, and iHeart Radio.
             </p>
-            <p className="font-editorial text-[0.9rem] text-[#0e1428]/50 leading-relaxed border-t border-[#0e1428]/10 pt-5 mt-6 clear-both">
+            <p className="font-editorial text-[0.9rem] text-[#0e1428]/50 leading-relaxed border-t border-[#0e1428]/10 pt-5 mt-6">
               To learn more about Sabrina Bhattacharjya, visit her website at{" "}
               <a
                 href="https://sabrinachandini.com"
@@ -102,6 +98,21 @@ export default function AboutPage() {
               </a>
               .
             </p>
+            </div>
+            {/* Photo */}
+            <div className="flex-shrink-0">
+              <div className="border-4 border-ink/10 overflow-hidden rotate-1">
+                <img
+                  src="/sabrina-doorway.jpg"
+                  alt="Sabrina Bhattacharjya sitting in a historic doorway"
+                  className="w-full object-cover object-top"
+                  style={{ maxHeight: 420 }}
+                />
+              </div>
+              <p className="font-ui text-[10px] text-ink/30 uppercase tracking-[0.12em] mt-2 text-center">
+                Sabrina at a Revolutionary War site
+              </p>
+            </div>
           </div>
         </div>
       </section>

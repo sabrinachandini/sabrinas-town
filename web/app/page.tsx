@@ -632,7 +632,7 @@ export default async function HomePage() {
           style={{ fontSize: "clamp(40px,5vw,80px)" }}
         >
           Pick a town.<br />
-          <em className="font-editorial italic font-light text-[#cc3322]">Start anywhere.</em>
+          <em className="font-editorial italic font-light text-[#1a3a72]">Start anywhere.</em>
         </p>
 
         {/* Button — full width on mobile */}
