@@ -8,7 +8,7 @@ export async function generateStaticParams() {
     const placesData = await getPlaces(town.slug);
     const places = placesData ? Object.values(placesData.placesByCategory).flat() : [];
     for (const place of places) {
-      if (place.slug) params.push({ slug: town.slug, placeSlug: place.slug });
+      params.push({ slug: town.slug, placeSlug: place.slug ?? place.id });
     }
   }
   return params;
