@@ -71,9 +71,8 @@ export function Header() {
             <span aria-hidden="true">←</span> Towns
           </Link>
           <Link href="/" className="no-underline hidden sm:block" aria-label="History is for Everyone — home">
-            <span className="font-editorial font-black text-white text-[20px] tracking-[-0.03em] leading-tight">
-              History is<br />for Everyone
-            </span>
+            {/* Star-only mark: compact for town context header */}
+            <img src="/logo-star.svg" alt="History is for Everyone" className="h-8 w-8" />
           </Link>
           {/* Mobile hamburger — shows active section + icon */}
           <button
@@ -155,11 +154,9 @@ export function Header() {
     >
       <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-3 flex items-center justify-between">
 
-        {/* Logo */}
-        <Link href="/" className="no-underline" aria-label="History is for Everyone — home">
-          <span className="font-display uppercase leading-tight text-white text-[20px] tracking-[0.02em]">
-            History is<br />for Everyone
-          </span>
+        {/* Logo — full lockup on main site */}
+        <Link href="/" className="no-underline flex items-center" aria-label="History is for Everyone — home">
+          <img src="/logo-lockup.svg" alt="History is for Everyone" className="h-11 w-auto" />
         </Link>
 
         {/* Desktop nav */}
