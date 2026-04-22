@@ -224,29 +224,29 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
             </button>
 
             {/* Town header */}
-            <div className="px-6 pt-8 pb-5 border-b border-[#f2e6c8]/8">
-              <span className="font-ui text-[7px] uppercase tracking-[0.22em] text-[#e8b84b] block mb-2">
+            <div className="px-4 sm:px-6 pt-6 sm:pt-8 pb-4 sm:pb-5 border-b border-[#f2e6c8]/8">
+              <span className="font-ui text-[7px] uppercase tracking-[0.18em] sm:tracking-[0.22em] text-[#e8b84b] block mb-1.5 sm:mb-2">
                 {selectedTown.scoreTier} · {selectedTown.state}
               </span>
-              <h2 className="font-display text-[#f2e6c8] text-[26px] leading-tight">
+              <h2 className="font-display text-[#f2e6c8] text-[20px] sm:text-[26px] leading-tight">
                 {selectedTown.name}
               </h2>
               {/* Score bar */}
-              <div className="mt-4 h-[2px] bg-[#f2e6c8]/8 w-full">
+              <div className="mt-3 sm:mt-4 h-[2px] bg-[#f2e6c8]/8 w-full">
                 <div
                   className="h-full bg-[#cc3322] transition-all duration-500"
                   style={{ width: `${selectedTown.compositeScore}%` }}
                 />
               </div>
-              <p className="font-ui text-[8px] uppercase tracking-[0.1em] text-[#f2e6c8]/20 mt-1.5">
+              <p className="font-ui text-[7px] sm:text-[8px] uppercase tracking-[0.1em] text-[#f2e6c8]/20 mt-1.5">
                 Historical significance: {selectedTown.compositeScore}/100
               </p>
             </div>
 
             {/* Summary */}
             {selectedTown.execSummary150 && (
-              <div className="px-6 py-5 border-b border-[#f2e6c8]/8">
-                <p className="font-editorial italic text-[13px] text-[#f2e6c8]/60 leading-relaxed">
+              <div className="px-4 sm:px-6 py-4 sm:py-5 border-b border-[#f2e6c8]/8">
+                <p className="font-editorial italic text-[12px] sm:text-[13px] text-[#f2e6c8]/60 leading-relaxed">
                   &ldquo;{selectedTown.execSummary150}&rdquo;
                 </p>
               </div>
@@ -254,11 +254,11 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
 
             {/* Connected towns */}
             {connectedTowns.length > 0 && (
-              <div className="px-6 py-4 border-b border-[#f2e6c8]/8 overflow-y-auto flex-1">
-                <p className="font-ui text-[8px] uppercase tracking-[0.16em] text-[#f2e6c8]/22 mb-3">
+              <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-[#f2e6c8]/8 overflow-y-auto flex-1">
+                <p className="font-ui text-[7px] sm:text-[8px] uppercase tracking-[0.16em] text-[#f2e6c8]/22 mb-2.5 sm:mb-3">
                   Connected Towns
                 </p>
-                <div className="space-y-3">
+                <div className="space-y-2.5 sm:space-y-3">
                   {connectedTowns.map(({ town: t, reason }) => (
                     <div key={t.slug}>
                       <button
@@ -266,12 +266,12 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
                         className="flex items-center gap-2 w-full text-left group"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-[#cc3322]/40 flex-shrink-0 group-hover:bg-[#cc3322] transition-colors" />
-                        <span className="font-ui text-[11px] text-[#f2e6c8]/60 group-hover:text-[#e8b84b] transition-colors">
+                        <span className="font-ui text-[10px] sm:text-[11px] text-[#f2e6c8]/60 group-hover:text-[#e8b84b] transition-colors">
                           {t.name}, {t.state}
                         </span>
                       </button>
                       {reason && (
-                        <p className="font-editorial italic text-[11px] text-[#f2e6c8]/30 leading-snug mt-0.5 pl-3.5 line-clamp-2">
+                        <p className="font-editorial italic text-[10px] sm:text-[11px] text-[#f2e6c8]/30 leading-snug mt-0.5 pl-3.5 line-clamp-2">
                           {reason}
                         </p>
                       )}
@@ -282,17 +282,17 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
             )}
 
             {/* CTA */}
-            <div className="px-6 py-5 mt-auto">
+            <div className="px-4 sm:px-6 py-4 sm:py-5 mt-auto">
               <a
                 href={`/towns/${selectedTown.slug}`}
-                className="no-underline flex items-center justify-between w-full font-ui text-[9px] uppercase tracking-[0.2em] text-[#f2e6c8] border border-[#cc3322]/60 px-4 py-3 hover:bg-[#cc3322] hover:border-[#cc3322] transition-colors"
+                className="no-underline flex items-center justify-between w-full font-ui text-[8px] sm:text-[9px] uppercase tracking-[0.18em] sm:tracking-[0.2em] text-[#f2e6c8] border border-[#cc3322]/60 px-3 sm:px-4 py-2.5 sm:py-3 hover:bg-[#cc3322] hover:border-[#cc3322] transition-colors"
               >
                 <span>Explore {selectedTown.name}</span>
                 <span aria-hidden>→</span>
               </a>
               <button
                 onClick={() => router.push(`/towns/${selectedTown.slug}/timeline`)}
-                className="mt-2 flex items-center justify-between w-full font-ui text-[9px] uppercase tracking-[0.2em] text-[#f2e6c8]/40 border border-[#f2e6c8]/10 px-4 py-3 hover:text-[#f2e6c8]/70 hover:border-[#f2e6c8]/25 transition-colors"
+                className="mt-2 flex items-center justify-between w-full font-ui text-[8px] sm:text-[9px] uppercase tracking-[0.18em] sm:tracking-[0.2em] text-[#f2e6c8]/40 border border-[#f2e6c8]/10 px-3 sm:px-4 py-2.5 sm:py-3 hover:text-[#f2e6c8]/70 hover:border-[#f2e6c8]/25 transition-colors"
               >
                 <span>Timeline</span>
                 <span aria-hidden>→</span>
@@ -303,17 +303,17 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
       </div>
 
       {/* ── Legend (bottom-left) ── */}
-      <div className={`absolute bottom-8 left-3 z-10 bg-white/90 border border-[#14100a]/10 px-4 py-3 shadow-sm ${selectedTown ? "hidden sm:block" : ""}`}>
-        <p className="font-ui text-[7px] uppercase tracking-[0.16em] text-[#14100a]/40 mb-2">Significance</p>
-        <div className="space-y-1.5">
+      <div className={`absolute bottom-8 left-3 z-10 bg-white/90 border border-[#14100a]/10 px-3 sm:px-4 py-2 sm:py-3 shadow-sm ${selectedTown ? "hidden sm:block" : ""}`}>
+        <p className="font-ui text-[6px] sm:text-[7px] uppercase tracking-[0.14em] sm:tracking-[0.16em] text-[#14100a]/40 mb-1.5 sm:mb-2">Significance</p>
+        <div className="space-y-1 sm:space-y-1.5">
           {Object.entries(TIER_COLORS).map(([tier, color]) => (
-            <div key={tier} className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full border border-white shadow-sm flex-shrink-0" style={{ backgroundColor: color }} />
-              <span className="font-ui text-[8px] uppercase tracking-[0.08em] text-[#14100a]/50 capitalize">{tier}</span>
+            <div key={tier} className="flex items-center gap-1.5 sm:gap-2">
+              <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full border border-white shadow-sm flex-shrink-0" style={{ backgroundColor: color }} />
+              <span className="font-ui text-[7px] sm:text-[8px] uppercase tracking-[0.06em] sm:tracking-[0.08em] text-[#14100a]/50 capitalize">{tier}</span>
             </div>
           ))}
         </div>
-        <p className="font-ui text-[7px] text-[#14100a]/30 mt-2.5 pt-2 border-t border-[#14100a]/8">
+        <p className="font-ui text-[6px] sm:text-[7px] text-[#14100a]/30 mt-2 sm:mt-2.5 pt-1.5 sm:pt-2 border-t border-[#14100a]/8">
           Size = historical score
         </p>
       </div>
