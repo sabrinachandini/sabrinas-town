@@ -29,7 +29,7 @@ export function PageHeader({
           {state.slice(0, 2).toUpperCase()}
         </div>
 
-        <p className="font-ui text-[9px] tracking-[0.2em] uppercase text-[rgba(242,230,200,0.6)] mb-4 relative z-10">
+        <p className="font-ui text-[11px] tracking-[0.2em] uppercase text-[rgba(242,230,200,0.6)] mb-4 relative z-10">
           {state}, USA
           {cluster && <span className="ml-3 text-[rgba(242,230,200,0.4)]">{cluster}</span>}
         </p>
@@ -45,7 +45,7 @@ export function PageHeader({
           </p>
         )}
         {lastUpdated && (
-          <p className="font-ui text-[9px] text-[rgba(242,230,200,0.4)] uppercase tracking-[0.1em] mt-4 relative z-10">
+          <p className="font-ui text-[11px] text-[rgba(242,230,200,0.4)] uppercase tracking-[0.1em] mt-4 relative z-10">
             Last updated{" "}
             {new Date(lastUpdated).toLocaleDateString("en-US", {
               year: "numeric",
@@ -61,7 +61,7 @@ export function PageHeader({
   // Default variant
   return (
     <header className="mb-16 md:mb-20">
-      <p className="font-ui text-[9px] tracking-[0.2em] uppercase text-ink/40 mb-3">
+      <p className="font-ui text-[11px] tracking-[0.2em] uppercase text-ink/40 mb-3">
         {state}, USA
         {cluster && <span className="ml-3 text-ink/25">{cluster}</span>}
       </p>
@@ -77,7 +77,7 @@ export function PageHeader({
         </p>
       )}
       {lastUpdated && (
-        <p className="font-ui text-[9px] text-ink/30 uppercase tracking-[0.1em] mt-4">
+        <p className="font-ui text-[11px] text-ink/30 uppercase tracking-[0.1em] mt-4">
           Last updated{" "}
           {new Date(lastUpdated).toLocaleDateString("en-US", {
             year: "numeric",

@@ -94,16 +94,16 @@ export default async function TownOverviewPage({ params }: PageProps) {
       <TownHero town={town} slug={slug} />
 
       {/* ── Significance strip ───────────────────────────────────── */}
-      <div className="bg-[#14100a] border-b border-[#f2e6c8]/8 px-4 sm:px-8 md:px-16 py-2.5 sm:py-3">
+      <div className="bg-[#1a3a72] border-b border-[#f2e6c8]/8 px-4 sm:px-8 md:px-16 py-2.5 sm:py-3">
         <div className="mx-auto max-w-[1200px] flex flex-wrap items-center gap-x-8 gap-y-1">
-          <span className="font-ui text-[8px] uppercase tracking-[0.22em] text-[#e8b84b]">
+          <span className="font-ui text-[10px] uppercase tracking-[0.22em] text-[#4A6A9B]">
             {town.scoreTier}
           </span>
           <div className="flex items-center gap-1.5">
             <div className="w-20 h-[2px] bg-[#f2e6c8]/10">
               <div className="h-full bg-[#cc3322]" style={{ width: `${town.compositeScore}%` }} />
             </div>
-            <span className="font-ui text-[8px] text-[#f2e6c8]/30 uppercase tracking-[0.1em]">
+            <span className="font-ui text-[10px] text-[#f2e6c8]/30 uppercase tracking-[0.1em]">
               {town.compositeScore}/100
             </span>
           </div>
@@ -112,7 +112,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
             { n: town.events.length, label: "Events" },
             { n: town.stories.length, label: "Stories" },
           ].map((s) => (
-            <span key={s.label} className="font-ui text-[8px] uppercase tracking-[0.12em] text-[#f2e6c8]/30">
+            <span key={s.label} className="font-ui text-[10px] uppercase tracking-[0.12em] text-[#f2e6c8]/30">
               <span className="text-[#f2e6c8]/60 mr-1">{s.n}</span>{s.label}
             </span>
           ))}
@@ -135,7 +135,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
             {featuredPeople.length > 0 && (
               <section id="people" className="mb-10">
                 <div className="border-t-[3px] border-ink pt-8 mt-8 mb-6">
-                  <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+                  <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
                     PEOPLE
                   </p>
                 </div>
@@ -188,7 +188,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
             {featuredEvents.length > 0 && (
               <section id="events" className="mb-10">
                 <div className="border-t-[3px] border-ink pt-8 mt-8 mb-6">
-                  <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+                  <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
                     KEY EVENTS
                   </p>
                 </div>
@@ -232,7 +232,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
             {featuredPlaces.length > 0 && (
               <section id="places" className="mb-10">
                 <div className="border-t-[3px] border-ink pt-8 mt-8 mb-6">
-                  <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+                  <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
                     PLACES TO VISIT
                   </p>
                 </div>
@@ -266,7 +266,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
             {featuredStories.length > 0 && (
               <section id="stories" className="mb-10">
                 <div className="border-t-[3px] border-ink pt-8 mt-8 mb-6">
-                  <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+                  <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
                     STORIES
                   </p>
                 </div>
@@ -286,7 +286,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
                       href={`/towns/${slug}/stories/${story.id}`}
                       className="block border-[3px] border-ink p-5 mb-4 group hover:bg-[#1a3a72] hover:border-[#1a3a72] transition-colors no-underline"
                     >
-                      <p className="font-ui text-[9px] uppercase tracking-[0.12em] text-crimson group-hover:text-yellow/70 mb-1">
+                      <p className="font-ui text-[11px] uppercase tracking-[0.12em] text-crimson group-hover:text-yellow/70 mb-1">
                         {story.storyType.replace(/_/g, " ")}
                       </p>
                       <p className="font-editorial text-[18px] sm:text-[22px] text-ink group-hover:text-cream transition-colors leading-tight">
@@ -317,7 +317,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
 
             {/* Explore All Sections */}
             <div>
-              <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-ink/30 mb-3">
+              <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-ink/30 mb-3">
                 Explore
               </p>
               <ul>
@@ -338,7 +338,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
             {/* Linked / nearby towns */}
             {town.linkedTowns && town.linkedTowns.length > 0 && (
               <div>
-                <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-ink/30 mb-3">
+                <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-ink/30 mb-3">
                   Nearby Towns
                 </p>
                 <ul>
@@ -387,7 +387,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
           <div className="mx-auto max-w-[1200px]">
             <div className="flex items-end justify-between mb-8">
               <div>
-                <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-cream/40 mb-2">
+                <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-cream/40 mb-2">
                   Plan Your Visit
                 </p>
                 <h2 className="font-display text-cream text-[clamp(28px,4vw,44px)] leading-none tracking-[-0.02em]">
@@ -422,7 +422,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
                       <div className="flex-shrink-0 text-center w-12">
                         {evt.month ? (
                           <>
-                            <p className="font-ui text-[9px] uppercase tracking-[0.1em] text-cream/40">
+                            <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-cream/40">
                               {MONTH_SHORT[evt.month]}
                             </p>
                             {evt.day && (
@@ -432,7 +432,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
                             )}
                           </>
                         ) : (
-                          <p className="font-ui text-[9px] uppercase tracking-[0.1em] text-cream/30 mt-1">
+                          <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-cream/30 mt-1">
                             Annual
                           </p>
                         )}
@@ -440,7 +440,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
 
                       {/* Info */}
                       <div className="flex-1 min-w-0">
-                        <p className="font-ui text-[9px] uppercase tracking-[0.12em] text-crimson mb-1">
+                        <p className="font-ui text-[11px] uppercase tracking-[0.12em] text-crimson mb-1">
                           {evt.category}
                         </p>
                         <p className="font-editorial text-cream text-[17px] leading-snug group-hover:text-yellow transition-colors line-clamp-2">

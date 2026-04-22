@@ -66,7 +66,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
       {/* Byline / dateline strip */}
       <div className="mb-8">
         <div className="flex items-center flex-wrap gap-x-3 gap-y-1">
-          <span className="inline-block px-2.5 py-1 font-ui text-[9px] uppercase tracking-[0.12em] text-cream bg-crimson">
+          <span className="inline-block px-2.5 py-1 font-ui text-[11px] uppercase tracking-[0.12em] text-cream bg-crimson">
             {story.storyType === "HISTORICAL_VOICE"
               ? "Historical Voice"
               : "Modern Voice"}
@@ -97,7 +97,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
           {story.tags.map((tag) => (
             <span
               key={tag}
-              className="font-ui text-[9px] tracking-[0.1em] uppercase text-ink/60 border-2 border-ink/20 px-2.5 py-1"
+              className="font-ui text-[11px] tracking-[0.1em] uppercase text-ink/60 border-2 border-ink/20 px-2.5 py-1"
             >
               {tag}
             </span>
@@ -110,7 +110,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
           {story.themes.map((theme) => (
             <span
               key={theme.id}
-              className="font-ui text-[9px] tracking-[0.1em] uppercase text-ink/60 border-2 border-ink/20 px-2.5 py-1"
+              className="font-ui text-[11px] tracking-[0.1em] uppercase text-ink/60 border-2 border-ink/20 px-2.5 py-1"
             >
               {theme.name}
             </span>
@@ -121,14 +121,14 @@ export default async function StoryDetailPage({ params }: PageProps) {
       <div className="mt-12 pt-8 border-t border-ink/8 flex items-center gap-6">
         <NextLink
           href={`/towns/${slug}/stories`}
-          className="no-underline font-ui text-[9px] tracking-[0.2em] uppercase text-ink/40 hover:text-crimson transition-colors"
+          className="no-underline font-ui text-[11px] tracking-[0.2em] uppercase text-ink/40 hover:text-crimson transition-colors"
         >
           &larr; Back to stories
         </NextLink>
 
         <NextLink
           href={`/towns/${slug}/stories`}
-          className="no-underline font-ui text-[9px] tracking-[0.2em] uppercase text-ink/40 hover:text-crimson transition-colors"
+          className="no-underline font-ui text-[11px] tracking-[0.2em] uppercase text-ink/40 hover:text-crimson transition-colors"
         >
           More Stories from {town.name} &rarr;
         </NextLink>

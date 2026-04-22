@@ -74,7 +74,7 @@ export default async function TimelinePage({ params }: PageProps) {
         <div
           aria-hidden
           className="absolute right-[-0.05em] bottom-[-0.15em] font-display leading-none text-white/[0.04] pointer-events-none select-none"
-          style={{ fontSize: "clamp(7rem,16vw,13rem)" }}
+          style={{ fontSize: "clamp(4rem,12vw,10rem)" }}
         >
           TIMELINE
         </div>
@@ -89,15 +89,15 @@ export default async function TimelinePage({ params }: PageProps) {
         </svg>
 
         <div className="relative z-10 max-w-[1200px] mx-auto">
-          <nav className="flex items-center gap-2 font-ui text-[9px] uppercase tracking-[0.2em] text-[#f2e6c8]/30 mb-8">
+          <nav className="flex items-center gap-2 font-ui text-[11px] uppercase tracking-[0.2em] text-[#f2e6c8]/30 mb-8">
             <NextLink href="/" className="no-underline hover:text-[#f2e6c8]/60 transition-colors">Home</NextLink>
             <span>/</span>
             <NextLink href={`/towns/${slug}`} className="no-underline hover:text-[#f2e6c8]/60 transition-colors">{town.name}</NextLink>
             <span>/</span>
             <span className="text-[#f2e6c8]/55">Timeline</span>
           </nav>
-          <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-[#e8b84b] mb-4">{town.name}, {town.state}</p>
-          <h1 className="font-display text-[#f2e6c8] leading-[0.88] tracking-[-0.02em]" style={{ fontSize: "clamp(48px,9vw,120px)" }}>
+          <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-[#4A6A9B] mb-4">{town.name}, {town.state}</p>
+          <h1 className="font-display text-[#f2e6c8] leading-[0.88] tracking-[-0.02em]" style={{ fontSize: "clamp(36px,7vw,88px)" }}>
             Timeline
           </h1>
           <p className="font-editorial italic text-[18px] text-[#f2e6c8]/60 max-w-[560px] leading-[1.65] mt-6">
@@ -114,8 +114,8 @@ export default async function TimelinePage({ params }: PageProps) {
           { n: totalPeople, label: "People Involved" },
         ].map((s) => (
           <div key={s.label} className="flex items-baseline gap-2">
-            <span className="font-display text-[2rem] text-[#e8b84b] leading-none">{s.n}</span>
-            <span className="font-ui text-[9px] uppercase tracking-[0.1em] text-white/60">{s.label}</span>
+            <span className="font-display text-[2rem] text-[#4A6A9B] leading-none">{s.n}</span>
+            <span className="font-ui text-[11px] uppercase tracking-[0.1em] text-white/60">{s.label}</span>
           </div>
         ))}
       </section>
@@ -125,7 +125,7 @@ export default async function TimelinePage({ params }: PageProps) {
         <div className="border-b border-[#14100a]/10 bg-[#f2e6c8] sticky top-0 z-10 overflow-x-auto">
           <div className="max-w-[1200px] mx-auto px-5 sm:px-8 md:px-16 flex gap-6 py-3">
             {years.map((year) => (
-              <a key={year} href={`#year-${year}`} className="no-underline font-ui text-[9px] uppercase tracking-[0.12em] text-[#14100a]/40 hover:text-[#cc3322] transition-colors whitespace-nowrap">
+              <a key={year} href={`#year-${year}`} className="no-underline font-ui text-[11px] uppercase tracking-[0.12em] text-[#14100a]/40 hover:text-[#cc3322] transition-colors whitespace-nowrap">
                 {year} <span className="text-[#14100a]/25">({byYear[year].length})</span>
               </a>
             ))}
@@ -142,17 +142,17 @@ export default async function TimelinePage({ params }: PageProps) {
               {/* ── Year marker — sits on center line ── */}
               <div className="flex items-center justify-center relative my-10">
                 {/* left rule */}
-                <div className="hidden md:block flex-1 h-[3px] bg-[#14100a]/10 mr-6" />
+                <div className="hidden md:block flex-1 h-[3px] bg-[#1a3a72]/10 mr-6" />
                 {/* stamp */}
                 <div
-                  className="bg-[#14100a] text-[#e8b84b] font-display leading-none px-5 py-2 -rotate-[0.6deg] flex-shrink-0 z-10"
+                  className="bg-[#1a3a72] text-[#4A6A9B] font-display leading-none px-5 py-2 -rotate-[0.6deg] flex-shrink-0 z-10"
                   style={{ fontSize: "clamp(32px,4vw,52px)" }}
                 >
                   {year}
                 </div>
                 {/* right rule */}
-                <div className="hidden md:block flex-1 h-[3px] bg-[#14100a]/10 ml-6" />
-                <span className="hidden md:block font-ui text-[9px] uppercase tracking-[0.1em] text-[#14100a]/25 flex-shrink-0 ml-4 whitespace-nowrap">
+                <div className="hidden md:block flex-1 h-[3px] bg-[#1a3a72]/10 ml-6" />
+                <span className="hidden md:block font-ui text-[11px] uppercase tracking-[0.1em] text-[#14100a]/25 flex-shrink-0 ml-4 whitespace-nowrap">
                   {byYear[year].length} event{byYear[year].length !== 1 ? "s" : ""}
                 </span>
               </div>
@@ -160,7 +160,7 @@ export default async function TimelinePage({ params }: PageProps) {
               {/* ── Events ── */}
               <div className="relative">
                 {/* Center vertical line — desktop only */}
-                <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[3px] bg-[#14100a]/10 -translate-x-1/2" />
+                <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[3px] bg-[#1a3a72]/10 -translate-x-1/2" />
 
                 <div className="space-y-0">
                   {byYear[year].map((event) => {
@@ -184,18 +184,18 @@ export default async function TimelinePage({ params }: PageProps) {
                                 {date ? (
                                   <div className={`w-[52px] text-center px-1 py-2 ${isKey ? "bg-[#cc3322]" : "bg-[#1a3a72]"}`}>
                                     <p className="font-display text-[20px] text-[#f2e6c8] leading-none">{date.day}</p>
-                                    <p className="font-ui text-[7px] uppercase tracking-[0.1em] text-[#f2e6c8]/60 mt-0.5">{date.month}</p>
+                                    <p className="font-ui text-[9px] uppercase tracking-[0.1em] text-[#f2e6c8]/60 mt-0.5">{date.month}</p>
                                   </div>
                                 ) : (
-                                  <div className="w-[52px] text-center bg-[#14100a]/8 px-1 py-3">
-                                    <p className="font-ui text-[7px] uppercase text-[#14100a]/25">n/a</p>
+                                  <div className="w-[52px] text-center bg-[#1a3a72]/8 px-1 py-3">
+                                    <p className="font-ui text-[9px] uppercase text-[#14100a]/25">n/a</p>
                                   </div>
                                 )}
                               </div>
                               {/* Text — right-aligned */}
                               <div className="flex-1 min-w-0 text-right">
                                 {isKey && (
-                                  <span className="inline-block font-ui text-[7px] uppercase tracking-[0.14em] text-[#cc3322] border border-[#cc3322]/40 px-1.5 py-0.5 mb-2">
+                                  <span className="inline-block font-ui text-[9px] uppercase tracking-[0.14em] text-[#cc3322] border border-[#cc3322]/40 px-1.5 py-0.5 mb-2">
                                     Key Event
                                   </span>
                                 )}
@@ -210,7 +210,7 @@ export default async function TimelinePage({ params }: PageProps) {
                                 {(event.peopleCount > 0 || event.themesCount > 0) && (
                                   <div className="flex items-center justify-end gap-3 mt-2">
                                     {event.peopleCount > 0 && (
-                                      <span className="font-ui text-[8px] uppercase tracking-[0.08em] text-[#1a3a72]/45">
+                                      <span className="font-ui text-[10px] uppercase tracking-[0.08em] text-[#1a3a72]/45">
                                         {event.peopleCount} {event.peopleCount === 1 ? "person" : "people"}
                                       </span>
                                     )}
@@ -235,18 +235,18 @@ export default async function TimelinePage({ params }: PageProps) {
                                 {date ? (
                                   <div className={`w-[52px] text-center px-1 py-2 ${isKey ? "bg-[#cc3322]" : "bg-[#1a3a72]"}`}>
                                     <p className="font-display text-[20px] text-[#f2e6c8] leading-none">{date.day}</p>
-                                    <p className="font-ui text-[7px] uppercase tracking-[0.1em] text-[#f2e6c8]/60 mt-0.5">{date.month}</p>
+                                    <p className="font-ui text-[9px] uppercase tracking-[0.1em] text-[#f2e6c8]/60 mt-0.5">{date.month}</p>
                                   </div>
                                 ) : (
-                                  <div className="w-[52px] text-center bg-[#14100a]/8 px-1 py-3">
-                                    <p className="font-ui text-[7px] uppercase text-[#14100a]/25">n/a</p>
+                                  <div className="w-[52px] text-center bg-[#1a3a72]/8 px-1 py-3">
+                                    <p className="font-ui text-[9px] uppercase text-[#14100a]/25">n/a</p>
                                   </div>
                                 )}
                               </div>
                               {/* Text */}
                               <div className="flex-1 min-w-0">
                                 {isKey && (
-                                  <span className="inline-block font-ui text-[7px] uppercase tracking-[0.14em] text-[#cc3322] border border-[#cc3322]/40 px-1.5 py-0.5 mb-2">
+                                  <span className="inline-block font-ui text-[9px] uppercase tracking-[0.14em] text-[#cc3322] border border-[#cc3322]/40 px-1.5 py-0.5 mb-2">
                                     Key Event
                                   </span>
                                 )}
@@ -259,7 +259,7 @@ export default async function TimelinePage({ params }: PageProps) {
                                   </p>
                                 )}
                                 {event.peopleCount > 0 && (
-                                  <p className="font-ui text-[8px] uppercase tracking-[0.08em] text-[#1a3a72]/45 mt-2">
+                                  <p className="font-ui text-[10px] uppercase tracking-[0.08em] text-[#1a3a72]/45 mt-2">
                                     {event.peopleCount} {event.peopleCount === 1 ? "person" : "people"}
                                   </p>
                                 )}
@@ -278,11 +278,11 @@ export default async function TimelinePage({ params }: PageProps) {
                           {date ? (
                             <div className={`flex-shrink-0 self-start w-[48px] text-center px-1 py-1.5 ${isKey ? "bg-[#cc3322]" : "bg-[#1a3a72]"}`}>
                               <p className="font-display text-[18px] text-[#f2e6c8] leading-none">{date.day}</p>
-                              <p className="font-ui text-[7px] uppercase tracking-[0.1em] text-[#f2e6c8]/60">{date.month}</p>
+                              <p className="font-ui text-[9px] uppercase tracking-[0.1em] text-[#f2e6c8]/60">{date.month}</p>
                             </div>
                           ) : (
-                            <div className="flex-shrink-0 w-[48px] bg-[#14100a]/8 px-1 py-2 text-center">
-                              <p className="font-ui text-[7px] uppercase text-[#14100a]/25">n/a</p>
+                            <div className="flex-shrink-0 w-[48px] bg-[#1a3a72]/8 px-1 py-2 text-center">
+                              <p className="font-ui text-[9px] uppercase text-[#14100a]/25">n/a</p>
                             </div>
                           )}
                           <div className="flex-1 min-w-0">
@@ -305,9 +305,9 @@ export default async function TimelinePage({ params }: PageProps) {
       </div>
 
       {/* ── Back to town ── */}
-      <div className="border-t-4 border-[#14100a] bg-[#14100a] py-8 px-5 sm:px-8 md:px-16">
+      <div className="border-t-4 border-[#14100a] bg-[#1a3a72] py-8 px-5 sm:px-8 md:px-16">
         <div className="max-w-[1200px] mx-auto">
-          <NextLink href={`/towns/${slug}`} className="no-underline font-ui text-[9px] uppercase tracking-[0.2em] text-[#f2e6c8]/40 hover:text-[#f2e6c8] transition-colors">
+          <NextLink href={`/towns/${slug}`} className="no-underline font-ui text-[11px] uppercase tracking-[0.2em] text-[#f2e6c8]/40 hover:text-[#f2e6c8] transition-colors">
             ← Back to {town.name}
           </NextLink>
         </div>

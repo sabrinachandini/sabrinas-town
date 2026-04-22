@@ -1,4 +1,4 @@
-export function StarScatter({ color = '#e8b84b', opacity = 0.22, className }: { color?: string; opacity?: number; className?: string }) {
+export function StarScatter({ color = '#4A6A9B', opacity = 0.22, className }: { color?: string; opacity?: number; className?: string }) {
   return (
     <svg
       className={className}

@@ -63,12 +63,12 @@ export default async function ItinerariesPage({ params }: PageProps) {
   return (
     <div className="bg-cream min-h-screen">
       {/* Hero */}
-      <div className="bg-[#14100a] border-b-4 border-[#cc3322] py-14 px-8 md:px-16 relative overflow-hidden">
+      <div className="bg-[#1a3a72] border-b-4 border-[#cc3322] py-14 px-8 md:px-16 relative overflow-hidden">
         <div aria-hidden className="absolute right-[-10px] top-[-20px] font-display leading-none pointer-events-none select-none text-white/[0.04]" style={{ fontSize: "clamp(140px,26vw,340px)", letterSpacing: "-0.05em" }}>
           Plan
         </div>
         <div className="relative z-10 max-w-[1200px] mx-auto">
-          <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-cream/40 mb-2">
+          <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-cream/40 mb-2">
             {town.name}, {town.state}
           </p>
           <h1 className="font-display text-cream leading-[0.9] tracking-[-0.03em]" style={{ fontSize: "clamp(40px,7vw,88px)" }}>
@@ -105,7 +105,7 @@ export default async function ItinerariesPage({ params }: PageProps) {
           {hasRoutes && (
             <section>
               <div className="border-t-[3px] border-ink pt-6 mb-10">
-                <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+                <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
                   Historical Routes
                 </p>
                 <h2 className="font-display text-ink text-[clamp(28px,4vw,48px)] leading-none tracking-[-0.02em] mt-3">
@@ -122,7 +122,7 @@ export default async function ItinerariesPage({ params }: PageProps) {
                     {/* Stop indicator */}
                     <div className="flex-shrink-0 text-center">
                       <p className="font-display text-[44px] text-cream/15 leading-none">{route.stopOrder}</p>
-                      <p className="font-ui text-[8px] uppercase tracking-[0.14em] text-cream/30">of {route.totalStops}</p>
+                      <p className="font-ui text-[10px] uppercase tracking-[0.14em] text-cream/30">of {route.totalStops}</p>
                     </div>
 
                     <div className="flex-1 min-w-0">
@@ -135,14 +135,14 @@ export default async function ItinerariesPage({ params }: PageProps) {
                             key={i}
                             className={`w-2.5 h-2.5 rounded-full border-2 ${
                               i + 1 === route.stopOrder
-                                ? "bg-[#e8b84b] border-[#e8b84b]"
+                                ? "bg-[#4A6A9B] border-[#4A6A9B]"
                                 : i + 1 < route.stopOrder
                                   ? "bg-cream/20 border-cream/20"
                                   : "bg-transparent border-cream/20"
                             }`}
                           />
                         ))}
-                        <span className="font-ui text-[9px] text-cream/30 ml-2 uppercase tracking-[0.1em]">
+                        <span className="font-ui text-[11px] text-cream/30 ml-2 uppercase tracking-[0.1em]">
                           Stop {route.stopOrder} of {route.totalStops}
                         </span>
                       </div>
@@ -161,7 +161,7 @@ export default async function ItinerariesPage({ params }: PageProps) {
             return (
               <section key={type}>
                 <div className="border-t-[3px] border-ink/20 pt-6 mb-8">
-                  <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-ink/30 flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-ink/15 before:block">
+                  <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-ink/30 flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-ink/15 before:block">
                     {label}
                   </p>
                   <h2 className="font-display text-ink text-[clamp(22px,3vw,36px)] leading-none tracking-[-0.02em] mt-2">

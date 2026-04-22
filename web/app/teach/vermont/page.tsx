@@ -95,7 +95,7 @@ export default async function VermontTeachPage() {
               fontWeight: 700,
               letterSpacing: "0.12em",
               textTransform: "uppercase",
-              color: "#e8b84b",
+              color: "#4A6A9B",
               marginBottom: "1rem",
             }}
           >
@@ -261,7 +261,7 @@ export default async function VermontTeachPage() {
               fontWeight: 700,
               letterSpacing: "0.12em",
               textTransform: "uppercase",
-              color: "#e8b84b",
+              color: "#4A6A9B",
               marginBottom: "0.75rem",
             }}
           >
@@ -316,7 +316,7 @@ export default async function VermontTeachPage() {
                       fontWeight: 600,
                       letterSpacing: "0.08em",
                       textTransform: "uppercase",
-                      color: "#e8b84b",
+                      color: "#4A6A9B",
                     }}
                   >
                     {seq.duration}
@@ -508,7 +508,7 @@ export default async function VermontTeachPage() {
               fontWeight: 700,
               letterSpacing: "0.12em",
               textTransform: "uppercase",
-              color: "#e8b84b",
+              color: "#4A6A9B",
               marginBottom: "0.75rem",
             }}
           >
@@ -525,7 +525,7 @@ export default async function VermontTeachPage() {
             Questions or corrections?{" "}
             <a
               href="mailto:hello@sabrinas-town.com"
-              style={{ color: "#e8b84b", textDecoration: "none" }}
+              style={{ color: "#4A6A9B", textDecoration: "none" }}
             >
               Reach out
             </a>

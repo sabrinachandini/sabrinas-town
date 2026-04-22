@@ -200,7 +200,7 @@ function TownMapSVG({ slug, hash }: { slug: string; hash: number }) {
           <line x1="200" y1="800" x2="205" y2="0" stroke="rgba(255,255,255,0.12)" strokeWidth="2.5" />
           <path d="M40 500 Q120 495 200 500 Q280 505 360 497" stroke="rgba(255,255,255,0.08)" strokeWidth="3" strokeDasharray="10 6" fill="none" />
           <circle cx="200" cy="340" r="9" fill="#cc3322" opacity="0.8" />
-          <circle cx="197" cy="460" r="6" fill="#e8b84b" opacity="0.65" />
+          <circle cx="197" cy="460" r="6" fill="#4A6A9B" opacity="0.65" />
           <path d="M200 340 Q215 400 197 460" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" strokeDasharray="5 4" fill="none" />
         </>
       );
@@ -213,7 +213,7 @@ function TownMapSVG({ slug, hash }: { slug: string; hash: number }) {
             fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
           <circle cx="218" cy="282" r="9" fill="#cc3322" opacity="0.82" />
           <circle cx="200" cy="362" r="6" fill="#cc3322" opacity="0.55" />
-          <circle cx="242" cy="444" r="5" fill="#e8b84b" opacity="0.7" />
+          <circle cx="242" cy="444" r="5" fill="#4A6A9B" opacity="0.7" />
           <path d="M218 282 Q244 323 242 444" stroke="rgba(255,255,255,0.14)" strokeWidth="1.5" strokeDasharray="5 4" fill="none" />
         </>
       );
@@ -251,7 +251,7 @@ function TownMapSVG({ slug, hash }: { slug: string; hash: number }) {
           <path d="M58 466 Q132 432 200 426 Q268 432 342 466" stroke="rgba(255,255,255,0.35)" strokeWidth="2.5" fill="none" strokeDasharray="8 4" />
           <rect x="84" y="360" width="22" height="17" fill="rgba(204,51,34,0.5)" stroke="rgba(255,255,255,0.3)" strokeWidth="1" />
           <rect x="294" y="360" width="22" height="17" fill="rgba(204,51,34,0.5)" stroke="rgba(255,255,255,0.3)" strokeWidth="1" />
-          <circle cx="200" cy="208" r="8" fill="#e8b84b" opacity="0.72" />
+          <circle cx="200" cy="208" r="8" fill="#4A6A9B" opacity="0.72" />
         </>
       );
       break;
@@ -267,7 +267,7 @@ function TownMapSVG({ slug, hash }: { slug: string; hash: number }) {
           ))}
           <rect x="148" y="272" width="94" height="58" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
           <rect x="188" y="254" width="22" height="18" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.25)" strokeWidth="1" />
-          <circle cx="196" cy="300" r="7" fill="#e8b84b" opacity="0.8" />
+          <circle cx="196" cy="300" r="7" fill="#4A6A9B" opacity="0.8" />
           <path d="M355 90 Q365 290 360 500 Q356 600 354 710" stroke="rgba(255,255,255,0.18)" strokeWidth="7" fill="none" />
         </>
       );
@@ -285,8 +285,8 @@ function TownMapSVG({ slug, hash }: { slug: string; hash: number }) {
           })).map((l, i) => (
             <line key={i} x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2} stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
           ))}
-          <circle cx={((hash * 41) % 320) + 40} cy={((hash * 67) % 500) + 80} r="10" fill="#e8b84b" opacity="0.45" />
-          <circle cx={((hash * 41) % 320) + 40} cy={((hash * 67) % 500) + 80} r="5" fill="#e8b84b" opacity="0.75" />
+          <circle cx={((hash * 41) % 320) + 40} cy={((hash * 67) % 500) + 80} r="10" fill="#4A6A9B" opacity="0.45" />
+          <circle cx={((hash * 41) % 320) + 40} cy={((hash * 67) % 500) + 80} r="5" fill="#4A6A9B" opacity="0.75" />
         </>
       );
   }

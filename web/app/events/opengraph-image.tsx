@@ -40,7 +40,7 @@ export default function Image() {
 
         {/* Content */}
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          <div style={{ fontSize: 14, fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "#e8b84b", display: "flex" }}>
+          <div style={{ fontSize: 14, fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "#4A6A9B", display: "flex" }}>
             Revolutionary War
           </div>
           <div style={{ fontSize: 80, fontWeight: 700, color: "#f2e6c8", lineHeight: 0.9, display: "flex" }}>

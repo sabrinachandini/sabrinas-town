@@ -74,14 +74,14 @@ export default function PartnerPage() {
         </div>
 
         <div className="relative z-10 max-w-[700px]">
-          <p className="font-ui text-[9px] font-semibold tracking-[0.32em] uppercase text-[rgba(255,255,255,0.5)] flex items-center gap-3 mb-6">
+          <p className="font-ui text-[11px] font-semibold tracking-[0.32em] uppercase text-[rgba(255,255,255,0.5)] flex items-center gap-3 mb-6">
             <span className="w-4 h-[2px] bg-[rgba(255,255,255,0.3)] block flex-shrink-0" />
             Partnership Program
           </p>
 
-          <h1 className="font-display leading-[0.88] tracking-[-0.05em] m-0" style={{ fontSize: "clamp(52px,14vw,160px)" }}>
+          <h1 className="font-display leading-[0.88] tracking-[-0.05em] m-0" style={{ fontSize: "clamp(40px,10vw,120px)" }}>
             <span className="text-white block">Partner</span>
-            <span className="text-[#e8b84b] block" style={{ transform: "rotate(-2deg) translateX(28px)", transformOrigin: "left center" }}>
+            <span className="text-[#4A6A9B] block" style={{ transform: "rotate(-2deg) translateX(28px)", transformOrigin: "left center" }}>
               With
             </span>
             <span className="text-white block">Us.</span>
@@ -97,7 +97,7 @@ export default function PartnerPage() {
 
           <a
             href="/partner/inquire"
-            className="no-underline block sm:inline-block mt-9 bg-[#14100a] text-[#f2e6c8] font-ui text-[11px] font-bold tracking-[0.18em] uppercase px-9 py-4 border-2 border-[#14100a] hover:bg-[#1a3a72] hover:border-[#1a3a72] transition-colors text-center sm:text-left"
+            className="no-underline block sm:inline-block mt-9 bg-[#1a3a72] text-[#f2e6c8] font-ui text-[11px] font-bold tracking-[0.18em] uppercase px-9 py-4 border-2 border-[#14100a] hover:bg-[#1a3a72] hover:border-[#1a3a72] transition-colors text-center sm:text-left"
             style={{ boxShadow: "5px 5px 0 rgba(255,255,255,0.25)" }}
           >
             Submit an Inquiry →
@@ -113,7 +113,7 @@ export default function PartnerPage() {
         </div>
 
         <div className="relative z-10">
-          <p className="font-ui text-[9px] font-semibold tracking-[0.32em] uppercase text-[rgba(255,255,255,0.42)] flex items-center gap-3 mb-7">
+          <p className="font-ui text-[11px] font-semibold tracking-[0.32em] uppercase text-[rgba(255,255,255,0.42)] flex items-center gap-3 mb-7">
             <span className="w-4 h-[2px] bg-[rgba(255,255,255,0.3)] block flex-shrink-0" />
             What Partnership Adds
           </p>
@@ -121,7 +121,7 @@ export default function PartnerPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0.5">
             {PROPOSITIONS.map((prop) => (
               <div key={prop.title} className="bg-white/[0.05] p-7">
-                <div className="font-display text-[20px] text-[#e8b84b] mb-3">→</div>
+                <div className="font-display text-[20px] text-[#4A6A9B] mb-3">→</div>
                 <div className="font-display text-[18px] text-white tracking-[0.02em] mb-2.5">{prop.title}</div>
                 <div className="font-editorial italic font-light text-[15px] text-[rgba(255,255,255,0.58)] leading-[1.55]">
                   {prop.body}
@@ -140,7 +140,7 @@ export default function PartnerPage() {
         </div>
 
         <div className="relative z-10 max-w-[640px] py-4">
-          <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] mb-3">
+          <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] mb-3">
             Always Free
           </p>
 
@@ -169,14 +169,14 @@ export default function PartnerPage() {
       </section>
 
       {/* INK benefits */}
-      <section className="bg-[#14100a] border-b-4 border-[#cc3322] py-12 sm:py-16 px-5 sm:px-16 relative overflow-hidden">
+      <section className="bg-[#1a3a72] border-b-4 border-[#cc3322] py-12 sm:py-16 px-5 sm:px-16 relative overflow-hidden">
         {/* Ghost */}
         <div aria-hidden className="absolute right-[-10px] bottom-[-20px] font-display text-[360px] leading-none text-white/[0.03] pointer-events-none select-none tracking-[-0.05em]">
           Benefits
         </div>
 
         <div className="relative z-10 py-4">
-          <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] mb-3">
+          <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] mb-3">
             Partner Benefits
           </p>
 
@@ -191,7 +191,7 @@ export default function PartnerPage() {
           <div className="max-w-[760px]">
             {BENEFITS.map((benefit, i) => (
               <div key={benefit.title} className="flex gap-6 py-6 border-b border-white/[0.07]">
-                <div className="font-display text-[13px] text-[#e8b84b] opacity-55 w-7 flex-shrink-0 mt-0.5">
+                <div className="font-display text-[13px] text-[#4A6A9B] opacity-55 w-7 flex-shrink-0 mt-0.5">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <div>
@@ -207,7 +207,7 @@ export default function PartnerPage() {
       {/* Inquiry */}
       <section className="bg-[#f2ece0] border-b-4 border-[#14100a] py-12 sm:py-20 px-5 sm:px-16">
         <div className="mx-auto max-w-[720px]">
-          <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[rgba(20,16,10,0.4)] mb-3">
+          <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[rgba(20,16,10,0.4)] mb-3">
             Pricing
           </p>
           <h2 className="font-display text-[#14100a] leading-[0.92] tracking-[-0.04em] mb-4" style={{ fontSize: "clamp(36px,4.5vw,60px)" }}>
@@ -225,7 +225,7 @@ export default function PartnerPage() {
           </p>
           <a
             href="/partner/inquire"
-            className="no-underline inline-block bg-[#cc3322] text-[#f2e6c8] font-ui text-[11px] font-bold tracking-[0.18em] uppercase px-8 py-4 border-2 border-[#cc3322] hover:bg-[#14100a] hover:border-[#14100a] transition-colors"
+            className="no-underline inline-block bg-[#cc3322] text-[#f2e6c8] font-ui text-[11px] font-bold tracking-[0.18em] uppercase px-8 py-4 border-2 border-[#cc3322] hover:bg-[#1a3a72] hover:border-[#14100a] transition-colors"
           >
             Request a Quote →
           </a>
@@ -240,11 +240,11 @@ export default function PartnerPage() {
         </div>
 
         <div className="relative z-10 max-w-[680px]">
-          <div className="inline-block border-[2.5px] border-[rgba(255,255,255,0.45)] text-[rgba(255,255,255,0.65)] font-ui text-[9px] font-bold tracking-[0.28em] uppercase px-3.5 py-1.5 mb-5" style={{ transform: "rotate(-2.5deg)", transformOrigin: "left center" }}>
+          <div className="inline-block border-[2.5px] border-[rgba(255,255,255,0.45)] text-[rgba(255,255,255,0.65)] font-ui text-[11px] font-bold tracking-[0.28em] uppercase px-3.5 py-1.5 mb-5" style={{ transform: "rotate(-2.5deg)", transformOrigin: "left center" }}>
             Join the Network
           </div>
 
-          <h2 className="font-display leading-[0.9] tracking-[-0.04em] text-white mt-3 m-0" style={{ fontSize: "clamp(56px,8vw,100px)" }}>
+          <h2 className="font-display leading-[0.9] tracking-[-0.04em] text-white mt-3 m-0" style={{ fontSize: "clamp(40px,6vw,76px)" }}>
             Ready to join
             <br />
             <span className="text-white/25 italic inline-block" style={{ transform: "rotate(-1.5deg)", transformOrigin: "left center" }}>
@@ -263,7 +263,7 @@ export default function PartnerPage() {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="/partner/inquire"
-              className="no-underline block text-center bg-[#14100a] text-[#f2e6c8] font-ui text-[11px] font-bold tracking-[0.18em] uppercase px-8 py-[18px] border-2 border-[#14100a] hover:bg-[#1a3a72] hover:border-[#1a3a72] transition-colors"
+              className="no-underline block text-center bg-[#1a3a72] text-[#f2e6c8] font-ui text-[11px] font-bold tracking-[0.18em] uppercase px-8 py-[18px] border-2 border-[#14100a] hover:bg-[#1a3a72] hover:border-[#1a3a72] transition-colors"
               style={{ boxShadow: "5px 5px 0 rgba(255,255,255,0.25)" }}
             >
               Submit an Inquiry

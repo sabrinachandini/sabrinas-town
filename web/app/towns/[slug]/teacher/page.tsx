@@ -82,7 +82,7 @@ export default async function TeacherPage({ params }: PageProps) {
   return (
     <div>
       {/* ── HERO ──────────────────────────────────────────────────── */}
-      <section className="bg-[#14100a] border-b-4 border-[#cc3322] py-16 px-8 md:px-16 relative overflow-hidden">
+      <section className="bg-[#1a3a72] border-b-4 border-[#cc3322] py-16 px-8 md:px-16 relative overflow-hidden">
         {/* Ghost watermark */}
         <div
           aria-hidden
@@ -95,18 +95,18 @@ export default async function TeacherPage({ params }: PageProps) {
         <div className="relative z-10 max-w-[1200px] mx-auto">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 mb-6">
-            <a href="/teach" className="font-ui text-[9px] uppercase tracking-[0.2em] text-[#f2e6c8]/30 hover:text-[#cc3322] transition-colors no-underline">
+            <a href="/teach" className="font-ui text-[11px] uppercase tracking-[0.2em] text-[#f2e6c8]/30 hover:text-[#cc3322] transition-colors no-underline">
               Teach
             </a>
             <span className="text-[#f2e6c8]/20 text-[10px]">/</span>
-            <a href={`/towns/${slug}`} className="font-ui text-[9px] uppercase tracking-[0.2em] text-[#f2e6c8]/30 hover:text-[#cc3322] transition-colors no-underline">
+            <a href={`/towns/${slug}`} className="font-ui text-[11px] uppercase tracking-[0.2em] text-[#f2e6c8]/30 hover:text-[#cc3322] transition-colors no-underline">
               {town.state}
             </a>
             <span className="text-[#f2e6c8]/20 text-[10px]">/</span>
-            <span className="font-ui text-[9px] uppercase tracking-[0.2em] text-[#f2e6c8]/50">{town.name}</span>
+            <span className="font-ui text-[11px] uppercase tracking-[0.2em] text-[#f2e6c8]/50">{town.name}</span>
           </nav>
 
-          <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-[#cc3322] mb-3">
+          <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-[#cc3322] mb-3">
             Teacher Resources
           </p>
           <h1
@@ -131,16 +131,16 @@ export default async function TeacherPage({ params }: PageProps) {
             <div className="max-w-[1200px] mx-auto flex flex-wrap items-center justify-between gap-6">
               <div className="flex flex-wrap gap-10">
                 <div>
-                  <p className="font-ui text-[8px] uppercase tracking-[0.2em] text-white/50 mb-1">Grade Range</p>
+                  <p className="font-ui text-[10px] uppercase tracking-[0.2em] text-white/50 mb-1">Grade Range</p>
                   <p className="font-display text-[28px] text-[#f2e6c8] leading-none">{teacherModule.overview.gradeRange}</p>
                 </div>
                 <div>
-                  <p className="font-ui text-[8px] uppercase tracking-[0.2em] text-white/50 mb-1">Duration</p>
+                  <p className="font-ui text-[10px] uppercase tracking-[0.2em] text-white/50 mb-1">Duration</p>
                   <p className="font-display text-[28px] text-[#f2e6c8] leading-none">{teacherModule.overview.estimatedDuration}</p>
                 </div>
                 {bullets.length > 0 && (
                   <div>
-                    <p className="font-ui text-[8px] uppercase tracking-[0.2em] text-white/50 mb-1">Included</p>
+                    <p className="font-ui text-[10px] uppercase tracking-[0.2em] text-white/50 mb-1">Included</p>
                     <p className="font-display text-[28px] text-[#f2e6c8] leading-none">{bullets.length} Resources</p>
                   </div>
                 )}
@@ -150,7 +150,7 @@ export default async function TeacherPage({ params }: PageProps) {
                 href={`/towns/${slug}/teacher/print`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="no-underline bg-[#f2e6c8] text-[#14100a] font-ui font-bold text-[9px] uppercase tracking-[0.2em] px-7 py-3.5 border-[2.5px] border-[#14100a] hover:bg-[#e8b84b] transition-colors whitespace-nowrap"
+                className="no-underline bg-[#f2e6c8] text-[#14100a] font-ui font-bold text-[11px] uppercase tracking-[0.2em] px-7 py-3.5 border-[2.5px] border-[#14100a] hover:bg-[#4A6A9B] transition-colors whitespace-nowrap"
                 style={{ boxShadow: "3px 3px 0 #14100a" }}
               >
                 Print Full Packet →
@@ -163,7 +163,7 @@ export default async function TeacherPage({ params }: PageProps) {
             <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-14">
               {/* Left: bullets */}
               <div>
-                <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-[#cc3322] flex items-center gap-2.5 mb-6">
+                <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-[#cc3322] flex items-center gap-2.5 mb-6">
                   <span className="w-4 h-[2px] bg-[#cc3322] block" />
                   What&apos;s Included
                 </p>
@@ -192,7 +192,7 @@ export default async function TeacherPage({ params }: PageProps) {
 
               {/* Right: overview + standards */}
               <div>
-                <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-[#cc3322] flex items-center gap-2.5 mb-6">
+                <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-[#cc3322] flex items-center gap-2.5 mb-6">
                   <span className="w-4 h-[2px] bg-[#cc3322] block" />
                   Lesson Overview
                 </p>
@@ -202,7 +202,7 @@ export default async function TeacherPage({ params }: PageProps) {
 
                 {lp?.essentialQuestions && lp.essentialQuestions.length > 0 && (
                   <div>
-                    <p className="font-ui text-[9px] uppercase tracking-[0.2em] text-[#14100a]/40 mb-3">Essential Questions</p>
+                    <p className="font-ui text-[11px] uppercase tracking-[0.2em] text-[#14100a]/40 mb-3">Essential Questions</p>
                     <ul className="space-y-2">
                       {lp.essentialQuestions.slice(0, 3).map((q, i) => (
                         <li key={i} className="font-ui text-[13px] text-[#14100a]/65 leading-relaxed pl-3 border-l-2 border-[#cc3322]/40">
@@ -220,7 +220,7 @@ export default async function TeacherPage({ params }: PageProps) {
           {teacherModule.primarySources.length > 0 && (
             <section className="bg-[#1a3a72] border-b-4 border-[#14100a] py-16 px-8 md:px-16">
               <div className="max-w-[1200px] mx-auto">
-                <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-[#f2e6c8]/40 flex items-center gap-2.5 mb-4">
+                <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-[#f2e6c8]/40 flex items-center gap-2.5 mb-4">
                   <span className="w-4 h-[2px] bg-[#f2e6c8]/30 block" />
                   Primary Sources
                 </p>
@@ -233,8 +233,8 @@ export default async function TeacherPage({ params }: PageProps) {
 
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
                   {teacherModule.primarySources.map((source) => (
-                    <div key={source.id} className="bg-[#14100a]/40 border border-[#f2e6c8]/10 p-5">
-                      <p className="font-ui text-[8px] uppercase tracking-[0.15em] text-[#cc3322] mb-2">
+                    <div key={source.id} className="bg-[#1a3a72]/40 border border-[#f2e6c8]/10 p-5">
+                      <p className="font-ui text-[10px] uppercase tracking-[0.15em] text-[#cc3322] mb-2">
                         {source.type.replace(/_/g, " ")} · {source.credibilityTier.replace(/_/g, " ")}
                       </p>
                       <p className="font-editorial text-[15px] text-[#f2e6c8]/90 leading-snug mb-2">
@@ -254,7 +254,7 @@ export default async function TeacherPage({ params }: PageProps) {
           {lp && (lp.objectives?.length > 0 || lp.warmUp) && (
             <section className="bg-[#f2e6c8] border-b-4 border-[#14100a] py-16 px-8 md:px-16">
               <div className="max-w-[1200px] mx-auto">
-                <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-[#cc3322] flex items-center gap-2.5 mb-4">
+                <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-[#cc3322] flex items-center gap-2.5 mb-4">
                   <span className="w-4 h-[2px] bg-[#cc3322] block" />
                   Lesson Plan
                 </p>
@@ -269,7 +269,7 @@ export default async function TeacherPage({ params }: PageProps) {
                   {/* Objectives */}
                   {lp.objectives && lp.objectives.length > 0 && (
                     <div>
-                      <p className="font-ui text-[9px] uppercase tracking-[0.2em] text-[#14100a]/40 mb-4 border-b border-[#14100a]/10 pb-2">
+                      <p className="font-ui text-[11px] uppercase tracking-[0.2em] text-[#14100a]/40 mb-4 border-b border-[#14100a]/10 pb-2">
                         Learning Objectives
                       </p>
                       <ol className="space-y-3">
@@ -289,7 +289,7 @@ export default async function TeacherPage({ params }: PageProps) {
                   <div className="space-y-4">
                     {lp.warmUp && (
                       <div className="border-l-3 border-[#cc3322] pl-4 border-l-[3px]">
-                        <p className="font-ui text-[8px] uppercase tracking-[0.18em] text-[#cc3322] mb-1">
+                        <p className="font-ui text-[10px] uppercase tracking-[0.18em] text-[#cc3322] mb-1">
                           Warm-Up · {lp.warmUp.duration}
                         </p>
                         <p className="font-ui text-[13px] text-[#14100a]/65 leading-relaxed">{lp.warmUp.activity}</p>
@@ -297,7 +297,7 @@ export default async function TeacherPage({ params }: PageProps) {
                     )}
                     {lp.directInstruction && (
                       <div className="border-l-[3px] border-[#1a3a72] pl-4">
-                        <p className="font-ui text-[8px] uppercase tracking-[0.18em] text-[#1a3a72] mb-1">
+                        <p className="font-ui text-[10px] uppercase tracking-[0.18em] text-[#1a3a72] mb-1">
                           Direct Instruction · {lp.directInstruction.duration}
                         </p>
                         {lp.directInstruction.content?.slice(0, 2).map((item, i) => (
@@ -307,7 +307,7 @@ export default async function TeacherPage({ params }: PageProps) {
                     )}
                     {lp.closure && (
                       <div className="border-l-[3px] border-[#14100a]/20 pl-4">
-                        <p className="font-ui text-[8px] uppercase tracking-[0.18em] text-[#14100a]/40 mb-1">
+                        <p className="font-ui text-[10px] uppercase tracking-[0.18em] text-[#14100a]/40 mb-1">
                           Closure · {lp.closure.duration}
                         </p>
                         <p className="font-ui text-[13px] text-[#14100a]/65 leading-relaxed">{lp.closure.activity}</p>
@@ -319,7 +319,7 @@ export default async function TeacherPage({ params }: PageProps) {
                 {/* Differentiation */}
                 {lp.differentiation && (
                   <div className="mt-12 pt-8 border-t border-[#14100a]/10">
-                    <p className="font-ui text-[9px] uppercase tracking-[0.2em] text-[#14100a]/40 mb-5">
+                    <p className="font-ui text-[11px] uppercase tracking-[0.2em] text-[#14100a]/40 mb-5">
                       Differentiation Strategies
                     </p>
                     <div className="grid sm:grid-cols-3 gap-4">
@@ -328,8 +328,8 @@ export default async function TeacherPage({ params }: PageProps) {
                         { label: "Advanced Learners", text: lp.differentiation.advanced },
                         { label: "ELL Support", text: lp.differentiation.ell },
                       ].map((d) => (
-                        <div key={d.label} className="bg-[#14100a]/5 border border-[#14100a]/8 p-4">
-                          <p className="font-ui text-[8px] uppercase tracking-[0.16em] text-[#1a3a72] font-bold mb-2">{d.label}</p>
+                        <div key={d.label} className="bg-[#1a3a72]/5 border border-[#14100a]/8 p-4">
+                          <p className="font-ui text-[10px] uppercase tracking-[0.16em] text-[#1a3a72] font-bold mb-2">{d.label}</p>
                           <p className="font-ui text-[12px] text-[#14100a]/60 leading-relaxed">{d.text}</p>
                         </div>
                       ))}
@@ -344,7 +344,7 @@ export default async function TeacherPage({ params }: PageProps) {
           {teacherModule.quiz?.questions?.length > 0 && (
             <section className="bg-[#1a3a72] border-b-4 border-[#14100a] py-16 px-8 md:px-16">
               <div className="max-w-[1200px] mx-auto">
-                <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-[#cc3322] flex items-center gap-2.5 mb-4">
+                <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-[#cc3322] flex items-center gap-2.5 mb-4">
                   <span className="w-4 h-[2px] bg-[#cc3322] block" />
                   Assessment
                 </p>
@@ -362,7 +362,7 @@ export default async function TeacherPage({ params }: PageProps) {
                       <span className="font-display text-[28px] text-[#cc3322]/50 leading-none flex-shrink-0 w-8">{qi + 1}</span>
                       <div>
                         <p className="font-ui text-[13px] text-[#f2e6c8]/80 leading-relaxed mb-1">{q.question}</p>
-                        <p className="font-ui text-[9px] uppercase tracking-[0.12em] text-[#f2e6c8]/25">
+                        <p className="font-ui text-[11px] uppercase tracking-[0.12em] text-[#f2e6c8]/25">
                           {q.type.replace(/_/g, " ")}
                         </p>
                       </div>
@@ -394,7 +394,7 @@ export default async function TeacherPage({ params }: PageProps) {
                   href={`/towns/${slug}/teacher/print`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="no-underline bg-[#f2e6c8] text-[#14100a] font-ui font-bold text-[9px] uppercase tracking-[0.2em] px-8 py-4 border-[2.5px] border-[#14100a] hover:bg-[#e8b84b] transition-colors whitespace-nowrap text-center"
+                  className="no-underline bg-[#f2e6c8] text-[#14100a] font-ui font-bold text-[11px] uppercase tracking-[0.2em] px-8 py-4 border-[2.5px] border-[#14100a] hover:bg-[#4A6A9B] transition-colors whitespace-nowrap text-center"
                   style={{ boxShadow: "4px 4px 0 #14100a" }}
                 >
                   Student Copy →
@@ -403,13 +403,13 @@ export default async function TeacherPage({ params }: PageProps) {
                   href={`/towns/${slug}/teacher/print?mode=teacher`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="no-underline border border-[#f2e6c8]/30 text-[#f2e6c8]/70 font-ui text-[9px] uppercase tracking-[0.2em] px-8 py-3 hover:border-[#f2e6c8] hover:text-[#f2e6c8] transition-colors whitespace-nowrap text-center"
+                  className="no-underline border border-[#f2e6c8]/30 text-[#f2e6c8]/70 font-ui text-[11px] uppercase tracking-[0.2em] px-8 py-3 hover:border-[#f2e6c8] hover:text-[#f2e6c8] transition-colors whitespace-nowrap text-center"
                 >
                   Teacher Copy (with Answer Key) →
                 </a>
                 <a
                   href={`/towns/${slug}`}
-                  className="no-underline font-ui text-[9px] uppercase tracking-[0.18em] text-[#f2e6c8]/40 text-center hover:text-[#f2e6c8] transition-colors"
+                  className="no-underline font-ui text-[11px] uppercase tracking-[0.18em] text-[#f2e6c8]/40 text-center hover:text-[#f2e6c8] transition-colors"
                 >
                   ← Back to {town.name}
                 </a>

@@ -63,12 +63,12 @@ export default async function PlacePage({ params }: PageProps) {
       <JsonLd data={jsonLd} />
 
       {/* ── Hero ── */}
-      <div className="bg-[#14100a] border-b-4 border-[#cc3322] py-16 px-8 md:px-16 relative overflow-hidden">
+      <div className="bg-[#1a3a72] border-b-4 border-[#cc3322] py-16 px-8 md:px-16 relative overflow-hidden">
         <div aria-hidden className="absolute right-0 bottom-[-0.1em] font-display leading-none text-white/[0.04] pointer-events-none select-none" style={{ fontSize: "clamp(80px,16vw,220px)" }}>
           {placeTypeLabel.charAt(0)}
         </div>
         <div className="relative z-10 max-w-[1200px] mx-auto">
-          <nav className="flex items-center gap-2 font-ui text-[9px] uppercase tracking-[0.2em] text-cream/30 mb-8">
+          <nav className="flex items-center gap-2 font-ui text-[11px] uppercase tracking-[0.2em] text-cream/30 mb-8">
             <NextLink href="/places" className="no-underline hover:text-cream/60 transition-colors">Places</NextLink>
             <span>/</span>
             <NextLink href={`/towns/${place.town.slug}`} className="no-underline hover:text-cream/60 transition-colors">{place.town.name}</NextLink>
@@ -76,7 +76,7 @@ export default async function PlacePage({ params }: PageProps) {
             <span className="text-cream/55">{place.name}</span>
           </nav>
 
-          <p className="font-ui text-[9px] uppercase tracking-[0.2em] text-[#e8b84b] mb-3">{placeTypeLabel}</p>
+          <p className="font-ui text-[11px] uppercase tracking-[0.2em] text-[#4A6A9B] mb-3">{placeTypeLabel}</p>
           <h1 className="font-display text-cream leading-[0.9] tracking-[-0.02em]" style={{ fontSize: "clamp(36px,7vw,88px)" }}>
             {place.name}
           </h1>
@@ -85,7 +85,7 @@ export default async function PlacePage({ params }: PageProps) {
               {place.town.name}, {place.town.state}
             </NextLink>
             {place.featured && (
-              <span className="font-ui text-[9px] uppercase tracking-[0.12em] text-[#e8b84b] border border-[#e8b84b]/30 px-2.5 py-1">Featured Site</span>
+              <span className="font-ui text-[11px] uppercase tracking-[0.12em] text-[#4A6A9B] border border-[#4A6A9B]/30 px-2.5 py-1">Featured Site</span>
             )}
           </div>
         </div>
@@ -100,7 +100,7 @@ export default async function PlacePage({ params }: PageProps) {
             {/* Description */}
             <section>
               <div className="border-t-[3px] border-ink pt-6 mb-8">
-                <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+                <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
                   About This Place
                 </p>
               </div>
@@ -117,7 +117,7 @@ export default async function PlacePage({ params }: PageProps) {
             {place.historicalNote && (
               <section className="mt-12">
                 <div className="border-t-[3px] border-ink pt-6 mb-8">
-                  <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+                  <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
                     Revolutionary Significance
                   </p>
                 </div>
@@ -135,7 +135,7 @@ export default async function PlacePage({ params }: PageProps) {
             {place.lat && place.lng && (
               <section className="mt-12">
                 <div className="border-t-[3px] border-ink pt-6 mb-6">
-                  <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+                  <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
                     Location
                   </p>
                 </div>
@@ -143,7 +143,7 @@ export default async function PlacePage({ params }: PageProps) {
                   href={`https://www.google.com/maps/search/?api=1&query=${place.lat},${place.lng}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="no-underline block bg-[#14100a]/5 border border-[#14100a]/10 p-4 hover:border-[#cc3322] transition-colors"
+                  className="no-underline block bg-[#1a3a72]/5 border border-[#14100a]/10 p-4 hover:border-[#cc3322] transition-colors"
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-[#cc3322] flex items-center justify-center flex-shrink-0">
@@ -154,7 +154,7 @@ export default async function PlacePage({ params }: PageProps) {
                     </div>
                     <div>
                       <p className="font-ui text-[11px] text-ink font-semibold">{place.address ?? `${place.lat.toFixed(4)}, ${place.lng.toFixed(4)}`}</p>
-                      <p className="font-ui text-[9px] uppercase tracking-[0.1em] text-ink/40 mt-0.5">Open in Google Maps →</p>
+                      <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-ink/40 mt-0.5">Open in Google Maps →</p>
                     </div>
                   </div>
                 </a>
@@ -165,7 +165,7 @@ export default async function PlacePage({ params }: PageProps) {
             {place.connectedEvents.length > 0 && (
               <section className="mt-16">
                 <div className="border-t-[3px] border-ink pt-6 mb-8">
-                  <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+                  <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
                     Events at This Location
                   </p>
                 </div>
@@ -179,7 +179,7 @@ export default async function PlacePage({ params }: PageProps) {
                           </div>
                         ) : (
                           <div className="bg-ink/10 inline-block px-2 py-2">
-                            <p className="font-ui text-[8px] text-ink/30 uppercase">n.d.</p>
+                            <p className="font-ui text-[10px] text-ink/30 uppercase">n.d.</p>
                           </div>
                         )}
                       </div>
@@ -191,7 +191,7 @@ export default async function PlacePage({ params }: PageProps) {
                           {ev.name}
                         </NextLink>
                         {ev.people.length > 0 && (
-                          <p className="font-ui text-[9px] text-ink/40 mt-1">
+                          <p className="font-ui text-[11px] text-ink/40 mt-1">
                             {ev.people.slice(0, 3).map((p) => p.name).join(", ")}
                           </p>
                         )}
@@ -207,40 +207,40 @@ export default async function PlacePage({ params }: PageProps) {
           <aside className="space-y-8">
             {/* Visitor info */}
             {hasVisitorInfo && (
-              <div className="bg-[#14100a] p-5">
-                <p className="font-ui text-[9px] uppercase tracking-[0.2em] text-cream/30 mb-4">Visitor Information</p>
+              <div className="bg-[#1a3a72] p-5">
+                <p className="font-ui text-[11px] uppercase tracking-[0.2em] text-cream/30 mb-4">Visitor Information</p>
                 <dl className="space-y-3">
                   {place.address && (
                     <div>
-                      <dt className="font-ui text-[9px] uppercase tracking-[0.12em] text-cream/30">Address</dt>
+                      <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Address</dt>
                       <dd className="font-editorial text-[14px] text-cream mt-0.5 leading-snug">{place.address}</dd>
                     </div>
                   )}
                   {place.hours && (
                     <div>
-                      <dt className="font-ui text-[9px] uppercase tracking-[0.12em] text-cream/30">Hours</dt>
+                      <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Hours</dt>
                       <dd className="font-editorial text-[14px] text-cream mt-0.5">{place.hours}</dd>
                     </div>
                   )}
                   {place.admission && (
                     <div>
-                      <dt className="font-ui text-[9px] uppercase tracking-[0.12em] text-cream/30">Admission</dt>
+                      <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Admission</dt>
                       <dd className="font-editorial text-[14px] text-cream mt-0.5">{place.admission}</dd>
                     </div>
                   )}
                   {place.phone && (
                     <div>
-                      <dt className="font-ui text-[9px] uppercase tracking-[0.12em] text-cream/30">Phone</dt>
+                      <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Phone</dt>
                       <dd className="mt-0.5">
-                        <a href={`tel:${place.phone}`} className="no-underline font-editorial text-[14px] text-[#e8b84b] hover:text-cream transition-colors">{place.phone}</a>
+                        <a href={`tel:${place.phone}`} className="no-underline font-editorial text-[14px] text-[#4A6A9B] hover:text-cream transition-colors">{place.phone}</a>
                       </dd>
                     </div>
                   )}
                   {place.website && (
                     <div>
-                      <dt className="font-ui text-[9px] uppercase tracking-[0.12em] text-cream/30">Website</dt>
+                      <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Website</dt>
                       <dd className="mt-0.5">
-                        <a href={place.website} target="_blank" rel="noopener noreferrer" className="no-underline font-ui text-[10px] text-[#e8b84b] hover:text-cream transition-colors uppercase tracking-[0.1em]">
+                        <a href={place.website} target="_blank" rel="noopener noreferrer" className="no-underline font-ui text-[10px] text-[#4A6A9B] hover:text-cream transition-colors uppercase tracking-[0.1em]">
                           Visit site →
                         </a>
                       </dd>
@@ -253,27 +253,27 @@ export default async function PlacePage({ params }: PageProps) {
             {/* Practical notes */}
             {hasPracticalInfo && (
               <div className="border border-ink/10 p-5">
-                <p className="font-ui text-[9px] uppercase tracking-[0.2em] text-ink/30 mb-4">Planning Your Visit</p>
+                <p className="font-ui text-[11px] uppercase tracking-[0.2em] text-ink/30 mb-4">Planning Your Visit</p>
                 <div className="space-y-3">
                   {place.amenities.length > 0 && (
                     <div>
-                      <p className="font-ui text-[9px] uppercase tracking-[0.12em] text-ink/40 mb-1">Amenities</p>
+                      <p className="font-ui text-[11px] uppercase tracking-[0.12em] text-ink/40 mb-1">Amenities</p>
                       <div className="flex flex-wrap gap-1.5">
                         {place.amenities.map((a) => (
-                          <span key={a} className="font-ui text-[8px] uppercase tracking-[0.08em] text-ink/50 border border-ink/10 px-1.5 py-0.5">{a}</span>
+                          <span key={a} className="font-ui text-[10px] uppercase tracking-[0.08em] text-ink/50 border border-ink/10 px-1.5 py-0.5">{a}</span>
                         ))}
                       </div>
                     </div>
                   )}
                   {place.accessibilityNotes && (
                     <div>
-                      <p className="font-ui text-[9px] uppercase tracking-[0.12em] text-ink/40 mb-1">Accessibility</p>
+                      <p className="font-ui text-[11px] uppercase tracking-[0.12em] text-ink/40 mb-1">Accessibility</p>
                       <p className="font-ui text-[11px] text-ink/60 leading-relaxed">{place.accessibilityNotes}</p>
                     </div>
                   )}
                   {place.parkingNotes && (
                     <div>
-                      <p className="font-ui text-[9px] uppercase tracking-[0.12em] text-ink/40 mb-1">Parking</p>
+                      <p className="font-ui text-[11px] uppercase tracking-[0.12em] text-ink/40 mb-1">Parking</p>
                       <p className="font-ui text-[11px] text-ink/60 leading-relaxed">{place.parkingNotes}</p>
                     </div>
                   )}
@@ -283,7 +283,7 @@ export default async function PlacePage({ params }: PageProps) {
 
             {/* Navigation */}
             <div>
-              <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-ink/30 mb-3">Explore</p>
+              <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-ink/30 mb-3">Explore</p>
               <ul>
                 {[
                   { label: "← All Places", href: "/places" },

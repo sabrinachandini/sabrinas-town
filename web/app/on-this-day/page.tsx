@@ -26,12 +26,12 @@ export default async function OnThisDayPage() {
   return (
     <div className="bg-cream min-h-screen">
       {/* Hero */}
-      <div className="bg-[#14100a] border-b-4 border-[#cc3322] py-16 px-8 md:px-16 relative overflow-hidden">
+      <div className="bg-[#1a3a72] border-b-4 border-[#cc3322] py-16 px-8 md:px-16 relative overflow-hidden">
         <div aria-hidden className="absolute right-[-10px] top-[-20px] font-display leading-none pointer-events-none select-none text-white/[0.04]" style={{ fontSize: "clamp(120px,22vw,300px)", letterSpacing: "-0.05em" }}>
           {dayNum}
         </div>
         <div className="relative z-10 max-w-[1200px] mx-auto">
-          <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-cream/40 mb-2">
+          <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-cream/40 mb-2">
             The Revolution, Day by Day
           </p>
           <h1 className="font-display text-cream leading-[0.9] tracking-[-0.03em]" style={{ fontSize: "clamp(44px,8vw,96px)" }}>
@@ -68,7 +68,7 @@ export default async function OnThisDayPage() {
         ) : (
           <div>
             <div className="border-t-[3px] border-ink pt-6 mb-10">
-              <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+              <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
                 Events on {monthName} {dayNum}
               </p>
             </div>
@@ -78,9 +78,9 @@ export default async function OnThisDayPage() {
                 <li key={event.id} className="flex gap-6 py-7 border-b border-ink/8 last:border-b-0 group">
                   {/* Year badge */}
                   <div className="flex-shrink-0 w-20">
-                    <div className="bg-[#14100a] text-cream inline-block px-3 py-2 text-center w-full">
+                    <div className="bg-[#1a3a72] text-cream inline-block px-3 py-2 text-center w-full">
                       <p className="font-display text-[24px] leading-none text-cream">{event.year}</p>
-                      <p className="font-ui text-[8px] uppercase tracking-[0.1em] text-cream/40 mt-0.5">{monthName.slice(0,3)} {dayNum}</p>
+                      <p className="font-ui text-[10px] uppercase tracking-[0.1em] text-cream/40 mt-0.5">{monthName.slice(0,3)} {dayNum}</p>
                     </div>
                   </div>
 
@@ -102,7 +102,7 @@ export default async function OnThisDayPage() {
                     {event.themes.length > 0 && (
                       <div className="flex flex-wrap gap-1.5 mt-3">
                         {event.themes.slice(0, 3).map((theme) => (
-                          <span key={theme.id} className="font-ui text-[8px] uppercase tracking-[0.1em] text-ink/30 border border-ink/10 px-1.5 py-0.5">
+                          <span key={theme.id} className="font-ui text-[10px] uppercase tracking-[0.1em] text-ink/30 border border-ink/10 px-1.5 py-0.5">
                             {theme.name}
                           </span>
                         ))}

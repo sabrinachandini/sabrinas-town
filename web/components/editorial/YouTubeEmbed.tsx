@@ -21,7 +21,7 @@ export function YouTubeEmbed({ videoId, title, source, description }: YouTubeEmb
 
   return (
     <figure className="my-10">
-      <div className="aspect-video relative overflow-hidden border-4 border-[#14100a] bg-[#14100a]">
+      <div className="aspect-video relative overflow-hidden border-4 border-[#14100a] bg-[#1a3a72]">
         {loaded ? (
           <iframe
             src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
@@ -44,7 +44,7 @@ export function YouTubeEmbed({ videoId, title, source, description }: YouTubeEmb
               className="absolute inset-0 w-full h-full object-cover"
             />
             {/* Dark overlay */}
-            <div className="absolute inset-0 bg-[#14100a]/40 group-hover:bg-[#14100a]/25 transition-colors" />
+            <div className="absolute inset-0 bg-[#1a3a72]/40 group-hover:bg-[#1a3a72]/25 transition-colors" />
             {/* Play button */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-16 h-16 rounded-full bg-[#cc3322] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">

@@ -20,19 +20,19 @@ export function ComingSoon({ slug, section }: ComingSoonProps) {
   return (
     <main>
       {/* Ink hero */}
-      <section className="bg-[#14100a] border-b-4 border-[#cc3322] py-20 px-6 sm:px-16 relative overflow-hidden">
+      <section className="bg-[#1a3a72] border-b-4 border-[#cc3322] py-20 px-6 sm:px-16 relative overflow-hidden">
         <div aria-hidden className="absolute right-[-10px] top-[-20px] font-display leading-none pointer-events-none select-none text-white/[0.04]" style={{ fontSize: "clamp(140px,28vw,380px)", letterSpacing: "-0.05em" }}>
           Soon
         </div>
         <svg className="absolute top-5 right-5 pointer-events-none" width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden style={{ opacity: 0.2 }}>
-          <path d="M9 21 L10.2 25.5 L15 25.5 L11.2 28.5 L12.6 33 L9 30.3 L5.4 33 L6.8 28.5 L3 25.5 L7.8 25.5 Z" fill="#e8b84b" />
+          <path d="M9 21 L10.2 25.5 L15 25.5 L11.2 28.5 L12.6 33 L9 30.3 L5.4 33 L6.8 28.5 L3 25.5 L7.8 25.5 Z" fill="#4A6A9B" />
           <path d="M32 8 L33 11 L36 11 L33.8 12.8 L34.8 16 L32 14.2 L29.2 16 L30.2 12.8 L28 11 L31 11 Z" fill="#f2e6c8" />
         </svg>
         <div className="absolute top-10 right-10 rotate-[4deg] font-ui font-bold text-[11px] tracking-[0.12em] uppercase text-[rgba(242,230,200,0.5)] border-[2.5px] border-[rgba(242,230,200,0.25)] px-3.5 py-2 hidden sm:block">
           In Research
         </div>
         <div className="relative z-10 max-w-[720px]">
-          <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.4)] flex items-center gap-2.5 mb-8">
+          <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.4)] flex items-center gap-2.5 mb-8">
             <span className="w-5 h-[2px] bg-[rgba(242,230,200,0.3)] block" />
             {section ? section : "Town Profile"}
           </p>
@@ -61,7 +61,7 @@ export function ComingSoon({ slug, section }: ComingSoonProps) {
           <div className="flex flex-wrap gap-4">
             <NextLink
               href="/towns"
-              className="no-underline inline-block bg-[#14100a] text-[#f2e6c8] font-ui text-[11px] font-bold tracking-[0.18em] uppercase px-8 py-4 border-2 border-[#14100a] hover:bg-[#cc3322] hover:border-[#cc3322] transition-colors"
+              className="no-underline inline-block bg-[#1a3a72] text-[#f2e6c8] font-ui text-[11px] font-bold tracking-[0.18em] uppercase px-8 py-4 border-2 border-[#14100a] hover:bg-[#cc3322] hover:border-[#cc3322] transition-colors"
             >
               Browse All Towns →
             </NextLink>

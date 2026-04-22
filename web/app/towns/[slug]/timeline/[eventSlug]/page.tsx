@@ -84,7 +84,7 @@ export default async function EventDetailPage({ params }: PageProps) {
       <JsonLd data={jsonLd} />
 
       {/* ── Hero ── */}
-      <section className="bg-[#14100a] border-b-4 border-[#cc3322] pt-14 pb-0 px-8 md:px-16 relative overflow-hidden">
+      <section className="bg-[#1a3a72] border-b-4 border-[#cc3322] pt-14 pb-0 px-8 md:px-16 relative overflow-hidden">
         {/* Ghost year watermark */}
         {dateParts && (
           <div
@@ -103,7 +103,7 @@ export default async function EventDetailPage({ params }: PageProps) {
 
         <div className="relative z-10 max-w-[900px] mx-auto">
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 font-ui text-[9px] uppercase tracking-[0.2em] text-[#f2e6c8]/25 mb-10">
+          <nav className="flex items-center gap-2 font-ui text-[11px] uppercase tracking-[0.2em] text-[#f2e6c8]/25 mb-10">
             <NextLink href="/" className="no-underline hover:text-[#f2e6c8]/50 transition-colors">Home</NextLink>
             <span>/</span>
             <NextLink href={`/towns/${slug}`} className="no-underline hover:text-[#f2e6c8]/50 transition-colors">{town.name}</NextLink>
@@ -118,19 +118,19 @@ export default async function EventDetailPage({ params }: PageProps) {
             {dateParts ? (
               <div className={`flex-shrink-0 text-center px-4 py-4 self-start ${isKey ? "bg-[#cc3322]" : "bg-[#1a3a72]"} border-[3px] border-[#f2e6c8]/10`}>
                 <p className="font-display text-[3rem] text-[#f2e6c8] leading-none">{dateParts.day}</p>
-                <p className="font-ui text-[8px] uppercase tracking-[0.12em] text-[#f2e6c8]/60 mt-1">{dateParts.month}</p>
-                <p className="font-ui text-[8px] uppercase tracking-[0.08em] text-[#f2e6c8]/40 mt-0.5">{dateParts.year}</p>
+                <p className="font-ui text-[10px] uppercase tracking-[0.12em] text-[#f2e6c8]/60 mt-1">{dateParts.month}</p>
+                <p className="font-ui text-[10px] uppercase tracking-[0.08em] text-[#f2e6c8]/40 mt-0.5">{dateParts.year}</p>
               </div>
             ) : (
               <div className="flex-shrink-0 bg-[#1a3a72]/40 border-[3px] border-[#f2e6c8]/10 px-4 py-4 text-center">
-                <p className="font-ui text-[8px] uppercase tracking-[0.1em] text-[#f2e6c8]/30 leading-relaxed">Date<br />Unknown</p>
+                <p className="font-ui text-[10px] uppercase tracking-[0.1em] text-[#f2e6c8]/30 leading-relaxed">Date<br />Unknown</p>
               </div>
             )}
 
             {/* Title */}
             <div className="flex-1 min-w-0">
               {isKey && (
-                <span className="inline-block font-ui text-[7px] uppercase tracking-[0.2em] text-[#e8b84b] border border-[#e8b84b]/40 px-2 py-1 mb-4">
+                <span className="inline-block font-ui text-[9px] uppercase tracking-[0.2em] text-[#4A6A9B] border border-[#4A6A9B]/40 px-2 py-1 mb-4">
                   Key Event
                 </span>
               )}
@@ -140,7 +140,7 @@ export default async function EventDetailPage({ params }: PageProps) {
               >
                 {event.name}
               </h1>
-              <p className="font-ui text-[9px] uppercase tracking-[0.2em] text-[#f2e6c8]/30 mt-4">
+              <p className="font-ui text-[11px] uppercase tracking-[0.2em] text-[#f2e6c8]/30 mt-4">
                 {town.name}, {town.state}
                 {event.datePrecision && event.datePrecision !== "EXACT" && (
                   <span className="ml-3 text-[#f2e6c8]/20">· {event.datePrecision.toLowerCase()} date</span>
@@ -156,21 +156,21 @@ export default async function EventDetailPage({ params }: PageProps) {
         <section className="bg-[#cc3322] border-b-4 border-[#14100a] py-4 px-8 md:px-16 flex flex-wrap gap-8 items-center">
           {event.people.length > 0 && (
             <div className="flex items-baseline gap-2">
-              <span className="font-display text-[2rem] text-[#e8b84b] leading-none">{event.people.length}</span>
-              <span className="font-ui text-[9px] uppercase tracking-[0.1em] text-white/60">
+              <span className="font-display text-[2rem] text-[#4A6A9B] leading-none">{event.people.length}</span>
+              <span className="font-ui text-[11px] uppercase tracking-[0.1em] text-white/60">
                 {event.people.length === 1 ? "Person" : "People"} Involved
               </span>
             </div>
           )}
           {event.themes.length > 0 && (
             <div className="flex items-baseline gap-2">
-              <span className="font-display text-[2rem] text-[#e8b84b] leading-none">{event.themes.length}</span>
-              <span className="font-ui text-[9px] uppercase tracking-[0.1em] text-white/60">Themes</span>
+              <span className="font-display text-[2rem] text-[#4A6A9B] leading-none">{event.themes.length}</span>
+              <span className="font-ui text-[11px] uppercase tracking-[0.1em] text-white/60">Themes</span>
             </div>
           )}
           <div className="flex items-baseline gap-2">
-            <span className="font-display text-[2rem] text-[#e8b84b] leading-none">{event.significanceWeight}</span>
-            <span className="font-ui text-[9px] uppercase tracking-[0.1em] text-white/60">Significance</span>
+            <span className="font-display text-[2rem] text-[#4A6A9B] leading-none">{event.significanceWeight}</span>
+            <span className="font-ui text-[11px] uppercase tracking-[0.1em] text-white/60">Significance</span>
           </div>
         </section>
       )}
@@ -192,7 +192,7 @@ export default async function EventDetailPage({ params }: PageProps) {
         {/* Red rule */}
         <div className="flex items-center gap-4 mb-10">
           <div className="w-12 h-[3px] bg-[#cc3322]" />
-          <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-[#cc3322]">The Story</p>
+          <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-[#cc3322]">The Story</p>
         </div>
 
         {/* Prose */}
@@ -222,7 +222,7 @@ export default async function EventDetailPage({ params }: PageProps) {
         {/* ── People section ── */}
         {event.people.length > 0 && (
           <div className="mt-16 pt-12 border-t-[3px] border-[#14100a]">
-            <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] flex items-center gap-2 mb-8 before:content-[''] before:w-4 before:h-[2px] before:bg-[#cc3322] before:block">
+            <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] flex items-center gap-2 mb-8 before:content-[''] before:w-4 before:h-[2px] before:bg-[#cc3322] before:block">
               People Involved
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -255,7 +255,7 @@ export default async function EventDetailPage({ params }: PageProps) {
                         {person.name}
                       </p>
                       {person.roleInEvent && (
-                        <p className="font-ui text-[9px] uppercase tracking-[0.1em] text-[#1a3a72]/60 mt-0.5">
+                        <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-[#1a3a72]/60 mt-0.5">
                           {person.roleInEvent}
                         </p>
                       )}
@@ -275,7 +275,7 @@ export default async function EventDetailPage({ params }: PageProps) {
         {/* ── Themes ── */}
         {event.themes.length > 0 && (
           <div className="mt-12 pt-8 border-t border-[#14100a]/10">
-            <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-[#cc3322] before:block">
+            <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-[#cc3322] before:block">
               Themes
             </p>
             <div className="flex flex-wrap gap-2">
@@ -283,7 +283,7 @@ export default async function EventDetailPage({ params }: PageProps) {
                 <a
                   key={theme.id}
                   href={`/towns?q=${encodeURIComponent(theme.name)}`}
-                  className="no-underline font-ui text-[9px] tracking-[0.1em] uppercase text-[#14100a]/60 border-2 border-[#14100a]/20 px-3 py-1.5 hover:bg-[#cc3322] hover:text-[#f2e6c8] hover:border-[#cc3322] transition-colors"
+                  className="no-underline font-ui text-[11px] tracking-[0.1em] uppercase text-[#14100a]/60 border-2 border-[#14100a]/20 px-3 py-1.5 hover:bg-[#cc3322] hover:text-[#f2e6c8] hover:border-[#cc3322] transition-colors"
                 >
                   {theme.name}
                 </a>
@@ -296,13 +296,13 @@ export default async function EventDetailPage({ params }: PageProps) {
         <div className="mt-16 pt-8 border-t-[3px] border-[#14100a] flex items-center justify-between gap-4">
           <NextLink
             href={`/towns/${slug}/timeline`}
-            className="font-ui text-[9px] tracking-[0.2em] uppercase text-[#14100a]/40 hover:text-[#cc3322] transition-colors no-underline"
+            className="font-ui text-[11px] tracking-[0.2em] uppercase text-[#14100a]/40 hover:text-[#cc3322] transition-colors no-underline"
           >
             ← Back to Timeline
           </NextLink>
           <NextLink
             href={`/towns/${slug}`}
-            className="font-ui text-[9px] tracking-[0.2em] uppercase text-[#14100a]/40 hover:text-[#cc3322] transition-colors no-underline"
+            className="font-ui text-[11px] tracking-[0.2em] uppercase text-[#14100a]/40 hover:text-[#cc3322] transition-colors no-underline"
           >
             {town.name} →
           </NextLink>

@@ -146,9 +146,9 @@ export default async function TownsPage({ searchParams }: PageProps) {
           style={{ opacity: 0.2 }}
           width="52" height="52" viewBox="0 0 52 52" fill="none"
         >
-          <path d="M11 25 L12.4 30 L18 30 L13.5 33.5 L15 39 L11 35.8 L7 39 L8.5 33.5 L4 30 L9.6 30 Z" fill="#e8b84b" />
+          <path d="M11 25 L12.4 30 L18 30 L13.5 33.5 L15 39 L11 35.8 L7 39 L8.5 33.5 L4 30 L9.6 30 Z" fill="#4A6A9B" />
           <path d="M38 10 L39 13 L42 13 L39.8 14.8 L40.8 18 L38 16.2 L35.2 18 L36.2 14.8 L34 13 L37 13 Z" fill="#f2e6c8" />
-          <path d="M44 36 L44.7 38.4 L47.3 38.4 L45.2 39.9 L45.9 42.3 L44 41 L42.1 42.3 L42.8 39.9 L40.7 38.4 L43.3 38.4 Z" fill="#e8b84b" />
+          <path d="M44 36 L44.7 38.4 L47.3 38.4 L45.2 39.9 L45.9 42.3 L44 41 L42.1 42.3 L42.8 39.9 L40.7 38.4 L43.3 38.4 Z" fill="#4A6A9B" />
         </svg>
 
         {/* Content */}
@@ -293,7 +293,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
             </a>
           ))}
           <div className="w-full pt-1.5">
-            <Squiggle width={120} stroke="#e8b84b" strokeWidth="1.8" />
+            <Squiggle width={120} stroke="#4A6A9B" strokeWidth="1.8" />
           </div>
         </div>
       </section>
@@ -481,7 +481,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
         </div>
 
         <svg aria-hidden className="hidden sm:block absolute top-5 right-5 pointer-events-none z-[2]" style={{ opacity: 0.2 }} width="52" height="52" viewBox="0 0 52 52" fill="none">
-          <path d="M11 25 L12.4 30 L18 30 L13.5 33.5 L15 39 L11 35.8 L7 39 L8.5 33.5 L4 30 L9.6 30 Z" fill="#e8b84b" />
+          <path d="M11 25 L12.4 30 L18 30 L13.5 33.5 L15 39 L11 35.8 L7 39 L8.5 33.5 L4 30 L9.6 30 Z" fill="#4A6A9B" />
           <path d="M38 10 L39 13 L42 13 L39.8 14.8 L40.8 18 L38 16.2 L35.2 18 L36.2 14.8 L34 13 L37 13 Z" fill="#f2e6c8" />
         </svg>
 

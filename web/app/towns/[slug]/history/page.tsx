@@ -72,7 +72,7 @@ export default async function HistoryPage({ params }: PageProps) {
       {/* Narrative section */}
       <div className="mt-8">
         <div className="border-b-[3px] border-ink pb-3 mb-6">
-          <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+          <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
             Why {town.name} Matters
           </p>
         </div>
@@ -96,7 +96,7 @@ export default async function HistoryPage({ params }: PageProps) {
       {town.themes.length > 0 && (
         <div className="mt-10">
           <div className="border-b-[3px] border-ink pb-3 mb-0">
-            <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+            <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
               Themes
             </p>
           </div>
@@ -123,7 +123,7 @@ export default async function HistoryPage({ params }: PageProps) {
       {town.routes.length > 0 && (
         <div className="mt-10">
           <div className="border-b-[3px] border-ink pb-3 mb-0">
-            <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+            <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
               Historical Routes
             </p>
           </div>

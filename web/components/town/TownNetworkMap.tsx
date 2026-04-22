@@ -6,7 +6,7 @@ import { Map, MapMarker, MarkerContent, MarkerTooltip, MapRoute, MapControls } f
 import type { MapTown, MapLink } from "@/lib/api";
 
 const TIER_COLORS: Record<string, string> = {
-  flagship: "#e8b84b",
+  flagship: "#4A6A9B",
   gateway:  "#cc3322",
   standard: "#1a3a72",
   emerging: "#5a7a5a",
@@ -112,9 +112,9 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
       <div className="absolute top-3 left-3 z-20 flex flex-wrap gap-1.5 max-w-[calc(100%-16px)] sm:max-w-[calc(100%-320px)]">
         <button
           onClick={() => { setActiveState(null); setSelectedSlug(null); }}
-          className={`font-ui text-[8px] uppercase tracking-[0.14em] px-2.5 py-1 border transition-colors whitespace-nowrap shadow-sm ${
+          className={`font-ui text-[10px] uppercase tracking-[0.14em] px-2.5 py-1 border transition-colors whitespace-nowrap shadow-sm ${
             !activeState
-              ? "bg-[#14100a] text-[#f2e6c8] border-[#14100a]"
+              ? "bg-[#1a3a72] text-[#f2e6c8] border-[#14100a]"
               : "bg-white/90 text-[#14100a]/55 border-[#14100a]/20 hover:border-[#14100a]/50"
           }`}
         >
@@ -124,7 +124,7 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
           <button
             key={s}
             onClick={() => { setActiveState(s === activeState ? null : s); setSelectedSlug(null); }}
-            className={`font-ui text-[8px] uppercase tracking-[0.14em] px-2.5 py-1 border transition-colors whitespace-nowrap shadow-sm ${
+            className={`font-ui text-[10px] uppercase tracking-[0.14em] px-2.5 py-1 border transition-colors whitespace-nowrap shadow-sm ${
               activeState === s
                 ? "bg-[#cc3322] text-white border-[#cc3322]"
                 : "bg-white/90 text-[#14100a]/55 border-[#14100a]/20 hover:border-[#14100a]/50"
@@ -209,7 +209,7 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
 
       {/* ── Sidebar panel ── */}
       <div
-        className={`absolute top-0 right-0 h-full w-full sm:w-[300px] bg-[#14100a] border-l-2 border-[#cc3322] z-20 flex flex-col overflow-hidden transition-transform duration-200 ease-out`}
+        className={`absolute top-0 right-0 h-full w-full sm:w-[300px] bg-[#1a3a72] border-l-2 border-[#cc3322] z-20 flex flex-col overflow-hidden transition-transform duration-200 ease-out`}
         style={{ transform: selectedTown ? "translateX(0)" : "translateX(100%)" }}
       >
         {selectedTown && (
@@ -225,7 +225,7 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
 
             {/* Town header */}
             <div className="px-4 sm:px-6 pt-6 sm:pt-8 pb-4 sm:pb-5 border-b border-[#f2e6c8]/8">
-              <span className="font-ui text-[7px] uppercase tracking-[0.18em] sm:tracking-[0.22em] text-[#e8b84b] block mb-1.5 sm:mb-2">
+              <span className="font-ui text-[9px] uppercase tracking-[0.18em] sm:tracking-[0.22em] text-[#4A6A9B] block mb-1.5 sm:mb-2">
                 {selectedTown.scoreTier} · {selectedTown.state}
               </span>
               <h2 className="font-display text-[#f2e6c8] text-[20px] sm:text-[26px] leading-tight">
@@ -238,7 +238,7 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
                   style={{ width: `${selectedTown.compositeScore}%` }}
                 />
               </div>
-              <p className="font-ui text-[7px] sm:text-[8px] uppercase tracking-[0.1em] text-[#f2e6c8]/20 mt-1.5">
+              <p className="font-ui text-[9px] sm:text-[10px] uppercase tracking-[0.1em] text-[#f2e6c8]/20 mt-1.5">
                 Historical significance: {selectedTown.compositeScore}/100
               </p>
             </div>
@@ -255,7 +255,7 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
             {/* Connected towns */}
             {connectedTowns.length > 0 && (
               <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-[#f2e6c8]/8 overflow-y-auto flex-1">
-                <p className="font-ui text-[7px] sm:text-[8px] uppercase tracking-[0.16em] text-[#f2e6c8]/22 mb-2.5 sm:mb-3">
+                <p className="font-ui text-[9px] sm:text-[10px] uppercase tracking-[0.16em] text-[#f2e6c8]/22 mb-2.5 sm:mb-3">
                   Connected Towns
                 </p>
                 <div className="space-y-2.5 sm:space-y-3">
@@ -266,7 +266,7 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
                         className="flex items-center gap-2 w-full text-left group"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-[#cc3322]/40 flex-shrink-0 group-hover:bg-[#cc3322] transition-colors" />
-                        <span className="font-ui text-[10px] sm:text-[11px] text-[#f2e6c8]/60 group-hover:text-[#e8b84b] transition-colors">
+                        <span className="font-ui text-[10px] sm:text-[11px] text-[#f2e6c8]/60 group-hover:text-[#4A6A9B] transition-colors">
                           {t.name}, {t.state}
                         </span>
                       </button>
@@ -285,14 +285,14 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
             <div className="px-4 sm:px-6 py-4 sm:py-5 mt-auto">
               <a
                 href={`/towns/${selectedTown.slug}`}
-                className="no-underline flex items-center justify-between w-full font-ui text-[8px] sm:text-[9px] uppercase tracking-[0.18em] sm:tracking-[0.2em] text-[#f2e6c8] border border-[#cc3322]/60 px-3 sm:px-4 py-2.5 sm:py-3 hover:bg-[#cc3322] hover:border-[#cc3322] transition-colors"
+                className="no-underline flex items-center justify-between w-full font-ui text-[10px] sm:text-[11px] uppercase tracking-[0.18em] sm:tracking-[0.2em] text-[#f2e6c8] border border-[#cc3322]/60 px-3 sm:px-4 py-2.5 sm:py-3 hover:bg-[#cc3322] hover:border-[#cc3322] transition-colors"
               >
                 <span>Explore {selectedTown.name}</span>
                 <span aria-hidden>→</span>
               </a>
               <button
                 onClick={() => router.push(`/towns/${selectedTown.slug}/timeline`)}
-                className="mt-2 flex items-center justify-between w-full font-ui text-[8px] sm:text-[9px] uppercase tracking-[0.18em] sm:tracking-[0.2em] text-[#f2e6c8]/40 border border-[#f2e6c8]/10 px-3 sm:px-4 py-2.5 sm:py-3 hover:text-[#f2e6c8]/70 hover:border-[#f2e6c8]/25 transition-colors"
+                className="mt-2 flex items-center justify-between w-full font-ui text-[10px] sm:text-[11px] uppercase tracking-[0.18em] sm:tracking-[0.2em] text-[#f2e6c8]/40 border border-[#f2e6c8]/10 px-3 sm:px-4 py-2.5 sm:py-3 hover:text-[#f2e6c8]/70 hover:border-[#f2e6c8]/25 transition-colors"
               >
                 <span>Timeline</span>
                 <span aria-hidden>→</span>
@@ -304,16 +304,16 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
 
       {/* ── Legend (bottom-left) ── */}
       <div className={`absolute bottom-8 left-3 z-10 bg-white/90 border border-[#14100a]/10 px-3 sm:px-4 py-2 sm:py-3 shadow-sm ${selectedTown ? "hidden sm:block" : ""}`}>
-        <p className="font-ui text-[6px] sm:text-[7px] uppercase tracking-[0.14em] sm:tracking-[0.16em] text-[#14100a]/40 mb-1.5 sm:mb-2">Significance</p>
+        <p className="font-ui text-[6px] sm:text-[9px] uppercase tracking-[0.14em] sm:tracking-[0.16em] text-[#14100a]/40 mb-1.5 sm:mb-2">Significance</p>
         <div className="space-y-1 sm:space-y-1.5">
           {Object.entries(TIER_COLORS).map(([tier, color]) => (
             <div key={tier} className="flex items-center gap-1.5 sm:gap-2">
               <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full border border-white shadow-sm flex-shrink-0" style={{ backgroundColor: color }} />
-              <span className="font-ui text-[7px] sm:text-[8px] uppercase tracking-[0.06em] sm:tracking-[0.08em] text-[#14100a]/50 capitalize">{tier}</span>
+              <span className="font-ui text-[9px] sm:text-[10px] uppercase tracking-[0.06em] sm:tracking-[0.08em] text-[#14100a]/50 capitalize">{tier}</span>
             </div>
           ))}
         </div>
-        <p className="font-ui text-[6px] sm:text-[7px] text-[#14100a]/30 mt-2 sm:mt-2.5 pt-1.5 sm:pt-2 border-t border-[#14100a]/8">
+        <p className="font-ui text-[6px] sm:text-[9px] text-[#14100a]/30 mt-2 sm:mt-2.5 pt-1.5 sm:pt-2 border-t border-[#14100a]/8">
           Size = historical score
         </p>
       </div>

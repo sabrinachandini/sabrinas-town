@@ -39,7 +39,7 @@ export function EventsSignup({ townName, townId }: EventsSignupProps) {
   if (status === "success") {
     return (
       <div className="bg-[#1a3a72] border border-white/10 px-6 py-5">
-        <p className="font-ui text-[9px] uppercase tracking-[0.2em] text-[#e8b84b] mb-1">Subscribed</p>
+        <p className="font-ui text-[11px] uppercase tracking-[0.2em] text-[#4A6A9B] mb-1">Subscribed</p>
         <p className="font-editorial text-white text-[16px] leading-snug">
           You&rsquo;re on the list for {townName} updates.
         </p>
@@ -48,8 +48,8 @@ export function EventsSignup({ townName, townId }: EventsSignupProps) {
   }
 
   return (
-    <div className="bg-[#14100a] border border-white/10 px-6 py-5">
-      <p className="font-ui text-[9px] uppercase tracking-[0.2em] text-[rgba(242,230,200,0.4)] mb-2">
+    <div className="bg-[#1a3a72] border border-white/10 px-6 py-5">
+      <p className="font-ui text-[11px] uppercase tracking-[0.2em] text-[rgba(242,230,200,0.4)] mb-2">
         Event Updates
       </p>
       <p className="font-editorial text-[#f2e6c8] text-[17px] leading-snug mb-4">

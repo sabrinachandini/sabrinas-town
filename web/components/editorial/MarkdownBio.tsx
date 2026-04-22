@@ -17,8 +17,8 @@ export function MarkdownBio({ content, dropCap = true, className }: MarkdownBioP
         "markdown-bio",
         "font-editorial text-[18px] text-ink leading-[1.75] max-w-[620px]",
         // Headings
-        "[&_h2]:font-ui [&_h2]:text-[9px] [&_h2]:font-semibold [&_h2]:uppercase [&_h2]:tracking-[0.28em] [&_h2]:text-crimson [&_h2]:mt-12 [&_h2]:mb-4 [&_h2]:flex [&_h2]:items-center [&_h2]:gap-2 [&_h2]:before:content-[''] [&_h2]:before:w-4 [&_h2]:before:h-[2px] [&_h2]:before:bg-crimson [&_h2]:before:block",
-        "[&_h3]:font-ui [&_h3]:text-[9px] [&_h3]:uppercase [&_h3]:tracking-[0.22em] [&_h3]:text-ink/40 [&_h3]:mt-8 [&_h3]:mb-3",
+        "[&_h2]:font-ui [&_h2]:text-[11px] [&_h2]:font-semibold [&_h2]:uppercase [&_h2]:tracking-[0.28em] [&_h2]:text-crimson [&_h2]:mt-12 [&_h2]:mb-4 [&_h2]:flex [&_h2]:items-center [&_h2]:gap-2 [&_h2]:before:content-[''] [&_h2]:before:w-4 [&_h2]:before:h-[2px] [&_h2]:before:bg-crimson [&_h2]:before:block",
+        "[&_h3]:font-ui [&_h3]:text-[11px] [&_h3]:uppercase [&_h3]:tracking-[0.22em] [&_h3]:text-ink/40 [&_h3]:mt-8 [&_h3]:mb-3",
         // Paragraphs
         "[&_p]:mb-6",
         // Lists

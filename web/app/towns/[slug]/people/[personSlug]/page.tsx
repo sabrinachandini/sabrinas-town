@@ -59,7 +59,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
       <JsonLd data={jsonLd} />
 
       {/* Hero */}
-      <div className="bg-[#14100a] border-b-4 border-[#cc3322] py-16 px-8 md:px-16 relative overflow-hidden">
+      <div className="bg-[#1a3a72] border-b-4 border-[#cc3322] py-16 px-8 md:px-16 relative overflow-hidden">
         {/* Ghost initial */}
         <div aria-hidden className="absolute right-0 top-[-10px] font-display leading-none text-white/[0.04] pointer-events-none select-none" style={{ fontSize: "clamp(120px,22vw,300px)" }}>
           {person.name.charAt(0)}
@@ -67,7 +67,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
 
         <div className="relative z-10 max-w-[1200px] mx-auto">
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 font-ui text-[9px] uppercase tracking-[0.2em] text-cream/30 mb-8">
+          <nav className="flex items-center gap-2 font-ui text-[11px] uppercase tracking-[0.2em] text-cream/30 mb-8">
             <NextLink href={`/towns/${slug}`} className="no-underline hover:text-cream/60 transition-colors">{town.name}</NextLink>
             <span>/</span>
             <NextLink href={`/towns/${slug}/people`} className="no-underline hover:text-cream/60 transition-colors">People</NextLink>
@@ -76,7 +76,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
           <div className="grid md:grid-cols-[1fr_auto] gap-8 items-end">
             <div>
               {lifespan && (
-                <p className="font-display text-[#e8b84b] text-[clamp(18px,2.5vw,28px)] leading-none mb-4 tracking-[0.02em]">
+                <p className="font-display text-[#4A6A9B] text-[clamp(18px,2.5vw,28px)] leading-none mb-4 tracking-[0.02em]">
                   {lifespan}
                 </p>
               )}
@@ -86,7 +86,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
               {person.roles.length > 0 && (
                 <div className="flex flex-wrap gap-2 mt-5">
                   {person.roles.map((role) => (
-                    <span key={role} className="font-ui text-[9px] uppercase tracking-[0.15em] text-cream/50 border border-cream/15 px-2.5 py-1">
+                    <span key={role} className="font-ui text-[11px] uppercase tracking-[0.15em] text-cream/50 border border-cream/15 px-2.5 py-1">
                       {role}
                     </span>
                   ))}
@@ -105,7 +105,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
                   />
                 </div>
                 {person.imageCredit && (
-                  <p className="font-ui text-[8px] text-cream/25 mt-1.5 leading-snug max-w-[160px]">
+                  <p className="font-ui text-[10px] text-cream/25 mt-1.5 leading-snug max-w-[160px]">
                     {person.imageCredit.split(".")[0]}
                   </p>
                 )}
@@ -113,7 +113,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
             ) : sortedEvents.length > 0 ? (
               <div className="hidden md:block text-right flex-shrink-0">
                 <p className="font-display text-[64px] text-cream/10 leading-none">{sortedEvents.length}</p>
-                <p className="font-ui text-[9px] uppercase tracking-[0.2em] text-cream/25">Events in {town.name}</p>
+                <p className="font-ui text-[11px] uppercase tracking-[0.2em] text-cream/25">Events in {town.name}</p>
               </div>
             ) : null}
           </div>
@@ -129,7 +129,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
             {/* Biography */}
             <section>
               <div className="border-t-[3px] border-ink pt-6 mb-8">
-                <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+                <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
                   Biography
                 </p>
               </div>
@@ -143,7 +143,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
             {sortedEvents.length > 0 && (
               <section className="mt-16">
                 <div className="border-t-[3px] border-ink pt-6 mb-8">
-                  <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+                  <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
                     In {town.name}
                   </p>
                 </div>
@@ -163,7 +163,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
                           </div>
                         ) : (
                           <div className="bg-ink/10 inline-block px-2 py-2 text-center">
-                            <p className="font-ui text-[9px] text-ink/30 uppercase">n.d.</p>
+                            <p className="font-ui text-[11px] text-ink/30 uppercase">n.d.</p>
                           </div>
                         )}
                       </div>
@@ -188,7 +188,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
                         {event.themes.length > 0 && (
                           <div className="flex flex-wrap gap-1.5 mt-2">
                             {event.themes.slice(0, 3).map((theme) => (
-                              <span key={theme.id} className="font-ui text-[8px] uppercase tracking-[0.1em] text-ink/30 border border-ink/10 px-1.5 py-0.5">
+                              <span key={theme.id} className="font-ui text-[10px] uppercase tracking-[0.1em] text-ink/30 border border-ink/10 px-1.5 py-0.5">
                                 {theme.name}
                               </span>
                             ))}
@@ -205,7 +205,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
             {person.stories.length > 0 && (
               <section className="mt-16">
                 <div className="border-t-[3px] border-ink pt-6 mb-8">
-                  <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+                  <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
                     Stories
                   </p>
                 </div>
@@ -216,7 +216,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
                       href={`/towns/${slug}/stories/${story.id}`}
                       className="no-underline block py-5 border-b border-ink/8 last:border-b-0 group"
                     >
-                      <p className="font-ui text-[8px] uppercase tracking-[0.14em] text-crimson/60 mb-1">
+                      <p className="font-ui text-[10px] uppercase tracking-[0.14em] text-crimson/60 mb-1">
                         {story.storyType.replace(/_/g, " ")}
                       </p>
                       <p className="font-editorial text-[19px] text-ink group-hover:text-crimson transition-colors leading-snug">
@@ -237,31 +237,31 @@ export default async function PersonDetailPage({ params }: PageProps) {
           {/* Sidebar */}
           <aside className="space-y-8">
             {/* Quick facts */}
-            <div className="bg-[#14100a] p-5">
-              <p className="font-ui text-[9px] uppercase tracking-[0.2em] text-cream/30 mb-4">Quick Facts</p>
+            <div className="bg-[#1a3a72] p-5">
+              <p className="font-ui text-[11px] uppercase tracking-[0.2em] text-cream/30 mb-4">Quick Facts</p>
               <dl className="space-y-3">
                 {lifespan && (
                   <div>
-                    <dt className="font-ui text-[9px] uppercase tracking-[0.12em] text-cream/30">Lived</dt>
+                    <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Lived</dt>
                     <dd className="font-editorial text-[17px] text-cream mt-0.5">{lifespan}</dd>
                   </div>
                 )}
                 {person.roles.length > 0 && (
                   <div>
-                    <dt className="font-ui text-[9px] uppercase tracking-[0.12em] text-cream/30">Roles</dt>
+                    <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Roles</dt>
                     <dd className="font-editorial text-[15px] text-cream mt-0.5 leading-snug">{person.roles.join(", ")}</dd>
                   </div>
                 )}
                 <div>
-                  <dt className="font-ui text-[9px] uppercase tracking-[0.12em] text-cream/30">Town</dt>
+                  <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Town</dt>
                   <dd className="mt-0.5">
-                    <NextLink href={`/towns/${slug}`} className="no-underline font-editorial text-[15px] text-[#e8b84b] hover:text-cream transition-colors">
+                    <NextLink href={`/towns/${slug}`} className="no-underline font-editorial text-[15px] text-[#4A6A9B] hover:text-cream transition-colors">
                       {town.name}, {town.state}
                     </NextLink>
                   </dd>
                 </div>
                 <div>
-                  <dt className="font-ui text-[9px] uppercase tracking-[0.12em] text-cream/30">Verification</dt>
+                  <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Verification</dt>
                   <dd className="font-ui text-[10px] text-cream/50 uppercase tracking-[0.1em] mt-0.5">
                     {person.verificationStatus.replace(/_/g, " ")}
                   </dd>
@@ -271,7 +271,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
 
             {/* Navigation */}
             <div>
-              <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-ink/30 mb-3">Explore {town.name}</p>
+              <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-ink/30 mb-3">Explore {town.name}</p>
               <ul>
                 {[
                   { label: "← All People", href: `/towns/${slug}/people` },

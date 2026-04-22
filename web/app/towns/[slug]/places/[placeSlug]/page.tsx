@@ -101,7 +101,7 @@ export default async function PlaceDetailPage({ params }: PageProps) {
           <div className="space-y-4">
             {place.address && (
               <div>
-                <p className="font-ui text-[9px] uppercase tracking-[0.1em] text-ink/40 mb-0.5">
+                <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-ink/40 mb-0.5">
                   Address
                 </p>
                 <p className="font-editorial text-[16px] text-ink">
@@ -111,7 +111,7 @@ export default async function PlaceDetailPage({ params }: PageProps) {
             )}
             {place.hours && (
               <div>
-                <p className="font-ui text-[9px] uppercase tracking-[0.1em] text-ink/40 mb-0.5">
+                <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-ink/40 mb-0.5">
                   Hours
                 </p>
                 <p className="font-editorial text-[16px] text-ink">
@@ -121,7 +121,7 @@ export default async function PlaceDetailPage({ params }: PageProps) {
             )}
             {place.admission && (
               <div>
-                <p className="font-ui text-[9px] uppercase tracking-[0.1em] text-ink/40 mb-0.5">
+                <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-ink/40 mb-0.5">
                   Admission
                 </p>
                 <p className="font-editorial text-[16px] text-ink">
@@ -131,7 +131,7 @@ export default async function PlaceDetailPage({ params }: PageProps) {
             )}
             {place.accessibilityNotes && (
               <div>
-                <p className="font-ui text-[9px] uppercase tracking-[0.1em] text-ink/40 mb-0.5">
+                <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-ink/40 mb-0.5">
                   Accessibility
                 </p>
                 <p className="font-editorial text-[16px] text-ink">
@@ -143,7 +143,7 @@ export default async function PlaceDetailPage({ params }: PageProps) {
               <div>
                 <a
                   href={place.website}
-                  className="font-ui text-[9px] tracking-[0.2em] uppercase text-ink/40 hover:text-crimson transition-colors no-underline"
+                  className="font-ui text-[11px] tracking-[0.2em] uppercase text-ink/40 hover:text-crimson transition-colors no-underline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -200,7 +200,7 @@ export default async function PlaceDetailPage({ params }: PageProps) {
       <div className="mt-12 pt-8 border-t border-ink/8">
         <a
           href={`/towns/${slug}/places`}
-          className="font-ui text-[9px] tracking-[0.2em] uppercase text-ink/40 hover:text-crimson transition-colors no-underline"
+          className="font-ui text-[11px] tracking-[0.2em] uppercase text-ink/40 hover:text-crimson transition-colors no-underline"
         >
           &larr; Back to places
         </a>

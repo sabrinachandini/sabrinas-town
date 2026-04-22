@@ -63,7 +63,7 @@ export default async function PeoplePage({ params }: PageProps) {
           {town.state.slice(0, 2).toUpperCase()}
         </div>
         <div className="relative z-10 max-w-[1200px] mx-auto">
-          <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-cream/50 mb-2">
+          <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-cream/50 mb-2">
             {town.name}, {town.state}
           </p>
           <h1 className="font-display text-cream text-[clamp(36px,6vw,72px)] leading-none tracking-[-0.02em]">
@@ -91,7 +91,7 @@ export default async function PeoplePage({ params }: PageProps) {
             ].filter(({ group }) => group.length > 0).map(({ label, group }) => (
               <section key={label}>
                 <div className="border-t-[3px] border-ink pt-6 mb-8">
-                  <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+                  <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
                     {label}
                   </p>
                 </div>
@@ -113,7 +113,7 @@ export default async function PeoplePage({ params }: PageProps) {
                               {person.name}
                             </p>
                             {lifespan && (
-                              <p className="font-display text-[13px] text-crimson group-hover:text-[#e8b84b] transition-colors mt-0.5">
+                              <p className="font-display text-[13px] text-crimson group-hover:text-[#4A6A9B] transition-colors mt-0.5">
                                 {lifespan}
                               </p>
                             )}
@@ -123,7 +123,7 @@ export default async function PeoplePage({ params }: PageProps) {
                         {person.roles.length > 0 && (
                           <div className="flex flex-wrap gap-1.5 mb-3">
                             {person.roles.slice(0, 3).map((role) => (
-                              <span key={role} className="font-ui text-[8px] uppercase tracking-[0.12em] text-crimson/70 group-hover:text-[#e8b84b]/70 border border-crimson/20 group-hover:border-[#e8b84b]/20 px-1.5 py-0.5 transition-colors">
+                              <span key={role} className="font-ui text-[10px] uppercase tracking-[0.12em] text-crimson/70 group-hover:text-[#4A6A9B]/70 border border-crimson/20 group-hover:border-[#4A6A9B]/20 px-1.5 py-0.5 transition-colors">
                                 {role}
                               </span>
                             ))}

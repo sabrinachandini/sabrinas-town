@@ -57,7 +57,7 @@ export default async function EventsPage() {
     <div className="bg-[#f2e6c8] min-h-screen">
 
       {/* ── Hero ── */}
-      <section className="bg-[#14100a] border-b-4 border-[#cc3322] pt-16 pb-0 px-8 md:px-16 relative overflow-hidden">
+      <section className="bg-[#1a3a72] border-b-4 border-[#cc3322] pt-16 pb-0 px-8 md:px-16 relative overflow-hidden">
         <div
           aria-hidden
           className="absolute right-[-0.04em] bottom-[-0.1em] font-display leading-none text-white/[0.04] pointer-events-none select-none"
@@ -70,14 +70,14 @@ export default async function EventsPage() {
         </svg>
 
         <div className="relative z-10 max-w-[1200px] mx-auto">
-          <nav className="flex items-center gap-2 font-ui text-[9px] uppercase tracking-[0.2em] text-[#f2e6c8]/25 mb-10">
+          <nav className="flex items-center gap-2 font-ui text-[11px] uppercase tracking-[0.2em] text-[#f2e6c8]/25 mb-10">
             <NextLink href="/" className="no-underline hover:text-[#f2e6c8]/50 transition-colors">Home</NextLink>
             <span>/</span>
             <span className="text-[#f2e6c8]/45">Events</span>
           </nav>
 
           <div className="pb-16">
-            <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-[#e8b84b] mb-5">Historical Record</p>
+            <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-[#4A6A9B] mb-5">Historical Record</p>
             <h1
               className="font-display text-[#f2e6c8] leading-[0.88] tracking-[-0.02em]"
               style={{ fontSize: "clamp(52px,10vw,130px)" }}
@@ -99,8 +99,8 @@ export default async function EventsPage() {
           { n: activeMonths.length, label: "Active Months" },
         ].map((s) => (
           <div key={s.label} className="flex items-baseline gap-2">
-            <span className="font-display text-[2.2rem] text-[#e8b84b] leading-none">{s.n}</span>
-            <span className="font-ui text-[9px] uppercase tracking-[0.1em] text-white/60">{s.label}</span>
+            <span className="font-display text-[2.2rem] text-[#4A6A9B] leading-none">{s.n}</span>
+            <span className="font-ui text-[11px] uppercase tracking-[0.1em] text-white/60">{s.label}</span>
           </div>
         ))}
       </section>
@@ -109,8 +109,8 @@ export default async function EventsPage() {
       {keyEvents.length > 0 && (
         <section className="border-b-4 border-[#14100a] bg-[#1a3a72]">
           <div className="max-w-[1200px] mx-auto px-8 md:px-16 py-10">
-            <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-[#e8b84b] mb-8 flex items-center gap-3">
-              <span className="w-6 h-[2px] bg-[#e8b84b] inline-block" />
+            <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-[#4A6A9B] mb-8 flex items-center gap-3">
+              <span className="w-6 h-[2px] bg-[#4A6A9B] inline-block" />
               Pivotal Moments
             </p>
             <div className="grid md:grid-cols-3 gap-px bg-[#f2e6c8]/10">
@@ -123,7 +123,7 @@ export default async function EventsPage() {
                   <NextLink
                     key={ev.id}
                     href={ev.slug ? `/events/${ev.slug}` : `/towns/${ev.town.slug}/timeline`}
-                    className="no-underline bg-[#1a3a72] hover:bg-[#14100a] group transition-colors p-8 flex flex-col justify-between min-h-[200px] relative overflow-hidden"
+                    className="no-underline bg-[#1a3a72] hover:bg-[#1a3a72] group transition-colors p-8 flex flex-col justify-between min-h-[200px] relative overflow-hidden"
                   >
                     {year && (
                       <div
@@ -137,15 +137,15 @@ export default async function EventsPage() {
                     <div>
                       {day && month && (
                         <div className="flex items-baseline gap-2 mb-4">
-                          <span className="font-display text-[2.5rem] text-[#e8b84b] leading-none">{day}</span>
-                          <span className="font-ui text-[8px] uppercase tracking-[0.12em] text-[#f2e6c8]/40">{month} {year}</span>
+                          <span className="font-display text-[2.5rem] text-[#4A6A9B] leading-none">{day}</span>
+                          <span className="font-ui text-[10px] uppercase tracking-[0.12em] text-[#f2e6c8]/40">{month} {year}</span>
                         </div>
                       )}
-                      <p className="font-display text-[#f2e6c8] text-[clamp(17px,2vw,22px)] leading-tight group-hover:text-[#e8b84b] transition-colors">
+                      <p className="font-display text-[#f2e6c8] text-[clamp(17px,2vw,22px)] leading-tight group-hover:text-[#4A6A9B] transition-colors">
                         {ev.name}
                       </p>
                     </div>
-                    <p className="font-ui text-[9px] uppercase tracking-[0.1em] text-[#f2e6c8]/30 mt-4">
+                    <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-[#f2e6c8]/30 mt-4">
                       {ev.town.name}, {ev.town.state}
                     </p>
                   </NextLink>
@@ -162,12 +162,12 @@ export default async function EventsPage() {
         {localEvents.length > 0 && (
           <section>
             <div className="border-t-[3px] border-[#14100a] pt-6 mb-10">
-              <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-[#cc3322] before:block">
+              <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-[#cc3322] before:block">
                 Living History
               </p>
               <h2 className="font-display text-[#14100a] text-[clamp(28px,4vw,48px)] leading-[0.9] mt-2">Visit the Revolution</h2>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-px bg-[#14100a]/12">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-px bg-[#1a3a72]/12">
               {localEvents.map((ev) => {
                 const monthLabel = ev.month ? MONTHS[ev.month - 1] : null;
                 const dayLabel = ev.day ? (ev.endDay ? `${ev.day}–${ev.endDay}` : String(ev.day)) : null;
@@ -176,27 +176,27 @@ export default async function EventsPage() {
                     <div className="flex items-start justify-between gap-2 mb-4">
                       <div>
                         {monthLabel && (
-                          <div className={`inline-block px-3 py-2 text-center mb-1 border-2 ${ev.featured ? "bg-[#e8b84b] border-[#e8b84b] text-[#14100a]" : "bg-[#14100a] border-[#14100a] text-[#f2e6c8]"}`}>
+                          <div className={`inline-block px-3 py-2 text-center mb-1 border-2 ${ev.featured ? "bg-[#4A6A9B] border-[#4A6A9B] text-[#14100a]" : "bg-[#1a3a72] border-[#14100a] text-[#f2e6c8]"}`}>
                             {dayLabel && <p className="font-display text-[18px] leading-none">{dayLabel}</p>}
-                            <p className="font-ui text-[8px] uppercase tracking-[0.12em] opacity-70">{monthLabel}</p>
+                            <p className="font-ui text-[10px] uppercase tracking-[0.12em] opacity-70">{monthLabel}</p>
                           </div>
                         )}
                         {ev.recurrence === "annual" && (
-                          <span className={`block font-ui text-[8px] uppercase tracking-[0.1em] mt-1 ${ev.featured ? "text-[#e8b84b]" : "text-[#cc3322]"}`}>Annual</span>
+                          <span className={`block font-ui text-[10px] uppercase tracking-[0.1em] mt-1 ${ev.featured ? "text-[#4A6A9B]" : "text-[#cc3322]"}`}>Annual</span>
                         )}
                       </div>
-                      <span className={`font-ui text-[7px] uppercase tracking-[0.08em] border px-1.5 py-0.5 flex-shrink-0 ${ev.featured ? "border-[#f2e6c8]/20 text-[#f2e6c8]/50" : "border-[#14100a]/15 text-[#14100a]/40"}`}>
+                      <span className={`font-ui text-[9px] uppercase tracking-[0.08em] border px-1.5 py-0.5 flex-shrink-0 ${ev.featured ? "border-[#f2e6c8]/20 text-[#f2e6c8]/50" : "border-[#14100a]/15 text-[#14100a]/40"}`}>
                         {CATEGORY_LABELS[ev.category] ?? ev.category}
                       </span>
                     </div>
                     <p className={`font-display text-[18px] leading-tight mb-2 flex-1 ${ev.featured ? "text-[#f2e6c8]" : "text-[#14100a]"}`}>{ev.name}</p>
-                    <NextLink href={`/towns/${ev.town.slug}`} className={`no-underline font-ui text-[9px] uppercase tracking-[0.1em] hover:text-[#cc3322] transition-colors ${ev.featured ? "text-[#f2e6c8]/50" : "text-[#1a3a72]"}`}>
+                    <NextLink href={`/towns/${ev.town.slug}`} className={`no-underline font-ui text-[11px] uppercase tracking-[0.1em] hover:text-[#cc3322] transition-colors ${ev.featured ? "text-[#f2e6c8]/50" : "text-[#1a3a72]"}`}>
                       {ev.town.name}, {ev.town.state}
                     </NextLink>
-                    {ev.venue && <p className={`font-ui text-[9px] mt-1 ${ev.featured ? "text-[#f2e6c8]/35" : "text-[#14100a]/40"}`}>{ev.venue}</p>}
-                    {ev.dateNote && <p className={`font-ui text-[9px] italic mt-1 ${ev.featured ? "text-[#f2e6c8]/40" : "text-[#14100a]/50"}`}>{ev.dateNote}</p>}
+                    {ev.venue && <p className={`font-ui text-[11px] mt-1 ${ev.featured ? "text-[#f2e6c8]/35" : "text-[#14100a]/40"}`}>{ev.venue}</p>}
+                    {ev.dateNote && <p className={`font-ui text-[11px] italic mt-1 ${ev.featured ? "text-[#f2e6c8]/40" : "text-[#14100a]/50"}`}>{ev.dateNote}</p>}
                     {ev.url && (
-                      <a href={ev.url} target="_blank" rel="noopener noreferrer" className={`no-underline block mt-4 font-ui text-[9px] uppercase tracking-[0.12em] hover:text-[#1a3a72] transition-colors ${ev.featured ? "text-[#e8b84b]" : "text-[#cc3322]"}`}>
+                      <a href={ev.url} target="_blank" rel="noopener noreferrer" className={`no-underline block mt-4 font-ui text-[11px] uppercase tracking-[0.12em] hover:text-[#1a3a72] transition-colors ${ev.featured ? "text-[#4A6A9B]" : "text-[#cc3322]"}`}>
                         More info →
                       </a>
                     )}
@@ -210,14 +210,14 @@ export default async function EventsPage() {
         {/* ── Historical Events by Month ── */}
         <section>
           <div className="border-t-[3px] border-[#14100a] pt-6 mb-10">
-            <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-[#cc3322] before:block">
+            <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-[#cc3322] before:block">
               The Historical Record
             </p>
             <h2 className="font-display text-[#14100a] text-[clamp(28px,4vw,48px)] leading-[0.9] mt-2">Events by Month</h2>
           </div>
 
           {/* Month activity bar — bold version */}
-          <div className="grid grid-cols-12 gap-[2px] mb-14 border-2 border-[#14100a]/12 p-4 bg-[#14100a]/[0.02]">
+          <div className="grid grid-cols-12 gap-[2px] mb-14 border-2 border-[#14100a]/12 p-4 bg-[#1a3a72]/[0.02]">
             {MONTHS.map((month, i) => {
               const count = byMonth[i]?.length ?? 0;
               const pct = (count / maxMonthCount) * 100;
@@ -229,7 +229,7 @@ export default async function EventsPage() {
                       style={{ height: count > 0 ? `${Math.max(pct, 8)}%` : "2px", opacity: count > 0 ? 1 : 0.15 }}
                     />
                   </div>
-                  <span className="font-ui text-[7px] uppercase tracking-[0.06em] text-[#14100a]/40 group-hover:text-[#cc3322] transition-colors">{month.slice(0, 3)}</span>
+                  <span className="font-ui text-[9px] uppercase tracking-[0.06em] text-[#14100a]/40 group-hover:text-[#cc3322] transition-colors">{month.slice(0, 3)}</span>
                   {count > 0 && <span className="font-display text-[1.1rem] text-[#14100a]/25 leading-none group-hover:text-[#cc3322] transition-colors">{count}</span>}
                 </a>
               );
@@ -250,8 +250,8 @@ export default async function EventsPage() {
                 <div key={month} id={`month-${i}`}>
                   <div className="flex items-baseline gap-6 mb-6">
                     <h3 className="font-display text-[#14100a] text-[clamp(24px,4vw,40px)] leading-none">{month}</h3>
-                    <div className="flex-1 h-[2px] bg-[#14100a]/10" />
-                    <span className="font-ui text-[9px] uppercase tracking-[0.1em] text-[#14100a]/30 flex-shrink-0">{events.length}</span>
+                    <div className="flex-1 h-[2px] bg-[#1a3a72]/10" />
+                    <span className="font-ui text-[11px] uppercase tracking-[0.1em] text-[#14100a]/30 flex-shrink-0">{events.length}</span>
                   </div>
                   <div className="space-y-0">
                     {sorted.map((ev) => {
@@ -263,7 +263,7 @@ export default async function EventsPage() {
                         <NextLink
                           key={ev.id}
                           href={ev.slug ? `/events/${ev.slug}` : `/towns/${ev.town.slug}/timeline`}
-                          className={`no-underline flex gap-0 border-b border-[#14100a]/8 last:border-b-0 group items-stretch ${isKey ? "bg-[#1a3a72]/[0.03] hover:bg-[#1a3a72]/8" : "hover:bg-[#14100a]/[0.02]"} transition-colors`}
+                          className={`no-underline flex gap-0 border-b border-[#14100a]/8 last:border-b-0 group items-stretch ${isKey ? "bg-[#1a3a72]/[0.03] hover:bg-[#1a3a72]/8" : "hover:bg-[#1a3a72]/[0.02]"} transition-colors`}
                         >
                           {/* Date column */}
                           <div className={`flex-shrink-0 w-20 flex flex-col items-center justify-center py-5 border-r-2 ${isKey ? "border-[#cc3322]/20 bg-[#cc3322]/[0.04]" : "border-[#14100a]/8"}`}>
@@ -273,7 +273,7 @@ export default async function EventsPage() {
                               </p>
                             )}
                             {year && (
-                              <p className="font-ui text-[8px] uppercase tracking-[0.06em] text-[#14100a]/25 mt-1">{year}</p>
+                              <p className="font-ui text-[10px] uppercase tracking-[0.06em] text-[#14100a]/25 mt-1">{year}</p>
                             )}
                           </div>
 
@@ -284,25 +284,25 @@ export default async function EventsPage() {
                                 {ev.name}
                               </p>
                               {isKey && (
-                                <span className="flex-shrink-0 font-ui text-[7px] uppercase tracking-[0.15em] text-[#e8b84b] border border-[#e8b84b]/40 px-2 py-0.5 self-start">
+                                <span className="flex-shrink-0 font-ui text-[9px] uppercase tracking-[0.15em] text-[#4A6A9B] border border-[#4A6A9B]/40 px-2 py-0.5 self-start">
                                   Key
                                 </span>
                               )}
                             </div>
                             <div className="flex items-center gap-3 mt-2 flex-wrap">
-                              <span className="font-ui text-[9px] uppercase tracking-[0.1em] text-[#1a3a72]/55">{ev.town.name}, {ev.town.state}</span>
+                              <span className="font-ui text-[11px] uppercase tracking-[0.1em] text-[#1a3a72]/55">{ev.town.name}, {ev.town.state}</span>
                               {ev.themes.slice(0, 2).map((t) => (
-                                <span key={t.id} className="font-ui text-[8px] uppercase tracking-[0.06em] text-[#14100a]/22 border border-[#14100a]/10 px-1.5 py-0.5">{t.name}</span>
+                                <span key={t.id} className="font-ui text-[10px] uppercase tracking-[0.06em] text-[#14100a]/22 border border-[#14100a]/10 px-1.5 py-0.5">{t.name}</span>
                               ))}
                             </div>
                           </div>
 
                           {/* Significance bar */}
                           <div className="hidden md:flex flex-col justify-center flex-shrink-0 w-14 pr-5">
-                            <div className="h-[3px] bg-[#14100a]/8 w-full">
+                            <div className="h-[3px] bg-[#1a3a72]/8 w-full">
                               <div className={`h-full ${isKey ? "bg-[#cc3322]" : "bg-[#1a3a72]/30"} group-hover:bg-[#cc3322] transition-colors`} style={{ width: `${ev.significanceWeight}%` }} />
                             </div>
-                            <span className="font-ui text-[8px] text-[#14100a]/20 mt-1 text-right">{ev.significanceWeight}</span>
+                            <span className="font-ui text-[10px] text-[#14100a]/20 mt-1 text-right">{ev.significanceWeight}</span>
                           </div>
                         </NextLink>
                       );

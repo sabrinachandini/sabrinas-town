@@ -111,9 +111,9 @@ export default function TeachPage() {
 
         {/* Stars */}
         <svg aria-hidden className="absolute top-5 right-5 pointer-events-none" style={{ opacity: 0.2 }} width="52" height="52" viewBox="0 0 52 52" fill="none">
-          <path d="M11 25 L12.4 30 L18 30 L13.5 33.5 L15 39 L11 35.8 L7 39 L8.5 33.5 L4 30 L9.6 30 Z" fill="#e8b84b" />
+          <path d="M11 25 L12.4 30 L18 30 L13.5 33.5 L15 39 L11 35.8 L7 39 L8.5 33.5 L4 30 L9.6 30 Z" fill="#4A6A9B" />
           <path d="M38 10 L39 13 L42 13 L39.8 14.8 L40.8 18 L38 16.2 L35.2 18 L36.2 14.8 L34 13 L37 13 Z" fill="#f2e6c8" />
-          <path d="M44 36 L44.7 38.4 L47.3 38.4 L45.2 39.9 L45.9 42.3 L44 41 L42.1 42.3 L42.8 39.9 L40.7 38.4 L43.3 38.4 Z" fill="#e8b84b" />
+          <path d="M44 36 L44.7 38.4 L47.3 38.4 L45.2 39.9 L45.9 42.3 L44 41 L42.1 42.3 L42.8 39.9 L40.7 38.4 L43.3 38.4 Z" fill="#4A6A9B" />
         </svg>
 
         {/* Tilted stamp */}
@@ -122,14 +122,14 @@ export default function TeachPage() {
         </div>
 
         <div className="relative z-10 max-w-[700px]">
-          <p className="font-ui text-[9px] font-semibold tracking-[0.32em] uppercase text-[rgba(255,255,255,0.5)] flex items-center gap-3 mb-6">
+          <p className="font-ui text-[11px] font-semibold tracking-[0.32em] uppercase text-[rgba(255,255,255,0.5)] flex items-center gap-3 mb-6">
             <span className="w-4 h-[2px] bg-[rgba(255,255,255,0.3)] block flex-shrink-0" />
             For Teachers &amp; Classrooms
           </p>
 
-          <h1 className="font-display leading-[0.88] tracking-[-0.05em] m-0" style={{ fontSize: "clamp(52px,14vw,160px)" }}>
+          <h1 className="font-display leading-[0.88] tracking-[-0.05em] m-0" style={{ fontSize: "clamp(40px,10vw,120px)" }}>
             <span className="text-white block">History</span>
-            <span className="text-[#e8b84b] block" style={{ transform: "rotate(-2deg) translateX(28px)", transformOrigin: "left center", display: "block" }}>
+            <span className="text-[#4A6A9B] block" style={{ transform: "rotate(-2deg) translateX(28px)", transformOrigin: "left center", display: "block" }}>
               For
             </span>
             <span className="text-white block">Teachers.</span>
@@ -155,10 +155,10 @@ export default function TeachPage() {
         <div className="relative z-10 flex flex-wrap gap-8 sm:gap-0 items-start sm:items-center">
           {/* Stat 1 */}
           <div className="sm:pr-11 sm:border-r border-white/20">
-            <div className="font-display text-[#e8b84b] leading-none" style={{ fontSize: "clamp(40px,6vw,72px)" }}>Tier 1</div>
+            <div className="font-display text-[#4A6A9B] leading-none" style={{ fontSize: "clamp(40px,6vw,72px)" }}>Tier 1</div>
             <div className="font-ui text-[11px] font-semibold tracking-[0.14em] uppercase text-white/50 mt-1">Primary sources only</div>
             <svg width="50" height="7" viewBox="0 0 50 7" aria-hidden className="mt-1">
-              <path d="M0 4 Q6 1 12 4 Q18 7 25 3 Q31 0 37 3 Q43 7 50 2" stroke="#e8b84b" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.45" />
+              <path d="M0 4 Q6 1 12 4 Q18 7 25 3 Q31 0 37 3 Q43 7 50 2" stroke="#4A6A9B" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.45" />
             </svg>
           </div>
 
@@ -167,7 +167,7 @@ export default function TeachPage() {
             <div className="font-display text-white leading-none" style={{ fontSize: "clamp(40px,6vw,72px)" }}>77</div>
             <div className="font-ui text-[11px] font-semibold tracking-[0.14em] uppercase text-white/50 mt-1">Towns in network</div>
             <svg width="50" height="7" viewBox="0 0 50 7" aria-hidden className="mt-1">
-              <path d="M0 4 Q6 1 12 4 Q18 7 25 3 Q31 0 37 3 Q43 7 50 2" stroke="#e8b84b" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.45" />
+              <path d="M0 4 Q6 1 12 4 Q18 7 25 3 Q31 0 37 3 Q43 7 50 2" stroke="#4A6A9B" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.45" />
             </svg>
           </div>
 
@@ -176,13 +176,13 @@ export default function TeachPage() {
             <div className="font-display text-white leading-none" style={{ fontSize: "clamp(40px,6vw,72px)" }}>16</div>
             <div className="font-ui text-[11px] font-semibold tracking-[0.14em] uppercase text-white/50 mt-1">States covered</div>
             <svg width="50" height="7" viewBox="0 0 50 7" aria-hidden className="mt-1">
-              <path d="M0 4 Q6 1 12 4 Q18 7 25 3 Q31 0 37 3 Q43 7 50 2" stroke="#e8b84b" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.45" />
+              <path d="M0 4 Q6 1 12 4 Q18 7 25 3 Q31 0 37 3 Q43 7 50 2" stroke="#4A6A9B" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.45" />
             </svg>
           </div>
 
           {/* Badge */}
           <div className="sm:px-11 sm:ml-auto">
-            <div className="bg-[#f2e6c8] text-[#14100a] font-ui text-[9px] font-bold tracking-[0.24em] uppercase px-[18px] py-[9px] border-[2.5px] border-[#14100a] inline-block" style={{ boxShadow: "3px 3px 0 #14100a", transform: "rotate(-2deg)" }}>
+            <div className="bg-[#f2e6c8] text-[#14100a] font-ui text-[11px] font-bold tracking-[0.24em] uppercase px-[18px] py-[9px] border-[2.5px] border-[#14100a] inline-block" style={{ boxShadow: "3px 3px 0 #14100a", transform: "rotate(-2deg)" }}>
               Standards Aligned
             </div>
           </div>
@@ -193,7 +193,7 @@ export default function TeachPage() {
       <section className="bg-[#f2ece0] py-10 sm:py-16 px-5 sm:px-16">
         {/* Section intro */}
         <div className="max-w-[640px] mb-10 sm:mb-14">
-          <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] flex items-center gap-3 mb-3">
+          <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] flex items-center gap-3 mb-3">
             <span className="w-4 h-[2px] bg-[#cc3322] block flex-shrink-0" />
             Browse by State
           </p>
@@ -256,13 +256,13 @@ export default function TeachPage() {
         </div>
 
         <div className="relative z-10 max-w-[720px]">
-          <p className="font-ui text-[9px] font-semibold tracking-[0.32em] uppercase text-white/50 mb-4">
+          <p className="font-ui text-[11px] font-semibold tracking-[0.32em] uppercase text-white/50 mb-4">
             Methodology
           </p>
 
           <h2 className="font-display leading-[0.9] tracking-[-0.04em] text-white m-0" style={{ fontSize: "clamp(40px,6vw,80px)" }}>
             Our{" "}
-            <span className="text-[#e8b84b] inline-block" style={{ transform: "rotate(-2deg)", transformOrigin: "left center" }}>
+            <span className="text-[#4A6A9B] inline-block" style={{ transform: "rotate(-2deg)", transformOrigin: "left center" }}>
               Approach.
             </span>
           </h2>
@@ -278,7 +278,7 @@ export default function TeachPage() {
                 key={stat.label}
                 className={`sm:px-11 ${i === 0 ? "sm:pl-0" : ""} ${i < 2 ? "sm:border-r border-white/[0.12]" : ""}`}
               >
-                <div className="font-display text-[40px] sm:text-[52px] text-[#e8b84b] leading-none">{stat.num}</div>
+                <div className="font-display text-[40px] sm:text-[52px] text-[#4A6A9B] leading-none">{stat.num}</div>
                 <div className="font-ui text-[11px] font-semibold tracking-[0.14em] uppercase text-white/45 mt-1">{stat.label}</div>
               </div>
             ))}

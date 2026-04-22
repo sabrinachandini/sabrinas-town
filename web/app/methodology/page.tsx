@@ -20,14 +20,14 @@ export default function MethodologyPage() {
           Method
         </div>
         <svg className="absolute top-5 right-5 pointer-events-none" width="52" height="52" viewBox="0 0 52 52" fill="none" aria-hidden style={{ opacity: 0.18 }}>
-          <path d="M11 25 L12.4 30 L18 30 L13.5 33.5 L15 39 L11 35.8 L7 39 L8.5 33.5 L4 30 L9.6 30 Z" fill="#e8b84b" />
+          <path d="M11 25 L12.4 30 L18 30 L13.5 33.5 L15 39 L11 35.8 L7 39 L8.5 33.5 L4 30 L9.6 30 Z" fill="#4A6A9B" />
           <path d="M38 10 L39 13 L42 13 L39.8 14.8 L40.8 18 L38 16.2 L35.2 18 L36.2 14.8 L34 13 L37 13 Z" fill="#f2e6c8" />
         </svg>
         <div className="absolute top-10 right-10 rotate-[4deg] font-editorial font-bold text-[11px] tracking-[0.12em] uppercase text-[rgba(242,230,200,0.6)] border-[2.5px] border-[rgba(242,230,200,0.3)] px-3.5 py-2 hidden sm:block">
           Open Research
         </div>
         <div className="relative z-10 max-w-[720px]">
-          <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.5)] flex items-center gap-2.5 mb-8">
+          <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.5)] flex items-center gap-2.5 mb-8">
             <span className="w-5 h-[2px] bg-[rgba(242,230,200,0.4)] block" />
             Transparency
           </p>
@@ -86,7 +86,7 @@ export default function MethodologyPage() {
             ].map(({ id, label, body }) => (
               <section key={id} id={id} className="mb-14">
                 <div className="border-t-[3px] border-[#14100a] pt-6 mb-5">
-                  <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-[#cc3322] before:block">
+                  <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-[#cc3322] before:block">
                     {label}
                   </p>
                 </div>
@@ -101,7 +101,7 @@ export default function MethodologyPage() {
             {/* Source Tiers */}
             <section id="source-tiers" className="mb-14">
               <div className="border-t-[3px] border-[#14100a] pt-6 mb-5">
-                <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-[#cc3322] before:block">
+                <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[#cc3322] flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-[#cc3322] before:block">
                   Source Credibility Tiers
                 </p>
               </div>
@@ -140,7 +140,7 @@ export default function MethodologyPage() {
           {/* Sidebar */}
           <aside className="space-y-8">
             <div>
-              <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[rgba(20,16,10,0.3)] mb-3">On This Page</p>
+              <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[rgba(20,16,10,0.3)] mb-3">On This Page</p>
               <ul>
                 {[
                   { label: "What Is This?", id: "what" },
@@ -164,7 +164,7 @@ export default function MethodologyPage() {
               </p>
             </div>
             <NextLink href="/changelog" className="no-underline block border-[3px] border-[#14100a] p-4 hover:bg-[#1a3a72] hover:border-[#1a3a72] group transition-colors">
-              <p className="font-ui text-[9px] uppercase tracking-[0.12em] text-[rgba(20,16,10,0.4)] group-hover:text-[rgba(242,230,200,0.5)] mb-1">See also</p>
+              <p className="font-ui text-[11px] uppercase tracking-[0.12em] text-[rgba(20,16,10,0.4)] group-hover:text-[rgba(242,230,200,0.5)] mb-1">See also</p>
               <p className="font-editorial text-[16px] text-[#14100a] group-hover:text-[#f2e6c8] transition-colors">Changelog →</p>
             </NextLink>
           </aside>

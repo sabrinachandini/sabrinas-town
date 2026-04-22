@@ -26,12 +26,12 @@ export default function Image() {
 
         {/* Decorative dots — simulated map nodes */}
         {[
-          { top: 120, left: 320, size: 20, color: "#e8b84b" },
+          { top: 120, left: 320, size: 20, color: "#4A6A9B" },
           { top: 200, left: 540, size: 13, color: "#cc3322" },
           { top: 160, left: 700, size: 16, color: "#1a3a72" },
           { top: 300, left: 450, size: 10, color: "#cc3322" },
           { top: 260, left: 820, size: 12, color: "#1a3a72" },
-          { top: 380, left: 620, size: 14, color: "#e8b84b" },
+          { top: 380, left: 620, size: 14, color: "#4A6A9B" },
         ].map((dot, i) => (
           <div
             key={i}
@@ -65,7 +65,7 @@ export default function Image() {
 
         {/* Content */}
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          <div style={{ fontSize: 14, fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "#e8b84b", display: "flex" }}>
+          <div style={{ fontSize: 14, fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "#4A6A9B", display: "flex" }}>
             Network
           </div>
           <div style={{ fontSize: 80, fontWeight: 700, color: "#f2e6c8", lineHeight: 0.9, display: "flex" }}>

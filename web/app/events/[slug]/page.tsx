@@ -62,7 +62,7 @@ export default async function EventPage({ params }: PageProps) {
       <JsonLd data={jsonLd} />
 
       {/* ── Hero ── */}
-      <div className="bg-[#14100a] border-b-4 border-[#cc3322] relative overflow-hidden">
+      <div className="bg-[#1a3a72] border-b-4 border-[#cc3322] relative overflow-hidden">
         {/* Background image */}
         {event.imageUrl && (
           <div className="absolute inset-0 z-0">
@@ -70,14 +70,14 @@ export default async function EventPage({ params }: PageProps) {
           </div>
         )}
         <div className="relative z-10 py-16 px-8 md:px-16 max-w-[1200px] mx-auto">
-          <nav className="flex items-center gap-2 font-ui text-[9px] uppercase tracking-[0.2em] text-cream/30 mb-8">
+          <nav className="flex items-center gap-2 font-ui text-[11px] uppercase tracking-[0.2em] text-cream/30 mb-8">
             <NextLink href="/events" className="no-underline hover:text-cream/60 transition-colors">Events</NextLink>
             <span>/</span>
             <NextLink href={`/towns/${event.town.slug}`} className="no-underline hover:text-cream/60 transition-colors">{event.town.name}</NextLink>
           </nav>
 
           {dateLabel && (
-            <p className="font-display text-[#e8b84b] text-[clamp(16px,2vw,24px)] leading-none mb-4">{dateLabel}</p>
+            <p className="font-display text-[#4A6A9B] text-[clamp(16px,2vw,24px)] leading-none mb-4">{dateLabel}</p>
           )}
           <h1 className="font-display text-cream leading-[0.9] tracking-[-0.02em]" style={{ fontSize: "clamp(36px,7vw,88px)" }}>
             {event.name}
@@ -88,12 +88,12 @@ export default async function EventPage({ params }: PageProps) {
               {event.town.name}, {event.town.state}
             </NextLink>
             {event.themes.map((theme) => (
-              <span key={theme.id} className="font-ui text-[9px] uppercase tracking-[0.1em] text-cream/30 border border-cream/10 px-2.5 py-1">
+              <span key={theme.id} className="font-ui text-[11px] uppercase tracking-[0.1em] text-cream/30 border border-cream/10 px-2.5 py-1">
                 {theme.name}
               </span>
             ))}
             {event.significanceWeight >= 80 && (
-              <span className="font-ui text-[8px] uppercase tracking-[0.14em] text-[#e8b84b] border border-[#e8b84b]/30 px-2.5 py-1">
+              <span className="font-ui text-[10px] uppercase tracking-[0.14em] text-[#4A6A9B] border border-[#4A6A9B]/30 px-2.5 py-1">
                 Major Event
               </span>
             )}
@@ -110,7 +110,7 @@ export default async function EventPage({ params }: PageProps) {
             {/* Summary */}
             <section>
               <div className="border-t-[3px] border-ink pt-6 mb-8">
-                <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+                <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
                   What Happened
                 </p>
               </div>
@@ -120,9 +120,9 @@ export default async function EventPage({ params }: PageProps) {
             {/* Image with credit */}
             {event.imageUrl && (
               <figure className="mt-12">
-                <Image src={event.imageUrl} alt={event.name} width={1200} height={400} className="w-full max-h-[400px] object-contain bg-[#14100a]/5" />
+                <Image src={event.imageUrl} alt={event.name} width={1200} height={400} className="w-full max-h-[400px] object-contain bg-[#1a3a72]/5" />
                 {event.imageCredit && (
-                  <figcaption className="font-ui text-[9px] text-ink/35 mt-2 leading-relaxed">{event.imageCredit}</figcaption>
+                  <figcaption className="font-ui text-[11px] text-ink/35 mt-2 leading-relaxed">{event.imageCredit}</figcaption>
                 )}
               </figure>
             )}
@@ -131,7 +131,7 @@ export default async function EventPage({ params }: PageProps) {
             {event.videoId && (
               <section className="mt-12">
                 <div className="border-t-[3px] border-ink pt-6 mb-6">
-                  <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+                  <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
                     Video
                   </p>
                 </div>
@@ -145,7 +145,7 @@ export default async function EventPage({ params }: PageProps) {
                   />
                 </div>
                 {event.videoSource && event.videoSource !== "other" && (
-                  <p className="font-ui text-[9px] text-ink/35 mt-2 uppercase tracking-[0.1em]">
+                  <p className="font-ui text-[11px] text-ink/35 mt-2 uppercase tracking-[0.1em]">
                     Source: {event.videoSource === "ken-burns" ? "Ken Burns Documentary" : "Liberty Kids"}
                   </p>
                 )}
@@ -156,7 +156,7 @@ export default async function EventPage({ params }: PageProps) {
             {event.people.length > 0 && (
               <section className="mt-16">
                 <div className="border-t-[3px] border-ink pt-6 mb-8">
-                  <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+                  <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
                     People Involved
                   </p>
                 </div>
@@ -177,9 +177,9 @@ export default async function EventPage({ params }: PageProps) {
                       <div>
                         <p className="font-display text-[16px] text-ink group-hover:text-cream transition-colors leading-tight">{person.name}</p>
                         {person.roleInEvent && (
-                          <p className="font-ui text-[8px] uppercase tracking-[0.1em] text-crimson group-hover:text-[#e8b84b] transition-colors mt-0.5">{person.roleInEvent}</p>
+                          <p className="font-ui text-[10px] uppercase tracking-[0.1em] text-crimson group-hover:text-[#4A6A9B] transition-colors mt-0.5">{person.roleInEvent}</p>
                         )}
-                        <p className="font-ui text-[9px] text-ink/40 group-hover:text-cream/40 transition-colors mt-0.5">{person.roles.slice(0, 2).join(", ")}</p>
+                        <p className="font-ui text-[11px] text-ink/40 group-hover:text-cream/40 transition-colors mt-0.5">{person.roles.slice(0, 2).join(", ")}</p>
                       </div>
                     </NextLink>
                   ))}
@@ -191,37 +191,37 @@ export default async function EventPage({ params }: PageProps) {
           {/* Sidebar */}
           <aside className="space-y-8">
             {/* Event facts */}
-            <div className="bg-[#14100a] p-5">
-              <p className="font-ui text-[9px] uppercase tracking-[0.2em] text-cream/30 mb-4">Event Details</p>
+            <div className="bg-[#1a3a72] p-5">
+              <p className="font-ui text-[11px] uppercase tracking-[0.2em] text-cream/30 mb-4">Event Details</p>
               <dl className="space-y-3">
                 {dateLabel && (
                   <div>
-                    <dt className="font-ui text-[9px] uppercase tracking-[0.12em] text-cream/30">Date</dt>
+                    <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Date</dt>
                     <dd className="font-editorial text-[15px] text-cream mt-0.5">{dateLabel}</dd>
                   </div>
                 )}
                 <div>
-                  <dt className="font-ui text-[9px] uppercase tracking-[0.12em] text-cream/30">Location</dt>
+                  <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Location</dt>
                   <dd className="mt-0.5">
-                    <NextLink href={`/towns/${event.town.slug}`} className="no-underline font-editorial text-[15px] text-[#e8b84b] hover:text-cream transition-colors">
+                    <NextLink href={`/towns/${event.town.slug}`} className="no-underline font-editorial text-[15px] text-[#4A6A9B] hover:text-cream transition-colors">
                       {event.town.name}, {event.town.state}
                     </NextLink>
                   </dd>
                 </div>
                 <div>
-                  <dt className="font-ui text-[9px] uppercase tracking-[0.12em] text-cream/30">Significance</dt>
+                  <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Significance</dt>
                   <dd className="mt-1">
                     <div className="flex gap-1">
                       {Array.from({ length: 10 }).map((_, i) => (
                         <div key={i} className={`h-[3px] flex-1 ${i < Math.round(event.significanceWeight / 10) ? "bg-[#cc3322]" : "bg-cream/10"}`} />
                       ))}
                     </div>
-                    <p className="font-ui text-[8px] text-cream/30 uppercase tracking-[0.1em] mt-1">{event.significanceWeight}/100</p>
+                    <p className="font-ui text-[10px] text-cream/30 uppercase tracking-[0.1em] mt-1">{event.significanceWeight}/100</p>
                   </dd>
                 </div>
                 {event.people.length > 0 && (
                   <div>
-                    <dt className="font-ui text-[9px] uppercase tracking-[0.12em] text-cream/30">People</dt>
+                    <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">People</dt>
                     <dd className="font-editorial text-[15px] text-cream mt-0.5">{event.people.length} figures</dd>
                   </div>
                 )}
@@ -231,7 +231,7 @@ export default async function EventPage({ params }: PageProps) {
             {/* Related events */}
             {event.relatedEvents.length > 0 && (
               <div>
-                <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-ink/30 mb-3">Also in {event.town.name}</p>
+                <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-ink/30 mb-3">Also in {event.town.name}</p>
                 <ul className="space-y-0">
                   {event.relatedEvents.map((rel) => (
                     <li key={rel.id}>
@@ -243,7 +243,7 @@ export default async function EventPage({ params }: PageProps) {
                         <div>
                           <p className="font-ui text-[12px] text-ink group-hover:text-crimson transition-colors leading-snug">{rel.name}</p>
                           {rel.startDate && (
-                            <p className="font-ui text-[9px] text-ink/30 mt-0.5">{new Date(rel.startDate).getFullYear()}</p>
+                            <p className="font-ui text-[11px] text-ink/30 mt-0.5">{new Date(rel.startDate).getFullYear()}</p>
                           )}
                         </div>
                       </NextLink>
@@ -255,7 +255,7 @@ export default async function EventPage({ params }: PageProps) {
 
             {/* Navigation */}
             <div>
-              <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-ink/30 mb-3">Explore</p>
+              <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-ink/30 mb-3">Explore</p>
               <ul>
                 {[
                   { label: "← All Events", href: "/events" },

@@ -33,7 +33,7 @@ export default function AboutPage() {
         </svg>
 
         <div className="mx-auto max-w-[1200px] relative">
-          <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+          <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
             About This Project
           </p>
           <Link href="/" className="no-underline">
@@ -63,7 +63,7 @@ export default function AboutPage() {
         </span>
         <div className="mx-auto max-w-[1200px] relative">
           <div className="max-w-[720px]">
-            <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+            <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
               Who I Am
             </p>
             <h2 className="font-display text-[2.5rem] text-ink mb-2">Sabrina Bhattacharjya</h2>
@@ -75,7 +75,7 @@ export default function AboutPage() {
             <div className="border-b border-ink/10 mb-8" />
 
             {/* Stamp */}
-            <div className="hidden sm:block float-right ml-6 mb-4 mt-1 rotate-3 border-2 border-crimson/60 px-3 py-2 font-ui text-[9px] font-bold uppercase tracking-[0.2em] text-crimson/70 select-none">
+            <div className="hidden sm:block float-right ml-6 mb-4 mt-1 rotate-3 border-2 border-crimson/60 px-3 py-2 font-ui text-[11px] font-bold uppercase tracking-[0.2em] text-crimson/70 select-none">
               Lexington, MA<br />Est. 1775
             </div>
 
@@ -110,7 +110,7 @@ export default function AboutPage() {
       <section className="py-12 sm:py-20 bg-cream px-5 sm:px-8 md:px-16">
         <div className="mx-auto max-w-[1200px]">
           <div className="max-w-[720px]">
-            <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+            <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
               Origin
             </p>
             <h2 className="font-display text-[2.5rem] text-ink mb-2">Why this exists</h2>
@@ -150,7 +150,7 @@ export default function AboutPage() {
       <section className="py-12 sm:py-20 bg-[#f8f0d8] px-5 sm:px-8 md:px-16">
         <div className="mx-auto max-w-[1200px]">
           <div className="max-w-[720px]">
-            <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+            <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
               Guide
             </p>
             <h2 className="font-display text-[2.5rem] text-ink mb-2">How to use this</h2>
@@ -239,7 +239,7 @@ export default function AboutPage() {
 
         <div className="mx-auto max-w-[1200px] relative">
           <div className="max-w-[720px]">
-            <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+            <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
               Values
             </p>
             <h2 className="font-display text-[2.5rem] text-cream mb-2">What we believe</h2>

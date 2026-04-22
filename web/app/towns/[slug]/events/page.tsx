@@ -75,7 +75,7 @@ export default async function TownEventsPage({ params, searchParams }: PageProps
       {/* Header */}
       <div className="bg-[#1a3a72] py-10 px-8 md:px-16">
         <div className="mx-auto max-w-[1200px]">
-          <p className="font-ui text-[9px] uppercase tracking-[0.28em] text-cream/50 mb-2">
+          <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-cream/50 mb-2">
             {town.name}, {town.state}
           </p>
           <div className="flex items-end justify-between gap-4 flex-wrap">
@@ -91,13 +91,13 @@ export default async function TownEventsPage({ params, searchParams }: PageProps
             <div className="flex gap-1 self-end mb-1">
               <NextLink
                 href={`/towns/${slug}/events`}
-                className={`no-underline font-ui text-[9px] uppercase tracking-[0.14em] px-3 py-2 border transition-colors ${view === "list" ? "bg-cream text-ink border-cream" : "text-cream/50 border-cream/20 hover:text-cream hover:border-cream/50"}`}
+                className={`no-underline font-ui text-[11px] uppercase tracking-[0.14em] px-3 py-2 border transition-colors ${view === "list" ? "bg-cream text-ink border-cream" : "text-cream/50 border-cream/20 hover:text-cream hover:border-cream/50"}`}
               >
                 List
               </NextLink>
               <NextLink
                 href={`/towns/${slug}/events?view=calendar`}
-                className={`no-underline font-ui text-[9px] uppercase tracking-[0.14em] px-3 py-2 border transition-colors ${view === "calendar" ? "bg-cream text-ink border-cream" : "text-cream/50 border-cream/20 hover:text-cream hover:border-cream/50"}`}
+                className={`no-underline font-ui text-[11px] uppercase tracking-[0.14em] px-3 py-2 border transition-colors ${view === "calendar" ? "bg-cream text-ink border-cream" : "text-cream/50 border-cream/20 hover:text-cream hover:border-cream/50"}`}
               >
                 Calendar
               </NextLink>
@@ -123,7 +123,7 @@ export default async function TownEventsPage({ params, searchParams }: PageProps
               {sortedUpcoming.length > 0 && (
                 <section className="mb-14">
                   <div className="border-t-[3px] border-ink pt-6 mb-8">
-                    <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+                    <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
                       Upcoming This Year
                     </p>
                   </div>
@@ -135,7 +135,7 @@ export default async function TownEventsPage({ params, searchParams }: PageProps
               {past.length > 0 && (
                 <section>
                   <div className="border-t-[3px] border-ink/20 pt-6 mb-8">
-                    <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-ink/30 flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-ink/20 before:block">
+                    <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-ink/30 flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-ink/20 before:block">
                       Earlier This Year
                     </p>
                   </div>
@@ -150,7 +150,7 @@ export default async function TownEventsPage({ params, searchParams }: PageProps
             <aside className="space-y-8">
               {events.some((e) => e.month != null) && (
                 <div>
-                  <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-ink/30 mb-3">By Month</p>
+                  <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-ink/30 mb-3">By Month</p>
                   <ul>
                     {Array.from(new Set(events.map((e) => e.month).filter(Boolean) as number[]))
                       .sort((a, b) => a - b)
@@ -172,17 +172,17 @@ export default async function TownEventsPage({ params, searchParams }: PageProps
                 </div>
               )}
               <div>
-                <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-ink/30 mb-3">Categories</p>
+                <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-ink/30 mb-3">Categories</p>
                 <div className="flex flex-wrap gap-2">
                   {Array.from(new Set(events.map((e) => e.category))).map((cat) => (
-                    <span key={cat} className={`font-ui text-[9px] uppercase tracking-[0.12em] px-2.5 py-1 rounded-sm ${CATEGORY_COLORS[cat] ?? "bg-cream text-ink border border-ink/20"}`}>
+                    <span key={cat} className={`font-ui text-[11px] uppercase tracking-[0.12em] px-2.5 py-1 rounded-sm ${CATEGORY_COLORS[cat] ?? "bg-cream text-ink border border-ink/20"}`}>
                       {CATEGORY_LABELS[cat] ?? cat}
                     </span>
                   ))}
                 </div>
               </div>
               <div>
-                <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-ink/30 mb-3">Explore {town.name}</p>
+                <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-ink/30 mb-3">Explore {town.name}</p>
                 <ul>
                   {[
                     { label: "Timeline", href: `/towns/${slug}/timeline` },
@@ -241,12 +241,12 @@ function CalendarView({ events, slug }: { events: LocalEvent[]; slug: string }) 
                   {MONTH_SHORT[month]}
                 </p>
                 {isCurrent && (
-                  <span className="font-ui text-[8px] uppercase tracking-[0.12em] text-crimson border border-crimson px-1 py-0.5 leading-none">
+                  <span className="font-ui text-[10px] uppercase tracking-[0.12em] text-crimson border border-crimson px-1 py-0.5 leading-none">
                     Now
                   </span>
                 )}
                 {monthEvents.length > 0 && !isCurrent && (
-                  <span className="font-ui text-[9px] text-ink/30">{monthEvents.length}</span>
+                  <span className="font-ui text-[11px] text-ink/30">{monthEvents.length}</span>
                 )}
               </div>
 
@@ -272,7 +272,7 @@ function CalendarView({ events, slug }: { events: LocalEvent[]; slug: string }) 
                   );
                 })}
                 {monthEvents.length > 3 && (
-                  <p className="font-ui text-[9px] text-ink/40 pl-1">
+                  <p className="font-ui text-[11px] text-ink/40 pl-1">
                     +{monthEvents.length - 3} more
                   </p>
                 )}
@@ -290,7 +290,7 @@ function CalendarView({ events, slug }: { events: LocalEvent[]; slug: string }) 
       {noMonth.length > 0 && (
         <div className="mt-10">
           <div className="border-t-[3px] border-ink/20 pt-6 mb-6">
-            <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-ink/30 flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-ink/20 before:block">
+            <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-ink/30 flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-ink/20 before:block">
               Flexible / Date TBD
             </p>
           </div>
@@ -302,14 +302,14 @@ function CalendarView({ events, slug }: { events: LocalEvent[]; slug: string }) 
 
       {/* Legend */}
       <div className="mt-10 pt-6 border-t border-ink/10 flex flex-wrap gap-3">
-        <p className="font-ui text-[9px] uppercase tracking-[0.14em] text-ink/30 self-center mr-2">Categories:</p>
+        <p className="font-ui text-[11px] uppercase tracking-[0.14em] text-ink/30 self-center mr-2">Categories:</p>
         {[
           { label: "Reenactment", bg: "bg-crimson text-white" },
           { label: "Festival", bg: "bg-yellow text-ink" },
           { label: "Ceremony", bg: "bg-[#1a3a72] text-white" },
           { label: "Other", bg: "bg-ink text-cream" },
         ].map(({ label, bg }) => (
-          <span key={label} className={`font-ui text-[9px] uppercase tracking-[0.1em] px-2 py-1 ${bg}`}>
+          <span key={label} className={`font-ui text-[11px] uppercase tracking-[0.1em] px-2 py-1 ${bg}`}>
             {label}
           </span>
         ))}
@@ -321,7 +321,7 @@ function CalendarView({ events, slug }: { events: LocalEvent[]; slug: string }) 
 function EventPill({ evt, catBg }: { evt: LocalEvent; catBg: string }) {
   return (
     <div className={`${catBg} px-2 py-1 group-hover:opacity-80 transition-opacity`}>
-      <p className="font-ui text-[9px] leading-snug truncate">
+      <p className="font-ui text-[11px] leading-snug truncate">
         {evt.day ? `${evt.day} · ` : ""}{evt.name}
       </p>
     </div>
@@ -341,25 +341,25 @@ function EventCard({ event }: { event: LocalEvent }) {
       {monthName ? (
         <div className="flex-shrink-0 w-14 text-center">
           <div className="bg-ink text-cream py-1 px-1">
-            <p className="font-ui text-[9px] uppercase tracking-[0.1em] text-cream/60">{monthName.slice(0, 3)}</p>
+            <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-cream/60">{monthName.slice(0, 3)}</p>
             {event.day && <p className="font-display text-[24px] leading-none text-cream">{event.day}</p>}
           </div>
           {event.endDay && event.day && event.endDay !== event.day && (
-            <p className="font-ui text-[9px] text-ink/40 mt-0.5">– {event.endDay}</p>
+            <p className="font-ui text-[11px] text-ink/40 mt-0.5">– {event.endDay}</p>
           )}
         </div>
       ) : (
         <div className="flex-shrink-0 w-14 text-center">
           <div className="bg-ink/10 text-ink/40 py-2 px-1">
-            <p className="font-ui text-[9px] uppercase tracking-[0.1em]">Date</p>
-            <p className="font-ui text-[9px] leading-none">TBD</p>
+            <p className="font-ui text-[11px] uppercase tracking-[0.1em]">Date</p>
+            <p className="font-ui text-[11px] leading-none">TBD</p>
           </div>
         </div>
       )}
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 mb-1 flex-wrap">
-          <span className={`font-ui text-[9px] uppercase tracking-[0.12em] px-2 py-0.5 ${catColor}`}>{catLabel}</span>
-          {event.featured && <span className="font-ui text-[9px] uppercase tracking-[0.12em] text-crimson">Featured</span>}
+          <span className={`font-ui text-[11px] uppercase tracking-[0.12em] px-2 py-0.5 ${catColor}`}>{catLabel}</span>
+          {event.featured && <span className="font-ui text-[11px] uppercase tracking-[0.12em] text-crimson">Featured</span>}
         </div>
         <h2 className="font-editorial text-[20px] text-ink leading-tight mb-1">
           {event.url ? (

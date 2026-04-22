@@ -18,7 +18,7 @@ export const metadata = {
 
 const CATEGORY_LABELS: Record<string, { label: string; bg: string; text: string }> = {
   CONTENT: { label: "Content", bg: "#1a3a72", text: "#f2e6c8" },
-  SOURCES: { label: "Sources", bg: "#e8b84b", text: "#14100a" },
+  SOURCES: { label: "Sources", bg: "#4A6A9B", text: "#14100a" },
   TEACHER: { label: "Teacher", bg: "#2a5c45", text: "#f2e6c8" },
   INFRA:   { label: "Infra",   bg: "#14100a", text: "#f2e6c8" },
   FIX:     { label: "Fix",     bg: "#cc3322", text: "#f2e6c8" },
@@ -32,16 +32,16 @@ export default async function ChangelogPage({ searchParams }: PageProps) {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-[#14100a] border-b-4 border-[#cc3322] py-16 px-6 sm:px-16 relative overflow-hidden">
+      <section className="bg-[#1a3a72] border-b-4 border-[#cc3322] py-16 px-6 sm:px-16 relative overflow-hidden">
         <div aria-hidden className="absolute right-[-10px] top-[-30px] font-display leading-none pointer-events-none select-none text-white/[0.03]" style={{ fontSize: "clamp(140px,28vw,380px)", letterSpacing: "-0.05em" }}>
           Log
         </div>
         <svg className="absolute top-5 right-5 pointer-events-none" width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden style={{ opacity: 0.18 }}>
-          <path d="M9 21 L10.2 25.5 L15 25.5 L11.2 28.5 L12.6 33 L9 30.3 L5.4 33 L6.8 28.5 L3 25.5 L7.8 25.5 Z" fill="#e8b84b" />
+          <path d="M9 21 L10.2 25.5 L15 25.5 L11.2 28.5 L12.6 33 L9 30.3 L5.4 33 L6.8 28.5 L3 25.5 L7.8 25.5 Z" fill="#4A6A9B" />
           <path d="M32 8 L33 11 L36 11 L33.8 12.8 L34.8 16 L32 14.2 L29.2 16 L30.2 12.8 L28 11 L31 11 Z" fill="#f2e6c8" />
         </svg>
         <div className="relative z-10 max-w-[720px]">
-          <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.4)] flex items-center gap-2.5 mb-8">
+          <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.4)] flex items-center gap-2.5 mb-8">
             <span className="w-5 h-[2px] bg-[rgba(242,230,200,0.3)] block" />
             Transparency
           </p>
@@ -81,7 +81,7 @@ export default async function ChangelogPage({ searchParams }: PageProps) {
                           {new Date(entry.createdAt).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
                         </span>
                         {cat && (
-                          <span className="font-ui text-[9px] tracking-[0.1em] uppercase px-2 py-0.5" style={{ backgroundColor: cat.bg, color: cat.text }}>
+                          <span className="font-ui text-[11px] tracking-[0.1em] uppercase px-2 py-0.5" style={{ backgroundColor: cat.bg, color: cat.text }}>
                             {cat.label}
                           </span>
                         )}

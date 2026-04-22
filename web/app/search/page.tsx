@@ -17,7 +17,7 @@ const TYPE_LABELS: Record<SearchResult["type"], { label: string; bg: string; tex
   town:   { label: "Town",   bg: "#1a3a72", text: "#f2e6c8" },
   event:  { label: "Event",  bg: "#cc3322", text: "#f2e6c8" },
   person: { label: "Person", bg: "#2a5c45", text: "#f2e6c8" },
-  place:  { label: "Place",  bg: "#e8b84b", text: "#14100a" },
+  place:  { label: "Place",  bg: "#4A6A9B", text: "#14100a" },
 };
 
 export default async function SearchPage({ searchParams }: PageProps) {
@@ -35,9 +35,9 @@ export default async function SearchPage({ searchParams }: PageProps) {
   return (
     <main>
       {/* Hero / Search bar */}
-      <section className="bg-[#14100a] border-b-4 border-[#cc3322] py-14 px-6 sm:px-16">
+      <section className="bg-[#1a3a72] border-b-4 border-[#cc3322] py-14 px-6 sm:px-16">
         <div className="mx-auto max-w-[820px]">
-          <p className="font-ui text-[9px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.4)] flex items-center gap-2.5 mb-6">
+          <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.4)] flex items-center gap-2.5 mb-6">
             <span className="w-5 h-[2px] bg-[rgba(242,230,200,0.3)] block" />
             Search the Network
           </p>
@@ -89,7 +89,7 @@ export default async function SearchPage({ searchParams }: PageProps) {
                 <div key={type}>
                   <div className="flex items-center gap-3 mb-5">
                     <span
-                      className="font-ui text-[9px] tracking-[0.15em] uppercase px-2.5 py-1"
+                      className="font-ui text-[11px] tracking-[0.15em] uppercase px-2.5 py-1"
                       style={{ backgroundColor: meta.bg, color: meta.text }}
                     >
                       {meta.label}
