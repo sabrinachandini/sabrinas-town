@@ -200,12 +200,6 @@ export default async function ItinerariesPage({ params }: PageProps) {
           {/* CTA */}
           <div className="border-t-2 border-ink/10 pt-10 flex flex-wrap gap-4">
             <NextLink
-              href={`/compare?a=${slug}`}
-              className="no-underline font-ui text-[10px] font-semibold uppercase tracking-[0.16em] text-ink border border-ink/20 px-6 py-3 hover:border-crimson hover:text-crimson transition-colors"
-            >
-              Compare with another town →
-            </NextLink>
-            <NextLink
               href="/map"
               className="no-underline font-ui text-[10px] font-semibold uppercase tracking-[0.16em] text-ink border border-ink/20 px-6 py-3 hover:border-crimson hover:text-crimson transition-colors"
             >

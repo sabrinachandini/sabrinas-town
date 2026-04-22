@@ -1,4 +1,4 @@
-import { getTown } from "@/lib/api";
+import { getTown, getRankings } from "@/lib/api";
 import { ComingSoon } from "@/components/town";
 import {
   PageShell,
@@ -7,6 +7,11 @@ import {
 } from "@/components/editorial";
 
 export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  const towns = await getRankings({ limit: 500 });
+  return (towns ?? []).map((t) => ({ slug: t.slug }));
+}
 
 interface PageProps {
   params: Promise<{ slug: string }>;

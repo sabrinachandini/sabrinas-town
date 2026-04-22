@@ -1,8 +1,13 @@
-import { getTeacherModule, getTown } from "@/lib/api";
+import { getTeacherModule, getTown, getRankings } from "@/lib/api";
 import { recordOrgEvent } from "@/lib/analytics";
 import { LessonPlan } from "@/components/teacher/types";
 
 export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  const towns = await getRankings({ limit: 500 });
+  return (towns ?? []).map((t) => ({ slug: t.slug }));
+}
 
 interface PageProps {
   params: Promise<{ slug: string }>;
