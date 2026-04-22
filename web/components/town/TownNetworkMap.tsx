@@ -130,7 +130,6 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
         theme="light"
         viewport={{ center: [-76, 41.5], zoom: 5.5 }}
         className="w-full h-full"
-        style={{ minHeight: 600 } as React.CSSProperties}
       >
         <MapControls showZoom showFullscreen position="bottom-right" />
 
