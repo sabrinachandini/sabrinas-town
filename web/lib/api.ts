@@ -31,6 +31,7 @@ export interface TownEvent {
 
 export interface TownStory {
   id: string;
+  slug: string | null;
   title: string;
   storyType: "HISTORICAL_VOICE" | "MODERN_VOICE";
   verificationStatus: "VERIFIED" | "ORAL_TRADITION" | "ANECDOTAL" | "UNVERIFIED";
@@ -379,6 +380,8 @@ export interface TownPersonDetail {
   birthYear: number | null;
   deathYear: number | null;
   verificationStatus: string;
+  imageUrl: string | null;
+  imageCredit: string | null;
   events: Array<{
     id: string;
     name: string;
@@ -888,6 +891,7 @@ export async function getTown(slug: string): Promise<Town | null> {
       })),
       stories: town.stories.map((s) => ({
         id: s.id,
+        slug: s.slug ?? null,
         title: s.title,
         storyType: s.storyType as TownStory["storyType"],
         verificationStatus: s.verificationStatus as TownStory["verificationStatus"],
@@ -1855,6 +1859,8 @@ export async function getTownPersonDetail(
       birthYear: person.birthYear,
       deathYear: person.deathYear,
       verificationStatus: person.verificationStatus as string,
+      imageUrl: person.imageUrl ?? null,
+      imageCredit: person.imageCredit ?? null,
       events: person.eventPeople.map((ep) => ({
         id: ep.event.id,
         name: ep.event.name,

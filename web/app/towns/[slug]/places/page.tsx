@@ -96,9 +96,24 @@ export default async function PlacesPage({ params }: PageProps) {
                   </p>
 
                   {place.description && (
-                    <p className="font-editorial text-[15px] text-ink/60 mt-2">
+                    <p className="font-editorial text-[15px] text-ink/60 mt-2 line-clamp-2">
                       {place.description}
                     </p>
+                  )}
+
+                  {(place.hours || place.admission) && (
+                    <div className="flex flex-wrap gap-3 mt-2">
+                      {place.hours && (
+                        <span className="font-ui text-[10px] text-ink/40 tracking-wide">
+                          🕐 {place.hours}
+                        </span>
+                      )}
+                      {place.admission && (
+                        <span className="font-ui text-[10px] text-ink/40 tracking-wide">
+                          {place.admission.toLowerCase().startsWith("free") ? "✓ Free" : `$ ${place.admission}`}
+                        </span>
+                      )}
+                    </div>
                   )}
                 </div>
 

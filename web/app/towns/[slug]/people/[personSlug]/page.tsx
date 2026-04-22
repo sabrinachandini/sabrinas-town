@@ -94,13 +94,28 @@ export default async function PersonDetailPage({ params }: PageProps) {
               )}
             </div>
 
-            {/* Stat: events count */}
-            {sortedEvents.length > 0 && (
+            {/* Portrait or event count */}
+            {person.imageUrl ? (
+              <div className="hidden md:block flex-shrink-0">
+                <div className="w-[160px] h-[200px] overflow-hidden border-2 border-cream/10">
+                  <img
+                    src={person.imageUrl}
+                    alt={`Portrait of ${person.name}`}
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                {person.imageCredit && (
+                  <p className="font-ui text-[8px] text-cream/25 mt-1.5 leading-snug max-w-[160px]">
+                    {person.imageCredit.split(".")[0]}
+                  </p>
+                )}
+              </div>
+            ) : sortedEvents.length > 0 ? (
               <div className="hidden md:block text-right flex-shrink-0">
                 <p className="font-display text-[64px] text-cream/10 leading-none">{sortedEvents.length}</p>
                 <p className="font-ui text-[9px] uppercase tracking-[0.2em] text-cream/25">Events in {town.name}</p>
               </div>
-            )}
+            ) : null}
           </div>
         </div>
       </div>
