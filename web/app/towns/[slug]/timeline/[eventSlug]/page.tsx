@@ -1,5 +1,10 @@
 import { notFound } from "next/navigation";
-import { getTown, getTownEventDetail } from "@/lib/api";
+import { getTown, getTownEventDetail, getAllEvents } from "@/lib/api";
+
+export async function generateStaticParams() {
+  const events = await getAllEvents({ limit: 5000 });
+  return events.map((e) => ({ slug: e.town.slug, eventSlug: e.slug ?? e.id }));
+}
 import { EVENT_VIDEOS } from "@/lib/videos";
 import { ImageWithCaption, YouTubeEmbed } from "@/components/editorial";
 import { JsonLd } from "@/components/seo/JsonLd";

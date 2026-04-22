@@ -2584,3 +2584,14 @@ export async function getAllPlaces(): Promise<PlaceListItem[]> {
 }
 
 export { PLACE_TYPE_ORDER };
+
+export async function getAllStoryParams(): Promise<Array<{ townSlug: string; storySlug: string }>> {
+  try {
+    const rows = await prisma.story.findMany({
+      select: { id: true, slug: true, town: { select: { slug: true } } },
+    });
+    return rows.map((r) => ({ townSlug: r.town.slug, storySlug: r.slug ?? r.id }));
+  } catch {
+    return [];
+  }
+}

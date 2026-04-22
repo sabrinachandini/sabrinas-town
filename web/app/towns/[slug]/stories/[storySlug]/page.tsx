@@ -1,5 +1,10 @@
 import { notFound } from "next/navigation";
-import { getTown, getTownStoryDetail } from "@/lib/api";
+import { getTown, getTownStoryDetail, getAllStoryParams } from "@/lib/api";
+
+export async function generateStaticParams() {
+  const stories = await getAllStoryParams();
+  return stories.map((s) => ({ slug: s.townSlug, storySlug: s.storySlug }));
+}
 import {
   PageShell,
   PageHeader,
