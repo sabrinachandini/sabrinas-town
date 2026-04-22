@@ -94,7 +94,7 @@ Respond with valid JSON only — no markdown, no explanation:
   try {
     const msg = await client.messages.create({
       model: "claude-opus-4-6",
-      max_tokens: 4000,
+      max_tokens: 8000,
       messages: [{ role: "user", content: prompt }],
     });
 
@@ -107,16 +107,16 @@ Respond with valid JSON only — no markdown, no explanation:
 
     // Repair common JSON issues from LLM output
     let rawJson = jsonMatch[0]
-      .replace(/[“”]/g, ‘”’)   // smart double quotes → straight
-      .replace(/[‘’]/g, “’”);  // smart single quotes → straight
+      .replace(/[\u201C\u201D]/g, '"')   // smart double quotes -> straight
+      .replace(/[\u2018\u2019]/g, "'");  // smart single quotes -> straight
 
     // Escape literal newlines/tabs inside JSON string values (the most common LLM mistake)
-    rawJson = rawJson.replace(/”((?:[^”\\]|\\.)*)”/gs, (_, inner: string) => {
+    rawJson = rawJson.replace(/"((?:[^"\\]|\\.)*)"/gs, (_, inner: string) => {
       const fixed = inner
-        .replace(/\n/g, “\\n”)
-        .replace(/\r/g, “\\r”)
-        .replace(/\t/g, “\\t”);
-      return `”${fixed}”`;
+        .replace(/\n/g, "\\n")
+        .replace(/\r/g, "\\r")
+        .replace(/\t/g, "\\t");
+      return `"${fixed}"`;
     });
 
     let data: { title: string; gradeRange: string; estimatedDuration: string; summary: string; lessonData: Record<string, unknown> };

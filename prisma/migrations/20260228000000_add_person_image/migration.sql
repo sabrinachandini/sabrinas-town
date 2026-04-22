@@ -1,0 +1,3 @@
+-- AddColumns
+ALTER TABLE "Person" ADD COLUMN IF NOT EXISTS "imageUrl" TEXT;
+ALTER TABLE "Person" ADD COLUMN IF NOT EXISTS "imageCredit" TEXT;
