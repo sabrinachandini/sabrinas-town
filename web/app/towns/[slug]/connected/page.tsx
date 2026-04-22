@@ -1,6 +1,13 @@
-import { getTown, LinkedTown } from "@/lib/api";
+import { getTown, LinkedTown, getRankings } from "@/lib/api";
 import { Container, Heading, Text, Divider, Link } from "@/components/ui";
 import { EmptyState } from "@/components/town";
+
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  const towns = await getRankings({ limit: 500 });
+  return (towns ?? []).map((t) => ({ slug: t.slug }));
+}
 
 interface PageProps {
   params: Promise<{ slug: string }>;

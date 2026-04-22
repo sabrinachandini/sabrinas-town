@@ -1,9 +1,14 @@
-import { getTown, getLocalEvents, LocalEvent } from "@/lib/api";
+import { getTown, getLocalEvents, getRankings, LocalEvent } from "@/lib/api";
 import { notFound } from "next/navigation";
 import NextLink from "next/link";
 import { EventsSignup } from "@/components/town/EventsSignup";
 
 export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  const towns = await getRankings({ limit: 500 });
+  return (towns ?? []).map((t) => ({ slug: t.slug }));
+}
 
 interface PageProps {
   params: Promise<{ slug: string }>;
