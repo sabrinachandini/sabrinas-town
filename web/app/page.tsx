@@ -73,7 +73,7 @@ export default async function HomePage() {
           </svg>
 
           {/* Pull quote */}
-          <p className="font-editorial italic font-light text-[22px] leading-[1.4] text-[#4a3c1a] max-w-[340px] mt-8">
+          <p className="font-editorial italic font-light text-[17px] sm:text-[22px] leading-[1.4] text-[#4a3c1a] max-w-[340px] mt-8">
             Seventy-seven towns. The places where ordinary people made history.
           </p>
 
@@ -397,10 +397,10 @@ export default async function HomePage() {
             >
               Concord
             </h3>
-            <p className="font-editorial font-black text-[#cc3322] text-[72px] leading-none tracking-[-0.04em] mt-4">
+            <p className="font-editorial font-black text-[#cc3322] text-[48px] sm:text-[72px] leading-none tracking-[-0.04em] mt-4">
               Apr 19
             </p>
-            <p className="font-editorial italic font-light text-[18px] leading-[1.6] text-[rgba(242,230,200,0.7)] max-w-[340px] mt-6">
+            <p className="font-editorial italic font-light text-[15px] sm:text-[18px] leading-[1.6] text-[rgba(242,230,200,0.7)] max-w-[340px] mt-6">
               The shot heard round the world. But who fired it? Seventy-seven militia stood on a triangular green at dawn. What they knew — and feared — is more complicated than the myth.
             </p>
             <NextLink
@@ -514,7 +514,7 @@ export default async function HomePage() {
             <span className="inline-block font-ui text-[9px] font-semibold tracking-[0.24em] uppercase px-2.5 py-1 border-[1.5px] mb-5 text-[#cc3322] border-[#cc3322]">
               People
             </span>
-            <h3 className="font-editorial font-black text-[24px] leading-[1.05] tracking-[-0.02em] mb-4 text-[#14100a]">
+            <h3 className="font-editorial font-black text-[20px] sm:text-[24px] leading-[1.05] tracking-[-0.02em] mb-4 text-[#14100a]">
               The Surgeon Who Rode Before Revere
             </h3>
             <p className="font-ui text-[14px] font-light leading-[1.7] text-[rgba(20,16,10,0.6)]">
@@ -536,7 +536,7 @@ export default async function HomePage() {
             <span className="inline-block font-ui text-[9px] font-semibold tracking-[0.24em] uppercase px-2.5 py-1 border-[1.5px] mb-5 text-[#e8b84b] border-[#e8b84b]">
               Places
             </span>
-            <h3 className="font-editorial font-black text-[24px] leading-[1.05] tracking-[-0.02em] mb-4 text-[#f2e6c8]">
+            <h3 className="font-editorial font-black text-[20px] sm:text-[24px] leading-[1.05] tracking-[-0.02em] mb-4 text-[#f2e6c8]">
               The Tavern That Was Really a War Room
             </h3>
             <p className="font-ui text-[14px] font-light leading-[1.7] text-[rgba(242,230,200,0.6)]">
@@ -558,7 +558,7 @@ export default async function HomePage() {
             <span className="inline-block font-ui text-[9px] font-semibold tracking-[0.24em] uppercase px-2.5 py-1 border-[1.5px] mb-5 text-[#f2e6c8] border-[rgba(242,230,200,0.5)]">
               Forgotten
             </span>
-            <h3 className="font-editorial font-black text-[24px] leading-[1.05] tracking-[-0.02em] mb-4 text-[#f2e6c8]">
+            <h3 className="font-editorial font-black text-[20px] sm:text-[24px] leading-[1.05] tracking-[-0.02em] mb-4 text-[#f2e6c8]">
               The Women Who Kept the Powder Dry
             </h3>
             <p className="font-ui text-[14px] font-light leading-[1.7] text-[rgba(242,230,200,0.65)]">
@@ -614,7 +614,7 @@ export default async function HomePage() {
         {/* Button — full width on mobile */}
         <NextLink
           href="/towns"
-          className="font-editorial font-bold text-[16px] text-[#f2e6c8] bg-[#14100a] px-10 py-5 no-underline block sm:inline-block text-center border-[3px] border-[#14100a] shadow-[6px_6px_0_#cc3322] hover:-translate-x-[3px] hover:-translate-y-[3px] hover:shadow-[9px_9px_0_#cc3322] transition-all duration-100 whitespace-nowrap relative z-[2] flex-shrink-0"
+          className="font-editorial font-bold text-[14px] sm:text-[16px] text-[#f2e6c8] bg-[#14100a] px-8 sm:px-10 py-4 sm:py-5 no-underline block sm:inline-block text-center border-[3px] border-[#14100a] shadow-[6px_6px_0_#cc3322] hover:-translate-x-[3px] hover:-translate-y-[3px] hover:shadow-[9px_9px_0_#cc3322] transition-all duration-100 whitespace-nowrap relative z-[2] flex-shrink-0"
         >
           Explore All Towns →
         </NextLink>

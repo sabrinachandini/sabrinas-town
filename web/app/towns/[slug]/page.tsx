@@ -94,7 +94,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
       <TownHero town={town} slug={slug} />
 
       {/* ── Significance strip ───────────────────────────────────── */}
-      <div className="bg-[#14100a] border-b border-[#f2e6c8]/8 px-8 md:px-16 py-3">
+      <div className="bg-[#14100a] border-b border-[#f2e6c8]/8 px-4 sm:px-8 md:px-16 py-2.5 sm:py-3">
         <div className="mx-auto max-w-[1200px] flex flex-wrap items-center gap-x-8 gap-y-1">
           <span className="font-ui text-[8px] uppercase tracking-[0.22em] text-[#e8b84b]">
             {town.scoreTier}
@@ -120,7 +120,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
       </div>
 
       {/* ── Body: cream background ───────────────────────────────── */}
-      <div className="bg-cream py-16 px-8 md:px-16">
+      <div className="bg-cream py-10 sm:py-16 px-5 sm:px-8 md:px-16">
         <div className="mx-auto max-w-[1200px] grid md:grid-cols-[1fr_260px] gap-16 items-start">
 
           {/* Main article column */}
@@ -170,7 +170,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
                         )}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="font-editorial text-[22px] text-ink group-hover:text-crimson transition-colors leading-tight">
+                        <p className="font-editorial text-[18px] sm:text-[22px] text-ink group-hover:text-crimson transition-colors leading-tight">
                           {person.name}
                         </p>
                         <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-crimson/60 mt-0.5">
@@ -209,7 +209,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
                       className="no-underline flex items-center justify-between group py-4 border-b border-ink/8 hover:bg-yellow/10 hover:pl-2 transition-all duration-150"
                     >
                       <div>
-                        <p className="font-editorial text-[22px] text-ink group-hover:text-crimson transition-colors">
+                        <p className="font-editorial text-[18px] sm:text-[22px] text-ink group-hover:text-crimson transition-colors">
                           {event.name}
                         </p>
                         {event.startDate && (
@@ -289,7 +289,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
                       <p className="font-ui text-[9px] uppercase tracking-[0.12em] text-crimson group-hover:text-yellow/70 mb-1">
                         {story.storyType.replace(/_/g, " ")}
                       </p>
-                      <p className="font-editorial text-[22px] text-ink group-hover:text-cream transition-colors leading-tight">
+                      <p className="font-editorial text-[18px] sm:text-[22px] text-ink group-hover:text-cream transition-colors leading-tight">
                         {story.title}
                       </p>
                       <p className="font-ui text-[13px] text-ink/60 group-hover:text-cream/60 leading-relaxed mt-2">
@@ -360,7 +360,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
             {/* Pull quote */}
             {town.execSummary150 && (
               <blockquote className="border-l-[4px] border-crimson pl-4 mt-8">
-                <p className="font-editorial italic text-[15px] text-ink leading-relaxed">
+                <p className="font-editorial italic text-[13px] sm:text-[15px] text-ink leading-relaxed">
                   &ldquo;{town.execSummary150.slice(0, 120)}{town.execSummary150.length > 120 ? "\u2026" : ""}&rdquo;
                 </p>
               </blockquote>
@@ -383,7 +383,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
 
       {/* ── Upcoming Events Agenda ───────────────────────────────── */}
       {localEvents.length > 0 && (
-        <div className="bg-[#1a3a72] py-14 px-8 md:px-16">
+        <div className="bg-[#1a3a72] py-10 sm:py-14 px-5 sm:px-8 md:px-16">
           <div className="mx-auto max-w-[1200px]">
             <div className="flex items-end justify-between mb-8">
               <div>
@@ -470,7 +470,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
       )}
 
       {/* ── Bottom Banner ────────────────────────────────────────── */}
-      <section className="bg-ink border-t-4 border-crimson py-20 px-8 md:px-16">
+      <section className="bg-ink border-t-4 border-crimson py-12 sm:py-20 px-5 sm:px-8 md:px-16">
         <div className="mx-auto max-w-[1200px] flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
             <p
