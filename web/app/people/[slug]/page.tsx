@@ -1,11 +1,16 @@
 import { notFound } from "next/navigation";
-import { getPersonBySlug } from "@/lib/api";
+import { getPersonBySlug, getAllPeople } from "@/lib/api";
 import NextLink from "next/link";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { MarkdownBio } from "@/components/editorial";
 import { Metadata } from "next";
 
 export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  const people = await getAllPeople({ limit: 1000 });
+  return people.filter((p) => p.slug).map((p) => ({ slug: p.slug! }));
+}
 
 interface PageProps {
   params: Promise<{ slug: string }>;

@@ -3,6 +3,7 @@ import {
   getTownSources,
   getTownPeople,
   getLocalEvents,
+  getRankings,
 } from "@/lib/api";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { recordOrgEvent } from "@/lib/analytics";
@@ -10,6 +11,11 @@ import { ComingSoon, TownHero } from "@/components/town";
 import NextLink from "next/link";
 
 export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  const towns = await getRankings({ limit: 500 });
+  return (towns ?? []).map((t) => ({ slug: t.slug }));
+}
 
 interface PageProps {
   params: Promise<{ slug: string }>;
