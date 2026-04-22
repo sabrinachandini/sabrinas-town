@@ -18,7 +18,6 @@ interface PageProps {
   searchParams: Promise<{ q?: string }>;
 }
 
-// DB stores two-letter abbreviations — map to display names
 const ABBREV_TO_NAME: Record<string, string> = {
   MA: "Massachusetts", NJ: "New Jersey", NY: "New York",
   PA: "Pennsylvania", VA: "Virginia", SC: "South Carolina",
@@ -90,7 +89,6 @@ export default async function TownsPage({ searchParams }: PageProps) {
       )
     : towns;
 
-  // Group by full state name (DB returns abbreviations like "MA")
   const townsByState: Record<string, typeof filtered> = {};
   for (const town of filtered) {
     const stateName = ABBREV_TO_NAME[town.state] ?? town.state;
@@ -102,44 +100,31 @@ export default async function TownsPage({ searchParams }: PageProps) {
 
   return (
     <main>
-      {/* RED hero */}
+      {/* ── RED hero ── */}
       <section
-        className="page-pad"
-        style={{
-          background: "var(--red)",
-          padding: "64px 52px 56px",
-          borderBottom: "4px solid var(--ink)",
-          position: "relative",
-          overflow: "hidden",
-        }}
+        className="relative overflow-hidden px-5 sm:px-[52px] pt-10 sm:pt-16 pb-10 sm:pb-14"
+        style={{ background: "var(--red)", borderBottom: "4px solid var(--ink)" }}
       >
         {/* Ghost */}
         <div
           aria-hidden
+          className="absolute right-[-10px] top-[-20px] pointer-events-none select-none z-0"
           style={{
-            position: "absolute",
-            right: -10,
-            top: -20,
             fontFamily: "var(--font-bebas)",
-            fontSize: "clamp(160px, 30vw, 460px)",
+            fontSize: "clamp(120px, 30vw, 460px)",
             lineHeight: 1,
             color: "rgba(255,255,255,0.07)",
-            pointerEvents: "none",
-            userSelect: "none",
-            zIndex: 0,
             letterSpacing: "-0.05em",
           }}
         >
           Towns
         </div>
 
-        {/* Tilted stamp — whimsy */}
+        {/* Tilted stamp — desktop only */}
         <div
           aria-hidden
+          className="hidden sm:block absolute top-6 right-6 z-[2]"
           style={{
-            position: "absolute",
-            top: 24,
-            right: 24,
             border: "2px solid rgba(255,255,255,0.45)",
             color: "rgba(255,255,255,0.6)",
             fontFamily: "var(--font-dm)",
@@ -149,16 +134,16 @@ export default async function TownsPage({ searchParams }: PageProps) {
             textTransform: "uppercase",
             padding: "6px 12px",
             transform: "rotate(-2deg)",
-            zIndex: 2,
           }}
         >
           75 Towns · 16 States
         </div>
 
-        {/* Stars — whimsy */}
+        {/* Stars */}
         <svg
           aria-hidden
-          style={{ position: "absolute", top: 20, right: 80, pointerEvents: "none", opacity: 0.2, zIndex: 2 }}
+          className="hidden sm:block absolute top-5 right-20 pointer-events-none z-[2]"
+          style={{ opacity: 0.2 }}
           width="52" height="52" viewBox="0 0 52 52" fill="none"
         >
           <path d="M11 25 L12.4 30 L18 30 L13.5 33.5 L15 39 L11 35.8 L7 39 L8.5 33.5 L4 30 L9.6 30 Z" fill="#e8b84b" />
@@ -167,8 +152,9 @@ export default async function TownsPage({ searchParams }: PageProps) {
         </svg>
 
         {/* Content */}
-        <div style={{ position: "relative", zIndex: 1, maxWidth: 700 }}>
+        <div className="relative z-[1] max-w-[700px]">
           <p
+            className="flex items-center gap-3 mb-5"
             style={{
               fontFamily: "var(--font-dm)",
               fontSize: 9,
@@ -176,21 +162,9 @@ export default async function TownsPage({ searchParams }: PageProps) {
               letterSpacing: "0.32em",
               textTransform: "uppercase",
               color: "rgba(255,255,255,0.55)",
-              display: "flex",
-              alignItems: "center",
-              gap: 12,
-              marginBottom: 20,
             }}
           >
-            <span
-              style={{
-                width: 20,
-                height: 2,
-                background: "rgba(255,255,255,0.5)",
-                display: "inline-block",
-                flexShrink: 0,
-              }}
-            />
+            <span className="w-5 h-[2px] flex-shrink-0" style={{ background: "rgba(255,255,255,0.5)" }} />
             The Revolutionary Town Network
           </p>
 
@@ -224,19 +198,18 @@ export default async function TownsPage({ searchParams }: PageProps) {
             Everywhere.
           </span>
 
-          <div style={{ marginTop: 24 }}>
-            <Squiggle width={340} stroke="rgba(255,255,255,0.35)" strokeWidth="2.5" />
+          <div className="mt-6">
+            <Squiggle width={280} stroke="rgba(255,255,255,0.35)" strokeWidth="2.5" />
           </div>
 
           <p
+            className="mt-5 max-w-[460px]"
             style={{
               fontFamily: "var(--font-instrument)",
               fontStyle: "italic",
               fontWeight: 300,
-              fontSize: 19,
+              fontSize: "clamp(15px, 2vw, 19px)",
               color: "rgba(255,255,255,0.75)",
-              maxWidth: 460,
-              marginTop: 24,
               lineHeight: 1.5,
             }}
           >
@@ -245,27 +218,17 @@ export default async function TownsPage({ searchParams }: PageProps) {
         </div>
       </section>
 
-      {/* BLUE search + state nav */}
-      <section
-        style={{
-          background: "var(--blue)",
-          borderBottom: "4px solid var(--ink)",
-        }}
-      >
+      {/* ── BLUE search + state nav ── */}
+      <section style={{ background: "var(--blue)", borderBottom: "4px solid var(--ink)" }}>
         {/* Search row */}
         <form
           action="/towns"
           method="GET"
-          className="page-pad towns-search-form"
-          style={{
-            padding: "18px 52px",
-            borderBottom: "1px solid rgba(255,255,255,0.1)",
-            display: "flex",
-            alignItems: "center",
-            gap: 16,
-          }}
+          className="flex items-center gap-4 px-5 sm:px-[52px] py-[18px]"
+          style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}
         >
           <span
+            className="flex-shrink-0"
             style={{
               fontFamily: "var(--font-dm)",
               fontSize: 10,
@@ -273,7 +236,6 @@ export default async function TownsPage({ searchParams }: PageProps) {
               letterSpacing: "0.24em",
               textTransform: "uppercase",
               color: "rgba(255,255,255,0.75)",
-              flexShrink: 0,
             }}
           >
             Search
@@ -283,7 +245,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
             name="q"
             defaultValue={q}
             placeholder="Filter towns..."
-            className="towns-search-input"
+            className="towns-search-input flex-1 min-w-0"
             style={{
               fontFamily: "var(--font-instrument)",
               fontStyle: "italic",
@@ -292,14 +254,13 @@ export default async function TownsPage({ searchParams }: PageProps) {
               background: "transparent",
               border: "none",
               borderBottom: "2px solid rgba(255,255,255,0.22)",
-              flex: 1,
-              minWidth: 0,
               padding: "4px 0",
             }}
           />
           {q && (
             <a
               href="/towns"
+              className="flex-shrink-0"
               style={{
                 fontFamily: "var(--font-dm)",
                 fontSize: 10,
@@ -314,10 +275,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
         </form>
 
         {/* State pills */}
-        <div
-          className="page-pad"
-          style={{ padding: "12px 52px 14px", display: "flex", flexWrap: "wrap", gap: 4 }}
-        >
+        <div className="px-5 sm:px-[52px] py-3 flex flex-wrap gap-1">
           {STATE_ORDER.map((state) => (
             <a
               key={state}
@@ -327,28 +285,26 @@ export default async function TownsPage({ searchParams }: PageProps) {
                 fontFamily: "var(--font-bebas)",
                 fontSize: 13,
                 color: "rgba(255,255,255,0.75)",
-                padding: "4px 10px",
+                padding: "4px 8px",
                 textDecoration: "none",
-                transition: "color 0.15s",
               }}
             >
               {state}
             </a>
           ))}
-          {/* Small yellow squiggle at end of state pills — whimsy */}
-          <div style={{ width: "100%", paddingTop: 6 }}>
+          <div className="w-full pt-1.5">
             <Squiggle width={120} stroke="#e8b84b" strokeWidth="1.8" />
           </div>
         </div>
       </section>
 
-      {/* PAPER two-column town list */}
+      {/* ── PAPER town list ── */}
       <section
-        className="page-pad"
-        style={{ background: "var(--paper)", padding: "0 52px 96px" }}
+        className="px-5 sm:px-[52px] pb-16 sm:pb-24"
+        style={{ background: "var(--paper)" }}
       >
         {filtered.length === 0 ? (
-          <div style={{ padding: "80px 0", textAlign: "center" }}>
+          <div className="py-20 text-center">
             <p
               style={{
                 fontFamily: "var(--font-instrument)",
@@ -358,56 +314,32 @@ export default async function TownsPage({ searchParams }: PageProps) {
               }}
             >
               No towns match &ldquo;{q}&rdquo;.{" "}
-              <a href="/towns" style={{ color: "var(--red)" }}>
-                Browse all towns
-              </a>
+              <a href="/towns" style={{ color: "var(--red)" }}>Browse all towns</a>
             </p>
           </div>
         ) : (
-          <div
-            className="towns-grid"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)",
-              gap: "0 72px",
-            }}
-          >
+          <div className="grid sm:grid-cols-2 gap-x-[72px]">
             {statesToShow.map((state) => {
               const id = STATE_IDS[state];
               const stateTowns = (townsByState[state] || []).sort((a, b) =>
                 a.name.localeCompare(b.name)
               );
               return (
-                <div key={state} id={id} style={{ paddingTop: 56 }}>
-                  <div style={{ marginBottom: 8 }}>
+                <div key={state} id={id} className="pt-10 sm:pt-14">
+                  <div className="mb-2">
                     <h2
                       style={{
                         fontFamily: "var(--font-bebas)",
-                        fontSize: "clamp(30px, 3.2vw, 44px)",
+                        fontSize: "clamp(26px, 3.2vw, 44px)",
                         lineHeight: 0.92,
                         letterSpacing: "-0.04em",
                         color: "var(--ink)",
                         margin: 0,
                       }}
                     >
-                      <span
-                        style={{
-                          color: "var(--red)",
-                          opacity: 0.4,
-                          fontWeight: 300,
-                          marginRight: 4,
-                        }}
-                      >
-                        /
-                      </span>
+                      <span style={{ color: "var(--red)", opacity: 0.4, fontWeight: 300, marginRight: 4 }}>/</span>
                       {state}
-                      <span
-                        style={{
-                          fontSize: 13,
-                          color: "var(--red)",
-                          marginLeft: 10,
-                        }}
-                      >
+                      <span style={{ fontSize: 13, color: "var(--red)", marginLeft: 10 }}>
                         {stateTowns.length}
                       </span>
                     </h2>
@@ -421,18 +353,11 @@ export default async function TownsPage({ searchParams }: PageProps) {
                         <a
                           key={town.id}
                           href={`/towns/${town.slug}`}
-                          className="town-row"
-                          style={{
-                            display: "flex",
-                            alignItems: "baseline",
-                            padding: "11px 0",
-                            borderBottom: "1px solid rgba(20,16,10,0.07)",
-                            textDecoration: "none",
-                            transition: "padding-left 0.15s",
-                          }}
+                          className="town-row flex items-baseline py-[11px] border-b no-underline"
+                          style={{ borderBottomColor: "rgba(20,16,10,0.07)", transition: "padding-left 0.15s" }}
                         >
                           <span
-                            className="town-name-text"
+                            className="town-name-text flex-shrink-0"
                             style={{
                               fontFamily: "var(--font-instrument)",
                               fontStyle: "italic",
@@ -440,50 +365,38 @@ export default async function TownsPage({ searchParams }: PageProps) {
                               fontSize: "clamp(15px, 1.5vw, 20px)",
                               letterSpacing: "-0.02em",
                               color: "var(--ink)",
-                              minWidth: 130,
-                              flexShrink: 0,
+                              minWidth: 120,
                               transition: "color 0.15s",
                             }}
                           >
                             {town.name}
                           </span>
+                          {/* Snippet — hidden on mobile */}
+                          {snippet && (
+                            <>
+                              <span
+                                className="hidden sm:inline-block flex-shrink-0 self-center rounded-full"
+                                style={{ width: 4, height: 4, background: "var(--blue)", opacity: 0.38, margin: "0 13px 3px" }}
+                              />
+                              <span
+                                className="hidden sm:block overflow-hidden flex-1"
+                                style={{
+                                  fontFamily: "var(--font-instrument)",
+                                  fontStyle: "italic",
+                                  fontWeight: 300,
+                                  fontSize: 13,
+                                  color: "rgba(20,16,10,0.42)",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "nowrap",
+                                }}
+                              >
+                                {snippet}
+                              </span>
+                            </>
+                          )}
                           <span
-                            style={{
-                              width: 4,
-                              height: 4,
-                              background: "var(--blue)",
-                              opacity: 0.38,
-                              borderRadius: "50%",
-                              margin: "0 13px 3px",
-                              flexShrink: 0,
-                              alignSelf: "center",
-                            }}
-                          />
-                          <span
-                            style={{
-                              fontFamily: "var(--font-instrument)",
-                              fontStyle: "italic",
-                              fontWeight: 300,
-                              fontSize: 13,
-                              color: "rgba(20,16,10,0.42)",
-                              overflow: "hidden",
-                              textOverflow: "ellipsis",
-                              whiteSpace: "nowrap",
-                              flex: 1,
-                            }}
-                          >
-                            {snippet}
-                          </span>
-                          <span
-                            className="town-arrow"
-                            style={{
-                              color: "var(--red)",
-                              fontSize: 12,
-                              opacity: 0,
-                              marginLeft: 8,
-                              flexShrink: 0,
-                              transition: "opacity 0.15s",
-                            }}
+                            className="town-arrow flex-shrink-0 ml-auto sm:ml-2"
+                            style={{ color: "var(--red)", fontSize: 12, opacity: 0, transition: "opacity 0.15s" }}
                           >
                             →
                           </span>
@@ -498,56 +411,25 @@ export default async function TownsPage({ searchParams }: PageProps) {
         )}
       </section>
 
-      {/* INK interstitial */}
+      {/* ── INK interstitial ── */}
       <section
-        className="page-pad"
-        style={{
-          background: "var(--ink)",
-          padding: "64px 52px 72px",
-          borderTop: "4px solid var(--ink)",
-          borderBottom: "4px solid var(--ink)",
-          position: "relative",
-          overflow: "hidden",
-        }}
+        className="relative overflow-hidden px-5 sm:px-[52px] py-12 sm:py-16"
+        style={{ background: "var(--ink)", borderTop: "4px solid var(--ink)", borderBottom: "4px solid var(--ink)" }}
       >
-        {/* Red right edge */}
+        <div className="absolute top-0 right-0 bottom-0 w-1.5 z-0" style={{ background: "var(--red)" }} aria-hidden />
         <div
           aria-hidden
-          style={{
-            position: "absolute",
-            top: 0,
-            right: 0,
-            bottom: 0,
-            width: 6,
-            background: "var(--red)",
-            zIndex: 0,
-          }}
-        />
-        {/* Ghost */}
-        <div
-          aria-hidden
-          style={{
-            position: "absolute",
-            bottom: -28,
-            left: 28,
-            fontFamily: "var(--font-bebas)",
-            fontSize: 300,
-            lineHeight: 1,
-            color: "rgba(255,255,255,0.04)",
-            pointerEvents: "none",
-            userSelect: "none",
-            zIndex: 0,
-          }}
+          className="absolute bottom-[-28px] left-7 pointer-events-none select-none z-0"
+          style={{ fontFamily: "var(--font-bebas)", fontSize: "clamp(120px, 25vw, 300px)", lineHeight: 1, color: "rgba(255,255,255,0.04)" }}
         >
           1775
         </div>
 
-        {/* Content */}
-        <div style={{ position: "relative", zIndex: 1, maxWidth: 640 }}>
+        <div className="relative z-[1] max-w-[640px]">
           <p
             style={{
               fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(36px, 5vw, 64px)",
+              fontSize: "clamp(28px, 5vw, 64px)",
               lineHeight: 0.92,
               letterSpacing: "-0.04em",
               color: "white",
@@ -555,27 +437,16 @@ export default async function TownsPage({ searchParams }: PageProps) {
             }}
           >
             The war was won{" "}
-            <span
-              style={{
-                color: "#6b8fd4",
-                display: "inline-block",
-                transform: "rotate(-2deg)",
-                transformOrigin: "left center",
-              }}
-            >
+            <span style={{ color: "#6b8fd4", display: "inline-block", transform: "rotate(-2deg)", transformOrigin: "left center" }}>
               here.
             </span>
-            <br />
-            In kitchens, fields,
-            <br />
-            and front doors.
+            <br />In kitchens, fields,<br />and front doors.
           </p>
-
-          <div style={{ marginTop: 16 }}>
+          <div className="mt-4">
             <Squiggle width={220} stroke="rgba(107,143,212,0.5)" strokeWidth="2.5" />
           </div>
-
           <p
+            className="mt-6"
             style={{
               fontFamily: "var(--font-dm)",
               fontSize: 10,
@@ -583,7 +454,6 @@ export default async function TownsPage({ searchParams }: PageProps) {
               letterSpacing: "0.24em",
               textTransform: "uppercase",
               color: "rgba(255,255,255,0.55)",
-              marginTop: 24,
             }}
           >
             <span style={{ color: "rgba(255,255,255,0.4)" }}>— </span>
@@ -591,57 +461,34 @@ export default async function TownsPage({ searchParams }: PageProps) {
           </p>
         </div>
 
-        {/* Cross mark — whimsy */}
-        <svg aria-hidden style={{ position: "absolute", bottom: 24, right: 24, opacity: 0.1, pointerEvents: "none" }} width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <svg aria-hidden className="absolute bottom-6 right-6 pointer-events-none" style={{ opacity: 0.1 }} width="28" height="28" viewBox="0 0 28 28" fill="none">
           <rect x="11.5" y="0" width="5" height="28" rx="2.5" fill="white" />
           <rect x="0" y="11.5" width="28" height="5" rx="2.5" fill="white" />
         </svg>
       </section>
 
-      {/* RED CTA */}
+      {/* ── RED CTA ── */}
       <section
-        className="page-pad"
-        style={{
-          background: "var(--red)",
-          padding: "80px 52px 88px",
-          borderTop: "4px solid var(--ink)",
-          position: "relative",
-          overflow: "hidden",
-        }}
+        className="relative overflow-hidden px-5 sm:px-[52px] py-14 sm:py-20"
+        style={{ background: "var(--red)", borderTop: "4px solid var(--ink)" }}
       >
-        {/* Ghost */}
         <div
           aria-hidden
-          style={{
-            position: "absolute",
-            right: -10,
-            bottom: -30,
-            fontFamily: "var(--font-bebas)",
-            fontSize: "clamp(120px, 25vw, 340px)",
-            lineHeight: 1,
-            color: "rgba(255,255,255,0.07)",
-            pointerEvents: "none",
-            userSelect: "none",
-            zIndex: 0,
-          }}
+          className="absolute right-[-10px] bottom-[-30px] pointer-events-none select-none z-0"
+          style={{ fontFamily: "var(--font-bebas)", fontSize: "clamp(100px, 25vw, 340px)", lineHeight: 1, color: "rgba(255,255,255,0.07)" }}
         >
           Teach
         </div>
 
-        {/* Stars — whimsy */}
-        <svg aria-hidden style={{ position: "absolute", top: 20, right: 20, opacity: 0.2, pointerEvents: "none", zIndex: 2 }} width="52" height="52" viewBox="0 0 52 52" fill="none">
+        <svg aria-hidden className="hidden sm:block absolute top-5 right-5 pointer-events-none z-[2]" style={{ opacity: 0.2 }} width="52" height="52" viewBox="0 0 52 52" fill="none">
           <path d="M11 25 L12.4 30 L18 30 L13.5 33.5 L15 39 L11 35.8 L7 39 L8.5 33.5 L4 30 L9.6 30 Z" fill="#e8b84b" />
           <path d="M38 10 L39 13 L42 13 L39.8 14.8 L40.8 18 L38 16.2 L35.2 18 L36.2 14.8 L34 13 L37 13 Z" fill="#f2e6c8" />
         </svg>
-        <svg aria-hidden style={{ position: "absolute", bottom: 24, left: 24, opacity: 0.15, pointerEvents: "none", zIndex: 2 }} width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <path d="M20 5 L22 15 L32 15 L24 21 L27 31 L20 25 L13 31 L16 21 L8 15 L18 15 Z" fill="#f2e6c8" />
-        </svg>
 
-        {/* Content */}
-        <div style={{ position: "relative", zIndex: 1, maxWidth: 640 }}>
+        <div className="relative z-[1] max-w-[640px]">
           <div
+            className="inline-block mb-5"
             style={{
-              display: "inline-block",
               border: "2.5px solid rgba(255,255,255,0.45)",
               color: "rgba(255,255,255,0.65)",
               fontFamily: "var(--font-dm)",
@@ -652,7 +499,6 @@ export default async function TownsPage({ searchParams }: PageProps) {
               padding: "7px 14px",
               transform: "rotate(-2.5deg)",
               transformOrigin: "left center",
-              marginBottom: 20,
             }}
           >
             Open to Everyone
@@ -661,40 +507,31 @@ export default async function TownsPage({ searchParams }: PageProps) {
           <h2
             style={{
               fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(56px, 8vw, 100px)",
+              fontSize: "clamp(48px, 8vw, 100px)",
               lineHeight: 0.9,
               letterSpacing: "-0.04em",
               color: "white",
               margin: "12px 0 0",
             }}
           >
-            Teach the
-            <br />
-            <span
-              style={{
-                fontStyle: "italic",
-                color: "rgba(255,255,255,0.85)",
-                display: "inline-block",
-                transform: "rotate(-1.5deg)",
-                transformOrigin: "left center",
-              }}
-            >
+            Teach the<br />
+            <span style={{ fontStyle: "italic", color: "rgba(255,255,255,0.85)", display: "inline-block", transform: "rotate(-1.5deg)", transformOrigin: "left center" }}>
               Revolution.
             </span>
           </h2>
 
-          <div style={{ margin: "20px 0" }}>
-            <Squiggle width={260} stroke="rgba(255,255,255,0.4)" strokeWidth="2.5" />
+          <div className="my-5">
+            <Squiggle width={240} stroke="rgba(255,255,255,0.4)" strokeWidth="2.5" />
           </div>
 
           <p
+            className="mb-8"
             style={{
               fontFamily: "var(--font-instrument)",
               fontStyle: "italic",
               fontWeight: 300,
-              fontSize: 19,
+              fontSize: "clamp(15px, 2vw, 19px)",
               color: "rgba(255,255,255,0.75)",
-              marginBottom: 32,
               lineHeight: 1.5,
             }}
           >
@@ -703,10 +540,8 @@ export default async function TownsPage({ searchParams }: PageProps) {
 
           <a
             href="/teach"
-            className="btn-dark"
+            className="block w-full sm:w-auto sm:inline-block text-center"
             style={{
-              display: "block",
-              maxWidth: 300,
               background: "var(--ink)",
               color: "var(--cream)",
               fontFamily: "var(--font-dm)",
@@ -718,7 +553,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
               border: "2px solid var(--ink)",
               boxShadow: "5px 5px 0 rgba(255,255,255,0.25)",
               textDecoration: "none",
-              textAlign: "center",
+              maxWidth: 300,
             }}
           >
             Teacher Resources →
