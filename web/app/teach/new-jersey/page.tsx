@@ -138,10 +138,10 @@ export default async function NewJerseyTeachPage() {
             <p className="font-editorial italic font-light text-[18px] text-[#14100a]/70 leading-[1.75]">
               New Jersey&apos;s geography made it a perpetual battleground: situated between the British stronghold of New York and the Continental Congress in Philadelphia, its roads, rivers, and towns saw constant military movement across seven years of war.
             </p>
-            <p className="font-ui text-[16px] text-[#14100a]/60 leading-relaxed">
+            <p className="font-ui text-[20px] text-[#14100a]/60 leading-relaxed">
               Its civilian population endured occupation, foraging, and the daily disruption of armies marching through their communities. Morristown was the Continental Army&apos;s winter headquarters twice — the first in 1777 when smallpox and starvation threatened to end the army, and again in 1779–80 when the worst winter of the century nearly accomplished what the British could not. Teaching New Jersey means teaching the war as it was actually experienced: not a series of glorious victories but a long, grinding contest of endurance.
             </p>
-            <p className="font-ui text-[16px] text-[#14100a]/60 leading-relaxed">
+            <p className="font-ui text-[20px] text-[#14100a]/60 leading-relaxed">
               New Jersey also holds the Revolution&apos;s sharpest loyalist-patriot divide. Bergen County towns like Hackensack and Fort Lee sat in a zone where British raiding parties and Patriot militias both demanded loyalty — and punished the wrong answer. The Monmouth battle in 1778 closed out the Northern theater with a chaotic, hard-fought draw that showed how far the Continental Army had come since the desperate winter of 1776.
             </p>
           </div>
@@ -165,7 +165,7 @@ export default async function NewJerseyTeachPage() {
                   <span className="font-ui text-[11px] uppercase tracking-[0.14em] text-[#4A6A9B]/70">{seq.duration}</span>
                 </div>
                 <p className="font-ui text-[11px] uppercase tracking-[0.14em] text-white/30 mb-3">{seq.towns.join(" → ")}</p>
-                <p className="font-editorial italic text-[16px] text-white/55 leading-[1.75]">{seq.description}</p>
+                <p className="font-editorial italic text-[20px] text-white/55 leading-[1.75]">{seq.description}</p>
               </div>
             ))}
           </div>
@@ -177,7 +177,7 @@ export default async function NewJerseyTeachPage() {
         <div className="max-w-[1200px] mx-auto">
           <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-[#cc3322] flex items-center gap-2.5 mb-4"><span className="w-4 h-[2px] bg-[#cc3322] block" />Town Resources</p>
           <h2 className="font-display text-[#14100a] leading-[0.92] mb-2" style={{ fontSize: "clamp(32px,4vw,52px)" }}>Print-Ready Packets</h2>
-          <p className="font-ui text-[15px] text-[#14100a]/50 mb-10">Complete teacher packets formatted for classroom printing — lesson plans, source packets, handouts, and quizzes.</p>
+          <p className="font-ui text-[19px] text-[#14100a]/50 mb-10">Complete teacher packets formatted for classroom printing — lesson plans, source packets, handouts, and quizzes.</p>
           <div className="border-t-[3px] border-[#14100a]">
             {modules.map((m, i) => (
               <div key={m.slug} className="flex items-center justify-between py-6 border-b border-[#14100a]/10 gap-8 group">

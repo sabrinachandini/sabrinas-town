@@ -119,7 +119,7 @@ export default async function FrontierTeachPage() {
             <p className="font-editorial italic font-light text-[18px] text-[#14100a]/70 leading-[1.75]">
               The frontier campaigns are rarely taught, but they decided what kind of country the new United States would become. Clark's audacious march through the Illinois Country secured American claims to the Northwest Territory at the peace table.
             </p>
-            <p className="font-ui text-[16px] text-[#14100a]/60 leading-relaxed">
+            <p className="font-ui text-[20px] text-[#14100a]/60 leading-relaxed">
               The founding of Marietta in 1788 under the Northwest Ordinance — which banned slavery in the territory — set the terms for a century of expansion and conflict. Wheeling's forts sheltered settlers under constant threat from Native nations who had their own reasons to resist the spread of American power westward. Teaching the frontier means teaching students that the Revolution was a continental event, not just a coastal one.
             </p>
           </div>
@@ -137,7 +137,7 @@ export default async function FrontierTeachPage() {
                 <p className="font-ui text-[10px] uppercase tracking-[0.18em] text-[#4A6A9B] mb-1">{seq.towns.join(" → ")}</p>
                 <p className="font-ui text-[10px] uppercase tracking-[0.14em] text-[#f2e6c8]/25 mb-3">{seq.duration}</p>
                 <h3 className="font-display text-[#f2e6c8] leading-tight mb-4" style={{ fontSize: "clamp(20px,2.5vw,28px)" }}>{seq.title}</h3>
-                <p className="font-ui text-[15px] text-[#f2e6c8]/55 leading-relaxed">{seq.description}</p>
+                <p className="font-ui text-[19px] text-[#f2e6c8]/55 leading-relaxed">{seq.description}</p>
               </div>
             ))}
           </div>
@@ -149,7 +149,7 @@ export default async function FrontierTeachPage() {
         <div className="max-w-[1200px] mx-auto">
           <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-[#cc3322] flex items-center gap-2.5 mb-4"><span className="w-4 h-[2px] bg-[#cc3322] block" />Town Resources</p>
           <h2 className="font-display text-[#14100a] leading-[0.92] mb-2" style={{ fontSize: "clamp(32px,4vw,52px)" }}>Print-Ready Packets</h2>
-          <p className="font-ui text-[15px] text-[#14100a]/50 mb-10">Complete teacher packets formatted for classroom printing — lesson plans, source packets, handouts, and quizzes.</p>
+          <p className="font-ui text-[19px] text-[#14100a]/50 mb-10">Complete teacher packets formatted for classroom printing — lesson plans, source packets, handouts, and quizzes.</p>
           <div className="border-t-[3px] border-[#14100a]">
             {modules.map((m, i) => (
               <div key={m.slug} className="flex items-center justify-between py-6 border-b border-[#14100a]/10 gap-8 group">

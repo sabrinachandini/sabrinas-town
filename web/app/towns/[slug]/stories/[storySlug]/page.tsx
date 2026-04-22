@@ -77,7 +77,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
         </div>
 
         {story.narratorName && (
-          <p className="font-editorial italic text-[16px] text-ink mt-4">
+          <p className="font-editorial italic text-[20px] text-ink mt-4">
             Narrated by {story.narratorName}
             {story.narratorRole ? ` \u2014 ${story.narratorRole}` : ""}
           </p>

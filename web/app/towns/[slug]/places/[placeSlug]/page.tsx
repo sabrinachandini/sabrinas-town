@@ -104,7 +104,7 @@ export default async function PlaceDetailPage({ params }: PageProps) {
                 <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-ink/40 mb-0.5">
                   Address
                 </p>
-                <p className="font-editorial text-[16px] text-ink">
+                <p className="font-editorial text-[20px] text-ink">
                   {place.address}
                 </p>
               </div>
@@ -114,7 +114,7 @@ export default async function PlaceDetailPage({ params }: PageProps) {
                 <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-ink/40 mb-0.5">
                   Hours
                 </p>
-                <p className="font-editorial text-[16px] text-ink">
+                <p className="font-editorial text-[20px] text-ink">
                   {place.hours}
                 </p>
               </div>
@@ -124,7 +124,7 @@ export default async function PlaceDetailPage({ params }: PageProps) {
                 <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-ink/40 mb-0.5">
                   Admission
                 </p>
-                <p className="font-editorial text-[16px] text-ink">
+                <p className="font-editorial text-[20px] text-ink">
                   {place.admission}
                 </p>
               </div>
@@ -134,7 +134,7 @@ export default async function PlaceDetailPage({ params }: PageProps) {
                 <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-ink/40 mb-0.5">
                   Accessibility
                 </p>
-                <p className="font-editorial text-[16px] text-ink">
+                <p className="font-editorial text-[20px] text-ink">
                   {place.accessibilityNotes}
                 </p>
               </div>

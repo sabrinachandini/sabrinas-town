@@ -49,7 +49,7 @@ export default async function ChangelogPage({ searchParams }: PageProps) {
             Changelog
           </h1>
           <div className="w-12 h-[3px] bg-[#cc3322] my-6" />
-          <p className="font-editorial italic font-light text-[17px] leading-[1.65] text-[rgba(242,230,200,0.65)] max-w-[500px]">
+          <p className="font-editorial italic font-light text-[21px] leading-[1.65] text-[rgba(242,230,200,0.65)] max-w-[500px]">
             Every update to a town profile, score adjustment, or source addition is logged here. If something changed, you can see when and why.
           </p>
           {townFilter && (
@@ -86,7 +86,7 @@ export default async function ChangelogPage({ searchParams }: PageProps) {
                           </span>
                         )}
                       </div>
-                      <p className="font-editorial text-[17px] text-[#14100a] leading-snug">
+                      <p className="font-editorial text-[21px] text-[#14100a] leading-snug">
                         {entry.town && (
                           <>
                             <NextLink href={`/towns/${entry.town.slug}`} className="no-underline text-[#1a3a72] hover:text-[#cc3322] transition-colors">

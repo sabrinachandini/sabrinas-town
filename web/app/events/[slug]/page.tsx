@@ -175,7 +175,7 @@ export default async function EventPage({ params }: PageProps) {
                         </div>
                       )}
                       <div>
-                        <p className="font-display text-[16px] text-ink group-hover:text-cream transition-colors leading-tight">{person.name}</p>
+                        <p className="font-display text-[20px] text-ink group-hover:text-cream transition-colors leading-tight">{person.name}</p>
                         {person.roleInEvent && (
                           <p className="font-ui text-[10px] uppercase tracking-[0.1em] text-crimson group-hover:text-[#4A6A9B] transition-colors mt-0.5">{person.roleInEvent}</p>
                         )}
@@ -197,13 +197,13 @@ export default async function EventPage({ params }: PageProps) {
                 {dateLabel && (
                   <div>
                     <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Date</dt>
-                    <dd className="font-editorial text-[15px] text-cream mt-0.5">{dateLabel}</dd>
+                    <dd className="font-editorial text-[19px] text-cream mt-0.5">{dateLabel}</dd>
                   </div>
                 )}
                 <div>
                   <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Location</dt>
                   <dd className="mt-0.5">
-                    <NextLink href={`/towns/${event.town.slug}`} className="no-underline font-editorial text-[15px] text-[#4A6A9B] hover:text-cream transition-colors">
+                    <NextLink href={`/towns/${event.town.slug}`} className="no-underline font-editorial text-[19px] text-[#4A6A9B] hover:text-cream transition-colors">
                       {event.town.name}, {event.town.state}
                     </NextLink>
                   </dd>
@@ -222,7 +222,7 @@ export default async function EventPage({ params }: PageProps) {
                 {event.people.length > 0 && (
                   <div>
                     <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">People</dt>
-                    <dd className="font-editorial text-[15px] text-cream mt-0.5">{event.people.length} figures</dd>
+                    <dd className="font-editorial text-[19px] text-cream mt-0.5">{event.people.length} figures</dd>
                   </div>
                 )}
               </dl>
@@ -263,7 +263,7 @@ export default async function EventPage({ params }: PageProps) {
                   { label: "People", href: "/people" },
                 ].map((link) => (
                   <li key={link.label}>
-                    <NextLink href={link.href} className="no-underline flex items-center gap-2 py-2.5 border-b border-ink/8 font-ui text-[15px] text-ink hover:text-crimson transition-colors">
+                    <NextLink href={link.href} className="no-underline flex items-center gap-2 py-2.5 border-b border-ink/8 font-ui text-[19px] text-ink hover:text-crimson transition-colors">
                       <span className="w-1.5 h-1.5 rounded-full bg-crimson flex-shrink-0" />
                       {link.label}
                     </NextLink>

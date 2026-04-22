@@ -91,7 +91,7 @@ export default function MethodologyPage() {
                   </p>
                 </div>
                 {body.map((para, i) => (
-                  <p key={i} className="font-editorial text-[17px] leading-[1.75] text-[#14100a] mb-4 last:mb-0">
+                  <p key={i} className="font-editorial text-[21px] leading-[1.75] text-[#14100a] mb-4 last:mb-0">
                     {para}
                   </p>
                 ))}
@@ -105,7 +105,7 @@ export default function MethodologyPage() {
                   Source Credibility Tiers
                 </p>
               </div>
-              <p className="font-editorial text-[17px] leading-[1.75] text-[#14100a] mb-6">
+              <p className="font-editorial text-[21px] leading-[1.75] text-[#14100a] mb-6">
                 Every source cited in a town profile is assigned a credibility tier. This does not mean lower-tier sources are unreliable — it means we want readers to understand the evidentiary basis for what they're reading.
               </p>
               <div className="space-y-0">
@@ -119,8 +119,8 @@ export default function MethodologyPage() {
                       <span className="font-display text-[22px] text-[#cc3322] leading-none">{tier.replace("Tier ", "T")}</span>
                     </div>
                     <div>
-                      <p className="font-editorial font-black text-[16px] text-[#14100a] leading-snug">{name}</p>
-                      <p className="font-ui text-[15px] text-[rgba(20,16,10,0.6)] leading-relaxed mt-1">{desc}</p>
+                      <p className="font-editorial font-black text-[20px] text-[#14100a] leading-snug">{name}</p>
+                      <p className="font-ui text-[19px] text-[rgba(20,16,10,0.6)] leading-relaxed mt-1">{desc}</p>
                     </div>
                   </div>
                 ))}
@@ -150,7 +150,7 @@ export default function MethodologyPage() {
                   { label: "Updates", id: "updates" },
                 ].map((item) => (
                   <li key={item.id}>
-                    <a href={`#${item.id}`} className="no-underline flex items-center gap-2 py-2.5 border-b border-[rgba(20,16,10,0.08)] font-ui text-[15px] text-[#14100a] hover:text-[#cc3322] transition-colors">
+                    <a href={`#${item.id}`} className="no-underline flex items-center gap-2 py-2.5 border-b border-[rgba(20,16,10,0.08)] font-ui text-[19px] text-[#14100a] hover:text-[#cc3322] transition-colors">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#cc3322] flex-shrink-0" />
                       {item.label}
                     </a>
@@ -159,13 +159,13 @@ export default function MethodologyPage() {
               </ul>
             </div>
             <div className="border-l-[4px] border-[#cc3322] pl-4">
-              <p className="font-editorial italic text-[16px] text-[rgba(20,16,10,0.6)] leading-relaxed">
+              <p className="font-editorial italic text-[20px] text-[rgba(20,16,10,0.6)] leading-relaxed">
                 &ldquo;History is not a finished product, and neither is this project.&rdquo;
               </p>
             </div>
             <NextLink href="/changelog" className="no-underline block border-[3px] border-[#14100a] p-4 hover:bg-[#1a3a72] hover:border-[#1a3a72] group transition-colors">
               <p className="font-ui text-[11px] uppercase tracking-[0.12em] text-[rgba(20,16,10,0.4)] group-hover:text-[rgba(242,230,200,0.5)] mb-1">See also</p>
-              <p className="font-editorial text-[16px] text-[#14100a] group-hover:text-[#f2e6c8] transition-colors">Changelog →</p>
+              <p className="font-editorial text-[20px] text-[#14100a] group-hover:text-[#f2e6c8] transition-colors">Changelog →</p>
             </NextLink>
           </aside>
         </div>

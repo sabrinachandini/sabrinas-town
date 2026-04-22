@@ -73,7 +73,7 @@ export default async function HomePage() {
           </svg>
 
           {/* Pull quote */}
-          <p className="font-editorial italic font-light text-[17px] sm:text-[22px] leading-[1.4] text-[#4a3c1a] max-w-[340px] mt-8">
+          <p className="font-editorial italic font-light text-[21px] sm:text-[22px] leading-[1.4] text-[#4a3c1a] max-w-[340px] mt-8">
             Seventy-seven towns. The places where ordinary people made history.
           </p>
 
@@ -81,7 +81,7 @@ export default async function HomePage() {
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 mt-9">
             <NextLink
               href="/towns"
-              className="font-editorial font-bold text-[16px] tracking-[0.04em] text-[#f2e6c8] bg-[#cc3322] px-7 py-3.5 no-underline inline-block border-[3px] border-[#14100a] shadow-[4px_4px_0_#14100a] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#14100a] transition-all duration-100 text-center"
+              className="font-editorial font-bold text-[20px] tracking-[0.04em] text-[#f2e6c8] bg-[#cc3322] px-7 py-3.5 no-underline inline-block border-[3px] border-[#14100a] shadow-[4px_4px_0_#14100a] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#14100a] transition-all duration-100 text-center"
             >
               Explore the Towns
             </NextLink>
@@ -102,7 +102,7 @@ export default async function HomePage() {
             N ↑
           </div>
           <div className="sm:hidden absolute bottom-3 left-4 z-[4]">
-            <p className="font-editorial font-black text-[#f2e6c8] text-[15px] leading-tight">75 / Towns. One Revolution.</p>
+            <p className="font-editorial font-black text-[#f2e6c8] text-[19px] leading-tight">75 / Towns. One Revolution.</p>
           </div>
 
           {/* Badge 1 */}
@@ -169,7 +169,7 @@ export default async function HomePage() {
               75 Towns.<br />One Revolution.
             </p>
             <div className="w-12 h-[3px] bg-[#cc3322] my-5" />
-            <p className="font-editorial italic font-light text-[16px] leading-[1.65] text-[rgba(242,230,200,0.58)] max-w-[280px]">
+            <p className="font-editorial italic font-light text-[20px] leading-[1.65] text-[rgba(242,230,200,0.58)] max-w-[280px]">
               Every town has a story. Most of them have never been told.
             </p>
           </div>
@@ -260,7 +260,7 @@ export default async function HomePage() {
                       {event.town.name}, {event.town.state}
                     </p>
                     {event.summary && (
-                      <p className="font-ui text-[12px] sm:text-[15px] text-[#f2e6c8]/40 leading-relaxed mt-1.5 line-clamp-2">
+                      <p className="font-ui text-[12px] sm:text-[19px] text-[#f2e6c8]/40 leading-relaxed mt-1.5 line-clamp-2">
                         {event.summary}
                       </p>
                     )}
@@ -424,7 +424,7 @@ export default async function HomePage() {
             <p className="font-editorial font-black text-[#cc3322] text-[48px] sm:text-[72px] leading-none tracking-[-0.04em] mt-4">
               Apr 19
             </p>
-            <p className="font-editorial italic font-light text-[15px] sm:text-[18px] leading-[1.6] text-[rgba(242,230,200,0.7)] max-w-[340px] mt-6">
+            <p className="font-editorial italic font-light text-[19px] sm:text-[18px] leading-[1.6] text-[rgba(242,230,200,0.7)] max-w-[340px] mt-6">
               The shot heard round the world. But who fired it? Seventy-seven militia stood on a triangular green at dawn. What they knew — and feared — is more complicated than the myth.
             </p>
             <NextLink
@@ -541,7 +541,7 @@ export default async function HomePage() {
             <h3 className="font-editorial font-black text-[20px] sm:text-[24px] leading-[1.05] tracking-[-0.02em] mb-4 text-[#14100a]">
               The Surgeon Who Rode Before Revere
             </h3>
-            <p className="font-ui text-[16px] font-light leading-[1.7] text-[rgba(20,16,10,0.6)]">
+            <p className="font-ui text-[20px] font-light leading-[1.7] text-[rgba(20,16,10,0.6)]">
               Samuel Prescott was the only rider who actually made it to Concord. Revere was captured. Dawes turned back. Prescott jumped a stone wall.
             </p>
             <NextLink
@@ -563,7 +563,7 @@ export default async function HomePage() {
             <h3 className="font-editorial font-black text-[20px] sm:text-[24px] leading-[1.05] tracking-[-0.02em] mb-4 text-[#f2e6c8]">
               The Tavern That Was Really a War Room
             </h3>
-            <p className="font-ui text-[16px] font-light leading-[1.7] text-[rgba(242,230,200,0.6)]">
+            <p className="font-ui text-[20px] font-light leading-[1.7] text-[rgba(242,230,200,0.6)]">
               Every town had one. The public room where men drank cider and planned treason. Buckman Tavern had both — sometimes on the same night.
             </p>
             <NextLink
@@ -585,7 +585,7 @@ export default async function HomePage() {
             <h3 className="font-editorial font-black text-[20px] sm:text-[24px] leading-[1.05] tracking-[-0.02em] mb-4 text-[#f2e6c8]">
               The Women Who Kept the Powder Dry
             </h3>
-            <p className="font-ui text-[16px] font-light leading-[1.7] text-[rgba(242,230,200,0.65)]">
+            <p className="font-ui text-[20px] font-light leading-[1.7] text-[rgba(242,230,200,0.65)]">
               When the men marched out, someone stayed behind. Hid the flax. Buried the pewter. Fed the scouts who came through at midnight. These are their names.
             </p>
             <NextLink
@@ -638,7 +638,7 @@ export default async function HomePage() {
         {/* Button — full width on mobile */}
         <NextLink
           href="/towns"
-          className="font-editorial font-bold text-[16px] sm:text-[16px] text-[#f2e6c8] bg-[#1a3a72] px-8 sm:px-10 py-4 sm:py-5 no-underline block sm:inline-block text-center border-[3px] border-[#14100a] shadow-[6px_6px_0_#cc3322] hover:-translate-x-[3px] hover:-translate-y-[3px] hover:shadow-[9px_9px_0_#cc3322] transition-all duration-100 whitespace-nowrap relative z-[2] flex-shrink-0"
+          className="font-editorial font-bold text-[20px] sm:text-[20px] text-[#f2e6c8] bg-[#1a3a72] px-8 sm:px-10 py-4 sm:py-5 no-underline block sm:inline-block text-center border-[3px] border-[#14100a] shadow-[6px_6px_0_#cc3322] hover:-translate-x-[3px] hover:-translate-y-[3px] hover:shadow-[9px_9px_0_#cc3322] transition-all duration-100 whitespace-nowrap relative z-[2] flex-shrink-0"
         >
           Explore All Towns →
         </NextLink>

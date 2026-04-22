@@ -124,7 +124,7 @@ export default async function PlacePage({ params }: PageProps) {
                 <div className="bg-[#1a3a72]/5 border-l-4 border-[#1a3a72] p-6">
                   <div className="space-y-4">
                     {place.historicalNote.split("\n\n").map((para, i) => (
-                      <p key={i} className="font-editorial text-[17px] text-ink leading-[1.75]">{para}</p>
+                      <p key={i} className="font-editorial text-[21px] text-ink leading-[1.75]">{para}</p>
                     ))}
                   </div>
                 </div>
@@ -175,7 +175,7 @@ export default async function PlacePage({ params }: PageProps) {
                       <div className="flex-shrink-0 w-14 text-right">
                         {ev.startDate ? (
                           <div className="bg-ink text-cream inline-block px-2 py-1 text-center">
-                            <p className="font-display text-[16px] leading-none text-cream">{new Date(ev.startDate).getFullYear()}</p>
+                            <p className="font-display text-[20px] leading-none text-cream">{new Date(ev.startDate).getFullYear()}</p>
                           </div>
                         ) : (
                           <div className="bg-ink/10 inline-block px-2 py-2">
@@ -213,26 +213,26 @@ export default async function PlacePage({ params }: PageProps) {
                   {place.address && (
                     <div>
                       <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Address</dt>
-                      <dd className="font-editorial text-[16px] text-cream mt-0.5 leading-snug">{place.address}</dd>
+                      <dd className="font-editorial text-[20px] text-cream mt-0.5 leading-snug">{place.address}</dd>
                     </div>
                   )}
                   {place.hours && (
                     <div>
                       <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Hours</dt>
-                      <dd className="font-editorial text-[16px] text-cream mt-0.5">{place.hours}</dd>
+                      <dd className="font-editorial text-[20px] text-cream mt-0.5">{place.hours}</dd>
                     </div>
                   )}
                   {place.admission && (
                     <div>
                       <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Admission</dt>
-                      <dd className="font-editorial text-[16px] text-cream mt-0.5">{place.admission}</dd>
+                      <dd className="font-editorial text-[20px] text-cream mt-0.5">{place.admission}</dd>
                     </div>
                   )}
                   {place.phone && (
                     <div>
                       <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Phone</dt>
                       <dd className="mt-0.5">
-                        <a href={`tel:${place.phone}`} className="no-underline font-editorial text-[16px] text-[#4A6A9B] hover:text-cream transition-colors">{place.phone}</a>
+                        <a href={`tel:${place.phone}`} className="no-underline font-editorial text-[20px] text-[#4A6A9B] hover:text-cream transition-colors">{place.phone}</a>
                       </dd>
                     </div>
                   )}
@@ -291,7 +291,7 @@ export default async function PlacePage({ params }: PageProps) {
                   { label: "Events", href: "/events" },
                 ].map((link) => (
                   <li key={link.label}>
-                    <NextLink href={link.href} className="no-underline flex items-center gap-2 py-2.5 border-b border-ink/8 font-ui text-[15px] text-ink hover:text-crimson transition-colors">
+                    <NextLink href={link.href} className="no-underline flex items-center gap-2 py-2.5 border-b border-ink/8 font-ui text-[19px] text-ink hover:text-crimson transition-colors">
                       <span className="w-1.5 h-1.5 rounded-full bg-crimson flex-shrink-0" />
                       {link.label}
                     </NextLink>

@@ -251,7 +251,7 @@ export default async function EventDetailPage({ params }: PageProps) {
                       </div>
                     )}
                     <div className="min-w-0">
-                      <p className="font-display text-[16px] text-[#14100a] group-hover:text-[#cc3322] transition-colors leading-tight">
+                      <p className="font-display text-[20px] text-[#14100a] group-hover:text-[#cc3322] transition-colors leading-tight">
                         {person.name}
                       </p>
                       {person.roleInEvent && (

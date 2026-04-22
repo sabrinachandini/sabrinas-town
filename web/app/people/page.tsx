@@ -211,7 +211,7 @@ export default async function PeoplePage() {
 
                     {/* Text column */}
                     <div className="flex-1 min-w-0 p-4">
-                      <p className="font-display text-[17px] text-[#14100a] group-hover:text-[#f2e6c8] transition-colors leading-tight">
+                      <p className="font-display text-[21px] text-[#14100a] group-hover:text-[#f2e6c8] transition-colors leading-tight">
                         {person.name}
                       </p>
                       {(person.birthYear || person.deathYear) && (

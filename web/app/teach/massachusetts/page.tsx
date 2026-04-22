@@ -224,7 +224,7 @@ export default async function MassachusettsTeachPage() {
               and Concord are the famous names, but the bloodiest fighting on April&nbsp;19 happened in
               Arlington. The siege of Boston was commanded from Cambridge.
             </p>
-            <p className="font-ui text-[16px] text-[#14100a]/60 leading-relaxed">
+            <p className="font-ui text-[20px] text-[#14100a]/60 leading-relaxed">
               Salem and Marblehead built the maritime infrastructure that made resistance viable.
               Worcester shut down royal courts months before any shots were fired. Springfield armed
               the Continental Army. Plymouth had to reconcile its Pilgrim identity with a Revolutionary
@@ -264,7 +264,7 @@ export default async function MassachusettsTeachPage() {
                 >
                   {seq.title}
                 </h3>
-                <p className="font-ui text-[15px] text-[#f2e6c8]/55 leading-relaxed">
+                <p className="font-ui text-[19px] text-[#f2e6c8]/55 leading-relaxed">
                   {seq.description}
                 </p>
               </div>
@@ -286,7 +286,7 @@ export default async function MassachusettsTeachPage() {
           >
             Print-Ready Packets
           </h2>
-          <p className="font-ui text-[15px] text-[#14100a]/50 mb-10">
+          <p className="font-ui text-[19px] text-[#14100a]/50 mb-10">
             Complete teacher packets formatted for classroom printing — lesson plans, source packets, handouts, and quizzes.
           </p>
 

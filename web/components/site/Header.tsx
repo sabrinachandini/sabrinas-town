@@ -63,10 +63,10 @@ export function Header() {
         }`}
       >
         {/* Row 1: logo LEFT + back link + mobile hamburger */}
-        <div className="h-20 mx-auto max-w-[1200px] pr-6 md:pr-10 flex items-center justify-between">
+        <div className="h-24 mx-auto max-w-[1200px] pr-6 md:pr-10 flex items-center justify-between">
           {/* Star logo — top left, always big */}
           <Link href="/" className="no-underline flex-shrink-0" aria-label="History is for Everyone — home">
-            <img src="/logo-star.svg" alt="History is for Everyone" className="h-[60px] w-auto" />
+            <img src="/logo-star.svg" alt="History is for Everyone" className="h-[80px] w-auto" />
           </Link>
           {/* Right: back to towns (desktop) + mobile hamburger */}
           <div className="flex items-center gap-3">

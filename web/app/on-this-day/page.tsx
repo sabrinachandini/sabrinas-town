@@ -38,7 +38,7 @@ export default async function OnThisDayPage() {
             {monthName} {dayNum}
           </h1>
           <div className="w-12 h-[3px] bg-[#cc3322] my-5" />
-          <p className="font-editorial italic font-light text-[17px] text-cream/60 max-w-[520px] leading-[1.65]">
+          <p className="font-editorial italic font-light text-[21px] text-cream/60 max-w-[520px] leading-[1.65]">
             {events.length > 0
               ? `${events.length} documented event${events.length !== 1 ? "s" : ""} in the Revolutionary War happened on this date.`
               : "No documented events fall on this exact date — but the war never stopped."}
@@ -51,7 +51,7 @@ export default async function OnThisDayPage() {
           <div className="py-12 text-center">
             <p className="font-display text-[80px] text-ink/5 leading-none mb-4">—</p>
             <p className="font-editorial text-[22px] text-ink/40 mb-3">Nothing recorded on {monthName} {dayNum}</p>
-            <p className="font-ui text-[15px] text-ink/30 max-w-[480px] mx-auto leading-relaxed">
+            <p className="font-ui text-[19px] text-ink/30 max-w-[480px] mx-auto leading-relaxed">
               The Revolutionary War produced thousands of documented events between 1763 and 1783.
               Not every date has a recorded battle or decision — but the work of building a nation
               continued regardless.
@@ -95,7 +95,7 @@ export default async function OnThisDayPage() {
                       {event.town.name}, {event.town.state}
                     </p>
                     {event.summary && (
-                      <p className="font-ui text-[15px] text-ink/55 leading-relaxed line-clamp-3">
+                      <p className="font-ui text-[19px] text-ink/55 leading-relaxed line-clamp-3">
                         {event.summary}
                       </p>
                     )}

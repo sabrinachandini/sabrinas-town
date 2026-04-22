@@ -111,7 +111,7 @@ export default async function DelawareTeachPage() {
             <p className="font-editorial italic font-light text-[18px] text-[#14100a]/70 leading-[1.75]">
               The vote for independence on July 2, 1776 was nearly lost when Delaware's delegation was deadlocked — until Caesar Rodney rode eighty miles through the night to break the tie. It is one of the Revolution's most dramatic individual acts.
             </p>
-            <p className="font-ui text-[16px] text-[#14100a]/60 leading-relaxed">
+            <p className="font-ui text-[20px] text-[#14100a]/60 leading-relaxed">
               Dover, the state capital, and Wilmington, its largest city, represent the small colony's outsized contribution to the founding. Delaware's story teaches students that the margin between independence and continued colonial rule was razor-thin, and that individual decisions at critical moments can shape the outcome of history. The state's "Blue Hen" regiment became one of the Continental Army's most celebrated units — a point of pride for a colony too small to be overlooked.
             </p>
           </div>
@@ -129,7 +129,7 @@ export default async function DelawareTeachPage() {
                 <p className="font-ui text-[10px] uppercase tracking-[0.18em] text-[#4A6A9B] mb-1">{seq.towns.join(" → ")}</p>
                 <p className="font-ui text-[10px] uppercase tracking-[0.14em] text-[#f2e6c8]/25 mb-3">{seq.duration}</p>
                 <h3 className="font-display text-[#f2e6c8] leading-tight mb-4" style={{ fontSize: "clamp(20px,2.5vw,28px)" }}>{seq.title}</h3>
-                <p className="font-ui text-[15px] text-[#f2e6c8]/55 leading-relaxed">{seq.description}</p>
+                <p className="font-ui text-[19px] text-[#f2e6c8]/55 leading-relaxed">{seq.description}</p>
               </div>
             ))}
           </div>
@@ -141,7 +141,7 @@ export default async function DelawareTeachPage() {
         <div className="max-w-[1200px] mx-auto">
           <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-[#cc3322] flex items-center gap-2.5 mb-4"><span className="w-4 h-[2px] bg-[#cc3322] block" />Town Resources</p>
           <h2 className="font-display text-[#14100a] leading-[0.92] mb-2" style={{ fontSize: "clamp(32px,4vw,52px)" }}>Print-Ready Packets</h2>
-          <p className="font-ui text-[15px] text-[#14100a]/50 mb-10">Complete teacher packets formatted for classroom printing — lesson plans, source packets, handouts, and quizzes.</p>
+          <p className="font-ui text-[19px] text-[#14100a]/50 mb-10">Complete teacher packets formatted for classroom printing — lesson plans, source packets, handouts, and quizzes.</p>
           <div className="border-t-[3px] border-[#14100a]">
             {modules.map((m, i) => (
               <div key={m.slug} className="flex items-center justify-between py-6 border-b border-[#14100a]/10 gap-8 group">

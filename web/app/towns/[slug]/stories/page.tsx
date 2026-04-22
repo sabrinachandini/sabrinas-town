@@ -1,6 +1,6 @@
 import { getTown, getRankings } from "@/lib/api";
 import { notFound } from "next/navigation";
-import NextLink from "next/link";
+import StoriesFilter from "./StoriesFilter";
 
 export const revalidate = 3600;
 
@@ -36,8 +36,6 @@ export default async function StoriesPage({ params }: PageProps) {
   if (!town) notFound();
 
   const stories = town.stories ?? [];
-  const historical = stories.filter((s) => s.storyType === "HISTORICAL_VOICE");
-  const modern = stories.filter((s) => s.storyType === "MODERN_VOICE");
 
   return (
     <div className="bg-cream min-h-screen">
@@ -53,7 +51,7 @@ export default async function StoriesPage({ params }: PageProps) {
           <h1 className="font-display text-cream text-[clamp(36px,6vw,72px)] leading-none tracking-[-0.02em]">
             Stories
           </h1>
-          <p className="font-editorial italic font-light text-cream/60 text-[17px] mt-4 max-w-[520px] leading-relaxed">
+          <p className="font-editorial italic font-light text-cream/60 text-[21px] mt-4 max-w-[520px] leading-relaxed">
             {stories.length > 0
               ? `${stories.length} first-person account${stories.length !== 1 ? "s" : ""} from the Revolutionary era.`
               : `Historical voices from ${town.name} are being collected.`}
@@ -69,63 +67,7 @@ export default async function StoriesPage({ params }: PageProps) {
             <p className="font-editorial italic text-[18px] text-ink/40">Research is ongoing. Stories will appear here as they are collected and verified.</p>
           </div>
         ) : (
-          <div className="space-y-16">
-            {[
-              { label: "Historical Voices", group: historical },
-              { label: "Modern Voices", group: modern },
-            ].filter(({ group }) => group.length > 0).map(({ label, group }) => (
-              <section key={label}>
-                <div className="border-t-[3px] border-ink pt-6 mb-8">
-                  <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
-                    {label}
-                  </p>
-                </div>
-                <div className="space-y-0">
-                  {group.map((story) => {
-                    const href = `/towns/${slug}/stories/${story.slug ?? story.id}`;
-                    const narrator = story.narratorName ?? story.subjectPersonName;
-                    return (
-                      <NextLink
-                        key={story.id}
-                        href={href}
-                        className="no-underline group flex items-start gap-6 py-7 border-b border-ink/10 last:border-b-0 hover:pl-2 transition-all duration-150"
-                      >
-                        {/* Accent bar */}
-                        <div className="flex-shrink-0 w-[3px] self-stretch bg-crimson/20 group-hover:bg-crimson transition-colors mt-1" />
-
-                        <div className="flex-1 min-w-0">
-                          {narrator && (
-                            <p className="font-ui text-[11px] uppercase tracking-[0.18em] text-crimson/70 mb-1.5">
-                              {narrator}
-                            </p>
-                          )}
-                          <p className="font-editorial text-[clamp(20px,2.5vw,26px)] text-ink group-hover:text-crimson transition-colors leading-tight">
-                            {story.title}
-                          </p>
-                          {story.excerpt && (
-                            <p className="font-ui text-[14px] text-ink/50 leading-relaxed mt-2 line-clamp-2">
-                              {story.excerpt}
-                            </p>
-                          )}
-                          {story.tags.length > 0 && (
-                            <div className="flex flex-wrap gap-1.5 mt-3">
-                              {story.tags.slice(0, 4).map((tag) => (
-                                <span key={tag} className="font-ui text-[10px] uppercase tracking-[0.1em] text-ink/30 border border-ink/15 px-1.5 py-0.5">
-                                  {tag}
-                                </span>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-
-                        <span className="font-display text-crimson/40 group-hover:text-crimson transition-colors text-[20px] flex-shrink-0 mt-1.5">→</span>
-                      </NextLink>
-                    );
-                  })}
-                </div>
-              </section>
-            ))}
-          </div>
+          <StoriesFilter stories={stories} slug={slug} />
         )}
       </div>
     </div>

@@ -96,7 +96,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
       {/* ── Significance strip ───────────────────────────────────── */}
       <div className="bg-[#1a3a72] border-b border-[#f2e6c8]/8 px-4 sm:px-8 md:px-16 py-2.5 sm:py-3">
         <div className="mx-auto max-w-[1200px] flex flex-wrap items-center gap-x-8 gap-y-1">
-          <span className="font-ui text-[10px] uppercase tracking-[0.22em] text-[#4A6A9B]">
+          <span className="font-ui text-[10px] uppercase tracking-[0.22em] text-cream/50">
             {town.scoreTier}
           </span>
           <div className="flex items-center gap-1.5">
@@ -164,7 +164,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
                             className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                           />
                         ) : (
-                          <div className="w-full h-full flex items-center justify-center font-display text-[16px] text-ink/30">
+                          <div className="w-full h-full flex items-center justify-center font-display text-[20px] text-ink/30">
                             {person.name.charAt(0)}
                           </div>
                         )}
@@ -292,7 +292,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
                       <p className="font-editorial text-[18px] sm:text-[22px] text-ink group-hover:text-cream transition-colors leading-tight">
                         {story.title}
                       </p>
-                      <p className="font-ui text-[15px] text-ink/60 group-hover:text-cream/60 leading-relaxed mt-2">
+                      <p className="font-ui text-[19px] text-ink/60 group-hover:text-cream/60 leading-relaxed mt-2">
                         {story.excerpt}
                       </p>
                     </NextLink>
@@ -325,7 +325,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
                   <li key={link.label}>
                     <NextLink
                       href={link.href}
-                      className="no-underline flex items-center gap-2 py-2.5 border-b border-ink/8 font-ui text-[15px] text-ink hover:text-crimson transition-colors"
+                      className="no-underline flex items-center gap-2 py-2.5 border-b border-ink/8 font-ui text-[19px] text-ink hover:text-crimson transition-colors"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-crimson flex-shrink-0" />
                       {link.label}
@@ -346,7 +346,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
                     <li key={linked.townId}>
                       <NextLink
                         href={`/towns/${linked.townSlug}`}
-                        className="no-underline flex items-center gap-2 py-2.5 border-b border-ink/8 font-ui text-[15px] text-ink hover:text-crimson transition-colors"
+                        className="no-underline flex items-center gap-2 py-2.5 border-b border-ink/8 font-ui text-[19px] text-ink hover:text-crimson transition-colors"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-crimson flex-shrink-0" />
                         {linked.townName}
@@ -360,7 +360,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
             {/* Pull quote */}
             {town.execSummary150 && (
               <blockquote className="border-l-[4px] border-crimson pl-4 mt-8">
-                <p className="font-editorial italic text-[15px] sm:text-[15px] text-ink leading-relaxed">
+                <p className="font-editorial italic text-[19px] sm:text-[19px] text-ink leading-relaxed">
                   &ldquo;{town.execSummary150.slice(0, 120)}{town.execSummary150.length > 120 ? "\u2026" : ""}&rdquo;
                 </p>
               </blockquote>
@@ -443,7 +443,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
                         <p className="font-ui text-[11px] uppercase tracking-[0.12em] text-crimson mb-1">
                           {evt.category}
                         </p>
-                        <p className="font-editorial text-cream text-[17px] leading-snug group-hover:text-yellow transition-colors line-clamp-2">
+                        <p className="font-editorial text-cream text-[21px] leading-snug group-hover:text-yellow transition-colors line-clamp-2">
                           {evt.name}
                         </p>
                         {evt.venue && (

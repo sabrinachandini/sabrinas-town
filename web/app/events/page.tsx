@@ -280,7 +280,7 @@ export default async function EventsPage() {
                           {/* Content */}
                           <div className="flex-1 min-w-0 px-5 py-5">
                             <div className="flex items-start gap-3 flex-wrap">
-                              <p className={`font-editorial text-[17px] leading-snug flex-1 min-w-0 ${isKey ? "text-[#14100a]" : "text-[#14100a]/80"} group-hover:text-[#cc3322] transition-colors`}>
+                              <p className={`font-editorial text-[21px] leading-snug flex-1 min-w-0 ${isKey ? "text-[#14100a]" : "text-[#14100a]/80"} group-hover:text-[#cc3322] transition-colors`}>
                                 {ev.name}
                               </p>
                               {isKey && (

@@ -91,7 +91,7 @@ export default function PartnerPage() {
             <path d="M0 8 Q21 2 42 8 Q63 14 85 7 Q106 1 127 7 Q148 13 170 7 Q191 2 212 7 Q233 13 255 7 Q276 2 297 7 Q318 13 340 6" stroke="rgba(255,255,255,0.35)" strokeWidth="2.5" fill="none" strokeLinecap="round" />
           </svg>
 
-          <p className="font-editorial italic font-light text-[16px] sm:text-[20px] text-[rgba(255,255,255,0.76)] max-w-[500px] mt-8 leading-[1.55]">
+          <p className="font-editorial italic font-light text-[20px] sm:text-[20px] text-[rgba(255,255,255,0.76)] max-w-[500px] mt-8 leading-[1.55]">
             Every town already has a public profile. Partnership is for communities that want to shape how their story is told, reach teachers and travelers, and understand who is engaging with their history.
           </p>
 
@@ -123,7 +123,7 @@ export default function PartnerPage() {
               <div key={prop.title} className="bg-white/[0.05] p-7">
                 <div className="font-display text-[20px] text-[#4A6A9B] mb-3">→</div>
                 <div className="font-display text-[18px] text-white tracking-[0.02em] mb-2.5">{prop.title}</div>
-                <div className="font-editorial italic font-light text-[15px] text-[rgba(255,255,255,0.58)] leading-[1.55]">
+                <div className="font-editorial italic font-light text-[19px] text-[rgba(255,255,255,0.58)] leading-[1.55]">
                   {prop.body}
                 </div>
               </div>
@@ -158,8 +158,8 @@ export default function PartnerPage() {
           <div>
             {FREE_FEATURES.map((feature) => (
               <div key={feature} className="flex items-baseline gap-3 py-3.5 border-b border-[rgba(20,16,10,0.08)]">
-                <span className="text-[#cc3322] font-ui font-black text-[15px] flex-shrink-0">✓</span>
-                <span className="font-editorial italic font-light text-[17px] text-[rgba(20,16,10,0.72)]">
+                <span className="text-[#cc3322] font-ui font-black text-[19px] flex-shrink-0">✓</span>
+                <span className="font-editorial italic font-light text-[21px] text-[rgba(20,16,10,0.72)]">
                   {feature}
                 </span>
               </div>
@@ -184,19 +184,19 @@ export default function PartnerPage() {
             What partners receive
           </h2>
 
-          <p className="font-editorial italic font-light text-[17px] text-[rgba(255,255,255,0.42)] mt-5 mb-10 max-w-[520px] leading-[1.65]">
+          <p className="font-editorial italic font-light text-[21px] text-[rgba(255,255,255,0.42)] mt-5 mb-10 max-w-[520px] leading-[1.65]">
             Six capabilities that set partnered towns apart from standard profiles.
           </p>
 
           <div className="max-w-[760px]">
             {BENEFITS.map((benefit, i) => (
               <div key={benefit.title} className="flex gap-6 py-6 border-b border-white/[0.07]">
-                <div className="font-display text-[15px] text-[#4A6A9B] opacity-55 w-7 flex-shrink-0 mt-0.5">
+                <div className="font-display text-[19px] text-[#4A6A9B] opacity-55 w-7 flex-shrink-0 mt-0.5">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <div>
                   <div className="font-editorial italic text-[20px] text-white mb-1.5">{benefit.title}</div>
-                  <div className="font-ui text-[15px] text-[rgba(255,255,255,0.65)] leading-[1.65]">{benefit.body}</div>
+                  <div className="font-ui text-[19px] text-[rgba(255,255,255,0.65)] leading-[1.65]">{benefit.body}</div>
                 </div>
               </div>
             ))}

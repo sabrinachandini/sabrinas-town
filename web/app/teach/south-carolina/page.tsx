@@ -131,7 +131,7 @@ export default async function SouthCarolinaTeachPage() {
             <p className="font-editorial italic font-light text-[18px] text-[#14100a]/70 leading-[1.75]">
               The fall of Charleston in 1780 was the worst American defeat of the entire war, surrendering an entire Continental Army of more than five thousand men. What followed was a guerrilla war of extraordinary violence — Tarleton's Quarter, the Waxhaws massacre, the retaliatory raids by Sumter and Marion.
             </p>
-            <p className="font-ui text-[16px] text-[#14100a]/60 leading-relaxed">
+            <p className="font-ui text-[20px] text-[#14100a]/60 leading-relaxed">
               The eight towns in this collection span the Southern campaign from Fort Moultrie's early defiance in 1776 to Nathanael Greene's grinding war of attrition that broke British strength without ever winning a decisive battle. Teaching South Carolina honestly also requires confronting how enslaved people's labor and knowledge shaped every campaign on both sides.
             </p>
           </div>
@@ -149,7 +149,7 @@ export default async function SouthCarolinaTeachPage() {
                 <p className="font-ui text-[10px] uppercase tracking-[0.18em] text-[#4A6A9B] mb-1">{seq.towns.join(" → ")}</p>
                 <p className="font-ui text-[10px] uppercase tracking-[0.14em] text-[#f2e6c8]/25 mb-3">{seq.duration}</p>
                 <h3 className="font-display text-[#f2e6c8] leading-tight mb-4" style={{ fontSize: "clamp(20px,2.5vw,28px)" }}>{seq.title}</h3>
-                <p className="font-ui text-[15px] text-[#f2e6c8]/55 leading-relaxed">{seq.description}</p>
+                <p className="font-ui text-[19px] text-[#f2e6c8]/55 leading-relaxed">{seq.description}</p>
               </div>
             ))}
           </div>
@@ -161,7 +161,7 @@ export default async function SouthCarolinaTeachPage() {
         <div className="max-w-[1200px] mx-auto">
           <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-[#cc3322] flex items-center gap-2.5 mb-4"><span className="w-4 h-[2px] bg-[#cc3322] block" />Town Resources</p>
           <h2 className="font-display text-[#14100a] leading-[0.92] mb-2" style={{ fontSize: "clamp(32px,4vw,52px)" }}>Print-Ready Packets</h2>
-          <p className="font-ui text-[15px] text-[#14100a]/50 mb-10">Complete teacher packets formatted for classroom printing — lesson plans, source packets, handouts, and quizzes.</p>
+          <p className="font-ui text-[19px] text-[#14100a]/50 mb-10">Complete teacher packets formatted for classroom printing — lesson plans, source packets, handouts, and quizzes.</p>
           <div className="border-t-[3px] border-[#14100a]">
             {modules.map((m, i) => (
               <div key={m.slug} className="flex items-center justify-between py-6 border-b border-[#14100a]/10 gap-8 group">

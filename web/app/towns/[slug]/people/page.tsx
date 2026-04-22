@@ -69,7 +69,7 @@ export default async function PeoplePage({ params }: PageProps) {
           <h1 className="font-display text-cream text-[clamp(36px,6vw,72px)] leading-none tracking-[-0.02em]">
             People
           </h1>
-          <p className="font-editorial italic font-light text-cream/60 text-[17px] mt-4 max-w-[520px] leading-relaxed">
+          <p className="font-editorial italic font-light text-cream/60 text-[21px] mt-4 max-w-[520px] leading-relaxed">
             {people.length} historical figure{people.length !== 1 ? "s" : ""} connected to {town.name} during the Revolutionary War.
           </p>
         </div>
@@ -113,7 +113,7 @@ export default async function PeoplePage({ params }: PageProps) {
                               {person.name}
                             </p>
                             {lifespan && (
-                              <p className="font-display text-[15px] text-crimson group-hover:text-cream/60 transition-colors mt-0.5">
+                              <p className="font-display text-[19px] text-crimson group-hover:text-cream/60 transition-colors mt-0.5">
                                 {lifespan}
                               </p>
                             )}
@@ -130,7 +130,7 @@ export default async function PeoplePage({ params }: PageProps) {
                           </div>
                         )}
                         {person.bioShort && (
-                          <p className="font-ui text-[14px] text-ink/55 group-hover:text-cream/55 leading-relaxed line-clamp-3 transition-colors">
+                          <p className="font-ui text-[18px] text-ink/55 group-hover:text-cream/55 leading-relaxed line-clamp-3 transition-colors">
                             {person.bioShort}
                           </p>
                         )}

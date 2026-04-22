@@ -76,7 +76,7 @@ export default async function SourcesPage({ params }: PageProps) {
           <SourceGroup label="Pending Evaluation" sources={tierTodo} />
 
           <div className="h-px bg-ink/10 my-8" />
-          <p className="font-ui text-[15px] text-ink/50">
+          <p className="font-ui text-[19px] text-ink/50">
             For details on how we evaluate sources, see our{" "}
             <a href="/methodology" className="text-crimson hover:underline">
               Methodology
@@ -89,7 +89,7 @@ export default async function SourcesPage({ params }: PageProps) {
           <p className="font-editorial text-ink/60">
             Sources for this town are being compiled and verified.
           </p>
-          <p className="font-ui text-[15px] text-ink/50">
+          <p className="font-ui text-[19px] text-ink/50">
             For details on how we evaluate sources, see our{" "}
             <a href="/methodology" className="text-crimson hover:underline">
               Methodology

@@ -106,7 +106,7 @@ export default async function PlacesPage({ params }: PageProps) {
                   </p>
 
                   {place.description && (
-                    <p className="font-editorial text-[15px] text-ink/60 mt-2 line-clamp-2">
+                    <p className="font-editorial text-[19px] text-ink/60 mt-2 line-clamp-2">
                       {place.description}
                     </p>
                   )}

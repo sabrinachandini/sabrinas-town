@@ -111,7 +111,7 @@ export default async function NewHampshireTeachPage() {
             <p className="font-editorial italic font-light text-[18px] text-[#14100a]/70 leading-[1.75]">
               Portsmouth was the colony's commercial heart — its port economy tied to the Atlantic trade that British tax policy threatened to strangle. When the royal governor tried to seize munitions at Fort William and Mary, Portsmouth's militia acted first.
             </p>
-            <p className="font-ui text-[16px] text-[#14100a]/60 leading-relaxed">
+            <p className="font-ui text-[20px] text-[#14100a]/60 leading-relaxed">
               Exeter became the seat of revolutionary government after the royal governor fled, building new institutions of self-governance without precedent and under enormous pressure. Together these two towns show students how a colony moved from commercial grievance to armed rebellion, and how the transition from colonial subjects to citizens was accomplished — imperfectly, urgently, in real time.
             </p>
           </div>
@@ -129,7 +129,7 @@ export default async function NewHampshireTeachPage() {
                 <p className="font-ui text-[10px] uppercase tracking-[0.18em] text-[#4A6A9B] mb-1">{seq.towns.join(" → ")}</p>
                 <p className="font-ui text-[10px] uppercase tracking-[0.14em] text-[#f2e6c8]/25 mb-3">{seq.duration}</p>
                 <h3 className="font-display text-[#f2e6c8] leading-tight mb-4" style={{ fontSize: "clamp(20px,2.5vw,28px)" }}>{seq.title}</h3>
-                <p className="font-ui text-[15px] text-[#f2e6c8]/55 leading-relaxed">{seq.description}</p>
+                <p className="font-ui text-[19px] text-[#f2e6c8]/55 leading-relaxed">{seq.description}</p>
               </div>
             ))}
           </div>
@@ -141,7 +141,7 @@ export default async function NewHampshireTeachPage() {
         <div className="max-w-[1200px] mx-auto">
           <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-[#cc3322] flex items-center gap-2.5 mb-4"><span className="w-4 h-[2px] bg-[#cc3322] block" />Town Resources</p>
           <h2 className="font-display text-[#14100a] leading-[0.92] mb-2" style={{ fontSize: "clamp(32px,4vw,52px)" }}>Print-Ready Packets</h2>
-          <p className="font-ui text-[15px] text-[#14100a]/50 mb-10">Complete teacher packets formatted for classroom printing — lesson plans, source packets, handouts, and quizzes.</p>
+          <p className="font-ui text-[19px] text-[#14100a]/50 mb-10">Complete teacher packets formatted for classroom printing — lesson plans, source packets, handouts, and quizzes.</p>
           <div className="border-t-[3px] border-[#14100a]">
             {modules.map((m, i) => (
               <div key={m.slug} className="flex items-center justify-between py-6 border-b border-[#14100a]/10 gap-8 group">

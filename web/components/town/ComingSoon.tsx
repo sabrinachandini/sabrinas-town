@@ -54,7 +54,7 @@ export function ComingSoon({ slug, section }: ComingSoonProps) {
       {/* Cream body */}
       <section className="bg-[#f2ece0] py-16 px-6 sm:px-16 border-b-4 border-[#14100a]">
         <div className="mx-auto max-w-[720px]">
-          <p className="font-editorial text-[17px] leading-[1.75] text-[#14100a] mb-10">
+          <p className="font-editorial text-[21px] leading-[1.75] text-[#14100a] mb-10">
             We&rsquo;re building this town&rsquo;s Revolutionary story from the ground up — primary documents, local historical society records, and academic scholarship. Check back soon.
           </p>
 

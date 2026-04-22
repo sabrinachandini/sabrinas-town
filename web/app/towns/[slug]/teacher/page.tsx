@@ -54,7 +54,7 @@ export default async function TeacherPage({ params }: PageProps) {
   if (!town) {
     return (
       <div className="bg-[#f2e6c8] min-h-screen flex items-center justify-center">
-        <p className="font-ui text-[16px] text-[#14100a]/40">Teacher resources for this town are being developed.</p>
+        <p className="font-ui text-[20px] text-[#14100a]/40">Teacher resources for this town are being developed.</p>
       </div>
     );
   }
@@ -116,7 +116,7 @@ export default async function TeacherPage({ params }: PageProps) {
             {town.name}
           </h1>
           <div className="w-12 h-[3px] bg-[#cc3322] my-5" />
-          <p className="font-editorial italic font-light text-[17px] text-[#f2e6c8]/60 max-w-[500px] leading-[1.65]">
+          <p className="font-editorial italic font-light text-[21px] text-[#f2e6c8]/60 max-w-[500px] leading-[1.65]">
             {teacherModule
               ? teacherModule.overview.summary
               : `Lesson plans and classroom materials for ${town.name}'s role in the American Revolution.`}
@@ -184,7 +184,7 @@ export default async function TeacherPage({ params }: PageProps) {
                           <path d="M1 4L3.5 6.5L9 1" stroke="#f2e6c8" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </span>
-                      <span className="font-ui text-[16px] text-[#14100a]/75 leading-relaxed">{b}</span>
+                      <span className="font-ui text-[20px] text-[#14100a]/75 leading-relaxed">{b}</span>
                     </li>
                   ))}
                 </ul>
@@ -205,7 +205,7 @@ export default async function TeacherPage({ params }: PageProps) {
                     <p className="font-ui text-[11px] uppercase tracking-[0.2em] text-[#14100a]/40 mb-3">Essential Questions</p>
                     <ul className="space-y-2">
                       {lp.essentialQuestions.slice(0, 3).map((q, i) => (
-                        <li key={i} className="font-ui text-[15px] text-[#14100a]/65 leading-relaxed pl-3 border-l-2 border-[#cc3322]/40">
+                        <li key={i} className="font-ui text-[19px] text-[#14100a]/65 leading-relaxed pl-3 border-l-2 border-[#cc3322]/40">
                           {q}
                         </li>
                       ))}
@@ -237,7 +237,7 @@ export default async function TeacherPage({ params }: PageProps) {
                       <p className="font-ui text-[10px] uppercase tracking-[0.15em] text-[#cc3322] mb-2">
                         {source.type.replace(/_/g, " ")} · {source.credibilityTier.replace(/_/g, " ")}
                       </p>
-                      <p className="font-editorial text-[15px] text-[#f2e6c8]/90 leading-snug mb-2">
+                      <p className="font-editorial text-[19px] text-[#f2e6c8]/90 leading-snug mb-2">
                         {source.title}
                       </p>
                       <p className="font-ui text-[11px] text-[#f2e6c8]/40 leading-relaxed">
@@ -278,7 +278,7 @@ export default async function TeacherPage({ params }: PageProps) {
                             <span className="font-display text-[22px] text-[#cc3322]/40 leading-none flex-shrink-0 w-6 text-right">
                               {i + 1}
                             </span>
-                            <span className="font-ui text-[15px] text-[#14100a]/70 leading-relaxed">{obj}</span>
+                            <span className="font-ui text-[19px] text-[#14100a]/70 leading-relaxed">{obj}</span>
                           </li>
                         ))}
                       </ol>
@@ -292,7 +292,7 @@ export default async function TeacherPage({ params }: PageProps) {
                         <p className="font-ui text-[10px] uppercase tracking-[0.18em] text-[#cc3322] mb-1">
                           Warm-Up · {lp.warmUp.duration}
                         </p>
-                        <p className="font-ui text-[15px] text-[#14100a]/65 leading-relaxed">{lp.warmUp.activity}</p>
+                        <p className="font-ui text-[19px] text-[#14100a]/65 leading-relaxed">{lp.warmUp.activity}</p>
                       </div>
                     )}
                     {lp.directInstruction && (
@@ -301,7 +301,7 @@ export default async function TeacherPage({ params }: PageProps) {
                           Direct Instruction · {lp.directInstruction.duration}
                         </p>
                         {lp.directInstruction.content?.slice(0, 2).map((item, i) => (
-                          <p key={i} className="font-ui text-[15px] text-[#14100a]/65 leading-relaxed">· {item}</p>
+                          <p key={i} className="font-ui text-[19px] text-[#14100a]/65 leading-relaxed">· {item}</p>
                         ))}
                       </div>
                     )}
@@ -310,7 +310,7 @@ export default async function TeacherPage({ params }: PageProps) {
                         <p className="font-ui text-[10px] uppercase tracking-[0.18em] text-[#14100a]/40 mb-1">
                           Closure · {lp.closure.duration}
                         </p>
-                        <p className="font-ui text-[15px] text-[#14100a]/65 leading-relaxed">{lp.closure.activity}</p>
+                        <p className="font-ui text-[19px] text-[#14100a]/65 leading-relaxed">{lp.closure.activity}</p>
                       </div>
                     )}
                   </div>
@@ -361,7 +361,7 @@ export default async function TeacherPage({ params }: PageProps) {
                     <div key={q.id} className="bg-[#f2e6c8]/5 border border-[#f2e6c8]/8 p-5 flex gap-4">
                       <span className="font-display text-[28px] text-[#cc3322]/50 leading-none flex-shrink-0 w-8">{qi + 1}</span>
                       <div>
-                        <p className="font-ui text-[15px] text-[#f2e6c8]/80 leading-relaxed mb-1">{q.question}</p>
+                        <p className="font-ui text-[19px] text-[#f2e6c8]/80 leading-relaxed mb-1">{q.question}</p>
                         <p className="font-ui text-[11px] uppercase tracking-[0.12em] text-[#f2e6c8]/25">
                           {q.type.replace(/_/g, " ")}
                         </p>
@@ -385,7 +385,7 @@ export default async function TeacherPage({ params }: PageProps) {
                 <p className="font-display text-[#f2e6c8] leading-none mb-2" style={{ fontSize: "clamp(28px,4vw,52px)" }}>
                   Ready to Print?
                 </p>
-                <p className="font-editorial italic font-light text-[16px] text-[#f2e6c8]/65 max-w-[440px] leading-relaxed">
+                <p className="font-editorial italic font-light text-[20px] text-[#f2e6c8]/65 max-w-[440px] leading-relaxed">
                   The full teacher packet includes cover page, lesson plan, all primary source worksheets, quiz, answer key, and standards alignment — formatted for classroom printing.
                 </p>
               </div>

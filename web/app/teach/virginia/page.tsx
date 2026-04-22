@@ -148,7 +148,7 @@ export default async function VirginiaTeachPage() {
             <p className="font-editorial italic font-light text-[18px] text-[#14100a]/70 leading-[1.75]">
               The eight towns in this collection reveal Virginia's complexity. Williamsburg was where Patrick Henry made his defiant speeches and the royal governor fled; Yorktown was where the war effectively ended. But teaching Virginia honestly requires confronting the contradiction at its core.
             </p>
-            <p className="font-ui text-[16px] text-[#14100a]/60 leading-relaxed">
+            <p className="font-ui text-[20px] text-[#14100a]/60 leading-relaxed">
               The men who wrote most eloquently about liberty were themselves slaveholders, and the labor of enslaved people made their political careers possible. Lord Dunmore's Proclamation — promising freedom to enslaved people who escaped to British lines — forced that contradiction into the open in ways that shaped the war's outcome and set the terms for the nation's founding crisis.
             </p>
           </div>
@@ -170,7 +170,7 @@ export default async function VirginiaTeachPage() {
                 <p className="font-ui text-[10px] uppercase tracking-[0.18em] text-[#4A6A9B] mb-1">{seq.towns.join(" → ")}</p>
                 <p className="font-ui text-[10px] uppercase tracking-[0.14em] text-[#f2e6c8]/25 mb-3">{seq.duration}</p>
                 <h3 className="font-display text-[#f2e6c8] leading-tight mb-4" style={{ fontSize: "clamp(20px,2.5vw,28px)" }}>{seq.title}</h3>
-                <p className="font-ui text-[15px] text-[#f2e6c8]/55 leading-relaxed">{seq.description}</p>
+                <p className="font-ui text-[19px] text-[#f2e6c8]/55 leading-relaxed">{seq.description}</p>
               </div>
             ))}
           </div>
@@ -184,7 +184,7 @@ export default async function VirginiaTeachPage() {
             <span className="w-4 h-[2px] bg-[#cc3322] block" />Town Resources
           </p>
           <h2 className="font-display text-[#14100a] leading-[0.92] mb-2" style={{ fontSize: "clamp(32px,4vw,52px)" }}>Print-Ready Packets</h2>
-          <p className="font-ui text-[15px] text-[#14100a]/50 mb-10">Complete teacher packets formatted for classroom printing — lesson plans, source packets, handouts, and quizzes.</p>
+          <p className="font-ui text-[19px] text-[#14100a]/50 mb-10">Complete teacher packets formatted for classroom printing — lesson plans, source packets, handouts, and quizzes.</p>
           <div className="border-t-[3px] border-[#14100a]">
             {modules.map((m, i) => (
               <div key={m.slug} className="flex items-center justify-between py-6 border-b border-[#14100a]/10 gap-8 group">

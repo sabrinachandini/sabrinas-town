@@ -243,19 +243,19 @@ export default async function PersonDetailPage({ params }: PageProps) {
                 {lifespan && (
                   <div>
                     <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Lived</dt>
-                    <dd className="font-editorial text-[17px] text-cream mt-0.5">{lifespan}</dd>
+                    <dd className="font-editorial text-[21px] text-cream mt-0.5">{lifespan}</dd>
                   </div>
                 )}
                 {person.roles.length > 0 && (
                   <div>
                     <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Roles</dt>
-                    <dd className="font-editorial text-[15px] text-cream mt-0.5 leading-snug">{person.roles.join(", ")}</dd>
+                    <dd className="font-editorial text-[19px] text-cream mt-0.5 leading-snug">{person.roles.join(", ")}</dd>
                   </div>
                 )}
                 <div>
                   <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Town</dt>
                   <dd className="mt-0.5">
-                    <NextLink href={`/towns/${slug}`} className="no-underline font-editorial text-[15px] text-[#4A6A9B] hover:text-cream transition-colors">
+                    <NextLink href={`/towns/${slug}`} className="no-underline font-editorial text-[19px] text-[#4A6A9B] hover:text-cream transition-colors">
                       {town.name}, {town.state}
                     </NextLink>
                   </dd>
@@ -279,7 +279,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
                   { label: "Overview", href: `/towns/${slug}` },
                 ].map((link) => (
                   <li key={link.label}>
-                    <NextLink href={link.href} className="no-underline flex items-center gap-2 py-2.5 border-b border-ink/8 font-ui text-[15px] text-ink hover:text-crimson transition-colors">
+                    <NextLink href={link.href} className="no-underline flex items-center gap-2 py-2.5 border-b border-ink/8 font-ui text-[19px] text-ink hover:text-crimson transition-colors">
                       <span className="w-1.5 h-1.5 rounded-full bg-crimson flex-shrink-0" />
                       {link.label}
                     </NextLink>
