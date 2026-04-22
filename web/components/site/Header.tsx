@@ -156,7 +156,7 @@ export function Header() {
 
         {/* Logo — full lockup on main site */}
         <Link href="/" className="no-underline flex items-center" aria-label="History is for Everyone — home">
-          <img src="/logo-lockup.svg" alt="History is for Everyone" className="h-11 w-auto" />
+          <img src="/logo-lockup.svg" alt="History is for Everyone" className="h-14 w-auto" />
         </Link>
 
         {/* Desktop nav */}
