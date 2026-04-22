@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { getPersonBySlug, getAllPeople } from "@/lib/api";
+import Image from "next/image";
 import NextLink from "next/link";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { MarkdownBio } from "@/components/editorial";
@@ -80,10 +81,12 @@ export default async function PersonPage({ params }: PageProps) {
               {/* Portrait */}
               {person.imageUrl && (
                 <div className="hidden md:block flex-shrink-0">
-                  <img
+                  <Image
                     src={person.imageUrl}
                     alt={`Portrait of ${person.name}`}
-                    className="w-[120px] h-[150px] object-cover object-top grayscale opacity-80 border border-cream/10"
+                    width={120}
+                    height={150}
+                    className="object-cover object-top grayscale opacity-80 border border-cream/10"
                   />
                   {person.imageCredit && (
                     <p className="font-ui text-[7px] text-cream/20 mt-1 max-w-[120px] leading-tight">{person.imageCredit}</p>
@@ -286,7 +289,7 @@ export default async function PersonPage({ params }: PageProps) {
             {/* Portrait (mobile / sidebar) */}
             {person.imageUrl && (
               <div className="md:hidden">
-                <img src={person.imageUrl} alt={`Portrait of ${person.name}`} className="w-full max-w-[200px] object-cover grayscale opacity-80" />
+                <Image src={person.imageUrl} alt={`Portrait of ${person.name}`} width={200} height={250} className="object-cover grayscale opacity-80" />
                 {person.imageCredit && <p className="font-ui text-[7px] text-ink/30 mt-1 leading-tight">{person.imageCredit}</p>}
               </div>
             )}

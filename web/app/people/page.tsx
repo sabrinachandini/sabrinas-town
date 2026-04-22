@@ -1,5 +1,6 @@
 import { getAllPeople } from "@/lib/api";
 import NextLink from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 
 export const revalidate = 3600;
@@ -120,10 +121,12 @@ export default async function PeoplePage() {
                 href={person.slug ? `/people/${person.slug}` : `/people/${person.id}`}
                 className="no-underline group relative overflow-hidden aspect-[3/4] flex items-end border-r-2 border-[#14100a] last:border-r-0"
               >
-                <img
+                <Image
                   src={person.imageUrl!}
                   alt={person.name}
-                  className="absolute inset-0 w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#14100a]/90 via-[#14100a]/20 to-transparent" />
                 <div className="relative z-10 p-5 w-full">
@@ -190,11 +193,12 @@ export default async function PeoplePage() {
                     {/* Portrait column */}
                     <div className="w-[72px] flex-shrink-0 overflow-hidden bg-[#14100a]/6 group-hover:bg-[#14100a]/30 transition-colors relative">
                       {person.imageUrl ? (
-                        <img
+                        <Image
                           src={person.imageUrl}
                           alt={person.name}
-                          className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-300 opacity-80 group-hover:opacity-100"
-                          style={{ minHeight: "88px" }}
+                          fill
+                          sizes="72px"
+                          className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-300 opacity-80 group-hover:opacity-100"
                         />
                       ) : (
                         <div className="w-full h-full min-h-[88px] flex items-center justify-center">
