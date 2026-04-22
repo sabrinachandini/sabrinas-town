@@ -64,9 +64,9 @@ export function Header() {
       >
         {/* Row 1: logo LEFT + back link + mobile hamburger */}
         <div className="h-20 mx-auto max-w-[1200px] pr-6 md:pr-10 flex items-center justify-between">
-          {/* Logo — top left */}
-          <Link href="/" className="no-underline ml-[5px] flex-shrink-0" aria-label="History is for Everyone — home">
-            <img src="/logo-lockup-town.svg" alt="History is for Everyone" className="h-[64px] w-auto" />
+          {/* Star logo — top left, always big */}
+          <Link href="/" className="no-underline flex-shrink-0" aria-label="History is for Everyone — home">
+            <img src="/logo-star.svg" alt="History is for Everyone" className="h-[60px] w-auto" />
           </Link>
           {/* Right: back to towns (desktop) + mobile hamburger */}
           <div className="flex items-center gap-3">
@@ -154,10 +154,10 @@ export function Header() {
         scrolled ? "shadow-lg" : ""
       }`}
     >
-      <div className="mx-auto max-w-[1200px] px-4 md:px-10 py-2 flex items-center justify-between">
+      <div className="mx-auto max-w-[1200px] pl-2 pr-6 md:pl-4 md:pr-10 py-2 flex items-center justify-between">
 
         {/* Logo — TOP LEFT, always visible */}
-        <Link href="/" className="no-underline ml-[5px] flex-shrink-0" aria-label="History is for Everyone — home">
+        <Link href="/" className="no-underline flex-shrink-0" aria-label="History is for Everyone — home">
           {/* Mobile: stacked lockup */}
           <img src="/logo-lockup-town.svg" alt="History is for Everyone" className="h-[64px] w-auto sm:hidden" />
           {/* Desktop: horizontal lockup */}

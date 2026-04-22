@@ -73,7 +73,7 @@ export default async function PlacesPage() {
           { n: TYPE_ORDER.filter((t) => (grouped[t]?.length ?? 0) > 0).length, label: "Categories" },
         ].map((s) => (
           <div key={s.label} className="flex items-baseline gap-2">
-            <span className="font-display text-[2rem] text-[#4A6A9B] leading-none">{s.n}</span>
+            <span className="font-display text-[2rem] text-white leading-none">{s.n}</span>
             <span className="font-ui text-[11px] uppercase tracking-[0.1em] text-white/60">{s.label}</span>
           </div>
         ))}

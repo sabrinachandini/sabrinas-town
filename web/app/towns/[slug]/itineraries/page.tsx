@@ -86,7 +86,7 @@ export default async function ItinerariesPage({ params }: PageProps) {
         <div className="mx-auto max-w-[820px] px-8 md:px-16 py-24 text-center">
           <p className="font-display text-[80px] text-ink/5 leading-none mb-4">→</p>
           <p className="font-editorial text-[22px] text-ink/40 mb-3">Itineraries Coming Soon</p>
-          <p className="font-ui text-[13px] text-ink/30 max-w-[480px] mx-auto leading-relaxed">
+          <p className="font-ui text-[15px] text-ink/30 max-w-[480px] mx-auto leading-relaxed">
             Curated routes featuring {town.name} are in development. These will connect multiple Revolutionary sites, following historical routes and thematic journeys across the region.
           </p>
           <div className="mt-10 flex justify-center gap-4 flex-wrap">

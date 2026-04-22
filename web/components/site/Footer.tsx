@@ -22,7 +22,7 @@ export function Footer() {
             <span className="font-editorial font-black text-[22px] text-[#14100a] tracking-[-0.03em] leading-tight block">
               History is for Everyone
             </span>
-            <p className="font-editorial italic font-light text-[14px] text-[rgba(20,16,10,0.55)] mt-1.5">
+            <p className="font-editorial italic font-light text-[16px] text-[rgba(20,16,10,0.55)] mt-1.5">
               The American Revolution, town by town.
             </p>
           </NextLink>

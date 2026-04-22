@@ -167,7 +167,7 @@ export default function AboutPage() {
                 <div className="w-1.5 h-1.5 rounded-full bg-crimson shrink-0 mt-2" />
                 <div>
                   <h3 className="font-editorial text-[20px] text-ink mb-2">For travelers</h3>
-                  <p className="font-ui text-[14px] text-ink/60 leading-relaxed">
+                  <p className="font-ui text-[16px] text-ink/60 leading-relaxed">
                     Browse the <Link href="/towns">town network</Link> to find
                     communities with a strong preservation score, accessible
                     battlefields, and stories that connect to the bigger arc of the
@@ -183,7 +183,7 @@ export default function AboutPage() {
                 <div className="w-1.5 h-1.5 rounded-full bg-crimson shrink-0 mt-2" />
                 <div>
                   <h3 className="font-editorial text-[20px] text-ink mb-2">For teachers</h3>
-                  <p className="font-ui text-[14px] text-ink/60 leading-relaxed">
+                  <p className="font-ui text-[16px] text-ink/60 leading-relaxed">
                     Every town in the network has lesson plans aligned to state
                     standards, curated primary source packets with guided analysis
                     prompts, and ready-to-use quizzes. Students learn to read
@@ -200,7 +200,7 @@ export default function AboutPage() {
                 <div className="w-1.5 h-1.5 rounded-full bg-crimson shrink-0 mt-2" />
                 <div>
                   <h3 className="font-editorial text-[20px] text-ink mb-2">For towns and organizations</h3>
-                  <p className="font-ui text-[14px] text-ink/60 leading-relaxed">
+                  <p className="font-ui text-[16px] text-ink/60 leading-relaxed">
                     Every town in the network has a researched public profile at no
                     cost — events, people, places, stories, and sources. Communities
                     that want a deeper presence can join the{" "}
@@ -277,7 +277,7 @@ export default function AboutPage() {
                   </span>
                   <div className="pt-1">
                     <p className="font-editorial text-[20px] text-cream mb-2">{head}</p>
-                    <p className="font-ui text-[14px] text-cream/60 leading-relaxed">{body}</p>
+                    <p className="font-ui text-[16px] text-cream/60 leading-relaxed">{body}</p>
                   </div>
                 </li>
               ))}

@@ -113,7 +113,7 @@ export default async function PeoplePage({ params }: PageProps) {
                               {person.name}
                             </p>
                             {lifespan && (
-                              <p className="font-display text-[13px] text-crimson group-hover:text-[#4A6A9B] transition-colors mt-0.5">
+                              <p className="font-display text-[15px] text-crimson group-hover:text-[#4A6A9B] transition-colors mt-0.5">
                                 {lifespan}
                               </p>
                             )}

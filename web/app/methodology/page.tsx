@@ -120,7 +120,7 @@ export default function MethodologyPage() {
                     </div>
                     <div>
                       <p className="font-editorial font-black text-[16px] text-[#14100a] leading-snug">{name}</p>
-                      <p className="font-ui text-[13px] text-[rgba(20,16,10,0.6)] leading-relaxed mt-1">{desc}</p>
+                      <p className="font-ui text-[15px] text-[rgba(20,16,10,0.6)] leading-relaxed mt-1">{desc}</p>
                     </div>
                   </div>
                 ))}
@@ -150,7 +150,7 @@ export default function MethodologyPage() {
                   { label: "Updates", id: "updates" },
                 ].map((item) => (
                   <li key={item.id}>
-                    <a href={`#${item.id}`} className="no-underline flex items-center gap-2 py-2.5 border-b border-[rgba(20,16,10,0.08)] font-ui text-[13px] text-[#14100a] hover:text-[#cc3322] transition-colors">
+                    <a href={`#${item.id}`} className="no-underline flex items-center gap-2 py-2.5 border-b border-[rgba(20,16,10,0.08)] font-ui text-[15px] text-[#14100a] hover:text-[#cc3322] transition-colors">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#cc3322] flex-shrink-0" />
                       {item.label}
                     </a>
@@ -159,7 +159,7 @@ export default function MethodologyPage() {
               </ul>
             </div>
             <div className="border-l-[4px] border-[#cc3322] pl-4">
-              <p className="font-editorial italic text-[14px] text-[rgba(20,16,10,0.6)] leading-relaxed">
+              <p className="font-editorial italic text-[16px] text-[rgba(20,16,10,0.6)] leading-relaxed">
                 &ldquo;History is not a finished product, and neither is this project.&rdquo;
               </p>
             </div>

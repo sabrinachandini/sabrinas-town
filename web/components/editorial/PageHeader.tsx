@@ -40,7 +40,7 @@ export function PageHeader({
           {name}
         </h1>
         {subtitle && (
-          <p className="font-ui text-[14px] text-[rgba(242,230,200,0.75)] mt-5 leading-relaxed max-w-[600px] relative z-10">
+          <p className="font-ui text-[16px] text-[rgba(242,230,200,0.75)] mt-5 leading-relaxed max-w-[600px] relative z-10">
             {subtitle}
           </p>
         )}
@@ -72,7 +72,7 @@ export function PageHeader({
         {name}
       </h1>
       {subtitle && (
-        <p className="font-ui text-[14px] text-ink/60 mt-5 leading-relaxed max-w-[600px]">
+        <p className="font-ui text-[16px] text-ink/60 mt-5 leading-relaxed max-w-[600px]">
           {subtitle}
         </p>
       )}

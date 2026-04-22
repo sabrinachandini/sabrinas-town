@@ -110,7 +110,7 @@ export default async function HistoryPage({ params }: PageProps) {
                   {theme.name}
                 </p>
                 {theme.relevanceNote && (
-                  <p className="font-ui text-[13px] text-ink/50 mt-1">
+                  <p className="font-ui text-[15px] text-ink/50 mt-1">
                     {theme.relevanceNote}
                   </p>
                 )}
@@ -136,7 +136,7 @@ export default async function HistoryPage({ params }: PageProps) {
                 <p className="font-editorial text-[18px] text-ink">
                   {route.name}
                 </p>
-                <p className="font-ui text-[13px] text-ink/50 mt-1">
+                <p className="font-ui text-[15px] text-ink/50 mt-1">
                   Stop {route.stopOrder} of {route.totalStops}
                 </p>
               </div>

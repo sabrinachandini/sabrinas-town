@@ -158,7 +158,7 @@ export default function PartnerPage() {
           <div>
             {FREE_FEATURES.map((feature) => (
               <div key={feature} className="flex items-baseline gap-3 py-3.5 border-b border-[rgba(20,16,10,0.08)]">
-                <span className="text-[#cc3322] font-ui font-black text-[13px] flex-shrink-0">✓</span>
+                <span className="text-[#cc3322] font-ui font-black text-[15px] flex-shrink-0">✓</span>
                 <span className="font-editorial italic font-light text-[17px] text-[rgba(20,16,10,0.72)]">
                   {feature}
                 </span>
@@ -191,12 +191,12 @@ export default function PartnerPage() {
           <div className="max-w-[760px]">
             {BENEFITS.map((benefit, i) => (
               <div key={benefit.title} className="flex gap-6 py-6 border-b border-white/[0.07]">
-                <div className="font-display text-[13px] text-[#4A6A9B] opacity-55 w-7 flex-shrink-0 mt-0.5">
+                <div className="font-display text-[15px] text-[#4A6A9B] opacity-55 w-7 flex-shrink-0 mt-0.5">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <div>
                   <div className="font-editorial italic text-[20px] text-white mb-1.5">{benefit.title}</div>
-                  <div className="font-ui text-[13px] text-[rgba(255,255,255,0.65)] leading-[1.65]">{benefit.body}</div>
+                  <div className="font-ui text-[15px] text-[rgba(255,255,255,0.65)] leading-[1.65]">{benefit.body}</div>
                 </div>
               </div>
             ))}

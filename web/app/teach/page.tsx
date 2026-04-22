@@ -278,7 +278,7 @@ export default function TeachPage() {
                 key={stat.label}
                 className={`sm:px-11 ${i === 0 ? "sm:pl-0" : ""} ${i < 2 ? "sm:border-r border-white/[0.12]" : ""}`}
               >
-                <div className="font-display text-[40px] sm:text-[52px] text-[#4A6A9B] leading-none">{stat.num}</div>
+                <div className="font-display text-[40px] sm:text-[52px] text-white leading-none">{stat.num}</div>
                 <div className="font-ui text-[11px] font-semibold tracking-[0.14em] uppercase text-white/45 mt-1">{stat.label}</div>
               </div>
             ))}

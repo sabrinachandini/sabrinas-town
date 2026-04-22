@@ -23,7 +23,7 @@ export function MarkdownBio({ content, dropCap = true, className }: MarkdownBioP
         "[&_p]:mb-6",
         // Lists
         "[&_ul]:space-y-2 [&_ul]:mb-6 [&_ul]:pl-0 [&_ul]:list-none",
-        "[&_ul_li]:flex [&_ul_li]:gap-3 [&_ul_li]:before:content-['—'] [&_ul_li]:before:text-crimson/50 [&_ul_li]:before:flex-shrink-0 [&_ul_li]:before:font-ui [&_ul_li]:before:text-[14px]",
+        "[&_ul_li]:flex [&_ul_li]:gap-3 [&_ul_li]:before:content-['—'] [&_ul_li]:before:text-crimson/50 [&_ul_li]:before:flex-shrink-0 [&_ul_li]:before:font-ui [&_ul_li]:before:text-[16px]",
         "[&_ol]:space-y-2 [&_ol]:mb-6 [&_ol]:pl-0 [&_ol]:list-none [&_ol]:counter-reset-[item]",
         "[&_ol_li]:flex [&_ol_li]:gap-3",
         // Bold / italic

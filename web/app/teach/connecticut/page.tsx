@@ -187,7 +187,7 @@ export default async function ConnecticutTeachPage() {
               ports fed and armed the Continental Army throughout the war. Its coastal towns paid a heavy
               price — British raiders burned Danbury, New London, and Fairfield.
             </p>
-            <p className="font-ui text-[14px] text-[#14100a]/60 leading-relaxed">
+            <p className="font-ui text-[16px] text-[#14100a]/60 leading-relaxed">
               The state's experience was shaped by its divided loyalties — New Haven's Yale College
               harbored Tory sympathizers while its harbor smugglers defied British customs. The 1781
               raids, led by the traitor Benedict Arnold himself, brought the war home in the most
@@ -221,7 +221,7 @@ export default async function ConnecticutTeachPage() {
                 <h3 className="font-display text-[#f2e6c8] leading-tight mb-4" style={{ fontSize: "clamp(20px,2.5vw,28px)" }}>
                   {seq.title}
                 </h3>
-                <p className="font-ui text-[13px] text-[#f2e6c8]/55 leading-relaxed">
+                <p className="font-ui text-[15px] text-[#f2e6c8]/55 leading-relaxed">
                   {seq.description}
                 </p>
               </div>
@@ -240,7 +240,7 @@ export default async function ConnecticutTeachPage() {
           <h2 className="font-display text-[#14100a] leading-[0.92] mb-2" style={{ fontSize: "clamp(32px,4vw,52px)" }}>
             Print-Ready Packets
           </h2>
-          <p className="font-ui text-[13px] text-[#14100a]/50 mb-10">
+          <p className="font-ui text-[15px] text-[#14100a]/50 mb-10">
             Complete teacher packets formatted for classroom printing — lesson plans, source packets, handouts, and quizzes.
           </p>
 

@@ -164,7 +164,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
                             className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                           />
                         ) : (
-                          <div className="w-full h-full flex items-center justify-center font-display text-[14px] text-ink/30">
+                          <div className="w-full h-full flex items-center justify-center font-display text-[16px] text-ink/30">
                             {person.name.charAt(0)}
                           </div>
                         )}
@@ -292,7 +292,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
                       <p className="font-editorial text-[18px] sm:text-[22px] text-ink group-hover:text-cream transition-colors leading-tight">
                         {story.title}
                       </p>
-                      <p className="font-ui text-[13px] text-ink/60 group-hover:text-cream/60 leading-relaxed mt-2">
+                      <p className="font-ui text-[15px] text-ink/60 group-hover:text-cream/60 leading-relaxed mt-2">
                         {story.excerpt}
                       </p>
                     </NextLink>
@@ -325,7 +325,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
                   <li key={link.label}>
                     <NextLink
                       href={link.href}
-                      className="no-underline flex items-center gap-2 py-2.5 border-b border-ink/8 font-ui text-[13px] text-ink hover:text-crimson transition-colors"
+                      className="no-underline flex items-center gap-2 py-2.5 border-b border-ink/8 font-ui text-[15px] text-ink hover:text-crimson transition-colors"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-crimson flex-shrink-0" />
                       {link.label}
@@ -346,7 +346,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
                     <li key={linked.townId}>
                       <NextLink
                         href={`/towns/${linked.townSlug}`}
-                        className="no-underline flex items-center gap-2 py-2.5 border-b border-ink/8 font-ui text-[13px] text-ink hover:text-crimson transition-colors"
+                        className="no-underline flex items-center gap-2 py-2.5 border-b border-ink/8 font-ui text-[15px] text-ink hover:text-crimson transition-colors"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-crimson flex-shrink-0" />
                         {linked.townName}
@@ -360,7 +360,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
             {/* Pull quote */}
             {town.execSummary150 && (
               <blockquote className="border-l-[4px] border-crimson pl-4 mt-8">
-                <p className="font-editorial italic text-[13px] sm:text-[15px] text-ink leading-relaxed">
+                <p className="font-editorial italic text-[15px] sm:text-[15px] text-ink leading-relaxed">
                   &ldquo;{town.execSummary150.slice(0, 120)}{town.execSummary150.length > 120 ? "\u2026" : ""}&rdquo;
                 </p>
               </blockquote>

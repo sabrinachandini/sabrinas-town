@@ -202,7 +202,7 @@ export default async function NewYorkTeachPage() {
               occupation became a Loyalist refuge and a city-sized prison camp for American POWs. The Hudson
               River was the strategic spine Washington fought seven years to protect.
             </p>
-            <p className="font-ui text-[14px] text-[#14100a]/60 leading-relaxed">
+            <p className="font-ui text-[16px] text-[#14100a]/60 leading-relaxed">
               Saratoga was the turning point that made an allied victory possible — the battle that brought
               France into the war. Washington's army spent its most desperate years in the Hudson Valley,
               from the humiliation of 1776 to the near-mutiny at Newburgh in 1783. The eleven towns in this
@@ -235,7 +235,7 @@ export default async function NewYorkTeachPage() {
                 <h3 className="font-display text-[#f2e6c8] leading-tight mb-4" style={{ fontSize: "clamp(20px,2.5vw,28px)" }}>
                   {seq.title}
                 </h3>
-                <p className="font-ui text-[13px] text-[#f2e6c8]/55 leading-relaxed">
+                <p className="font-ui text-[15px] text-[#f2e6c8]/55 leading-relaxed">
                   {seq.description}
                 </p>
               </div>
@@ -254,7 +254,7 @@ export default async function NewYorkTeachPage() {
           <h2 className="font-display text-[#14100a] leading-[0.92] mb-2" style={{ fontSize: "clamp(32px,4vw,52px)" }}>
             Print-Ready Packets
           </h2>
-          <p className="font-ui text-[13px] text-[#14100a]/50 mb-10">
+          <p className="font-ui text-[15px] text-[#14100a]/50 mb-10">
             Complete teacher packets formatted for classroom printing — lesson plans, source packets, handouts, and quizzes.
           </p>
 

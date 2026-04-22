@@ -246,7 +246,7 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
             {/* Summary */}
             {selectedTown.execSummary150 && (
               <div className="px-4 sm:px-6 py-4 sm:py-5 border-b border-[#f2e6c8]/8">
-                <p className="font-editorial italic text-[12px] sm:text-[13px] text-[#f2e6c8]/60 leading-relaxed">
+                <p className="font-editorial italic text-[12px] sm:text-[15px] text-[#f2e6c8]/60 leading-relaxed">
                   &ldquo;{selectedTown.execSummary150}&rdquo;
                 </p>
               </div>

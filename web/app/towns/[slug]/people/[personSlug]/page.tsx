@@ -279,7 +279,7 @@ export default async function PersonDetailPage({ params }: PageProps) {
                   { label: "Overview", href: `/towns/${slug}` },
                 ].map((link) => (
                   <li key={link.label}>
-                    <NextLink href={link.href} className="no-underline flex items-center gap-2 py-2.5 border-b border-ink/8 font-ui text-[13px] text-ink hover:text-crimson transition-colors">
+                    <NextLink href={link.href} className="no-underline flex items-center gap-2 py-2.5 border-b border-ink/8 font-ui text-[15px] text-ink hover:text-crimson transition-colors">
                       <span className="w-1.5 h-1.5 rounded-full bg-crimson flex-shrink-0" />
                       {link.label}
                     </NextLink>

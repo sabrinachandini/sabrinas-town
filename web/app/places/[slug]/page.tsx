@@ -213,26 +213,26 @@ export default async function PlacePage({ params }: PageProps) {
                   {place.address && (
                     <div>
                       <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Address</dt>
-                      <dd className="font-editorial text-[14px] text-cream mt-0.5 leading-snug">{place.address}</dd>
+                      <dd className="font-editorial text-[16px] text-cream mt-0.5 leading-snug">{place.address}</dd>
                     </div>
                   )}
                   {place.hours && (
                     <div>
                       <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Hours</dt>
-                      <dd className="font-editorial text-[14px] text-cream mt-0.5">{place.hours}</dd>
+                      <dd className="font-editorial text-[16px] text-cream mt-0.5">{place.hours}</dd>
                     </div>
                   )}
                   {place.admission && (
                     <div>
                       <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Admission</dt>
-                      <dd className="font-editorial text-[14px] text-cream mt-0.5">{place.admission}</dd>
+                      <dd className="font-editorial text-[16px] text-cream mt-0.5">{place.admission}</dd>
                     </div>
                   )}
                   {place.phone && (
                     <div>
                       <dt className="font-ui text-[11px] uppercase tracking-[0.12em] text-cream/30">Phone</dt>
                       <dd className="mt-0.5">
-                        <a href={`tel:${place.phone}`} className="no-underline font-editorial text-[14px] text-[#4A6A9B] hover:text-cream transition-colors">{place.phone}</a>
+                        <a href={`tel:${place.phone}`} className="no-underline font-editorial text-[16px] text-[#4A6A9B] hover:text-cream transition-colors">{place.phone}</a>
                       </dd>
                     </div>
                   )}
@@ -291,7 +291,7 @@ export default async function PlacePage({ params }: PageProps) {
                   { label: "Events", href: "/events" },
                 ].map((link) => (
                   <li key={link.label}>
-                    <NextLink href={link.href} className="no-underline flex items-center gap-2 py-2.5 border-b border-ink/8 font-ui text-[13px] text-ink hover:text-crimson transition-colors">
+                    <NextLink href={link.href} className="no-underline flex items-center gap-2 py-2.5 border-b border-ink/8 font-ui text-[15px] text-ink hover:text-crimson transition-colors">
                       <span className="w-1.5 h-1.5 rounded-full bg-crimson flex-shrink-0" />
                       {link.label}
                     </NextLink>
