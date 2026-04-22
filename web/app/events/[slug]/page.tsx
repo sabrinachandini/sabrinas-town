@@ -1,10 +1,17 @@
 import { notFound } from "next/navigation";
-import { getEventBySlug } from "@/lib/api";
+import { getEventBySlug, getAllEvents } from "@/lib/api";
 import NextLink from "next/link";
+import Image from "next/image";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { MarkdownBio } from "@/components/editorial";
 import { Metadata } from "next";
 
 export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  const events = await getAllEvents({ minSignificance: 0, limit: 2000 });
+  return events.filter((e) => e.slug).map((e) => ({ slug: e.slug! }));
+}
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -59,7 +66,7 @@ export default async function EventPage({ params }: PageProps) {
         {/* Background image */}
         {event.imageUrl && (
           <div className="absolute inset-0 z-0">
-            <img src={event.imageUrl} alt="" className="w-full h-full object-cover opacity-[0.12] grayscale" />
+            <Image src={event.imageUrl} alt="" fill className="object-cover opacity-[0.12] grayscale" />
           </div>
         )}
         <div className="relative z-10 py-16 px-8 md:px-16 max-w-[1200px] mx-auto">
@@ -107,19 +114,13 @@ export default async function EventPage({ params }: PageProps) {
                   What Happened
                 </p>
               </div>
-              <div className="space-y-5">
-                {event.summary.split("\n\n").map((para, i) => (
-                  <p key={i} className={`font-editorial text-[18px] text-ink leading-[1.75] ${i === 0 ? "drop-cap" : ""}`}>
-                    {para}
-                  </p>
-                ))}
-              </div>
+              <MarkdownBio content={event.summary} dropCap />
             </section>
 
             {/* Image with credit */}
             {event.imageUrl && (
               <figure className="mt-12">
-                <img src={event.imageUrl} alt={event.name} className="w-full max-h-[400px] object-contain bg-[#14100a]/5" />
+                <Image src={event.imageUrl} alt={event.name} width={1200} height={400} className="w-full max-h-[400px] object-contain bg-[#14100a]/5" />
                 {event.imageCredit && (
                   <figcaption className="font-ui text-[9px] text-ink/35 mt-2 leading-relaxed">{event.imageCredit}</figcaption>
                 )}
@@ -167,7 +168,7 @@ export default async function EventPage({ params }: PageProps) {
                       className="no-underline bg-cream hover:bg-[#1a3a72] group transition-colors p-4 flex gap-3 items-start"
                     >
                       {person.imageUrl ? (
-                        <img src={person.imageUrl} alt={person.name} className="w-[44px] h-[54px] object-cover object-top flex-shrink-0 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100 transition-all" />
+                        <Image src={person.imageUrl} alt={person.name} width={44} height={54} className="object-cover object-top flex-shrink-0 grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100 transition-all" />
                       ) : (
                         <div className="w-[44px] h-[54px] flex-shrink-0 bg-ink/8 flex items-center justify-center">
                           <span className="font-display text-[22px] text-ink/20 group-hover:text-cream/20 transition-colors">{person.name.charAt(0)}</span>
