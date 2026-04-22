@@ -7,3 +7,4 @@ export { EditorialNav } from "./EditorialNav";
 export { ImageWithCaption } from "./ImageWithCaption";
 export { YouTubeEmbed } from "./YouTubeEmbed";
 export { SourceGroup } from "./SourceGroup";
+export { MarkdownBio } from "./MarkdownBio";

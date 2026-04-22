@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getTown, getTownPersonDetail } from "@/lib/api";
 import NextLink from "next/link";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { MarkdownBio } from "@/components/editorial";
 
 export const revalidate = 3600;
 
@@ -117,16 +118,10 @@ export default async function PersonDetailPage({ params }: PageProps) {
                   Biography
                 </p>
               </div>
-              <div className="space-y-5">
-                {person.bioLong
-                  ? person.bioLong.split("\n\n").map((para, i) => (
-                      <p key={i} className={`font-editorial text-[18px] text-ink leading-[1.75] ${i === 0 ? "drop-cap" : ""}`}>
-                        {para}
-                      </p>
-                    ))
-                  : <p className="font-editorial text-[18px] text-ink leading-[1.75] drop-cap">{person.bioShort}</p>
-                }
-              </div>
+              <MarkdownBio
+                content={person.bioLong ?? person.bioShort}
+                dropCap
+              />
             </section>
 
             {/* Events in this town */}

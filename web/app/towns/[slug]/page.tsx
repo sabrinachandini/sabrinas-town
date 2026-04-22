@@ -46,7 +46,10 @@ export default async function TownOverviewPage({ params }: PageProps) {
 
   void recordOrgEvent(slug, "TOWN_VIEW");
 
-  const firstParagraph = town.whyMatters.split("\n\n")[0];
+  // Skip any leading markdown headers to find the first real prose paragraph
+  const firstParagraph = town.whyMatters
+    .split("\n\n")
+    .find((p) => p.trim() && !p.trim().startsWith("#")) ?? town.whyMatters.split("\n\n")[0];
   const people = peopleData?.people ?? [];
   const featuredPeople = people.slice(0, 4);
   const featuredPlaces = (town.featuredPlaces ?? []).slice(0, 4);

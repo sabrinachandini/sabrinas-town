@@ -3,8 +3,8 @@ import { ComingSoon } from "@/components/town";
 import {
   PageShell,
   PageHeader,
-  Prose,
   ImageWithCaption,
+  MarkdownBio,
 } from "@/components/editorial";
 import { JsonLd } from "@/components/seo/JsonLd";
 
@@ -72,11 +72,7 @@ export default async function HistoryPage({ params }: PageProps) {
           </p>
         </div>
         {town.whyMatters ? (
-          <Prose>
-            {town.whyMatters.split("\n\n").map((p, i) => (
-              <p key={i} className="font-editorial">{p}</p>
-            ))}
-          </Prose>
+          <MarkdownBio content={town.whyMatters} dropCap />
         ) : (
           <p className="font-editorial text-ink/60">
             The historical narrative for {town.name} is being researched and written.
