@@ -142,11 +142,64 @@ function buildTownQueries(
   return queries;
 }
 
+// Looks up the Wikipedia article for a person and returns the canonical page image if it exists on Commons
+async function searchWikipediaImage(name: string): Promise<{ url: string; credit: string } | null> {
+  try {
+    const searchUrl = `https://en.wikipedia.org/w/api.php?action=query&titles=${encodeURIComponent(name)}&prop=pageimages&pithumbsize=1200&pilicense=any&format=json`;
+    const res = await fetch(searchUrl, { headers: WIKIMEDIA_HEADERS });
+    if (!res.ok) return null;
+    const text = await res.text();
+    if (!text.startsWith("{")) return null;
+    const data = JSON.parse(text) as any;
+    const pages = data?.query?.pages ?? {};
+    const page = Object.values(pages)[0] as any;
+    if (!page || page.missing !== undefined) return null;
+    const thumb = page.thumbnail?.source as string | undefined;
+    if (!thumb) return null;
+
+    // Convert thumb URL to full-size Commons URL
+    const commonsMatch = thumb.match(/\/wikipedia\/commons\/(thumb\/)?([^/]+\/[^/]+)\//);
+    if (!commonsMatch) return null;
+    const filePathPart = commonsMatch[2];
+    const fileName = filePathPart.split("/").pop()!;
+
+    // Look up license on Commons
+    const infoUrl = `https://commons.wikimedia.org/w/api.php?action=query&titles=File:${encodeURIComponent(fileName)}&prop=imageinfo&iiprop=url|extmetadata&format=json`;
+    const infoRes = await fetch(infoUrl, { headers: WIKIMEDIA_HEADERS });
+    if (!infoRes.ok) return null;
+    const infoData = JSON.parse(await infoRes.text()) as any;
+    const iPages = infoData?.query?.pages ?? {};
+    const iPage = Object.values(iPages)[0] as any;
+    const imageInfo = iPage?.imageinfo?.[0];
+    if (!imageInfo?.url) return null;
+
+    const meta = imageInfo.extmetadata ?? {};
+    const license: string = (meta.LicenseShortName?.value as string) ?? "";
+    const dateStr: string = (meta.DateTimeOriginal?.value as string) ?? (meta.DateTime?.value as string) ?? "";
+    const year = parseInt(dateStr.slice(0, 4));
+    const licenseLow = license.toLowerCase();
+    const isFree = licenseLow.includes("pd") || licenseLow.includes("cc0") || licenseLow.includes("public domain") || licenseLow.includes("cc-pd");
+    const isPreCopyright = !isNaN(year) && year < 1928;
+    if (!isFree && !isPreCopyright && !license) return null;
+
+    const artist: string = (meta.Artist?.value as string)?.replace(/<[^>]+>/g, "").trim() ?? "Unknown";
+    const credit = `${artist}${dateStr ? `, ${dateStr.slice(0, 4)}` : ""}. Wikimedia Commons. ${license || "Public domain"}.`;
+    return { url: imageInfo.url, credit };
+  } catch {
+    return null;
+  }
+}
+
+const PORTRAIT_ARTISTS = ["Gilbert Stuart", "John Singleton Copley", "Charles Willson Peale", "Rembrandt Peale", "John Trumbull", "James Peale"];
+
 function buildPersonQueries(person: { name: string; roles: string[]; birthYear: number | null; deathYear: number | null }): string[] {
   const yearRange = person.birthYear ? `${person.birthYear}` : "";
+  // Artist-specific queries first — these produce the highest-quality paintings
+  const artistQueries = PORTRAIT_ARTISTS.map((artist) => `${person.name} ${artist}`);
   return [
-    `${person.name} portrait engraving`,
+    ...artistQueries,
     `${person.name} portrait painting`,
+    `${person.name} portrait engraving`,
     `${person.name} ${yearRange} American Revolution`,
     `${person.name} Revolutionary War portrait`,
     `${person.name} historical portrait`,
@@ -219,13 +272,18 @@ async function enrichPersonPortraits(limit: number) {
   console.log(`\n── People (${people.length} missing portraits) ──`);
 
   for (const person of people) {
-    const queries = buildPersonQueries(person);
-
-    let result: { url: string; credit: string } | null = null;
-    for (const q of queries) {
-      result = await searchWikimedia(q);
-      if (result) { console.log(`  ✓ ${person.name} [${q}]`); break; }
-      await delay(800);
+    // 1. Try Wikipedia canonical page image first (highest quality)
+    let result: { url: string; credit: string } | null = await searchWikipediaImage(person.name);
+    if (result) {
+      console.log(`  ✓ ${person.name} [Wikipedia page image]`);
+    } else {
+      // 2. Fall through to artist-specific + general Commons queries
+      const queries = buildPersonQueries(person);
+      for (const q of queries) {
+        result = await searchWikimedia(q);
+        if (result) { console.log(`  ✓ ${person.name} [${q}]`); break; }
+        await delay(800);
+      }
     }
 
     if (!result) { console.log(`  ⚠ ${person.name} — no portrait found`); await delay(1000); continue; }

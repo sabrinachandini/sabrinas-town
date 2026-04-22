@@ -40,8 +40,8 @@ export default async function PeoplePage({ params }: PageProps) {
   const people = peopleData?.people ?? [];
 
   // Group by side/allegiance based on roles
-  const patriots = people.filter((p) => p.roles.some((r) => ["Patriot", "General", "Colonel", "Commander", "Minuteman", "Continental", "Spy", "Silversmith", "Printer", "Merchant", "Statesman", "Physician"].includes(r)));
-  const loyalists = people.filter((p) => p.roles.some((r) => ["Loyalist", "Tory", "British"].includes(r)));
+  const patriots = people.filter((p) => (p.roles ?? []).some((r) => ["Patriot", "General", "Colonel", "Commander", "Minuteman", "Continental", "Spy", "Silversmith", "Printer", "Merchant", "Statesman", "Physician"].includes(r)));
+  const loyalists = people.filter((p) => (p.roles ?? []).some((r) => ["Loyalist", "Tory", "British"].includes(r)));
   const others = people.filter((p) => !patriots.includes(p) && !loyalists.includes(p));
 
   return (
