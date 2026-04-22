@@ -156,7 +156,12 @@ export function Header() {
     >
       <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-3 flex items-center justify-between">
 
-        {/* Desktop nav */}
+        {/* Logo — LEFT, 5px margin, desktop only */}
+        <Link href="/" className="no-underline hidden sm:flex items-center ml-[5px]" aria-label="History is for Everyone — home">
+          <img src="/logo-horizontal.svg" alt="History is for Everyone" className="h-[94px] w-auto" />
+        </Link>
+
+        {/* Desktop nav — RIGHT */}
         <nav className="hidden sm:flex items-center gap-8" aria-label="Main navigation">
           {NAV_LINKS.map(({ label, href }) => {
             const active = isNavActive(href);
@@ -191,11 +196,6 @@ export function Header() {
             Plan a Visit
           </Link>
         </nav>
-
-        {/* Logo — right side, desktop only */}
-        <Link href="/" className="no-underline hidden sm:flex items-center" aria-label="History is for Everyone — home">
-          <img src="/logo-lockup.svg" alt="History is for Everyone" className="h-[67px] w-auto" />
-        </Link>
 
         {/* Mobile hamburger */}
         <button
