@@ -194,7 +194,7 @@ export function Header() {
             </svg>
           </Link>
           <Link
-            href="/towns"
+            href="/muster/new"
             className="no-underline ml-2 bg-yellow text-ink font-ui text-[10px] font-semibold uppercase tracking-[0.2em] px-4 py-2 border-2 border-ink hover:bg-cream transition-colors"
           >
             Plan a Visit
@@ -233,7 +233,7 @@ export function Header() {
             })}
             <li className="pt-2">
               <Link
-                href="/towns"
+                href="/muster/new"
                 onClick={() => setOpen(false)}
                 className="no-underline block w-full text-center py-2 px-4 bg-yellow text-ink font-ui font-semibold text-[10px] uppercase tracking-[0.2em]"
               >
