@@ -19,7 +19,7 @@ import {
   arrayMove,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { Map, MapMarker, MarkerContent, MapRoute, MapControls } from "@/components/ui/map";
+import { Map, MapMarker, MarkerContent, MarkerPopup, MapRoute, MapControls } from "@/components/ui/map";
 import Link from "next/link";
 import type { MusterDetail } from "@/lib/muster";
 import { remuster } from "@/app/muster/actions";
@@ -93,6 +93,24 @@ function SortableStop({ stop, color, dayIdx, stopIdx }: { stop: Stop; color: str
         {stop.whyThisStop && (
           <p className="font-ui text-[13px] text-ink/50 leading-snug mt-1 line-clamp-2">{stop.whyThisStop}</p>
         )}
+        {(() => {
+          const addr = stop.place?.address ?? stop.customNote ?? null;
+          const coords = stop.place?.lat && stop.place?.lng ? `${stop.place.lat},${stop.place.lng}` : null;
+          const mapsUrl = coords
+            ? `https://www.google.com/maps/search/?api=1&query=${coords}`
+            : addr
+            ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(addr)}`
+            : stop.place || stop.customName
+            ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent((stop.place?.name ?? stop.customName ?? "") + ", USA")}`
+            : null;
+          if (!addr && !mapsUrl) return null;
+          return (
+            <a href={mapsUrl ?? "#"} target="_blank" rel="noopener noreferrer"
+              className="font-ui text-[11px] text-ink/35 hover:text-[#1a3a72] transition-colors mt-0.5 block">
+              {addr ? `📍 ${addr}` : "📍 View on map"}
+            </a>
+          );
+        })()}
       </div>
     </li>
   );
@@ -104,6 +122,7 @@ export function MusterBuilder({ muster }: { muster: MusterDetail }) {
   const [isSaving, setIsSaving] = useState(false);
   const [isRemustering, setIsRemustering] = useState(false);
   const [mobileTab, setMobileTab] = useState<"agenda" | "map">("agenda");
+  const [showShare, setShowShare] = useState(false);
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 8 } }),
@@ -183,9 +202,13 @@ export function MusterBuilder({ muster }: { muster: MusterDetail }) {
           <a href={`/muster/${muster.id}/print`} className="no-underline font-ui text-[10px] uppercase tracking-[0.14em] text-ink/50 border border-ink/15 px-3 py-1.5 hover:border-ink/40 hover:text-ink transition-colors">
             Print
           </a>
-          <a href={`/muster/share/${muster.shareToken}`} className="no-underline font-ui text-[10px] uppercase tracking-[0.14em] bg-[#1a3a72] text-cream px-3 py-1.5 hover:bg-[#0e1428] transition-colors">
+          <button
+            type="button"
+            onClick={() => setShowShare((v) => !v)}
+            className="font-ui text-[11px] font-semibold uppercase tracking-[0.14em] bg-[#cc3322] text-cream px-4 py-1.5 hover:bg-[#a32818] transition-colors"
+          >
             Share →
-          </a>
+          </button>
           {/* Mobile map toggle */}
           <button
             className="sm:hidden font-ui text-[10px] uppercase tracking-[0.14em] text-ink/50 border border-ink/15 px-3 py-1.5"
@@ -195,6 +218,53 @@ export function MusterBuilder({ muster }: { muster: MusterDetail }) {
           </button>
         </div>
       </div>
+
+      {/* Share panel */}
+      {showShare && (() => {
+        const shareUrl = typeof window !== "undefined"
+          ? `${window.location.origin}/muster/share/${muster.shareToken}`
+          : `/muster/share/${muster.shareToken}`;
+        const text = encodeURIComponent(`Check out my Revolutionary War road trip: ${muster.title}`);
+        const encodedUrl = encodeURIComponent(shareUrl);
+        return (
+          <div className="border-b border-ink/10 bg-[#1a3a72]/[0.04] px-4 md:px-8 py-4">
+            <div className="max-w-[1400px] mx-auto">
+              <p className="font-ui text-[10px] uppercase tracking-[0.18em] text-ink/40 mb-3">Share this Muster</p>
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="flex-1 min-w-0 flex items-center gap-2 bg-white border border-ink/15 px-3 py-2">
+                  <span className="font-ui text-[12px] text-ink/50 truncate flex-1">{shareUrl}</span>
+                  <button
+                    type="button"
+                    onClick={() => { navigator.clipboard.writeText(shareUrl); }}
+                    className="font-ui text-[10px] uppercase tracking-[0.12em] text-[#1a3a72] hover:text-ink transition-colors whitespace-nowrap flex-shrink-0"
+                  >
+                    Copy
+                  </button>
+                </div>
+                <a href={`https://twitter.com/intent/tweet?text=${text}&url=${encodedUrl}`}
+                  target="_blank" rel="noopener noreferrer"
+                  className="no-underline font-ui text-[10px] uppercase tracking-[0.12em] bg-black text-white px-4 py-2 hover:bg-zinc-800 transition-colors whitespace-nowrap">
+                  𝕏 Post
+                </a>
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
+                  target="_blank" rel="noopener noreferrer"
+                  className="no-underline font-ui text-[10px] uppercase tracking-[0.12em] bg-[#1877F2] text-white px-4 py-2 hover:bg-[#1565d8] transition-colors whitespace-nowrap">
+                  Facebook
+                </a>
+                <a href={`https://api.whatsapp.com/send?text=${text}%20${encodedUrl}`}
+                  target="_blank" rel="noopener noreferrer"
+                  className="no-underline font-ui text-[10px] uppercase tracking-[0.12em] bg-[#25D366] text-white px-4 py-2 hover:bg-[#1da851] transition-colors whitespace-nowrap">
+                  WhatsApp
+                </a>
+                <a href={`/muster/share/${muster.shareToken}`}
+                  className="no-underline font-ui text-[10px] uppercase tracking-[0.12em] text-ink/50 border border-ink/15 px-4 py-2 hover:border-ink/40 hover:text-ink transition-colors whitespace-nowrap">
+                  View share page →
+                </a>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
 
       {/* Two-column layout */}
       <div className="flex flex-1">
@@ -237,19 +307,49 @@ export function MusterBuilder({ muster }: { muster: MusterDetail }) {
               {routeCoords.length >= 2 && (
                 <MapRoute coordinates={routeCoords} color="#1a3a72" width={2} opacity={0.5} dashArray={[4, 3]} />
               )}
-              {allStopsWithCoords.map((stop, i) => (
-                <MapMarker key={stop.id} latitude={stop.lat} longitude={stop.lng}>
-                  <MarkerContent>
-                    <div
-                      className="w-7 h-7 flex items-center justify-center text-cream font-ui font-bold text-[11px] border-2 border-white shadow-md cursor-pointer"
-                      style={{ background: DAY_COLORS[stop.dayIdx % DAY_COLORS.length] }}
-                      title={stop.place?.name ?? ""}
-                    >
-                      {i + 1}
-                    </div>
-                  </MarkerContent>
-                </MapMarker>
-              ))}
+              {allStopsWithCoords.map((stop, i) => {
+                const stopName = stop.place?.name ?? stop.customName ?? "Stop";
+                const website = stop.place?.website ?? stop.localEvent?.url ?? null;
+                const addr = stop.place?.address ?? stop.customNote ?? null;
+                const coords = `${stop.lat},${stop.lng}`;
+                const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${coords}`;
+                return (
+                  <MapMarker key={stop.id} latitude={stop.lat} longitude={stop.lng}>
+                    <MarkerContent>
+                      <div
+                        className="w-7 h-7 flex items-center justify-center text-cream font-ui font-bold text-[11px] border-2 border-white shadow-md cursor-pointer hover:scale-110 transition-transform"
+                        style={{ background: DAY_COLORS[stop.dayIdx % DAY_COLORS.length] }}
+                      >
+                        {i + 1}
+                      </div>
+                    </MarkerContent>
+                    <MarkerPopup closeButton>
+                      <div className="min-w-[200px] max-w-[260px] space-y-1.5 p-1">
+                        <p className="font-display text-[15px] text-ink leading-tight">{stopName}</p>
+                        {stop.arrivalTime && (
+                          <p className="font-ui text-[11px] text-ink/40">{stop.arrivalTime}{stop.durationMinutes ? ` · ${stop.durationMinutes} min` : ""}</p>
+                        )}
+                        {stop.whyThisStop && (
+                          <p className="font-ui text-[12px] text-ink/60 leading-snug">{stop.whyThisStop}</p>
+                        )}
+                        {addr && <p className="font-ui text-[11px] text-ink/40">📍 {addr}</p>}
+                        <div className="flex gap-2 pt-1">
+                          <a href={mapsUrl} target="_blank" rel="noopener noreferrer"
+                            className="font-ui text-[10px] uppercase tracking-[0.1em] text-[#1a3a72] hover:underline">
+                            Directions
+                          </a>
+                          {website && (
+                            <a href={website} target="_blank" rel="noopener noreferrer"
+                              className="font-ui text-[10px] uppercase tracking-[0.1em] text-[#cc3322] hover:underline">
+                              Website
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    </MarkerPopup>
+                  </MapMarker>
+                );
+              })}
             </Map>
           ) : (
             <div className="h-full bg-[#1a3a72]/5 flex items-center justify-center">

@@ -26,6 +26,7 @@ export interface MusterStopData {
   duration_minutes: number;
   why_this_stop: string;
   tip?: string;
+  address?: string;
 }
 
 export interface MusterDayData {
@@ -263,20 +264,29 @@ export async function findMusterData(
 
 // ── Restaurant Verification (Nominatim) ──────────────────────────────────────
 
-async function verifyRestaurantExists(name: string, region: string): Promise<boolean> {
+async function verifyRestaurantExists(name: string, region: string): Promise<{ exists: boolean; address?: string; website?: string }> {
   try {
-    const q = encodeURIComponent(`${name}, ${region}, USA`);
-    const res = await fetch(
-      `https://nominatim.openstreetmap.org/search?q=${q}&format=json&limit=1&addressdetails=1`,
-      { headers: { "User-Agent": "HistoryIsForEveryone-Muster/1.0 (sabrina@hife.org)" } }
-    );
-    if (!res.ok) return false;
+    const geo = await geocodeLocation(region);
+    if (!geo) return { exists: false };
+    const safeName = name.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+    const amenities = "restaurant|bar|pub|cafe|tavern|fast_food";
+    const q = `[out:json][timeout:8];(node["amenity"~"${amenities}"]["name"~"^${safeName}$",i](around:120000,${geo.lat},${geo.lng});way["amenity"~"${amenities}"]["name"~"^${safeName}$",i](around:120000,${geo.lat},${geo.lng}););out 1;`;
+    const res = await fetch("https://overpass-api.de/api/interpreter", {
+      method: "POST",
+      body: "data=" + encodeURIComponent(q),
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      signal: AbortSignal.timeout(12000),
+    });
+    if (!res.ok) return { exists: false };
     const data = await res.json();
-    if (!data[0]) return false;
-    const { class: cls, type } = data[0];
-    return cls === "amenity" || cls === "tourism" || type === "restaurant" || type === "bar" || type === "cafe" || type === "pub";
+    if (!data.elements?.length) return { exists: false };
+    const tags = data.elements[0].tags ?? {};
+    const addrParts = [tags["addr:housenumber"], tags["addr:street"], tags["addr:city"], tags["addr:state"]].filter(Boolean);
+    const address = addrParts.length >= 2 ? addrParts.join(" ") : undefined;
+    const website = tags["website"] || tags["contact:website"] || undefined;
+    return { exists: true, address, website };
   } catch {
-    return false;
+    return { exists: false };
   }
 }
 
@@ -370,6 +380,8 @@ Voice: warm, curious, accessible — like a brilliant friend who knows the Revol
 - For history buffs: surface lesser-known details, primary source connections
 - Always route geographically logically (no backtracking)
 - Suggest a meal stop each day at a real, named, landmark restaurant or tavern. Choose historic institutions that have been operating for decades (colonial taverns, famous inns, long-standing local institutions). Include the restaurant name and city. Do NOT suggest chains or generic descriptions. Only name places you are highly confident still exist.
+- For museum and historic site stops, check the "hours" field in the sites JSON. Only suggest arrival times that fall within those hours. Never suggest arriving before a site opens or after it closes.
+- For every stop that is a statue, monument, or outdoor landmark, note in why_this_stop that it is always accessible (no hours needed).
 
 Return ONLY valid JSON. No markdown code fences.`;
 
@@ -421,18 +433,21 @@ Return ONLY valid JSON. No markdown code fences.`;
     }
   }
 
-  // Verify meal stop restaurants exist via Nominatim; flag unverified ones.
-  const region = request.startLocation;
-  for (const day of itinerary.days) {
-    for (const stop of day.stops) {
-      if (stop.type === "meal" && stop.name) {
-        const exists = await verifyRestaurantExists(stop.name, region);
-        if (!exists) {
-          stop.tip = (stop.tip ? stop.tip + " " : "") + "Call ahead to confirm hours and that it's still open.";
-        }
-      }
-    }
-  }
+  // Verify meal stop restaurants via Overpass/OpenStreetMap; run in parallel.
+  await Promise.all(
+    itinerary.days.flatMap((day) =>
+      day.stops
+        .filter((stop) => stop.type === "meal" && stop.name)
+        .map(async (stop) => {
+          const result = await verifyRestaurantExists(stop.name, request.startLocation);
+          if (result.exists) {
+            if (result.address) stop.address = result.address;
+          } else {
+            stop.tip = (stop.tip ? stop.tip + " " : "") + "⚠ Call ahead to confirm this is still open.";
+          }
+        })
+    )
+  );
 
   return itinerary;
 }
@@ -470,6 +485,7 @@ export async function saveMuster(
               placeId: stop.type === "site" && stop.id ? stop.id : null,
               localEventId: stop.type === "event" && stop.id ? stop.id : null,
               customName: !stop.id ? stop.name : null,
+              customNote: stop.address ?? null,
               arrivalTime: stop.arrival_time,
               durationMinutes: stop.duration_minutes,
               whyThisStop: stop.why_this_stop,

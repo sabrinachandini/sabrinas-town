@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getMusterByToken } from "@/lib/muster";
 import { MusterShareMap } from "./MusterShareMap";
+import { ShareActions } from "./ShareActions";
 
 interface PageProps { params: Promise<{ token: string }> }
 
@@ -21,7 +22,18 @@ export default async function MusterSharePage({ params }: PageProps) {
   const stopsWithCoords = muster.days.flatMap((day, di) =>
     day.stops
       .filter((s) => s.place?.lat && s.place?.lng)
-      .map((s) => ({ id: s.id, lat: s.place!.lat!, lng: s.place!.lng!, dayIdx: di, name: s.place!.name }))
+      .map((s) => ({
+        id: s.id,
+        lat: s.place!.lat!,
+        lng: s.place!.lng!,
+        dayIdx: di,
+        name: s.place!.name,
+        whyThisStop: s.whyThisStop,
+        arrivalTime: s.arrivalTime,
+        durationMinutes: s.durationMinutes,
+        address: s.place?.address ?? s.customNote ?? null,
+        website: s.place?.website ?? s.localEvent?.url ?? null,
+      }))
   );
 
   return (
@@ -42,6 +54,11 @@ export default async function MusterSharePage({ params }: PageProps) {
           {muster.summary && <p className="font-editorial italic font-light text-cream/60 max-w-[560px] leading-[1.6]" style={{ fontSize: "clamp(15px,1.8vw,19px)" }}>{muster.summary}</p>}
         </div>
       </div>
+
+      <ShareActions
+        shareUrl={`https://sabrinas-town.vercel.app/muster/share/${token}`}
+        title={muster.title}
+      />
 
       {/* Two-column body */}
       <div className="flex flex-1 flex-col sm:flex-row">
@@ -81,6 +98,19 @@ export default async function MusterSharePage({ params }: PageProps) {
                             </h3>
                             {stop.arrivalTime && <p className="font-ui text-[11px] text-ink/35 mt-0.5">{stop.arrivalTime}{stop.durationMinutes ? ` · ${stop.durationMinutes} min` : ""}</p>}
                             {stop.whyThisStop && <p className="font-ui text-[15px] text-ink/55 mt-1.5 leading-relaxed">{stop.whyThisStop}</p>}
+                            {(() => {
+                              const addr = stop.place?.address ?? stop.customNote ?? null;
+                              const coords = stop.place?.lat && stop.place?.lng ? `${stop.place.lat},${stop.place.lng}` : null;
+                              const mapsUrl = coords
+                                ? `https://www.google.com/maps/search/?api=1&query=${coords}`
+                                : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent((stop.place?.name ?? stop.localEvent?.name ?? stop.customName ?? "") + ", USA")}`;
+                              return (
+                                <a href={mapsUrl} target="_blank" rel="noopener noreferrer"
+                                  className="font-ui text-[12px] text-ink/35 hover:text-[#1a3a72] transition-colors mt-1 block no-underline">
+                                  {addr ? `📍 ${addr}` : "📍 View on map →"}
+                                </a>
+                              );
+                            })()}
                           </div>
                         </li>
                       );
@@ -100,6 +130,7 @@ export default async function MusterSharePage({ params }: PageProps) {
               </Link>
             </div>
           </div>
+
         </div>
 
         {/* Right: map — sticky on desktop */}
