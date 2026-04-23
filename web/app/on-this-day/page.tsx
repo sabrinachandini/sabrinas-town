@@ -1,7 +1,11 @@
 import { getOnThisDay } from "@/lib/api";
 import NextLink from "next/link";
 
-export const revalidate = 3600;
+export const dynamic = "force-dynamic";
+
+interface PageProps {
+  searchParams: Promise<{ date?: string }>;
+}
 
 export function generateMetadata() {
   const now = new Date();
@@ -14,17 +18,21 @@ export function generateMetadata() {
   };
 }
 
-export default async function OnThisDayPage() {
-  const now = new Date();
-  const month = now.getUTCMonth() + 1;
-  const day = now.getUTCDate();
+export default async function OnThisDayPage({ searchParams }: PageProps) {
+  const { date } = await searchParams;
+  // Use browser-supplied local date if present (set by client script below)
+  const now = date ? new Date(date + "T12:00:00") : new Date();
+  const month = now.getMonth() + 1;
+  const day = now.getDate();
   const events = await getOnThisDay(month, day);
 
-  const monthName = now.toLocaleDateString("en-US", { month: "long", timeZone: "UTC" });
-  const dayNum = now.toLocaleDateString("en-US", { day: "numeric", timeZone: "UTC" });
+  const monthName = now.toLocaleDateString("en-US", { month: "long" });
+  const dayNum = now.toLocaleDateString("en-US", { day: "numeric" });
 
   return (
     <div className="bg-cream min-h-screen">
+      {/* Redirect to local date if browser date differs from server date */}
+      <script dangerouslySetInnerHTML={{ __html: `(function(){var d=new Date(),s=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'),u=new URL(location.href);if(u.searchParams.get('date')!==s){u.searchParams.set('date',s);location.replace(u.toString());}})();` }} />
       {/* Hero */}
       <div className="bg-[#1a3a72] border-b-4 border-[#cc3322] py-16 px-8 md:px-16 relative overflow-hidden">
         <div aria-hidden className="absolute right-[-10px] top-[-20px] font-display leading-none pointer-events-none select-none text-white/[0.04]" style={{ fontSize: "clamp(120px,22vw,300px)", letterSpacing: "-0.05em" }}>

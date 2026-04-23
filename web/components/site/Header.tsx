@@ -154,12 +154,12 @@ export function Header() {
         scrolled ? "shadow-lg" : ""
       }`}
     >
-      <div className="mx-auto max-w-[1200px] pl-0 pr-6 md:pl-0 md:pr-10 py-2 flex items-center justify-between">
+      <div className="w-full pl-0 pr-5 sm:pr-10 py-2 flex items-center justify-between">
 
         {/* Logo — TOP LEFT, always visible */}
         <Link href="/" className="no-underline flex-shrink-0" aria-label="History is for Everyone — home">
           {/* Mobile: stacked lockup */}
-          <img src="/logo-lockup-town.svg" alt="History is for Everyone" className="h-[64px] w-auto sm:hidden" />
+          <img src="/logo-lockup-town.svg" alt="History is for Everyone" className="h-[88px] w-auto sm:hidden" />
           {/* Desktop: horizontal lockup */}
           <img src="/logo-horizontal.svg" alt="History is for Everyone" className="h-[110px] w-auto hidden sm:block" />
         </Link>

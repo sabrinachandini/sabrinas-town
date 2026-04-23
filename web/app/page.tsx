@@ -81,7 +81,7 @@ export default async function HomePage() {
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 mt-9">
             <NextLink
               href="/towns"
-              className="font-editorial font-bold text-[20px] tracking-[0.04em] text-[#f2e6c8] bg-[#cc3322] px-7 py-3.5 no-underline inline-block border-[3px] border-[#14100a] shadow-[4px_4px_0_#14100a] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#14100a] transition-all duration-100 text-center"
+              className="font-editorial font-bold text-[20px] tracking-[0.04em] text-[#f2e6c8] bg-[#1a3a72] px-7 py-3.5 no-underline inline-block border-[3px] border-[#14100a] shadow-[4px_4px_0_#14100a] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#14100a] transition-all duration-100 text-center"
             >
               Explore the Towns
             </NextLink>

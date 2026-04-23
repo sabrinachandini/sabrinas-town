@@ -68,7 +68,7 @@ export default async function TeacherPrintPage({ params, searchParams }: PagePro
       {/* ── Cover ──────────────────────────────────────────────────────── */}
       <section className="ws-cover page-break-after">
         <div className="ws-cover-topbar">
-          <span className="ws-cover-topbar-brand">History is for Everyone</span>
+          <img src="/logo-horizontal.svg" alt="History is for Everyone" style={{ height: 48, width: "auto" }} />
           <span className="ws-cover-topbar-series">American Revolution Network</span>
         </div>
         <p className="ws-cover-brand">{isTeacherMode ? "Teacher Resource Packet" : "Student Worksheet Packet"}</p>
