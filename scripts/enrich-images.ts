@@ -154,17 +154,12 @@ async function searchWikipediaImage(name: string): Promise<{ url: string; credit
     const pages = data?.query?.pages ?? {};
     const page = Object.values(pages)[0] as any;
     if (!page || page.missing !== undefined) return null;
-    const thumb = page.thumbnail?.source as string | undefined;
-    if (!thumb) return null;
-
-    // Convert thumb URL to full-size Commons URL
-    const commonsMatch = thumb.match(/\/wikipedia\/commons\/(thumb\/)?([^/]+\/[^/]+)\//);
-    if (!commonsMatch) return null;
-    const filePathPart = commonsMatch[2];
-    const fileName = filePathPart.split("/").pop()!;
+    // Use pageimage filename directly — more reliable than parsing thumbnail URL
+    const pageImageName = page.pageimage as string | undefined;
+    if (!pageImageName) return null;
 
     // Look up license on Commons
-    const infoUrl = `https://commons.wikimedia.org/w/api.php?action=query&titles=File:${encodeURIComponent(fileName)}&prop=imageinfo&iiprop=url|extmetadata&format=json`;
+    const infoUrl = `https://commons.wikimedia.org/w/api.php?action=query&titles=File:${encodeURIComponent(pageImageName)}&prop=imageinfo&iiprop=url|extmetadata&format=json`;
     const infoRes = await fetch(infoUrl, { headers: WIKIMEDIA_HEADERS });
     if (!infoRes.ok) return null;
     const infoData = JSON.parse(await infoRes.text()) as any;
@@ -180,7 +175,7 @@ async function searchWikipediaImage(name: string): Promise<{ url: string; credit
     const licenseLow = license.toLowerCase();
     const isFree = licenseLow.includes("pd") || licenseLow.includes("cc0") || licenseLow.includes("public domain") || licenseLow.includes("cc-pd");
     const isPreCopyright = !isNaN(year) && year < 1928;
-    if (!isFree && !isPreCopyright && !license) return null;
+    if (!isFree && !isPreCopyright && license) return null;
 
     const artist: string = (meta.Artist?.value as string)?.replace(/<[^>]+>/g, "").trim() ?? "Unknown";
     const credit = `${artist}${dateStr ? `, ${dateStr.slice(0, 4)}` : ""}. Wikimedia Commons. ${license || "Public domain"}.`;
@@ -271,9 +266,25 @@ async function enrichPersonPortraits(limit: number) {
 
   console.log(`\n── People (${people.length} missing portraits) ──`);
 
+  const RANK_PREFIXES = [
+    /^(Major General|Brigadier General|Lieutenant General|General|Major|Lieutenant Colonel|Colonel|Captain|Sergeant|Corporal|Private|Admiral|Commodore|Rear Admiral|Vice Admiral|Baron|Count|Viscount|Earl|Lord|Sir|Dr\.?|Reverend|Governor|Judge)\s+/i,
+  ];
+  function stripRank(name: string): string {
+    for (const re of RANK_PREFIXES) {
+      const stripped = name.replace(re, "");
+      if (stripped !== name) return stripped;
+    }
+    return name;
+  }
+
   for (const person of people) {
+    const wikiName = stripRank(person.name);
     // 1. Try Wikipedia canonical page image first (highest quality)
-    let result: { url: string; credit: string } | null = await searchWikipediaImage(person.name);
+    let result: { url: string; credit: string } | null = await searchWikipediaImage(wikiName);
+    // If stripped name differs, also try original
+    if (!result && wikiName !== person.name) {
+      result = await searchWikipediaImage(person.name);
+    }
     if (result) {
       console.log(`  ✓ ${person.name} [Wikipedia page image]`);
     } else {
