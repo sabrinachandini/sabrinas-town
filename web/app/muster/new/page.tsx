@@ -363,31 +363,63 @@ export default function MusterNewPage() {
         )}
 
         {isPending && (
-          <div className="mt-16 text-center space-y-5">
-            <div className="flex justify-center gap-1.5">
-              {[0, 1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="w-2 h-2 rounded-full bg-[#cc3322]"
-                  style={{ animation: `muster-pulse 1.2s ease-in-out ${i * 0.18}s infinite` }}
+          <div className="mt-16 text-center space-y-6">
+            <div className="flex justify-center">
+              <svg width="140" height="120" viewBox="0 0 140 120" aria-hidden>
+                <style>{`
+                  @keyframes drum-hit-left {
+                    0%, 100% { transform: rotate(-38deg); }
+                    45%, 55% { transform: rotate(-4deg); }
+                  }
+                  @keyframes drum-hit-right {
+                    0%, 100% { transform: rotate(38deg); }
+                    45%, 55% { transform: rotate(4deg); }
+                  }
+                  @keyframes drum-head-flash {
+                    0%, 100% { opacity: 1; }
+                    48%, 52% { opacity: 0.65; }
+                  }
+                `}</style>
+
+                {/* Drum body */}
+                <rect x="25" y="68" width="90" height="38" rx="3" fill="#1a3a72" />
+                {/* Tension zig-zag */}
+                <polyline
+                  points="25,73 32,87 39,73 46,87 53,73 60,87 67,73 74,87 81,73 88,87 95,73 102,87 109,73 115,87"
+                  fill="none" stroke="#cc3322" strokeWidth="1.5"
                 />
-              ))}
+                {/* Drum head */}
+                <ellipse cx="70" cy="68" rx="45" ry="10" fill="#f5e9d0" stroke="#1a3a72" strokeWidth="2.5"
+                  style={{ animation: "drum-head-flash 0.9s ease-in-out infinite" }} />
+                {/* Bottom rim */}
+                <ellipse cx="70" cy="106" rx="45" ry="10" fill="none" stroke="#1a3a72" strokeWidth="2" />
+                {/* Drum legs */}
+                <line x1="38" y1="106" x2="30" y2="118" stroke="#1a3a72" strokeWidth="3" strokeLinecap="round" />
+                <line x1="102" y1="106" x2="110" y2="118" stroke="#1a3a72" strokeWidth="3" strokeLinecap="round" />
+
+                {/* Left drumstick — pivots at (48, 68) */}
+                <g style={{ transformOrigin: "48px 68px", animation: "drum-hit-left 0.9s ease-in-out infinite" }}>
+                  <line x1="48" y1="68" x2="18" y2="12" stroke="#c8a044" strokeWidth="4" strokeLinecap="round" />
+                  <circle cx="18" cy="10" r="5.5" fill="#c8a044" />
+                </g>
+
+                {/* Right drumstick — pivots at (92, 68), offset half beat */}
+                <g style={{ transformOrigin: "92px 68px", animation: "drum-hit-right 0.9s ease-in-out 0.45s infinite" }}>
+                  <line x1="92" y1="68" x2="122" y2="12" stroke="#c8a044" strokeWidth="4" strokeLinecap="round" />
+                  <circle cx="122" cy="10" r="5.5" fill="#c8a044" />
+                </g>
+              </svg>
             </div>
+
             <p className="font-display text-[clamp(22px,4vw,34px)] text-ink tracking-[-0.02em]">
               Mustering your troops…
             </p>
             <p className="font-editorial italic text-[17px] text-ink/40">
               Scouting routes, consulting the archives,<br className="hidden sm:block" /> assembling your itinerary.
             </p>
-            <p className="font-ui text-[11px] uppercase tracking-[0.18em] text-ink/25 mt-2">
+            <p className="font-ui text-[11px] uppercase tracking-[0.18em] text-ink/25">
               This takes about 15 seconds
             </p>
-            <style>{`
-              @keyframes muster-pulse {
-                0%, 80%, 100% { transform: scale(0.6); opacity: 0.3; }
-                40% { transform: scale(1); opacity: 1; }
-              }
-            `}</style>
           </div>
         )}
       </div>

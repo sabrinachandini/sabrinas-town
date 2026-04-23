@@ -261,6 +261,25 @@ export async function findMusterData(
   return { sites, events };
 }
 
+// ── Restaurant Verification (Nominatim) ──────────────────────────────────────
+
+async function verifyRestaurantExists(name: string, region: string): Promise<boolean> {
+  try {
+    const q = encodeURIComponent(`${name}, ${region}, USA`);
+    const res = await fetch(
+      `https://nominatim.openstreetmap.org/search?q=${q}&format=json&limit=1&addressdetails=1`,
+      { headers: { "User-Agent": "HistoryIsForEveryone-Muster/1.0 (sabrina@hife.org)" } }
+    );
+    if (!res.ok) return false;
+    const data = await res.json();
+    if (!data[0]) return false;
+    const { class: cls, type } = data[0];
+    return cls === "amenity" || cls === "tourism" || type === "restaurant" || type === "bar" || type === "cafe" || type === "pub";
+  } catch {
+    return false;
+  }
+}
+
 // ── Claude Itinerary Generation ───────────────────────────────────────────────
 
 const INTEREST_LABELS: Record<string, string> = {
@@ -350,7 +369,7 @@ Voice: warm, curious, accessible — like a brilliant friend who knows the Revol
 - For school groups: note group logistics, educational framing
 - For history buffs: surface lesser-known details, primary source connections
 - Always route geographically logically (no backtracking)
-- Suggest a meal stop each day at a historically-relevant tavern or restaurant — describe the TYPE of place and neighborhood to look in (e.g. "a colonial tavern near the green"), NOT a specific restaurant name, since businesses open and close
+- Suggest a meal stop each day at a real, named, landmark restaurant or tavern. Choose historic institutions that have been operating for decades (colonial taverns, famous inns, long-standing local institutions). Include the restaurant name and city. Do NOT suggest chains or generic descriptions. Only name places you are highly confident still exist.
 
 Return ONLY valid JSON. No markdown code fences.`;
 
@@ -398,6 +417,19 @@ Return ONLY valid JSON. No markdown code fences.`;
       }
       if (stop.type === "event" && stop.id && !knownEventIds.has(stop.id)) {
         stop.id = undefined;
+      }
+    }
+  }
+
+  // Verify meal stop restaurants exist via Nominatim; flag unverified ones.
+  const region = request.startLocation;
+  for (const day of itinerary.days) {
+    for (const stop of day.stops) {
+      if (stop.type === "meal" && stop.name) {
+        const exists = await verifyRestaurantExists(stop.name, region);
+        if (!exists) {
+          stop.tip = (stop.tip ? stop.tip + " " : "") + "Call ahead to confirm hours and that it's still open.";
+        }
       }
     }
   }
