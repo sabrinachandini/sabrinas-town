@@ -363,10 +363,31 @@ export default function MusterNewPage() {
         )}
 
         {isPending && (
-          <div className="mt-8 text-center">
-            <p className="font-editorial italic text-[17px] text-ink/50">
-              Gathering the troops…
+          <div className="mt-16 text-center space-y-5">
+            <div className="flex justify-center gap-1.5">
+              {[0, 1, 2, 3, 4].map((i) => (
+                <div
+                  key={i}
+                  className="w-2 h-2 rounded-full bg-[#cc3322]"
+                  style={{ animation: `muster-pulse 1.2s ease-in-out ${i * 0.18}s infinite` }}
+                />
+              ))}
+            </div>
+            <p className="font-display text-[clamp(22px,4vw,34px)] text-ink tracking-[-0.02em]">
+              Mustering your troops…
             </p>
+            <p className="font-editorial italic text-[17px] text-ink/40">
+              Scouting routes, consulting the archives,<br className="hidden sm:block" /> assembling your itinerary.
+            </p>
+            <p className="font-ui text-[11px] uppercase tracking-[0.18em] text-ink/25 mt-2">
+              This takes about 15 seconds
+            </p>
+            <style>{`
+              @keyframes muster-pulse {
+                0%, 80%, 100% { transform: scale(0.6); opacity: 0.3; }
+                40% { transform: scale(1); opacity: 1; }
+              }
+            `}</style>
           </div>
         )}
       </div>
