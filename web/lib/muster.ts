@@ -264,18 +264,19 @@ export async function findMusterData(
 
 // ── Restaurant Verification (Nominatim) ──────────────────────────────────────
 
-async function verifyRestaurantExists(name: string, region: string): Promise<{ exists: boolean; address?: string; website?: string }> {
+async function verifyRestaurantExists(
+  name: string,
+  geo: { lat: number; lng: number }
+): Promise<{ exists: boolean; address?: string; website?: string }> {
   try {
-    const geo = await geocodeLocation(region);
-    if (!geo) return { exists: false };
     const safeName = name.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
     const amenities = "restaurant|bar|pub|cafe|tavern|fast_food";
-    const q = `[out:json][timeout:8];(node["amenity"~"${amenities}"]["name"~"^${safeName}$",i](around:120000,${geo.lat},${geo.lng});way["amenity"~"${amenities}"]["name"~"^${safeName}$",i](around:120000,${geo.lat},${geo.lng}););out 1;`;
+    const q = `[out:json][timeout:5];(node["amenity"~"${amenities}"]["name"~"^${safeName}$",i](around:120000,${geo.lat},${geo.lng});way["amenity"~"${amenities}"]["name"~"^${safeName}$",i](around:120000,${geo.lat},${geo.lng}););out 1;`;
     const res = await fetch("https://overpass-api.de/api/interpreter", {
       method: "POST",
       body: "data=" + encodeURIComponent(q),
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      signal: AbortSignal.timeout(12000),
+      signal: AbortSignal.timeout(7000),
     });
     if (!res.ok) return { exists: false };
     const data = await res.json();
@@ -433,21 +434,28 @@ Return ONLY valid JSON. No markdown code fences.`;
     }
   }
 
-  // Verify meal stop restaurants via Overpass/OpenStreetMap; run in parallel.
-  await Promise.all(
-    itinerary.days.flatMap((day) =>
-      day.stops
-        .filter((stop) => stop.type === "meal" && stop.name)
-        .map(async (stop) => {
-          const result = await verifyRestaurantExists(stop.name, request.startLocation);
+  // Verify meal stop restaurants via Overpass. Geocode region once, run checks in
+  // parallel. The entire block is best-effort — any failure just skips verification.
+  try {
+    const geo = await geocodeLocation(request.startLocation);
+    if (geo) {
+      const mealStops = itinerary.days.flatMap((day) =>
+        day.stops.filter((stop) => stop.type === "meal" && stop.name)
+      );
+      await Promise.all(
+        mealStops.map(async (stop) => {
+          const result = await verifyRestaurantExists(stop.name, geo);
           if (result.exists) {
             if (result.address) stop.address = result.address;
           } else {
             stop.tip = (stop.tip ? stop.tip + " " : "") + "⚠ Call ahead to confirm this is still open.";
           }
         })
-    )
-  );
+      );
+    }
+  } catch {
+    // Verification is non-critical; never let it fail the generation.
+  }
 
   return itinerary;
 }
