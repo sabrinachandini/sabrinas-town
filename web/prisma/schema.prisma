@@ -77,6 +77,7 @@ model Town {
 
   // Partner inquiries
   partnerInquiries PartnerInquiry[]
+  eventSubmissions EventSubmission[]
 
   // Clusters
   clusterTowns     ClusterTown[]
@@ -1108,6 +1109,29 @@ model MusterStop {
 
   @@index([musterDayId])
   @@unique([musterDayId, stopOrder])
+}
+
+// ── Event Submissions (public form → admin review) ────────────────────────
+
+model EventSubmission {
+  id           String   @id @default(cuid())
+  eventName    String
+  description  String   @db.Text
+  startDate    DateTime?
+  endDate      DateTime?
+  venueName    String?
+  townId       String?
+  town         Town?    @relation(fields: [townId], references: [id])
+  eventType    String   // "reenactment" | "festival" | "ceremony" | "tour" | "lecture" | "exhibition"
+  websiteUrl   String?
+  contactEmail String
+  status       String   @default("pending") // "pending" | "approved" | "rejected"
+  adminNotes   String?  @db.Text
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([status])
+  @@index([createdAt(sort: Desc)])
 }
 
 // ── Email Signups ─────────────────────────────────────────────────────────

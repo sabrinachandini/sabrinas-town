@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
+import prisma from "@/lib/prisma";
 import {
   geocodeLocation,
   findMusterData,
@@ -23,18 +24,15 @@ export async function createMuster(formData: FormData) {
     pace: (formData.get("pace") as MusterRequest["pace"]) ?? "BALANCED",
   };
 
-  // Basic validation
   if (!request.startDate || !request.endDate || !request.startLocation || !request.endLocation) {
     throw new Error("Missing required trip fields");
   }
 
-  // Geocode start and end locations
   const [startCoords, endCoords] = await Promise.all([
     geocodeLocation(request.startLocation),
     geocodeLocation(request.endLocation),
   ]);
 
-  // Fall back to center of New England if geocoding fails
   const startLat = startCoords?.lat ?? 42.3;
   const startLng = startCoords?.lng ?? -71.5;
   const endLat = endCoords?.lat ?? startLat;
@@ -43,17 +41,50 @@ export async function createMuster(formData: FormData) {
   const startDate = new Date(request.startDate + "T00:00:00");
   const endDate = new Date(request.endDate + "T23:59:59");
 
-  // Find relevant sites and events
-  const { sites, events } = await findMusterData(
-    startLat, startLng, endLat, endLng,
-    startDate, endDate
-  );
-
-  // Generate itinerary with Claude
+  const { sites, events } = await findMusterData(startLat, startLng, endLat, endLng, startDate, endDate);
   const itinerary = await generateMusterWithClaude(request, sites, events);
-
-  // Save to DB
   const musterId = await saveMuster(request, itinerary, session?.user?.id);
 
   redirect(`/muster/${musterId}`);
+}
+
+// Re-generate itinerary with same inputs, return new muster ID
+export async function remuster(musterId: string): Promise<string> {
+  const session = await auth();
+
+  const existing = await prisma.muster.findUnique({
+    where: { id: musterId },
+    select: {
+      startDate: true, endDate: true, startLocation: true, endLocation: true,
+      interests: true, travelerType: true, pace: true,
+    },
+  });
+  if (!existing) throw new Error("Muster not found");
+
+  const request: MusterRequest = {
+    startDate: existing.startDate.toISOString().split("T")[0],
+    endDate: existing.endDate.toISOString().split("T")[0],
+    startLocation: existing.startLocation,
+    endLocation: existing.endLocation,
+    interests: existing.interests,
+    travelerType: existing.travelerType as MusterRequest["travelerType"],
+    pace: existing.pace as MusterRequest["pace"],
+  };
+
+  const [startCoords, endCoords] = await Promise.all([
+    geocodeLocation(request.startLocation),
+    geocodeLocation(request.endLocation),
+  ]);
+
+  const startLat = startCoords?.lat ?? 42.3;
+  const startLng = startCoords?.lng ?? -71.5;
+  const endLat = endCoords?.lat ?? startLat;
+  const endLng = endCoords?.lng ?? startLng;
+
+  const startDate = new Date(request.startDate + "T00:00:00");
+  const endDate = new Date(request.endDate + "T23:59:59");
+
+  const { sites, events } = await findMusterData(startLat, startLng, endLat, endLng, startDate, endDate);
+  const itinerary = await generateMusterWithClaude(request, sites, events);
+  return saveMuster(request, itinerary, session?.user?.id);
 }
