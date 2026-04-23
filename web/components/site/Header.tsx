@@ -195,7 +195,7 @@ export function Header() {
           </Link>
           <Link
             href="/muster/new"
-            className="no-underline ml-2 bg-yellow text-ink font-ui text-[10px] font-semibold uppercase tracking-[0.2em] px-4 py-2 border-2 border-ink hover:bg-cream transition-colors"
+            className="no-underline ml-2 bg-[#f2e6c8] text-ink font-ui text-[10px] font-semibold uppercase tracking-[0.2em] px-4 py-2 border-2 border-ink hover:bg-cream transition-colors"
           >
             Plan a Visit
           </Link>
@@ -235,7 +235,7 @@ export function Header() {
               <Link
                 href="/muster/new"
                 onClick={() => setOpen(false)}
-                className="no-underline block w-full text-center py-2 px-4 bg-yellow text-ink font-ui font-semibold text-[10px] uppercase tracking-[0.2em]"
+                className="no-underline block w-full text-center py-2 px-4 bg-[#f2e6c8] text-ink font-ui font-semibold text-[10px] uppercase tracking-[0.2em]"
               >
                 Plan a Visit
               </Link>

@@ -36,7 +36,7 @@ export default function AboutPage() {
           <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
             About This Project
           </p>
-          <Link href="/" className="no-underline">
+          <Link href="/" className="no-underline text-cream">
             <h1
               className="font-display text-cream leading-[0.88] hover:opacity-80 transition-opacity"
               style={{ fontSize: "clamp(52px,12vw,140px)" }}
@@ -250,7 +250,7 @@ export default function AboutPage() {
 
         <div className="mx-auto max-w-[1200px] relative">
           <div className="max-w-[720px]">
-            <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+            <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-cream/60 flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-cream/40 before:block">
               Values
             </p>
             <h2 className="font-display text-[2.5rem] text-cream mb-2">What we believe</h2>
@@ -281,7 +281,7 @@ export default function AboutPage() {
               ].map(({ num, head, body }) => (
                 <li key={num} className="flex gap-6">
                   <span
-                    className="font-display text-[2rem] sm:text-[3rem] text-crimson leading-none shrink-0 select-none"
+                    className="font-display text-[2rem] sm:text-[3rem] text-cream/30 leading-none shrink-0 select-none"
                     aria-hidden="true"
                   >
                     {num}
