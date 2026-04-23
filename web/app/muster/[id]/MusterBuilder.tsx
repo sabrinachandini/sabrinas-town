@@ -75,7 +75,16 @@ function SortableStop({ stop, color, dayIdx, stopIdx }: { stop: Stop; color: str
             Event
           </span>
         )}
-        <p className="font-display text-[16px] text-ink leading-snug tracking-[-0.01em]">{name}</p>
+        {(() => {
+          const website = stop.place?.website ?? stop.localEvent?.url ?? null;
+          return website ? (
+            <a href={website} target="_blank" rel="noopener noreferrer" className="font-display text-[16px] text-ink leading-snug tracking-[-0.01em] no-underline border-b border-ink/20 hover:border-[#1a3a72] hover:text-[#1a3a72] transition-colors">
+              {name}
+            </a>
+          ) : (
+            <p className="font-display text-[16px] text-ink leading-snug tracking-[-0.01em]">{name}</p>
+          );
+        })()}
         {stop.arrivalTime && (
           <p className="font-ui text-[11px] text-ink/35 mt-0.5">
             {stop.arrivalTime}{stop.durationMinutes ? ` · ${stop.durationMinutes} min` : ""}
