@@ -34,6 +34,7 @@ type Step = 0 | 1 | 2 | 3;
 export default function MusterNewPage() {
   const [step, setStep] = useState<Step>(0);
   const [isPending, startTransition] = useTransition();
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   // Form values
   const [startDate, setStartDate] = useState("");
@@ -63,7 +64,11 @@ export default function MusterNewPage() {
   const handleSubmit = () => {
     if (!formRef.current) return;
     const fd = new FormData(formRef.current);
-    startTransition(() => createMuster(fd));
+    setErrorMsg(null);
+    startTransition(async () => {
+      const result = await createMuster(fd);
+      if (result?.error) setErrorMsg(result.error);
+    });
   };
 
   const today = new Date().toISOString().split("T")[0];
@@ -345,9 +350,15 @@ export default function MusterNewPage() {
           )}
         </div>
 
-        {step === 3 && !isPending && (
+        {step === 3 && !isPending && !errorMsg && (
           <p className="font-ui text-[13px] text-ink/35 mt-4 text-center">
             Takes about 10 seconds. No account required.
+          </p>
+        )}
+
+        {errorMsg && (
+          <p className="font-ui text-[13px] text-[#cc3322] mt-4 text-center">
+            {errorMsg} Please try again.
           </p>
         )}
 

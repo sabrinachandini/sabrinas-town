@@ -11,7 +11,7 @@ import {
   type MusterRequest,
 } from "@/lib/muster";
 
-export async function createMuster(formData: FormData) {
+export async function createMuster(formData: FormData): Promise<{ error: string } | void> {
   const session = await auth();
 
   const request: MusterRequest = {
@@ -25,25 +25,32 @@ export async function createMuster(formData: FormData) {
   };
 
   if (!request.startDate || !request.endDate || !request.startLocation || !request.endLocation) {
-    throw new Error("Missing required trip fields");
+    return { error: "Missing required trip fields." };
   }
 
-  const [startCoords, endCoords] = await Promise.all([
-    geocodeLocation(request.startLocation),
-    geocodeLocation(request.endLocation),
-  ]);
+  let musterId: string;
+  try {
+    const [startCoords, endCoords] = await Promise.all([
+      geocodeLocation(request.startLocation),
+      geocodeLocation(request.endLocation),
+    ]);
 
-  const startLat = startCoords?.lat ?? 42.3;
-  const startLng = startCoords?.lng ?? -71.5;
-  const endLat = endCoords?.lat ?? startLat;
-  const endLng = endCoords?.lng ?? startLng;
+    const startLat = startCoords?.lat ?? 42.3;
+    const startLng = startCoords?.lng ?? -71.5;
+    const endLat = endCoords?.lat ?? startLat;
+    const endLng = endCoords?.lng ?? startLng;
 
-  const startDate = new Date(request.startDate + "T00:00:00");
-  const endDate = new Date(request.endDate + "T23:59:59");
+    const startDate = new Date(request.startDate + "T00:00:00");
+    const endDate = new Date(request.endDate + "T23:59:59");
 
-  const { sites, events } = await findMusterData(startLat, startLng, endLat, endLng, startDate, endDate);
-  const itinerary = await generateMusterWithClaude(request, sites, events);
-  const musterId = await saveMuster(request, itinerary, session?.user?.id);
+    const { sites, events } = await findMusterData(startLat, startLng, endLat, endLng, startDate, endDate);
+    const itinerary = await generateMusterWithClaude(request, sites, events);
+    musterId = await saveMuster(request, itinerary, session?.user?.id);
+  } catch (e) {
+    console.error("createMuster failed:", e);
+    const msg = e instanceof Error ? e.message : String(e);
+    return { error: `Something went wrong generating your trip. ${msg.slice(0, 120)}` };
+  }
 
   redirect(`/muster/${musterId}`);
 }
