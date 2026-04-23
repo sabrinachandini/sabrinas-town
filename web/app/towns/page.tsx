@@ -303,7 +303,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
         className="px-5 sm:px-[52px] pb-16 sm:pb-24"
         style={{ background: "var(--paper)" }}
       >
-        {filtered.length === 0 ? (
+        {filtered.length === 0 && q ? (
           <div className="py-20 text-center">
             <p
               style={{
@@ -316,6 +316,61 @@ export default async function TownsPage({ searchParams }: PageProps) {
               No towns match &ldquo;{q}&rdquo;.{" "}
               <a href="/towns" style={{ color: "var(--red)" }}>Browse all towns</a>
             </p>
+          </div>
+        ) : filtered.length === 0 ? (
+          <div className="py-24 text-center max-w-[480px] mx-auto">
+            <p
+              style={{
+                fontFamily: "var(--font-bebas)",
+                fontSize: "clamp(60px,10vw,100px)",
+                lineHeight: 1,
+                color: "rgba(20,16,10,0.06)",
+                letterSpacing: "-0.04em",
+              }}
+            >
+              503
+            </p>
+            <p
+              className="mt-4"
+              style={{
+                fontFamily: "var(--font-instrument)",
+                fontStyle: "italic",
+                fontSize: 20,
+                color: "var(--ink)",
+                lineHeight: 1.5,
+              }}
+            >
+              Towns are temporarily unavailable.
+            </p>
+            <p
+              className="mt-3"
+              style={{
+                fontFamily: "var(--font-dm)",
+                fontSize: 12,
+                color: "rgba(20,16,10,0.4)",
+                letterSpacing: "0.05em",
+              }}
+            >
+              The database is waking up — try refreshing in a moment.
+            </p>
+            <a
+              href="/towns"
+              style={{
+                display: "inline-block",
+                marginTop: 20,
+                fontFamily: "var(--font-dm)",
+                fontSize: 10,
+                fontWeight: 700,
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "var(--red)",
+                border: "1.5px solid var(--red)",
+                padding: "10px 24px",
+                textDecoration: "none",
+              }}
+            >
+              Refresh
+            </a>
           </div>
         ) : (
           <div className="grid sm:grid-cols-2 gap-x-[72px]">

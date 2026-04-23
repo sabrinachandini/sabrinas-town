@@ -233,16 +233,29 @@ export default async function TeacherPage({ params }: PageProps) {
 
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
                   {teacherModule.primarySources.map((source) => (
-                    <div key={source.id} className="bg-[#1a3a72]/40 border border-[#f2e6c8]/10 p-5">
+                    <div key={source.id} className="bg-[#1a3a72]/40 border border-[#f2e6c8]/10 p-5 flex flex-col">
                       <p className="font-ui text-[10px] uppercase tracking-[0.15em] text-[#cc3322] mb-2">
                         {source.type.replace(/_/g, " ")} · {source.credibilityTier.replace(/_/g, " ")}
                       </p>
-                      <p className="font-editorial text-[19px] text-[#f2e6c8]/90 leading-snug mb-2">
+                      <p className="font-editorial text-[19px] text-[#f2e6c8]/90 leading-snug mb-2 flex-1">
                         {source.title}
                       </p>
-                      <p className="font-ui text-[11px] text-[#f2e6c8]/40 leading-relaxed">
+                      <p className="font-ui text-[11px] text-[#f2e6c8]/40 leading-relaxed mb-3">
                         {source.sourceInfo}
                       </p>
+                      {source.url && (
+                        <a
+                          href={source.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="no-underline inline-flex items-center gap-1.5 font-ui text-[10px] uppercase tracking-[0.15em] text-[#f2e6c8]/50 border border-[#f2e6c8]/15 px-3 py-1.5 hover:text-[#f2e6c8] hover:border-[#f2e6c8]/40 transition-colors self-start"
+                        >
+                          View Source
+                          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden>
+                            <path d="M1 9L9 1M9 1H3M9 1V7" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </a>
+                      )}
                     </div>
                   ))}
                 </div>
