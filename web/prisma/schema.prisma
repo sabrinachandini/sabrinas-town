@@ -114,6 +114,8 @@ model LocalEvent {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
+  musterStops MusterStop[]
+
   @@index([townId])
   @@index([month])
 }
@@ -264,6 +266,8 @@ model Place {
 
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
+
+  musterStops MusterStop[]
 
   @@index([townId])
   @@index([placeType])
@@ -479,6 +483,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   orgUsers      OrgUser[]
+  musters       Muster[]
 }
 
 model Account {
@@ -1005,6 +1010,104 @@ model ClusterBridge {
   createdAt       DateTime @default(now())
 
   @@unique([fromClusterId, toClusterId])
+}
+
+// ============================================================================
+// MUSTER — Road Trip Planner
+// ============================================================================
+
+enum MusterTravelerType {
+  SOLO_COUPLE
+  FAMILY_KIDS
+  SCHOOL_GROUP
+  HISTORY_BUFF
+}
+
+enum MusterPace {
+  LEISURELY  // 2-3 stops/day
+  BALANCED   // 4-5 stops/day
+  PACKED     // 6+ stops/day
+}
+
+enum MusterStopType {
+  SITE
+  EVENT
+  MEAL
+  LODGING
+  CUSTOM
+}
+
+model Muster {
+  id             String             @id @default(cuid())
+  userId         String?
+  user           User?              @relation(fields: [userId], references: [id])
+
+  title          String
+  summary        String?            @db.Text
+  shareToken     String             @unique @default(cuid())
+
+  startDate      DateTime
+  endDate        DateTime
+  startLocation  String
+  endLocation    String
+
+  interests      String[]           // e.g. ["battles", "founding-figures", "women"]
+  travelerType   MusterTravelerType @default(SOLO_COUPLE)
+  pace           MusterPace         @default(BALANCED)
+
+  // Raw Claude response stored for re-muster
+  rawItinerary   Json?
+
+  createdAt      DateTime           @default(now())
+  updatedAt      DateTime           @updatedAt
+
+  days           MusterDay[]
+
+  @@index([userId])
+  @@index([shareToken])
+}
+
+model MusterDay {
+  id         String       @id @default(cuid())
+  musterId   String
+  muster     Muster       @relation(fields: [musterId], references: [id], onDelete: Cascade)
+
+  dayNumber  Int
+  date       DateTime
+  theme      String
+  narrative  String       @db.Text
+
+  stops      MusterStop[]
+
+  @@index([musterId])
+  @@unique([musterId, dayNumber])
+}
+
+model MusterStop {
+  id           String         @id @default(cuid())
+  musterDayId  String
+  musterDay    MusterDay      @relation(fields: [musterDayId], references: [id], onDelete: Cascade)
+
+  stopOrder    Int
+  stopType     MusterStopType @default(SITE)
+
+  // References — at most one will be set
+  placeId      String?
+  place        Place?         @relation(fields: [placeId], references: [id])
+  localEventId String?
+  localEvent   LocalEvent?    @relation(fields: [localEventId], references: [id])
+
+  // For MEAL / LODGING / CUSTOM stops (no DB record)
+  customName   String?
+  customNote   String?
+
+  arrivalTime      String?   // "10:00 AM"
+  durationMinutes  Int?
+  whyThisStop      String?   @db.Text
+  userNote         String?   @db.Text
+
+  @@index([musterDayId])
+  @@unique([musterDayId, stopOrder])
 }
 
 // ── Email Signups ─────────────────────────────────────────────────────────
