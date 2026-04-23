@@ -270,11 +270,13 @@ async function enrichPersonPortraits(limit: number) {
     /^(Major General|Brigadier General|Lieutenant General|General|Major|Lieutenant Colonel|Colonel|Captain|Sergeant|Corporal|Private|Admiral|Commodore|Rear Admiral|Vice Admiral|Baron|Count|Viscount|Earl|Lord|Sir|Dr\.?|Reverend|Governor|Judge)\s+/i,
   ];
   function stripRank(name: string): string {
+    let result = name;
     for (const re of RANK_PREFIXES) {
-      const stripped = name.replace(re, "");
-      if (stripped !== name) return stripped;
+      result = result.replace(re, "");
     }
-    return name;
+    // Strip parenthetical qualifiers like "(at Fort Lee)" or "(enslaved, ...)"
+    result = result.replace(/\s*\([^)]+\)/, "").trim();
+    return result;
   }
 
   for (const person of people) {
