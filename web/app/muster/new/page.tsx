@@ -106,7 +106,7 @@ export default function MusterNewPage() {
 
       {/* Form */}
       <div className="max-w-[680px] mx-auto px-8 md:px-16 py-12">
-        <form ref={formRef}>
+        <form ref={formRef} onSubmit={(e) => e.preventDefault()}>
           {/* Hidden fields that hold all values */}
           <input type="hidden" name="startDate" value={startDate} />
           <input type="hidden" name="endDate" value={endDate} />
@@ -313,6 +313,7 @@ export default function MusterNewPage() {
         <div className="mt-12 flex items-center justify-between">
           {step > 0 ? (
             <button
+              type="button"
               onClick={() => setStep((s) => (s - 1) as Step)}
               disabled={isPending}
               className="font-ui text-[10px] uppercase tracking-[0.18em] text-ink/40 hover:text-ink transition-colors disabled:opacity-30"
@@ -325,6 +326,7 @@ export default function MusterNewPage() {
 
           {step < 3 ? (
             <button
+              type="button"
               onClick={() => setStep((s) => (s + 1) as Step)}
               disabled={!canAdvance()}
               className="font-ui text-[11px] font-semibold uppercase tracking-[0.18em] bg-[#1a3a72] text-cream px-8 py-3.5 disabled:opacity-30 hover:bg-[#0e1428] transition-colors"
@@ -333,6 +335,7 @@ export default function MusterNewPage() {
             </button>
           ) : (
             <button
+              type="button"
               onClick={handleSubmit}
               disabled={isPending}
               className="font-ui text-[11px] font-semibold uppercase tracking-[0.18em] bg-[#cc3322] text-cream px-8 py-3.5 hover:bg-[#a32818] transition-colors disabled:opacity-50 min-w-[200px] text-center"

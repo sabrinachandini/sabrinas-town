@@ -355,7 +355,7 @@ Return ONLY valid JSON. No markdown code fences.`;
 
   const msg = await client.messages.create({
     model: "claude-sonnet-4-6",
-    max_tokens: 4096,
+    max_tokens: 8192,
     messages: [{ role: "user", content: prompt }],
   });
 
@@ -374,6 +374,31 @@ Return ONLY valid JSON. No markdown code fences.`;
   // Basic validation
   if (!itinerary.days || !Array.isArray(itinerary.days)) {
     throw new Error("Itinerary missing days array");
+  }
+
+  // Sanitize stop types — Claude occasionally returns types outside the enum.
+  const validStopTypes = new Set(["site", "event", "meal", "lodging", "custom"]);
+  for (const day of itinerary.days) {
+    for (const stop of day.stops) {
+      if (!validStopTypes.has(stop.type)) {
+        stop.type = "custom";
+      }
+    }
+  }
+
+  // Sanitize stop IDs — Claude sometimes hallucinates IDs not in our dataset.
+  // Clear any ID that doesn't match the known sites/events to prevent FK errors.
+  const knownSiteIds = new Set(sites.map((s) => s.id));
+  const knownEventIds = new Set(events.map((e) => e.id));
+  for (const day of itinerary.days) {
+    for (const stop of day.stops) {
+      if (stop.type === "site" && stop.id && !knownSiteIds.has(stop.id)) {
+        stop.id = undefined;
+      }
+      if (stop.type === "event" && stop.id && !knownEventIds.has(stop.id)) {
+        stop.id = undefined;
+      }
+    }
   }
 
   return itinerary;
