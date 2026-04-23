@@ -12,7 +12,7 @@ export const maxDuration = 300;
 export const dynamic = "force-dynamic";
 
 async function enrichOneTown(townId: string, townName: string, state: string, currentWhyMatters: string, eventList: string, themeList: string, peopleList: string) {
-  const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  const client = new Anthropic();
 
   const prompt = `You are a professional historian writing for an American Revolution education network.
 

@@ -292,7 +292,8 @@ export async function generateMusterWithClaude(
   sites: SiteForPrompt[],
   events: EventForPrompt[]
 ): Promise<MusterItinerary> {
-  const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  if (!process.env.ANTHROPIC_API_KEY) throw new Error("ANTHROPIC_API_KEY is not set in environment variables.");
+  const client = new Anthropic();
 
   const numDays =
     Math.ceil(
