@@ -194,7 +194,7 @@ export default async function HomePage() {
             <div className="font-display text-[40px] sm:text-[48px] text-[#f2e6c8] leading-none tracking-[-0.04em]">
               {stat.number}<span className="text-cream/50 text-[0.7em]">{stat.accent}</span>
             </div>
-            <div className="font-ui text-[10px] font-normal tracking-[0.2em] uppercase text-[rgba(242,230,200,0.7)\1>
+            <div className="font-ui text-[10px] font-normal tracking-[0.2em] uppercase text-[rgba(242,230,200,0.7)]">
               {stat.label}
             </div>
             {/* Tiny squiggle under stat label — whimsy */}
