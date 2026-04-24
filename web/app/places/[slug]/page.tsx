@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title,
     description,
-    openGraph: { title, description, url, ...(place.imageUrl ? { images: [{ url: place.imageUrl, width: 1200, height: 630, alt: place.name }] } : {}) },
+    openGraph: { title, description, url },
     twitter: { card: "summary_large_image", title, description },
     alternates: { canonical: url },
   };
