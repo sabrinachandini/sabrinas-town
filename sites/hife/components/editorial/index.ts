@@ -1,10 +1,2 @@
-export { PageShell } from "./PageShell";
-export { PageHeader } from "./PageHeader";
-export { EditorialSection } from "./EditorialSection";
-export { Prose } from "./Prose";
-export { OnThisPageSelect } from "./OnThisPageSelect";
+export { PageShell, PageHeader, EditorialSection, Prose, OnThisPageSelect, ImageWithCaption, YouTubeEmbed, SourceGroup, MarkdownBio } from "@hife/ui";
 export { EditorialNav } from "./EditorialNav";
-export { ImageWithCaption } from "./ImageWithCaption";
-export { YouTubeEmbed } from "./YouTubeEmbed";
-export { SourceGroup } from "./SourceGroup";
-export { MarkdownBio } from "./MarkdownBio";

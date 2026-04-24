@@ -3,6 +3,7 @@ import path from "path";
 import { withSentryConfig } from "@sentry/nextjs";
 
 const nextConfig: NextConfig = {
+  transpilePackages: ["@hife/ui"],
   trailingSlash: false,
   images: {
     remotePatterns: [
