@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import {
   DndContext,
@@ -19,12 +19,30 @@ import {
   arrayMove,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { Map, MapMarker, MarkerContent, MarkerPopup, MapRoute, MapControls } from "@/components/ui/map";
+import { Map, MapMarker, MarkerContent, MarkerPopup, MapRoute, MapControls, useMap } from "@/components/ui/map";
 import Link from "next/link";
 import type { MusterDetail } from "@/lib/muster";
 import { remuster } from "@/app/muster/actions";
 
 const DAY_COLORS = ["#cc3322", "#1a3a72", "#4A6A9B", "#5a7a5a", "#8B6914", "#6B21A8"];
+
+function FitBounds({ stops }: { stops: { lat: number; lng: number }[] }) {
+  const { map, isLoaded } = useMap();
+  useEffect(() => {
+    if (!map || !isLoaded || stops.length === 0) return;
+    if (stops.length === 1) {
+      map.flyTo({ center: [stops[0].lng, stops[0].lat], zoom: 13 });
+      return;
+    }
+    const lngs = stops.map((s) => s.lng);
+    const lats = stops.map((s) => s.lat);
+    map.fitBounds(
+      [[Math.min(...lngs), Math.min(...lats)], [Math.max(...lngs), Math.max(...lats)]],
+      { padding: 60, maxZoom: 13, duration: 600 }
+    );
+  }, [map, isLoaded]); // eslint-disable-line react-hooks/exhaustive-deps
+  return null;
+}
 
 type Stop = MusterDetail["days"][0]["stops"][0];
 type Day = MusterDetail["days"][0];
@@ -175,12 +193,7 @@ export function MusterBuilder({ muster }: { muster: MusterDetail }) {
 
   const routeCoords = allStopsWithCoords.map((s) => [s.lng, s.lat] as [number, number]);
 
-  const mapCenter = allStopsWithCoords.length > 0
-    ? {
-        lat: allStopsWithCoords.reduce((sum, s) => sum + s.lat, 0) / allStopsWithCoords.length,
-        lng: allStopsWithCoords.reduce((sum, s) => sum + s.lng, 0) / allStopsWithCoords.length,
-      }
-    : { lat: 42.3, lng: -71.5 };
+
 
   return (
     <div className="flex flex-col" style={{ minHeight: "calc(100vh - 200px)" }}>
@@ -299,10 +312,10 @@ export function MusterBuilder({ muster }: { muster: MusterDetail }) {
         <div className={`${mobileTab === "agenda" ? "hidden" : "block"} sm:block sm:w-[45%] sm:sticky sm:top-[52px] sm:h-[calc(100vh-52px)]`}>
           {allStopsWithCoords.length > 0 ? (
             <Map
-              viewport={{ center: [mapCenter.lng, mapCenter.lat], zoom: 9 }}
               theme="light"
               className="w-full h-full"
             >
+              <FitBounds stops={allStopsWithCoords} />
               <MapControls />
               {routeCoords.length >= 2 && (
                 <MapRoute coordinates={routeCoords} color="#1a3a72" width={2} opacity={0.5} dashArray={[4, 3]} />

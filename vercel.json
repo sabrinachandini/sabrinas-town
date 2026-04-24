@@ -16,7 +16,6 @@
   ],
   "routes": [
     { "src": "/api/cron/(.*)", "dest": "/web/api/cron/$1" },
-    { "src": "/api/muster/health", "dest": "/web/api/muster/health" },
     { "src": "/api/(.*)", "dest": "/api/index.ts" },
     { "src": "/((?!api/).*)", "dest": "/web/$1", "continue": true },
     { "handle": "filesystem" }

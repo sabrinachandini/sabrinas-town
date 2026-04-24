@@ -33,7 +33,7 @@ export default function AboutPage() {
         </svg>
 
         <div className="mx-auto max-w-[1200px] relative">
-          <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
+          <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-cream/60 flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-cream/40 before:block">
             About This Project
           </p>
           <Link href="/" className="no-underline text-cream">
@@ -75,7 +75,7 @@ export default function AboutPage() {
             </svg>
             <div className="border-b border-ink/10 mb-8" />
 
-            <p className="font-editorial text-[1.05rem] text-[#0e1428] leading-relaxed mb-5">
+            <p className="font-editorial text-[18px] text-[#0e1428] leading-relaxed mb-5">
               I&apos;m Sabrina Bhattacharjya, a 15-year-old from Lexington, Massachusetts — the town where
               the American Revolution began on April 19, 1775. I&apos;m the founder of{" "}
               <strong>History Is For Everyone</strong>, a platform connecting 75+ Revolutionary War towns
@@ -86,7 +86,7 @@ export default function AboutPage() {
               a 12-year-old eyewitness to the Battle of Lexington — and my work has been covered by the{" "}
               <em>New York Times</em>, the BBC, and iHeart Radio.
             </p>
-            <p className="font-editorial text-[0.9rem] text-[#0e1428]/50 leading-relaxed border-t border-[#0e1428]/10 pt-5 mt-6">
+            <p className="font-editorial text-[15px] text-[#0e1428]/50 leading-relaxed border-t border-[#0e1428]/10 pt-5 mt-6">
               To learn more about Sabrina Bhattacharjya, visit her website at{" "}
               <a
                 href="https://sabrinachandini.com"
@@ -131,7 +131,7 @@ export default function AboutPage() {
                 stroke="#1a3a72" strokeWidth="2" strokeLinecap="round" opacity="0.35"/>
             </svg>
             <div className="border-b border-ink/10 mb-8" />
-            <p className="font-editorial text-[1.05rem] text-ink leading-relaxed mb-6">
+            <p className="font-editorial text-[18px] text-ink leading-relaxed mb-6">
               Most of the towns that shaped the American Revolution have never
               been documented well enough for a visitor to plan a meaningful trip,
               or for a teacher to build a real lesson. The famous sites get the
@@ -139,7 +139,7 @@ export default function AboutPage() {
               Courthouse, Kaskaskia, Beaufort — sit quietly with real history and
               almost no usable record of it.
             </p>
-            <p className="font-editorial text-[1.05rem] text-ink leading-relaxed mb-6">
+            <p className="font-editorial text-[18px] text-ink leading-relaxed mb-6">
               We started by mapping the towns that played a documented role in
               the Revolution across 13 colonies. For each one, we researched the
               events, the people, the places, the primary sources, and the
@@ -147,7 +147,7 @@ export default function AboutPage() {
               so that a teacher in Ohio or a tourist planning a road trip could
               actually compare them.
             </p>
-            <p className="font-editorial text-[1.05rem] text-ink leading-relaxed">
+            <p className="font-editorial text-[18px] text-ink leading-relaxed">
               The goal is not a finished encyclopedia. It is a living research
               network that gets better as more people engage with it — and that
               makes the history usable for everyone, not just the towns that

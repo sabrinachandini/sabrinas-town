@@ -1,8 +1,27 @@
 "use client";
 
-import { Map, MapMarker, MarkerContent, MarkerPopup, MapRoute, MapControls } from "@/components/ui/map";
+import { useEffect } from "react";
+import { Map, MapMarker, MarkerContent, MarkerPopup, MapRoute, MapControls, useMap } from "@/components/ui/map";
 
 const DAY_COLORS = ["#cc3322", "#1a3a72", "#4A6A9B", "#5a7a5a", "#8B6914", "#6B21A8"];
+
+function FitBounds({ stops }: { stops: { lat: number; lng: number }[] }) {
+  const { map, isLoaded } = useMap();
+  useEffect(() => {
+    if (!map || !isLoaded || stops.length === 0) return;
+    if (stops.length === 1) {
+      map.flyTo({ center: [stops[0].lng, stops[0].lat], zoom: 13 });
+      return;
+    }
+    const lngs = stops.map((s) => s.lng);
+    const lats = stops.map((s) => s.lat);
+    map.fitBounds(
+      [[Math.min(...lngs), Math.min(...lats)], [Math.max(...lngs), Math.max(...lats)]],
+      { padding: 60, maxZoom: 13, duration: 600 }
+    );
+  }, [map, isLoaded]); // eslint-disable-line react-hooks/exhaustive-deps
+  return null;
+}
 
 interface StopCoord {
   id: string;
@@ -30,16 +49,14 @@ export function MusterShareMap({ stops }: Props) {
     );
   }
 
-  const centerLat = stops.reduce((sum, s) => sum + s.lat, 0) / stops.length;
-  const centerLng = stops.reduce((sum, s) => sum + s.lng, 0) / stops.length;
   const routeCoords = stops.map((s) => [s.lng, s.lat] as [number, number]);
 
   return (
     <Map
-      viewport={{ center: [centerLng, centerLat], zoom: 9 }}
       theme="light"
       className="w-full h-full"
     >
+      <FitBounds stops={stops} />
       <MapControls />
       {routeCoords.length >= 2 && (
         <MapRoute coordinates={routeCoords} color="#1a3a72" width={2} opacity={0.5} dashArray={[4, 3]} />

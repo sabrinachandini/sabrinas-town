@@ -19,10 +19,10 @@ export default async function HomePage() {
   }
 
   const now = new Date();
-  const otdMonth = now.getUTCMonth() + 1;
-  const otdDay = now.getUTCDate();
-  const otdMonthName = now.toLocaleDateString("en-US", { month: "long", timeZone: "UTC" });
-  const otdDayNum = now.toLocaleDateString("en-US", { day: "numeric", timeZone: "UTC" });
+  const otdMonth = parseInt(now.toLocaleDateString("en-US", { month: "numeric", timeZone: "America/New_York" }));
+  const otdDay = parseInt(now.toLocaleDateString("en-US", { day: "numeric", timeZone: "America/New_York" }));
+  const otdMonthName = now.toLocaleDateString("en-US", { month: "long", timeZone: "America/New_York" });
+  const otdDayNum = now.toLocaleDateString("en-US", { day: "numeric", timeZone: "America/New_York" });
   let otdEvents: Awaited<ReturnType<typeof getOnThisDay>> = [];
   try {
     otdEvents = await getOnThisDay(otdMonth, otdDay);
@@ -198,7 +198,7 @@ export default async function HomePage() {
             className="stat-cell flex-1 px-4 sm:px-6 py-6 sm:py-7 border-r-2 border-[rgba(242,230,200,0.08)] last:border-r-0 flex flex-col gap-1"
           >
             <div className="font-display text-[40px] sm:text-[48px] text-[#f2e6c8] leading-none tracking-[-0.04em]">
-              {stat.number}<span className="text-[#cc3322] text-[0.7em]">{stat.accent}</span>
+              {stat.number}<span className="text-cream/50 text-[0.7em]">{stat.accent}</span>
             </div>
             <div className="font-ui text-[10px] font-normal tracking-[0.2em] uppercase text-[rgba(242,230,200,0.4)]">
               {stat.label}
@@ -227,7 +227,7 @@ export default async function HomePage() {
 
         <div className="relative z-10 max-w-[1200px] mx-auto">
           {/* Kicker */}
-          <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-[#cc3322] flex items-center gap-2 mb-6 before:content-[''] before:w-4 before:h-[2px] before:bg-[#cc3322] before:block">
+          <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-cream/60 flex items-center gap-2 mb-6 before:content-[''] before:w-4 before:h-[2px] before:bg-cream/40 before:block">
             On This Day in the Revolution
           </p>
 
@@ -256,7 +256,7 @@ export default async function HomePage() {
                     <p className="font-display text-[clamp(17px,2.5vw,26px)] text-[#f2e6c8] group-hover:text-[#cc3322] transition-colors leading-tight tracking-[-0.02em]">
                       {event.name}
                     </p>
-                    <p className="font-ui text-[10px] uppercase tracking-[0.12em] text-[#cc3322]/70 mt-1">
+                    <p className="font-ui text-[10px] uppercase tracking-[0.12em] text-cream/40 mt-1">
                       {event.town.name}, {event.town.state}
                     </p>
                     {event.summary && (
@@ -557,7 +557,7 @@ export default async function HomePage() {
             <div className="absolute top-4 right-5 font-editorial font-black text-[80px] leading-none tracking-[-0.05em] opacity-[0.12] pointer-events-none select-none text-[#f2e6c8]" aria-hidden="true">
               02
             </div>
-            <span className="inline-block font-ui text-[11px] font-semibold tracking-[0.24em] uppercase px-2.5 py-1 border-[1.5px] mb-5 text-[#4A6A9B] border-[#4A6A9B]">
+            <span className="inline-block font-ui text-[11px] font-semibold tracking-[0.24em] uppercase px-2.5 py-1 border-[1.5px] mb-5 text-cream/60 border-cream/30">
               Places
             </span>
             <h3 className="font-editorial font-black text-[20px] sm:text-[24px] leading-[1.05] tracking-[-0.02em] mb-4 text-[#f2e6c8]">
@@ -568,7 +568,7 @@ export default async function HomePage() {
             </p>
             <NextLink
               href="/towns/lexington-ma"
-              className="inline-flex items-center gap-2 mt-6 font-ui text-[10px] font-semibold tracking-[0.18em] uppercase no-underline pb-0.5 text-[#4A6A9B] border-b-[1.5px] border-[#4A6A9B]"
+              className="inline-flex items-center gap-2 mt-6 font-ui text-[10px] font-semibold tracking-[0.18em] uppercase no-underline pb-0.5 text-cream/60 border-b-[1.5px] border-cream/40"
             >
               Read More
             </NextLink>
@@ -613,7 +613,7 @@ export default async function HomePage() {
         </div>
 
         {/* Tilted stamp */}
-        <div className="absolute top-10 right-[300px] font-editorial font-black text-[11px] tracking-[0.12em] uppercase text-[#cc3322] border-[3px] border-[#cc3322] px-3.5 py-2 -rotate-[8deg] opacity-60 z-[2] hidden sm:block">
+        <div className="absolute top-10 right-[300px] font-editorial font-black text-[11px] tracking-[0.12em] uppercase text-[#f2e6c8] border-[3px] border-[rgba(242,230,200,0.6)] px-3.5 py-2 -rotate-[8deg] opacity-60 z-[2] hidden sm:block">
           All Welcome
         </div>
 
@@ -632,7 +632,7 @@ export default async function HomePage() {
           style={{ fontSize: "clamp(40px,5vw,80px)" }}
         >
           Pick a town.<br />
-          <em className="font-editorial italic font-light text-[#1a3a72]">Start anywhere.</em>
+          <em className="font-editorial italic font-light text-[#0e1428]">Start anywhere.</em>
         </p>
 
         {/* Button — full width on mobile */}

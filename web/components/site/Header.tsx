@@ -160,7 +160,7 @@ export function Header() {
         {/* Logo — TOP LEFT, always visible */}
         <Link href="/" className="no-underline flex-shrink-0" aria-label="History is for Everyone — home">
           {/* Mobile: stacked lockup */}
-          <img src="/logo-lockup-town.svg" alt="History is for Everyone" className="h-[88px] w-auto sm:hidden" />
+          <img src="/logo-lockup-town.svg" alt="History is for Everyone" className="h-[120px] w-auto sm:hidden" />
           {/* Desktop: horizontal lockup */}
           <img src="/logo-horizontal.svg" alt="History is for Everyone" className="h-[110px] w-auto hidden sm:block" />
         </Link>
@@ -195,7 +195,7 @@ export function Header() {
           </Link>
           <Link
             href="/muster/new"
-            className="no-underline ml-2 bg-[#f2e6c8] text-ink font-ui text-[10px] font-semibold uppercase tracking-[0.2em] px-4 py-2 border-2 border-ink hover:bg-cream transition-colors"
+            className="no-underline ml-2 bg-[#cc3322] text-cream font-ui text-[10px] font-semibold uppercase tracking-[0.2em] px-4 py-2 border-2 border-[#cc3322] hover:bg-[#a82818] transition-colors"
           >
             Plan a Visit
           </Link>
@@ -235,7 +235,7 @@ export function Header() {
               <Link
                 href="/muster/new"
                 onClick={() => setOpen(false)}
-                className="no-underline block w-full text-center py-2 px-4 bg-[#f2e6c8] text-ink font-ui font-semibold text-[10px] uppercase tracking-[0.2em]"
+                className="no-underline block w-full text-center py-2 px-4 bg-[#cc3322] text-cream font-ui font-semibold text-[10px] uppercase tracking-[0.2em]"
               >
                 Plan a Visit
               </Link>
