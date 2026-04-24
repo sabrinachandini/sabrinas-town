@@ -483,7 +483,7 @@ export default async function HomePage() {
               <svg width="32" height="1" viewBox="0 0 32 1" aria-hidden="true">
                 <line x1="0" y1="0.5" x2="32" y2="0.5" stroke="rgba(242,230,200,0.25)" strokeWidth="1" />
               </svg>
-              <p className="font-ui text-[10px] font-medium tracking-[0.24em] uppercase text-[rgba(242,230,200,0.7)\1>
+              <p className="font-ui text-[10px] font-medium tracking-[0.24em] uppercase text-[rgba(242,230,200,0.7)]">
                 Thomas Paine · The American Crisis · 1776
               </p>
               <svg width="32" height="1" viewBox="0 0 32 1" aria-hidden="true">
