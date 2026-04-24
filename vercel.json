@@ -6,7 +6,7 @@
   },
   "builds": [
     {
-      "src": "web/package.json",
+      "src": "sites/hife/package.json",
       "use": "@vercel/next"
     },
     {
@@ -15,9 +15,9 @@
     }
   ],
   "routes": [
-    { "src": "/api/cron/(.*)", "dest": "/web/api/cron/$1" },
+    { "src": "/api/cron/(.*)", "dest": "/sites/hife/api/cron/$1" },
     { "src": "/api/(.*)", "dest": "/api/index.ts" },
-    { "src": "/((?!api/).*)", "dest": "/web/$1", "continue": true },
+    { "src": "/((?!api/).*)", "dest": "/sites/hife/$1", "continue": true },
     { "handle": "filesystem" }
   ],
   "crons": [

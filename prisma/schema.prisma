@@ -77,6 +77,7 @@ model Town {
 
   // Partner inquiries
   partnerInquiries PartnerInquiry[]
+  eventSubmissions EventSubmission[]
 
   // Clusters
   clusterTowns     ClusterTown[]
@@ -99,22 +100,22 @@ model LocalEvent {
   description String   @db.Text
   category    String   // "reenactment" | "festival" | "ceremony" | "tour" | "lecture" | "exhibition"
 
-  // Timing — annual events use month/day; one-time events use eventDate
-  recurrence  String   @default("annual")  // "annual" | "one-time" | "monthly"
-  month       Int?     // 1–12
-  day         Int?     // day of month
-  endDay      Int?     // last day (multi-day events)
-  dateNote    String?  // Human note: "Third weekend in April" or "Every Saturday May–Oct"
-  eventDate   DateTime? // Specific date for one-time events
+  recurrence  String   @default("annual")
+  month       Int?
+  day         Int?
+  endDay      Int?
+  dateNote    String?
+  eventDate   DateTime?
 
-  // Logistics
   venue       String?
   url         String?
-  admission   String?  // "Free" | "$15/adult" | "Varies"
+  admission   String?
   featured    Boolean  @default(false)
 
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+
+  musterStops MusterStop[]
 
   @@index([townId])
   @@index([month])
@@ -139,7 +140,7 @@ model Event {
   imageCredit     String?  // Attribution string
 
   // Video
-  videoId         String?  // YouTube video ID (11 chars), e.g. "dQw4w9WgXcQ"
+  videoId         String?  // YouTube video ID (11 chars)
   videoSource     String?  // "ken-burns" | "liberty-kids" | "other"
 
   // Optional geo (for events at specific locations within town)
@@ -168,9 +169,8 @@ model Person {
   bioShort            String             @db.VarChar(500)
   bioLong             String?            @db.Text
 
-  // Media
-  imageUrl            String?  // Portrait or primary image (Wikimedia Commons)
-  imageCredit         String?  // Attribution string
+  imageUrl            String?
+  imageCredit         String?
 
   birthYear           Int?
   deathYear           Int?
@@ -267,6 +267,8 @@ model Place {
 
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
+
+  musterStops MusterStop[]
 
   @@index([townId])
   @@index([placeType])
@@ -482,6 +484,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   orgUsers      OrgUser[]
+  musters       Muster[]
 }
 
 model Account {
@@ -1008,6 +1011,127 @@ model ClusterBridge {
   createdAt       DateTime @default(now())
 
   @@unique([fromClusterId, toClusterId])
+}
+
+// ============================================================================
+// MUSTER — Road Trip Planner
+// ============================================================================
+
+enum MusterTravelerType {
+  SOLO_COUPLE
+  FAMILY_KIDS
+  SCHOOL_GROUP
+  HISTORY_BUFF
+}
+
+enum MusterPace {
+  LEISURELY  // 2-3 stops/day
+  BALANCED   // 4-5 stops/day
+  PACKED     // 6+ stops/day
+}
+
+enum MusterStopType {
+  SITE
+  EVENT
+  MEAL
+  LODGING
+  CUSTOM
+}
+
+model Muster {
+  id             String             @id @default(cuid())
+  userId         String?
+  user           User?              @relation(fields: [userId], references: [id])
+
+  title          String
+  summary        String?            @db.Text
+  shareToken     String             @unique @default(cuid())
+
+  startDate      DateTime
+  endDate        DateTime
+  startLocation  String
+  endLocation    String
+
+  interests      String[]           // e.g. ["battles", "founding-figures", "women"]
+  travelerType   MusterTravelerType @default(SOLO_COUPLE)
+  pace           MusterPace         @default(BALANCED)
+
+  // Raw Claude response stored for re-muster
+  rawItinerary   Json?
+
+  createdAt      DateTime           @default(now())
+  updatedAt      DateTime           @updatedAt
+
+  days           MusterDay[]
+
+  @@index([userId])
+  @@index([shareToken])
+}
+
+model MusterDay {
+  id         String       @id @default(cuid())
+  musterId   String
+  muster     Muster       @relation(fields: [musterId], references: [id], onDelete: Cascade)
+
+  dayNumber  Int
+  date       DateTime
+  theme      String
+  narrative  String       @db.Text
+
+  stops      MusterStop[]
+
+  @@index([musterId])
+  @@unique([musterId, dayNumber])
+}
+
+model MusterStop {
+  id           String         @id @default(cuid())
+  musterDayId  String
+  musterDay    MusterDay      @relation(fields: [musterDayId], references: [id], onDelete: Cascade)
+
+  stopOrder    Int
+  stopType     MusterStopType @default(SITE)
+
+  // References — at most one will be set
+  placeId      String?
+  place        Place?         @relation(fields: [placeId], references: [id])
+  localEventId String?
+  localEvent   LocalEvent?    @relation(fields: [localEventId], references: [id])
+
+  // For MEAL / LODGING / CUSTOM stops (no DB record)
+  customName   String?
+  customNote   String?
+
+  arrivalTime      String?   // "10:00 AM"
+  durationMinutes  Int?
+  whyThisStop      String?   @db.Text
+  userNote         String?   @db.Text
+
+  @@index([musterDayId])
+  @@unique([musterDayId, stopOrder])
+}
+
+// ── Event Submissions (public form → admin review) ────────────────────────
+
+model EventSubmission {
+  id           String   @id @default(cuid())
+  eventName    String
+  description  String   @db.Text
+  startDate    DateTime?
+  endDate      DateTime?
+  venueName    String?
+  townId       String?
+  town         Town?    @relation(fields: [townId], references: [id])
+  eventType    String   // "reenactment" | "festival" | "ceremony" | "tour" | "lecture" | "exhibition"
+  websiteUrl   String?
+  contactEmail String
+  status       String   @default("pending") // "pending" | "approved" | "rejected"
+  adminNotes   String?  @db.Text
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([status])
+  @@index([createdAt(sort: Desc)])
 }
 
 // ── Email Signups ─────────────────────────────────────────────────────────

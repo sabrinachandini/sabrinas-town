@@ -1,0 +1,12 @@
+{
+  "name": "@hife/template",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Generic town site template — copy to sites/<slug>/ via pnpm create-town",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5"
+  }
+}
