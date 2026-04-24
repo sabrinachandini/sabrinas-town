@@ -6,6 +6,10 @@ import { Container, Heading, Text, Link, Button } from "@/components/ui";
 
 export const metadata = {
   title: "Sign Up | History is for Everyone",
+  description: "Create an account to join the Revolutionary War education and research network.",
+  openGraph: { title: "Sign Up | History is for Everyone", url: "https://sabrinas-town.vercel.app/signup" },
+  alternates: { canonical: "https://sabrinas-town.vercel.app/signup" },
+  robots: { index: false },
 };
 
 export default async function SignupPage() {

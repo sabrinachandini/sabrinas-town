@@ -9,7 +9,7 @@ export function generateMetadata() {
   return {
     title: "Search | History is for Everyone",
     description: "Search towns, events, people, and places across the American Revolution network.",
-    robots: { index: false },
+    alternates: { canonical: "https://sabrinas-town.vercel.app/search" },
   };
 }
 

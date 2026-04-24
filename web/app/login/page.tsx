@@ -4,6 +4,10 @@ import { Container, Heading, Text, Link, Button } from "@/components/ui";
 
 export const metadata = {
   title: "Sign In | History is for Everyone",
+  description: "Sign in to your History is for Everyone account to manage content and plan Revolutionary War road trips.",
+  openGraph: { title: "Sign In | History is for Everyone", url: "https://sabrinas-town.vercel.app/login" },
+  alternates: { canonical: "https://sabrinas-town.vercel.app/login" },
+  robots: { index: false },
 };
 
 export default async function LoginPage({

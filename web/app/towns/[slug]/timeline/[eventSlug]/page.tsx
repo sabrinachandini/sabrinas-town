@@ -62,6 +62,18 @@ export default async function EventDetailPage({ params }: PageProps) {
   const formattedDate = formatDate(event.startDate, event.datePrecision);
   const isKey = event.significanceWeight >= 70;
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://sabrinas-town.vercel.app" },
+      { "@type": "ListItem", position: 2, name: "Towns", item: "https://sabrinas-town.vercel.app/towns" },
+      { "@type": "ListItem", position: 3, name: town.name, item: `https://sabrinas-town.vercel.app/towns/${slug}` },
+      { "@type": "ListItem", position: 4, name: "Timeline", item: `https://sabrinas-town.vercel.app/towns/${slug}/timeline` },
+      { "@type": "ListItem", position: 5, name: event.name, item: `https://sabrinas-town.vercel.app/towns/${slug}/timeline/${eventSlug}` },
+    ],
+  };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Event",
@@ -82,6 +94,7 @@ export default async function EventDetailPage({ params }: PageProps) {
   return (
     <div className="bg-[#f2e6c8] min-h-screen">
       <JsonLd data={jsonLd} />
+      <JsonLd data={breadcrumbLd} />
 
       {/* ── Hero ── */}
       <section className="bg-[#1a3a72] border-b-4 border-[#cc3322] pt-14 pb-0 px-8 md:px-16 relative overflow-hidden">

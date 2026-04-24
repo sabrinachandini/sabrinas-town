@@ -3,6 +3,7 @@ import path from "path";
 import { withSentryConfig } from "@sentry/nextjs";
 
 const nextConfig: NextConfig = {
+  trailingSlash: false,
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "upload.wikimedia.org" },

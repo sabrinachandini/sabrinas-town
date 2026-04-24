@@ -39,11 +39,13 @@ export const metadata: Metadata = {
     siteName: "History is for Everyone",
     description:
       "A living network of America's Revolutionary towns — built for travelers, teachers, and towns themselves.",
-    images: [{ url: "/images/paul-revere-boston-massacre.jpg", width: 1200, height: 630, alt: "History is for Everyone" }],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/images/paul-revere-boston-massacre.jpg"],
+  },
+  icons: {
+    icon: "/logo-star.svg",
+    apple: "/logo.png",
   },
 };
 
@@ -52,9 +54,33 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const siteSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "History is for Everyone",
+      url: "https://sabrinas-town.vercel.app",
+      logo: "https://sabrinas-town.vercel.app/logo.png",
+      description: "A living network of America's Revolutionary towns — built for travelers, teachers, and towns themselves.",
+      founder: { "@type": "Person", name: "Sabrina Bhattacharjya", url: "https://sabrinachandini.com" },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "History is for Everyone",
+      url: "https://sabrinas-town.vercel.app",
+      potentialAction: {
+        "@type": "SearchAction",
+        target: { "@type": "EntryPoint", urlTemplate: "https://sabrinas-town.vercel.app/search?q={search_term_string}" },
+        "query-input": "required name=search_term_string",
+      },
+    },
+  ];
+
   return (
     <html lang="en">
       <body className={`${bebasNeue.variable} ${instrumentSerif.variable} ${dmSans.variable} bg-cream text-ink`}>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }} />
         <Header />
         {children}
         <Footer />
