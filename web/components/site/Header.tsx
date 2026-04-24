@@ -160,7 +160,7 @@ export function Header() {
         {/* Logo — TOP LEFT, always visible */}
         <Link href="/" className="no-underline flex-shrink-0" aria-label="History is for Everyone — home">
           {/* Mobile: stacked lockup */}
-          <img src="/logo-lockup-town.svg" alt="History is for Everyone" className="h-[120px] w-auto sm:hidden" />
+          <img src="/logo-lockup-town.svg" alt="History is for Everyone" className="h-[160px] w-auto sm:hidden" />
           {/* Desktop: horizontal lockup */}
           <img src="/logo-horizontal.svg" alt="History is for Everyone" className="h-[110px] w-auto hidden sm:block" />
         </Link>
