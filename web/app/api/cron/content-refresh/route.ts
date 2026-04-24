@@ -186,18 +186,22 @@ UPDATED_CONTENT:
     }
   }
 
-  // 5. Log to ChangeLogEntry
+  // 5. Log to ChangeLogEntry — only when something actually changed
+  if (!changed && newSourceIds.length === 0) {
+    return { changed: false, newSourceIds: [], summary: `No new information found for ${town.name}` };
+  }
+
   const summaryText = changed
     ? `Found new Tier 1/2 information and updated content (${town.whyMatters.length} → ${updatedContent.length} chars). ${newSourceIds.length} new source(s) added.`
-    : `Researched ${town.name} — no new Tier 1/2 information found. Content unchanged.`;
+    : `${newSourceIds.length} new Tier 1/2 source(s) discovered and linked for ${town.name}.`;
 
   await prisma.changeLogEntry.create({
     data: {
       townId: town.id,
-      category: changed ? "CONTENT" : "SOURCES",
+      category: "CONTENT",
       title: changed
         ? `Agentic enrichment: new facts added for ${town.name}`
-        : `Agentic research: no new facts for ${town.name}`,
+        : `Agentic enrichment: new sources linked for ${town.name}`,
       summary: summaryText,
       details: {
         newFactsFound,

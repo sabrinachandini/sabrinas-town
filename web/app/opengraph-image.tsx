@@ -21,12 +21,12 @@ export default function OgImage() {
         }}
       >
         <svg viewBox="0 0 400 400" width="400" height="400">
-          <path d={STAR} fill="#24446e" stroke="#2a2418" stroke-width="4.5" stroke-linejoin="round" />
+          <path d={STAR} fill="#24446e" stroke="#2a2418" strokeWidth="4.5" strokeLinejoin="round" />
           <g transform="translate(200 200) scale(0.667) translate(-200 -200)">
-            <path d={STAR} fill="#faf0db" stroke="#2a2418" stroke-width="3.5" stroke-linejoin="round" />
+            <path d={STAR} fill="#faf0db" stroke="#2a2418" strokeWidth="3.5" strokeLinejoin="round" />
           </g>
           <g transform="translate(200 200) scale(0.367) translate(-200 -200)">
-            <path d={STAR} fill="#d14a39" stroke="#2a2418" stroke-width="3" stroke-linejoin="round" />
+            <path d={STAR} fill="#d14a39" stroke="#2a2418" strokeWidth="3" strokeLinejoin="round" />
           </g>
         </svg>
       </div>
