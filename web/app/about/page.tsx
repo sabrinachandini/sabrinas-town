@@ -36,10 +36,10 @@ export default function AboutPage() {
           <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-cream/80 flex items-center gap-2 mb-5 before:content-[''] before:w-4 before:h-[2px] before:bg-cream/60 before:block">
             About This Project
           </p>
-          <Link href="/" className="no-underline text-cream">
+          <Link href="/" className="no-underline" style={{ color: "#f2ece0" }}>
             <h1
-              className="font-display text-cream leading-[0.88] hover:opacity-80 transition-opacity"
-              style={{ fontSize: "clamp(52px,12vw,140px)" }}
+              className="font-display leading-[0.88] hover:opacity-80 transition-opacity"
+              style={{ fontSize: "clamp(52px,12vw,140px)", color: "#f2ece0" }}
             >
               History is for Everyone
             </h1>

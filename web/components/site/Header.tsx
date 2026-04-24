@@ -73,7 +73,7 @@ export function Header() {
           <div className="flex items-center gap-3">
             <Link
               href="/towns"
-              className="no-underline hidden sm:flex font-ui text-[10px] font-medium uppercase tracking-[0.2em] text-cream/55 hover:text-cream transition-colors items-center gap-1.5"
+              className="no-underline hidden sm:flex font-ui text-[13px] font-medium uppercase tracking-[0.2em] text-cream/55 hover:text-cream transition-colors items-center gap-1.5"
             >
               <span aria-hidden="true">←</span> Towns
             </Link>
@@ -160,7 +160,7 @@ export function Header() {
         {/* Logo — TOP LEFT, always visible */}
         <Link href="/" className="no-underline flex-shrink-0" aria-label="History is for Everyone — home">
           {/* Mobile: stacked lockup */}
-          <img src="/logo-lockup-town.svg" alt="History is for Everyone" className="h-[160px] w-auto sm:hidden" />
+          <img src="/logo-lockup-town.svg" alt="History is for Everyone" className="h-[320px] w-auto sm:hidden" />
           {/* Desktop: horizontal lockup */}
           <img src="/logo-horizontal.svg" alt="History is for Everyone" className="h-[110px] w-auto hidden sm:block" />
         </Link>
@@ -173,7 +173,7 @@ export function Header() {
               <Link
                 key={href}
                 href={href}
-                className={`no-underline font-ui text-[10px] font-medium uppercase tracking-[0.2em] transition-colors py-1 border-b-2 ${
+                className={`no-underline font-ui text-[13px] font-medium uppercase tracking-[0.2em] transition-colors py-1 border-b-2 ${
                   active
                     ? "text-white border-crimson"
                     : "text-white border-transparent hover:text-cream"

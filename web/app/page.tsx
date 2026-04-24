@@ -81,15 +81,9 @@ export default async function HomePage() {
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 mt-9">
             <NextLink
               href="/towns"
-              className="font-editorial font-bold text-[20px] tracking-[0.04em] text-[#f2e6c8] bg-[#1a3a72] px-7 py-3.5 no-underline inline-block border-[3px] border-[#14100a] shadow-[4px_4px_0_#14100a] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#14100a] transition-all duration-100 text-center"
+              className="font-editorial font-bold text-[20px] tracking-[0.04em] text-white bg-[#1a3a72] px-7 py-3.5 no-underline inline-block border-[3px] border-[#14100a] shadow-[4px_4px_0_#14100a] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#14100a] transition-all duration-100 text-center"
             >
               Explore the Towns
-            </NextLink>
-            <NextLink
-              href="/teach"
-              className="font-ui text-[11px] font-medium tracking-[0.18em] uppercase text-[#1a3a72] no-underline border-b-2 border-[#1a3a72] pb-0.5 text-center sm:text-left w-fit self-center sm:self-auto"
-            >
-              For Teachers
             </NextLink>
           </div>
         </div>
@@ -106,12 +100,12 @@ export default async function HomePage() {
           </div>
 
           {/* Badge 1 */}
-          <div className="hidden sm:block absolute top-12 left-8 -rotate-[3deg] font-editorial font-black text-[11px] tracking-[0.1em] uppercase bg-[#4A6A9B] text-[#14100a] px-3 py-1.5 border-[2.5px] border-[#14100a] z-[4]">
+          <div className="hidden sm:block absolute top-12 left-8 -rotate-[3deg] font-editorial font-black text-[11px] tracking-[0.1em] uppercase bg-[#4A6A9B] text-[#f2e6c8] px-3 py-1.5 border-[2.5px] border-[#f2e6c8]/50 z-[4]">
             April 19, 1775
           </div>
 
           {/* Badge 2 */}
-          <div className="hidden sm:block absolute bottom-20 right-6 rotate-[2.5deg] font-editorial font-black text-[11px] tracking-[0.1em] uppercase bg-[#4A6A9B] text-[#14100a] px-3 py-1.5 border-[2.5px] border-[#14100a] z-[4]">
+          <div className="hidden sm:block absolute bottom-20 right-6 rotate-[2.5deg] font-editorial font-black text-[11px] tracking-[0.1em] uppercase bg-[#4A6A9B] text-[#f2e6c8] px-3 py-1.5 border-[2.5px] border-[#f2e6c8]/50 z-[4]">
             Massachusetts, 1775
           </div>
 
@@ -200,7 +194,7 @@ export default async function HomePage() {
             <div className="font-display text-[40px] sm:text-[48px] text-[#f2e6c8] leading-none tracking-[-0.04em]">
               {stat.number}<span className="text-cream/50 text-[0.7em]">{stat.accent}</span>
             </div>
-            <div className="font-ui text-[10px] font-normal tracking-[0.2em] uppercase text-[rgba(242,230,200,0.4)]">
+            <div className="font-ui text-[10px] font-normal tracking-[0.2em] uppercase text-[rgba(242,230,200,0.7)\1>
               {stat.label}
             </div>
             {/* Tiny squiggle under stat label — whimsy */}
@@ -489,7 +483,7 @@ export default async function HomePage() {
               <svg width="32" height="1" viewBox="0 0 32 1" aria-hidden="true">
                 <line x1="0" y1="0.5" x2="32" y2="0.5" stroke="rgba(242,230,200,0.25)" strokeWidth="1" />
               </svg>
-              <p className="font-ui text-[10px] font-medium tracking-[0.24em] uppercase text-[rgba(242,230,200,0.4)]">
+              <p className="font-ui text-[10px] font-medium tracking-[0.24em] uppercase text-[rgba(242,230,200,0.7)\1>
                 Thomas Paine · The American Crisis · 1776
               </p>
               <svg width="32" height="1" viewBox="0 0 32 1" aria-hidden="true">
