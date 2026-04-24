@@ -250,11 +250,11 @@ export default async function HomePage() {
                     <p className="font-display text-[clamp(17px,2.5vw,26px)] text-[#f2e6c8] group-hover:text-[#cc3322] transition-colors leading-tight tracking-[-0.02em]">
                       {event.name}
                     </p>
-                    <p className="font-ui text-[10px] uppercase tracking-[0.12em] text-cream/40 mt-1">
+                    <p className="font-ui text-[10px] uppercase tracking-[0.12em] text-cream/65 mt-1">
                       {event.town.name}, {event.town.state}
                     </p>
                     {event.summary && (
-                      <p className="font-ui text-[12px] sm:text-[19px] text-[#f2e6c8]/40 leading-relaxed mt-1.5 line-clamp-2">
+                      <p className="font-ui text-[12px] sm:text-[19px] text-[#f2e6c8]/65 leading-relaxed mt-1.5 line-clamp-2">
                         {event.summary}
                       </p>
                     )}
@@ -300,7 +300,7 @@ export default async function HomePage() {
               style={{ fontSize: "clamp(36px,4vw,60px)" }}
             >
               The War<br />Was Won<br />
-              <span className="inline-block -rotate-[4deg] text-[#4A6A9B] origin-left">Here.</span>
+              <span className="inline-block -rotate-[4deg] text-[#f2e6c8] origin-left">Here.</span>
             </h2>
           </div>
 
@@ -396,7 +396,7 @@ export default async function HomePage() {
         <div className="bg-[#1a3a72] px-8 sm:px-12 py-12 sm:py-16 relative overflow-hidden flex flex-col justify-between">
 
           {/* Tilted tag */}
-          <div className="absolute top-12 right-8 rotate-[3deg] bg-[#4A6A9B] text-[#14100a] font-editorial font-bold text-[12px] px-3.5 py-2 border-[2.5px] border-[#14100a] shadow-[3px_3px_0_#14100a] z-[3]">
+          <div className="absolute top-12 right-8 rotate-[3deg] bg-[#4A6A9B] text-[#f2e6c8] font-editorial font-bold text-[12px] px-3.5 py-2 border-[2.5px] border-[#f2e6c8]/50 shadow-[3px_3px_0_#14100a] z-[3]">
             Featured Town
           </div>
 
@@ -406,7 +406,7 @@ export default async function HomePage() {
           </div>
 
           <div className="relative z-10">
-            <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.4)] mb-5">
+            <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.65)] mb-5">
               This Week
             </p>
             <h3
@@ -474,7 +474,7 @@ export default async function HomePage() {
               style={{ fontSize: "clamp(24px,3.5vw,52px)" }}
             >
               &ldquo;Those who expect to reap the blessings of freedom must, like men, undergo{" "}
-              <strong className="font-editorial font-black not-italic text-[#4A6A9B]">
+              <strong className="font-editorial font-black not-italic text-white">
                 the fatigues of supporting it.
               </strong>&rdquo;
             </p>
@@ -551,7 +551,7 @@ export default async function HomePage() {
             <div className="absolute top-4 right-5 font-editorial font-black text-[80px] leading-none tracking-[-0.05em] opacity-[0.12] pointer-events-none select-none text-[#f2e6c8]" aria-hidden="true">
               02
             </div>
-            <span className="inline-block font-ui text-[11px] font-semibold tracking-[0.24em] uppercase px-2.5 py-1 border-[1.5px] mb-5 text-cream/60 border-cream/30">
+            <span className="inline-block font-ui text-[11px] font-semibold tracking-[0.24em] uppercase px-2.5 py-1 border-[1.5px] mb-5 text-cream/80 border-cream/50">
               Places
             </span>
             <h3 className="font-editorial font-black text-[20px] sm:text-[24px] leading-[1.05] tracking-[-0.02em] mb-4 text-[#f2e6c8]">
@@ -562,7 +562,7 @@ export default async function HomePage() {
             </p>
             <NextLink
               href="/towns/lexington-ma"
-              className="inline-flex items-center gap-2 mt-6 font-ui text-[10px] font-semibold tracking-[0.18em] uppercase no-underline pb-0.5 text-cream/60 border-b-[1.5px] border-cream/40"
+              className="inline-flex items-center gap-2 mt-6 font-ui text-[10px] font-semibold tracking-[0.18em] uppercase no-underline pb-0.5 text-cream/80 border-b-[1.5px] border-cream/60"
             >
               Read More
             </NextLink>
