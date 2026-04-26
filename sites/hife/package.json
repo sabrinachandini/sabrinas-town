@@ -17,6 +17,7 @@
     "postinstall": "prisma generate --schema=../../prisma/schema.prisma || true"
   },
   "dependencies": {
+    "@hife/content": "workspace:*",
     "@hife/ui": "workspace:*",
     "@anthropic-ai/sdk": "^0.90.0",
     "@auth/prisma-adapter": "^2.11.1",

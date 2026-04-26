@@ -1,10 +1,4 @@
-interface TownSource {
-  id: string;
-  url: string | null;
-  title: string;
-  publisherOrHolder: string | null;
-  notes: string | null;
-}
+import type { TownSource } from "@hife/content";
 
 interface SourceGroupProps {
   label: string;

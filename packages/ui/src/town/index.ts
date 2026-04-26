@@ -15,3 +15,5 @@ export { ContentSourceBadge } from "./ContentSourceBadge";
 export { PrimarySourceCard } from "./PrimarySourceCard";
 export { QuizSection } from "./QuizSection";
 export { TeacherHandoutCard } from "./TeacherHandoutCard";
+export { TownHero } from "./TownHero";
+export { TownAccentSync } from "./TownAccentSync";
