@@ -2,5 +2,32 @@
   "name": "lexington",
   "version": "0.0.1",
   "private": true,
-  "description": "Lexington, MA — first town instance (scaffold pending Phase 5)"
+  "description": "Lexington, MA — branded town site for the first shot of the Revolution",
+  "scripts": {
+    "dev": "next dev --port 3001",
+    "build": "prisma generate --schema=../../prisma/schema.prisma && next build",
+    "postinstall": "prisma generate --schema=../../prisma/schema.prisma || true",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hife/content": "workspace:*",
+    "@hife/ui": "workspace:*",
+    "@prisma/client": "5.22.0",
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "prisma": "5.22.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5"
+  },
+  "prisma": {
+    "schema": "../../prisma/schema.prisma"
+  }
 }
