@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-navy:  #0a0e1a;
+  --color-cream: #f2ece0;
+  --color-red:   #c8222a;
+  --color-ink:   #0e1428;
+}
