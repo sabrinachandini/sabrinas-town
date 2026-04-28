@@ -2600,3 +2600,36 @@ export async function getAllStoryParams(): Promise<Array<{ townSlug: string; sto
     return [];
   }
 }
+
+export async function getHomeTowns(): Promise<{ name: string; slug: string }[]> {
+  try {
+    return await prisma.town.findMany({
+      where: { state: "MA", NOT: { heroSummary40: "" } },
+      select: { name: true, slug: true },
+      orderBy: { name: "asc" },
+    });
+  } catch {
+    return [];
+  }
+}
+
+export interface TownListItem {
+  id: string;
+  name: string;
+  state: string;
+  slug: string;
+  heroSummary40: string;
+  execSummary150: string;
+}
+
+export async function getAllTownsList(): Promise<TownListItem[]> {
+  try {
+    return await prisma.town.findMany({
+      select: { id: true, name: true, state: true, slug: true, heroSummary40: true, execSummary150: true },
+      orderBy: { name: "asc" },
+    });
+  } catch (err) {
+    console.error("[getAllTownsList] DB error:", err);
+    return [];
+  }
+}

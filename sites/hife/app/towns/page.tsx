@@ -1,4 +1,5 @@
-import prisma from "@/lib/prisma";
+import { getAllTownsList } from "@/lib/api";
+import type { TownListItem } from "@/lib/api";
 
 export const metadata = {
   title: "Browse Towns | History is for Everyone",
@@ -69,15 +70,7 @@ function WavyRule() {
 
 export default async function TownsPage({ searchParams }: PageProps) {
   const { q = "" } = await searchParams;
-  let towns: { id: string; name: string; state: string; slug: string; heroSummary40: string; execSummary150: string }[] = [];
-  try {
-    towns = await prisma.town.findMany({
-      select: { id: true, name: true, state: true, slug: true, heroSummary40: true, execSummary150: true },
-      orderBy: { name: "asc" },
-    });
-  } catch (err) {
-    console.error("[TownsPage] DB error:", err);
-  }
+  const towns: TownListItem[] = await getAllTownsList();
 
   const query = q.trim().toLowerCase();
   const filtered = query

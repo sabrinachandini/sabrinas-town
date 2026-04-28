@@ -1,22 +1,12 @@
 import NextLink from "next/link";
-import prisma from "@/lib/prisma";
-import { getOnThisDay } from "@/lib/api";
+import { getOnThisDay, getHomeTowns } from "@/lib/api";
 
 export const revalidate = 86400;
 
 /* ── Page ──────────────────────────────────────────────────────────── */
 
 export default async function HomePage() {
-  let towns: { name: string; slug: string }[] = [];
-  try {
-    towns = await prisma.town.findMany({
-      where: { state: "MA", NOT: { heroSummary40: "" } },
-      select: { name: true, slug: true },
-      orderBy: { name: "asc" },
-    });
-  } catch {
-    // fall back to empty list — links won't show rather than 404
-  }
+  const towns = await getHomeTowns();
 
   const now = new Date();
   const otdMonth = parseInt(now.toLocaleDateString("en-US", { month: "numeric", timeZone: "America/New_York" }));
