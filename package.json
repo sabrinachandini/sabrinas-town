@@ -20,7 +20,8 @@
     "api:dev": "tsx watch src/server.ts",
     "api:build": "prisma generate && tsc",
     "vercel-build": "npx prisma generate || true",
-    "lint:links": "npx tsx sites/hife/scripts/validateExternalLinks.ts"
+    "lint:links": "npx tsx sites/hife/scripts/validateExternalLinks.ts",
+    "create-town": "tsx scripts/create-town.ts"
   },
   "keywords": ["american-revolution", "tourism", "history", "education"],
   "author": "Sabrina Bhattacharjya",
