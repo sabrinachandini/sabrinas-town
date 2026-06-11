@@ -1563,7 +1563,7 @@ button {
 
 /* ── Towns / Teach / Partner page styles ─────────────── */
 .towns-search-input::placeholder { color: rgba(255,255,255,0.3); }
-.towns-search-input:focus { border-bottom-color: rgba(255,255,255,0.7) !important; outline: none; }
+.towns-search-input:focus { border-bottom-color: rgba(255,255,255,0.7) !important; outline: 2px solid rgba(255,255,255,0.6); outline-offset: 2px; }
 .state-pill:hover { color: white !important; }
 .town-row:hover { padding-left: 8px; }
 .town-row:hover .town-name-text { color: var(--red) !important; }
