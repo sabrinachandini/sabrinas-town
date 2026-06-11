@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getMuster } from "@/lib/muster";
@@ -5,6 +6,23 @@ import { MusterBuilder } from "./MusterBuilder";
 
 interface PageProps {
   params: Promise<{ id: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { id } = await params;
+  const muster = await getMuster(id);
+  if (!muster) return {};
+  const placeNames = muster.days
+    .flatMap((d) => d.stops.map((s) => s.place?.name))
+    .filter(Boolean)
+    .slice(0, 3)
+    .join(", ");
+  return {
+    title: muster.title || "My Muster Road Trip",
+    description: placeNames
+      ? `A Revolutionary War road trip including ${placeNames} — planned with History Is For Everyone.`
+      : "A Revolutionary War road trip planned with History Is For Everyone.",
+  };
 }
 
 function formatDateShort(date: Date) {

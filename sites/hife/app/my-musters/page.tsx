@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import { auth } from "@/lib/auth";
 import { getUserMusters } from "@/lib/muster";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+
+export const metadata: Metadata = {
+  title: "My Musters",
+  robots: { index: false, follow: false },
+};
 
 function fmtShort(d: Date) { return new Date(d).toLocaleDateString("en-US", { month: "short", day: "numeric" }); }
 
