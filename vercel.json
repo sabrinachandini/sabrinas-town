@@ -17,8 +17,7 @@
   "routes": [
     { "src": "/api/cron/(.*)", "dest": "/sites/hife/api/cron/$1" },
     { "src": "/api/(.*)", "dest": "/api/index.ts" },
-    { "src": "/((?!api/).*)", "dest": "/sites/hife/$1", "continue": true },
-    { "handle": "filesystem" }
+    { "src": "/(.*)", "dest": "/sites/hife/$1" }
   ],
   "crons": [
     { "path": "/api/cron/content-refresh", "schedule": "0 6 * * *" },
