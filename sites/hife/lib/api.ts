@@ -971,7 +971,31 @@ export async function getRankings(options?: {
   }
 }
 
-export async function getOnThisDay(month: number, day: number): Promise<OnThisDayEvent[]> {
+export interface OnThisDayResult {
+  events: OnThisDayEvent[];
+  isFallback: boolean;
+}
+
+function nearbyDates(month: number, day: number, windowDays = 7): Array<[number, number]> {
+  const pairs: Array<[number, number]> = [];
+  const daysInMonth = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  for (let offset = -windowDays; offset <= windowDays; offset++) {
+    if (offset === 0) continue;
+    let m = month;
+    let d = day + offset;
+    if (d < 1) {
+      m = m === 1 ? 12 : m - 1;
+      d += daysInMonth[m];
+    } else if (d > daysInMonth[m]) {
+      d -= daysInMonth[m];
+      m = m === 12 ? 1 : m + 1;
+    }
+    pairs.push([m, d]);
+  }
+  return pairs;
+}
+
+export async function getOnThisDay(month: number, day: number): Promise<OnThisDayResult> {
   try {
     const events = await prisma.event.findMany({
       where: { startDate: { not: null } },
@@ -988,24 +1012,40 @@ export async function getOnThisDay(month: number, day: number): Promise<OnThisDa
       orderBy: { significanceWeight: "desc" },
     });
 
-    return events
+    const toResult = (e: typeof events[number]): OnThisDayEvent => ({
+      id: e.id,
+      name: e.name,
+      slug: e.slug,
+      summary: e.summary ?? "",
+      startDate: e.startDate!.toISOString(),
+      year: new Date(e.startDate!).getUTCFullYear(),
+      town: e.town,
+      themes: e.eventThemes.map((et) => ({ id: et.theme.id, name: et.theme.name })),
+    });
+
+    const exact = events.filter((e) => {
+      const d = new Date(e.startDate!);
+      return d.getUTCMonth() + 1 === month && d.getUTCDate() === day;
+    });
+
+    if (exact.length > 0) {
+      return { events: exact.map(toResult), isFallback: false };
+    }
+
+    const nearby = nearbyDates(month, day);
+    const fallback = events
       .filter((e) => {
         const d = new Date(e.startDate!);
-        return d.getUTCMonth() + 1 === month && d.getUTCDate() === day;
+        const em = d.getUTCMonth() + 1;
+        const ed = d.getUTCDate();
+        return nearby.some(([nm, nd]) => nm === em && nd === ed);
       })
-      .map((e) => ({
-        id: e.id,
-        name: e.name,
-        slug: e.slug,
-        summary: e.summary ?? "",
-        startDate: e.startDate!.toISOString(),
-        year: new Date(e.startDate!).getUTCFullYear(),
-        town: e.town,
-        themes: e.eventThemes.map((et) => ({ id: et.theme.id, name: et.theme.name })),
-      }));
+      .slice(0, 6);
+
+    return { events: fallback.map(toResult), isFallback: true };
   } catch (error) {
     console.error("Error fetching on-this-day events:", error);
-    return [];
+    return { events: [], isFallback: false };
   }
 }
 

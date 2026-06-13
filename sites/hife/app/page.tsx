@@ -13,9 +13,9 @@ export default async function HomePage() {
   const otdDay = parseInt(now.toLocaleDateString("en-US", { day: "numeric", timeZone: "America/New_York" }));
   const otdMonthName = now.toLocaleDateString("en-US", { month: "long", timeZone: "America/New_York" });
   const otdDayNum = now.toLocaleDateString("en-US", { day: "numeric", timeZone: "America/New_York" });
-  let otdEvents: Awaited<ReturnType<typeof getOnThisDay>> = [];
+  let otdEvents: Awaited<ReturnType<typeof getOnThisDay>>["events"] = [];
   try {
-    otdEvents = await getOnThisDay(otdMonth, otdDay);
+    otdEvents = (await getOnThisDay(otdMonth, otdDay)).events;
   } catch {
     // non-fatal — widget just won't show events
   }

@@ -18,7 +18,7 @@ export async function GET(req: Request) {
   const monthName = now.toLocaleDateString("en-US", { month: "long", timeZone: "UTC" });
   const dayNum = now.toLocaleDateString("en-US", { day: "numeric", timeZone: "UTC" });
 
-  const events = await getOnThisDay(month, day);
+  const { events } = await getOnThisDay(month, day);
 
   // Get all signups
   const signups = await prisma.emailSignup.findMany({

@@ -20,11 +20,10 @@ export function generateMetadata() {
 
 export default async function OnThisDayPage({ searchParams }: PageProps) {
   const { date } = await searchParams;
-  // Use browser-supplied local date if present (set by client script below)
   const now = date ? new Date(date + "T12:00:00") : new Date();
   const month = now.getMonth() + 1;
   const day = now.getDate();
-  const events = await getOnThisDay(month, day);
+  const { events, isFallback } = await getOnThisDay(month, day);
 
   const monthName = now.toLocaleDateString("en-US", { month: "long" });
   const dayNum = now.toLocaleDateString("en-US", { day: "numeric" });
@@ -47,9 +46,11 @@ export default async function OnThisDayPage({ searchParams }: PageProps) {
           </h1>
           <div className="w-12 h-[3px] bg-[#cc3322] my-5" />
           <p className="font-editorial italic font-light text-[21px] text-cream/60 max-w-[520px] leading-[1.65]">
-            {events.length > 0
+            {events.length > 0 && !isFallback
               ? `${events.length} documented event${events.length !== 1 ? "s" : ""} in the Revolutionary War happened on this date.`
-              : "No documented events fall on this exact date — but the war never stopped."}
+              : events.length > 0
+              ? `No recorded events on this exact date — but the war never paused. Here are events from this week in history.`
+              : "No documented events fall on this date or nearby — but the work of building a nation continued regardless."}
           </p>
         </div>
       </div>
@@ -58,7 +59,7 @@ export default async function OnThisDayPage({ searchParams }: PageProps) {
         {events.length === 0 ? (
           <div className="py-12 text-center">
             <p className="font-display text-[80px] text-ink/5 leading-none mb-4">—</p>
-            <p className="font-editorial text-[22px] text-ink/40 mb-3">Nothing recorded on {monthName} {dayNum}</p>
+            <p className="font-editorial text-[22px] text-ink/40 mb-3">Nothing recorded near {monthName} {dayNum}</p>
             <p className="font-ui text-[19px] text-ink/30 max-w-[480px] mx-auto leading-relaxed">
               The Revolutionary War produced thousands of documented events between 1763 and 1783.
               Not every date has a recorded battle or decision — but the work of building a nation
@@ -77,7 +78,7 @@ export default async function OnThisDayPage({ searchParams }: PageProps) {
           <div>
             <div className="border-t-[3px] border-ink pt-6 mb-10">
               <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-crimson flex items-center gap-2 before:content-[''] before:w-4 before:h-[2px] before:bg-crimson before:block">
-                Events on {monthName} {dayNum}
+                {isFallback ? `Events from this week in history` : `Events on ${monthName} ${dayNum}`}
               </p>
             </div>
 
@@ -88,7 +89,9 @@ export default async function OnThisDayPage({ searchParams }: PageProps) {
                   <div className="flex-shrink-0 w-20">
                     <div className="bg-[#1a3a72] text-cream inline-block px-3 py-2 text-center w-full">
                       <p className="font-display text-[24px] leading-none text-cream">{event.year}</p>
-                      <p className="font-ui text-[10px] uppercase tracking-[0.1em] text-cream/40 mt-0.5">{monthName.slice(0,3)} {dayNum}</p>
+                      <p className="font-ui text-[10px] uppercase tracking-[0.1em] text-cream/40 mt-0.5">
+                        {new Date(event.startDate).toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" })}
+                      </p>
                     </div>
                   </div>
 
