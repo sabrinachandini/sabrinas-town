@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getRouteBySlug, getAllRoutes } from "@/lib/api";
 import Link from "next/link";
 import { Metadata } from "next";
+import { MusterRouteButton } from "./MusterRouteButton";
 
 export const revalidate = 3600;
 
@@ -142,6 +143,9 @@ export default async function RoutePage({ params }: PageProps) {
 
           {/* Sidebar */}
           <aside className="space-y-8">
+            {/* Muster CTA */}
+            <MusterRouteButton routeId={route.id} routeName={route.name} />
+
             {/* Quick facts */}
             <div className="bg-blue p-5">
               <p className="font-ui text-[11px] uppercase tracking-[0.2em] text-cream/30 mb-4">Route Details</p>

@@ -45,6 +45,7 @@ export interface MusterItinerary {
 
 export interface MusterDetail {
   id: string;
+  userId: string | null;
   title: string;
   summary: string | null;
   shareToken: string;
