@@ -140,7 +140,7 @@ export default function MethodologyPage() {
           {/* Sidebar */}
           <aside className="space-y-8">
             <div>
-              <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[rgba(20,16,10,0.3)] mb-3">On This Page</p>
+              <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[rgba(20,16,10,0.55)] mb-3">On This Page</p>
               <ul>
                 {[
                   { label: "What Is This?", id: "what" },
