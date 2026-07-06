@@ -4,10 +4,10 @@ import type { TownListItem } from "@/lib/api";
 export const metadata = {
   title: "Browse Towns | History is for Everyone",
   description:
-    "77 towns across 13 original states — every place where the American Revolution happened.",
+    "A growing network of Revolutionary towns across America — every place where the American Revolution happened.",
   openGraph: {
     title: "Browse Towns",
-    description: "77 towns across 13 original states — every place where the American Revolution happened.",
+    description: "A growing network of Revolutionary towns across America — every place where the American Revolution happened.",
     url: "https://sabrinas-town.vercel.app/towns",
   },
   alternates: { canonical: "https://sabrinas-town.vercel.app/towns" },
@@ -129,7 +129,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
             transform: "rotate(-2deg)",
           }}
         >
-          75 Towns · 16 States
+          75 Towns · 1 Revolution
         </div>
 
         {/* Stars */}
@@ -206,7 +206,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
               lineHeight: 1.5,
             }}
           >
-            77 towns across 13 original states — every place where the American Revolution happened.
+            A growing network of Revolutionary towns across America — every place where the American Revolution happened.
           </p>
         </div>
       </section>

@@ -24,7 +24,8 @@ const MANUAL_OVERRIDES: Record<string, TownAccent> = {
   "yorktown-va":       "green",
   "williamsburg-va":   "green",
   // New York
-  "saratoga-ny":       "green",
+  "saratoga-springs-ny": "green",
+  "saratoga-ny":         "green", // retired slug — redirect in next.config.ts
   "albany-ny":         "blue",
   // South Carolina
   "charleston-sc":     "rust",

@@ -64,7 +64,7 @@ export default async function HomePage() {
 
           {/* Pull quote */}
           <p className="font-editorial italic font-light text-[21px] sm:text-[22px] leading-[1.4] text-[#4a3c1a] max-w-[340px] mt-8">
-            Seventy-seven towns. The places where ordinary people made history.
+            A growing network of Revolutionary towns. The places where ordinary people made history.
           </p>
 
           {/* CTA row — stacked on mobile */}

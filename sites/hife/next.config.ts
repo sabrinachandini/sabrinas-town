@@ -19,6 +19,9 @@ const nextConfig: NextConfig = {
       { source: "/towns/:slug/visit/:id", destination: "/towns/:slug/places/:id", permanent: true },
       { source: "/towns/:slug/events", destination: "/towns/:slug/timeline", permanent: true },
       { source: "/towns/:slug/events/:id", destination: "/towns/:slug/timeline/:id", permanent: true },
+      // Saratoga: retired duplicate slug → canonical page
+      { source: "/towns/saratoga-ny", destination: "/towns/saratoga-springs-ny", permanent: true },
+      { source: "/towns/saratoga-ny/:path*", destination: "/towns/saratoga-springs-ny/:path*", permanent: true },
     ];
   },
 };

@@ -87,6 +87,13 @@ model Town {
   localEvents      LocalEvent[]
   emailSignups     EmailSignup[]
 
+  // Business directory
+  businesses       Business[]
+
+  // Editor note — shown on the town page (e.g. "The battlefield lies just
+  // across the South Carolina state line in York County, SC.")
+  footnote         String?   @db.Text
+
   @@index([state])
   @@index([compositeScore(sort: Desc)])
 }
@@ -269,6 +276,7 @@ model Place {
   updatedAt   DateTime  @updatedAt
 
   musterStops MusterStop[]
+  businesses  Business[]
 
   @@index([townId])
   @@index([placeType])
@@ -1097,6 +1105,8 @@ model MusterStop {
   place        Place?         @relation(fields: [placeId], references: [id])
   localEventId String?
   localEvent   LocalEvent?    @relation(fields: [localEventId], references: [id])
+  businessId   String?
+  business     Business?      @relation(fields: [businessId], references: [id])
 
   // For MEAL / LODGING / CUSTOM stops (no DB record)
   customName   String?
@@ -1147,4 +1157,73 @@ model EmailSignup {
   @@unique([email, townId])
   @@index([townId])
   @@index([email])
+}
+
+// ============================================================================
+// BUSINESS DIRECTORY
+// Commerce layer — fully separate from historic Site/Place so trade never
+// muddles history. Sourced automatically (PLACES_API) or hand-curated
+// (CURATED). ★ HIFE Picks are curated entries with is_hife_pick=true.
+// ============================================================================
+
+enum BusinessCategory {
+  RESTAURANT
+  CAFE_BAKERY
+  SHOPPING
+  LODGING
+}
+
+enum BusinessStatus {
+  ACTIVE
+  CLOSED
+  NEEDS_REVIEW
+}
+
+enum BusinessSource {
+  PLACES_API
+  CURATED
+}
+
+model Business {
+  id           String           @id @default(cuid())
+  townId       String
+  town         Town             @relation(fields: [townId], references: [id])
+
+  name         String
+  slug         String           @unique
+  category     BusinessCategory
+
+  // Location
+  lat          Float?
+  lng          Float?
+  address      String?
+
+  // Contact / visitor info
+  hours        String?          // Human-readable: "Mon–Sat 8am–6pm"
+  priceRange   String?          // "$", "$$", "$$$"
+  website      String?
+  phone        String?
+
+  // HIFE curation layer
+  isHifePick   Boolean          @default(false)
+  blurb        String?          @db.Text  // Required when isHifePick=true
+
+  // Optional link to a historic Place (e.g. tavern that is also a Site)
+  siteId       String?
+  site         Place?           @relation(fields: [siteId], references: [id])
+
+  // Data provenance
+  source       BusinessSource   @default(CURATED)
+  lastVerified DateTime?
+  status       BusinessStatus   @default(ACTIVE)
+
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+
+  musterStops  MusterStop[]
+
+  @@index([townId])
+  @@index([category])
+  @@index([isHifePick])
+  @@index([status])
 }
