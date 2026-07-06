@@ -2736,3 +2736,98 @@ export async function getBusinessesByTown(slug: string): Promise<TownBusinesses 
     return null;
   }
 }
+
+// ─── Route detail types ────────────────────────────────────────────────────────
+
+export interface RouteStopDetail {
+  id: string;
+  stopOrder: number;
+  notes: string | null;
+  arrivalTime: string | null;
+  town: {
+    id: string;
+    slug: string;
+    name: string;
+    state: string;
+    execSummary150: string;
+    imageUrl: string | null;
+  };
+}
+
+export interface RouteDetail {
+  id: string;
+  name: string;
+  description: string;
+  totalMiles: number | null;
+  stops: RouteStopDetail[];
+}
+
+export interface RouteSummary {
+  id: string;
+  name: string;
+  description: string;
+  totalMiles: number | null;
+  stopCount: number;
+}
+
+export async function getRouteBySlug(slug: string): Promise<RouteDetail | null> {
+  try {
+    const route = await prisma.route.findUnique({
+      where: { id: slug },
+      include: {
+        stops: {
+          orderBy: { stopOrder: "asc" },
+          include: {
+            town: {
+              select: {
+                id: true,
+                slug: true,
+                name: true,
+                state: true,
+                execSummary150: true,
+                imageUrl: true,
+              },
+            },
+          },
+        },
+      },
+    });
+    if (!route) return null;
+
+    return {
+      id: route.id,
+      name: route.name,
+      description: route.description,
+      totalMiles: route.totalMiles,
+      stops: route.stops.map((s) => ({
+        id: s.id,
+        stopOrder: s.stopOrder,
+        notes: s.notes,
+        arrivalTime: s.arrivalTime,
+        town: s.town,
+      })),
+    };
+  } catch (err) {
+    console.error("[getRouteBySlug] DB error:", err);
+    return null;
+  }
+}
+
+export async function getAllRoutes(): Promise<RouteSummary[]> {
+  try {
+    const routes = await prisma.route.findMany({
+      orderBy: { name: "asc" },
+      include: { stops: { select: { id: true } } },
+    });
+    return routes.map((r) => ({
+      id: r.id,
+      name: r.name,
+      description: r.description,
+      totalMiles: r.totalMiles,
+      stopCount: r.stops.length,
+    }));
+  } catch (err) {
+    console.error("[getAllRoutes] DB error:", err);
+    return [];
+  }
+}
