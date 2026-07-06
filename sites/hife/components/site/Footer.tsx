@@ -22,7 +22,7 @@ export function Footer() {
             <span className="font-editorial font-black text-[22px] text-[#14100a] tracking-[-0.03em] leading-tight block">
               History is for Everyone
             </span>
-            <p className="font-editorial italic font-light text-[20px] text-[rgba(20,16,10,0.55)] mt-1.5">
+            <p className="font-editorial italic font-light text-[20px] text-[rgba(20,16,10,0.65)] mt-1.5">
               The American Revolution, town by town.
             </p>
           </NextLink>
@@ -34,7 +34,7 @@ export function Footer() {
                 <li key={label}>
                   <NextLink
                     href={href}
-                    className="font-ui text-[10px] font-medium tracking-[0.2em] uppercase text-[rgba(20,16,10,0.6)] no-underline hover:text-[#cc3322] transition-colors"
+                    className="font-ui text-[10px] font-medium tracking-[0.2em] uppercase text-[rgba(20,16,10,0.7)] no-underline hover:text-[#cc3322] transition-colors"
                   >
                     {label}
                   </NextLink>
@@ -46,10 +46,10 @@ export function Footer() {
 
         {/* Bottom row */}
         <div className="flex items-center justify-between">
-          <p className="font-ui text-[11px] text-[rgba(20,16,10,0.4)] tracking-[0.08em]">
+          <p className="font-ui text-[11px] text-[rgba(20,16,10,0.62)] tracking-[0.08em]">
             © {new Date().getFullYear()} History Is For Everyone
           </p>
-          <p className="font-ui text-[10px] text-[rgba(20,16,10,0.4)] tracking-[0.08em]">
+          <p className="font-ui text-[10px] text-[rgba(20,16,10,0.62)] tracking-[0.08em]">
             Made in Massachusetts
           </p>
         </div>

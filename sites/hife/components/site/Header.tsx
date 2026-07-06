@@ -173,7 +173,7 @@ export function Header() {
               <Link
                 key={href}
                 href={href}
-                className={`no-underline font-ui text-[13px] font-medium uppercase tracking-[0.2em] transition-colors py-1 border-b-2 ${
+                className={`no-underline font-ui text-[13px] font-medium uppercase tracking-[0.2em] transition-colors py-1 border-b-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:ring-offset-[#1a3a72] ${
                   active
                     ? "text-white border-crimson"
                     : "text-white border-transparent hover:text-cream"
@@ -195,7 +195,7 @@ export function Header() {
           </Link>
           <Link
             href="/muster/new"
-            className="no-underline ml-2 bg-[#cc3322] text-cream font-ui text-[10px] font-semibold uppercase tracking-[0.2em] px-4 py-2 border-2 border-[#cc3322] hover:bg-[#a82818] transition-colors"
+            className="no-underline ml-2 bg-[#cc3322] text-cream font-ui text-[10px] font-semibold uppercase tracking-[0.2em] px-4 py-2 border-2 border-[#cc3322] hover:bg-[#a82818] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1a3a72]"
           >
             Plan a Visit
           </Link>
@@ -235,7 +235,7 @@ export function Header() {
               <Link
                 href="/muster/new"
                 onClick={() => setOpen(false)}
-                className="no-underline block w-full text-center py-2 px-4 bg-[#cc3322] text-cream font-ui font-semibold text-[10px] uppercase tracking-[0.2em]"
+                className="no-underline block w-full text-center py-2 px-4 bg-[#cc3322] text-cream font-ui font-semibold text-[10px] uppercase tracking-[0.2em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 Plan a Visit
               </Link>

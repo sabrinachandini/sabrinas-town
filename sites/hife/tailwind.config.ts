@@ -12,12 +12,14 @@ const config: Config = {
     extend: {
       // hife-specific overrides go here
       colors: {
-        fog: "rgba(255,255,255,0.55)",
-        gold: "#c8222a",
-        ivory: "#f2ece0",
-        charcoal: "#0e1428",
-        slate: "#6b7280",
-        crimson: "#c8222a",
+        fog:          "rgba(255,255,255,0.55)",
+        gold:         "#C8A24A",
+        "gold-ink":   "#8A6B24",
+        ivory:        "#f2ece0",
+        charcoal:     "#0e1428",
+        slate:        "#6b7280",
+        crimson:      "#cc3322",
+        "crimson-ink":"#B53A29",
       },
     },
   },

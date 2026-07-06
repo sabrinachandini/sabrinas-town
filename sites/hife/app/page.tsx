@@ -525,7 +525,7 @@ export default async function HomePage() {
             <h3 className="font-editorial font-black text-[20px] sm:text-[24px] leading-[1.05] tracking-[-0.02em] mb-4 text-[#14100a]">
               The Surgeon Who Rode Before Revere
             </h3>
-            <p className="font-ui text-[20px] font-light leading-[1.7] text-[rgba(20,16,10,0.6)]">
+            <p className="font-ui text-[20px] font-light leading-[1.7] text-[rgba(20,16,10,0.75)]">
               Samuel Prescott was the only rider who actually made it to Concord. Revere was captured. Dawes turned back. Prescott jumped a stone wall.
             </p>
             <NextLink

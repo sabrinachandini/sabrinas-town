@@ -9,16 +9,18 @@
 
 :root {
   /* ── Brand Colors ──────────────────────────────── */
-  --navy:    #0a0e1a;
-  --crimson: #c8222a;
-  --red:     #c8222a;
-  --gold:    #c8222a;
-  --ivory:   #f2ece0;
-  --cream:   #f2ece0;
-  --charcoal:#0e1428;
-  --ink:     #0e1428;
-  --slate:   #6b7280;
-  --fog:     rgba(255,255,255,0.80);
+  --navy:         #0a0e1a;
+  --crimson:      #cc3322;
+  --crimson-ink:  #B53A29; /* small-text safe: use below 19px on light bg */
+  --red:          #cc3322;
+  --gold:         #C8A24A;
+  --gold-ink:     #8A6B24; /* small-text safe: use below 19px on light bg */
+  --ivory:        #f2ece0;
+  --cream:        #f2ece0;
+  --charcoal:     #0e1428;
+  --ink:          #0e1428;
+  --slate:        #6b7280;
+  --fog:          rgba(255,255,255,0.80);
 
   /* ── Extended Palette ─────────────────────────── */
   --blue:     #1a3a72;
@@ -40,8 +42,8 @@
   --text-muted: var(--slate);
   --accent-blue: var(--navy);
   --accent-blue-hover: #1a1e2e;
-  --accent-red: #c8222a;
-  --accent-red-hover: #a81c22;
+  --accent-red: #cc3322;
+  --accent-red-hover: #a82818;
   --border-light: #ddd8ce;
 
   /* Typography Scale */
@@ -96,14 +98,16 @@
 
 @theme inline {
   /* Brand colors */
-  --color-navy:    var(--navy);
-  --color-crimson: var(--crimson);
-  --color-gold:    var(--gold);
-  --color-ivory:   var(--ivory);
-  --color-cream:   var(--cream);
-  --color-charcoal:var(--charcoal);
-  --color-slate:   var(--slate);
-  --color-fog:     var(--fog);
+  --color-navy:         var(--navy);
+  --color-crimson:      var(--crimson);
+  --color-crimson-ink:  var(--crimson-ink);
+  --color-gold:         var(--gold);
+  --color-gold-ink:     var(--gold-ink);
+  --color-ivory:        var(--ivory);
+  --color-cream:        var(--cream);
+  --color-charcoal:     var(--charcoal);
+  --color-slate:        var(--slate);
+  --color-fog:          var(--fog);
 
   /* Extended palette */
   --color-blue:   var(--blue);
