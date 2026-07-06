@@ -142,6 +142,10 @@ model Event {
   summary         String        @db.Text
   significanceWeight Int        @default(50) // 0-100 scale
 
+  // Confidence & workflow
+  verificationStatus VerificationStatus @default(UNVERIFIED)
+  needsReview        Boolean            @default(false)
+
   // Media
   imageUrl        String?  // Wikimedia Commons or local path
   imageCredit     String?  // Attribution string
@@ -182,6 +186,7 @@ model Person {
   birthYear           Int?
   deathYear           Int?
   verificationStatus  VerificationStatus @default(VERIFIED)
+  needsReview         Boolean            @default(false)
 
   createdAt           DateTime           @default(now())
   updatedAt           DateTime           @updatedAt
@@ -272,6 +277,10 @@ model Place {
   displayOrder       Int      @default(100)
   featured           Boolean  @default(false)
 
+  // Confidence & workflow
+  verificationStatus VerificationStatus @default(VERIFIED)
+  needsReview        Boolean            @default(false)
+
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
 
@@ -323,6 +332,7 @@ model Story {
   narratorRole        String?            // "Curator, Lexington Historical Society"
 
   verificationStatus  VerificationStatus
+  needsReview         Boolean            @default(false)
 
   // Content
   audioScript         String?            @db.Text
