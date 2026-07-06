@@ -8,6 +8,7 @@ import {
   findMusterData,
   generateMusterWithClaude,
   saveMuster,
+  getMuster,
   type MusterRequest,
 } from "@/lib/muster";
 
@@ -94,4 +95,99 @@ export async function remuster(musterId: string): Promise<string> {
   const { sites, events, businesses } = await findMusterData(startLat, startLng, endLat, endLng, startDate, endDate);
   const itinerary = await generateMusterWithClaude(request, sites, events, businesses);
   return saveMuster(request, itinerary, session?.user?.id);
+}
+
+// Create a muster seeded from a Route's ordered stops
+export async function createMusterFromRoute(formData: FormData): Promise<{ error: string } | void> {
+  const session = await auth();
+  const routeId = formData.get("routeId") as string;
+  const startDate = formData.get("startDate") as string;
+  const endDate = formData.get("endDate") as string;
+
+  if (!routeId || !startDate || !endDate) return { error: "Missing required fields." };
+
+  const route = await prisma.route.findUnique({
+    where: { id: routeId },
+    include: {
+      stops: {
+        orderBy: { stopOrder: "asc" },
+        include: { town: { select: { name: true, state: true, lat: true, lng: true } } },
+      },
+    },
+  });
+  if (!route || route.stops.length === 0) return { error: "Route not found." };
+
+  const firstTown = route.stops[0].town;
+  const lastTown = route.stops[route.stops.length - 1].town;
+
+  const request: MusterRequest = {
+    startDate,
+    endDate,
+    startLocation: `${firstTown.name}, ${firstTown.state}`,
+    endLocation: `${lastTown.name}, ${lastTown.state}`,
+    interests: [],
+    travelerType: "HISTORY_BUFF",
+    pace: "BALANCED",
+  };
+
+  let musterId: string;
+  try {
+    // Use the route towns as the corridor anchors
+    const startLat = firstTown.lat ?? 42.3;
+    const startLng = firstTown.lng ?? -71.5;
+    const endLat = lastTown.lat ?? startLat;
+    const endLng = lastTown.lng ?? startLng;
+
+    const sd = new Date(startDate + "T00:00:00");
+    const ed = new Date(endDate + "T23:59:59");
+
+    const { sites, events, businesses } = await findMusterData(startLat, startLng, endLat, endLng, sd, ed, 30);
+    const itinerary = await generateMusterWithClaude(
+      { ...request, interests: [`Following the ${route.name} route`] },
+      sites, events, businesses
+    );
+    musterId = await saveMuster(request, itinerary, session?.user?.id);
+  } catch (e) {
+    console.error("createMusterFromRoute failed:", e);
+    const msg = e instanceof Error ? e.message : String(e);
+    return { error: `Could not muster this route. ${msg.slice(0, 120)}` };
+  }
+
+  redirect(`/muster/${musterId}`);
+}
+
+// Claim an anonymous muster after sign-in
+export async function claimMuster(musterId: string): Promise<{ error: string } | void> {
+  const session = await auth();
+  if (!session?.user?.id) return { error: "Not signed in." };
+
+  const muster = await getMuster(musterId);
+  if (!muster) return { error: "Muster not found." };
+
+  await prisma.muster.update({
+    where: { id: musterId },
+    data: { userId: session.user.id },
+  });
+}
+
+// Remove a single stop from a muster
+export async function removeMusterStop(musterId: string, stopId: string): Promise<{ error: string } | void> {
+  // Verify the stop belongs to this muster before deleting
+  const stop = await prisma.musterStop.findFirst({
+    where: { id: stopId, musterDay: { musterId } },
+  });
+  if (!stop) return { error: "Stop not found." };
+
+  await prisma.musterStop.delete({ where: { id: stopId } });
+
+  // Re-number remaining stops in the same day to keep order clean
+  const remaining = await prisma.musterStop.findMany({
+    where: { musterDayId: stop.musterDayId },
+    orderBy: { stopOrder: "asc" },
+  });
+  await Promise.all(
+    remaining.map((s, i) =>
+      prisma.musterStop.update({ where: { id: s.id }, data: { stopOrder: i + 1 } })
+    )
+  );
 }
