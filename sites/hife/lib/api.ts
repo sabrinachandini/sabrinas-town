@@ -137,6 +137,7 @@ export interface Town {
     summary: string;
     publicNotes: string | null;
   }>;
+  footnote?: string | null;
 }
 
 export interface PlacesResponse {
@@ -932,6 +933,7 @@ export async function getTown(slug: string): Promise<Town | null> {
         summary: c.summary,
         publicNotes: c.publicNotes,
       })),
+      footnote: town.footnote ?? null,
     };
   } catch (error) {
     console.error("Error fetching town:", error);
@@ -2671,5 +2673,66 @@ export async function getAllTownsList(): Promise<TownListItem[]> {
   } catch (err) {
     console.error("[getAllTownsList] DB error:", err);
     return [];
+  }
+}
+
+// ============================================================================
+// BUSINESS DIRECTORY
+// ============================================================================
+
+export interface TownBusiness {
+  id: string;
+  name: string;
+  slug: string;
+  category: "RESTAURANT" | "CAFE_BAKERY" | "SHOPPING" | "LODGING";
+  address: string | null;
+  hours: string | null;
+  priceRange: string | null;
+  website: string | null;
+  phone: string | null;
+  isHifePick: boolean;
+  blurb: string | null;
+  lat: number | null;
+  lng: number | null;
+}
+
+export interface TownBusinesses {
+  picks: TownBusiness[];
+  byCategory: {
+    RESTAURANT: TownBusiness[];
+    CAFE_BAKERY: TownBusiness[];
+    SHOPPING: TownBusiness[];
+    LODGING: TownBusiness[];
+  };
+}
+
+export async function getBusinessesByTown(slug: string): Promise<TownBusinesses | null> {
+  try {
+    const town = await prisma.town.findUnique({ where: { slug }, select: { id: true } });
+    if (!town) return null;
+
+    const businesses = await prisma.business.findMany({
+      where: { townId: town.id, status: "ACTIVE" },
+      orderBy: [{ isHifePick: "desc" }, { name: "asc" }],
+      select: {
+        id: true, name: true, slug: true, category: true,
+        address: true, hours: true, priceRange: true,
+        website: true, phone: true, isHifePick: true, blurb: true,
+        lat: true, lng: true,
+      },
+    });
+
+    const picks = businesses.filter((b) => b.isHifePick);
+    const byCategory = {
+      RESTAURANT: businesses.filter((b) => b.category === "RESTAURANT"),
+      CAFE_BAKERY: businesses.filter((b) => b.category === "CAFE_BAKERY"),
+      SHOPPING: businesses.filter((b) => b.category === "SHOPPING"),
+      LODGING: businesses.filter((b) => b.category === "LODGING"),
+    };
+
+    return { picks, byCategory };
+  } catch (err) {
+    console.error("[getBusinessesByTown] DB error:", err);
+    return null;
   }
 }

@@ -4,10 +4,13 @@ import {
   getTownPeople,
   getLocalEvents,
   getRankings,
+  getBusinessesByTown,
+  type TownBusiness,
 } from "@/lib/api";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { recordOrgEvent } from "@/lib/analytics";
 import { ComingSoon, TownHero } from "@/components/town";
+import { EatAndShop } from "./EatAndShop";
 import NextLink from "next/link";
 
 export const revalidate = 3600;
@@ -41,11 +44,12 @@ export async function generateMetadata({ params }: PageProps) {
 export default async function TownOverviewPage({ params }: PageProps) {
   const { slug } = await params;
 
-  const [town, sourcesData, peopleData, localEvents] = await Promise.all([
+  const [town, sourcesData, peopleData, localEvents, businesses] = await Promise.all([
     getTown(slug),
     getTownSources(slug),
     getTownPeople(slug),
     getLocalEvents(slug),
+    getBusinessesByTown(slug),
   ]);
 
   if (!town) return <ComingSoon slug={slug} />;
@@ -301,6 +305,18 @@ export default async function TownOverviewPage({ params }: PageProps) {
               </section>
             )}
 
+            {/* Editor footnote (e.g. Kings Mountain geography note) */}
+            {town.footnote && (
+              <aside className="mt-8 border border-ink/15 bg-[#f8f4e8] p-4 rounded-sm">
+                <p className="font-ui text-[11px] font-semibold tracking-[0.2em] uppercase text-ink/40 mb-1">
+                  Editor&rsquo;s Note
+                </p>
+                <p className="font-ui text-[13px] text-ink/65 leading-relaxed">
+                  {town.footnote}
+                </p>
+              </aside>
+            )}
+
             {/* Footer links */}
             <div className="pt-6 border-t border-ink/10 flex flex-wrap gap-6 font-ui text-[0.8rem] text-ink/55">
               <NextLink href={`/changelog?town=${slug}`} className="no-underline hover:text-ink/70 transition-colors">
@@ -467,6 +483,11 @@ export default async function TownOverviewPage({ params }: PageProps) {
             </div>
           </div>
         </div>
+      )}
+
+      {/* ── Eat & Shop ───────────────────────────────────────────── */}
+      {businesses && (businesses.picks.length > 0 || Object.values(businesses.byCategory).some((cat) => cat.length > 0)) && (
+        <EatAndShop slug={slug} townName={town.name} businesses={businesses} />
       )}
 
       {/* ── Bottom Banner ────────────────────────────────────────── */}

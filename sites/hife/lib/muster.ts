@@ -158,6 +158,19 @@ interface EventForPrompt {
   endDay: number | null;
 }
 
+interface BusinessForPrompt {
+  id: string;
+  name: string;
+  townName: string;
+  category: string;
+  address: string | null;
+  hours: string | null;
+  priceRange: string | null;
+  website: string | null;
+  isHifePick: boolean;
+  blurb: string | null;
+}
+
 export async function findMusterData(
   startLat: number,
   startLng: number,
@@ -166,8 +179,8 @@ export async function findMusterData(
   startDate: Date,
   endDate: Date,
   maxMilesFromRoute = 80
-): Promise<{ sites: SiteForPrompt[]; events: EventForPrompt[] }> {
-  // Fetch all towns with coordinates and their places + events
+): Promise<{ sites: SiteForPrompt[]; events: EventForPrompt[]; businesses: BusinessForPrompt[] }> {
+  // Fetch all towns with coordinates and their places + events + businesses
   const towns = await prisma.town.findMany({
     where: { lat: { not: null }, lng: { not: null } },
     select: {
@@ -192,6 +205,15 @@ export async function findMusterData(
           id: true, name: true, category: true, description: true,
           venue: true, url: true, eventDate: true, month: true, day: true, endDay: true,
         },
+      },
+      businesses: {
+        where: { status: "ACTIVE" },
+        select: {
+          id: true, name: true, category: true, address: true,
+          hours: true, priceRange: true, website: true,
+          isHifePick: true, blurb: true,
+        },
+        orderBy: [{ isHifePick: "desc" }, { name: "asc" }],
       },
     },
   });
@@ -259,7 +281,22 @@ export async function findMusterData(
     }))
   );
 
-  return { sites, events };
+  const businesses: BusinessForPrompt[] = nearbyTowns.flatMap((t) =>
+    (t.businesses ?? []).map((b) => ({
+      id: b.id,
+      name: b.name,
+      townName: t.name,
+      category: b.category,
+      address: b.address,
+      hours: b.hours,
+      priceRange: b.priceRange,
+      website: b.website,
+      isHifePick: b.isHifePick,
+      blurb: b.blurb,
+    }))
+  );
+
+  return { sites, events, businesses };
 }
 
 // ── Restaurant Verification (Nominatim) ──────────────────────────────────────
@@ -320,7 +357,8 @@ const PACE_LABELS: Record<string, string> = {
 export async function generateMusterWithClaude(
   request: MusterRequest,
   sites: SiteForPrompt[],
-  events: EventForPrompt[]
+  events: EventForPrompt[],
+  businesses: BusinessForPrompt[] = []
 ): Promise<MusterItinerary> {
   if (!process.env.ANTHROPIC_API_KEY) throw new Error("ANTHROPIC_API_KEY is not set in environment variables.");
   const client = new Anthropic();
@@ -348,6 +386,9 @@ ${JSON.stringify(sites.slice(0, 40), null, 2)}
 Living history events happening during these dates (PRIORITIZE these — include at least one per day if available):
 ${events.length > 0 ? JSON.stringify(events, null, 2) : "No events found for these exact dates — suggest the best sites instead."}
 
+HIFE-verified businesses near the route (restaurants, cafés, shops, inns):
+${businesses.length > 0 ? JSON.stringify(businesses.slice(0, 30), null, 2) : "No HIFE-verified businesses on file for this route."}
+
 Return a JSON object with EXACTLY this shape (no markdown, no explanation, just the JSON):
 {
   "title": "A 3-word evocative trip title",
@@ -373,16 +414,19 @@ Return a JSON object with EXACTLY this shape (no markdown, no explanation, just 
   ]
 }
 
-Stop types: "site" (historical place from the sites list), "event" (from events list with its id), "meal" (historically relevant restaurant — use id: null), "custom" (anything else — use id: null).
+Stop types: "site" (historical place from the sites list, use its id), "event" (from events list, use its id), "meal" (restaurant or café — use id from businesses list if available, otherwise id: null), "lodging" (inn or hotel for multi-day trips — use id from businesses list if available, otherwise id: null), "custom" (anything else — id: null).
 
 Voice: warm, curious, accessible — like a brilliant friend who knows the Revolution intimately. Never stuffy. Never a brochure.
 - For family trips: note kid-friendly elements, interactive exhibits
 - For school groups: note group logistics, educational framing
 - For history buffs: surface lesser-known details, primary source connections
 - Always route geographically logically (no backtracking)
-- Suggest a meal stop each day at a real, named, landmark restaurant or tavern. Choose historic institutions that have been operating for decades (colonial taverns, famous inns, long-standing local institutions). Include the restaurant name and city. Do NOT suggest chains or generic descriptions. Only name places you are highly confident still exist.
+- Suggest a meal stop each day around midday, timed sensibly near the day's midpoint stop. STRONGLY PREFER businesses marked isHifePick:true from the HIFE-verified businesses list — use their id field. If no HIFE picks are available for a given town, choose a real, named, long-standing local institution (historic tavern, famous inn). Never suggest national chains. Never fabricate a business.
+- For multi-day trips: add a lodging stop at the end of each day except the last. STRONGLY PREFER inns and B&Bs marked isHifePick:true. Use id from the businesses list when available.
+- If pace allows and a bookstore or antique shop is in the businesses list near a midday stop, add a brief browse stop (20-30 min) with type "custom".
 - For museum and historic site stops, check the "hours" field in the sites JSON. Only suggest arrival times that fall within those hours. Never suggest arriving before a site opens or after it closes.
 - For every stop that is a statue, monument, or outdoor landmark, note in why_this_stop that it is always accessible (no hours needed).
+- Never route to a business with status "CLOSED" or "NEEDS_REVIEW".
 
 Return ONLY valid JSON. No markdown code fences.`;
 
@@ -420,15 +464,19 @@ Return ONLY valid JSON. No markdown code fences.`;
   }
 
   // Sanitize stop IDs — Claude sometimes hallucinates IDs not in our dataset.
-  // Clear any ID that doesn't match the known sites/events to prevent FK errors.
+  // Clear any ID that doesn't match the known sites/events/businesses to prevent FK errors.
   const knownSiteIds = new Set(sites.map((s) => s.id));
   const knownEventIds = new Set(events.map((e) => e.id));
+  const knownBusinessIds = new Set(businesses.map((b) => b.id));
   for (const day of itinerary.days) {
     for (const stop of day.stops) {
       if (stop.type === "site" && stop.id && !knownSiteIds.has(stop.id)) {
         stop.id = undefined;
       }
       if (stop.type === "event" && stop.id && !knownEventIds.has(stop.id)) {
+        stop.id = undefined;
+      }
+      if ((stop.type === "meal" || stop.type === "lodging") && stop.id && !knownBusinessIds.has(stop.id)) {
         stop.id = undefined;
       }
     }
@@ -492,6 +540,7 @@ export async function saveMuster(
               stopType: stop.type.toUpperCase() as never,
               placeId: stop.type === "site" && stop.id ? stop.id : null,
               localEventId: stop.type === "event" && stop.id ? stop.id : null,
+              businessId: (stop.type === "meal" || stop.type === "lodging") && stop.id ? stop.id : null,
               customName: !stop.id ? stop.name : null,
               customNote: stop.address ?? null,
               arrivalTime: stop.arrival_time,
@@ -509,6 +558,18 @@ export async function saveMuster(
 
 // ── DB Reads ──────────────────────────────────────────────────────────────────
 
+const MUSTER_STOP_INCLUDE = {
+  place: {
+    select: { id: true, name: true, placeType: true, address: true, lat: true, lng: true, website: true },
+  },
+  localEvent: {
+    select: { id: true, name: true, category: true, venue: true, url: true, eventDate: true, month: true, day: true },
+  },
+  business: {
+    select: { id: true, name: true, category: true, address: true, hours: true, website: true, phone: true, isHifePick: true, blurb: true, lat: true, lng: true },
+  },
+} as const;
+
 export async function getMuster(id: string): Promise<MusterDetail | null> {
   const muster = await prisma.muster.findUnique({
     where: { id },
@@ -518,14 +579,7 @@ export async function getMuster(id: string): Promise<MusterDetail | null> {
         include: {
           stops: {
             orderBy: { stopOrder: "asc" },
-            include: {
-              place: {
-                select: { id: true, name: true, placeType: true, address: true, lat: true, lng: true, website: true },
-              },
-              localEvent: {
-                select: { id: true, name: true, category: true, venue: true, url: true, eventDate: true, month: true, day: true },
-              },
-            },
+            include: MUSTER_STOP_INCLUDE,
           },
         },
       },
@@ -543,14 +597,7 @@ export async function getMusterByToken(token: string): Promise<MusterDetail | nu
         include: {
           stops: {
             orderBy: { stopOrder: "asc" },
-            include: {
-              place: {
-                select: { id: true, name: true, placeType: true, address: true, lat: true, lng: true, website: true },
-              },
-              localEvent: {
-                select: { id: true, name: true, category: true, venue: true, url: true, eventDate: true, month: true, day: true },
-              },
-            },
+            include: MUSTER_STOP_INCLUDE,
           },
         },
       },

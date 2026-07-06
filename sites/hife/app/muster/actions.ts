@@ -43,8 +43,8 @@ export async function createMuster(formData: FormData): Promise<{ error: string 
     const startDate = new Date(request.startDate + "T00:00:00");
     const endDate = new Date(request.endDate + "T23:59:59");
 
-    const { sites, events } = await findMusterData(startLat, startLng, endLat, endLng, startDate, endDate);
-    const itinerary = await generateMusterWithClaude(request, sites, events);
+    const { sites, events, businesses } = await findMusterData(startLat, startLng, endLat, endLng, startDate, endDate);
+    const itinerary = await generateMusterWithClaude(request, sites, events, businesses);
     musterId = await saveMuster(request, itinerary, session?.user?.id);
   } catch (e) {
     console.error("createMuster failed:", e);
@@ -91,7 +91,7 @@ export async function remuster(musterId: string): Promise<string> {
   const startDate = new Date(request.startDate + "T00:00:00");
   const endDate = new Date(request.endDate + "T23:59:59");
 
-  const { sites, events } = await findMusterData(startLat, startLng, endLat, endLng, startDate, endDate);
-  const itinerary = await generateMusterWithClaude(request, sites, events);
+  const { sites, events, businesses } = await findMusterData(startLat, startLng, endLat, endLng, startDate, endDate);
+  const itinerary = await generateMusterWithClaude(request, sites, events, businesses);
   return saveMuster(request, itinerary, session?.user?.id);
 }
