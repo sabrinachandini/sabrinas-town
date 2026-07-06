@@ -44,6 +44,10 @@ export default function MusterNewPage() {
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
   const [travelerType, setTravelerType] = useState("SOLO_COUPLE");
   const [pace, setPace] = useState("BALANCED");
+  // Teacher / field-trip mode
+  const [gradeLevel, setGradeLevel] = useState("");
+  const [busCapacity, setBusCapacity] = useState("");
+  const isFieldTrip = travelerType === "SCHOOL_GROUP";
 
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -122,6 +126,9 @@ export default function MusterNewPage() {
           ))}
           <input type="hidden" name="travelerType" value={travelerType} />
           <input type="hidden" name="pace" value={pace} />
+          <input type="hidden" name="fieldTrip" value={String(isFieldTrip)} />
+          {isFieldTrip && gradeLevel && <input type="hidden" name="gradeLevel" value={gradeLevel} />}
+          {isFieldTrip && busCapacity && <input type="hidden" name="busCapacity" value={busCapacity} />}
 
           {/* ── Step 0: Dates ── */}
           {step === 0 && (
@@ -279,6 +286,42 @@ export default function MusterNewPage() {
                   ))}
                 </div>
               </div>
+
+              {/* Field trip extras — shown when School Group is selected */}
+              {isFieldTrip && (
+                <div className="bg-[#1a3a72]/[0.05] border-l-4 border-[#1a3a72] p-5 space-y-4">
+                  <p className="font-ui text-[10px] uppercase tracking-[0.18em] text-[#1a3a72] font-semibold">Field Trip Details</p>
+                  <div>
+                    <label className="font-ui text-[10px] uppercase tracking-[0.15em] text-ink/50 block mb-2">
+                      Grade Level
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="e.g. 4th grade, Middle School, High School"
+                      value={gradeLevel}
+                      onChange={(e) => setGradeLevel(e.target.value)}
+                      className="w-full border-2 border-ink/15 bg-white px-4 py-3 font-ui text-[15px] text-ink placeholder:text-ink/25 focus:outline-none focus:border-[#1a3a72] transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label className="font-ui text-[10px] uppercase tracking-[0.15em] text-ink/50 block mb-2">
+                      Number of Students
+                    </label>
+                    <input
+                      type="number"
+                      placeholder="e.g. 28"
+                      min={1}
+                      max={200}
+                      value={busCapacity}
+                      onChange={(e) => setBusCapacity(e.target.value)}
+                      className="w-full border-2 border-ink/15 bg-white px-4 py-3 font-ui text-[15px] text-ink placeholder:text-ink/25 focus:outline-none focus:border-[#1a3a72] transition-colors"
+                    />
+                  </div>
+                  <p className="font-editorial italic text-[14px] text-ink/40 leading-snug">
+                    Claude will design a school-day itinerary (8 AM – 3 PM), prioritize bus-accessible sites, and frame every stop with curriculum connections.
+                  </p>
+                </div>
+              )}
 
               <div>
                 <h2 className="font-display text-[clamp(22px,3.5vw,30px)] text-ink tracking-[-0.02em] mb-2">

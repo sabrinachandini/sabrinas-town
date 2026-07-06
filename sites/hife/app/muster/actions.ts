@@ -15,6 +15,7 @@ import {
 export async function createMuster(formData: FormData): Promise<{ error: string } | void> {
   const session = await auth();
 
+  const rawBusCapacity = formData.get("busCapacity");
   const request: MusterRequest = {
     startDate: formData.get("startDate") as string,
     endDate: formData.get("endDate") as string,
@@ -23,6 +24,9 @@ export async function createMuster(formData: FormData): Promise<{ error: string 
     interests: formData.getAll("interests") as string[],
     travelerType: (formData.get("travelerType") as MusterRequest["travelerType"]) ?? "SOLO_COUPLE",
     pace: (formData.get("pace") as MusterRequest["pace"]) ?? "BALANCED",
+    fieldTrip: formData.get("fieldTrip") === "true",
+    gradeLevel: (formData.get("gradeLevel") as string) || undefined,
+    busCapacity: rawBusCapacity ? parseInt(rawBusCapacity as string, 10) : undefined,
   };
 
   if (!request.startDate || !request.endDate || !request.startLocation || !request.endLocation) {

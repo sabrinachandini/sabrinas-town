@@ -1077,6 +1077,11 @@ model Muster {
   // Raw Claude response stored for re-muster
   rawItinerary   Json?
 
+  // Field trip / teacher mode
+  fieldTrip      Boolean            @default(false)
+  gradeLevel     String?            // e.g. "4th grade", "High School"
+  busCapacity    Int?               // number of students on the trip
+
   createdAt      DateTime           @default(now())
   updatedAt      DateTime           @updatedAt
 
