@@ -122,7 +122,7 @@ export default async function SearchPage({ searchParams }: PageProps) {
                             </p>
                           )}
                         </div>
-                        <span className="font-ui text-[11px] text-[rgba(20,16,10,0.25)] group-hover:text-[#cc3322] transition-colors ml-auto flex-shrink-0 self-center">
+                        <span className="font-ui text-[11px] text-[rgba(20,16,10,0.5)] group-hover:text-[#cc3322] transition-colors ml-auto flex-shrink-0 self-center">
                           →
                         </span>
                       </NextLink>

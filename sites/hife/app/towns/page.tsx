@@ -62,7 +62,7 @@ function WavyRule() {
     <svg width="260" height="10" viewBox="0 0 260 10" style={{ display: "block", marginTop: 6 }}>
       <path
         d="M0 6 Q16 1 33 6 Q49 11 65 5 Q81 0 98 5 Q114 10 130 5 Q146 1 163 5 Q179 10 195 5 Q211 1 228 5 Q244 10 260 4"
-        stroke="#c8222a" strokeWidth="2" fill="none" strokeLinecap="round" opacity="0.3"
+        stroke="rgba(20,16,10,0.18)" strokeWidth="2" fill="none" strokeLinecap="round" opacity="1"
       />
     </svg>
   );
@@ -291,6 +291,56 @@ export default async function TownsPage({ searchParams }: PageProps) {
         </div>
       </section>
 
+      {/* ── START HERE strip (no search active) ── */}
+      {!query && (() => {
+        const FEATURED = ["lexington-ma", "concord-ma", "boston-ma"];
+        const ACCENTS: Record<string, { bg: string; label: string }> = {
+          "lexington-ma": { bg: "#b5431a", label: "Where it started" },
+          "concord-ma":   { bg: "#1a3a72", label: "The road to liberty" },
+          "boston-ma":    { bg: "#14100a", label: "The cradle colony" },
+        };
+        const featured = FEATURED.map((slug) => towns.find((t) => t.slug === slug)).filter(Boolean) as TownListItem[];
+        if (featured.length === 0) return null;
+        return (
+          <section style={{ background: "var(--cream)", borderBottom: "4px solid var(--ink-deep)" }}>
+            <div className="px-5 sm:px-[52px] pt-8 pb-10">
+              <p style={{ fontFamily: "var(--font-dm)", fontSize: 9, fontWeight: 700, letterSpacing: "0.32em", textTransform: "uppercase", color: "rgba(20,16,10,0.45)", marginBottom: 20, display: "flex", alignItems: "center", gap: 10 }}>
+                <span style={{ width: 14, height: 2, background: "rgba(20,16,10,0.25)", display: "block", flexShrink: 0 }} />
+                Three Good First Towns
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {featured.map((town) => {
+                  const accent = ACCENTS[town.slug] ?? { bg: "#1a3a72", label: "Revolutionary town" };
+                  const blurb = (town.execSummary150 ?? town.heroSummary40 ?? "").slice(0, 72);
+                  return (
+                    <a
+                      key={town.slug}
+                      href={`/towns/${town.slug}`}
+                      style={{ display: "block", textDecoration: "none", background: accent.bg, border: "3px solid #14100a", padding: "20px 22px 18px", position: "relative", overflow: "hidden" }}
+                    >
+                      <span style={{ fontFamily: "var(--font-dm)", fontSize: 8, fontWeight: 700, letterSpacing: "0.3em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)", display: "block", marginBottom: 10 }}>
+                        {accent.label}
+                      </span>
+                      <span style={{ fontFamily: "var(--font-instrument)", fontWeight: 900, fontSize: "clamp(22px,3vw,28px)", lineHeight: 1, color: "#f2e6c8", display: "block", marginBottom: 8 }}>
+                        {town.name}
+                      </span>
+                      {blurb && (
+                        <span style={{ fontFamily: "var(--font-instrument)", fontStyle: "italic", fontWeight: 300, fontSize: 13, lineHeight: 1.45, color: "rgba(242,230,200,0.7)", display: "block", marginBottom: 14 }}>
+                          {blurb}{blurb.length >= 72 ? "…" : ""}
+                        </span>
+                      )}
+                      <span style={{ fontFamily: "var(--font-dm)", fontSize: 9, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)", borderBottom: "1px solid rgba(255,255,255,0.3)", paddingBottom: 1 }}>
+                        Explore →
+                      </span>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
+
       {/* ── PAPER town list ── */}
       <section
         className="px-5 sm:px-[52px] pb-16 sm:pb-24"
@@ -387,7 +437,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
                     >
                       <span style={{ color: "var(--red)", opacity: 0.4, fontWeight: 300, marginRight: 4 }}>/</span>
                       {state}
-                      <span style={{ fontSize: 13, color: "var(--red)", marginLeft: 10 }}>
+                      <span style={{ fontSize: 13, color: "var(--blue)", marginLeft: 10, opacity: 0.6 }}>
                         {stateTowns.length}
                       </span>
                     </h2>

@@ -31,7 +31,7 @@ export default async function HomePage() {
         <div className="bg-[#f2e6c8] px-5 sm:px-10 py-10 sm:py-16 flex flex-col justify-center relative z-[3]">
 
           {/* Eyebrow pill */}
-          <span className="inline-block font-ui text-[11px] font-semibold tracking-[0.3em] uppercase text-[#f2e6c8] bg-[#cc3322] px-3 py-[5px] mb-6 -rotate-1 w-fit">
+          <span className="inline-block font-ui text-[11px] font-semibold tracking-[0.3em] uppercase text-[#f2e6c8] bg-[#14100a] px-3 py-[5px] mb-6 -rotate-1 w-fit">
             75 Towns · 1 Revolution
           </span>
 
@@ -58,7 +58,7 @@ export default async function HomePage() {
           >
             <path
               d="M0 8 Q15 2 30 8 Q45 14 60 7 Q75 1 90 7 Q105 13 120 7 Q135 2 150 7 Q165 13 180 7 Q195 2 210 7 Q225 13 240 6"
-              stroke="#cc3322" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0.5"
+              stroke="rgba(20,16,10,0.18)" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="1"
             />
           </svg>
 
@@ -170,7 +170,7 @@ export default async function HomePage() {
       {/* ────────────────────────────────────────────────────────────── */}
       {/* 2. STATS RIBBON                                               */}
       {/* ────────────────────────────────────────────────────────────── */}
-      <div className="stats-ribbon bg-[#1a3a72] flex border-b-4 border-[#cc3322] overflow-hidden">
+      <div className="stats-ribbon bg-[#1a3a72] flex border-b-4 border-[#14100a] overflow-hidden">
         {[
           { number: "13", accent: "✦", label: "Original Colonies" },
           { number: "75", accent: "",   label: "Towns Documented" },
@@ -199,7 +199,7 @@ export default async function HomePage() {
       {/* ────────────────────────────────────────────────────────────── */}
       {/* ON THIS DAY — full section                                    */}
       {/* ────────────────────────────────────────────────────────────── */}
-      <section className="bg-[#1a3a72] border-b-4 border-[#cc3322] py-14 sm:py-20 px-5 sm:px-10 relative overflow-hidden">
+      <section className="bg-[#1a3a72] border-b-4 border-[#14100a] py-14 sm:py-20 px-5 sm:px-10 relative overflow-hidden">
         {/* Ghost day number watermark */}
         <div
           aria-hidden
@@ -339,7 +339,7 @@ export default async function HomePage() {
           {/* Squiggle under heading — whimsy */}
           <svg width="200" height="12" viewBox="0 0 200 12" style={{ display: 'block', margin: '10px 0 20px' }} aria-hidden="true">
             <path d="M0 8 Q12 2 25 8 Q37 14 50 7 Q62 1 75 7 Q87 13 100 7 Q112 2 125 7 Q137 13 150 7 Q162 2 175 7 Q187 13 200 6"
-              stroke="#cc3322" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0.38" />
+              stroke="rgba(20,16,10,0.18)" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="1" />
           </svg>
 
           {/* Town grid */}
@@ -501,7 +501,7 @@ export default async function HomePage() {
           {/* Squiggle under heading — whimsy */}
           <svg width="200" height="12" viewBox="0 0 200 12" style={{ display: 'block' }} aria-hidden="true" className="sm:hidden">
             <path d="M0 8 Q12 2 25 8 Q37 14 50 7 Q62 1 75 7 Q87 13 100 7 Q112 2 125 7 Q137 13 150 7 Q162 2 175 7 Q187 13 200 6"
-              stroke="#cc3322" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0.38" />
+              stroke="rgba(20,16,10,0.18)" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="1" />
           </svg>
           <NextLink
             href="/towns"
@@ -525,7 +525,7 @@ export default async function HomePage() {
             <h3 className="font-editorial font-black text-[20px] sm:text-[24px] leading-[1.05] tracking-[-0.02em] mb-4 text-[#14100a]">
               The Surgeon Who Rode Before Revere
             </h3>
-            <p className="font-ui text-[20px] font-light leading-[1.7] text-[rgba(20,16,10,0.6)]">
+            <p className="font-ui text-[20px] font-light leading-[1.7] text-[rgba(20,16,10,0.75)]">
               Samuel Prescott was the only rider who actually made it to Concord. Revere was captured. Dawes turned back. Prescott jumped a stone wall.
             </p>
             <NextLink
@@ -622,7 +622,7 @@ export default async function HomePage() {
         {/* Button — full width on mobile */}
         <NextLink
           href="/towns"
-          className="font-editorial font-bold text-[20px] sm:text-[20px] text-[#f2e6c8] bg-[#1a3a72] px-8 sm:px-10 py-4 sm:py-5 no-underline block sm:inline-block text-center border-[3px] border-[#14100a] shadow-[6px_6px_0_#cc3322] hover:-translate-x-[3px] hover:-translate-y-[3px] hover:shadow-[9px_9px_0_#cc3322] transition-all duration-100 whitespace-nowrap relative z-[2] flex-shrink-0"
+          className="font-editorial font-bold text-[20px] sm:text-[20px] text-[#f2e6c8] bg-[#1a3a72] px-8 sm:px-10 py-4 sm:py-5 no-underline block sm:inline-block text-center border-[3px] border-[#14100a] shadow-[6px_6px_0_#14100a] hover:-translate-x-[3px] hover:-translate-y-[3px] hover:shadow-[9px_9px_0_#14100a] transition-all duration-100 whitespace-nowrap relative z-[2] flex-shrink-0"
         >
           Explore All Towns →
         </NextLink>

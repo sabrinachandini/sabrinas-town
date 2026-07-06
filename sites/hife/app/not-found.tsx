@@ -20,7 +20,7 @@ export default function NotFound() {
         </div>
 
         <div className="relative z-10 max-w-[720px]">
-          <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.4)] flex items-center gap-2.5 mb-8">
+          <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.7)] flex items-center gap-2.5 mb-8">
             <span className="w-5 h-[2px] bg-[rgba(242,230,200,0.3)] block" />
             Error 404
           </p>
