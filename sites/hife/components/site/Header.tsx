@@ -59,7 +59,7 @@ export function Header() {
 
     return (
       <header
-        className={`sticky top-0 z-50 bg-[#1a3a72] transition-shadow duration-300 ${
+        className={`sticky top-0 z-50 bg-blue transition-shadow duration-300 ${
           scrolled ? "shadow-lg" : ""
         }`}
       >
@@ -123,7 +123,7 @@ export function Header() {
 
         {/* Mobile section dropdown */}
         {open && (
-          <nav className="mobile-dropdown sm:hidden bg-[#0e1428] border-t-2 border-crimson" aria-label="Town sections">
+          <nav className="mobile-dropdown sm:hidden bg-ink border-t-2 border-crimson" aria-label="Town sections">
             <ul className="px-6 py-4 space-y-1">
               {TOWN_TABS.map(({ label, path }) => {
                 const active = isTownTabActive(path);
@@ -151,7 +151,7 @@ export function Header() {
   /* ── Default: single-row header ─────────────────────────── */
   return (
     <header
-      className={`sticky top-0 z-50 bg-[#1a3a72] border-b-[3px] border-crimson transition-shadow duration-300 ${
+      className={`sticky top-0 z-50 bg-blue border-b-[3px] border-crimson transition-shadow duration-300 ${
         scrolled ? "shadow-lg" : ""
       }`}
     >
@@ -195,7 +195,7 @@ export function Header() {
           </Link>
           <Link
             href="/muster/new"
-            className="no-underline ml-2 bg-[#cc3322] text-cream font-ui text-[10px] font-semibold uppercase tracking-[0.2em] px-4 py-2 border-2 border-[#cc3322] hover:bg-[#a82818] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1a3a72]"
+            className="no-underline ml-2 bg-crimson text-cream font-ui text-[10px] font-semibold uppercase tracking-[0.2em] px-4 py-2 border-2 border-crimson hover:bg-[#a82818] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-blue"
           >
             Plan a Visit
           </Link>
@@ -213,7 +213,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <nav className="mobile-dropdown sm:hidden bg-[#0e1428] border-t-2 border-crimson" aria-label="Mobile navigation">
+        <nav className="mobile-dropdown sm:hidden bg-ink border-t-2 border-crimson" aria-label="Mobile navigation">
           <ul className="px-6 py-4 space-y-1">
             {NAV_LINKS.map(({ label, href }) => {
               const active = isNavActive(href);
@@ -235,7 +235,7 @@ export function Header() {
               <Link
                 href="/muster/new"
                 onClick={() => setOpen(false)}
-                className="no-underline block w-full text-center py-2 px-4 bg-[#cc3322] text-cream font-ui font-semibold text-[10px] uppercase tracking-[0.2em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                className="no-underline block w-full text-center py-2 px-4 bg-crimson text-cream font-ui font-semibold text-[10px] uppercase tracking-[0.2em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 Plan a Visit
               </Link>
