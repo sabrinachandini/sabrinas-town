@@ -2831,3 +2831,160 @@ export async function getAllRoutes(): Promise<RouteSummary[]> {
     return [];
   }
 }
+
+// ─── Google Places enrichment ──────────────────────────────────────────────────
+
+type PlacesCategory = "RESTAURANT" | "CAFE_BAKERY" | "SHOPPING" | "LODGING";
+
+const PLACES_TYPE_MAP: Record<string, PlacesCategory> = {
+  restaurant: "RESTAURANT",
+  food: "RESTAURANT",
+  meal_takeaway: "RESTAURANT",
+  meal_delivery: "RESTAURANT",
+  cafe: "CAFE_BAKERY",
+  bakery: "CAFE_BAKERY",
+  coffee_shop: "CAFE_BAKERY",
+  store: "SHOPPING",
+  book_store: "SHOPPING",
+  clothing_store: "SHOPPING",
+  gift_shop: "SHOPPING",
+  lodging: "LODGING",
+  hotel: "LODGING",
+  inn: "LODGING",
+  bed_and_breakfast: "LODGING",
+};
+
+const PLACES_SEARCH_TYPES = [
+  { query: "restaurant", category: "RESTAURANT" as PlacesCategory },
+  { query: "cafe bakery coffee", category: "CAFE_BAKERY" as PlacesCategory },
+  { query: "gift shop book store", category: "SHOPPING" as PlacesCategory },
+  { query: "hotel inn bed breakfast lodging", category: "LODGING" as PlacesCategory },
+];
+
+function inferCategory(types: string[]): PlacesCategory | null {
+  for (const t of types) {
+    if (PLACES_TYPE_MAP[t]) return PLACES_TYPE_MAP[t];
+  }
+  return null;
+}
+
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .slice(0, 80);
+}
+
+export interface EnrichResult {
+  upserted: number;
+  skipped: number;
+  errors: string[];
+}
+
+export async function enrichBusinessesFromPlaces(
+  townSlug: string
+): Promise<EnrichResult> {
+  const apiKey = process.env.GOOGLE_PLACES_API_KEY;
+  if (!apiKey) {
+    return { upserted: 0, skipped: 0, errors: ["GOOGLE_PLACES_API_KEY not set"] };
+  }
+
+  const town = await prisma.town.findUnique({
+    where: { slug: townSlug },
+    select: { id: true, name: true, state: true },
+  });
+  if (!town) {
+    return { upserted: 0, skipped: 0, errors: [`Town not found: ${townSlug}`] };
+  }
+
+  let upserted = 0;
+  let skipped = 0;
+  const errors: string[] = [];
+
+  for (const { query, category } of PLACES_SEARCH_TYPES) {
+    const searchQuery = `${query} in ${town.name} ${town.state}`;
+    const url =
+      `https://maps.googleapis.com/maps/api/place/textsearch/json` +
+      `?query=${encodeURIComponent(searchQuery)}&key=${apiKey}`;
+
+    let data: { results?: PlacesResult[]; status?: string };
+    try {
+      const res = await fetch(url);
+      data = (await res.json()) as { results?: PlacesResult[]; status?: string };
+    } catch (e) {
+      errors.push(`Fetch error for ${category}: ${String(e)}`);
+      continue;
+    }
+
+    if (data.status !== "OK" && data.status !== "ZERO_RESULTS") {
+      errors.push(`Places API error for ${category}: ${data.status}`);
+      continue;
+    }
+
+    for (const place of data.results ?? []) {
+      const inferredCategory = inferCategory(place.types ?? []) ?? category;
+      const priceRange =
+        place.price_level === 1 ? "$" :
+        place.price_level === 2 ? "$$" :
+        place.price_level === 3 ? "$$$" :
+        place.price_level === 4 ? "$$$$" : undefined;
+
+      const baseSlug = slugify(`${town.name}-${place.name}`);
+      let slug = baseSlug;
+      let attempt = 0;
+      while (attempt < 5) {
+        const existing = await prisma.business.findUnique({ where: { slug } });
+        if (!existing || existing.townId === town.id) break;
+        attempt++;
+        slug = `${baseSlug}-${attempt}`;
+      }
+
+      try {
+        await prisma.business.upsert({
+          where: { slug },
+          update: {
+            name: place.name,
+            category: inferredCategory,
+            address: place.formatted_address,
+            lat: place.geometry?.location?.lat,
+            lng: place.geometry?.location?.lng,
+            priceRange,
+            source: "PLACES_API",
+            lastVerified: new Date(),
+            status: "NEEDS_REVIEW",
+          },
+          create: {
+            townId: town.id,
+            name: place.name,
+            slug,
+            category: inferredCategory,
+            address: place.formatted_address,
+            lat: place.geometry?.location?.lat,
+            lng: place.geometry?.location?.lng,
+            priceRange,
+            source: "PLACES_API",
+            lastVerified: new Date(),
+            status: "NEEDS_REVIEW",
+            isHifePick: false,
+          },
+        });
+        upserted++;
+      } catch (e) {
+        errors.push(`Upsert error for ${place.name}: ${String(e)}`);
+        skipped++;
+      }
+    }
+  }
+
+  return { upserted, skipped, errors };
+}
+
+interface PlacesResult {
+  name: string;
+  types?: string[];
+  price_level?: number;
+  formatted_address?: string;
+  geometry?: { location?: { lat?: number; lng?: number } };
+}
