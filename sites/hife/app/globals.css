@@ -1738,3 +1738,232 @@ svg { max-width: 100%; }
   }
   .props-grid { grid-template-columns: 1fr 1fr; }
 }
+/* ═══════════════════════════════════════════════════════════════════════════
+   TEACHER PACKET PRINT STYLESHEET
+   Extends the base @media print block above.
+   Student packets and teacher guides must survive a black-and-white photocopier.
+   Rules:
+   - All colors reduce to black / white / gray
+   - No color-only confidence labels — icons carry meaning
+   - Body minimum 12pt, headers minimum 14pt
+   - Facsimile images get high-contrast filter for photocopier legibility
+   - Clean page breaks: avoid orphaned headers, keep source+analysis together
+   - Navigation, buttons, decorative elements, backgrounds all removed
+   ════════════════════════════════════════════════════════════════════════════ */
+
+@media print {
+  /* ── Teacher Packet: base typography upgrades ── */
+  #student-packet,
+  #teacher-guide {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.6;
+  }
+
+  #student-packet h1,
+  #teacher-guide h1 {
+    font-size: 20pt;
+    line-height: 1.2;
+    color: black !important;
+  }
+
+  #student-packet h2,
+  #teacher-guide h2 {
+    font-size: 16pt;
+    color: black !important;
+  }
+
+  #student-packet h3,
+  #teacher-guide h3 {
+    font-size: 14pt;
+    color: black !important;
+  }
+
+  /* ── Minimum body text size ── */
+  #student-packet p,
+  #teacher-guide p,
+  #student-packet li,
+  #teacher-guide li,
+  #student-packet td,
+  #teacher-guide td {
+    font-size: 12pt;
+    color: black !important;
+  }
+
+  /* Small labels stay legible */
+  #student-packet [class*="text-[10px]"],
+  #teacher-guide [class*="text-[10px]"],
+  #student-packet [class*="text-[9px]"],
+  #teacher-guide [class*="text-[9px]"] {
+    font-size: 9pt;
+  }
+
+  /* ── Facsimile images: high-contrast for photocopiers ── */
+  #student-packet img,
+  #teacher-guide img {
+    filter: contrast(1.4) brightness(0.85) grayscale(1) !important;
+    -webkit-filter: contrast(1.4) brightness(0.85) grayscale(1) !important;
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+
+  /* ── Page breaks ── */
+  /* Keep source block with its analysis questions */
+  #student-packet .print\:break-inside-avoid,
+  #teacher-guide .print\:break-inside-avoid {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* New page before each source and teacher-guide section */
+  #student-packet .print\:break-before-page,
+  #teacher-guide .print\:break-before-page {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  /* Cover and last page: page break after */
+  #student-packet .print\:break-after-page,
+  #teacher-guide .print\:break-after-page {
+    page-break-after: always;
+    break-after: page;
+  }
+
+  /* ── Color overrides: brand colors → black/white/gray ── */
+  /* Blue accents → black borders */
+  #student-packet [class*="border-[#1a3a72]"],
+  #teacher-guide [class*="border-[#1a3a72]"] {
+    border-color: black !important;
+  }
+
+  /* Crimson accents → dark gray */
+  #student-packet [class*="border-[#cc3322]"],
+  #teacher-guide [class*="border-[#cc3322]"],
+  #student-packet [class*="text-[#cc3322]"],
+  #teacher-guide [class*="text-[#cc3322]"] {
+    border-color: #333 !important;
+    color: black !important;
+  }
+
+  /* Blue text → black */
+  #student-packet [class*="text-[#1a3a72]"],
+  #teacher-guide [class*="text-[#1a3a72]"] {
+    color: black !important;
+  }
+
+  /* Cream / paper backgrounds → white */
+  #student-packet [class*="bg-[#f2ece0]"],
+  #teacher-guide [class*="bg-[#f2ece0]"],
+  #student-packet [class*="bg-[#f8f0d8]"],
+  #teacher-guide [class*="bg-[#f8f0d8]"],
+  #student-packet [class*="bg-[#f2e6c8]"],
+  #teacher-guide [class*="bg-[#f2e6c8]"] {
+    background: white !important;
+  }
+
+  /* Navy backgrounds → white with black border */
+  #student-packet [class*="bg-[#1a3a72]"],
+  #teacher-guide [class*="bg-[#1a3a72]"],
+  #student-packet [class*="bg-[#0e1428]"],
+  #teacher-guide [class*="bg-[#0e1428]"] {
+    background: white !important;
+    color: black !important;
+    border: 1pt solid black !important;
+  }
+
+  /* Confidential banner: keep black on white */
+  #teacher-guide .print\:bg-black {
+    background: black !important;
+    color: white !important;
+  }
+
+  /* ── Confidence labels: icons carry the meaning in B&W ── */
+  /* Labels are already text + icon, so no additional overrides needed.
+     The icons (✓ ◎ △ ?) are visible in B&W. */
+
+  /* ── Hide decorative + navigation elements ── */
+  #student-packet + nav,
+  #teacher-guide + nav,
+  .no-print,
+  [class*="download-btn"],
+  [class*="print-trigger"] {
+    display: none !important;
+  }
+
+  /* ── Writing lines: ensure they print clearly ── */
+  .print\:border-b {
+    border-bottom: 1pt solid #aaa !important;
+    min-height: 24pt;
+    display: block;
+  }
+
+  /* ── Two-column grid for source+transcription: enforce on print ── */
+  #student-packet .print\:grid-cols-2,
+  #teacher-guide .print\:grid-cols-2 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16pt !important;
+  }
+
+  /* ── Table styling for rubric ── */
+  #teacher-guide table {
+    width: 100%;
+    border-collapse: collapse;
+    page-break-inside: avoid;
+  }
+
+  #teacher-guide th {
+    background: #222 !important;
+    color: white !important;
+    font-size: 10pt;
+    padding: 4pt 6pt;
+    border: 1pt solid black;
+  }
+
+  #teacher-guide td {
+    border: 1pt solid #999;
+    padding: 4pt 6pt;
+    font-size: 11pt;
+    vertical-align: top;
+  }
+
+  /* ── Max width: use full page ── */
+  #student-packet > *,
+  #teacher-guide > * {
+    max-width: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+/* ── Download/Print trigger buttons (screen only, hidden in print) ── */
+.print-trigger-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-dm-sans, sans-serif);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: var(--cream, #f2ece0);
+  color: var(--ink-deep, #14100a);
+  border: 2.5px solid var(--ink-deep, #14100a);
+  padding: 12px 24px;
+  box-shadow: 3px 3px 0 var(--ink-deep, #14100a);
+  cursor: pointer;
+  transition: background 150ms, color 150ms;
+  text-decoration: none;
+}
+
+.print-trigger-btn:hover {
+  background: var(--blue, #1a3a72);
+  color: var(--cream, #f2ece0);
+}
+
+@media print {
+  .print-trigger-btn {
+    display: none !important;
+  }
+}
