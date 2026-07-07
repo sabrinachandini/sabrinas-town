@@ -1,0 +1,122 @@
+[
+  {
+    "id": "src-worcester-committee-correspondence-minutes",
+    "url": "https://www.americanantiquarian.org/",
+    "title": "Worcester Committee of Correspondence Minutes, 1773-1775",
+    "publisherOrHolder": "American Antiquarian Society",
+    "tier": "TIER1",
+    "towns": "worcester-ma"
+  },
+  {
+    "id": "src-plymouth-forefathers-monument-docs",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "title": "Plymouth Town Records and Proprietors Minutes, 1774-1776",
+    "publisherOrHolder": "Plymouth County Registry of Deeds and Massachusetts State Archives",
+    "tier": "TIER1",
+    "towns": "plymouth-ma"
+  },
+  {
+    "id": "src-springfield-knox-ordnance-orders",
+    "url": "https://www.archives.gov/",
+    "title": "General Henry Knox's Orders Establishing the Springfield Arsenal, 1777",
+    "publisherOrHolder": "National Archives and Records Administration",
+    "tier": "TIER1",
+    "towns": "springfield-ma"
+  },
+  {
+    "id": "src-springfield-state-archives-shays",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "title": "Shays' Rebellion Papers: Springfield Arsenal Attack, January 1787",
+    "publisherOrHolder": "Massachusetts State Archives",
+    "tier": "TIER1",
+    "towns": "springfield-ma"
+  },
+  {
+    "id": "src-springfield-continental-congress-supply",
+    "url": "https://www.loc.gov/collections/papers-of-the-continental-congress/",
+    "title": "Board of War Records: Springfield Armory Procurement, 1778-1781",
+    "publisherOrHolder": "Library of Congress, Papers of the Continental Congress",
+    "tier": "TIER1",
+    "towns": "springfield-ma"
+  },
+  {
+    "id": "src-nyc-british-hq-papers",
+    "url": "https://quod.lib.umich.edu/c/clementsmss/umich-wcl-M-1",
+    "title": "Sir Henry Clinton Papers (British Headquarters Papers)",
+    "publisherOrHolder": "William L. Clements Library, University of Michigan",
+    "tier": "TIER1",
+    "towns": "new-york-city-ny"
+  },
+  {
+    "id": "src-nyc-continental-congress-journals-ny",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "title": "Journals of the Continental Congress, 1776-1783",
+    "publisherOrHolder": "Library of Congress",
+    "tier": "TIER1",
+    "towns": "new-york-city-ny"
+  },
+  {
+    "id": "src-alb-schuyler-papers",
+    "url": "https://digitalcollections.nypl.org/collections/philip-schuyler-papers",
+    "title": "Philip Schuyler Papers",
+    "publisherOrHolder": "New York Public Library",
+    "tier": "TIER1",
+    "towns": "albany-ny"
+  },
+  {
+    "id": "src-sar-gates-papers",
+    "url": "https://digitalcollections.nyhistory.org/islandora/object/islandora:120591",
+    "title": "Horatio Gates Papers, 1726-1828",
+    "publisherOrHolder": "New-York Historical Society",
+    "tier": "TIER1",
+    "towns": "saratoga-springs-ny"
+  },
+  {
+    "id": "src-tic-congressional-resolution-1775",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "title": "Continental Congress Resolutions Regarding Fort Ticonderoga, May 1775",
+    "publisherOrHolder": "Library of Congress, Journals of the Continental Congress",
+    "tier": "TIER1",
+    "towns": "ticonderoga-ny"
+  },
+  {
+    "id": "src-new-washington-hasbrouck-orders",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "General Orders from Newburgh Headquarters, 1782-1783",
+    "publisherOrHolder": "Library of Congress, George Washington Papers",
+    "tier": "TIER1",
+    "towns": "newburgh-ny"
+  },
+  {
+    "id": "src-new-newburgh-address-text",
+    "url": "https://www.loc.gov/resource/mgw3b.020/?sp=375",
+    "title": "Washington's Address to the Officers of the Army (Newburgh Address), March 15, 1",
+    "publisherOrHolder": "Library of Congress",
+    "tier": "TIER1",
+    "towns": "newburgh-ny"
+  },
+  {
+    "id": "src-king-ny-state-constitution-1777",
+    "url": "https://www.archives.nysed.gov/research/new-york-state-constitution-1777",
+    "title": "Constitution of the State of New-York, 1777",
+    "publisherOrHolder": "New York State Archives",
+    "tier": "TIER1",
+    "towns": "kingston-ny"
+  },
+  {
+    "id": "src-phi-journals-continental-congress",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "title": "Journals of the Continental Congress, 1774-1789",
+    "publisherOrHolder": "Library of Congress",
+    "tier": "TIER1",
+    "towns": "philadelphia-pa"
+  },
+  {
+    "id": "src-phi-letters-delegates-congress",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwdg.html",
+    "title": "Letters of Delegates to Congress, 1774-1789 (26 vols.)",
+    "publisherOrHolder": "Library of Congress (Paul H. Smith, ed.)",
+    "tier": "TIER1",
+    "towns": "philadelphia-pa"
+  }
+]

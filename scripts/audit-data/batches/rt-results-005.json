@@ -1,0 +1,170 @@
+[
+  {
+    "id": "src-new-london-connecticut-state-records",
+    "title": "The Public Records of the State of Connecticut, 1781",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL returns HTTP 404 — page no longer exists at this path on portal.ct.gov.",
+      "Institution mismatch: publisherOrHolder lists 'Connecticut State Library' but the URL domain is CT.gov/SOTS (Connecticut Secretary of the State's office), which is a separate institution from the Connecticut State Library.",
+      "Even if the URL worked, the path '/SOTS/Collection-Detail-Pages/State-Archives' is a collection-category landing page, not a permalink to the specific 1781 volume."
+    ],
+    "recommendation": "Replace with a direct permalink from the Connecticut State Library's Digital Collections or the Connecticut State Archives finding aid for the Public Records series. Correct the publisherOrHolder to 'Connecticut State Archives' (under SOTS) or 'Connecticut State Library' depending on which institution actually holds this volume."
+  },
+  {
+    "id": "src-danbury-continental-congress-resolve",
+    "title": "Continental Congress Resolution on the Danbury Raid, May 1777",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL (memory.loc.gov/ammem/amlaw/lwjc.html) returns HTTP 403 when fetched programmatically; may be accessible in a browser but anti-bot blocking prevents verification.",
+      "Even if the URL loads, it is the collection landing page for the entire 'Journals of the Continental Congress, 1774–1789' series, not a direct link to any specific resolution about the Danbury Raid.",
+      "No discrete document titled 'Continental Congress Resolution on the Danbury Raid, May 1777' exists as a named standalone item; relevant material (JCC vol. VII, May 2, 1777 entries) would need a page-level URL to be citable as a specific primary source.",
+      "Title should be verified against the JCC transcription to confirm such a resolution is specifically recorded under that framing."
+    ],
+    "recommendation": "Link directly to the specific page images or transcription within the JCC digital edition (e.g., memory.loc.gov/ammem/amlaw/lwjclink.html volume VII, relevant page), and revise the title to reflect the actual heading of the journal entry rather than a descriptive gloss."
+  },
+  {
+    "id": "src-danbury-connecticut-state-archives-1777",
+    "title": "Connecticut Council of Safety Records: April-May 1777",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is identical to src-new-london-connecticut-state-records and returns HTTP 404.",
+      "The path '/SOTS/Collection-Detail-Pages/State-Archives' is a generic landing page, not a finding aid or specific record group for Council of Safety records.",
+      "Two entirely different sources (1781 Public Records and 1777 Council of Safety Records for different towns) share the same dead URL, indicating bulk URL assignment rather than individual sourcing."
+    ],
+    "recommendation": "Obtain the correct finding aid URL from the Connecticut State Archives for Record Group 001 (Governor and Council) or the Connecticut State Library's online catalog entry for the Council of Safety minute books. Do not reuse the same landing-page URL across multiple distinct source records."
+  },
+  {
+    "id": "src-providence-gaspee-testimony",
+    "title": "Proceedings of the Gaspee Commission, 1772-1773",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL (sos.ri.gov/divisions/Archival/archives) returns HTTP 404 — page no longer exists at this path.",
+      "Even if the URL worked, the path is the general Rhode Island State Archives division landing page, not a specific finding aid or digitized record for the Gaspee Commission proceedings.",
+      "The underlying document (Gaspee Commission inquiry records) is historically real and held by Rhode Island State Archives, but the URL does not point to it."
+    ],
+    "recommendation": "Contact Rhode Island State Archives directly for a permalink or finding aid reference to the Gaspee inquiry records. An alternative citation path is through the published edition in 'Records of the Colony of Rhode Island' or the digitized Rhode Island Colonial Records collection."
+  },
+  {
+    "id": "src-newport-rochambeau-journal",
+    "title": "Journal de la Campagne en Amérique (Rochambeau's Campaign Journal)",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL (loc.gov/item/2021667630/) returns HTTP 403 Forbidden — the Library of Congress item page blocks automated fetching; accessibility in a browser cannot be confirmed from this audit.",
+      "Unable to verify that the item at this LOC catalog number corresponds to the stated title 'Journal de la Campagne en Amérique' or to Rochambeau's personal campaign journal specifically.",
+      "The dual attribution 'Bibliothèque nationale de France / Library of Congress' is plausible for a joint digitization project but could not be confirmed against the item record."
+    ],
+    "recommendation": "Manually verify the LOC item page in a browser. If the item resolves correctly to Rochambeau's campaign journal with BnF provenance, this source is potentially valid as a primary source (journal created contemporaneously with the 1780-1781 campaign). Update verdict after browser verification."
+  },
+  {
+    "id": "src-portsmouth-langdon-papers",
+    "title": "John Langdon Papers, 1775-1819",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL points to the New Hampshire Historical Society homepage (nhhistory.org/), not to a specific collection finding aid or catalog entry for the John Langdon Papers.",
+      "The homepage makes no mention of the John Langdon Papers and provides no direct route to this collection from the content retrieved.",
+      "A reader following this URL cannot locate the cited collection without additional navigation; this does not constitute a verifiable specific-source citation."
+    ],
+    "recommendation": "Replace with the direct NHHS online catalog permalink or finding aid URL for the John Langdon Papers (MS 0100 or equivalent accession number). The NHHS online library catalog should have a searchable record for this collection."
+  },
+  {
+    "id": "src-portsmouth-continental-congress-navy",
+    "title": "Journals of the Continental Congress: Naval Committee Records, 1775-1776",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL (memory.loc.gov/ammem/amlaw/lwjc.html) is the collection landing page for all Journals of the Continental Congress, not a specific volume or page relating to Naval Committee records.",
+      "URL returns HTTP 403 when fetched programmatically.",
+      "The JCC does not have a separately titled 'Naval Committee Records' sub-series at this URL; Naval Committee minutes are embedded within the main journal volumes and would require page-specific citations."
+    ],
+    "recommendation": "Cite specific volume and page numbers within the JCC digital edition. Naval Committee records for 1775-1776 appear in JCC vol. III-IV; provide direct page image URLs from the LOC American Memory viewer."
+  },
+  {
+    "id": "src-annapolis-washington-resignation",
+    "title": "General Washington's Address to Congress on Resigning His Commission, December 2",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL (loc.gov/resource/mgw3b.048/?sp=330) returns HTTP 403 Forbidden — LOC resource viewer blocks automated fetching.",
+      "The title appears truncated in the data ('December 2') — Washington's resignation address was delivered December 23, 1783, not December 2. If this is a JSON field truncation, the date field should be corrected to 'December 23, 1783'.",
+      "Cannot confirm that page 330 of George Washington Papers Series 3b vol. 48 corresponds to the resignation address without browser access."
+    ],
+    "recommendation": "Verify the URL in a browser and confirm the document on page sp=330. Correct the title date to December 23, 1783. The George Washington Papers at LOC do hold primary copies of correspondence and addresses from this period, so the collection attribution is plausible if the page number is accurate."
+  },
+  {
+    "id": "src-annapolis-treaty-paris-ratification",
+    "title": "Ratification of the Treaty of Paris by the Continental Congress, January 14, 178",
+    "verdict": "ISSUE",
+    "issues": [
+      "Title is truncated in the data: 'January 14, 178' — the year 1784 is cut off. This suggests a data entry or field-length error.",
+      "The URL (archives.gov/milestone-documents/treaty-of-paris) leads to a NARA educational overview page presenting the Treaty of Paris text (signed September 3, 1783), NOT to the ratification instrument from January 14, 1784.",
+      "Wrong document at this URL: the ratification by the Continental Congress in Annapolis on January 14, 1784 is a distinct document (a congressional act) separate from the peace treaty itself. The NARA page does not show or discuss this ratification record.",
+      "The NARA milestone-documents page functions as a secondary educational summary with treaty text, not as a primary ratification record."
+    ],
+    "recommendation": "Locate the actual ratification instrument (Continental Congress, January 14, 1784) — it is held in NARA Record Group 360 (Papers of the Continental Congress). Replace the URL with either the specific NARA catalog entry for the ratification document or the relevant pages from the Journals of the Continental Congress vol. XXV. Fix the truncated year to 1784."
+  },
+  {
+    "id": "src-annapolis-journals-continental-congress-1783",
+    "title": "Journals of the Continental Congress, Volume XXV (1783)",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL (memory.loc.gov/ammem/amlaw/lwjc.html) is the collection landing page for the entire JCC series, not a link to Volume XXV specifically.",
+      "URL returns HTTP 403 when fetched programmatically.",
+      "Volume XXV of the JCC (1783) is a real published volume and does exist in the LOC digital collection, but a direct URL to that specific volume was not provided."
+    ],
+    "recommendation": "Replace with the direct URL for JCC Volume XXV within the LOC American Memory viewer (e.g., memory.loc.gov/ammem/amlaw/lwjclink.html volume 25 entry). This would make the citation specific and verifiable."
+  },
+  {
+    "id": "src-annapolis-md-state-archives",
+    "title": "Maryland State Archives: Revolutionary War Records Collection",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL points to the Maryland State Archives homepage (msa.maryland.gov/), not to any specific collection, finding aid, or record group.",
+      "No collection formally titled 'Revolutionary War Records Collection' is surfaced at the homepage URL; this appears to be a descriptive gloss rather than an official collection name.",
+      "The MSA homepage provides no direct path to the cited collection without additional navigation."
+    ],
+    "recommendation": "Identify the specific MSA series identifier (e.g., S1161 Muster Rolls, M3060 militia records, etc.) and link to the corresponding finding aid or online catalog record. The MSA holds extensive Revolutionary War materials but they are distributed across multiple record groups, not a single named collection."
+  },
+  {
+    "id": "src-exeter-nh-constitution-1776",
+    "title": "Constitution of New Hampshire, January 5, 1776",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL (sos.nh.gov/archives) returns HTTP 403 Forbidden when fetched; may be accessible in a browser.",
+      "The URL path '/archives' is the New Hampshire Division of Archives landing page, not a specific document permalink for the 1776 Constitution.",
+      "The NH 1776 Constitution is a real document (the first state constitution, adopted January 5, 1776) held by the NH State Archives, but a collection landing page URL is insufficient as a specific citation."
+    ],
+    "recommendation": "Locate the specific NH State Archives permalink or digitized image URL for the 1776 Constitution. The NH State Archives may have a dedicated page for this document; alternatively, it appears in published compilations of early state constitutions."
+  },
+  {
+    "id": "src-exeter-continental-association-exeter",
+    "title": "Exeter Committee of Safety Records, 1775-1783",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is identical to src-exeter-nh-constitution-1776, pointing to the same NH archives landing page (sos.nh.gov/archives) — two entirely different documents sharing the same non-specific URL.",
+      "URL returns HTTP 403 Forbidden.",
+      "The landing page provides no path to the specific Committee of Safety record series."
+    ],
+    "recommendation": "Obtain the specific NH State Archives series or box/folder reference for the Exeter Committee of Safety minute books. The title also incorrectly calls these 'Continental Association' records in the source ID while the title correctly says 'Committee of Safety Records' — the ID naming should be reconciled. Provide a distinct URL for each source."
+  },
+  {
+    "id": "src-baltimore-continental-congress-baltimore",
+    "title": "Journals of the Continental Congress, December 1776 - February 1777 (Baltimore S",
+    "verdict": "ISSUE",
+    "issues": [
+      "Title is truncated: 'Baltimore S' — presumably 'Baltimore Session' is cut off.",
+      "URL (memory.loc.gov/ammem/amlaw/lwjc.html) is the collection landing page for the entire JCC series, not a link to the specific December 1776 - February 1777 Baltimore session volumes (JCC vol. VI).",
+      "URL returns HTTP 403 when fetched programmatically.",
+      "The historical claim is accurate (Congress did meet in Baltimore Dec 20, 1776 - Feb 27, 1777), but the citation is not specific."
+    ],
+    "recommendation": "Replace with a direct URL to JCC Volume VI in the LOC digital collection. Fix the truncated title to 'Journals of the Continental Congress, December 1776 - February 1777 (Baltimore Session)'."
+  },
+  {
+    "id": "src-baltimore-privateering-records",
+    "title": "Maryland Admiralty Court Records: Privateering Commissions, 1776-1783",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL points to the Maryland State Archives homepage (msa.maryland.gov/), not to any specific series, finding aid, or record group.",
+      "No collection or series formally titled 'Maryland Admiralty Court Records: Privateering Commissions' is surfaced from the homepage URL.",
+      "The MSA homepage is the same URL used for src-annapolis-md-state-archives and src-baltimore-privateering-records, indicating bulk homepage assignment rather than individual source URLs."
+    ],
+    "recommendation": "Identify the specific MSA series for admiralty or privateering records (possibly within the Court of Admiralty records or Governor's correspondence). Provide the MSA series identifier and a direct finding aid or catalog URL. Maryland privateer commission records from the Revolution are real but require a specific archival reference."
+  }
+]

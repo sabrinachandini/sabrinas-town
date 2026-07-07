@@ -1,0 +1,452 @@
+[
+  {
+    "id": "src-kings-mountain-nc-nps-battlefield",
+    "table": "Source",
+    "url": "https://www.nps.gov/kimo/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/kimo/index.htm"
+  },
+  {
+    "id": "src-guilford-courthouse-nc-nps-battlefield",
+    "table": "Source",
+    "url": "https://www.nps.gov/guco/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/guco/index.htm"
+  },
+  {
+    "id": "src-kings-mountain-nc-american-battlefield-trust-km",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/kings-mountain",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/kings-mountain"
+  },
+  {
+    "id": "src-kings-mountain-nc-wikipedia-battle",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Kings_Mountain",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battle_of_Kings_Mountain"
+  },
+  {
+    "id": "src-kings-mountain-nc-nps-visitor-guide",
+    "table": "Source",
+    "url": "https://www.nps.gov/kimo/planyourvisit/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/kimo/planyourvisit/index.htm"
+  },
+  {
+    "id": "src-wilmington-nc-nc-state-archives",
+    "table": "Source",
+    "url": "https://www.archives.ncdcr.gov/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://archives.ncdcr.gov/"
+  },
+  {
+    "id": "src-wilmington-nc-wilmington-hist-district",
+    "table": "Source",
+    "url": "https://www.capefearmuseum.com/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nhcgov.com/548/Cape-Fear-Museum/"
+  },
+  {
+    "id": "src-wilmington-nc-lower-cape-fear-historical-society",
+    "table": "Source",
+    "url": "https://www.lcfhs.org/",
+    "status": 301,
+    "ok": false,
+    "issue": "redirects to unrelated site",
+    "finalUrl": "https://www.therichmondartcenter.org/"
+  },
+  {
+    "id": "src-kings-mountain-nc-nc-state-archives-kings-mountain",
+    "table": "Source",
+    "url": "https://www.archives.ncdcr.gov/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://archives.ncdcr.gov/"
+  },
+  {
+    "id": "src-new-bern-nc-provincial-congress-records",
+    "table": "Source",
+    "url": "https://www.archives.ncdcr.gov/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://archives.ncdcr.gov/"
+  },
+  {
+    "id": "src-new-bern-nc-tryon-palace",
+    "table": "Source",
+    "url": "https://www.tryonpalace.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.tryonpalace.org/"
+  },
+  {
+    "id": "src-new-bern-nc-moores-creek-nps",
+    "table": "Source",
+    "url": "https://www.nps.gov/mocr/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/mocr/index.htm"
+  },
+  {
+    "id": "src-new-bern-nc-north-carolina-state-hist-soc",
+    "table": "Source",
+    "url": "https://library.unc.edu/wilson/ncc/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://library.unc.edu/wilson/ncc/"
+  },
+  {
+    "id": "src-new-bern-nc-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/New_Bern,_North_Carolina",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/New_Bern,_North_Carolina"
+  },
+  {
+    "id": "src-new-bern-nc-tryon-palace-visitor",
+    "table": "Source",
+    "url": "https://www.tryonpalace.org/plan-your-visit",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.tryonpalace.org/plan-your-visit"
+  },
+  {
+    "id": "src-savannah-ga-lincoln-siege-correspondence",
+    "table": "Source",
+    "url": "https://www.masshist.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.masshist.org/"
+  },
+  {
+    "id": "src-wilmington-nc-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Wilmington,_North_Carolina",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Wilmington,_North_Carolina"
+  },
+  {
+    "id": "src-wilmington-nc-visit-wilmington",
+    "table": "Source",
+    "url": "https://www.wilmingtonandbeaches.com/history-culture/history/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.wilmingtonandbeaches.com/history-culture/history/"
+  },
+  {
+    "id": "src-savannah-ga-nps-fort-pulaski",
+    "table": "Source",
+    "url": "https://www.nps.gov/fopu/learn/historyculture/revolutionary-war.htm",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/fopu/learn/historyculture/revolutionary-war.htm"
+  },
+  {
+    "id": "src-savannah-ga-georgia-historical-society",
+    "table": "Source",
+    "url": "https://georgiahistory.com/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.georgiahistory.com/"
+  },
+  {
+    "id": "src-savannah-ga-lamprecht-pulaski",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/"
+  },
+  {
+    "id": "src-savannah-ga-wikipedia-siege-1779",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Siege_of_Savannah_(1779)",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Siege_of_Savannah_(1779)"
+  },
+  {
+    "id": "src-savannah-ga-wikipedia-capture-1778",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Capture_of_Savannah_(1778)",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Capture_of_Savannah_(1778)"
+  },
+  {
+    "id": "src-savannah-ga-visit-savannah",
+    "table": "Source",
+    "url": "https://www.visitsavannah.com/history",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.visitsavannah.com/history"
+  },
+  {
+    "id": "src-savannah-ga-georgia-state-archives",
+    "table": "Source",
+    "url": "https://www.georgiaarchives.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.georgiaarchives.org/"
+  },
+  {
+    "id": "src-augusta-ga-historic-augusta",
+    "table": "Source",
+    "url": "https://www.historicaugusta.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://historicaugusta.org/"
+  },
+  {
+    "id": "src-augusta-ga-wikipedia-battle-1781",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Siege_of_Augusta_(1781)",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Siege_of_Augusta_(1781)"
+  },
+  {
+    "id": "src-augusta-ga-american-battlefield-trust",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/augusta",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/augusta"
+  },
+  {
+    "id": "src-new-haven-nps-coastal-raids",
+    "table": "Source",
+    "url": "https://www.nps.gov/subjects/nationalregister/upload/CT-MPS-Revolutionary-War-Coastal-Raids.pdf",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/subjects/nationalregister/upload/CT-MPS-Revolutionary-War-Coastal-Raids.pdf"
+  },
+  {
+    "id": "src-new-haven-state-archives-council",
+    "table": "Source",
+    "url": "https://portal.ct.gov/SOTS/Collection-Detail-Pages/State-Archives",
+    "status": 200,
+    "ok": false,
+    "issue": "redirects to homepage",
+    "finalUrl": "https://portal.ct.gov/en/404error/?item=%2fsots%2fcollection-detail-pages%2fstate-archives&user=extranet%5cAnonymous&site=website"
+  },
+  {
+    "id": "src-new-haven-dandrea-raid",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2018/07/the-british-raid-on-new-haven/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2018/07/the-british-raid-on-new-haven/"
+  },
+  {
+    "id": "src-augusta-ga-georgia-state-archives-augusta",
+    "table": "Source",
+    "url": "https://www.georgiaarchives.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.georgiaarchives.org/"
+  },
+  {
+    "id": "src-new-haven-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_New_Haven",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battle_of_New_Haven"
+  },
+  {
+    "id": "src-new-haven-visitnewhaven",
+    "table": "Source",
+    "url": "https://www.visitnewhaven.com/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://visitnewhaven.com/"
+  },
+  {
+    "id": "src-new-london-connecticut-state-records",
+    "table": "Source",
+    "url": "https://portal.ct.gov/SOTS/Collection-Detail-Pages/State-Archives",
+    "status": 200,
+    "ok": false,
+    "issue": "redirects to homepage",
+    "finalUrl": "https://portal.ct.gov/en/404error/?item=%2fsots%2fcollection-detail-pages%2fstate-archives&user=extranet%5cAnonymous&site=website"
+  },
+  {
+    "id": "src-new-london-nps-arnold-raid",
+    "table": "Source",
+    "url": "https://portal.ct.gov/DEEP/State-Parks/Parks/Fort-Trumbull-State-Park",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://ctparks.com/parks/fort-trumbull-state-park"
+  },
+  {
+    "id": "src-new-london-martin-privateers",
+    "table": "Source",
+    "url": "https://connecticuthistory.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://connecticuthistory.org/"
+  },
+  {
+    "id": "src-new-london-connecticut-humanities",
+    "table": "Source",
+    "url": "https://connecticuthistory.org/new-london/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://connecticuthistory.org/towns-page/new-london/"
+  },
+  {
+    "id": "src-new-london-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Raid_on_New_London",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Raid_on_New_London"
+  },
+  {
+    "id": "src-new-london-tourism",
+    "table": "Source",
+    "url": "https://www.newlondonct.gov/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.newlondonct.gov/"
+  },
+  {
+    "id": "src-groton-nps-fort-griswold",
+    "table": "Source",
+    "url": "https://portal.ct.gov/DEEP/State-Parks/Parks/Fort-Griswold-Battlefield-State-Park",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://ctparks.com/parks/fort-griswold-battlefield-state-park"
+  },
+  {
+    "id": "src-new-haven-new-haven-hist-soc",
+    "table": "Source",
+    "url": "https://www.newhavenmuseum.org/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.newhavenmuseum.org/"
+  },
+  {
+    "id": "src-groton-connecticut-sons-revolution",
+    "table": "Source",
+    "url": "https://connecticutsar.org/",
+    "status": 301,
+    "ok": false,
+    "issue": "redirects to unrelated site",
+    "finalUrl": "https://pokpokrestaurants.com/"
+  },
+  {
+    "id": "src-groton-harris-ledyard",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2021/09/colonel-william-ledyard-fort-griswold/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2021/09/colonel-william-ledyard-fort-griswold/"
+  },
+  {
+    "id": "src-groton-jordan-african-american",
+    "table": "Source",
+    "url": "https://connecticuthistory.org/african-americans-at-fort-griswold/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://connecticuthistory.org/african-americans-at-fort-griswold/"
+  },
+  {
+    "id": "src-groton-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Groton_Heights",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battle_of_Groton_Heights"
+  },
+  {
+    "id": "src-groton-visitgroton",
+    "table": "Source",
+    "url": "https://www.groton-ct.gov/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.groton-ct.gov/"
+  },
+  {
+    "id": "src-danbury-continental-congress-resolve",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/century-of-lawmaking/articles-and-essays/continental-congress/journals-of-the-continental-congress/"
+  },
+  {
+    "id": "src-danbury-nps-ridgefield",
+    "table": "Source",
+    "url": "https://www.keelertavernmuseum.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://keelertavernmuseum.org/"
+  },
+  {
+    "id": "src-danbury-connecticut-state-archives-1777",
+    "table": "Source",
+    "url": "https://portal.ct.gov/SOTS/Collection-Detail-Pages/State-Archives",
+    "status": 200,
+    "ok": false,
+    "issue": "redirects to homepage",
+    "finalUrl": "https://portal.ct.gov/en/404error/?item=%2fsots%2fcollection-detail-pages%2fstate-archives&user=extranet%5cAnonymous&site=website"
+  }
+]

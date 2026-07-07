@@ -1,0 +1,151 @@
+[
+  {
+    "id": "src-phi-declaration-independence",
+    "title": "Declaration of Independence, July 4, 1776",
+    "verdict": "PASS",
+    "issues": [],
+    "recommendation": "Citation is sound. The National Archives page at archives.gov/founding-docs/declaration serves the document with high-res images, PDF, and full transcript. Institution matches. The Declaration is unambiguously primary — created at the event. No changes needed."
+  },
+  {
+    "id": "src-car-pa-archives-carlisle",
+    "title": "Pennsylvania Archives, Series 2 and 5: Militia Records and Border Defense",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL www.phmc.pa.gov/Archives issues a 302 redirect to the PHMC agency landing page at www.pa.gov/en/agencies/phmc.html — the original path no longer resolves.",
+      "Destination page is an agency-level landing page for the Pennsylvania Historical and Museum Commission, not a specific archives collection or series page.",
+      "No mention of 'Series 2,' 'Series 5,' 'Militia Records,' or 'Border Defense' anywhere on the redirected page.",
+      "Title implies a specific identified series but the URL leads only to the institutional homepage."
+    ],
+    "recommendation": "Replace URL with a direct link to the Pennsylvania State Archives online catalog entry for the relevant series, e.g. via www.phmc.pa.gov/Archives/Research-And-Education or the Ancestry PA catalog. Series 2 and 5 of Pennsylvania Archives exist as published volumes and the State Archives does hold the underlying records; the citation just needs a precise URL."
+  },
+  {
+    "id": "src-alexandria-va-washington-letters-pre-war",
+    "title": "George Washington's Letters from Alexandria, 1769-1775",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL www.loc.gov/collections/george-washington-papers/ returned HTTP 403 Forbidden — the Library of Congress blocks automated fetches on collection pages.",
+      "Even if accessible, the URL resolves to the top-level collection landing page for the entire George Washington Papers (spanning decades), not a filtered view of Alexandria-origin letters dated 1769-1775.",
+      "Title implies a specific, geographically and temporally bounded subset of the collection that is not surfaced by this URL alone.",
+      "This exact URL is also used for a second distinct source (src-fredericksburg-va-washington-boyhood-letters), suggesting both citations are pointing to the same undifferentiated collection page."
+    ],
+    "recommendation": "Provide a direct permalink to the specific letter(s) at loc.gov (each digitized letter has its own resource URL) or cite the printed edition: The Papers of George Washington, Colonial Series, vols. 8-10 (Univ. of Virginia Press). Disambiguate from the Fredericksburg source."
+  },
+  {
+    "id": "src-fredericksburg-va-washington-boyhood-letters",
+    "title": "George Washington's Early Letters and Diary Fragments, 1748-1754",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL www.loc.gov/collections/george-washington-papers/ returned HTTP 403 Forbidden.",
+      "This is an identical URL to src-alexandria-va-washington-letters-pre-war — two entirely distinct claimed documents share the same collection-landing-page URL.",
+      "URL is the undifferentiated collection page for all Washington Papers, not the 1748-1754 diary fragments or early letters specifically.",
+      "Washington's diaries for 1748-1754 are a real subset of the collection but require specific resource permalinks or volume citations."
+    ],
+    "recommendation": "Replace with specific item permalinks from loc.gov for the surveying diaries or early letters, or cite the published edition: The Diaries of George Washington, vol. 1 (Univ. of Virginia Press, 1976). Resolve the duplicate-URL conflict with the Alexandria source."
+  },
+  {
+    "id": "src-charlottesville-va-jefferson-escape-account",
+    "title": "Thomas Jefferson to William Gordon, July 16, 1788 (Account of Tarleton's Raid)",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL www.loc.gov/collections/thomas-jefferson-papers/ returned HTTP 403 Forbidden.",
+      "URL is the collection landing page for all Thomas Jefferson Papers, not a permalink to the specific July 16, 1788 letter to William Gordon.",
+      "The letter itself is a genuine primary document (Jefferson wrote it in 1788 recounting the 1781 raid on Monticello); no fabrication concern on the document's existence, only on the URL's specificity.",
+      "A collection page does not constitute a citable link to the specific letter."
+    ],
+    "recommendation": "Provide the specific item URL from loc.gov for this letter (series 1, reel 8 approximately) or cite Founders Online: founders.archives.gov which hosts a searchable, permalinked text of this letter."
+  },
+  {
+    "id": "src-savannah-ga-pulaski-death-account",
+    "title": "Account of the Death of Count Casimir Pulaski at the Siege of Savannah, October [1779]",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is www.loc.gov/ — the bare Library of Congress homepage. This does not point to any specific document, collection, or finding aid.",
+      "A homepage URL is effectively a null citation: it confirms the institution exists but provides no path to the claimed document.",
+      "No document with this exact title was surfaced by LOC's homepage. The specificity of the title (named eyewitness account of Pulaski's death) suggests a precise manuscript source that requires a specific catalog or resource URL.",
+      "This citation pattern — using an institution homepage rather than a document URL — is a red flag for a fabricated or unverified citation."
+    ],
+    "recommendation": "Locate the specific manuscript in LOC's catalog (catalog.loc.gov) or identify whether this account exists in the Papers of the Continental Congress, a period newspaper, or a named collection. Replace URL with a verifiable permalink. If the document cannot be located, downgrade or remove this citation."
+  },
+  {
+    "id": "src-dover-delaware-ratification",
+    "title": "Delaware Ratification of the U.S. Constitution, December 7, 1787",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL www.archives.gov/founding-docs/constitution leads to the National Archives page for the U.S. Constitution itself — the parchment document signed in Philadelphia — not Delaware's ratification instrument.",
+      "The fetched page explicitly contains no state-specific ratification content. Delaware's ratification record (a separate instrument dated December 7, 1787) is not at this URL.",
+      "The publisherOrHolder claims 'Records of the Continental and Confederation Congresses' as the record group, but the URL leads to the Charters of Freedom exhibit page, not a specific archival record.",
+      "Wrong document at right institution: NARA does hold ratification records but this URL does not surface them."
+    ],
+    "recommendation": "Replace with the NARA catalog URL for the Delaware ratification instrument, Record Group 11 (General Records of the U.S. Government). The Founders Online entry and the National Archives Online Catalog (catalog.archives.gov) both have more precise access points for state ratification records."
+  },
+  {
+    "id": "src-dover-delaware-state-archives",
+    "title": "Delaware Public Archives: Revolutionary War Records",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL archives.delaware.gov resolves to the Delaware Public Archives homepage, not a specific Revolutionary War records collection or finding aid.",
+      "Title implies a specific named collection ('Revolutionary War Records') but the URL leads to the institutional homepage with general content.",
+      "The homepage does reference Revolutionary War–era content and an exhibit, confirming the institution holds relevant materials, but the citation does not identify a specific record series, collection, or document."
+    ],
+    "recommendation": "Replace with a direct URL to the DPA's Revolutionary War–era collection guide or specific record series (e.g., Delaware Militia Records or Continental Line records). The Delaware Public Archives catalog should have finding aids for these series."
+  },
+  {
+    "id": "source-elizabeth-nj-historical-society",
+    "title": "New Jersey Historical Society Collections: Essex County Revolutionary War Record",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL jerseyhistory.org resolves to the New Jersey Historical Society homepage. Institution name matches.",
+      "The homepage contains no reference to 'Essex County Revolutionary War Records' as a named collection or document.",
+      "Title implies a specific collection or document ('Essex County Revolutionary War Record') but the URL is just the institutional homepage.",
+      "As a TIER2 source, pointing to a homepage rather than a specific finding aid or collection page reduces verifiability."
+    ],
+    "recommendation": "Provide a direct URL to the NJHS finding aid or catalog entry for the Essex County–related Revolutionary War holdings. The NJHS maintains a library and manuscript collection; a specific collection guide URL would make this citation verifiable."
+  },
+  {
+    "id": "src-bennington-stark-report",
+    "title": "General John Stark's Report on the Battle of Bennington to General Schuyler, Aug[ust 1777]",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL memory.loc.gov/ammem/amlaw/lwcc.html returned HTTP 403 Forbidden.",
+      "Even if accessible, this URL leads to the collection-level page for the Papers of the Continental Congress (American Memory project), not a specific item or document within that collection.",
+      "Historical note: Stark's primary report after Bennington (August 22, 1777) was addressed to the New Hampshire Committee of Safety and to General Lincoln, not directly to General Schuyler. Attribution to Schuyler warrants further verification; a report through Schuyler's command may exist as a forwarded document in PCC but the addressee in the title appears inaccurate.",
+      "Title specificity cannot be confirmed at this collection-level URL."
+    ],
+    "recommendation": "Verify the actual addressee of Stark's after-action report and correct if necessary. Provide a specific item URL or PCC item number from the LOC catalog. Founders Online or the National Archives microfilm edition of the PCC may offer a more precise citation."
+  },
+  {
+    "id": "src-brattleboro-continental-congress-vermont",
+    "title": "Journals of the Continental Congress: Vermont Statehood Debates, 1777-1791",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL memory.loc.gov/ammem/amlaw/lwjc.html returned HTTP 403 Forbidden.",
+      "Even if accessible, the URL is the collection landing page for the full Journals of the Continental Congress (34 volumes), not filtered to Vermont statehood debates.",
+      "Factual concern: The Continental Congress ceased to exist in 1789 when the new federal Congress convened. The Journals of the Continental Congress end in 1789; they cannot cover events through 1791. Vermont was admitted to the Union on March 4, 1791, under the new Congress, not the Continental Congress. The date range '1777-1791' in the title is misleading or erroneous for this specific source.",
+      "Debates from 1790-1791 on Vermont's admission would appear in the Annals of Congress (First Congress), not the Journals of the Continental Congress."
+    ],
+    "recommendation": "Correct the date range to reflect what the Journals actually cover (through 1788/1789). For Vermont admission debates in 1790-1791, cite the Annals of Congress or Senate records from the First Congress. Provide a specific volume and page reference rather than the collection homepage."
+  },
+  {
+    "id": "source-elizabeth-boudinot-papers-princeton",
+    "title": "Elias Boudinot Papers",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL findingaids.princeton.edu resolves to the Princeton University Library finding aids portal homepage. Institution name matches.",
+      "The homepage does not surface the specific Elias Boudinot Papers finding aid; there is no direct path to the collection from this URL.",
+      "The Elias Boudinot Papers are a real Princeton holding (American Revolutionary–era statesman, Commissary General of Prisoners), making this a genuine primary source collection, but the URL must point to the specific finding aid rather than the portal home.",
+      "Title is minimal — no date range or specific documents cited."
+    ],
+    "recommendation": "Replace with the direct finding aid URL for the Boudinot Papers within Princeton's system (typically at a path like findingaids.princeton.edu/catalog/[call_number]). Adding a date range and specific sub-series reference would improve the citation's research utility."
+  },
+  {
+    "id": "src-kings-mountain-nc-draper-manuscripts",
+    "title": "Draper Manuscripts: Kings Mountain and Its Heroes -- Source Materials",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL www.wisconsinhistory.org/Records/Article/CS1945 returned HTTP 404 Not Found — the page does not exist.",
+      "The Wisconsin Historical Society does hold the Draper Manuscripts, and Lyman Draper's 'Kings Mountain and Its Heroes' (1881) and the accompanying source collection (series DD) are genuine primary and near-primary sources for the Battle of Kings Mountain.",
+      "The specific article URL referenced in this citation is a dead link. The WHS has restructured its website, breaking this path."
+    ],
+    "recommendation": "Update to the current WHS Draper Manuscripts landing page or the specific finding aid for the Kings Mountain Papers within the Draper collection. The WHS catalog and the digital microfilm edition (available via several university libraries) are more stable access points. Note that Draper's published 1881 book is secondary; the underlying manuscript interviews and documents (series DD) are the primary sources and should be cited specifically."
+  }
+]

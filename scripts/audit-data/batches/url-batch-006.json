@@ -1,0 +1,502 @@
+[
+  {
+    "id": "src-kings-mountain-nc-nps-battlefield",
+    "table": "Source",
+    "url": "https://www.nps.gov/kimo/index.htm",
+    "title": "Kings Mountain National Military Park: Official Interpretive",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "kings-mountain-nc",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-guilford-courthouse-nc-nps-battlefield",
+    "table": "Source",
+    "url": "https://www.nps.gov/guco/index.htm",
+    "title": "Guilford Courthouse National Military Park: Official Interpr",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "guilford-courthouse-nc",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-kings-mountain-nc-american-battlefield-trust-km",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/kings-mountain",
+    "title": "Kings Mountain -- American Battlefield Trust",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "kings-mountain-nc",
+    "publisherOrHolder": "American Battlefield Trust"
+  },
+  {
+    "id": "src-kings-mountain-nc-wikipedia-battle",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Kings_Mountain",
+    "title": "Battle of Kings Mountain -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "kings-mountain-nc",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-kings-mountain-nc-nps-visitor-guide",
+    "table": "Source",
+    "url": "https://www.nps.gov/kimo/planyourvisit/index.htm",
+    "title": "Kings Mountain National Military Park Visitor Guide",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "kings-mountain-nc",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-wilmington-nc-nc-state-archives",
+    "table": "Source",
+    "url": "https://www.archives.ncdcr.gov/",
+    "title": "North Carolina State Archives: New Hanover County Records an",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "wilmington-nc",
+    "publisherOrHolder": "North Carolina State Archives"
+  },
+  {
+    "id": "src-wilmington-nc-wilmington-hist-district",
+    "table": "Source",
+    "url": "https://www.capefearmuseum.com/",
+    "title": "Wilmington Historic District and Cape Fear Museum: Revolutio",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "wilmington-nc",
+    "publisherOrHolder": "Cape Fear Museum of History and Science"
+  },
+  {
+    "id": "src-wilmington-nc-lower-cape-fear-historical-society",
+    "table": "Source",
+    "url": "https://www.lcfhs.org/",
+    "title": "Lower Cape Fear Historical Society: Revolutionary War Resear",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "wilmington-nc",
+    "publisherOrHolder": "Lower Cape Fear Historical Society"
+  },
+  {
+    "id": "src-kings-mountain-nc-nc-state-archives-kings-mountain",
+    "table": "Source",
+    "url": "https://www.archives.ncdcr.gov/",
+    "title": "North Carolina State Archives: Surry and Wilkes County Milit",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "kings-mountain-nc",
+    "publisherOrHolder": "North Carolina State Archives"
+  },
+  {
+    "id": "src-new-bern-nc-provincial-congress-records",
+    "table": "Source",
+    "url": "https://www.archives.ncdcr.gov/",
+    "title": "North Carolina Provincial Congress: Proceedings and Journal,",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "new-bern-nc",
+    "publisherOrHolder": "North Carolina State Archives"
+  },
+  {
+    "id": "src-new-bern-nc-tryon-palace",
+    "table": "Source",
+    "url": "https://www.tryonpalace.org/",
+    "title": "Tryon Palace Historic Sites and Gardens: Research Collection",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "new-bern-nc",
+    "publisherOrHolder": "Tryon Palace"
+  },
+  {
+    "id": "src-new-bern-nc-moores-creek-nps",
+    "table": "Source",
+    "url": "https://www.nps.gov/mocr/index.htm",
+    "title": "Moores Creek National Battlefield: New Bern and the North Ca",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "new-bern-nc",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-new-bern-nc-north-carolina-state-hist-soc",
+    "table": "Source",
+    "url": "https://library.unc.edu/wilson/ncc/",
+    "title": "North Carolina Collection: University of North Carolina at C",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "new-bern-nc",
+    "publisherOrHolder": "University of North Carolina at Chapel Hill Libraries"
+  },
+  {
+    "id": "src-new-bern-nc-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/New_Bern,_North_Carolina",
+    "title": "New Bern, North Carolina -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "new-bern-nc",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-new-bern-nc-tryon-palace-visitor",
+    "table": "Source",
+    "url": "https://www.tryonpalace.org/plan-your-visit",
+    "title": "Tryon Palace Visitor Guide",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "new-bern-nc",
+    "publisherOrHolder": "Tryon Palace"
+  },
+  {
+    "id": "src-savannah-ga-lincoln-siege-correspondence",
+    "table": "Source",
+    "url": "https://www.masshist.org/",
+    "title": "General Benjamin Lincoln: Correspondence during the Siege of",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "savannah-ga",
+    "publisherOrHolder": "Massachusetts Historical Society"
+  },
+  {
+    "id": "src-wilmington-nc-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Wilmington,_North_Carolina",
+    "title": "Wilmington, North Carolina -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "wilmington-nc",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-wilmington-nc-visit-wilmington",
+    "table": "Source",
+    "url": "https://www.wilmingtonandbeaches.com/history-culture/history/",
+    "title": "Wilmington: History and Heritage",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "wilmington-nc",
+    "publisherOrHolder": "Wilmington and Beaches Convention and Visitors Bureau"
+  },
+  {
+    "id": "src-savannah-ga-nps-fort-pulaski",
+    "table": "Source",
+    "url": "https://www.nps.gov/fopu/learn/historyculture/revolutionary-war.htm",
+    "title": "Fort Pulaski and the Savannah Revolutionary Heritage: NPS Re",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "savannah-ga",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-savannah-ga-georgia-historical-society",
+    "table": "Source",
+    "url": "https://georgiahistory.com/",
+    "title": "Georgia Historical Society: Revolutionary War Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "savannah-ga",
+    "publisherOrHolder": "Georgia Historical Society"
+  },
+  {
+    "id": "src-savannah-ga-lamprecht-pulaski",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/",
+    "title": "Casimir Pulaski at Savannah: Cavalry, Command, and Death",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "savannah-ga",
+    "publisherOrHolder": "Journal of the American Revolution"
+  },
+  {
+    "id": "src-savannah-ga-wikipedia-siege-1779",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Siege_of_Savannah_(1779)",
+    "title": "Siege of Savannah (1779) -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "savannah-ga",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-savannah-ga-wikipedia-capture-1778",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Capture_of_Savannah_(1778)",
+    "title": "Capture of Savannah (1778) -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "savannah-ga",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-savannah-ga-visit-savannah",
+    "table": "Source",
+    "url": "https://www.visitsavannah.com/history",
+    "title": "Visit Savannah: Revolutionary War History",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "savannah-ga",
+    "publisherOrHolder": "Visit Savannah"
+  },
+  {
+    "id": "src-savannah-ga-georgia-state-archives",
+    "table": "Source",
+    "url": "https://www.georgiaarchives.org/",
+    "title": "Georgia State Archives: Revolutionary War Records, 1776-1783",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "savannah-ga",
+    "publisherOrHolder": "Georgia Archives"
+  },
+  {
+    "id": "src-augusta-ga-historic-augusta",
+    "table": "Source",
+    "url": "https://www.historicaugusta.org/",
+    "title": "Historic Augusta: Revolutionary War Sites and Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "augusta-ga",
+    "publisherOrHolder": "Historic Augusta"
+  },
+  {
+    "id": "src-augusta-ga-wikipedia-battle-1781",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Siege_of_Augusta_(1781)",
+    "title": "Siege of Augusta (1781) -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "augusta-ga",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-augusta-ga-american-battlefield-trust",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/augusta",
+    "title": "Augusta -- American Battlefield Trust",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "augusta-ga",
+    "publisherOrHolder": "American Battlefield Trust"
+  },
+  {
+    "id": "src-new-haven-nps-coastal-raids",
+    "table": "Source",
+    "url": "https://www.nps.gov/subjects/nationalregister/upload/CT-MPS-Revolutionary-War-Coastal-Raids.pdf",
+    "title": "Connecticut's Revolutionary War Coastal Raids: A National Re",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "new-haven-ct",
+    "publisherOrHolder": "National Park Service, National Register of Historic Places"
+  },
+  {
+    "id": "src-new-haven-state-archives-council",
+    "table": "Source",
+    "url": "https://portal.ct.gov/SOTS/Collection-Detail-Pages/State-Archives",
+    "title": "Connecticut Council of Safety Minutes, 1779",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "new-haven-ct",
+    "publisherOrHolder": "Connecticut State Archives"
+  },
+  {
+    "id": "src-new-haven-dandrea-raid",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2018/07/the-british-raid-on-new-haven/",
+    "title": "The British Raid on New Haven, July 1779",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "new-haven-ct",
+    "publisherOrHolder": "Journal of the American Revolution"
+  },
+  {
+    "id": "src-augusta-ga-georgia-state-archives-augusta",
+    "table": "Source",
+    "url": "https://www.georgiaarchives.org/",
+    "title": "Georgia Archives: Richmond County Records and Georgia Execut",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "augusta-ga",
+    "publisherOrHolder": "Georgia Archives"
+  },
+  {
+    "id": "src-new-haven-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_New_Haven",
+    "title": "Battle of New Haven -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "new-haven-ct",
+    "publisherOrHolder": "Wikimedia Foundation"
+  },
+  {
+    "id": "src-new-haven-visitnewhaven",
+    "table": "Source",
+    "url": "https://www.visitnewhaven.com/",
+    "title": "Visit New Haven: Revolutionary War Heritage Sites",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "new-haven-ct",
+    "publisherOrHolder": "Visit New Haven (tourism bureau)"
+  },
+  {
+    "id": "src-new-london-connecticut-state-records",
+    "table": "Source",
+    "url": "https://portal.ct.gov/SOTS/Collection-Detail-Pages/State-Archives",
+    "title": "The Public Records of the State of Connecticut, 1781",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "new-london-ct",
+    "publisherOrHolder": "Connecticut State Library"
+  },
+  {
+    "id": "src-new-london-nps-arnold-raid",
+    "table": "Source",
+    "url": "https://portal.ct.gov/DEEP/State-Parks/Parks/Fort-Trumbull-State-Park",
+    "title": "Fort Trumbull State Park: The 1781 Raid on New London",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "new-london-ct",
+    "publisherOrHolder": "Connecticut DEEP State Parks / National Park Service"
+  },
+  {
+    "id": "src-new-london-martin-privateers",
+    "table": "Source",
+    "url": "https://connecticuthistory.org/",
+    "title": "Privateers of New London: Commerce Raiding in the American R",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "new-london-ct",
+    "publisherOrHolder": "Connecticut History (Connecticut Humanities)"
+  },
+  {
+    "id": "src-new-london-connecticut-humanities",
+    "table": "Source",
+    "url": "https://connecticuthistory.org/new-london/",
+    "title": "Connecticut History Online: New London in the Revolution",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "new-london-ct",
+    "publisherOrHolder": "Connecticut Humanities"
+  },
+  {
+    "id": "src-new-london-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Raid_on_New_London",
+    "title": "Raid on New London -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "new-london-ct",
+    "publisherOrHolder": "Wikimedia Foundation"
+  },
+  {
+    "id": "src-new-london-tourism",
+    "table": "Source",
+    "url": "https://www.newlondonct.gov/",
+    "title": "New London Landmarks Commission: Revolutionary War Sites",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "new-london-ct",
+    "publisherOrHolder": "City of New London"
+  },
+  {
+    "id": "src-groton-nps-fort-griswold",
+    "table": "Source",
+    "url": "https://portal.ct.gov/DEEP/State-Parks/Parks/Fort-Griswold-Battlefield-State-Park",
+    "title": "Fort Griswold Battlefield State Park Interpretive Program",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "groton-ct",
+    "publisherOrHolder": "Connecticut DEEP / National Register of Historic Places"
+  },
+  {
+    "id": "src-new-haven-new-haven-hist-soc",
+    "table": "Source",
+    "url": "https://www.newhavenmuseum.org/",
+    "title": "New Haven Colony Historical Society: Revolutionary War Colle",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "new-haven-ct",
+    "publisherOrHolder": "New Haven Museum"
+  },
+  {
+    "id": "src-groton-connecticut-sons-revolution",
+    "table": "Source",
+    "url": "https://connecticutsar.org/",
+    "title": "Connecticut Society of the Sons of the American Revolution: ",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "groton-ct",
+    "publisherOrHolder": "Connecticut Society SAR"
+  },
+  {
+    "id": "src-groton-harris-ledyard",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2021/09/colonel-william-ledyard-fort-griswold/",
+    "title": "Colonel William Ledyard and the Defense of Fort Griswold",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "groton-ct",
+    "publisherOrHolder": "Journal of the American Revolution"
+  },
+  {
+    "id": "src-groton-jordan-african-american",
+    "table": "Source",
+    "url": "https://connecticuthistory.org/african-americans-at-fort-griswold/",
+    "title": "African American Defenders at Fort Griswold",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "groton-ct",
+    "publisherOrHolder": "Connecticut History (Connecticut Humanities)"
+  },
+  {
+    "id": "src-groton-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Groton_Heights",
+    "title": "Battle of Groton Heights -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "groton-ct",
+    "publisherOrHolder": "Wikimedia Foundation"
+  },
+  {
+    "id": "src-groton-visitgroton",
+    "table": "Source",
+    "url": "https://www.groton-ct.gov/",
+    "title": "Visit Groton: Fort Griswold Battlefield State Park",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "groton-ct",
+    "publisherOrHolder": "Groton Tourism Office"
+  },
+  {
+    "id": "src-danbury-continental-congress-resolve",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "title": "Continental Congress Resolution on the Danbury Raid, May 177",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "danbury-ct",
+    "publisherOrHolder": "Library of Congress, Journals of the Continental Congress"
+  },
+  {
+    "id": "src-danbury-nps-ridgefield",
+    "table": "Source",
+    "url": "https://www.keelertavernmuseum.org/",
+    "title": "Keeler Tavern Museum and History Center: The Danbury Raid Co",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "danbury-ct",
+    "publisherOrHolder": "Keeler Tavern Museum and History Center"
+  },
+  {
+    "id": "src-danbury-connecticut-state-archives-1777",
+    "table": "Source",
+    "url": "https://portal.ct.gov/SOTS/Collection-Detail-Pages/State-Archives",
+    "title": "Connecticut Council of Safety Records: April-May 1777",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "danbury-ct",
+    "publisherOrHolder": "Connecticut State Archives"
+  }
+]

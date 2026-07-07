@@ -1,0 +1,122 @@
+[
+  {
+    "id": "src-revere-deposition",
+    "url": "https://www.masshist.org/database/viewer.php?item_id=99",
+    "title": "Paul Revere's Deposition, circa 1775",
+    "publisherOrHolder": "Massachusetts Historical Society",
+    "tier": "TIER1",
+    "towns": "lexington-ma"
+  },
+  {
+    "id": "source-adams-papers",
+    "url": "https://www.masshist.org/adams/",
+    "title": "Adams Family Papers",
+    "publisherOrHolder": "Massachusetts Historical Society",
+    "tier": "TIER1",
+    "towns": "boston-ma"
+  },
+  {
+    "id": "src-massachusetts-archives",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "title": "Massachusetts Archives Collection",
+    "publisherOrHolder": "Massachusetts State Archives",
+    "tier": "TIER1",
+    "towns": "lexington-ma"
+  },
+  {
+    "id": "source-harvard-archives-rev",
+    "url": "https://library.harvard.edu/archives",
+    "title": "Harvard University Archives: Revolutionary War Collection",
+    "publisherOrHolder": "Harvard University",
+    "tier": "TIER1",
+    "towns": "cambridge-ma"
+  },
+  {
+    "id": "source-mass-historical-siege",
+    "url": "https://www.masshist.org",
+    "title": "Massachusetts Historical Society: Siege Papers",
+    "publisherOrHolder": "Massachusetts Historical Society",
+    "tier": "TIER1",
+    "towns": "cambridge-ma"
+  },
+  {
+    "id": "source-washington-orders-cambridge",
+    "url": "https://www.loc.gov/collections/george-washington-papers",
+    "title": "General Orders, Cambridge Headquarters 1775-1776",
+    "publisherOrHolder": "Library of Congress",
+    "tier": "TIER1",
+    "towns": "cambridge-ma"
+  },
+  {
+    "id": "source-martha-washington-letters",
+    "url": "https://www.mountvernon.org",
+    "title": "Martha Washington Letters",
+    "publisherOrHolder": "Mount Vernon Ladies' Association",
+    "tier": "TIER1",
+    "towns": "cambridge-ma"
+  },
+  {
+    "id": "src-salem-essex-county-court-records",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "title": "Essex County Court Records and Committee of Safety Minutes, 1774-1776",
+    "publisherOrHolder": "Massachusetts State Archives",
+    "tier": "TIER1",
+    "towns": "salem-ma"
+  },
+  {
+    "id": "src-salem-privateering-commissions",
+    "url": "https://www.archives.gov/",
+    "title": "Continental Congress Privateering Commissions: Salem-Registered Vessels, 1776-17",
+    "publisherOrHolder": "National Archives and Records Administration",
+    "tier": "TIER1",
+    "towns": "salem-ma"
+  },
+  {
+    "id": "source-hackensack-nj-historical-society-bergen",
+    "url": "https://jerseyhistory.org",
+    "title": "Bergen County in the American Revolution: Primary Sources",
+    "publisherOrHolder": "New Jersey Historical Society",
+    "tier": "TIER1",
+    "towns": "hackensack-nj"
+  },
+  {
+    "id": "src-marblehead-glover-orderly-books",
+    "url": "https://www.masshist.org/",
+    "title": "Colonel John Glover's Orderly Books, 1775-1777",
+    "publisherOrHolder": "Massachusetts Historical Society",
+    "tier": "TIER1",
+    "towns": "marblehead-ma"
+  },
+  {
+    "id": "src-marblehead-washington-crossing-orders",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "General Washington's Orders to Colonel Glover, December 25-26, 1776",
+    "publisherOrHolder": "Library of Congress, George Washington Papers",
+    "tier": "TIER1",
+    "towns": "marblehead-ma"
+  },
+  {
+    "id": "src-marblehead-state-archives-muster-rolls",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "title": "Massachusetts Muster Rolls: Glover's 14th Continental Regiment, 1775-1777",
+    "publisherOrHolder": "Massachusetts State Archives",
+    "tier": "TIER1",
+    "towns": "marblehead-ma"
+  },
+  {
+    "id": "src-plymouth-muster-rolls-siege-boston",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "title": "Plymouth County Militia Muster Rolls: Siege of Boston, 1775-1776",
+    "publisherOrHolder": "Massachusetts State Archives",
+    "tier": "TIER1",
+    "towns": "plymouth-ma"
+  },
+  {
+    "id": "src-worcester-court-closure-proceedings",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "title": "Worcester County Court of Common Pleas: Closure Proceedings, September 6, 1774",
+    "publisherOrHolder": "Massachusetts State Archives",
+    "tier": "TIER1",
+    "towns": "worcester-ma"
+  }
+]

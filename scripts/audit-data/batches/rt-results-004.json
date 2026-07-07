@@ -1,0 +1,176 @@
+[
+  {
+    "id": "src-charleston-sc-sc-state-archives",
+    "title": "South Carolina Department of Archives and History: Revolutionary War Records",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "Cited URL https://www.scdah.sc.gov/ returns ECONNREFUSED — the www subdomain does not resolve; the institution is accessible at scdah.sc.gov (no www) but not at the cited address.",
+      "Even if corrected, the URL is the institutional homepage, not a specific collection page or finding aid. The title implies a named collection ('Revolutionary War Records') that is not navigable from this URL.",
+      "No specific document, series, or record group is linked; citation is not actionable for verification or citation reuse."
+    ],
+    "recommendation": "Replace with the specific SCDAH finding aid or online catalog record URL for the Revolutionary War collection (e.g., via SCDAH's online research portal at scdah.sc.gov/research). Remove www from URL. Confirm that the named collection exists under that label in SCDAH's catalog."
+  },
+  {
+    "id": "src-camden-sc-sc-state-archives-camden",
+    "title": "South Carolina State Records: Camden District Court and Loyalist Records, 1780-1",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "Cited URL https://www.scdah.sc.gov/ returns ECONNREFUSED — www subdomain does not resolve.",
+      "Even if corrected, the URL lands on the institutional homepage, not a specific collection. The title names a very specific series ('Camden District Court and Loyalist Records, 1780-1') that cannot be verified.",
+      "The framing 'Camden District Court' during 1780-1 is historically suspect: Camden was a British military post during that period; a functioning American district court would not have operated there under that name. This label may reflect a post-war administrative reconstruction or may be a fabricated collection title.",
+      "Title appears truncated ('1780-1' likely means 1780-1781 or 1780-1782)."
+    ],
+    "recommendation": "Verify whether SCDAH actually holds a collection called 'Camden District Court and Loyalist Records' — the terminology is anachronistic for British-occupied Camden. Replace URL with a direct finding-aid link. If the collection does not exist under this name, the citation should be corrected or removed."
+  },
+  {
+    "id": "src-cowpens-sc-eyewitness-depositions",
+    "title": "Pension Depositions of Cowpens Veterans, 1820-1840",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "Fold3 returns HTTP 403 Forbidden — the site requires a paid subscription; content cannot be verified without credentials.",
+      "The URL points to the general Revolutionary War Pension and Bounty Land Warrant Application Files collection (approximately 80,000 files); there is no curated sub-collection of 'Cowpens Veterans' at this URL. The title implies a filtered, named sub-collection that does not exist.",
+      "The dates 1820-1840 reflect when veterans filed pension applications, not when the Battle of Cowpens occurred (1781). These are retrospective testimonies recorded 39-59 years after the event. While they qualify as primary sources (firsthand testimony), they are NOT contemporaneous battle records. Labeling them as tier-1 primary sources without this caveat is misleading.",
+      "The publisherOrHolder lists NARA, but the access point is Fold3 (an Ancestry/private subscription service), not a free NARA resource."
+    ],
+    "recommendation": "Replace with the NARA Catalog direct link to the Revolutionary War Pension files (catalog.archives.gov) which is free and accessible. Retitle to reflect that these are retrospective pension depositions, not contemporaneous battle records. Acknowledge the paywall issue."
+  },
+  {
+    "id": "src-ninety-six-sc-sc-state-archives-backcountry",
+    "title": "South Carolina Backcountry District Records: Ninety Six, 1775-1782",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "Cited URL https://www.scdah.sc.gov/ returns ECONNREFUSED — www subdomain does not resolve.",
+      "Even if corrected, the URL is the institutional homepage, not a specific collection or finding aid.",
+      "The title implies a distinct named series ('South Carolina Backcountry District Records: Ninety Six') that cannot be verified from the homepage URL. SCDAH does hold backcountry-era records, but it is unclear whether this specific named series exists in their catalog."
+    ],
+    "recommendation": "Fix URL to scdah.sc.gov and locate the specific series or record group in SCDAH's online catalog. Provide a direct finding-aid URL. Confirm the collection label matches SCDAH's actual catalog terminology."
+  },
+  {
+    "id": "src-eutaw-springs-sc-sc-state-archives",
+    "title": "South Carolina State Records: Eutaw Springs District, 1781-1782",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "Cited URL https://www.scdah.sc.gov/ returns ECONNREFUSED — www subdomain does not resolve.",
+      "Even if corrected, the URL is the institutional homepage, not a specific collection.",
+      "'Eutaw Springs District' is not a recognized historical administrative district in South Carolina — Eutaw Springs was a battle site (September 8, 1781) in what was then Orangeburg District. A collection named 'Eutaw Springs District' is likely a fabricated label.",
+      "No specific document, record group, or series can be verified from the cited URL."
+    ],
+    "recommendation": "Verify whether SCDAH holds any collection under the name 'Eutaw Springs District Records' — this administrative label appears historically inaccurate. Records from this engagement would more likely appear under Orangeburg District or British military records. If no such named collection exists, this citation should be corrected or removed."
+  },
+  {
+    "id": "src-fort-moultrie-sc-sc-state-archives-1776",
+    "title": "South Carolina Council of Safety Minutes: Fort Sullivan, June-July 1776",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "Cited URL https://www.scdah.sc.gov/ returns ECONNREFUSED — www subdomain does not resolve.",
+      "Even if corrected, the URL is the institutional homepage, not a specific collection or digitized document.",
+      "The South Carolina Council of Safety did keep minutes and SCDAH does hold such records — the collection is plausible and the historical framing (Fort Sullivan, pre-rename) is accurate. However, the specific series cannot be verified from this URL.",
+      "No direct link to the Council of Safety minute books or a finding aid is provided."
+    ],
+    "recommendation": "Fix URL to scdah.sc.gov and provide a direct finding aid or catalog link to the Council of Safety minutes. The historical framing (Fort Sullivan rather than Fort Moultrie) is correct for June-July 1776 and should be retained."
+  },
+  {
+    "id": "src-guilford-courthouse-nc-pension-depositions",
+    "title": "Pension Applications: Guilford Courthouse Veterans, North Carolina and Virginia",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "Fold3 returns HTTP 403 Forbidden — subscription required; content cannot be verified.",
+      "The URL points to the entire Revolutionary War Pension collection; there is no curated sub-collection of 'Guilford Courthouse Veterans' at this URL. The title implies a filtered, named grouping that does not exist.",
+      "Pension applications are retrospective (filed decades after the 1781 battle); they are primary sources as firsthand testimony but not contemporaneous battlefield records. The tier-1 classification should reflect this distinction.",
+      "NARA is named as publisherOrHolder but access is gated through a private subscription platform (Fold3)."
+    ],
+    "recommendation": "Replace with the free NARA Catalog link (catalog.archives.gov) for the pension files. Retitle to remove the implication of a curated Guilford Courthouse sub-collection. Note the retrospective nature of pension testimonies."
+  },
+  {
+    "id": "src-guilford-courthouse-nc-nc-state-archives",
+    "title": "North Carolina State Archives: Military Collection, Revolutionary War, 1780-1781",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL loads as the North Carolina State Archives institutional homepage (archives.ncdcr.gov) — not a specific collection page or finding aid.",
+      "The title implies a named collection ('Military Collection, Revolutionary War, 1780-1781') that is not accessible or verifiable from the homepage. While NC State Archives does hold military records from this period, no direct link to this specific collection is provided.",
+      "No specific document, record group identifier, or finding aid URL is cited."
+    ],
+    "recommendation": "Replace the homepage URL with a direct link to the NC State Archives Military Collection finding aid or online catalog record. The institution and approximate collection type are plausible."
+  },
+  {
+    "id": "src-wilmington-nc-nc-state-archives",
+    "title": "North Carolina State Archives: New Hanover County Records and Governor's Papers,",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL loads as the NC State Archives institutional homepage, not a specific collection or finding aid.",
+      "The title is truncated — 'Governor's Papers,' with no date range or governor identified. Cannot determine what specific records are intended.",
+      "New Hanover County Records and Governor's Papers are distinct record groups; bundling them in a single citation suggests a collection-level or category-level reference, not a specific document.",
+      "No finding aid, record group ID, or direct collection URL is provided."
+    ],
+    "recommendation": "Supply complete title with date range and identify the relevant governor (e.g., Governor Burke or Governor Caswell for the relevant period). Provide separate citations for county records vs. governor's papers. Link to specific finding aids in NC State Archives catalog."
+  },
+  {
+    "id": "src-kings-mountain-nc-nc-state-archives-kings-mountain",
+    "title": "North Carolina State Archives: Surry and Wilkes County Militia Records, 1780",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL loads as the NC State Archives institutional homepage, not a specific collection page or finding aid.",
+      "The title implies a specific named series ('Surry and Wilkes County Militia Records, 1780') that cannot be verified from the homepage. NC State Archives does hold county-level militia records, but access requires specific finding-aid URLs.",
+      "No record group identifier, series number, or finding aid link is provided."
+    ],
+    "recommendation": "Locate and link to the specific NC State Archives finding aid for Surry County and Wilkes County militia records. The historical framing is appropriate — Overmountain Men from these counties participated at Kings Mountain — but the citation needs a specific, navigable URL."
+  },
+  {
+    "id": "src-new-bern-nc-provincial-congress-records",
+    "title": "North Carolina Provincial Congress: Proceedings and Journal, 1774-1776",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL loads as the NC State Archives institutional homepage, not a specific collection, digitized volume, or finding aid.",
+      "The North Carolina Provincial Congress Proceedings and Journals are real primary sources and NC State Archives does hold them. However, these proceedings have also been published and digitized in other locations; the citation should point to the specific volume or digitized resource.",
+      "Homepage URL is not actionable for citation or direct access."
+    ],
+    "recommendation": "Replace with a direct finding aid or digitized volume URL. Note: The Proceedings of the North Carolina Provincial Congresses have been published in the Colonial Records of North Carolina (Saunders, vols. 9-10), which may be freely accessible via digital collections. Provide the most direct and accessible URL."
+  },
+  {
+    "id": "src-savannah-ga-lincoln-siege-correspondence",
+    "title": "General Benjamin Lincoln: Correspondence during the Siege of Savannah, September",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL loads as the Massachusetts Historical Society homepage — not a specific finding aid, collection page, or digitized document for the Benjamin Lincoln Papers.",
+      "The title is truncated ('September' with no year — presumably September 1779 for the Siege of Savannah).",
+      "The MHS does hold the Benjamin Lincoln Papers (a real collection, MS N-1832), but the citation should link to the finding aid or the specific digitized correspondence, not the institutional homepage.",
+      "No finding aid number, collection identifier, or specific document URL is provided."
+    ],
+    "recommendation": "Replace URL with the MHS finding aid for the Benjamin Lincoln Papers (accessible via masshist.org/collection-guides). Correct the truncated title to include the year (September-October 1779). This is a genuinely strong primary source if properly cited."
+  },
+  {
+    "id": "src-savannah-ga-georgia-state-archives",
+    "title": "Georgia State Archives: Revolutionary War Records, 1776-1783",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL loads as the Georgia Archives institutional homepage — not a specific collection, series, or finding aid.",
+      "The title ('Revolutionary War Records, 1776-1783') is a generic category label, not a specific collection or document. The Georgia Archives does hold Revolutionary War-era records, but no specific record group or finding aid is identified.",
+      "No direct collection link, record group identifier, or finding aid is provided."
+    ],
+    "recommendation": "Replace with a direct link to Georgia Archives' Revolutionary War finding aids or Virtual Vault digitized records. Identify the specific record series (e.g., Georgia Revolutionary War Bounty Grants, Headright Grants, or militia records)."
+  },
+  {
+    "id": "src-new-haven-state-archives-council",
+    "title": "Connecticut Council of Safety Minutes, 1779",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://portal.ct.gov/SOTS/Collection-Detail-Pages/State-Archives returns HTTP 404 — the page does not exist at this path.",
+      "The Connecticut State Archives does exist under the Secretary of State (SOTS), and Connecticut Council of Safety records are real — but this specific URL is a dead link.",
+      "No working URL is provided for the Connecticut State Archives or for this specific collection.",
+      "Without a valid URL, the existence and content of the specific 'Connecticut Council of Safety Minutes, 1779' cannot be verified."
+    ],
+    "recommendation": "Find the current correct URL for the Connecticut State Archives (likely cslib.org/archives or a SOTS subpage). Locate the finding aid for the Council of Safety records. The Connecticut Council of Safety Minutes are a real primary source (held by the Connecticut State Library Archives), but this citation needs a correct, working URL."
+  },
+  {
+    "id": "src-augusta-ga-georgia-state-archives-augusta",
+    "title": "Georgia Archives: Richmond County Records and Georgia Executive Council Papers,",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL loads as the Georgia Archives institutional homepage — not a specific collection or finding aid.",
+      "The title is truncated — no date range is provided after the trailing comma.",
+      "Richmond County Records and Georgia Executive Council Papers are distinct record groups; bundling them in a single citation suggests a category-level reference rather than a specific document or series.",
+      "No record group identifier, finding aid, or direct collection URL is provided."
+    ],
+    "recommendation": "Provide complete title with date range. Separate Richmond County records from Executive Council Papers as distinct citations. Link to specific finding aids in the Georgia Archives catalog or Virtual Vault. Georgia Executive Council Papers (1778-1789) are a real and significant primary source if properly cited."
+  }
+]

@@ -1,0 +1,502 @@
+[
+  {
+    "id": "cmpdpfvcl000buh4zziu45l5a",
+    "table": "Source",
+    "url": "https://history.delaware.gov/2021/05/12/dover-green/",
+    "title": "https://history.delaware.gov/2021/05/12/dover-green/",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "dover-de",
+    "publisherOrHolder": "history.delaware.gov"
+  },
+  {
+    "id": "cmpdpfvcw000euh4zdyzusvk2",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/the-dover-green.htm",
+    "title": "https://www.nps.gov/places/the-dover-green.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "dover-de",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmpdpfvd6000huh4z0rxp6evg",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/caesar-rodney-statue.htm",
+    "title": "https://www.nps.gov/places/caesar-rodney-statue.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "dover-de",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmpdphy8f000muh4z7ytg0zaf",
+    "table": "Source",
+    "url": "https://www.georgiaencyclopedia.org/articles/history-archaeology/thomas-brown-1750-1825/",
+    "title": "https://www.georgiaencyclopedia.org/articles/history-archaeo",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "augusta-ga",
+    "publisherOrHolder": "www.georgiaencyclopedia.org"
+  },
+  {
+    "id": "cmpdphy9g000puh4zvv025kby",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/biographies/thomas-brown",
+    "title": "https://www.battlefields.org/learn/biographies/thomas-brown",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "augusta-ga",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmpdphy9t000suh4z6wk2lo1n",
+    "table": "Source",
+    "url": "https://www.scencyclopedia.org/sce/entries/brown-thomas/",
+    "title": "https://www.scencyclopedia.org/sce/entries/brown-thomas/",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "augusta-ga",
+    "publisherOrHolder": "www.scencyclopedia.org"
+  },
+  {
+    "id": "cmpf4tqnv0000ez88l0kds9aj",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/massachusetts-hall.htm",
+    "title": "https://www.nps.gov/places/massachusetts-hall.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "cambridge-ma",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmpf4tqom0003ez885ymu50kx",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/generals-and-staff-at-washingtons-cambridge-headquarters.htm",
+    "title": "https://www.nps.gov/articles/000/generals-and-staff-at-washi",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "cambridge-ma",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmpf4tqp10006ez88efe8p340",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/washingtons-cambridge-headquarters-and-the-memory-of-the-american-revolution.htm",
+    "title": "https://www.nps.gov/articles/000/washingtons-cambridge-headq",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "cambridge-ma",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmpf4vw54000bez884hybtrnw",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/concord-s-north-bridge.htm",
+    "title": "https://www.nps.gov/places/concord-s-north-bridge.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "concord-ma",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmpf4vw5v000eez880ddkvloi",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/biographies/james-barrett",
+    "title": "https://www.battlefields.org/learn/biographies/james-barrett",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "concord-ma",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmpf4vw6g000hez882e6zhu4q",
+    "table": "Source",
+    "url": "https://www.nps.gov/mima/learn/news/nps-discovers-nearly-250-year-old-musket-balls-from-shot-heard-round-the-world.htm",
+    "title": "https://www.nps.gov/mima/learn/news/nps-discovers-nearly-250",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "concord-ma",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmpf4xxk4000sez88npzbuz27",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/john-hannigan-patriots-of-color-paper-4.htm",
+    "title": "https://www.nps.gov/articles/000/john-hannigan-patriots-of-c",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "lexington-ma",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmpgk9ns80000lne0adv1ysgz",
+    "table": "Source",
+    "url": "https://www.history.navy.mil/research/underwater-archaeology/sites-and-projects/ship-wrecksites/penobscot-expedition-archaeological-project.html",
+    "title": "https://www.history.navy.mil/research/underwater-archaeology",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "castine-me",
+    "publisherOrHolder": "www.history.navy.mil"
+  },
+  {
+    "id": "cmpgk9nsz0003lne0dk6o6avh",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2019/08/the-penobscot-expedition-of-1779/",
+    "title": "https://allthingsliberty.com/2019/08/the-penobscot-expeditio",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "castine-me",
+    "publisherOrHolder": "allthingsliberty.com"
+  },
+  {
+    "id": "cmpgk9ntc0006lne0nhvnp3i1",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/penobscot-expedition",
+    "title": "https://www.battlefields.org/learn/revolutionary-war/battles",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "castine-me",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmpgkbrwa000blne0hnm7jxkw",
+    "table": "Source",
+    "url": "https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/elizabethtown-new-jersey",
+    "title": "https://www.encyclopedia.com/history/encyclopedias-almanacs-",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "elizabeth-nj",
+    "publisherOrHolder": "www.encyclopedia.com"
+  },
+  {
+    "id": "cmpgkbrx7000elne01eid6xyj",
+    "table": "Source",
+    "url": "https://ucnj.org/parks-recreation/the-last-invasion-historic-trail/",
+    "title": "https://ucnj.org/parks-recreation/the-last-invasion-historic",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "elizabeth-nj",
+    "publisherOrHolder": "ucnj.org"
+  },
+  {
+    "id": "cmpgkbrxl000hlne0bftnw5ew",
+    "table": "Source",
+    "url": "https://www.revolutionary-war-and-beyond.com/presbyterian-church-burned-elizabethtown-new-jersey.html",
+    "title": "https://www.revolutionary-war-and-beyond.com/presbyterian-ch",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "elizabeth-nj",
+    "publisherOrHolder": "www.revolutionary-war-and-beyond.com"
+  },
+  {
+    "id": "cmphzpuwp0000i4sidi2otwgk",
+    "table": "Source",
+    "url": "https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/fort-lee-new-jersey",
+    "title": "https://www.encyclopedia.com/history/encyclopedias-almanacs-",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "fort-lee-nj",
+    "publisherOrHolder": "www.encyclopedia.com"
+  },
+  {
+    "id": "cmphzpuxg0003i4siqok6xm0c",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/fort-lee",
+    "title": "https://www.battlefields.org/learn/revolutionary-war/battles",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "fort-lee-nj",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmphzpuxx0006i4sic2yi5ms6",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/forts-washington-and-lee",
+    "title": "https://www.battlefields.org/learn/articles/forts-washington",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "fort-lee-nj",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmphzryt6000bi4sik7vh9cja",
+    "table": "Source",
+    "url": "https://www.revolutionarywarnewjersey.com/new_jersey_revolutionary_war_sites/towns/hackensack_nj_revolutionary_war_sites.htm",
+    "title": "https://www.revolutionarywarnewjersey.com/new_jersey_revolut",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "hackensack-nj",
+    "publisherOrHolder": "www.revolutionarywarnewjersey.com"
+  },
+  {
+    "id": "cmphzrytw000ei4si6b154u4w",
+    "table": "Source",
+    "url": "https://www.bergencountyhistory.org/newbridge-revwar",
+    "title": "https://www.bergencountyhistory.org/newbridge-revwar",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "hackensack-nj",
+    "publisherOrHolder": "www.bergencountyhistory.org"
+  },
+  {
+    "id": "cmphzryua000hi4sio9cg953d",
+    "table": "Source",
+    "url": "https://bergencountynj.gov/tourism/discovering-history/revolutionary-war-sites-in-bergen-county/",
+    "title": "https://bergencountynj.gov/tourism/discovering-history/revol",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "hackensack-nj",
+    "publisherOrHolder": "bergencountynj.gov"
+  },
+  {
+    "id": "cmpjf52830000dqjhk9fovxel",
+    "table": "Source",
+    "url": "https://www.revolutionarywarnewjersey.com/new_jersey_revolutionary_war_sites/towns/new_brunswick_nj_revolutionary_war_sites.htm",
+    "title": "https://www.revolutionarywarnewjersey.com/new_jersey_revolut",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "new-brunswick-nj",
+    "publisherOrHolder": "www.revolutionarywarnewjersey.com"
+  },
+  {
+    "id": "cmpjf528y0003dqjhdm6xeo77",
+    "table": "Source",
+    "url": "https://www.hmdb.org/m.asp?m=208921",
+    "title": "https://www.hmdb.org/m.asp?m=208921",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "new-brunswick-nj",
+    "publisherOrHolder": "www.hmdb.org"
+  },
+  {
+    "id": "cmpjf529c0006dqjhopo6e08w",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2018/01/baptism-fire-brunswick-new-jersey-june-1777/",
+    "title": "https://allthingsliberty.com/2018/01/baptism-fire-brunswick-",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "new-brunswick-nj",
+    "publisherOrHolder": "allthingsliberty.com"
+  },
+  {
+    "id": "cmpjf768t000bdqjh3r4sfd2d",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2014/08/the-american-revolution-comes-to-albany-new-york-1756-1776/",
+    "title": "https://allthingsliberty.com/2014/08/the-american-revolution",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "albany-ny",
+    "publisherOrHolder": "allthingsliberty.com"
+  },
+  {
+    "id": "cmpjf769j000edqjhm0kbnfs3",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/History_of_Albany",
+    "title": "https://en.wikipedia.org/wiki/History_of_Albany",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "albany-ny",
+    "publisherOrHolder": "en.wikipedia.org"
+  },
+  {
+    "id": "cmpjf769v000hdqjhy34onhip",
+    "table": "Source",
+    "url": "https://www.newyorkalmanack.com/2022/03/revolutionary-albany-the-battles-of-saratoga-loyalist-opposition/",
+    "title": "https://www.newyorkalmanack.com/2022/03/revolutionary-albany",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "albany-ny",
+    "publisherOrHolder": "www.newyorkalmanack.com"
+  },
+  {
+    "id": "cmpjf9d33000mdqjhclhzhzn3",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/where-the-battle-of-harlem-heights-began.htm",
+    "title": "https://www.nps.gov/places/where-the-battle-of-harlem-height",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "harlem-heights-ny",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmpjf9d3i000pdqjhpgqfj1y8",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/battle-of-harlem-heights-plaque.htm",
+    "title": "https://www.nps.gov/places/battle-of-harlem-heights-plaque.h",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "harlem-heights-ny",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmpjf9d3u000sdqjhbnw4kd46",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/battle-of-harlem-heights",
+    "title": "https://www.mountvernon.org/library/digitalhistory/digital-e",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "harlem-heights-ny",
+    "publisherOrHolder": "www.mountvernon.org"
+  },
+  {
+    "id": "cmpkul1wd0000c57roevpmqda",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/bowling-green.htm",
+    "title": "https://www.nps.gov/places/bowling-green.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "new-york-city-ny",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmpkul1x90003c57rvqonpr1l",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/british-occupation-of-new-york-city",
+    "title": "https://www.mountvernon.org/library/digitalhistory/digital-e",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "new-york-city-ny",
+    "publisherOrHolder": "www.mountvernon.org"
+  },
+  {
+    "id": "cmpkul1xn0006c57rruizphn6",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/culper-spy-ring",
+    "title": "https://www.mountvernon.org/library/digitalhistory/digital-e",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "new-york-city-ny",
+    "publisherOrHolder": "www.mountvernon.org"
+  },
+  {
+    "id": "cmpkuncuo000dc57rgs6xgli8",
+    "table": "Source",
+    "url": "https://www.sos.ri.gov/divisions/civics-and-education/for-educators/themed-collections/american-revolution",
+    "title": "https://www.sos.ri.gov/divisions/civics-and-education/for-ed",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "providence-ri",
+    "publisherOrHolder": "www.sos.ri.gov"
+  },
+  {
+    "id": "cmpkuncv6000gc57r1xu41z1j",
+    "table": "Source",
+    "url": "https://www.history.navy.mil/browse-by-topic/people/historical-figures/esek-hopkins.html",
+    "title": "https://www.history.navy.mil/browse-by-topic/people/historic",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "providence-ri",
+    "publisherOrHolder": "www.history.navy.mil"
+  },
+  {
+    "id": "cmpma132i0000ftl1xxdftdoc",
+    "table": "Source",
+    "url": "https://www.britannica.com/event/Battle-of-Camden-1780",
+    "title": "https://www.britannica.com/event/Battle-of-Camden-1780",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "camden-sc",
+    "publisherOrHolder": "www.britannica.com"
+  },
+  {
+    "id": "cmpma13360003ftl18stk4n6k",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Johann_de_Kalb",
+    "title": "https://en.wikipedia.org/wiki/Johann_de_Kalb",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "camden-sc",
+    "publisherOrHolder": "en.wikipedia.org"
+  },
+  {
+    "id": "cmpma31fk0008ftl1ecjemo2s",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/battle-of-sullivan-s-island.htm",
+    "title": "https://www.nps.gov/articles/battle-of-sullivan-s-island.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "fort-moultrie-sc",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmpma31fs000bftl1z39xsvai",
+    "table": "Source",
+    "url": "https://www.scencyclopedia.org/sce/entries/sullivan%C2%92s-island-battle-of/",
+    "title": "https://www.scencyclopedia.org/sce/entries/sullivan%C2%92s-i",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "fort-moultrie-sc",
+    "publisherOrHolder": "www.scencyclopedia.org"
+  },
+  {
+    "id": "cmpma31g0000eftl16q8cv70g",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2023/05/danger-at-the-beach/",
+    "title": "https://allthingsliberty.com/2023/05/danger-at-the-beach/",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "fort-moultrie-sc",
+    "publisherOrHolder": "allthingsliberty.com"
+  },
+  {
+    "id": "cmpnpgx0a00008vsqidvxmxib",
+    "table": "Source",
+    "url": "https://encyclopediavirginia.org/entries/fairfax-resolves/",
+    "title": "https://encyclopediavirginia.org/entries/fairfax-resolves/",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "alexandria-va",
+    "publisherOrHolder": "encyclopediavirginia.org"
+  },
+  {
+    "id": "cmpnpgx1c00038vsqi42f3ngt",
+    "table": "Source",
+    "url": "https://founders.archives.gov/documents/Washington/02-10-02-0080",
+    "title": "https://founders.archives.gov/documents/Washington/02-10-02-",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "alexandria-va",
+    "publisherOrHolder": "founders.archives.gov"
+  },
+  {
+    "id": "cmpnpgx1n00068vsqzy1yhb12",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2020/10/the-american-revolution-in-alexandria-virginia-upheaval-in-george-washingtons-hometown/",
+    "title": "https://allthingsliberty.com/2020/10/the-american-revolution",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "alexandria-va",
+    "publisherOrHolder": "allthingsliberty.com"
+  },
+  {
+    "id": "cmpnpj5vp000b8vsqo5d0g5nc",
+    "table": "Source",
+    "url": "https://encyclopediavirginia.org/entries/the-burning-of-norfolk/",
+    "title": "https://encyclopediavirginia.org/entries/the-burning-of-norf",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "norfolk-va",
+    "publisherOrHolder": "encyclopediavirginia.org"
+  },
+  {
+    "id": "cmpp4winx0000hj1wsrxim3tv",
+    "table": "Source",
+    "url": "https://encyclopediavirginia.org/entries/williamsburg-during-the-colonial-period/",
+    "title": "https://encyclopediavirginia.org/entries/williamsburg-during",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "williamsburg-va",
+    "publisherOrHolder": "encyclopediavirginia.org"
+  },
+  {
+    "id": "cmpp4wioj0003hj1w9aixr21v",
+    "table": "Source",
+    "url": "https://encyclopediavirginia.org/entries/the-gunpowder-incident/",
+    "title": "https://encyclopediavirginia.org/entries/the-gunpowder-incid",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "williamsburg-va",
+    "publisherOrHolder": "encyclopediavirginia.org"
+  }
+]

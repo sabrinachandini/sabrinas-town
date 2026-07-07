@@ -1,0 +1,452 @@
+[
+  {
+    "id": "cmp29x9mi000bef4in2ggvsnq",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/philadelphia-campaign-1777.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/philadelphia-campaign-1777.htm"
+  },
+  {
+    "id": "cmp29x9nf000eef4i1jcd43mm",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/battle-of-germantown",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/battle-of-germantown"
+  },
+  {
+    "id": "cmp29x9nu000hef4igrwbmvsh",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/germantown",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/germantown"
+  },
+  {
+    "id": "cmp3pap4k0000th4bdlfe1wgi",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/paoli",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/paoli"
+  },
+  {
+    "id": "cmp3pap5k0003th4bgmghwyjw",
+    "table": "Source",
+    "url": "https://www.nps.gov/people/anthony-wayne.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/people/anthony-wayne.htm"
+  },
+  {
+    "id": "cmp3pcz2q000ath4bqo1qnz3g",
+    "table": "Source",
+    "url": "https://philadelphiaencyclopedia.org/essays/british-occupation-of-philadelphia/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://philadelphiaencyclopedia.org/essays/british-occupation-of-philadelphia/"
+  },
+  {
+    "id": "cmp3pcz31000dth4bpsnlczba",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/heart-revolution-philadelphia-during-war-independence",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/articles/heart-revolution-philadelphia-during-war-independence"
+  },
+  {
+    "id": "cmp3pf2ix000ith4bsvqmgiz5",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/valley-forge-encampment",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/articles/valley-forge-encampment"
+  },
+  {
+    "id": "cmp3pf2ju000lth4bb91jkx90",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/winter-valley-forge",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/articles/winter-valley-forge"
+  },
+  {
+    "id": "cmp3pf2k9000oth4by1tiviqc",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/alliance-day",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/articles/alliance-day"
+  },
+  {
+    "id": "cmp54qju00000nhebz8ugj08c",
+    "table": "Source",
+    "url": "https://www.achp.gov/preserve-america/community/york-pennsylvania",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.achp.gov/preserve-america/community/york-pennsylvania"
+  },
+  {
+    "id": "cmp54sp2l000enhebm5i9zhuo",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/life-liberty-and-the-moral-dilemma-of-slavery-uncovering-the-history-of-rhode-island-s-black-soldiers-during-the-american-revolution.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/life-liberty-and-the-moral-dilemma-of-slavery-uncovering-the-history-of-rhode-island-s-black-soldiers-during-the-american-revolution.htm"
+  },
+  {
+    "id": "cmp54sp2z000hnhebhahqb4gx",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/weathering-storm-battle-rhode-island",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/articles/weathering-storm-battle-rhode-island"
+  },
+  {
+    "id": "cmp6k6hr50000dkr3zmdkubxl",
+    "table": "Source",
+    "url": "https://www.scencyclopedia.org/sce/entries/beaufort/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.scencyclopedia.org/sce/entries/beaufort/"
+  },
+  {
+    "id": "cmp6k6hru0003dkr3oav2b6vq",
+    "table": "Source",
+    "url": "https://www.scencyclopedia.org/sce/entries/beaufort-county/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.scencyclopedia.org/sce/entries/beaufort-county/"
+  },
+  {
+    "id": "cmp6k6hs50006dkr3ycs7t4nm",
+    "table": "Source",
+    "url": "https://www.scencyclopedia.org/sce/entries/port-royal-island-battle-of/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.scencyclopedia.org/sce/entries/port-royal-island-battle-of/"
+  },
+  {
+    "id": "cmp6k8sd3000bdkr3cklnxkiw",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/siege-of-charleston-1780.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/siege-of-charleston-1780.htm"
+  },
+  {
+    "id": "cmp6k8sdr000edkr3jhu14kji",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/british-evacuation-of-charleston.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/british-evacuation-of-charleston.htm"
+  },
+  {
+    "id": "cmp6k8se2000hdkr3qc5s8tbc",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/charleston-community-history.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/charleston-community-history.htm"
+  },
+  {
+    "id": "cmp7zmcvy00007fq73p2rp769",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/battle-of-cowpens.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/battle-of-cowpens.htm"
+  },
+  {
+    "id": "cmp7zmcwj00037fq7x5p8k7s4",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/washington-light-infantry-monument.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/washington-light-infantry-monument.htm"
+  },
+  {
+    "id": "cmp7zo8ha00087fq7f4hk3w8j",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2023/05/eutaw-springs-and-the-ambiguity-of-victory/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2023/05/eutaw-springs-and-the-ambiguity-of-victory/"
+  },
+  {
+    "id": "cmp7zo8hi000b7fq7l6fcjz9k",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/battle-eutaw-springs",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/battle-eutaw-springs"
+  },
+  {
+    "id": "cmp7zo8hq000e7fq702i3ozqd",
+    "table": "Source",
+    "url": "https://americanhistory.si.edu/collections/object/nmah_1097423",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://americanhistory.si.edu/collections/object/nmah_1097423"
+  },
+  {
+    "id": "cmp7zqep1000j7fq7pwjhgn4o",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/hobkirk-hill-blag.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/hobkirk-hill-blag.htm"
+  },
+  {
+    "id": "cmp7zqepp000m7fq7fkgjajev",
+    "table": "Source",
+    "url": "https://www.scbattlegroundtrust.org/revolutionary-war-gaol-site-acquired-for-permanent-protection",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.scbattlegroundtrust.org/revolutionary-war-gaol-site-acquired-for-permanent-protection"
+  },
+  {
+    "id": "cmp7zqepx000p7fq7c8jerc7k",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/hobkirk-hill",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/hobkirk-hill"
+  },
+  {
+    "id": "cmp9f2ehq000011bgztu9djty",
+    "table": "Source",
+    "url": "https://www.nps.gov/nisi/learn/historyculture/birmingham.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/nisi/learn/historyculture/birmingham.htm"
+  },
+  {
+    "id": "cmp9f2eij000311bgvu9hvyhi",
+    "table": "Source",
+    "url": "https://www.scencyclopedia.org/sce/entries/ninety-six-battles-of/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.scencyclopedia.org/sce/entries/ninety-six-battles-of/"
+  },
+  {
+    "id": "cmp9f4kj5000811bgo1nqja9d",
+    "table": "Source",
+    "url": "https://encyclopediavirginia.org/entries/jack-jouetts-ride-1781/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://encyclopediavirginia.org/entries/jack-jouetts-ride-1781/"
+  },
+  {
+    "id": "cmp9f4kk0000b11bgxnqfkgyc",
+    "table": "Source",
+    "url": "https://encyclopediavirginia.org/entries/the-albemarle-barracks/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://encyclopediavirginia.org/entries/the-albemarle-barracks/"
+  },
+  {
+    "id": "cmp9f4kkc000e11bg6t9geuie",
+    "table": "Source",
+    "url": "https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/charlottesville-raid-virginia",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/charlottesville-raid-virginia"
+  },
+  {
+    "id": "cmpauhz160000m35woq7xqkog",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/echoes-revolutionary-fredericksburg",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/articles/echoes-revolutionary-fredericksburg"
+  },
+  {
+    "id": "cmpauhz210003m35wxhohx1sm",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/hugh-mercers-fredericksburg",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/articles/hugh-mercers-fredericksburg"
+  },
+  {
+    "id": "cmpauhz2f0006m35wi0c0u14q",
+    "table": "Source",
+    "url": "https://encyclopediavirginia.org/entries/mercer-hugh-1725-1777",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://encyclopediavirginia.org/entries/mercer-hugh-1725-1777"
+  },
+  {
+    "id": "cmpauk48b000bm35w7o3oweg5",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/george-washington/slavery/resistance-and-punishment/savage",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mountvernon.org/george-washington/slavery/resistance-and-punishment/savage"
+  },
+  {
+    "id": "cmpauk498000em35w3n4t0fk0",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/h-m-s-savage",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/h-m-s-savage"
+  },
+  {
+    "id": "cmpaumc4a000sm35wtyeucw2y",
+    "table": "Source",
+    "url": "https://encyclopediavirginia.org/entries/virginia-statute-for-establishing-religious-freedom-1786/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://encyclopediavirginia.org/entries/virginia-statute-for-establishing-religious-freedom-1786/"
+  },
+  {
+    "id": "cmpc9xwxm0000szcw2w3oox1n",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/yorktown",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/yorktown"
+  },
+  {
+    "id": "cmpc9xwy70003szcwf1fzg0fi",
+    "table": "Source",
+    "url": "https://americanhistory.si.edu/explore/exhibitions/american-revolution-world-war/online/yorktown/bombarding-yorktown",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://americanhistory.si.edu/explore/exhibitions/american-revolution-world-war/online/yorktown/bombarding-yorktown"
+  },
+  {
+    "id": "cmpc9xwyi0006szcwxmdpbuml",
+    "table": "Source",
+    "url": "https://www.armyheritage.org/soldier-stories-information/let-freedom-ring-the-battle-of-yorktown/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.armyheritage.org/soldier-stories-information/let-freedom-ring-the-battle-of-yorktown/"
+  },
+  {
+    "id": "cmpca00z2000bszcwdtaqx4c8",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/the-battle-of-bennington-an-american-victory-teaching-with-historic-places.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/the-battle-of-bennington-an-american-victory-teaching-with-historic-places.htm"
+  },
+  {
+    "id": "cmpca00zq000eszcwtbie8i4n",
+    "table": "Source",
+    "url": "https://historicsites.vermont.gov/bennington-battle/research",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://historicsites.vermont.gov/bennington-battle/research"
+  },
+  {
+    "id": "cmpca0104000hszcwshyemfov",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/bennington",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/bennington"
+  },
+  {
+    "id": "cmpca27t8000mszcw9cjwjl1w",
+    "table": "Source",
+    "url": "https://www.reformer.com/local-news/the-long-battle-for-independence/article_6feccc86-4b08-503f-8244-536c8734e37a.html",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.reformer.com/local-news/the-long-battle-for-independence/article_6feccc86-4b08-503f-8244-536c8734e37a.html"
+  },
+  {
+    "id": "cmpca27tk000pszcww7mazpme",
+    "table": "Source",
+    "url": "https://www.reformer.com/community-news/brattleborough-was-home-to-spies-and-double-agents-during-revoluntionary-war/article_ef14b530-5f69-11ec-8eba-ff384fb60a30.html",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.reformer.com/community-news/brattleborough-was-home-to-spies-and-double-agents-during-revoluntionary-war/article_ef14b530-5f69-11ec-8eba-ff384fb60a30.html"
+  },
+  {
+    "id": "cmpca27tu000sszcwqwtw6yiv",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Westminster_Massacre",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Westminster_Massacre"
+  },
+  {
+    "id": "cmpdpdukd0000uh4z8tgot44i",
+    "table": "Source",
+    "url": "https://www.wvencyclopedia.org/entries/1986",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.wvencyclopedia.org/entries/1986"
+  },
+  {
+    "id": "cmpdpdul40003uh4zcomyk97e",
+    "table": "Source",
+    "url": "https://www.wvencyclopedia.org/entries/59",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.wvencyclopedia.org/entries/59"
+  },
+  {
+    "id": "cmpdpdule0006uh4zfv8zmwxc",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2020/01/betty-zane-and-the-siege-of-fort-henry-september-1782/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2020/01/betty-zane-and-the-siege-of-fort-henry-september-1782/"
+  }
+]

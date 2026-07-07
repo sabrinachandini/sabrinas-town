@@ -1,0 +1,452 @@
+[
+  {
+    "id": "src-charleston-sc-lincoln-capitulation",
+    "table": "Source",
+    "url": "https://www.archives.gov/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.archives.gov/"
+  },
+  {
+    "id": "src-charleston-sc-lincoln-siege-journal",
+    "table": "Source",
+    "url": "https://www.masshist.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.masshist.org/"
+  },
+  {
+    "id": "src-charleston-sc-schs-collections",
+    "table": "Source",
+    "url": "https://www.southcarolinahistoricalsociety.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://schistory.org/"
+  },
+  {
+    "id": "src-charleston-sc-nps-fort-sumter-and-moultrie",
+    "table": "Source",
+    "url": "https://www.nps.gov/fosu/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/fosu/index.htm"
+  },
+  {
+    "id": "src-charleston-sc-sc-state-archives",
+    "table": "Source",
+    "url": "https://www.scdah.sc.gov/",
+    "status": 0,
+    "ok": false,
+    "issue": "connection error",
+    "finalUrl": "https://www.scdah.sc.gov/"
+  },
+  {
+    "id": "src-charleston-sc-museum-charleston",
+    "table": "Source",
+    "url": "https://www.charlestonmuseum.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.charlestonmuseum.org/"
+  },
+  {
+    "id": "src-charleston-sc-wikipedia-siege-1780",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Siege_of_Charleston_(1780)",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Siege_of_Charleston_(1780)"
+  },
+  {
+    "id": "src-charleston-sc-preservation-society",
+    "table": "Source",
+    "url": "https://www.preservationsociety.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.preservationsociety.org/"
+  },
+  {
+    "id": "src-charleston-sc-visitch",
+    "table": "Source",
+    "url": "https://www.explorecharleston.com/history/revolutionary-war/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.charlestoncvb.com/history/revolutionary-war/"
+  },
+  {
+    "id": "src-camden-sc-nps-historic-camden",
+    "table": "Source",
+    "url": "https://www.historiccamden.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.historiccamden.org/"
+  },
+  {
+    "id": "src-camden-sc-sc-state-archives-camden",
+    "table": "Source",
+    "url": "https://www.scdah.sc.gov/",
+    "status": 0,
+    "ok": false,
+    "issue": "connection error",
+    "finalUrl": "https://www.scdah.sc.gov/"
+  },
+  {
+    "id": "src-camden-sc-south-carolina-hist-mag",
+    "table": "Source",
+    "url": "https://www.southcarolinahistoricalsociety.org/publications/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.southcarolinahistoricalsociety.org/publications/"
+  },
+  {
+    "id": "src-camden-sc-wikipedia-battle",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Camden",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battle_of_Camden"
+  },
+  {
+    "id": "src-cowpens-sc-eyewitness-depositions",
+    "table": "Source",
+    "url": "https://www.fold3.com/title/452/revolutionary-war-pension-and-bounty-land-warrant-application-files",
+    "status": 200,
+    "ok": false,
+    "issue": "redirects to homepage",
+    "finalUrl": "https://www.fold3.com/publication/452/us-photos-coolidge-1917-1943"
+  },
+  {
+    "id": "src-cowpens-sc-schs-cowpens-research",
+    "table": "Source",
+    "url": "https://www.southcarolinahistoricalsociety.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://schistory.org/"
+  },
+  {
+    "id": "src-cowpens-sc-american-battlefield-trust",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/cowpens",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/cowpens"
+  },
+  {
+    "id": "src-cowpens-sc-wikipedia-battle",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Cowpens",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battle_of_Cowpens"
+  },
+  {
+    "id": "src-cowpens-sc-nps-visitor",
+    "table": "Source",
+    "url": "https://www.nps.gov/cowp/planyourvisit/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/cowp/planyourvisit/index.htm"
+  },
+  {
+    "id": "src-ninety-six-sc-nps-site",
+    "table": "Source",
+    "url": "https://www.nps.gov/nisi/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/nisi/index.htm"
+  },
+  {
+    "id": "src-ninety-six-sc-sc-state-archives-backcountry",
+    "table": "Source",
+    "url": "https://www.scdah.sc.gov/",
+    "status": 0,
+    "ok": false,
+    "issue": "connection error",
+    "finalUrl": "https://www.scdah.sc.gov/"
+  },
+  {
+    "id": "src-cowpens-sc-nps-battlefield",
+    "table": "Source",
+    "url": "https://www.nps.gov/cowp/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/cowp/index.htm"
+  },
+  {
+    "id": "src-ninety-six-sc-american-battlefield-trust-nsi",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/ninety-six",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/ninety-six"
+  },
+  {
+    "id": "src-ninety-six-sc-usc-library-backcountry",
+    "table": "Source",
+    "url": "https://library.sc.edu/p/Collections/SCL",
+    "status": 200,
+    "ok": false,
+    "issue": "redirects to homepage",
+    "finalUrl": "https://www.sc.edu/about/offices_and_divisions/university_libraries/"
+  },
+  {
+    "id": "src-ninety-six-sc-wikipedia-siege",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Siege_of_Ninety_Six",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Siege_of_Ninety_Six"
+  },
+  {
+    "id": "src-ninety-six-sc-nps-visitor-guide",
+    "table": "Source",
+    "url": "https://www.nps.gov/nisi/planyourvisit/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/nisi/planyourvisit/index.htm"
+  },
+  {
+    "id": "src-eutaw-springs-sc-sc-state-archives",
+    "table": "Source",
+    "url": "https://www.scdah.sc.gov/",
+    "status": 0,
+    "ok": false,
+    "issue": "connection error",
+    "finalUrl": "https://www.scdah.sc.gov/"
+  },
+  {
+    "id": "src-eutaw-springs-sc-american-battlefield-trust-listing",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/eutaw-springs",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/eutaw-springs"
+  },
+  {
+    "id": "src-eutaw-springs-sc-wikipedia-battle",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Eutaw_Springs",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battle_of_Eutaw_Springs"
+  },
+  {
+    "id": "src-beaufort-sc-nps-gullah-geechee",
+    "table": "Source",
+    "url": "https://www.nps.gov/guge/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/places/gullah-geechee-cultural-heritage-corridor.htm"
+  },
+  {
+    "id": "src-beaufort-sc-beaufort-museum",
+    "table": "Source",
+    "url": "https://www.beauforthistorymuseum.com/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://beauforthistorymuseum.wildapricot.org/"
+  },
+  {
+    "id": "src-beaufort-sc-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Beaufort,_South_Carolina",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Beaufort,_South_Carolina"
+  },
+  {
+    "id": "src-beaufort-sc-visit-beaufort",
+    "table": "Source",
+    "url": "https://www.beaufortsc.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.beaufortsc.org/"
+  },
+  {
+    "id": "src-hobkirks-hill-sc-nps-historic-camden-hobkirks",
+    "table": "Source",
+    "url": "https://www.historiccamden.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.historiccamden.org/"
+  },
+  {
+    "id": "cmp54sp1j000bnhebx06y92ct",
+    "table": "Source",
+    "url": "https://battleofrhodeisland.org/occupation-newport/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://battleofrhodeisland.org/occupation-newport/"
+  },
+  {
+    "id": "cmpaumc3w000pm35w06lm5ldj",
+    "table": "Source",
+    "url": "https://encyclopediavirginia.org/entries/benedict-arnolds-raid-on-virginia/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://encyclopediavirginia.org/entries/benedict-arnolds-raid-on-virginia/"
+  },
+  {
+    "id": "src-hobkirks-hill-sc-american-battlefield-trust-hh",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/hobkirks-hill",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/hobkirks-hill"
+  },
+  {
+    "id": "src-hobkirks-hill-sc-wikipedia-battle",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Hobkirk%27s_Hill",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battle_of_Hobkirk%27s_Hill"
+  },
+  {
+    "id": "src-hobkirks-hill-sc-historic-camden-visit",
+    "table": "Source",
+    "url": "https://www.historiccamden.org/plan-your-visit",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.historiccamden.org/plan-your-visit"
+  },
+  {
+    "id": "src-fort-moultrie-sc-nps-fort-moultrie",
+    "table": "Source",
+    "url": "https://www.nps.gov/fosu/learn/historyculture/fort-moultrie.htm",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/fosu/learn/historyculture/fort-moultrie.htm"
+  },
+  {
+    "id": "src-fort-moultrie-sc-sc-state-archives-1776",
+    "table": "Source",
+    "url": "https://www.scdah.sc.gov/",
+    "status": 0,
+    "ok": false,
+    "issue": "connection error",
+    "finalUrl": "https://www.scdah.sc.gov/"
+  },
+  {
+    "id": "src-fort-moultrie-sc-american-battlefield-trust-fm",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/sullivan%27s-island",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/sullivan%27s-island"
+  },
+  {
+    "id": "src-fort-moultrie-sc-carolina-historical-assoc",
+    "table": "Source",
+    "url": "https://www.southcarolinahistoricalsociety.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://schistory.org/"
+  },
+  {
+    "id": "src-fort-moultrie-sc-wikipedia-battle",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Sullivan%27s_Island",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battle_of_Sullivan%27s_Island"
+  },
+  {
+    "id": "src-fort-moultrie-sc-nps-visitor-guide",
+    "table": "Source",
+    "url": "https://www.nps.gov/fosu/planyourvisit/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/fosu/planyourvisit/index.htm"
+  },
+  {
+    "id": "src-guilford-courthouse-nc-pension-depositions",
+    "table": "Source",
+    "url": "https://www.fold3.com/title/452/revolutionary-war-pension-and-bounty-land-warrant-application-files",
+    "status": 200,
+    "ok": false,
+    "issue": "redirects to homepage",
+    "finalUrl": "https://www.fold3.com/publication/452/us-photos-coolidge-1917-1943"
+  },
+  {
+    "id": "src-guilford-courthouse-nc-nc-state-archives",
+    "table": "Source",
+    "url": "https://www.archives.ncdcr.gov/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://archives.ncdcr.gov/"
+  },
+  {
+    "id": "src-guilford-courthouse-nc-historical-assoc-nc",
+    "table": "Source",
+    "url": "https://www.ncdcr.gov/about/history/north-carolina-historical-review",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.dncr.nc.gov/about/history/north-carolina-historical-review"
+  },
+  {
+    "id": "src-guilford-courthouse-nc-american-battlefield-trust",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/guilford-court-house",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/guilford-court-house"
+  },
+  {
+    "id": "src-guilford-courthouse-nc-wikipedia-battle",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Guilford_Court_House",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battle_of_Guilford_Court_House"
+  },
+  {
+    "id": "src-guilford-courthouse-nc-nps-visitor",
+    "table": "Source",
+    "url": "https://www.nps.gov/guco/planyourvisit/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/guco/planyourvisit/index.htm"
+  }
+]

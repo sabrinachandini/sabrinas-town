@@ -1,0 +1,502 @@
+[
+  {
+    "id": "cmoquf88o000b12nplq9mlrqe",
+    "table": "Source",
+    "url": "https://www.ncpedia.org/biography/stanly-john-wright",
+    "title": "https://www.ncpedia.org/biography/stanly-john-wright",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "new-bern-nc",
+    "publisherOrHolder": "www.ncpedia.org"
+  },
+  {
+    "id": "cmos9sij7000012qjrw1c2ate",
+    "table": "Source",
+    "url": "https://www.ncpedia.org/wilmington-campaign-1781",
+    "title": "https://www.ncpedia.org/wilmington-campaign-1781",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "wilmington-nc",
+    "publisherOrHolder": "www.ncpedia.org"
+  },
+  {
+    "id": "cmos9sijt000312qjlcf1ifmh",
+    "table": "Source",
+    "url": "https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/wilmington-north-carolina",
+    "title": "https://www.encyclopedia.com/history/encyclopedias-almanacs-",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "wilmington-nc",
+    "publisherOrHolder": "www.encyclopedia.com"
+  },
+  {
+    "id": "cmos9sik7000612qjm4pu47gx",
+    "table": "Source",
+    "url": "https://amrevnc.com/wilmington/",
+    "title": "https://amrevnc.com/wilmington/",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "wilmington-nc",
+    "publisherOrHolder": "amrevnc.com"
+  },
+  {
+    "id": "cmos9ujcz000b12qjiw0ecfc1",
+    "table": "Source",
+    "url": "https://www.exeterhistory.org/historically-speaking/revolutionary-war-capital",
+    "title": "https://www.exeterhistory.org/historically-speaking/revoluti",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "exeter-nh",
+    "publisherOrHolder": "www.exeterhistory.org"
+  },
+  {
+    "id": "cmos9ujdu000e12qj55l8ifdw",
+    "table": "Source",
+    "url": "https://www.exeterhistory.org/exeter-history/2016/6/24/early-exeter-history-1638-1887",
+    "title": "https://www.exeterhistory.org/exeter-history/2016/6/24/early",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "exeter-nh",
+    "publisherOrHolder": "www.exeterhistory.org"
+  },
+  {
+    "id": "cmos9uje7000h12qjs15buqyj",
+    "table": "Source",
+    "url": "https://www.yahoo.com/lifestyle/articles/revolutionary-era-committee-met-exeter-100149193.html",
+    "title": "https://www.yahoo.com/lifestyle/articles/revolutionary-era-c",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "exeter-nh",
+    "publisherOrHolder": "www.yahoo.com"
+  },
+  {
+    "id": "cmotp7ujd00002hy6yrusdq84",
+    "table": "Source",
+    "url": "https://nhsar.org/the-raid-on-fort-william-and-mary-in-1774/",
+    "title": "https://nhsar.org/the-raid-on-fort-william-and-mary-in-1774/",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "portsmouth-nh",
+    "publisherOrHolder": "nhsar.org"
+  },
+  {
+    "id": "cmotp7uk100032hy6ljed8mmf",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Capture_of_Fort_William_and_Mary",
+    "title": "https://en.wikipedia.org/wiki/Capture_of_Fort_William_and_Ma",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "portsmouth-nh",
+    "publisherOrHolder": "en.wikipedia.org"
+  },
+  {
+    "id": "cmotp7ukb00062hy6u5sa9v4m",
+    "table": "Source",
+    "url": "https://exhibits.nhd.uscourts.gov/6.htm",
+    "title": "https://exhibits.nhd.uscourts.gov/6.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "portsmouth-nh",
+    "publisherOrHolder": "exhibits.nhd.uscourts.gov"
+  },
+  {
+    "id": "cmotpc5kz000p2hy66g0xuj0x",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/morristown-nj",
+    "title": "https://www.mountvernon.org/library/digitalhistory/digital-e",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "morristown-nj",
+    "publisherOrHolder": "www.mountvernon.org"
+  },
+  {
+    "id": "cmov4no7e0000u9q3q8uzjufo",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/experiencing-the-story-of-the-battle-of-princeton.htm",
+    "title": "https://www.nps.gov/articles/000/experiencing-the-story-of-t",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "princeton-nj",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmov4no800003u9q3tsjt8f6t",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/ten-crucial-days-princeton",
+    "title": "https://www.battlefields.org/learn/articles/ten-crucial-days",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "princeton-nj",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmov4no8e0006u9q3796va3nq",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/george-washington/the-revolutionary-war/washingtons-revolutionary-war-battles/the-trenton-princeton-campaign/10-facts-about-the-battle-of-princeton",
+    "title": "https://www.mountvernon.org/george-washington/the-revolution",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "princeton-nj",
+    "publisherOrHolder": "www.mountvernon.org"
+  },
+  {
+    "id": "cmov4pwlk000bu9q3m10ri9gi",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/trenton",
+    "title": "https://www.battlefields.org/learn/revolutionary-war/battles",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "trenton-nj",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmov4pwly000eu9q3otvmixjp",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/george-washington/the-revolutionary-war/washingtons-revolutionary-war-battles/the-trenton-princeton-campaign/10-facts-about-washingtons-crossing-of-the-delaware-river",
+    "title": "https://www.mountvernon.org/george-washington/the-revolution",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "trenton-nj",
+    "publisherOrHolder": "www.mountvernon.org"
+  },
+  {
+    "id": "cmov4pwmb000hu9q3qc1fxztf",
+    "table": "Source",
+    "url": "https://www.nps.gov/people/henry-knox.htm",
+    "title": "https://www.nps.gov/people/henry-knox.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "trenton-nj",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmowk3gqi0000rkwcnqbb3ppv",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/history-crown-point-1734-1783",
+    "title": "https://www.battlefields.org/learn/articles/history-crown-po",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "crown-point-ny",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmowk3gr70003rkwcuzy6oxsi",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/crown-point",
+    "title": "https://www.battlefields.org/learn/revolutionary-war/battles",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "crown-point-ny",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmowk3grl0006rkwcb2l4rot2",
+    "table": "Source",
+    "url": "https://founders.archives.gov/documents/Washington/03-05-02-0279",
+    "title": "https://founders.archives.gov/documents/Washington/03-05-02-",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "crown-point-ny",
+    "publisherOrHolder": "founders.archives.gov"
+  },
+  {
+    "id": "cmowk5iug000brkwc920bycmf",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2014/09/so-heavy-a-trial-the-burning-of-new-yorks-first-capital/",
+    "title": "https://allthingsliberty.com/2014/09/so-heavy-a-trial-the-bu",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "kingston-ny",
+    "publisherOrHolder": "allthingsliberty.com"
+  },
+  {
+    "id": "cmowk5iur000erkwc0jkmhfu8",
+    "table": "Source",
+    "url": "https://history.nycourts.gov/about_period/20-stories-constitution/",
+    "title": "https://history.nycourts.gov/about_period/20-stories-constit",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "kingston-ny",
+    "publisherOrHolder": "history.nycourts.gov"
+  },
+  {
+    "id": "cmowk5iv3000hrkwcpp974uoy",
+    "table": "Source",
+    "url": "https://www.encyclopedia.com/law/encyclopedias-almanacs-transcripts-and-maps/new-york-constitution-1777",
+    "title": "https://www.encyclopedia.com/law/encyclopedias-almanacs-tran",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "kingston-ny",
+    "publisherOrHolder": "www.encyclopedia.com"
+  },
+  {
+    "id": "cmowk7lx5000mrkwcsww3a64m",
+    "table": "Source",
+    "url": "https://parks.ny.gov/visit/historic-sites/washingtons-headquarters-state-historic-site",
+    "title": "https://parks.ny.gov/visit/historic-sites/washingtons-headqu",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "newburgh-ny",
+    "publisherOrHolder": "parks.ny.gov"
+  },
+  {
+    "id": "cmowk7ly1000prkwc8jjioary",
+    "table": "Source",
+    "url": "https://parks.ny.gov/visit/historic-sites/new-windsor-cantonment-state-historic-site",
+    "title": "https://parks.ny.gov/visit/historic-sites/new-windsor-canton",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "newburgh-ny",
+    "publisherOrHolder": "parks.ny.gov"
+  },
+  {
+    "id": "cmowk7lye000srkwcxf87qv1l",
+    "table": "Source",
+    "url": "https://npg.si.edu/es/blog/newburgh-conspiracy",
+    "title": "https://npg.si.edu/es/blog/newburgh-conspiracy",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "newburgh-ny",
+    "publisherOrHolder": "npg.si.edu"
+  },
+  {
+    "id": "cmoxzjfzg0000yuayyxz64fq6",
+    "table": "Source",
+    "url": "https://www.nps.gov/sara/",
+    "title": "https://www.nps.gov/sara/",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "saratoga-springs-ny",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmoxzjg060003yuaytziqbayd",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/saratoga-surrender-site.htm",
+    "title": "https://www.nps.gov/places/saratoga-surrender-site.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "saratoga-springs-ny",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmoxzjg0i0006yuay6rgmrwge",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/schuyler-estate.htm",
+    "title": "https://www.nps.gov/places/schuyler-estate.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "saratoga-springs-ny",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmoxzllun000byuayr53l6zt0",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/saratoga-the-tide-turns-on-the-frontier-teaching-with-historic-places.htm",
+    "title": "https://www.nps.gov/articles/saratoga-the-tide-turns-on-the-",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "saratoga-springs-ny",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmoxzllw6000gyuayq1wl22lo",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/saratoga",
+    "title": "https://www.battlefields.org/learn/revolutionary-war/battles",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "saratoga-springs-ny",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmozezbgk0000ibgzqwxyrvi8",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/battle-of-stony-point",
+    "title": "https://www.mountvernon.org/library/digitalhistory/digital-e",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "stony-point-ny",
+    "publisherOrHolder": "www.mountvernon.org"
+  },
+  {
+    "id": "cmozezbha0003ibgz973vz8st",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/battle-stony-point",
+    "title": "https://www.battlefields.org/learn/articles/battle-stony-poi",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "stony-point-ny",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmozezbho0006ibgzl3d6dge0",
+    "table": "Source",
+    "url": "https://armyhistory.org/our-officers-and-men-behaved-like-men-determined-to-be-free-the-battle-of-stony-point-15-16-july-1779/",
+    "title": "https://armyhistory.org/our-officers-and-men-behaved-like-me",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "stony-point-ny",
+    "publisherOrHolder": "armyhistory.org"
+  },
+  {
+    "id": "cmpwa4e0i0000uhiyv299h1o6",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/boston-massacre-trial.htm",
+    "title": "https://www.nps.gov/articles/000/boston-massacre-trial.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "boston-ma",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmozf1jj2000bibgzue201dxh",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/fort-ticonderoga-1775",
+    "title": "https://www.battlefields.org/learn/revolutionary-war/battles",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "ticonderoga-ny",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmozf1jjg000eibgza5ww3j6g",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/reinterpreting-new-york-s-fort-ticonderoga.htm",
+    "title": "https://www.nps.gov/articles/000/reinterpreting-new-york-s-f",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "ticonderoga-ny",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmozf1jjs000hibgzgb7v3qsu",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/the-humdrum-side-of-war-investigating-camp-life-during-the-american-revolution.htm",
+    "title": "https://www.nps.gov/articles/000/the-humdrum-side-of-war-inv",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "ticonderoga-ny",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmozf3k9a000mibgzmighpcvz",
+    "table": "Source",
+    "url": "https://www.westpoint.edu/about/history-of-west-point/brief-history-of-west-point",
+    "title": "https://www.westpoint.edu/about/history-of-west-point/brief-",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "west-point-ny",
+    "publisherOrHolder": "www.westpoint.edu"
+  },
+  {
+    "id": "cmozf3kam000pibgz9wbk6i9d",
+    "table": "Source",
+    "url": "https://home.army.mil/westpoint/about/history",
+    "title": "https://home.army.mil/westpoint/about/history",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "west-point-ny",
+    "publisherOrHolder": "home.army.mil"
+  },
+  {
+    "id": "cmozf3kay000sibgzmlzyydga",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/west-point",
+    "title": "https://www.battlefields.org/learn/articles/west-point",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "west-point-ny",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmp0uf6wk0000xazrhk74ckv1",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/new-york-militia-soldier-who-fought-at-battle-of-white-plains-buried-at-st-paul-s.htm",
+    "title": "https://www.nps.gov/articles/000/new-york-militia-soldier-wh",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "white-plains-ny",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmp0uf6y10003xazrc757gpn4",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/battle-white-plains",
+    "title": "https://www.battlefields.org/learn/articles/battle-white-pla",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "white-plains-ny",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmp0uf6yc0006xazr0ljhzsy3",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/battle-of-white-plains",
+    "title": "https://www.mountvernon.org/library/digitalhistory/digital-e",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "white-plains-ny",
+    "publisherOrHolder": "www.mountvernon.org"
+  },
+  {
+    "id": "cmp0uhiq6000bxazr9w8e9afs",
+    "table": "Source",
+    "url": "https://www.ohiohistory.org/visit/browse-historical-sites/campus-martius-museum/",
+    "title": "https://www.ohiohistory.org/visit/browse-historical-sites/ca",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "marietta-oh",
+    "publisherOrHolder": "www.ohiohistory.org"
+  },
+  {
+    "id": "cmp0uhiqe000exazruq9v35p7",
+    "table": "Source",
+    "url": "https://www.ohiohistory.org/marietta_mound_cemetery/",
+    "title": "https://www.ohiohistory.org/marietta_mound_cemetery/",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "marietta-oh",
+    "publisherOrHolder": "www.ohiohistory.org"
+  },
+  {
+    "id": "cmp0uhiqn000hxazrkbduq1as",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/campus-martius-museum.htm",
+    "title": "https://www.nps.gov/places/campus-martius-museum.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "marietta-oh",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmp29v0rg0000ef4ii7s6ossf",
+    "table": "Source",
+    "url": "https://founders.archives.gov/documents/Washington/03-08-02-0086",
+    "title": "https://founders.archives.gov/documents/Washington/03-08-02-",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "carlisle-pa",
+    "publisherOrHolder": "founders.archives.gov"
+  },
+  {
+    "id": "cmp29v0sh0003ef4ivbuj7icm",
+    "table": "Source",
+    "url": "https://ahec.armywarcollege.edu/exhibits/CBKsThenAndNow.cfm",
+    "title": "https://ahec.armywarcollege.edu/exhibits/CBKsThenAndNow.cfm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "carlisle-pa",
+    "publisherOrHolder": "ahec.armywarcollege.edu"
+  },
+  {
+    "id": "cmp29v0sv0006ef4idfth0to1",
+    "table": "Source",
+    "url": "https://goordnance.army.mil/history/OrdnanceCorpshistory.html",
+    "title": "https://goordnance.army.mil/history/OrdnanceCorpshistory.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "carlisle-pa",
+    "publisherOrHolder": "goordnance.army.mil"
+  }
+]

@@ -1,0 +1,502 @@
+[
+  {
+    "id": "src-lexington-historical-society",
+    "table": "Source",
+    "url": "https://lexingtonhistory.org",
+    "title": "Lexington Historical Society Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "lexington-ma",
+    "publisherOrHolder": "Lexington Historical Society"
+  },
+  {
+    "id": "src-freedom-trail-foundation",
+    "table": "Source",
+    "url": "https://www.thefreedomtrail.org/",
+    "title": "Freedom Trail Foundation Resources",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "lexington-ma",
+    "publisherOrHolder": "Freedom Trail Foundation"
+  },
+  {
+    "id": "source-old-manse-archives",
+    "table": "Source",
+    "url": "https://thetrustees.org/place/the-old-manse/",
+    "title": "Old Manse Historical Documentation",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "concord-ma",
+    "publisherOrHolder": "The Trustees of Reservations"
+  },
+  {
+    "id": "source-nps-boston",
+    "table": "Source",
+    "url": "https://www.nps.gov/bost/",
+    "title": "Boston National Historical Park Official Resources",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "boston-ma",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-revere-deposition",
+    "table": "Source",
+    "url": "https://www.masshist.org/database/viewer.php?item_id=99",
+    "title": "Paul Revere's Deposition, circa 1775",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "lexington-ma",
+    "publisherOrHolder": "Massachusetts Historical Society"
+  },
+  {
+    "id": "source-adams-papers",
+    "table": "Source",
+    "url": "https://www.masshist.org/adams/",
+    "title": "Adams Family Papers",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "boston-ma",
+    "publisherOrHolder": "Massachusetts Historical Society"
+  },
+  {
+    "id": "source-nps-concord",
+    "table": "Source",
+    "url": "https://www.nps.gov/mima/",
+    "title": "Minute Man National Historical Park Official Resources",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "concord-ma",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-loc-american-memory",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/collections/continental/",
+    "title": "American Memory: American Revolution and Its Era",
+    "type": "DATASET",
+    "tier": "TIER1",
+    "towns": "lexington-ma",
+    "publisherOrHolder": "Library of Congress"
+  },
+  {
+    "id": "src-wikipedia-lexington",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battles_of_Lexington_and_Concord",
+    "title": "Battles of Lexington and Concord - Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "lexington-ma",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-nps-minuteman",
+    "table": "Source",
+    "url": "https://www.nps.gov/mima/index.htm",
+    "title": "Minute Man National Historical Park Official Site",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "lexington-ma",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "source-mhs-collections",
+    "table": "Source",
+    "url": "https://www.masshist.org/",
+    "title": "Massachusetts Historical Society Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "boston-ma",
+    "publisherOrHolder": "Massachusetts Historical Society"
+  },
+  {
+    "id": "src-massachusetts-archives",
+    "table": "Source",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "title": "Massachusetts Archives Collection",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "lexington-ma",
+    "publisherOrHolder": "Massachusetts State Archives"
+  },
+  {
+    "id": "source-freedom-trail-foundation",
+    "table": "Source",
+    "url": "https://www.thefreedomtrail.org/",
+    "title": "Freedom Trail Foundation Resources",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "boston-ma",
+    "publisherOrHolder": "Freedom Trail Foundation"
+  },
+  {
+    "id": "source-boston-athenaeum",
+    "table": "Source",
+    "url": "https://www.bostonathenaeum.org/",
+    "title": "Boston Athenaeum Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "boston-ma",
+    "publisherOrHolder": "Boston Athenaeum"
+  },
+  {
+    "id": "source-longfellow-nps",
+    "table": "Source",
+    "url": "https://www.nps.gov/long/index.htm",
+    "title": "Longfellow House-Washington's Headquarters National Historic",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "cambridge-ma",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "source-cambridge-historical",
+    "table": "Source",
+    "url": "https://www.cambridgema.gov/historic",
+    "title": "Cambridge Historical Commission Archives",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "cambridge-ma",
+    "publisherOrHolder": "City of Cambridge"
+  },
+  {
+    "id": "source-harvard-archives-rev",
+    "table": "Source",
+    "url": "https://library.harvard.edu/archives",
+    "title": "Harvard University Archives: Revolutionary War Collection",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "cambridge-ma",
+    "publisherOrHolder": "Harvard University"
+  },
+  {
+    "id": "source-cambridge-museum",
+    "table": "Source",
+    "url": "https://cambridgehistory.org",
+    "title": "Cambridge Historical Society",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "cambridge-ma",
+    "publisherOrHolder": "Cambridge Historical Society"
+  },
+  {
+    "id": "source-mass-historical-siege",
+    "table": "Source",
+    "url": "https://www.masshist.org",
+    "title": "Massachusetts Historical Society: Siege Papers",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "cambridge-ma",
+    "publisherOrHolder": "Massachusetts Historical Society"
+  },
+  {
+    "id": "source-washington-orders-cambridge",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers",
+    "title": "General Orders, Cambridge Headquarters 1775-1776",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "cambridge-ma",
+    "publisherOrHolder": "Library of Congress"
+  },
+  {
+    "id": "source-martha-washington-letters",
+    "table": "Source",
+    "url": "https://www.mountvernon.org",
+    "title": "Martha Washington Letters",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "cambridge-ma",
+    "publisherOrHolder": "Mount Vernon Ladies' Association"
+  },
+  {
+    "id": "source-russell-house-museum",
+    "table": "Source",
+    "url": "https://arlingtonhistorical.org/jason-russell-house/",
+    "title": "Jason Russell House Museum",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "arlington-ma",
+    "publisherOrHolder": "Arlington Historical Society"
+  },
+  {
+    "id": "source-arlington-historical",
+    "table": "Source",
+    "url": "https://arlingtonhistorical.org",
+    "title": "Arlington Historical Society Archives",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "arlington-ma",
+    "publisherOrHolder": "Arlington Historical Society"
+  },
+  {
+    "id": "source-mma-april19",
+    "table": "Source",
+    "url": "https://www.nps.gov/mima",
+    "title": "Minute Man National Historical Park",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "arlington-ma",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-lex-boston1775-blog",
+    "table": "Source",
+    "url": "https://boston1775.blogspot.com/",
+    "title": "Boston 1775 (J.L. Bell)",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "lexington-ma",
+    "publisherOrHolder": "J.L. Bell"
+  },
+  {
+    "id": "source-museum-fine-arts-revolutionary",
+    "table": "Source",
+    "url": "https://www.mfa.org/",
+    "title": "Museum of Fine Arts Revolutionary Era Collection",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "boston-ma",
+    "publisherOrHolder": "Museum of Fine Arts, Boston"
+  },
+  {
+    "id": "src-salem-essex-county-court-records",
+    "table": "Source",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "title": "Essex County Court Records and Committee of Safety Minutes, ",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "salem-ma",
+    "publisherOrHolder": "Massachusetts State Archives"
+  },
+  {
+    "id": "src-salem-privateering-commissions",
+    "table": "Source",
+    "url": "https://www.archives.gov/",
+    "title": "Continental Congress Privateering Commissions: Salem-Registe",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "salem-ma",
+    "publisherOrHolder": "National Archives and Records Administration"
+  },
+  {
+    "id": "src-lex-prince-estabrook",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2019/04/prince-estabrook/",
+    "title": "Prince Estabrook and the Battle of Lexington",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "lexington-ma",
+    "publisherOrHolder": "Journal of the American Revolution"
+  },
+  {
+    "id": "src-lex-nps-wayside",
+    "table": "Source",
+    "url": "https://www.nps.gov/mima/planyourvisit/the-battle-road-trail.htm",
+    "title": "Battle Road Trail Interpretive Guide",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "lexington-ma",
+    "publisherOrHolder": "National Park Service, Minute Man NHP"
+  },
+  {
+    "id": "src-lex-lexington-visitor",
+    "table": "Source",
+    "url": "https://www.lexingtonma.gov/visitors-center",
+    "title": "Lexington Visitors Center: Battle Green Walking Tour",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "lexington-ma",
+    "publisherOrHolder": "Town of Lexington"
+  },
+  {
+    "id": "source-hackensack-nps-washington-hq",
+    "table": "Source",
+    "url": "https://www.nps.gov/revwar",
+    "title": "Washington's Headquarters: The Hackensack Area in the Revolu",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "hackensack-nj",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "source-hackensack-nj-historical-society-bergen",
+    "table": "Source",
+    "url": "https://jerseyhistory.org",
+    "title": "Bergen County in the American Revolution: Primary Sources",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "hackensack-nj",
+    "publisherOrHolder": "New Jersey Historical Society"
+  },
+  {
+    "id": "source-hackensack-rutgers-nj-revolution",
+    "table": "Source",
+    "url": "https://www.rutgersuniversitypress.org",
+    "title": "New Jersey in the American Revolution (Rutgers Encyclopedia)",
+    "type": "SECONDARY",
+    "tier": "TIER1",
+    "towns": "hackensack-nj",
+    "publisherOrHolder": "Rutgers University Press"
+  },
+  {
+    "id": "src-salem-pem-collections",
+    "table": "Source",
+    "url": "https://www.pem.org/library",
+    "title": "Phillips Library Revolutionary War Collection",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "salem-ma",
+    "publisherOrHolder": "Peabody Essex Museum, Phillips Library"
+  },
+  {
+    "id": "src-salem-carey-leslie-retreat",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2014/02/leslies-retreat-the-first-blow-for-liberty/",
+    "title": "Leslie's Retreat: The First Blow for Liberty",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "salem-ma",
+    "publisherOrHolder": "Journal of the American Revolution"
+  },
+  {
+    "id": "src-salem-essex-county-hist-soc",
+    "table": "Source",
+    "url": "https://www.essexheritage.org/",
+    "title": "Essex County History: Revolutionary Period Research Guide",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "salem-ma",
+    "publisherOrHolder": "Essex County Historical Society"
+  },
+  {
+    "id": "src-salem-wikipedia-leslies-retreat",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Leslie%27s_Retreat",
+    "title": "Leslie's Retreat -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "salem-ma",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-salem-tourism-revolution",
+    "table": "Source",
+    "url": "https://www.salem.org/history/revolutionary-war/",
+    "title": "Salem: Revolutionary War History -- Destination Salem",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "salem-ma",
+    "publisherOrHolder": "Destination Salem"
+  },
+  {
+    "id": "src-marblehead-glover-orderly-books",
+    "table": "Source",
+    "url": "https://www.masshist.org/",
+    "title": "Colonel John Glover's Orderly Books, 1775-1777",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "marblehead-ma",
+    "publisherOrHolder": "Massachusetts Historical Society"
+  },
+  {
+    "id": "src-marblehead-washington-crossing-orders",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "General Washington's Orders to Colonel Glover, December 25-2",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "marblehead-ma",
+    "publisherOrHolder": "Library of Congress, George Washington Papers"
+  },
+  {
+    "id": "src-marblehead-nps-valley-forge",
+    "table": "Source",
+    "url": "https://www.nps.gov/vafo/learn/historyculture/index.htm",
+    "title": "Glover's Regiment at Valley Forge: Interpretive Panel Series",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "marblehead-ma",
+    "publisherOrHolder": "National Park Service, Valley Forge NHP"
+  },
+  {
+    "id": "src-marblehead-state-archives-muster-rolls",
+    "table": "Source",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "title": "Massachusetts Muster Rolls: Glover's 14th Continental Regime",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "marblehead-ma",
+    "publisherOrHolder": "Massachusetts State Archives"
+  },
+  {
+    "id": "src-marblehead-historical-society",
+    "table": "Source",
+    "url": "https://www.marbleheadmuseum.org/",
+    "title": "Marblehead Museum Collections: Revolutionary War",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "marblehead-ma",
+    "publisherOrHolder": "Marblehead Museum and Historical Society"
+  },
+  {
+    "id": "src-marblehead-chandler-long-island",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2016/08/battle-long-island/",
+    "title": "The Battle of Long Island and Washington's Retreat",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "marblehead-ma",
+    "publisherOrHolder": "Journal of the American Revolution"
+  },
+  {
+    "id": "src-plymouth-muster-rolls-siege-boston",
+    "table": "Source",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "title": "Plymouth County Militia Muster Rolls: Siege of Boston, 1775-",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "plymouth-ma",
+    "publisherOrHolder": "Massachusetts State Archives"
+  },
+  {
+    "id": "src-plymouth-nps-site",
+    "table": "Source",
+    "url": "https://www.nps.gov/nr/travel/american_revolution/nationalmonumenttotheforefathers.html",
+    "title": "Plymouth Colony and the American Revolution: National Monume",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "plymouth-ma",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-plymouth-historical-society",
+    "table": "Source",
+    "url": "https://www.pilgrimhall.org/",
+    "title": "Pilgrim Hall Museum: Revolution-Era Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "plymouth-ma",
+    "publisherOrHolder": "Pilgrim Hall Museum"
+  },
+  {
+    "id": "src-plymouth-wikipedia-revolution",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Plymouth,_Massachusetts#American_Revolution",
+    "title": "Plymouth, Massachusetts -- Wikipedia (American Revolution se",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "plymouth-ma",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-plymouth-visit-tourism",
+    "table": "Source",
+    "url": "https://www.seeplymouth.com/",
+    "title": "Visit Plymouth: Revolutionary War History",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "plymouth-ma",
+    "publisherOrHolder": "Destination Plymouth"
+  }
+]

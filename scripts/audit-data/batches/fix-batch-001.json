@@ -1,0 +1,22 @@
+[
+  {"id":"src-tic-nps-fort-ticonderoga","table":"Source","url":"https://www.nps.gov/nr/travel/geo-flyer/fortticonderoga.html","issue":""},
+  {"id":"src-alb-albany-county-historical","table":"Source","url":"https://www.historicalbany.org/","issue":"connection error"},
+  {"id":"src-wp-great-chain-history","table":"Source","url":"https://allthingsliberty.com/2014/05/the-great-chain-across-the-hudson/","issue":""},
+  {"id":"src-wp2-nps-washington-ny-campaign","table":"Source","url":"https://www.nps.gov/subjects/revwar/new-york-campaign-1776.htm","issue":""},
+  {"id":"src-new-orange-county-historical","table":"Source","url":"https://www.orangecountyhistorical.org/","issue":"connection error"},
+  {"id":"src-king-ny-state-constitution-1777","table":"Source","url":"https://www.archives.nysed.gov/research/new-york-state-constitution-1777","issue":""},
+  {"id":"src-stony-point-nps-battlefield","table":"Source","url":"https://parks.ny.gov/historic-sites/stonypoint/","issue":""},
+  {"id":"src-phi-visit-philadelphia-history","table":"Source","url":"https://www.visitphiladelphia.com/things-to-do/history-and-culture/american-revolution/","issue":"connection error"},
+  {"id":"src-vf-chester-county-archives","table":"Source","url":"https://www.chesco.org/3411/Archives","issue":""},
+  {"id":"src-yor-nps-york-colonial-courthouse","table":"Source","url":"https://www.yorkheritage.org/colonial-complex","issue":""},
+  {"id":"src-car-visit-carlisle-pa","table":"Source","url":"https://www.visitcarlislepa.com/","issue":"connection error"},
+  {"id":"src-pao-chester-county-paoli-memorial","table":"Source","url":"https://www.chesco.org/3411/Archives","issue":""},
+  {"id":"src-ger-nps-germantown","table":"Source","url":"https://www.nps.gov/inde/learn/historyculture/battle-of-germantown.htm","issue":""},
+  {"id":"src-ger-battle-germantown-french-context","table":"Source","url":"https://allthingsliberty.com/2015/06/the-battle-of-germantown/","issue":""},
+  {"id":"src-pit-visit-pittsburgh-history","table":"Source","url":"https://www.visitpittsburgh.com/things-to-do/history-heritage/","issue":""},
+  {"id":"src-tre-nps-washington-crossing","table":"Source","url":"https://www.nj.gov/dep/parksandforests/historic/washcros/index.html","issue":""},
+  {"id":"src-pri-nps-princeton-battlefield","table":"Source","url":"https://www.nj.gov/dep/parksandforests/historic/princeton/index.html","issue":""},
+  {"id":"src-pri-princeton-battlefield-society","table":"Source","url":"https://www.theprincetonbattlefield.org/","issue":"connection error"},
+  {"id":"src-pri-visit-princeton-revolution","table":"Source","url":"https://www.visitprinceton.org/","issue":""},
+  {"id":"src-mor-morris-county-historical","table":"Source","url":"https://www.morrishistory.org/","issue":"connection error"}
+]

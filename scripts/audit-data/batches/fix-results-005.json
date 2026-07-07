@@ -1,0 +1,182 @@
+[
+  {
+    "id": "src-wheeling-draper-manuscripts",
+    "table": "Source",
+    "oldUrl": "https://www.wisconsinhistory.org/Records/Article/CS5107",
+    "newUrl": "https://www.wisconsinhistory.org/Records/Article/CS4103",
+    "reason": "CS5107 returns 404. CS4103 is the Wisconsin Historical Society's Draper Manuscripts Collection overview page, which describes the full 491-volume collection and provides access guidance. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-alb-nps-hudson-valley",
+    "table": "Source",
+    "oldUrl": "https://www.hudsonrivervalley.com/heritage/",
+    "newUrl": "https://www.hudsonrivervalley.com/sites",
+    "reason": "/heritage/ returns 404. The /sites path is the current Heritage Sites directory of the Maurice D. Hinchey Hudson River Valley National Heritage Area, covering cultural and historical attractions including Revolutionary War history. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-wp-nps-west-point-highlands",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/subjects/revwar/west-point.htm",
+    "newUrl": "https://www.nps.gov/subjects/americanrevolution/index.htm",
+    "reason": "The /subjects/revwar/ path no longer exists; NPS reorganized to /subjects/americanrevolution/. The new index page is the NPS American Revolution hub covering West Point and Hudson Highlands among other sites. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-car-pa-archives-carlisle",
+    "table": "Source",
+    "oldUrl": "https://www.phmc.pa.gov/Archives",
+    "newUrl": "https://www.pa.gov/agencies/phmc/pa-state-archives",
+    "reason": "The phmc.pa.gov/Archives URL redirects to a generic PHMC agency page (HTTP 302). Pennsylvania migrated to the pa.gov domain; the correct Pennsylvania State Archives page is now at pa.gov/agencies/phmc/pa-state-archives. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-pao-paoli-battlefield-org",
+    "table": "Source",
+    "oldUrl": "https://www.paolipreservation.org/",
+    "newUrl": "https://pbpfinc.org/",
+    "reason": "paolipreservation.org is unreachable (ECONNREFUSED). The Paoli Battlefield Preservation Fund Inc. now operates at pbpfinc.org, which covers the same mission of protecting and promoting the September 1777 Battle of Paoli site. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-marblehead-wikipedia-glovers-regiment",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/Glover%27s_Marblehead_Regiment",
+    "newUrl": "https://en.wikipedia.org/wiki/14th_Continental_Regiment",
+    "reason": "The 'Glover%27s_Marblehead_Regiment' Wikipedia title returns 404; the article was merged into the 14th Continental Regiment page, which explicitly identifies itself as 'also known as the Marblehead Regiment, Marbleheaders, and Glover's Regiment.' Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-fle-nps-fort-lee-historic-park",
+    "table": "Source",
+    "oldUrl": "https://www.nj.gov/dep/parksandforests/historic/fortlee/index.html",
+    "newUrl": "https://njpalisades.org/fortlee/",
+    "reason": "The NJ DEP URL returns 404. Fort Lee Historic Park is managed by the Palisades Interstate Park Commission; the current official page is at njpalisades.org/fortlee/, covering the park's Revolutionary War history, reconstructed encampment, and visitor information. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-savannah-ga-georgia-hist-quarterly",
+    "table": "Source",
+    "oldUrl": "https://georgiahistory.com/education-outreach/publications/georgia-historical-quarterly/",
+    "newUrl": "https://www.georgiahistory.com/learn-and-explore/publications/georgia-historical-quarterly/",
+    "reason": "The URL without 'www' and under the old /education-outreach/ path returns 404. The Georgia Historical Society reorganized its site; the Georgia Historical Quarterly page moved to www.georgiahistory.com/learn-and-explore/publications/georgia-historical-quarterly/. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-danbury-wikipedia",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/Raid_on_Danbury",
+    "newUrl": "https://en.wikipedia.org/wiki/Battle_of_Ridgefield",
+    "reason": "The 'Raid_on_Danbury' Wikipedia title returns 404; the article was merged into Battle_of_Ridgefield, which explicitly covers 'Tryon's Raid on Danbury' as the central event in the 1777 Connecticut operation. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-annapolis-historic-annapolis",
+    "table": "Source",
+    "oldUrl": "https://www.historiccannapolis.org/",
+    "newUrl": "https://www.annapolis.org/",
+    "reason": "historiccannapolis.org is unreachable (ECONNREFUSED). Historic Annapolis (formerly Historic Annapolis Foundation) now operates at annapolis.org. The site covers preservation of Maryland's capital including Revolutionary-era properties such as the William Paca House. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-wilmington-cooch-bridge-society",
+    "table": "Source",
+    "oldUrl": "https://www.coochsbridgebattlefield.org/",
+    "newUrl": "https://history.delaware.gov/coochs-bridge-historic-site/",
+    "reason": "coochsbridgebattlefield.org is unreachable (ECONNREFUSED). The official state-managed page for Delaware's only Revolutionary War land battle is now at the Delaware History division site. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-kaskaskia-illinois-historical-survey",
+    "table": "Source",
+    "oldUrl": "https://www.illinois.gov/agencies/agency.illinois-state-historical-library.html",
+    "newUrl": "https://presidentlincoln.illinois.gov/library/library-collections/",
+    "reason": "The illinois.gov agency URL redirects to a generic state agency page with no content. The Illinois State Historical Library is now housed within the Abraham Lincoln Presidential Library and Museum; its collections page at presidentlincoln.illinois.gov describes access to 12 million manuscript documents and historical materials. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "source-elizabeth-nps-revolutionary-nj",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/revwar/about_the_revolution/new_jersey.html",
+    "newUrl": "https://www.nps.gov/places/crossroads-national-heritage-area.htm",
+    "reason": "The /revwar/ path no longer exists on NPS. The Crossroads of the American Revolution National Heritage Area page covers New Jersey's Revolutionary War role in detail, noting 'more battles and skirmishes took place in New Jersey than any other colony.' Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-salem-nps-maritime",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/sama/learn/historyculture/revolutionary-war.htm",
+    "newUrl": "https://www.nps.gov/sama/learn/historyculture/index.htm",
+    "reason": "The specific /revolutionary-war.htm subpage returns 404. The Salem Maritime National Historical Park History & Culture index at /index.htm is the current landing page for the site's historical content, including its Revolutionary War privateering role. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-kings-mountain-nc-draper-manuscripts",
+    "table": "Source",
+    "oldUrl": "https://www.wisconsinhistory.org/Records/Article/CS1945",
+    "newUrl": "https://digicoll.library.wisc.edu/cgi/f/findaid/findaid-idx?c=wiarchives%3Bcc%3Dwiarchives%3Bview%3Dtext%3Brgn%3Dmain%3Bdidno%3Duw-whs-draper0dd",
+    "reason": "CS1945 returns 404. The UW Digital Collections finding aid for the Draper Manuscripts: King's Mountain Papers (1756-1887) is the authoritative source for the same collection, covering the October 7, 1780 battle and Lyman Draper's 40-year research. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "cmoagrnsa000036gwew6ze63k",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/subjects/amrevolution/index.htm",
+    "newUrl": "https://www.nps.gov/subjects/americanrevolution/index.htm",
+    "reason": "The /subjects/amrevolution/ path returns 404; the NPS renamed the subject section to /subjects/americanrevolution/. The index page at the new path is the NPS American Revolution hub with the same content. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "cmoagrobo000936gwmoc8jw0n",
+    "table": "Source",
+    "oldUrl": "https://www.nysm.nysed.gov/collections",
+    "newUrl": "https://nysm.nysed.gov/research-collections",
+    "reason": "The /collections path returns 404. The New York State Museum reorganized its site; the current Research & Collections hub is at /research-collections, covering the museum's 16 million specimens and artifacts across history, geology, and other departments. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "cmonzghud00001p158fgxlasz",
+    "table": "Source",
+    "oldUrl": "https://history.house.gov/Historical-Highlights/1700s/General-George-Washington-resigning-his-commission-in-Annapolis",
+    "newUrl": "https://en.wikipedia.org/wiki/George_Washington%27s_resignation_as_commander-in-chief",
+    "reason": "The history.house.gov URL redirects to the homepage (likely slug changed to include '-Maryland/' suffix). The replacement URL from the House Archives returns HTTP 403 to automated fetchers (bot protection), preventing confirmation of 200. Using the Wikipedia article on Washington's resignation instead, which covers the same December 23, 1783 Annapolis event in full detail. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "cmp29v0sh0003ef4ivbuj7icm",
+    "table": "Source",
+    "oldUrl": "https://ahec.armywarcollege.edu/exhibits/CBKsThenAndNow.cfm",
+    "newUrl": "https://ahec.armywarcollege.edu/exhibits/index.cfm",
+    "reason": "The specific CBKsThenAndNow.cfm exhibit page returns 404; the exhibit appears to have been removed or retired. The USAHEC exhibits index at /exhibits/index.cfm is the current landing page for all USAHEC exhibits, including 'From Power to Purpose: Carlisle Barracks from Revolution to Today,' which covers the same subject matter. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "cmp29v0sv0006ef4idfth0to1",
+    "table": "Source",
+    "oldUrl": "https://goordnance.army.mil/history/OrdnanceCorpshistory.html",
+    "newUrl": null,
+    "reason": "The goordnance.army.mil server consistently times out for all automated requests (connection refused or timeout across multiple fetch attempts including both the original URL and alternate paths /history/index.html and /history-heritage/index.html). The domain is indexed in search engines as active but cannot be verified to return HTTP 200 or 202 from this environment. Returning null per verification requirement.",
+    "verified": false,
+    "httpStatus": 0
+  }
+]

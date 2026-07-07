@@ -1,0 +1,452 @@
+[
+  {
+    "id": "src-dover-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Dover,_Delaware",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Dover,_Delaware"
+  },
+  {
+    "id": "src-dover-visit-delaware",
+    "table": "Source",
+    "url": "https://www.visitdelaware.com/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.visitdelaware.com/"
+  },
+  {
+    "id": "src-wilmington-cooch-bridge-pension",
+    "table": "Source",
+    "url": "https://www.fold3.com/collection/revolutionary-war-pension-bounty-land-warrant-application-files",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.fold3.com/collection/revolutionary-war-pension-bounty-land-warrant-application-files"
+  },
+  {
+    "id": "src-wilmington-continental-army-orders",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/george-washington-papers/"
+  },
+  {
+    "id": "src-wilmington-nps-brandywine",
+    "table": "Source",
+    "url": "https://brandywinebattlefield.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.brandywinebattlefield.org/"
+  },
+  {
+    "id": "src-wilmington-delaware-historical-society",
+    "table": "Source",
+    "url": "https://dehs.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://dehs.org/"
+  },
+  {
+    "id": "src-kaskaskia-george-rogers-clark-nhp",
+    "table": "Source",
+    "url": "https://www.nps.gov/gero/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/gero/index.htm"
+  },
+  {
+    "id": "src-dover-delaware-declaration",
+    "table": "Source",
+    "url": "https://archives.delaware.gov/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://archives.delaware.gov/"
+  },
+  {
+    "id": "src-wilmington-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Wilmington,_Delaware",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Wilmington,_Delaware"
+  },
+  {
+    "id": "src-wilmington-visit-tourism",
+    "table": "Source",
+    "url": "https://www.visitwilmingtonde.com/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.visitwilmingtonde.com/"
+  },
+  {
+    "id": "src-bennington-nps-bennington-battlefield",
+    "table": "Source",
+    "url": "https://parks.ny.gov/historic-sites/35/details.aspx",
+    "status": 200,
+    "ok": false,
+    "issue": "redirects to wrong page",
+    "finalUrl": "https://parks.ny.gov/visit/historic-sites/darwin-martin-house-state-historic-site"
+  },
+  {
+    "id": "src-bennington-vermont-historical-society",
+    "table": "Source",
+    "url": "https://vermonthistory.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://vermonthistory.org/"
+  },
+  {
+    "id": "src-bennington-bennington-museum",
+    "table": "Source",
+    "url": "https://www.benningtonmuseum.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://benningtonmuseum.org/"
+  },
+  {
+    "id": "src-bennington-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Bennington",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battle_of_Bennington"
+  },
+  {
+    "id": "src-bennington-visit-tourism",
+    "table": "Source",
+    "url": "https://www.bennington.com/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.swvtchamber.com/"
+  },
+  {
+    "id": "src-brattleboro-vermont-independence-1777",
+    "table": "Source",
+    "url": "https://www.sec.state.vt.us/archives-records.aspx",
+    "status": 0,
+    "ok": false,
+    "issue": "connection error",
+    "finalUrl": "https://www.sec.state.vt.us/archives-records.aspx"
+  },
+  {
+    "id": "src-brattleboro-vermont-historical-society-records",
+    "table": "Source",
+    "url": "https://vermonthistory.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://vermonthistory.org/"
+  },
+  {
+    "id": "src-brattleboro-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Brattleboro,_Vermont",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Brattleboro,_Vermont"
+  },
+  {
+    "id": "src-brattleboro-visit-tourism",
+    "table": "Source",
+    "url": "https://www.brattleborochamber.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.brattleborochamber.org/"
+  },
+  {
+    "id": "src-castine-massachusetts-general-court-records",
+    "table": "Source",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.sec.state.ma.us/arc/"
+  },
+  {
+    "id": "src-castine-nps-penobscot",
+    "table": "Source",
+    "url": "https://wilsonmuseum.org/",
+    "status": 0,
+    "ok": false,
+    "issue": "connection error",
+    "finalUrl": "https://wilsonmuseum.org/"
+  },
+  {
+    "id": "src-castine-paul-revere-penobscot",
+    "table": "Source",
+    "url": "https://www.masshist.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.masshist.org/"
+  },
+  {
+    "id": "src-castine-maine-historic-preservation",
+    "table": "Source",
+    "url": "https://www.maine.gov/mhpc/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.maine.gov/mhpc/"
+  },
+  {
+    "id": "src-portland-continental-congress-falmouth",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/century-of-lawmaking/articles-and-essays/continental-congress/journals-of-the-continental-congress/"
+  },
+  {
+    "id": "src-portland-massachusetts-provincial-congress",
+    "table": "Source",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.sec.state.ma.us/arc/"
+  },
+  {
+    "id": "src-portland-maine-historical-society",
+    "table": "Source",
+    "url": "https://www.mainehistory.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.mainehistory.org/"
+  },
+  {
+    "id": "src-portland-maine-historic-preservation-portland",
+    "table": "Source",
+    "url": "https://www.maine.gov/mhpc/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.maine.gov/mhpc/"
+  },
+  {
+    "id": "src-portland-wikipedia-falmouth",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Burning_of_Falmouth_(1775)",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Burning_of_Falmouth_(1775)"
+  },
+  {
+    "id": "src-portland-visit-portland",
+    "table": "Source",
+    "url": "https://www.visitportland.com/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.visitportland.com/"
+  },
+  {
+    "id": "src-kaskaskia-clark-memoir",
+    "table": "Source",
+    "url": "https://www.loc.gov/item/mm79070887/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/item/mm79070887/"
+  },
+  {
+    "id": "src-kaskaskia-virginia-state-papers",
+    "table": "Source",
+    "url": "https://www.lva.virginia.gov/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.lva.virginia.gov/"
+  },
+  {
+    "id": "src-kaskaskia-nps-lincoln-trail",
+    "table": "Source",
+    "url": "https://www.nps.gov/gero/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/gero/index.htm"
+  },
+  {
+    "id": "src-castine-wikipedia-penobscot",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Penobscot_Expedition",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Penobscot_Expedition"
+  },
+  {
+    "id": "src-castine-visit-castine",
+    "table": "Source",
+    "url": "https://castine.me.us/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://castine.me.us/"
+  },
+  {
+    "id": "src-kaskaskia-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Capture_of_Kaskaskia",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Capture_of_Kaskaskia"
+  },
+  {
+    "id": "src-kaskaskia-illinois-tourism",
+    "table": "Source",
+    "url": "https://www.dnr.illinois.gov/Parks/Pages/Kaskaskia.aspx",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://dnr.illinois.gov/Parks/Pages/Kaskaskia.aspx"
+  },
+  {
+    "id": "src-marietta-northwest-ordinance",
+    "table": "Source",
+    "url": "https://www.archives.gov/milestone-documents/northwest-ordinance",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.archives.gov/milestone-documents/northwest-ordinance"
+  },
+  {
+    "id": "src-marietta-nps-mound-city",
+    "table": "Source",
+    "url": "https://www.nps.gov/hocu/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/hocu/index.htm"
+  },
+  {
+    "id": "src-marietta-ohio-history-connection",
+    "table": "Source",
+    "url": "https://www.ohiohistory.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.ohiohistory.org/"
+  },
+  {
+    "id": "src-marietta-campus-martius-museum",
+    "table": "Source",
+    "url": "https://www.ohiohistory.org/visit/museum-and-site-locator/campus-martius-museum/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.ohiohistory.org/visit/museum-and-site-locator/campus-martius-museum/"
+  },
+  {
+    "id": "src-wheeling-continental-congress-northwest",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/century-of-lawmaking/articles-and-essays/continental-congress/journals-of-the-continental-congress/"
+  },
+  {
+    "id": "src-wheeling-archives-wv",
+    "table": "Source",
+    "url": "https://archives.wv.gov/",
+    "status": 0,
+    "ok": false,
+    "issue": "connection error",
+    "finalUrl": "https://archives.wv.gov/"
+  },
+  {
+    "id": "src-wheeling-wikipedia-fort-henry",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Fort_Henry_(1777)",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battle_of_Fort_Henry_(1777)"
+  },
+  {
+    "id": "src-wheeling-visit-tourism",
+    "table": "Source",
+    "url": "https://www.visitwheeling.com/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.visitwheeling.com/"
+  },
+  {
+    "id": "source-concord-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battles_of_Lexington_and_Concord",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battles_of_Lexington_and_Concord"
+  },
+  {
+    "id": "source-boston-wikipedia-tea-party",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Boston_Tea_Party",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Boston_Tea_Party"
+  },
+  {
+    "id": "source-cambridge-wikipedia-siege",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Siege_of_Boston",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Siege_of_Boston"
+  },
+  {
+    "id": "source-arlington-wikipedia-menotomy",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Menotomy",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battle_of_Menotomy"
+  },
+  {
+    "id": "src-marietta-visit-tourism",
+    "table": "Source",
+    "url": "https://www.mariettaohio.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://mariettaohio.org/"
+  },
+  {
+    "id": "src-wheeling-draper-manuscripts",
+    "table": "Source",
+    "url": "https://www.wisconsinhistory.org/Records/Article/CS5107",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.wisconsinhistory.org/Records/Article/CS5107"
+  }
+]

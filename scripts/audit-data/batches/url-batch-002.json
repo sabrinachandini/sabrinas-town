@@ -1,0 +1,502 @@
+[
+  {
+    "id": "src-wp2-white-plains-city-history",
+    "table": "Source",
+    "url": "https://www.cityofwhiteplains.com/",
+    "title": "City of White Plains: Revolutionary War Heritage",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "white-plains-ny",
+    "publisherOrHolder": "City of White Plains"
+  },
+  {
+    "id": "src-new-washington-hasbrouck-orders",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "General Orders from Newburgh Headquarters, 1782-1783",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "newburgh-ny",
+    "publisherOrHolder": "Library of Congress, George Washington Papers"
+  },
+  {
+    "id": "src-new-newburgh-address-text",
+    "table": "Source",
+    "url": "https://www.loc.gov/resource/mgw3b.020/?sp=375",
+    "title": "Washington's Address to the Officers of the Army (Newburgh A",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "newburgh-ny",
+    "publisherOrHolder": "Library of Congress"
+  },
+  {
+    "id": "src-wp-usma-library-collections",
+    "table": "Source",
+    "url": "https://www.westpoint.edu/library",
+    "title": "United States Military Academy Library: Special Collections ",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "west-point-ny",
+    "publisherOrHolder": "USMA Library"
+  },
+  {
+    "id": "src-new-orange-county-historical",
+    "table": "Source",
+    "url": "https://www.orangecountyhistorical.org/",
+    "title": "Orange County Historical Society Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "newburgh-ny",
+    "publisherOrHolder": "Orange County Historical Society"
+  },
+  {
+    "id": "src-new-wikipedia-newburgh-conspiracy",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Newburgh_Conspiracy",
+    "title": "Newburgh Conspiracy -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "newburgh-ny",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-new-ny-heritage-digital",
+    "table": "Source",
+    "url": "https://nyheritage.org/",
+    "title": "NY Heritage Digital Collections: Newburgh Revolutionary Era ",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "newburgh-ny",
+    "publisherOrHolder": "New York Heritage Digital Collections"
+  },
+  {
+    "id": "src-king-ny-state-constitution-1777",
+    "table": "Source",
+    "url": "https://www.archives.nysed.gov/research/new-york-state-constitution-1777",
+    "title": "Constitution of the State of New-York, 1777",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "kingston-ny",
+    "publisherOrHolder": "New York State Archives"
+  },
+  {
+    "id": "src-king-senate-house-state-historic",
+    "table": "Source",
+    "url": "https://parks.ny.gov/historic-sites/33/details.aspx",
+    "title": "Senate House State Historic Site",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "kingston-ny",
+    "publisherOrHolder": "New York State Office of Parks, Recreation and Historic Preservation"
+  },
+  {
+    "id": "src-king-hudsonvalley-heritage",
+    "table": "Source",
+    "url": "https://www.hvlibrary.org/",
+    "title": "Hudson Valley Heritage: Ulster County Resources",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "kingston-ny",
+    "publisherOrHolder": "Mid-Hudson Library System"
+  },
+  {
+    "id": "src-king-wikipedia-kingston-ny",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Kingston,_New_York",
+    "title": "Kingston, New York -- Revolutionary War History (Wikipedia)",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "kingston-ny",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-king-kingston-tourism",
+    "table": "Source",
+    "url": "https://www.ulstercountyny.gov/tourism",
+    "title": "Kingston, NY: Heritage Tourism Guide",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "kingston-ny",
+    "publisherOrHolder": "Ulster County Tourism"
+  },
+  {
+    "id": "src-crown-point-nps-champlain",
+    "table": "Source",
+    "url": "https://parks.ny.gov/historic-sites/crownpoint/",
+    "title": "Crown Point State Historic Site",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "crown-point-ny",
+    "publisherOrHolder": "New York State Office of Parks, Recreation and Historic Preservation"
+  },
+  {
+    "id": "src-new-nps-washingtons-hq",
+    "table": "Source",
+    "url": "https://parks.ny.gov/historic-sites/17/details.aspx",
+    "title": "Washington's Headquarters State Historic Site",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "newburgh-ny",
+    "publisherOrHolder": "New York State Office of Parks, Recreation and Historic Preservation"
+  },
+  {
+    "id": "src-crown-point-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Crown_Point,_New_York",
+    "title": "Crown Point, New York - Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "crown-point-ny",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-harlem-heights-nyhs-collections",
+    "table": "Source",
+    "url": "https://www.nyhistory.org/",
+    "title": "New-York Historical Society: Revolutionary War Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "harlem-heights-ny",
+    "publisherOrHolder": "New-York Historical Society"
+  },
+  {
+    "id": "src-harlem-heights-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Harlem_Heights",
+    "title": "Battle of Harlem Heights - Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "harlem-heights-ny",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-stony-point-nps-battlefield",
+    "table": "Source",
+    "url": "https://parks.ny.gov/historic-sites/stonypoint/",
+    "title": "Stony Point Battlefield State Historic Site",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "stony-point-ny",
+    "publisherOrHolder": "New York State Office of Parks, Recreation and Historic Preservation"
+  },
+  {
+    "id": "src-stony-point-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Stony_Point",
+    "title": "Battle of Stony Point - Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "stony-point-ny",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-phi-journals-continental-congress",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "title": "Journals of the Continental Congress, 1774-1789",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "philadelphia-pa",
+    "publisherOrHolder": "Library of Congress"
+  },
+  {
+    "id": "src-phi-letters-delegates-congress",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwdg.html",
+    "title": "Letters of Delegates to Congress, 1774-1789 (26 vols.)",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "philadelphia-pa",
+    "publisherOrHolder": "Library of Congress (Paul H. Smith, ed.)"
+  },
+  {
+    "id": "src-phi-nps-independence-nhp",
+    "table": "Source",
+    "url": "https://www.nps.gov/inde/index.htm",
+    "title": "Independence National Historical Park: Official Site",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "philadelphia-pa",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-phi-franklin-papers",
+    "table": "Source",
+    "url": "https://franklinpapers.org/",
+    "title": "The Papers of Benjamin Franklin (43 vols.)",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "philadelphia-pa",
+    "publisherOrHolder": "Yale University Press (various editors)"
+  },
+  {
+    "id": "src-phi-historical-society-pa",
+    "table": "Source",
+    "url": "https://hsp.org/",
+    "title": "Historical Society of Pennsylvania: Revolutionary War Collec",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "philadelphia-pa",
+    "publisherOrHolder": "Historical Society of Pennsylvania"
+  },
+  {
+    "id": "src-phi-american-philosophical-society",
+    "table": "Source",
+    "url": "https://www.amphilsoc.org/library",
+    "title": "American Philosophical Society Library Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "philadelphia-pa",
+    "publisherOrHolder": "American Philosophical Society"
+  },
+  {
+    "id": "src-phi-wikipedia-independence-hall",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Independence_Hall",
+    "title": "Independence Hall -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "philadelphia-pa",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-phi-visit-philadelphia-history",
+    "table": "Source",
+    "url": "https://www.visitphiladelphia.com/things-to-do/history-and-culture/american-revolution/",
+    "title": "Visit Philadelphia: American Revolution Heritage Trail",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "philadelphia-pa",
+    "publisherOrHolder": "Visit Philadelphia"
+  },
+  {
+    "id": "src-vf-nps-valley-forge",
+    "table": "Source",
+    "url": "https://www.nps.gov/vafo/index.htm",
+    "title": "Valley Forge National Historical Park: Official Site and Res",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "valley-forge-pa",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-vf-chester-county-archives",
+    "table": "Source",
+    "url": "https://www.chesco.org/3411/Archives",
+    "title": "Chester County Archives: Revolutionary War Records",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "valley-forge-pa",
+    "publisherOrHolder": "Chester County Archives"
+  },
+  {
+    "id": "src-vf-wikipedia-valley-forge",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Valley_Forge",
+    "title": "Valley Forge -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "valley-forge-pa",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-vf-vf-park-visitor-guide",
+    "table": "Source",
+    "url": "https://www.nps.gov/vafo/planyourvisit/index.htm",
+    "title": "Valley Forge National Historical Park: Visitor Guide",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "valley-forge-pa",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-yor-articles-confederation",
+    "table": "Source",
+    "url": "https://www.archives.gov/milestone-documents/articles-of-confederation",
+    "title": "Articles of Confederation and Perpetual Union",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "york-pa",
+    "publisherOrHolder": "National Archives and Records Administration"
+  },
+  {
+    "id": "src-yor-journals-congress-york",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "title": "Journals of the Continental Congress: York Period (September",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "york-pa",
+    "publisherOrHolder": "Library of Congress"
+  },
+  {
+    "id": "src-yor-nps-york-colonial-courthouse",
+    "table": "Source",
+    "url": "https://www.yorkheritage.org/colonial-complex",
+    "title": "Colonial Complex: York, Pennsylvania -- Revolutionary War He",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "york-pa",
+    "publisherOrHolder": "York County Heritage Trust"
+  },
+  {
+    "id": "src-yor-york-county-heritage-trust",
+    "table": "Source",
+    "url": "https://www.yorkheritage.org/",
+    "title": "York County Heritage Trust: Revolutionary War Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "york-pa",
+    "publisherOrHolder": "York County Heritage Trust"
+  },
+  {
+    "id": "src-car-cumberland-county-historical",
+    "table": "Source",
+    "url": "https://www.historicalsociety.com/",
+    "title": "Cumberland County Historical Society: Revolutionary War Coll",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "carlisle-pa",
+    "publisherOrHolder": "Cumberland County Historical Society"
+  },
+  {
+    "id": "src-car-dickinson-college-archives",
+    "table": "Source",
+    "url": "https://archives.dickinson.edu/",
+    "title": "Dickinson College Archives and Special Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "carlisle-pa",
+    "publisherOrHolder": "Dickinson College"
+  },
+  {
+    "id": "src-car-wikipedia-carlisle-pa",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Carlisle,_Pennsylvania",
+    "title": "Carlisle, Pennsylvania -- History (Wikipedia)",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "carlisle-pa",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-car-visit-carlisle-pa",
+    "table": "Source",
+    "url": "https://www.visitcarlislepa.com/",
+    "title": "Visit Carlisle PA: Heritage Tourism",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "carlisle-pa",
+    "publisherOrHolder": "Borough of Carlisle"
+  },
+  {
+    "id": "src-pao-chester-county-paoli-memorial",
+    "table": "Source",
+    "url": "https://www.chesco.org/3411/Archives",
+    "title": "Paoli Battlefield: Chester County Historical Documentation",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "paoli-pa",
+    "publisherOrHolder": "Chester County Archives"
+  },
+  {
+    "id": "src-pao-wikipedia-paoli-massacre",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Paoli",
+    "title": "Battle of Paoli -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "paoli-pa",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-yor-york-pa-tourism",
+    "table": "Source",
+    "url": "https://www.yorkpa.org/",
+    "title": "Explore York PA: Revolutionary History",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "york-pa",
+    "publisherOrHolder": "York County Convention and Visitors Bureau"
+  },
+  {
+    "id": "src-ger-nps-germantown",
+    "table": "Source",
+    "url": "https://www.nps.gov/inde/learn/historyculture/battle-of-germantown.htm",
+    "title": "Germantown: NPS and Pennsylvania Trail of History Interpreti",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "germantown-pa",
+    "publisherOrHolder": "National Park Service / Pennsylvania Historical and Museum Commission"
+  },
+  {
+    "id": "src-ger-cliveden-nhld",
+    "table": "Source",
+    "url": "https://www.cliveden.org/",
+    "title": "Cliveden of the National Trust: Historic Structure Report",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "germantown-pa",
+    "publisherOrHolder": "National Trust for Historic Preservation"
+  },
+  {
+    "id": "src-ger-germantown-historical-society",
+    "table": "Source",
+    "url": "https://www.germantownhistory.org/",
+    "title": "Germantown Historical Society: Revolutionary War Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "germantown-pa",
+    "publisherOrHolder": "Germantown Historical Society"
+  },
+  {
+    "id": "src-ger-battle-germantown-french-context",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2015/06/the-battle-of-germantown/",
+    "title": "The Near-Victory at Germantown and the French Alliance",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "germantown-pa",
+    "publisherOrHolder": "Journal of the American Revolution"
+  },
+  {
+    "id": "src-ger-wikipedia-germantown",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Germantown",
+    "title": "Battle of Germantown -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "germantown-pa",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-ger-cliveden-visitor",
+    "table": "Source",
+    "url": "https://www.cliveden.org/visit/",
+    "title": "Cliveden (Chew House) Visitor Information",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "germantown-pa",
+    "publisherOrHolder": "National Trust for Historic Preservation"
+  },
+  {
+    "id": "src-pit-nps-fort-pitt",
+    "table": "Source",
+    "url": "https://www.heinzhistorycenter.org/fort-pitt-museum",
+    "title": "Fort Pitt Museum: Research Collections and Interpretive Mate",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "pittsburgh-pa",
+    "publisherOrHolder": "Fort Pitt Museum / Senator John Heinz History Center"
+  },
+  {
+    "id": "src-pit-allegheny-county-historical",
+    "table": "Source",
+    "url": "https://www.heinzhistorycenter.org/",
+    "title": "Heinz History Center: Western Pennsylvania Revolutionary War",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "pittsburgh-pa",
+    "publisherOrHolder": "Senator John Heinz History Center"
+  }
+]

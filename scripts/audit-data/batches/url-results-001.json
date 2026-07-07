@@ -1,0 +1,452 @@
+[
+  {
+    "id": "src-worcester-court-closure-proceedings",
+    "table": "Source",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.sec.state.ma.us/arc/"
+  },
+  {
+    "id": "src-worcester-committee-correspondence-minutes",
+    "table": "Source",
+    "url": "https://www.americanantiquarian.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.americanantiquarian.org/"
+  },
+  {
+    "id": "src-worcester-american-antiquarian-society",
+    "table": "Source",
+    "url": "https://www.americanantiquarian.org/collections/revolutionary-war",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.americanantiquarian.org/collections/revolutionary-war"
+  },
+  {
+    "id": "src-marblehead-visit-marblehead",
+    "table": "Source",
+    "url": "https://visitmarblehead.com/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.visitmarblehead.com/"
+  },
+  {
+    "id": "src-plymouth-forefathers-monument-docs",
+    "table": "Source",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.sec.state.ma.us/arc/"
+  },
+  {
+    "id": "src-worcester-historical-museum",
+    "table": "Source",
+    "url": "https://www.worcesterhistory.net/",
+    "status": 0,
+    "ok": false,
+    "issue": "connection error",
+    "finalUrl": "https://www.worcesterhistory.net/"
+  },
+  {
+    "id": "src-worcester-bell-powder-alarm",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2014/09/powder-alarm-1774/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2014/09/powder-alarm-1774/"
+  },
+  {
+    "id": "src-worcester-wikipedia-revolution",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Worcester,_Massachusetts#American_Revolution",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Worcester,_Massachusetts"
+  },
+  {
+    "id": "src-worcester-mass-moments",
+    "table": "Source",
+    "url": "https://www.massmoments.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.massmoments.org/"
+  },
+  {
+    "id": "src-springfield-armory-nps",
+    "table": "Source",
+    "url": "https://www.nps.gov/spar/learn/historyculture/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/spar/learn/historyculture/index.htm"
+  },
+  {
+    "id": "src-springfield-knox-ordnance-orders",
+    "table": "Source",
+    "url": "https://www.archives.gov/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.archives.gov/"
+  },
+  {
+    "id": "src-springfield-state-archives-shays",
+    "table": "Source",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.sec.state.ma.us/arc/"
+  },
+  {
+    "id": "src-springfield-continental-congress-supply",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/papers-of-the-continental-congress/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/papers-of-the-continental-congress/"
+  },
+  {
+    "id": "src-springfield-historical-society",
+    "table": "Source",
+    "url": "https://www.springfieldlibrary.org/history/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.springfieldlibrary.org/history/"
+  },
+  {
+    "id": "src-springfield-nps-shays-teaching",
+    "table": "Source",
+    "url": "https://www.nps.gov/subjects/teachingwithhistoricplaces/shaysrebellion.htm",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/subjects/teachingwithhistoricplaces/shaysrebellion.htm"
+  },
+  {
+    "id": "src-worcester-nps-revolution-resources",
+    "table": "Source",
+    "url": "https://www.nps.gov/subjects/teachingwithhistoricplaces/worcester.htm",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/subjects/teachingwithhistoricplaces/worcester.htm"
+  },
+  {
+    "id": "src-nyc-british-hq-papers",
+    "table": "Source",
+    "url": "https://quod.lib.umich.edu/c/clementsmss/umich-wcl-M-1",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://quod.lib.umich.edu/c/clementsmss/umich-wcl-M-1"
+  },
+  {
+    "id": "src-nyc-continental-congress-journals-ny",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/century-of-lawmaking/articles-and-essays/continental-congress/journals-of-the-continental-congress/"
+  },
+  {
+    "id": "src-nyc-nps-revolution-ny",
+    "table": "Source",
+    "url": "https://www.nps.gov/subjects/revwar/new-york.htm",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/subjects/revwar/new-york.htm"
+  },
+  {
+    "id": "src-nyc-new-york-historical-society-collections",
+    "table": "Source",
+    "url": "https://www.nyhistory.org/library/manuscript-collections",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nyhistory.org/library/manuscript-collections"
+  },
+  {
+    "id": "src-nyc-wallabout-martyrs",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2014/02/wallabout-prison-ships/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2014/02/wallabout-prison-ships/"
+  },
+  {
+    "id": "src-nyc-battle-long-island-nps",
+    "table": "Source",
+    "url": "https://www.nps.gov/gate/learn/historyculture/battle-of-brooklyn.htm",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/gate/learn/historyculture/battle-of-brooklyn.htm"
+  },
+  {
+    "id": "src-nyc-wikipedia-battle-long-island",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Long_Island",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battle_of_Long_Island"
+  },
+  {
+    "id": "src-nyc-nycgo-revolutionary-sites",
+    "table": "Source",
+    "url": "https://www.nyctourism.com/articles/revolutionary-war-sites/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nyctourism.com/articles/revolutionary-war-sites/"
+  },
+  {
+    "id": "src-nyc-fraunces-tavern-museum",
+    "table": "Source",
+    "url": "https://www.frauncestavernmuseum.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.frauncestavernmuseum.org/"
+  },
+  {
+    "id": "src-springfield-wikipedia-armory",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Springfield_Armory_National_Historic_Site",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Springfield_Armory_National_Historic_Site"
+  },
+  {
+    "id": "src-springfield-tourism-site",
+    "table": "Source",
+    "url": "https://www.valleyvisitor.com/",
+    "status": 0,
+    "ok": false,
+    "issue": "connection error",
+    "finalUrl": "https://www.valleyvisitor.com/"
+  },
+  {
+    "id": "src-sar-nps-saratoga-nbp",
+    "table": "Source",
+    "url": "https://www.nps.gov/sara/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/sara/index.htm"
+  },
+  {
+    "id": "src-sar-new-york-state-archives-saratoga",
+    "table": "Source",
+    "url": "https://www.archives.nysed.gov/research/military-records",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.archives.nysed.gov/research/military-records"
+  },
+  {
+    "id": "src-sar-saratoga-county-historical",
+    "table": "Source",
+    "url": "https://www.saratogahistory.com/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.saratogahistory.com/"
+  },
+  {
+    "id": "src-sar-wikipedia-saratoga",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battles_of_Saratoga",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battles_of_Saratoga"
+  },
+  {
+    "id": "src-sar-nps-visitor-saratoga",
+    "table": "Source",
+    "url": "https://www.nps.gov/sara/planyourvisit/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/sara/planyourvisit/index.htm"
+  },
+  {
+    "id": "src-sar-discover-saratoga",
+    "table": "Source",
+    "url": "https://www.discoversaratoga.org/history/revolutionary-war",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.discoversaratoga.org/things-to-do/history-and-museums/revolutionary-war/"
+  },
+  {
+    "id": "src-alb-schuyler-papers",
+    "table": "Source",
+    "url": "https://digitalcollections.nypl.org/collections/philip-schuyler-papers",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://digitalcollections.nypl.org/collections/philip-schuyler-papers"
+  },
+  {
+    "id": "src-sar-gates-papers",
+    "table": "Source",
+    "url": "https://digitalcollections.nyhistory.org/islandora/object/islandora:120591",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://digitalcollections.nyhistory.org/islandora/object/islandora:120591"
+  },
+  {
+    "id": "src-alb-ten-broeck-mansion",
+    "table": "Source",
+    "url": "https://www.tenbroeckmansion.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://tenbroeckmansion.org/"
+  },
+  {
+    "id": "src-alb-wikipedia-albany",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Albany,_New_York",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Albany,_New_York"
+  },
+  {
+    "id": "src-alb-albany-visitor",
+    "table": "Source",
+    "url": "https://www.albany.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.albany.org/"
+  },
+  {
+    "id": "src-tic-nps-fort-ticonderoga",
+    "table": "Source",
+    "url": "https://www.nps.gov/nr/travel/geo-flyer/fortticonderoga.html",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/nr/travel/geo-flyer/fortticonderoga.html"
+  },
+  {
+    "id": "src-tic-congressional-resolution-1775",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/century-of-lawmaking/articles-and-essays/continental-congress/journals-of-the-continental-congress/"
+  },
+  {
+    "id": "src-tic-fort-ticonderoga-museum",
+    "table": "Source",
+    "url": "https://www.fortticonderoga.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://fortticonderoga.org/"
+  },
+  {
+    "id": "src-tic-wikipedia-fort-tic",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Fort_Ticonderoga",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Fort_Ticonderoga"
+  },
+  {
+    "id": "src-tic-fort-tic-tourism",
+    "table": "Source",
+    "url": "https://www.fortticonderoga.org/visit",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://fortticonderoga.org/visit/buy-tickets/"
+  },
+  {
+    "id": "src-alb-albany-county-historical",
+    "table": "Source",
+    "url": "https://www.historicalbany.org/",
+    "status": 0,
+    "ok": false,
+    "issue": "connection error",
+    "finalUrl": "https://www.historicalbany.org/"
+  },
+  {
+    "id": "src-wp-great-chain-history",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2014/05/the-great-chain-across-the-hudson/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2014/05/the-great-chain-across-the-hudson/"
+  },
+  {
+    "id": "src-wp-wikipedia-west-point",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/West_Point,_New_York",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/West_Point,_New_York"
+  },
+  {
+    "id": "src-wp-usma-visitor",
+    "table": "Source",
+    "url": "https://www.westpoint.edu/visiting",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.westpoint.edu/gateway-for-visitors"
+  },
+  {
+    "id": "src-wp2-nps-washington-ny-campaign",
+    "table": "Source",
+    "url": "https://www.nps.gov/subjects/revwar/new-york-campaign-1776.htm",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/subjects/revwar/new-york-campaign-1776.htm"
+  },
+  {
+    "id": "src-wp2-westchester-county-historical",
+    "table": "Source",
+    "url": "https://westchesterhistory.com/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://westchesterhistory.com/"
+  },
+  {
+    "id": "src-wp2-wikipedia-battle-white-plains",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_White_Plains",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battle_of_White_Plains"
+  }
+]

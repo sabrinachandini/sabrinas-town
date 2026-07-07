@@ -1,0 +1,160 @@
+[
+  {
+    "id": "src-worcester-committee-correspondence-minutes",
+    "title": "Worcester Committee of Correspondence Minutes, 1773-1775",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL points to the American Antiquarian Society homepage (https://www.americanantiquarian.org/), not to a catalog record, finding aid, or digitized version of this specific collection.",
+      "No direct link to the Worcester Committee of Correspondence Minutes is accessible from this citation; the AAS homepage confirms the institution exists but does not confirm or surface this specific holding.",
+      "Citation is non-functional as a primary source link — a researcher cannot navigate from this URL to the document."
+    ],
+    "recommendation": "Replace with a direct AAS catalog permalink (e.g., from their OPAC or ArchivesSpace finding aid) pointing to the specific collection. The AAS is the plausible repository, but the homepage URL is inadequate for citation."
+  },
+  {
+    "id": "src-plymouth-forefathers-monument-docs",
+    "title": "Plymouth Town Records and Proprietors Minutes, 1774-1776",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.sec.state.ma.us/arc/ returns HTTP 404. The Massachusetts State Archives has reorganized its web presence and this path is broken.",
+      "publisherOrHolder lists two institutions ('Plymouth County Registry of Deeds and Massachusetts State Archives') but the URL points only to the MA State Archives, creating an institution mismatch.",
+      "No specific finding aid, collection page, or document is linked — even if the URL resolved, it would be a top-level archives homepage."
+    ],
+    "recommendation": "Locate the current Massachusetts State Archives URL (likely under sec.state.ma.us or a successor domain) and identify separate citations for Plymouth County Registry of Deeds if that institution is a distinct holder. Provide specific collection-level or item-level links."
+  },
+  {
+    "id": "src-springfield-knox-ordnance-orders",
+    "title": "General Henry Knox's Orders Establishing the Springfield Arsenal, 1777",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL points to the NARA homepage (https://www.archives.gov/), not to a specific record group, series, or item. NARA holds millions of records; a homepage citation is unfalsifiable and non-navigable.",
+      "Title uses 'Arsenal' — the facility established in Springfield in 1777 was the Springfield Armory (an armory manufacturing weapons), not an arsenal (a storage depot). This is a substantive factual error in the document title.",
+      "No specific NARA record group or catalog entry number is referenced, making independent verification impossible."
+    ],
+    "recommendation": "Identify the specific NARA record group (likely RG 156 — Office of the Chief of Ordnance, or Continental Army records) and provide a catalog.archives.gov permalink or NARA finding aid URL. Correct 'Arsenal' to 'Armory' in the title."
+  },
+  {
+    "id": "src-springfield-state-archives-shays",
+    "title": "Shays' Rebellion Papers: Springfield Arsenal Attack, January 1787",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.sec.state.ma.us/arc/ returns HTTP 404. Same broken URL used for src-plymouth-forefathers-monument-docs.",
+      "Even if the URL resolved, it would point to the MA State Archives homepage, not to a specific Shays' Rebellion collection or finding aid.",
+      "Title again uses 'Arsenal' — the target of the January 1787 attack was the Springfield Armory, not an arsenal."
+    ],
+    "recommendation": "Find the current MA State Archives URL for their Shays' Rebellion holdings and link to the specific collection or finding aid. Correct 'Arsenal' to 'Armory' in the title."
+  },
+  {
+    "id": "src-springfield-continental-congress-supply",
+    "title": "Board of War Records: Springfield Armory Procurement, 1778-1781",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.loc.gov/collections/papers-of-the-continental-congress/ returns HTTP 403 (Cloudflare bot protection), preventing verification of the specific document.",
+      "The title 'Board of War Records: Springfield Armory Procurement, 1778-1781' reads as a constructed sub-series descriptor, not an official document title or series name. The Papers of the Continental Congress at LOC are organized by item number (PCC Item numbers), not by descriptors like this.",
+      "The URL is a collection-level landing page, not a specific item or series within the collection."
+    ],
+    "recommendation": "Identify the specific PCC item numbers (e.g., Item 147 for Board of War letter books) and link to the LOC catalog record or digitized item page. The collection itself (Papers of the Continental Congress) is real and held by LOC, but this citation cannot be verified at the URL provided."
+  },
+  {
+    "id": "src-nyc-british-hq-papers",
+    "title": "Sir Henry Clinton Papers (British Headquarters Papers)",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://quod.lib.umich.edu/c/clementsmss/umich-wcl-M-1 is blocked by a Cloudflare JavaScript challenge, preventing direct verification of the content at this specific path.",
+      "The parenthetical '(British Headquarters Papers)' conflates two distinct archival collections: the Sir Henry Clinton Papers at the William L. Clements Library (University of Michigan) and the British Headquarters Papers (Carleton/Dorchester Papers, PRO 30/55) held at The National Archives (UK). These are separate collections. The Clinton Papers contain British HQ correspondence but are not formally titled 'British Headquarters Papers.'",
+      "Institution listed as 'William L. Clements Library, University of Michigan' is correct for the Clinton Papers specifically, but the combined title creates ambiguity."
+    ],
+    "recommendation": "Clarify whether the citation refers to the Sir Henry Clinton Papers (Clements Library) or the British Headquarters Papers (UK National Archives). Remove the conflating parenthetical or disambiguate with two separate citations. Confirm the specific Clements finding aid URL once accessible."
+  },
+  {
+    "id": "src-nyc-continental-congress-journals-ny",
+    "title": "Journals of the Continental Congress, 1776-1783",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL https://memory.loc.gov/ammem/amlaw/lwjc.html redirects (HTTP 301) to an article/essay page within the 'Century of Lawmaking' collection, not to the actual digitized Journals of the Continental Congress.",
+      "The redirect destination is an introductory essay about the Journals, not the searchable or browsable digitized documents themselves.",
+      "Date range '1776-1783' is incorrect and narrower than the actual collection, which spans 1774-1789 (34 volumes). Restricting to 1776-1783 drops the critical First Continental Congress period."
+    ],
+    "recommendation": "Update the URL to the actual digitized Journals collection (e.g., https://www.loc.gov/collections/century-of-lawmaking/ and navigate to the Journals directly, or use a specific volume permalink). Correct the date range to 1774-1789."
+  },
+  {
+    "id": "src-alb-schuyler-papers",
+    "title": "Philip Schuyler Papers",
+    "verdict": "PASS",
+    "issues": [],
+    "recommendation": "Citation is sound. URL loads and confirms the Philip Schuyler Papers at the New York Public Library (Manuscripts and Archives Division, MssCol 2701), approximately 1,531 items spanning 1705-1864. Collection includes military records and correspondence from the Revolutionary War period. Genuinely primary. No changes needed."
+  },
+  {
+    "id": "src-sar-gates-papers",
+    "title": "Horatio Gates Papers, 1726-1828",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://digitalcollections.nyhistory.org/islandora/object/islandora:120591 is blocked by a Cloudflare JavaScript challenge, preventing verification of the specific object at this path.",
+      "Cannot confirm whether this Islandora object ID (islandora:120591) corresponds to the Gates Papers finding aid, a specific digitized item, or a collection-level record."
+    ],
+    "recommendation": "Verify the specific Islandora object ID once accessible in a browser. The New-York Historical Society is the correct institutional holder of the Horatio Gates Papers, and the date range 1726-1828 is consistent with known records. If the URL leads to a collection-level record, also provide a direct finding aid link from the NYHS website."
+  },
+  {
+    "id": "src-tic-congressional-resolution-1775",
+    "title": "Continental Congress Resolutions Regarding Fort Ticonderoga, May 1775",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL https://memory.loc.gov/ammem/amlaw/lwjc.html is the same generic URL used for three other sources in this batch. It redirects to an article/essay page about the Journals of the Continental Congress, not to a specific resolution.",
+      "No page number, volume number, or item-level link is provided to the specific May 1775 resolution regarding Ticonderoga.",
+      "The use of an identical URL for multiple distinct 'documents' is a strong indicator that these are collection-level placeholders, not specific document citations."
+    ],
+    "recommendation": "Identify the specific volume and page in the Journals of the Continental Congress where the Ticonderoga resolution appears (Volume II, May 1775) and link to the digitized page image or a specific LOC catalog item."
+  },
+  {
+    "id": "src-new-washington-hasbrouck-orders",
+    "title": "General Orders from Newburgh Headquarters, 1782-1783",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.loc.gov/collections/george-washington-papers/ is blocked by Cloudflare (HTTP 403), preventing verification.",
+      "The URL is a collection-level landing page for the entire George Washington Papers, not a specific series, subseries, or item for 'General Orders from Newburgh Headquarters.'"
+    ],
+    "recommendation": "Provide a specific URL to the General Orders series within the George Washington Papers (Series 3G, General Orders, 1775-1783) at LOC, or a catalog.loc.gov permalink to the relevant items. The collection is real and the institution is correct."
+  },
+  {
+    "id": "src-new-newburgh-address-text",
+    "title": "Washington's Address to the Officers of the Army (Newburgh Address), March 15, 1",
+    "verdict": "ISSUE",
+    "issues": [
+      "Title is truncated — cut off at 'March 15, 1' (presumably 1783). This is a data entry error that leaves the document incompletely identified.",
+      "URL https://www.loc.gov/resource/mgw3b.020/?sp=375 returns HTTP 403 (Cloudflare), preventing direct verification. However, the URL structure (mgw3b = George Washington Papers Series 3b Letterbooks, volume 020, page 375) is consistent with LOC's digitized Washington Papers format.",
+      "The Newburgh Address was delivered extemporaneously on March 15, 1783; Washington's written draft and the text circulated are documented in the Papers but the specific page number would need browser verification to confirm it is page 375 of volume 20."
+    ],
+    "recommendation": "Fix the truncated title to read 'Washington's Address to the Officers of the Army (Newburgh Address), March 15, 1783.' Verify the specific page number (sp=375) once accessible in a browser. The LOC George Washington Papers is the correct repository."
+  },
+  {
+    "id": "src-king-ny-state-constitution-1777",
+    "title": "Constitution of the State of New-York, 1777",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.archives.nysed.gov/research/new-york-state-constitution-1777 returns HTTP 404. The New York State Archives has reorganized its website and this specific path no longer resolves.",
+      "The document itself (the 1777 NY State Constitution) is real, historically significant, and held by the NY State Archives — this appears to be a broken link due to site restructuring, not a fabricated citation."
+    ],
+    "recommendation": "Locate the current NY State Archives URL for the 1777 Constitution (try searching archives.nysed.gov directly or the NYS Archives catalog). The document is also available via other repositories including Avalon Project at Yale and the NY State Library."
+  },
+  {
+    "id": "src-phi-journals-continental-congress",
+    "title": "Journals of the Continental Congress, 1774-1789",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL https://memory.loc.gov/ammem/amlaw/lwjc.html is the same generic redirect URL used for two other sources in this batch (src-nyc-continental-congress-journals-ny and src-tic-congressional-resolution-1775). It redirects to an essay/article page, not to the actual digitized journals.",
+      "This version correctly states the full date range (1774-1789), unlike the NYC version of the same citation.",
+      "Three separate entries in this batch use the same non-specific URL to cite what should be three distinct document references within the Journals collection."
+    ],
+    "recommendation": "Provide specific volume/page links within the digitized Journals collection. Consider consolidating duplicate source entries for the same collection and distinguishing them by specific item references."
+  },
+  {
+    "id": "src-phi-letters-delegates-congress",
+    "title": "Letters of Delegates to Congress, 1774-1789 (26 vols.)",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL https://memory.loc.gov/ammem/amlaw/lwdg.html redirects (HTTP 301) to an article/essay page describing the Letters of Delegates collection, not to the digitized letters themselves.",
+      "The 'Letters of Delegates to Congress' (26 volumes, edited by Paul H. Smith et al., published 1976-2000) is a modern scholarly edition — an editorially compiled, transcribed, and annotated collection assembled from dozens of repositories. As a published edited compilation, it is a secondary source by nature. The underlying individual letters are primary, but this citation points to the compiled edition, not original manuscripts.",
+      "Labeling an edited twentieth-century scholarly compilation as TIER1 primary overstates its evidential standing compared to the original holograph letters."
+    ],
+    "recommendation": "Reclassify as TIER2 (secondary/edited primary) or replace with citations to specific original letters at their holding institutions. If using LOC's digitized version, link directly to the collection's browsable interface rather than the essay redirect."
+  }
+]

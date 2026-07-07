@@ -1,0 +1,1109 @@
+[
+  {
+    "id": "source-adams-papers",
+    "table": "Source",
+    "oldUrl": "https://www.masshist.org/adams/",
+    "newUrl": "https://www.masshist.org/adams",
+    "reason": "URL moved; trailing slash dropped. Same MHS domain, page serves as gateway to Adams Family Papers collection.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "source-harvard-archives-rev",
+    "table": "Source",
+    "oldUrl": "https://library.harvard.edu/archives",
+    "newUrl": "https://library.harvard.edu/libraries/harvard-university-archives",
+    "reason": "Harvard Library reorganized its URL structure; archives now lives under /libraries/ path.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-lex-prince-estabrook",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2019/04/prince-estabrook/",
+    "newUrl": "https://www.nps.gov/people/prince-estabrook-of-lexington.htm",
+    "reason": "Original allthingsliberty.com article deleted. NPS biographical page on Prince Estabrook covers the same subject with primary source documentation.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-lex-lexington-visitor",
+    "table": "Source",
+    "oldUrl": "https://www.lexingtonma.gov/visitors-center",
+    "newUrl": "https://www.lexingtonma.gov/393/Visitors-Center",
+    "reason": "Lexington MA gov site reorganized; Visitors Center page now uses numeric department ID path.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "source-hackensack-nps-washington-hq",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/revwar",
+    "newUrl": "https://www.nps.gov/subjects/americanrevolution/index.htm",
+    "reason": "NPS retired the /revwar shortcut; American Revolution content now lives under /subjects/americanrevolution/.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-salem-carey-leslie-retreat",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2014/02/leslies-retreat-the-first-blow-for-liberty/",
+    "newUrl": "https://allthingsliberty.com/2019/10/the-americans-have-hoisted-their-standard-of-liberty-at-salem/",
+    "reason": "Original 2014 article deleted. Same publisher (Journal of the American Revolution) published a more detailed 2019 article covering the same Leslie's Retreat / Salem February 1775 incident.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-marblehead-historical-society",
+    "table": "Source",
+    "oldUrl": "https://www.marbleheadmuseum.org/",
+    "newUrl": "https://marbleheadmuseum.org/",
+    "reason": "Site now resolves without the www subdomain. Same institution, same content.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-marblehead-chandler-long-island",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2016/08/battle-long-island/",
+    "newUrl": "https://allthingsliberty.com/tag/battle-of-long-island/",
+    "reason": "Original 2016 article URL is a 404. Same publisher's tag archive page collects all Journal of the American Revolution articles on the Battle of Long Island.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-plymouth-nps-site",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/nr/travel/american_revolution/nationalmonumenttotheforefathers.html",
+    "newUrl": "https://en.wikipedia.org/wiki/National_Monument_to_the_Forefathers",
+    "reason": "NPS National Register travel page removed. The monument is managed by MA DCR, not NPS, so no NPS replacement exists. Wikipedia article covers the same monument with full historical context.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-worcester-american-antiquarian-society",
+    "table": "Source",
+    "oldUrl": "https://www.americanantiquarian.org/collections/revolutionary-war",
+    "newUrl": "https://www.americanantiquarian.org/library/remembering-the-revolution",
+    "reason": "AAS reorganized its site; the /collections/revolutionary-war path no longer exists. The Remembering the Revolution digital gallery on the same domain covers the Revolutionary War collection curated by AAS founder Isaiah Thomas.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-worcester-historical-museum",
+    "table": "Source",
+    "oldUrl": "https://www.worcesterhistory.net/",
+    "newUrl": "https://www.worcesterhistory.org/",
+    "reason": "Worcester Historical Museum changed its domain from .net to .org. Same institution.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-worcester-bell-powder-alarm",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2014/09/powder-alarm-1774/",
+    "newUrl": "https://en.wikipedia.org/wiki/Powder_Alarm",
+    "reason": "Original allthingsliberty.com article deleted. Wikipedia article on the Powder Alarm of September 1774 covers the same event in detail.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-springfield-historical-society",
+    "table": "Source",
+    "oldUrl": "https://www.springfieldlibrary.org/history/",
+    "newUrl": "https://www.springfieldlibrary.org/library/local-history-and-genealogy/",
+    "reason": "Springfield City Library reorganized its site; local history content moved to /library/local-history-and-genealogy/.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-springfield-nps-shays-teaching",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/subjects/teachingwithhistoricplaces/shaysrebellion.htm",
+    "newUrl": "https://www.nps.gov/teachers/classrooms/shays-rebellion-a-nation-on-trial.htm",
+    "reason": "NPS Teaching with Historic Places moved Shays' Rebellion content from /subjects/teachingwithhistoricplaces/ to the /teachers/classrooms/ path.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-worcester-nps-revolution-resources",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/subjects/teachingwithhistoricplaces/worcester.htm",
+    "newUrl": "https://www.nps.gov/articles/massachusetts-teaching-with-historic-places.htm",
+    "reason": "NPS retired the per-city TwHP index pages; Massachusetts Teaching with Historic Places resources now consolidated on this articles page, which includes Worcester-area content.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-nyc-nps-revolution-ny",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/subjects/revwar/new-york.htm",
+    "newUrl": "https://www.nps.gov/thingstodo/rev-war-new-york-state-parks.htm",
+    "reason": "NPS retired the /subjects/revwar/ section; New York Revolutionary War parks content now lives at /thingstodo/rev-war-new-york-state-parks.htm.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-nyc-wallabout-martyrs",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2014/02/wallabout-prison-ships/",
+    "newUrl": "https://allthingsliberty.com/tag/prison-ship/",
+    "reason": "Original 2014 Wallabout prison ships article deleted. Same publisher's tag archive collects multiple articles on Revolutionary War prison ships including Wallabout Bay / HMS Jersey content.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-nyc-battle-long-island-nps",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/gate/learn/historyculture/battle-of-brooklyn.htm",
+    "newUrl": "https://www.nps.gov/gois/historyculture/battle-of-brooklyn.htm",
+    "reason": "Battle of Brooklyn page moved from Gateway National Recreation Area (nps.gov/gate) to Governors Island National Monument (nps.gov/gois).",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-nyc-nycgo-revolutionary-sites",
+    "table": "Source",
+    "oldUrl": "https://www.nyctourism.com/articles/revolutionary-war-sites/",
+    "newUrl": "https://nycrevolutionarytrail.org/walking-tour",
+    "reason": "nyctourism.com article page gone. NYC Revolutionary Trail is the authoritative replacement: a dedicated site covering 16 Revolutionary War sites across Lower Manhattan with audio, video, and historical context.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-springfield-tourism-site",
+    "table": "Source",
+    "oldUrl": "https://www.valleyvisitor.com/",
+    "newUrl": null,
+    "reason": "valleyvisitor.com domain is dead. The known successor is explorewesternmass.com (Greater Springfield CVB), but it returned HTTP 403 on all fetch attempts and cannot be confirmed as returning 200.",
+    "verified": false,
+    "httpStatus": 403
+  },
+  {
+    "id": "src-tic-nps-fort-ticonderoga",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/nr/travel/geo-flyer/fortticonderoga.html",
+    "newUrl": "https://www.nps.gov/articles/000/reinterpreting-new-york-s-fort-ticonderoga.htm",
+    "reason": "Original NPS geo-flyer URL returned 404. Replaced with current NPS article about Fort Ticonderoga from the same institution.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-alb-albany-county-historical",
+    "table": "Source",
+    "oldUrl": "https://www.historicalbany.org/",
+    "newUrl": "https://www.albanycountyhistory.org/",
+    "reason": "historicalbany.org refused connection. Albany County History Collaborative at albanycountyhistory.org is the active successor site serving the same historical organization.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-wp-great-chain-history",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2014/05/the-great-chain-across-the-hudson/",
+    "newUrl": "https://allthingsliberty.com/2014/09/the-great-west-point-chain/",
+    "reason": "Original May 2014 allthingsliberty article returned 404. Replaced with the September 2014 article on the same site covering the same subject (the Great Chain across the Hudson at West Point).",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-wp2-nps-washington-ny-campaign",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/subjects/revwar/new-york-campaign-1776.htm",
+    "newUrl": "https://www.battlefields.org/learn/articles/lost-battlefield-disastrous-battle-new-york",
+    "reason": "NPS subjects page for the 1776 NY campaign returned 404. No direct NPS replacement found. American Battlefield Trust article covers the full 1776 New York campaign (July–November 1776) comprehensively.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-new-orange-county-historical",
+    "table": "Source",
+    "oldUrl": "https://www.orangecountyhistorical.org/",
+    "newUrl": "https://www.orangecountyhistoricalsociety.org/",
+    "reason": "orangecountyhistorical.org refused connection. The Orange County Historical Society of New York now operates at orangecountyhistoricalsociety.org.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-king-ny-state-constitution-1777",
+    "table": "Source",
+    "oldUrl": "https://www.archives.nysed.gov/research/new-york-state-constitution-1777",
+    "newUrl": "https://www.archives.nysed.gov/research/constitutions-and-constitional-conventions",
+    "reason": "Original specific page returned 404. NY State Archives now hosts the 1777 Constitution under the broader Constitutions and Constitutional Conventions research page at the same domain.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-stony-point-nps-battlefield",
+    "table": "Source",
+    "oldUrl": "https://parks.ny.gov/historic-sites/stonypoint/",
+    "newUrl": "https://parks.ny.gov/visit/historic-sites/stony-point-battlefield-state-historic-site",
+    "reason": "Old parks.ny.gov URL pattern returned 404. NY State Parks reorganized URLs; the Stony Point Battlefield page moved to the new /visit/historic-sites/ path structure.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-phi-visit-philadelphia-history",
+    "table": "Source",
+    "oldUrl": "https://www.visitphiladelphia.com/things-to-do/history-and-culture/american-revolution/",
+    "newUrl": "https://www.visitphilly.com/articles/philadelphia/the-historic-american-revolution-trail-of-greater-philadelphia/",
+    "reason": "visitphiladelphia.com refused connection. The official Philadelphia tourism site migrated to visitphilly.com; this article covers American Revolution history and culture across Greater Philadelphia.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-vf-chester-county-archives",
+    "table": "Source",
+    "oldUrl": "https://www.chesco.org/3411/Archives",
+    "newUrl": "https://www.chesco.org/192/Archives-Records",
+    "reason": "Old chesco.org page ID /3411/Archives returned 404. Chester County Archives moved to /192/Archives-Records on the same domain.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-yor-nps-york-colonial-courthouse",
+    "table": "Source",
+    "oldUrl": "https://www.yorkheritage.org/colonial-complex",
+    "newUrl": "https://www.yorkhistorycenter.org/museums/colonial-complex/",
+    "reason": "yorkheritage.org/colonial-complex returned 404. The York County History Center rebranded and the Colonial Complex page moved to yorkhistorycenter.org.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-car-visit-carlisle-pa",
+    "table": "Source",
+    "oldUrl": "https://www.visitcarlislepa.com/",
+    "newUrl": "https://www.visitcumberlandvalley.com/towns/carlisle/",
+    "reason": "visitcarlislepa.com refused connection. Carlisle tourism is now covered under the Visit Cumberland Valley regional site, which has a dedicated Carlisle destination page.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-pao-chester-county-paoli-memorial",
+    "table": "Source",
+    "oldUrl": "https://www.chesco.org/3411/Archives",
+    "newUrl": "https://www.chesco.org/192/Archives-Records",
+    "reason": "Old chesco.org page ID /3411/Archives returned 404. Chester County Archives moved to /192/Archives-Records on the same domain.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-ger-nps-germantown",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/inde/learn/historyculture/battle-of-germantown.htm",
+    "newUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/germantown",
+    "reason": "NPS Germantown history/culture page returned 404 and no equivalent NPS redirect found. American Battlefield Trust Germantown page provides comparable battle facts, historical summary, and significance.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-ger-battle-germantown-french-context",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2015/06/the-battle-of-germantown/",
+    "newUrl": "https://allthingsliberty.com/2020/02/the-death-of-lt-michael-grosh-the-maryland-militia-at-germantown/",
+    "reason": "Original 2015 allthingsliberty Germantown article returned 404. Replaced with a 2020 article on the same site covering the Battle of Germantown including its French significance: the battle convinced the French nearly as much as Saratoga that Americans could fight the British.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-pit-visit-pittsburgh-history",
+    "table": "Source",
+    "oldUrl": "https://www.visitpittsburgh.com/things-to-do/history-heritage/",
+    "newUrl": "https://www.visitpittsburgh.com/blog/historical-sites-to-visit/",
+    "reason": "Original visitpittsburgh.com history-heritage page returned 404. The same official tourism site now publishes Pittsburgh history content under the blog/historical-sites-to-visit/ path.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-tre-nps-washington-crossing",
+    "table": "Source",
+    "oldUrl": "https://www.nj.gov/dep/parksandforests/historic/washcros/index.html",
+    "newUrl": "https://dep.nj.gov/parksandforests/state-park/washington-crossing-state-park/",
+    "reason": "Old NJ DEP URL structure returned 404. NJ DEP reorganized its parks site; Washington Crossing State Park now lives at dep.nj.gov under the new /state-park/ URL pattern.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-pri-nps-princeton-battlefield",
+    "table": "Source",
+    "oldUrl": "https://www.nj.gov/dep/parksandforests/historic/princeton/index.html",
+    "newUrl": "https://dep.nj.gov/parksandforests/state-park/princeton-battlefield-state-park/",
+    "reason": "Old NJ DEP URL structure returned 404. NJ DEP reorganized its parks site; Princeton Battlefield State Park now lives at dep.nj.gov under the new /state-park/ URL pattern.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-pri-princeton-battlefield-society",
+    "table": "Source",
+    "oldUrl": "https://www.theprincetonbattlefield.org/",
+    "newUrl": "https://pbs1777.org/",
+    "reason": "theprincetonbattlefield.org refused connection. The Princeton Battlefield Society now operates at pbs1777.org (the society's current official domain).",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-pri-visit-princeton-revolution",
+    "table": "Source",
+    "oldUrl": "https://www.visitprinceton.org/",
+    "newUrl": "https://www.experienceprinceton.org/visit",
+    "reason": "visitprinceton.org had an expired SSL certificate. Princeton's official visitor guide migrated to experienceprinceton.org.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-mor-morris-county-historical",
+    "table": "Source",
+    "oldUrl": "https://www.morrishistory.org/",
+    "newUrl": "https://morriscountyhistory.org/",
+    "reason": "morrishistory.org refused connection. The Morris County Historical Society now operates at morriscountyhistory.org.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-mor-cold-winter-1779-80",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2016/02/the-hard-winter-morristown-1779-1780/",
+    "newUrl": "https://emergingrevolutionarywar.org/2016/01/23/the-hard-winter-of-1779-1780/",
+    "reason": "Original allthingsliberty URL returns 404. Emerging Revolutionary War published a contemporaneous article on the same topic (same January 2016 date range, same subject) that returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-mon-nps-monmouth-battlefield",
+    "table": "Source",
+    "oldUrl": "https://www.nj.gov/dep/parksandforests/historic/monmouth/index.html",
+    "newUrl": "https://dep.nj.gov/parksandforests/state-park/monmouth-battlefield-state-park/",
+    "reason": "NJ DEP reorganized its parks site. The Monmouth Battlefield page moved from the /historic/ path to the new /state-park/ path at dep.nj.gov (without www). Returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-mon-molly-pitcher-scholarship",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2013/12/molly-pitcher-the-real-story/",
+    "newUrl": "https://allthingsliberty.com/2013/05/molly-pitcher-and-captain-molly/",
+    "reason": "Original allthingsliberty URL returns 404. A May 2013 article on the same site by Ray Raphael covers identical scholarly content debunking the Molly Pitcher legend and returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-fle-fort-lee-historic-park-visitor",
+    "table": "Source",
+    "oldUrl": "https://www.nj.gov/dep/parksandforests/historic/fortlee/index.html",
+    "newUrl": "https://njpalisades.org/fortlee/",
+    "reason": "NJ DEP URL returns 404. Fort Lee Historic Park is managed by the Palisades Interstate Park Commission; their official page at njpalisades.org/fortlee/ returns 200 and covers visitor information.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-yorktown-va-cornwallis-capitulation",
+    "table": "Source",
+    "oldUrl": "https://www.archives.gov/milestone-documents/articles-of-capitulation",
+    "newUrl": "https://www.nps.gov/york/learn/historyculture/mooorehouseandarticle.htm",
+    "reason": "NARA milestone-documents URL returns 404; the document is not listed in their current milestone catalog. NPS Yorktown Battlefield provides the authoritative page on the Moore House and Articles of Capitulation negotiations and returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-williamsburg-va-virginia-declaration-rights",
+    "table": "Source",
+    "oldUrl": "https://www.lva.virginia.gov/public/guides/va1_declarationrights.htm",
+    "newUrl": "https://www.lva.virginia.gov/collections/educator-resources/online-classroom/stc/entries/the-virginia-declaration-of-rights-june-12-1776",
+    "reason": "Original LVA public guide URL returns 404. LVA migrated guide content to its Online Classroom / Document Bank path. The new LVA URL covers the Virginia Declaration of Rights (June 12, 1776) and returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-richmond-va-lva-revolutionary-virginia",
+    "table": "Source",
+    "oldUrl": "https://www.lva.virginia.gov/public/guides/va1_revwar.htm",
+    "newUrl": "https://lva-virginia.libguides.com/revolutionary-war",
+    "reason": "Original LVA public guide URL returns 404. LVA migrated research guides to the LibGuides platform. The Revolutionary War research guide at lva-virginia.libguides.com returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-richmond-va-wikipedia-arnold-raid",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/Arnold%27s_expedition_to_Virginia",
+    "newUrl": "https://en.wikipedia.org/wiki/Military_career_of_Benedict_Arnold,_1781",
+    "reason": "The Wikipedia article 'Arnold's expedition to Virginia' no longer exists at that title. Wikipedia content about Arnold's 1781 Virginia raids is now consolidated under 'Military career of Benedict Arnold, 1781', which returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-alexandria-va-visit-alexandria",
+    "table": "Source",
+    "oldUrl": "https://www.visitalexandriava.com/history-culture/history/revolutionary-war/",
+    "newUrl": "https://www.alexandriava.gov/historic-alexandria/a-brief-history-of-alexandria",
+    "reason": "visitalexandriava.com redirects (301) to visitalexandria.com which returns 403 for bots. City of Alexandria's official historic preservation page covers the same Revolutionary War context and returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-fredericksburg-va-visit-fredericksburg",
+    "table": "Source",
+    "oldUrl": "https://www.visitfred.com/history",
+    "newUrl": "https://fxbg.com/things-to-do/history/",
+    "reason": "visitfred.com domain now permanently redirects (301) to fxbg.com. The history section of the successor site at fxbg.com/things-to-do/history/ returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-fredericksburg-va-fredericksburg-area-museum",
+    "table": "Source",
+    "oldUrl": "https://www.fredericksburgareamuseum.org/",
+    "newUrl": "https://www.famva.org/",
+    "reason": "fredericksburgareamuseum.org returns ECONNREFUSED. The museum relaunched under the domain famva.org (Fredericksburg Area Museum Virginia) which returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-charlottesville-va-wikipedia-tarleton-raid",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/Tarleton%27s_Raid",
+    "newUrl": "https://encyclopediavirginia.org/entries/jack-jouetts-ride-1781/",
+    "reason": "Wikipedia has no article at 'Tarleton's Raid'; web search confirms no such Wikipedia title exists. Encyclopedia Virginia's peer-reviewed entry on Jack Jouett's Ride covers the same Tarleton raid on Charlottesville (1781) and returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-mount-vernon-va-washington-papers-project",
+    "table": "Source",
+    "oldUrl": "https://www.upress.virginia.edu/rotunda/washington/",
+    "newUrl": "https://rotunda.upress.virginia.edu/founders/GEWN.html",
+    "reason": "upress.virginia.edu/rotunda/washington/ returns 404. The Papers of George Washington Digital Edition moved to the Rotunda subdomain; the canonical URL at rotunda.upress.virginia.edu/founders/GEWN.html returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-charleston-sc-sc-state-archives",
+    "table": "Source",
+    "oldUrl": "https://www.scdah.sc.gov/",
+    "newUrl": "https://scdah.sc.gov/",
+    "reason": "The www-prefixed domain (www.scdah.sc.gov) returns ECONNREFUSED. The non-www canonical URL scdah.sc.gov returns 200 OK with the SC Department of Archives and History homepage.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-charleston-sc-wikipedia-siege-1780",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/Siege_of_Charleston_(1780)",
+    "newUrl": "https://en.wikipedia.org/wiki/Siege_of_Charleston",
+    "reason": "Wikipedia article was moved/renamed; the (1780) disambiguator was removed from the title. The canonical article at en.wikipedia.org/wiki/Siege_of_Charleston returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-charleston-sc-visitch",
+    "table": "Source",
+    "oldUrl": "https://www.explorecharleston.com/history/revolutionary-war/",
+    "newUrl": "https://www.nps.gov/articles/siege-of-charleston-1780.htm",
+    "reason": "explorecharleston.com permanently redirects to charlestoncvb.com which returns 403 for automated access. NPS article on the Siege of Charleston 1780 covers Revolutionary War history in Charleston authoritatively and returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-camden-sc-sc-state-archives-camden",
+    "table": "Source",
+    "oldUrl": "https://www.scdah.sc.gov/",
+    "newUrl": "https://scdah.sc.gov/",
+    "reason": "The www-prefixed domain (www.scdah.sc.gov) returns ECONNREFUSED. The non-www canonical URL scdah.sc.gov returns 200 OK with the SC Department of Archives and History homepage.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-camden-sc-south-carolina-hist-mag",
+    "table": "Source",
+    "oldUrl": "https://www.southcarolinahistoricalsociety.org/publications/",
+    "newUrl": "https://schistory.org/publications/",
+    "reason": "southcarolinahistoricalsociety.org returns 404. The SC Historical Society migrated to the domain schistory.org; the publications page at schistory.org/publications/ returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-cowpens-sc-eyewitness-depositions",
+    "table": "Source",
+    "oldUrl": "https://www.fold3.com/title/452/revolutionary-war-pension-and-bounty-land-warrant-application-files",
+    "newUrl": "https://www.familysearch.org/en/search/collection/1417475",
+    "reason": "Fold3's /title/452/ path redirects to the homepage and blocks automated access (403). FamilySearch hosts the same NARA M804 Revolutionary War Pension and Bounty Land Warrant Application Files collection freely with full indexing, returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-ninety-six-sc-sc-state-archives-backcountry",
+    "table": "Source",
+    "oldUrl": "https://www.scdah.sc.gov/",
+    "newUrl": "https://scdah.sc.gov/",
+    "reason": "The www-prefixed domain (www.scdah.sc.gov) returns ECONNREFUSED. The non-www canonical URL scdah.sc.gov returns 200 OK with the SC Department of Archives and History homepage.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-ninety-six-sc-usc-library-backcountry",
+    "table": "Source",
+    "oldUrl": "https://library.sc.edu/p/Collections/SCL",
+    "newUrl": "https://www.nps.gov/nisi/",
+    "reason": "Original USC South Caroliniana Library collections URL redirected to homepage; digital.library.sc.edu collection pages block automated access. NPS Ninety Six National Historic Site (200 OK) covers the same Ninety Six SC backcountry Revolutionary War history.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-eutaw-springs-sc-sc-state-archives",
+    "table": "Source",
+    "oldUrl": "https://www.scdah.sc.gov/",
+    "newUrl": "https://scdah.sc.gov/",
+    "reason": "SCDAH dropped the www subdomain; new canonical URL returns 200 OK.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-hobkirks-hill-sc-historic-camden-visit",
+    "table": "Source",
+    "oldUrl": "https://www.historiccamden.org/plan-your-visit",
+    "newUrl": "https://www.historiccamden.org/",
+    "reason": "/plan-your-visit path returns 404; organization homepage returns 200 OK and covers the Revolutionary War Living History Park in Camden SC.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-fort-moultrie-sc-nps-fort-moultrie",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/fosu/learn/historyculture/fort-moultrie.htm",
+    "newUrl": "https://www.nps.gov/fosu/learn/historyculture/fort_moultrie.htm",
+    "reason": "NPS renamed slug from hyphen to underscore; fort_moultrie.htm returns 200 OK with full Fort Moultrie Revolutionary War history.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-fort-moultrie-sc-sc-state-archives-1776",
+    "table": "Source",
+    "oldUrl": "https://www.scdah.sc.gov/",
+    "newUrl": "https://scdah.sc.gov/",
+    "reason": "SCDAH dropped the www subdomain; new canonical URL returns 200 OK.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-fort-moultrie-sc-american-battlefield-trust-fm",
+    "table": "Source",
+    "oldUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/sullivan%27s-island",
+    "newUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/sullivans-island-south-carolina",
+    "reason": "American Battlefield Trust restructured the slug to remove apostrophe encoding and added state suffix; new URL returns 200 OK with full Battle of Sullivan's Island / Fort Moultrie coverage.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-guilford-courthouse-nc-pension-depositions",
+    "table": "Source",
+    "oldUrl": "https://www.fold3.com/title/452/revolutionary-war-pension-and-bounty-land-warrant-application-files",
+    "newUrl": "https://www.archives.gov/citizen-archivist/missions/revolutionary-war-pension-files",
+    "reason": "Fold3 title/452 URL redirects to homepage. National Archives (primary custodian of these pension files) hosts the Revolutionary War Pension Files transcription mission at this 200 OK URL, covering the same case files including Guilford Courthouse veterans.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-guilford-courthouse-nc-historical-assoc-nc",
+    "table": "Source",
+    "oldUrl": "https://www.ncdcr.gov/about/history/north-carolina-historical-review",
+    "newUrl": "https://www.dncr.nc.gov/explore/history-culture/history/division-historical-resources/historical-publications/north-carolina-historical-review",
+    "reason": "NC DNCR migrated from ncdcr.gov to dncr.nc.gov and restructured URL paths; new URL returns 200 OK with the full North Carolina Historical Review page.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-wilmington-nc-lower-cape-fear-historical-society",
+    "table": "Source",
+    "oldUrl": "https://www.lcfhs.org/",
+    "newUrl": "https://latimerhouse.org/",
+    "reason": "lcfhs.org redirects to unrelated site. The Lower Cape Fear Historical Society now operates under the Latimer House Museum brand; latimerhouse.org returns 200 OK.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-wilmington-nc-visit-wilmington",
+    "table": "Source",
+    "oldUrl": "https://www.wilmingtonandbeaches.com/history-culture/history/",
+    "newUrl": "https://www.wilmingtonandbeaches.com/things-to-do/attractions-and-activities/history/wilmington/",
+    "reason": "Wilmington CVB restructured its URL hierarchy; new path returns 200 OK with Wilmington NC history page explicitly covering Revolutionary War heritage.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-savannah-ga-nps-fort-pulaski",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/fopu/learn/historyculture/revolutionary-war.htm",
+    "newUrl": "https://www.nps.gov/people/casimir-pulaski.htm",
+    "reason": "NPS Fort Pulaski Revolutionary War page no longer exists (404); the H&C index confirms the park's primary focus is Civil War. NPS People page for Casimir Pulaski returns 200 OK and covers his Revolutionary War role including the 1779 Savannah campaign.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-savannah-ga-wikipedia-capture-1778",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/Capture_of_Savannah_(1778)",
+    "newUrl": "https://en.wikipedia.org/wiki/Capture_of_Savannah",
+    "reason": "Wikipedia dropped the year disambiguator from the article title; Capture_of_Savannah returns 200 OK with full 1778 British capture of Savannah coverage.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-augusta-ga-wikipedia-battle-1781",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/Siege_of_Augusta_(1781)",
+    "newUrl": "https://en.wikipedia.org/wiki/Siege_of_Augusta",
+    "reason": "Wikipedia dropped the year disambiguator; Siege_of_Augusta returns 200 OK with full May–June 1781 Augusta campaign coverage.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-augusta-ga-american-battlefield-trust",
+    "table": "Source",
+    "oldUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/augusta",
+    "newUrl": null,
+    "reason": "battlefields.org/learn/revolutionary-war/battles/augusta returns 404 and no dedicated Augusta battle page exists on the American Battlefield Trust site; the organization covers nearby Georgia battles (Kettle Creek, Brier Creek) but not the Siege of Augusta.",
+    "verified": false,
+    "httpStatus": 404
+  },
+  {
+    "id": "src-new-haven-nps-coastal-raids",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/subjects/nationalregister/upload/CT-MPS-Revolutionary-War-Coastal-Raids.pdf",
+    "newUrl": "https://connecticuthistory.org/topics-page/revolutionary-war/",
+    "reason": "NPS National Register PDF no longer hosted at that path (404); new NPS location not found. CT Humanities connecticuthistory.org Revolutionary War topic page returns 200 OK and explicitly documents Connecticut coastal raids including New Haven (Tryon's 1779 raid).",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-new-haven-state-archives-council",
+    "table": "Source",
+    "oldUrl": "https://portal.ct.gov/SOTS/Collection-Detail-Pages/State-Archives",
+    "newUrl": "https://portal.ct.gov/csl/departments/state-archives",
+    "reason": "CT Secretary of State SOTS path redirected to homepage; Connecticut State Library's State Archives page at portal.ct.gov/csl/departments/state-archives returns 200 OK.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-new-haven-dandrea-raid",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2018/07/the-british-raid-on-new-haven/",
+    "newUrl": "https://en.wikipedia.org/wiki/Tryon%27s_raid",
+    "reason": "The 2018 allthingsliberty.com article is no longer available (404). Wikipedia's Tryon's Raid article returns 200 OK and covers the same July 1779 British raid on New Haven, Fairfield, and Norwalk, Connecticut.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-new-london-connecticut-state-records",
+    "table": "Source",
+    "oldUrl": "https://portal.ct.gov/SOTS/Collection-Detail-Pages/State-Archives",
+    "newUrl": "https://portal.ct.gov/csl/departments/state-archives",
+    "reason": "CT Secretary of State SOTS path redirected to homepage; Connecticut State Library's State Archives page returns 200 OK.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-new-london-wikipedia",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/Raid_on_New_London",
+    "newUrl": "https://en.wikipedia.org/wiki/Battle_of_Groton_Heights",
+    "reason": "Wikipedia's Raid_on_New_London article does not exist; the 1781 event is documented under Battle_of_Groton_Heights, which returns 200 OK and covers Benedict Arnold's raid on New London and Groton, CT in full.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-groton-connecticut-sons-revolution",
+    "table": "Source",
+    "oldUrl": "https://connecticutsar.org/",
+    "newUrl": "https://www.fortgriswold.org/",
+    "reason": "connecticutsar.org redirects to unrelated site; replacement CT SAR site (sarconnecticut.org) blocks automated fetch (403). Fort Griswold Battlefield State Park Foundation (fortgriswold.org) returns 200 OK and is the primary institutional authority for the Groton CT Revolutionary War site.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-groton-harris-ledyard",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2021/09/colonel-william-ledyard-fort-griswold/",
+    "newUrl": "https://allthingsliberty.com/2016/03/anything-but-monotonous-nine-months-of-garrison-duty-at-fort-griswold/",
+    "reason": "Original 2021 ATL article returned 404. Replaced with a 2016 Journal of the American Revolution article from the same publisher that discusses Colonel William Ledyard as commandant of Fort Griswold in detail.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-groton-jordan-african-american",
+    "table": "Source",
+    "oldUrl": "https://connecticuthistory.org/african-americans-at-fort-griswold/",
+    "newUrl": "https://revolutionarywarjournal.com/african-americans-in-the-american-revolution-jordan-freeman-dies-defending-fort-griswold/",
+    "reason": "Original Connecticut History URL returned 404. The connecticuthistory.org battle page that still exists does not discuss African Americans. Replaced with Revolutionary War Journal article (Feb 2023) specifically about Jordan Freeman and Lambert Latham, African American defenders at Fort Griswold.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-danbury-connecticut-state-archives-1777",
+    "table": "Source",
+    "oldUrl": "https://portal.ct.gov/SOTS/Collection-Detail-Pages/State-Archives",
+    "newUrl": "https://libguides.ctstatelibrary.org/hg/militaryrecords/revwar",
+    "reason": "Original portal.ct.gov page returned 404 ('no longer here'). Replaced with Connecticut State Library's LibGuide for Revolutionary War military records, which covers CT state archives holdings for the 1777 period including the Danbury raid.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-newport-nps-rochambeau",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/roc/index.htm",
+    "newUrl": "https://www.nps.gov/waro/",
+    "reason": "Original NPS Rochambeau site (nps.gov/roc) returned 404. The Washington-Rochambeau Revolutionary Route National Historic Trail (WARO) is the current NPS program covering Rochambeau's 1781 march from Newport, RI to Yorktown.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-providence-gaspee-testimony",
+    "table": "Source",
+    "oldUrl": "https://www.sos.ri.gov/divisions/Archival/archives",
+    "newUrl": "https://sosri.access.preservica.com/uncategorized/SO_ad412bed-2274-4bd6-8013-1d9994900096/",
+    "reason": "Original RI SOS archives URL returned 404. Replaced with the Rhode Island State Archives Digital Archive record for HMS Gaspee, which contains the Gaspee Commission's witness testimony, depositions, and official court records.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-providence-nps-gaspee",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/articles/gaspee.htm",
+    "newUrl": "https://www.nps.gov/articles/000/providence-tea-party.htm",
+    "reason": "Original NPS Gaspee article URL returned 404. Replaced with the current NPS article 'Anyone Up for a Cup of Tea? The Providence Tea Party' (Blackstone River Valley NHP), which discusses the 1772 burning of HMS Gaspee as the precursor to the Revolution.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-danbury-visitdanbury",
+    "table": "Source",
+    "oldUrl": "https://www.danbury.org/",
+    "newUrl": "https://danburymuseum.org/danbury-history-in-brief",
+    "reason": "Original danbury.org returned a TLS certificate error (connection failure). Replaced with the Danbury Museum & Historical Society's 'Danbury History in Brief' page, which covers the 1777 British raid and the town's Revolutionary War history.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-exeter-nps-war-independence",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/nr/travel/revwar/index.htm",
+    "newUrl": "https://www.nps.gov/subjects/americanrevolution/visit.htm",
+    "reason": "Original NPS 'revwar' travel itinerary URL returned 404. Replaced with the current NPS American Revolution 'Visit' page, which lists battlefields and sites open to visitors across all states including New England.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-baltimore-maryland-line",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2016/08/maryland-400/",
+    "newUrl": "https://msa.maryland.gov/maryland400",
+    "reason": "Original ATL article returned 404. Replaced with the Maryland State Archives 'Maryland 400' project page, a primary institutional source documenting the 1st Maryland Regiment's heroic rearguard action at the Battle of Brooklyn (1776).",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-dover-delaware-historical-society",
+    "table": "Source",
+    "oldUrl": "https://dehs.org/",
+    "newUrl": "https://dehistory.org/",
+    "reason": "Original dehs.org domain is parked for sale on GoDaddy (307 redirect). The Delaware Historical Society has migrated to dehistory.org, confirmed by the page title 'Delaware Historical Society - Giving Life to History' at their Wilmington campus.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-wilmington-cooch-bridge-pension",
+    "table": "Source",
+    "oldUrl": "https://www.fold3.com/collection/revolutionary-war-pension-bounty-land-warrant-application-files",
+    "newUrl": "https://www.archives.gov/research/military/american-revolution",
+    "reason": "Original Fold3 URL returns HTTP 403 (requires paid subscription). Replaced with the National Archives (NARA) guide to American Revolution records, which describes the M804 Revolutionary War pension and bounty land warrant application files and links to searchable databases.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-bennington-nps-bennington-battlefield",
+    "table": "Source",
+    "oldUrl": "https://parks.ny.gov/historic-sites/35/details.aspx",
+    "newUrl": "https://parks.ny.gov/historic-sites/benningtonbattlefield/details.aspx",
+    "reason": "Original URL (numeric ID 35) redirects to Darwin Martin House in Buffalo — wrong site. The correct slug-based URL resolves to Bennington Battlefield State Historic Site in Walloomsac, NY, covering the August 16, 1777 battle.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-brattleboro-vermont-independence-1777",
+    "table": "Source",
+    "oldUrl": "https://www.sec.state.vt.us/archives-records.aspx",
+    "newUrl": "https://avalon.law.yale.edu/18th_century/vt01.asp",
+    "reason": "Original Vermont Secretary of State archives URL returned ECONNREFUSED (server down). sec.state.vt.us and sos.vermont.gov both failed or blocked access. Replaced with Yale Law School Avalon Project's full text of the Vermont Constitution of July 8, 1777, the founding document of Vermont's independence.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-castine-nps-penobscot",
+    "table": "Source",
+    "oldUrl": "https://wilsonmuseum.org/",
+    "newUrl": "https://www.wilsonmuseum.org/",
+    "reason": "Original bare domain wilsonmuseum.org (no www) returned a TLS certificate mismatch error. The canonical URL with www prefix resolves correctly to the Wilson Museum's homepage in Castine, Maine, which holds Penobscot Expedition archives.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-portland-wikipedia-falmouth",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/Burning_of_Falmouth_(1775)",
+    "newUrl": "https://en.wikipedia.org/wiki/Burning_of_Falmouth",
+    "reason": "Original Wikipedia URL with '(1775)' disambiguation suffix returned 404 — the article does not use that suffix. The correct article title is 'Burning of Falmouth' and returned HTTP 200 with full content about the October 18, 1775 Royal Navy attack on Portland, Maine.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-kaskaskia-wikipedia",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/Capture_of_Kaskaskia",
+    "newUrl": "https://en.wikipedia.org/wiki/Illinois_campaign",
+    "reason": "Original Wikipedia article 'Capture_of_Kaskaskia' returned 404 — the article was merged/renamed. The current Wikipedia article 'Illinois campaign' covers Clark's 1778 capture of Kaskaskia in the 'Occupation of the Illinois Country' section in detail.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-kaskaskia-illinois-tourism",
+    "table": "Source",
+    "oldUrl": "https://www.dnr.illinois.gov/Parks/Pages/Kaskaskia.aspx",
+    "newUrl": "https://dnrhistoric.illinois.gov/experience/sites/site.fort-kaskaskia.html",
+    "reason": "Original Illinois DNR URL returned 404 — the DNR historic sites migrated to a new subdomain. The Illinois Historic Preservation Division now hosts Fort Kaskaskia State Historic Site content at dnrhistoric.illinois.gov.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-marietta-campus-martius-museum",
+    "table": "Source",
+    "oldUrl": "https://www.ohiohistory.org/visit/museum-and-site-locator/campus-martius-museum/",
+    "newUrl": "https://www.ohiohistory.org/visit/browse-historical-sites/campus-martius-museum/",
+    "reason": "Original Ohio History URL returned 404 — the site restructured from 'museum-and-site-locator' to 'browse-historical-sites'. The new URL resolves correctly to the Campus Martius Museum page at Ohio History Connection.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-wheeling-archives-wv",
+    "table": "Source",
+    "oldUrl": "https://archives.wv.gov/",
+    "newUrl": "https://archive.wvculture.org/history/archives/services.html",
+    "reason": "Original archives.wv.gov returned ECONNREFUSED (server offline). The West Virginia State Archives operates under wvculture.org; the services page at archive.wvculture.org is accessible and covers research resources including Revolutionary War records.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-wheeling-wikipedia-fort-henry",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/Battle_of_Fort_Henry_(1777)",
+    "newUrl": "https://en.wikipedia.org/wiki/Siege_of_Fort_Henry_(1777)",
+    "reason": "Original Wikipedia URL 'Battle_of_Fort_Henry_(1777)' returned 404 — the article uses 'Siege' not 'Battle' as the title. The correct URL 'Siege_of_Fort_Henry_(1777)' returned HTTP 200 with full content about the September 1777 multi-tribal attack on the Virginia outpost near Wheeling.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-wheeling-draper-manuscripts",
+    "table": "Source",
+    "oldUrl": "https://www.wisconsinhistory.org/Records/Article/CS5107",
+    "newUrl": "https://www.wisconsinhistory.org/Records/Article/CS4103",
+    "reason": "CS5107 returns 404. CS4103 is the Wisconsin Historical Society's Draper Manuscripts Collection overview page, which describes the full 491-volume collection and provides access guidance. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-alb-nps-hudson-valley",
+    "table": "Source",
+    "oldUrl": "https://www.hudsonrivervalley.com/heritage/",
+    "newUrl": "https://www.hudsonrivervalley.com/sites",
+    "reason": "/heritage/ returns 404. The /sites path is the current Heritage Sites directory of the Maurice D. Hinchey Hudson River Valley National Heritage Area, covering cultural and historical attractions including Revolutionary War history. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-wp-nps-west-point-highlands",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/subjects/revwar/west-point.htm",
+    "newUrl": "https://www.nps.gov/subjects/americanrevolution/index.htm",
+    "reason": "The /subjects/revwar/ path no longer exists; NPS reorganized to /subjects/americanrevolution/. The new index page is the NPS American Revolution hub covering West Point and Hudson Highlands among other sites. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-car-pa-archives-carlisle",
+    "table": "Source",
+    "oldUrl": "https://www.phmc.pa.gov/Archives",
+    "newUrl": "https://www.pa.gov/agencies/phmc/pa-state-archives",
+    "reason": "The phmc.pa.gov/Archives URL redirects to a generic PHMC agency page (HTTP 302). Pennsylvania migrated to the pa.gov domain; the correct Pennsylvania State Archives page is now at pa.gov/agencies/phmc/pa-state-archives. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-pao-paoli-battlefield-org",
+    "table": "Source",
+    "oldUrl": "https://www.paolipreservation.org/",
+    "newUrl": "https://pbpfinc.org/",
+    "reason": "paolipreservation.org is unreachable (ECONNREFUSED). The Paoli Battlefield Preservation Fund Inc. now operates at pbpfinc.org, which covers the same mission of protecting and promoting the September 1777 Battle of Paoli site. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-marblehead-wikipedia-glovers-regiment",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/Glover%27s_Marblehead_Regiment",
+    "newUrl": "https://en.wikipedia.org/wiki/14th_Continental_Regiment",
+    "reason": "The 'Glover%27s_Marblehead_Regiment' Wikipedia title returns 404; the article was merged into the 14th Continental Regiment page, which explicitly identifies itself as 'also known as the Marblehead Regiment, Marbleheaders, and Glover's Regiment.' Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-fle-nps-fort-lee-historic-park",
+    "table": "Source",
+    "oldUrl": "https://www.nj.gov/dep/parksandforests/historic/fortlee/index.html",
+    "newUrl": "https://njpalisades.org/fortlee/",
+    "reason": "The NJ DEP URL returns 404. Fort Lee Historic Park is managed by the Palisades Interstate Park Commission; the current official page is at njpalisades.org/fortlee/, covering the park's Revolutionary War history, reconstructed encampment, and visitor information. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-savannah-ga-georgia-hist-quarterly",
+    "table": "Source",
+    "oldUrl": "https://georgiahistory.com/education-outreach/publications/georgia-historical-quarterly/",
+    "newUrl": "https://www.georgiahistory.com/learn-and-explore/publications/georgia-historical-quarterly/",
+    "reason": "The URL without 'www' and under the old /education-outreach/ path returns 404. The Georgia Historical Society reorganized its site; the Georgia Historical Quarterly page moved to www.georgiahistory.com/learn-and-explore/publications/georgia-historical-quarterly/. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-danbury-wikipedia",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/Raid_on_Danbury",
+    "newUrl": "https://en.wikipedia.org/wiki/Battle_of_Ridgefield",
+    "reason": "The 'Raid_on_Danbury' Wikipedia title returns 404; the article was merged into Battle_of_Ridgefield, which explicitly covers 'Tryon's Raid on Danbury' as the central event in the 1777 Connecticut operation. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-annapolis-historic-annapolis",
+    "table": "Source",
+    "oldUrl": "https://www.historiccannapolis.org/",
+    "newUrl": "https://www.annapolis.org/",
+    "reason": "historiccannapolis.org is unreachable (ECONNREFUSED). Historic Annapolis (formerly Historic Annapolis Foundation) now operates at annapolis.org. The site covers preservation of Maryland's capital including Revolutionary-era properties such as the William Paca House. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-wilmington-cooch-bridge-society",
+    "table": "Source",
+    "oldUrl": "https://www.coochsbridgebattlefield.org/",
+    "newUrl": "https://history.delaware.gov/coochs-bridge-historic-site/",
+    "reason": "coochsbridgebattlefield.org is unreachable (ECONNREFUSED). The official state-managed page for Delaware's only Revolutionary War land battle is now at the Delaware History division site. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-kaskaskia-illinois-historical-survey",
+    "table": "Source",
+    "oldUrl": "https://www.illinois.gov/agencies/agency.illinois-state-historical-library.html",
+    "newUrl": "https://presidentlincoln.illinois.gov/library/library-collections/",
+    "reason": "The illinois.gov agency URL redirects to a generic state agency page with no content. The Illinois State Historical Library is now housed within the Abraham Lincoln Presidential Library and Museum; its collections page at presidentlincoln.illinois.gov describes access to 12 million manuscript documents and historical materials. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "source-elizabeth-nps-revolutionary-nj",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/revwar/about_the_revolution/new_jersey.html",
+    "newUrl": "https://www.nps.gov/places/crossroads-national-heritage-area.htm",
+    "reason": "The /revwar/ path no longer exists on NPS. The Crossroads of the American Revolution National Heritage Area page covers New Jersey's Revolutionary War role in detail, noting 'more battles and skirmishes took place in New Jersey than any other colony.' Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-salem-nps-maritime",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/sama/learn/historyculture/revolutionary-war.htm",
+    "newUrl": "https://www.nps.gov/sama/learn/historyculture/index.htm",
+    "reason": "The specific /revolutionary-war.htm subpage returns 404. The Salem Maritime National Historical Park History & Culture index at /index.htm is the current landing page for the site's historical content, including its Revolutionary War privateering role. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-kings-mountain-nc-draper-manuscripts",
+    "table": "Source",
+    "oldUrl": "https://www.wisconsinhistory.org/Records/Article/CS1945",
+    "newUrl": "https://digicoll.library.wisc.edu/cgi/f/findaid/findaid-idx?c=wiarchives%3Bcc%3Dwiarchives%3Bview%3Dtext%3Brgn%3Dmain%3Bdidno%3Duw-whs-draper0dd",
+    "reason": "CS1945 returns 404. The UW Digital Collections finding aid for the Draper Manuscripts: King's Mountain Papers (1756-1887) is the authoritative source for the same collection, covering the October 7, 1780 battle and Lyman Draper's 40-year research. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "cmoagrnsa000036gwew6ze63k",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/subjects/amrevolution/index.htm",
+    "newUrl": "https://www.nps.gov/subjects/americanrevolution/index.htm",
+    "reason": "The /subjects/amrevolution/ path returns 404; the NPS renamed the subject section to /subjects/americanrevolution/. The index page at the new path is the NPS American Revolution hub with the same content. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "cmoagrobo000936gwmoc8jw0n",
+    "table": "Source",
+    "oldUrl": "https://www.nysm.nysed.gov/collections",
+    "newUrl": "https://nysm.nysed.gov/research-collections",
+    "reason": "The /collections path returns 404. The New York State Museum reorganized its site; the current Research & Collections hub is at /research-collections, covering the museum's 16 million specimens and artifacts across history, geology, and other departments. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "cmonzghud00001p158fgxlasz",
+    "table": "Source",
+    "oldUrl": "https://history.house.gov/Historical-Highlights/1700s/General-George-Washington-resigning-his-commission-in-Annapolis",
+    "newUrl": "https://en.wikipedia.org/wiki/George_Washington%27s_resignation_as_commander-in-chief",
+    "reason": "The history.house.gov URL redirects to the homepage (likely slug changed to include '-Maryland/' suffix). The replacement URL from the House Archives returns HTTP 403 to automated fetchers (bot protection), preventing confirmation of 200. Using the Wikipedia article on Washington's resignation instead, which covers the same December 23, 1783 Annapolis event in full detail. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "cmp29v0sh0003ef4ivbuj7icm",
+    "table": "Source",
+    "oldUrl": "https://ahec.armywarcollege.edu/exhibits/CBKsThenAndNow.cfm",
+    "newUrl": "https://ahec.armywarcollege.edu/exhibits/index.cfm",
+    "reason": "The specific CBKsThenAndNow.cfm exhibit page returns 404; the exhibit appears to have been removed or retired. The USAHEC exhibits index at /exhibits/index.cfm is the current landing page for all USAHEC exhibits, including 'From Power to Purpose: Carlisle Barracks from Revolution to Today,' which covers the same subject matter. Verified HTTP 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "cmp29v0sv0006ef4idfth0to1",
+    "table": "Source",
+    "oldUrl": "https://goordnance.army.mil/history/OrdnanceCorpshistory.html",
+    "newUrl": null,
+    "reason": "The goordnance.army.mil server consistently times out for all automated requests (connection refused or timeout across multiple fetch attempts including both the original URL and alternate paths /history/index.html and /history-heritage/index.html). The domain is indexed in search engines as active but cannot be verified to return HTTP 200 or 202 from this environment. Returning null per verification requirement.",
+    "verified": false,
+    "httpStatus": 0
+  },
+  {
+    "id": "cmpjf769j000edqjhm0kbnfs3",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/History_of_Albany",
+    "newUrl": "https://en.wikipedia.org/wiki/History_of_Albany,_New_York",
+    "reason": "The original URL path does not exist on Wikipedia. The article was moved/titled 'History of Albany, New York'. The replacement URL returned content successfully (HTTP 200).",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "cmprzueof0008um0ruqkkryi8",
+    "table": "Source",
+    "oldUrl": "https://www.nlchs.org/about/shaw-mansion/",
+    "newUrl": "https://en.wikipedia.org/wiki/Shaw_Mansion_(New_London,_Connecticut)",
+    "reason": "NLCHS website (nlchs.org) returned HTTP 503 Service Unavailable at time of check. Wikipedia's article on the Shaw Mansion covers the same subject (New London County Historical Society headquarters, history, and museum), returned HTTP 200, and is from a stable institution.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "cmprzueop000bum0r7mpcwgg0",
+    "table": "Source",
+    "oldUrl": "https://www.nlchs.org/privateering-out-of-new-london/",
+    "newUrl": "https://www.nlchs.org/privateering-out-of-new-london/",
+    "reason": "The original URL was previously returning a server error but is now accessible and returned full page content ('Privateering out of New London' article from the New London County Historical Society) at HTTP 200. No URL change needed.",
+    "verified": true,
+    "httpStatus": 200
+  }
+]

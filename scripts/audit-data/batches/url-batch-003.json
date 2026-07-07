@@ -1,0 +1,502 @@
+[
+  {
+    "id": "src-ger-washington-germantown-plan",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "Washington's Battle Plan for Germantown, October 1777",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "germantown-pa",
+    "publisherOrHolder": "Library of Congress, George Washington Papers"
+  },
+  {
+    "id": "src-pit-visit-pittsburgh-history",
+    "table": "Source",
+    "url": "https://www.visitpittsburgh.com/things-to-do/history-heritage/",
+    "title": "Visit Pittsburgh: Fort Pitt and Revolutionary War History",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "pittsburgh-pa",
+    "publisherOrHolder": "Visit Pittsburgh"
+  },
+  {
+    "id": "src-tre-washington-trenton-orders",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "Washington's Orders for the Crossing of the Delaware and Att",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "trenton-nj",
+    "publisherOrHolder": "Library of Congress, George Washington Papers"
+  },
+  {
+    "id": "src-tre-nps-washington-crossing",
+    "table": "Source",
+    "url": "https://www.nj.gov/dep/parksandforests/historic/washcros/index.html",
+    "title": "Washington Crossing Historic Park: Official Site",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "trenton-nj",
+    "publisherOrHolder": "Pennsylvania/New Jersey State Parks"
+  },
+  {
+    "id": "src-tre-nj-state-archives-trenton",
+    "table": "Source",
+    "url": "https://www.nj.gov/state/archives/",
+    "title": "New Jersey State Archives: Revolutionary War Era Records",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "trenton-nj",
+    "publisherOrHolder": "New Jersey State Archives"
+  },
+  {
+    "id": "src-tre-trenton-city-museum",
+    "table": "Source",
+    "url": "https://www.barracks.org/",
+    "title": "Old Barracks Museum: Revolutionary War Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "trenton-nj",
+    "publisherOrHolder": "Old Barracks Museum"
+  },
+  {
+    "id": "src-tre-trenton-nj-heritage",
+    "table": "Source",
+    "url": "https://ellarslie.org/",
+    "title": "Trenton City Museum: American Revolution Interpretive Collec",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "trenton-nj",
+    "publisherOrHolder": "Trenton City Museum at Ellarslie"
+  },
+  {
+    "id": "src-tre-wikipedia-battle-trenton",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Trenton",
+    "title": "Battle of Trenton -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "trenton-nj",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-tre-visit-nj-trenton",
+    "table": "Source",
+    "url": "https://www.visitnj.org/trenton",
+    "title": "Visit New Jersey: Trenton Revolutionary War Heritage",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "trenton-nj",
+    "publisherOrHolder": "New Jersey Division of Travel and Tourism"
+  },
+  {
+    "id": "src-pit-wikipedia-fort-pitt",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Fort_Pitt",
+    "title": "Fort Pitt -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "pittsburgh-pa",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "source-hackensack-dey-mansion-nps",
+    "table": "Source",
+    "url": "https://npgallery.nps.gov",
+    "title": "Dey Mansion (Wayne, NJ): National Register of Historic Place",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "hackensack-nj",
+    "publisherOrHolder": "National Park Service / National Register of Historic Places"
+  },
+  {
+    "id": "cmpwa4e1e0003uhiyc6imj53g",
+    "table": "Source",
+    "url": "https://www.nps.gov/people/crispus-attucks.htm",
+    "title": "https://www.nps.gov/people/crispus-attucks.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "boston-ma",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "src-pri-nps-princeton-battlefield",
+    "table": "Source",
+    "url": "https://www.nj.gov/dep/parksandforests/historic/princeton/index.html",
+    "title": "Princeton Battlefield State Park: Historical Documentation",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "princeton-nj",
+    "publisherOrHolder": "New Jersey State Park Service"
+  },
+  {
+    "id": "src-pri-princeton-university-archives",
+    "table": "Source",
+    "url": "https://rbsc.princeton.edu/",
+    "title": "Princeton University Archives: Nassau Hall During the Revolu",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "princeton-nj",
+    "publisherOrHolder": "Princeton University Library"
+  },
+  {
+    "id": "src-pri-nj-historical-society-princeton",
+    "table": "Source",
+    "url": "https://jerseyhistory.org/",
+    "title": "New Jersey Historical Society: Princeton Area Revolutionary ",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "princeton-nj",
+    "publisherOrHolder": "New Jersey Historical Society"
+  },
+  {
+    "id": "src-pri-princeton-battlefield-society",
+    "table": "Source",
+    "url": "https://www.theprincetonbattlefield.org/",
+    "title": "Princeton Battlefield Society: Archaeological Research Progr",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "princeton-nj",
+    "publisherOrHolder": "Princeton Battlefield Society"
+  },
+  {
+    "id": "src-pri-wikipedia-princeton",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Princeton",
+    "title": "Battle of Princeton -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "princeton-nj",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-pri-visit-princeton-revolution",
+    "table": "Source",
+    "url": "https://www.visitprinceton.org/",
+    "title": "Princeton Tourism: American Revolution Heritage",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "princeton-nj",
+    "publisherOrHolder": "Princeton Mercer Regional Convention and Visitors Bureau"
+  },
+  {
+    "id": "src-pri-nassau-hall-history",
+    "table": "Source",
+    "url": "https://www.princeton.edu/history",
+    "title": "Nassau Hall History: Princeton University's Role in the Revo",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "princeton-nj",
+    "publisherOrHolder": "Princeton University"
+  },
+  {
+    "id": "src-pri-washington-princeton-orders",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "Washington's Orders and After-Action Report on the Battle of",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "princeton-nj",
+    "publisherOrHolder": "Library of Congress, George Washington Papers"
+  },
+  {
+    "id": "src-mor-morris-county-historical",
+    "table": "Source",
+    "url": "https://www.morrishistory.org/",
+    "title": "Morris County Historical Society: Morristown Encampment Coll",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "morristown-nj",
+    "publisherOrHolder": "Morris County Historical Society"
+  },
+  {
+    "id": "src-mor-cold-winter-1779-80",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2016/02/the-hard-winter-morristown-1779-1780/",
+    "title": "The Hard Winter: Morristown 1779-1780 and the Most Severe Cl",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "morristown-nj",
+    "publisherOrHolder": "Journal of the American Revolution"
+  },
+  {
+    "id": "src-mor-wikipedia-morristown-nhp",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Morristown_National_Historical_Park",
+    "title": "Morristown National Historical Park -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "morristown-nj",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-mor-visit-morristown",
+    "table": "Source",
+    "url": "https://www.morristourism.org/",
+    "title": "Explore Morris County: Revolutionary War Heritage",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "morristown-nj",
+    "publisherOrHolder": "Morris County Tourism Bureau"
+  },
+  {
+    "id": "src-mor-nps-morristown-visitor",
+    "table": "Source",
+    "url": "https://www.nps.gov/morr/planyourvisit/index.htm",
+    "title": "Morristown NHP Visitor Guide",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "morristown-nj",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-mon-washington-monmouth-orders",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "Washington's Orders and Correspondence: Monmouth Campaign, J",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "monmouth-nj",
+    "publisherOrHolder": "Library of Congress, George Washington Papers"
+  },
+  {
+    "id": "src-mon-nps-monmouth-battlefield",
+    "table": "Source",
+    "url": "https://www.nj.gov/dep/parksandforests/historic/monmouth/index.html",
+    "title": "Monmouth Battlefield State Park: Historical Resources",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "monmouth-nj",
+    "publisherOrHolder": "New Jersey State Park Service"
+  },
+  {
+    "id": "src-mon-molly-pitcher-scholarship",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2013/12/molly-pitcher-the-real-story/",
+    "title": "Molly Pitcher: The Real Story",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "monmouth-nj",
+    "publisherOrHolder": "Journal of the American Revolution"
+  },
+  {
+    "id": "cmotpc5ke000j2hy643v2uobt",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/washingtons-encampment-morristown-new-jersey-and-hard-winter-1779-1780",
+    "title": "https://www.battlefields.org/learn/articles/washingtons-enca",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "morristown-nj",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmotpc5ko000m2hy6ntpya80w",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/morristown-winter-encampment",
+    "title": "https://www.battlefields.org/learn/articles/morristown-winte",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "morristown-nj",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "src-mon-monmouth-county-tourism",
+    "table": "Source",
+    "url": "https://www.visitmonmouth.com/",
+    "title": "Monmouth County Tourism: Revolutionary War Heritage",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "monmouth-nj",
+    "publisherOrHolder": "Monmouth County Tourism"
+  },
+  {
+    "id": "src-nbr-washington-retreat-dispatch",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "Washington's Dispatches from New Brunswick and the New Jerse",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "new-brunswick-nj",
+    "publisherOrHolder": "Library of Congress, George Washington Papers"
+  },
+  {
+    "id": "src-nbr-rutgers-university-archives",
+    "table": "Source",
+    "url": "https://www.libraries.rutgers.edu/rul/libs/scua/",
+    "title": "Rutgers University Special Collections: New Jersey Revolutio",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "new-brunswick-nj",
+    "publisherOrHolder": "Rutgers University Libraries"
+  },
+  {
+    "id": "src-nbr-wikipedia-new-brunswick",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/New_Brunswick,_New_Jersey",
+    "title": "New Brunswick, New Jersey -- History (Wikipedia)",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "new-brunswick-nj",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-nbr-visit-new-brunswick",
+    "table": "Source",
+    "url": "https://www.visitnewbrunswick.com/",
+    "title": "Visit New Brunswick: History and Heritage",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "new-brunswick-nj",
+    "publisherOrHolder": "New Brunswick City Tourism"
+  },
+  {
+    "id": "src-fle-washington-fort-lee-letters",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "Washington's Correspondence on the Fall of Fort Lee and Fort",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "fort-lee-nj",
+    "publisherOrHolder": "Library of Congress, George Washington Papers"
+  },
+  {
+    "id": "src-mon-wikipedia-monmouth",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Monmouth",
+    "title": "Battle of Monmouth -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "monmouth-nj",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-fle-wikipedia-fort-lee",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Fort_Lee,_New_Jersey",
+    "title": "Fort Lee, New Jersey -- Revolutionary War History (Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "fort-lee-nj",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-fle-fort-lee-historic-park-visitor",
+    "table": "Source",
+    "url": "https://www.nj.gov/dep/parksandforests/historic/fortlee/index.html",
+    "title": "Fort Lee Historic Park Visitor Information",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "fort-lee-nj",
+    "publisherOrHolder": "New Jersey State Park Service"
+  },
+  {
+    "id": "src-yorktown-va-cornwallis-capitulation",
+    "table": "Source",
+    "url": "https://www.archives.gov/milestone-documents/articles-of-capitulation",
+    "title": "Articles of Capitulation, Yorktown, October 19, 1781",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "yorktown-va",
+    "publisherOrHolder": "National Archives and Records Administration"
+  },
+  {
+    "id": "src-yorktown-va-washington-diary-1781",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "George Washington's Diary, August-October 1781",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "yorktown-va",
+    "publisherOrHolder": "Library of Congress, Manuscript Division"
+  },
+  {
+    "id": "src-yorktown-va-nps-colonial-nhp",
+    "table": "Source",
+    "url": "https://www.nps.gov/york/index.htm",
+    "title": "Colonial National Historical Park: Yorktown Battlefield",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "yorktown-va",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-yorktown-va-virginia-state-archives-1781",
+    "table": "Source",
+    "url": "https://www.lva.virginia.gov/",
+    "title": "Virginia Executive Papers: Governor Thomas Nelson, 1781",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "yorktown-va",
+    "publisherOrHolder": "Library of Virginia"
+  },
+  {
+    "id": "src-yorktown-va-hamilton-assault-redoubt",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/alexander-hamilton-papers/",
+    "title": "Alexander Hamilton's Report on the Assault on Redoubt No. 10",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "yorktown-va",
+    "publisherOrHolder": "Library of Congress, Alexander Hamilton Papers"
+  },
+  {
+    "id": "src-fle-bergen-county-historical",
+    "table": "Source",
+    "url": "https://www.bergencountyhistory.org/",
+    "title": "Bergen County Historical Society: Revolutionary War Collecti",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "fort-lee-nj",
+    "publisherOrHolder": "Bergen County Historical Society"
+  },
+  {
+    "id": "src-yorktown-va-wikipedia-siege",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Siege_of_Yorktown",
+    "title": "Siege of Yorktown -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "yorktown-va",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-yorktown-va-nps-battlemap",
+    "table": "Source",
+    "url": "https://www.nps.gov/york/planyourvisit/maps.htm",
+    "title": "Yorktown Battlefield Visitor Map and Guide",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "yorktown-va",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-williamsburg-va-burgesses-journals",
+    "table": "Source",
+    "url": "https://www.colonialwilliamsburg.org/",
+    "title": "Journals of the House of Burgesses of Virginia, 1773-1776",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "williamsburg-va",
+    "publisherOrHolder": "Colonial Williamsburg Foundation / Virginia State Library"
+  },
+  {
+    "id": "src-williamsburg-va-henry-resolves-1765",
+    "table": "Source",
+    "url": "https://www.encyclopediavirginia.org/entries/henry-patrick-1736-1799/",
+    "title": "Patrick Henry's Virginia Stamp Act Resolves, May 1765",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "williamsburg-va",
+    "publisherOrHolder": "Library of Virginia"
+  },
+  {
+    "id": "src-williamsburg-va-virginia-declaration-rights",
+    "table": "Source",
+    "url": "https://www.lva.virginia.gov/public/guides/va1_declarationrights.htm",
+    "title": "Virginia Declaration of Rights, June 12, 1776 (George Mason'",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "williamsburg-va",
+    "publisherOrHolder": "Library of Virginia"
+  }
+]

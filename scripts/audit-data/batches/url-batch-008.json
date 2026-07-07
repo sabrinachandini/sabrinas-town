@@ -1,0 +1,502 @@
+[
+  {
+    "id": "src-dover-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Dover,_Delaware",
+    "title": "Dover, Delaware -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "dover-de",
+    "publisherOrHolder": "Wikimedia Foundation"
+  },
+  {
+    "id": "src-dover-visit-delaware",
+    "table": "Source",
+    "url": "https://www.visitdelaware.com/",
+    "title": "Visit Delaware: First State Heritage Sites",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "dover-de",
+    "publisherOrHolder": "Delaware Tourism Office"
+  },
+  {
+    "id": "src-wilmington-cooch-bridge-pension",
+    "table": "Source",
+    "url": "https://www.fold3.com/collection/revolutionary-war-pension-bounty-land-warrant-application-files",
+    "title": "Revolutionary War Pension Applications: Delaware Veterans",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "wilmington-de",
+    "publisherOrHolder": "National Archives, Record Group 15"
+  },
+  {
+    "id": "src-wilmington-continental-army-orders",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "Orderly Books of the Continental Army: Delaware Campaign, Se",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "wilmington-de",
+    "publisherOrHolder": "Library of Congress, George Washington Papers"
+  },
+  {
+    "id": "src-wilmington-nps-brandywine",
+    "table": "Source",
+    "url": "https://brandywinebattlefield.org/",
+    "title": "Brandywine Battlefield Park: Historical Overview",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "wilmington-de",
+    "publisherOrHolder": "Pennsylvania Historical and Museum Commission"
+  },
+  {
+    "id": "src-wilmington-delaware-historical-society",
+    "table": "Source",
+    "url": "https://dehs.org/",
+    "title": "Delaware Historical Society: Wilmington Revolutionary Collec",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "wilmington-de",
+    "publisherOrHolder": "Delaware Historical Society"
+  },
+  {
+    "id": "src-kaskaskia-george-rogers-clark-nhp",
+    "table": "Source",
+    "url": "https://www.nps.gov/gero/index.htm",
+    "title": "George Rogers Clark National Historical Park: Interpretive M",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "kaskaskia-il",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-dover-delaware-declaration",
+    "table": "Source",
+    "url": "https://archives.delaware.gov/",
+    "title": "Delaware Declaration of Rights and Fundamental Rules, Septem",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "dover-de",
+    "publisherOrHolder": "Delaware Public Archives"
+  },
+  {
+    "id": "src-wilmington-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Wilmington,_Delaware",
+    "title": "Wilmington, Delaware -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "wilmington-de",
+    "publisherOrHolder": "Wikimedia Foundation"
+  },
+  {
+    "id": "src-wilmington-visit-tourism",
+    "table": "Source",
+    "url": "https://www.visitwilmingtonde.com/",
+    "title": "Visit Wilmington & the Brandywine Valley",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "wilmington-de",
+    "publisherOrHolder": "Wilmington Alliance / Greater Wilmington CVB"
+  },
+  {
+    "id": "src-bennington-nps-bennington-battlefield",
+    "table": "Source",
+    "url": "https://parks.ny.gov/historic-sites/35/details.aspx",
+    "title": "Bennington Battlefield State Historic Site Interpretive Prog",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "bennington-vt",
+    "publisherOrHolder": "New York State Office of Parks, Recreation and Historic Preservation"
+  },
+  {
+    "id": "src-bennington-vermont-historical-society",
+    "table": "Source",
+    "url": "https://vermonthistory.org/",
+    "title": "Vermont Historical Society: Battle of Bennington Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "bennington-vt",
+    "publisherOrHolder": "Vermont Historical Society"
+  },
+  {
+    "id": "src-bennington-bennington-museum",
+    "table": "Source",
+    "url": "https://www.benningtonmuseum.org/",
+    "title": "Bennington Museum: Bennington Battle Flag and Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "bennington-vt",
+    "publisherOrHolder": "Bennington Museum"
+  },
+  {
+    "id": "src-bennington-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Bennington",
+    "title": "Battle of Bennington -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "bennington-vt",
+    "publisherOrHolder": "Wikimedia Foundation"
+  },
+  {
+    "id": "src-bennington-visit-tourism",
+    "table": "Source",
+    "url": "https://www.bennington.com/",
+    "title": "Visit Bennington: Battle Anniversary and Heritage Sites",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "bennington-vt",
+    "publisherOrHolder": "Bennington Area Chamber of Commerce"
+  },
+  {
+    "id": "src-brattleboro-vermont-independence-1777",
+    "table": "Source",
+    "url": "https://www.sec.state.vt.us/archives-records.aspx",
+    "title": "Declaration of Independence of Vermont, January 15, 1777",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "brattleboro-vt",
+    "publisherOrHolder": "Vermont State Archives and Records Administration"
+  },
+  {
+    "id": "src-brattleboro-vermont-historical-society-records",
+    "table": "Source",
+    "url": "https://vermonthistory.org/",
+    "title": "Vermont Historical Society: Windham County Revolutionary War",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "brattleboro-vt",
+    "publisherOrHolder": "Vermont Historical Society"
+  },
+  {
+    "id": "src-brattleboro-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Brattleboro,_Vermont",
+    "title": "Brattleboro, Vermont -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "brattleboro-vt",
+    "publisherOrHolder": "Wikimedia Foundation"
+  },
+  {
+    "id": "src-brattleboro-visit-tourism",
+    "table": "Source",
+    "url": "https://www.brattleborochamber.org/",
+    "title": "Discover Brattleboro: History and Heritage",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "brattleboro-vt",
+    "publisherOrHolder": "Brattleboro Area Chamber of Commerce"
+  },
+  {
+    "id": "src-castine-massachusetts-general-court-records",
+    "table": "Source",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "title": "Massachusetts General Court: Penobscot Expedition Committee ",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "castine-me",
+    "publisherOrHolder": "Massachusetts State Archives"
+  },
+  {
+    "id": "src-castine-nps-penobscot",
+    "table": "Source",
+    "url": "https://wilsonmuseum.org/",
+    "title": "Wilson Museum: Penobscot Expedition Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "castine-me",
+    "publisherOrHolder": "Wilson Museum, Castine ME / National Register of Historic Places"
+  },
+  {
+    "id": "src-castine-paul-revere-penobscot",
+    "table": "Source",
+    "url": "https://www.masshist.org/",
+    "title": "Paul Revere's Deposition Regarding the Penobscot Expedition,",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "castine-me",
+    "publisherOrHolder": "Massachusetts Historical Society"
+  },
+  {
+    "id": "src-castine-maine-historic-preservation",
+    "table": "Source",
+    "url": "https://www.maine.gov/mhpc/",
+    "title": "Maine Historic Preservation Commission: Castine Historic Dis",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "castine-me",
+    "publisherOrHolder": "Maine Historic Preservation Commission"
+  },
+  {
+    "id": "src-portland-continental-congress-falmouth",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "title": "Journals of the Continental Congress: Falmouth Burning Resol",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "portland-me",
+    "publisherOrHolder": "Library of Congress"
+  },
+  {
+    "id": "src-portland-massachusetts-provincial-congress",
+    "table": "Source",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "title": "Records of the Massachusetts Provincial Congress: Falmouth R",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "portland-me",
+    "publisherOrHolder": "Massachusetts State Archives"
+  },
+  {
+    "id": "src-portland-maine-historical-society",
+    "table": "Source",
+    "url": "https://www.mainehistory.org/",
+    "title": "Maine Historical Society: Falmouth/Portland Revolutionary Co",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "portland-me",
+    "publisherOrHolder": "Maine Historical Society"
+  },
+  {
+    "id": "src-portland-maine-historic-preservation-portland",
+    "table": "Source",
+    "url": "https://www.maine.gov/mhpc/",
+    "title": "Maine Historic Preservation Commission: Old Port and Congres",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "portland-me",
+    "publisherOrHolder": "Maine Historic Preservation Commission"
+  },
+  {
+    "id": "src-portland-wikipedia-falmouth",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Burning_of_Falmouth_(1775)",
+    "title": "Burning of Falmouth (1775) -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "portland-me",
+    "publisherOrHolder": "Wikimedia Foundation"
+  },
+  {
+    "id": "src-portland-visit-portland",
+    "table": "Source",
+    "url": "https://www.visitportland.com/",
+    "title": "Visit Portland Maine: History and Old Port",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "portland-me",
+    "publisherOrHolder": "Portland Regional Chamber"
+  },
+  {
+    "id": "src-kaskaskia-clark-memoir",
+    "table": "Source",
+    "url": "https://www.loc.gov/item/mm79070887/",
+    "title": "George Rogers Clark's Memoir (Clark to Mason, 1791)",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "kaskaskia-il",
+    "publisherOrHolder": "Library of Congress, George Rogers Clark Papers"
+  },
+  {
+    "id": "src-kaskaskia-virginia-state-papers",
+    "table": "Source",
+    "url": "https://www.lva.virginia.gov/",
+    "title": "Virginia State Papers: George Rogers Clark Correspondence, 1",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "kaskaskia-il",
+    "publisherOrHolder": "Library of Virginia"
+  },
+  {
+    "id": "src-kaskaskia-nps-lincoln-trail",
+    "table": "Source",
+    "url": "https://www.nps.gov/gero/index.htm",
+    "title": "Lincoln Trail Homestead State Memorial: George Rogers Clark ",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "kaskaskia-il",
+    "publisherOrHolder": "Illinois Department of Natural Resources / National Park Service"
+  },
+  {
+    "id": "src-castine-wikipedia-penobscot",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Penobscot_Expedition",
+    "title": "Penobscot Expedition -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "castine-me",
+    "publisherOrHolder": "Wikimedia Foundation"
+  },
+  {
+    "id": "src-castine-visit-castine",
+    "table": "Source",
+    "url": "https://castine.me.us/",
+    "title": "Castine, Maine: Historic Town Guide",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "castine-me",
+    "publisherOrHolder": "Town of Castine"
+  },
+  {
+    "id": "src-kaskaskia-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Capture_of_Kaskaskia",
+    "title": "Capture of Kaskaskia -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "kaskaskia-il",
+    "publisherOrHolder": "Wikimedia Foundation"
+  },
+  {
+    "id": "src-kaskaskia-illinois-tourism",
+    "table": "Source",
+    "url": "https://www.dnr.illinois.gov/Parks/Pages/Kaskaskia.aspx",
+    "title": "Illinois History: Kaskaskia State Memorial",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "kaskaskia-il",
+    "publisherOrHolder": "Illinois Department of Natural Resources"
+  },
+  {
+    "id": "src-marietta-northwest-ordinance",
+    "table": "Source",
+    "url": "https://www.archives.gov/milestone-documents/northwest-ordinance",
+    "title": "An Ordinance for the Government of the Territory of the Unit",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "marietta-oh",
+    "publisherOrHolder": "National Archives"
+  },
+  {
+    "id": "src-marietta-nps-mound-city",
+    "table": "Source",
+    "url": "https://www.nps.gov/hocu/index.htm",
+    "title": "Hopewell Culture National Historical Park: Marietta Earthwor",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "marietta-oh",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-marietta-ohio-history-connection",
+    "table": "Source",
+    "url": "https://www.ohiohistory.org/",
+    "title": "Ohio History Connection: Marietta and the Northwest Territor",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "marietta-oh",
+    "publisherOrHolder": "Ohio History Connection (formerly Ohio Historical Society)"
+  },
+  {
+    "id": "src-marietta-campus-martius-museum",
+    "table": "Source",
+    "url": "https://www.ohiohistory.org/visit/museum-and-site-locator/campus-martius-museum/",
+    "title": "Campus Martius Museum: First Settlement of the Northwest Ter",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "marietta-oh",
+    "publisherOrHolder": "Ohio History Connection"
+  },
+  {
+    "id": "src-wheeling-continental-congress-northwest",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "title": "Journals of the Continental Congress: Western Land and Defen",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "wheeling-wv",
+    "publisherOrHolder": "Library of Congress"
+  },
+  {
+    "id": "src-wheeling-archives-wv",
+    "table": "Source",
+    "url": "https://archives.wv.gov/",
+    "title": "West Virginia State Archives: Ohio County Records",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "wheeling-wv",
+    "publisherOrHolder": "West Virginia Archives and History Division"
+  },
+  {
+    "id": "src-wheeling-wikipedia-fort-henry",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Fort_Henry_(1777)",
+    "title": "Battle of Fort Henry (1777) -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "wheeling-wv",
+    "publisherOrHolder": "Wikimedia Foundation"
+  },
+  {
+    "id": "src-wheeling-visit-tourism",
+    "table": "Source",
+    "url": "https://www.visitwheeling.com/",
+    "title": "Visit Wheeling: Historic Sites and Civil War Heritage",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "wheeling-wv",
+    "publisherOrHolder": "Wheeling Convention and Visitors Bureau"
+  },
+  {
+    "id": "source-concord-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battles_of_Lexington_and_Concord",
+    "title": "Battles of Lexington and Concord - Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "concord-ma",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "source-boston-wikipedia-tea-party",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Boston_Tea_Party",
+    "title": "Boston Tea Party - Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "boston-ma",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "source-cambridge-wikipedia-siege",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Siege_of_Boston",
+    "title": "Siege of Boston - Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "cambridge-ma",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "source-arlington-wikipedia-menotomy",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Menotomy",
+    "title": "Battle of Menotomy - Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "arlington-ma",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-marietta-visit-tourism",
+    "table": "Source",
+    "url": "https://www.mariettaohio.org/",
+    "title": "Visit Marietta Ohio: History and Heritage",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "marietta-oh",
+    "publisherOrHolder": "Marietta Washington County CVB"
+  },
+  {
+    "id": "src-wheeling-draper-manuscripts",
+    "table": "Source",
+    "url": "https://www.wisconsinhistory.org/Records/Article/CS5107",
+    "title": "Draper Manuscript Collection: Ohio Valley Frontier Papers",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "wheeling-wv",
+    "publisherOrHolder": "Wisconsin Historical Society"
+  }
+]

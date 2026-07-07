@@ -1,0 +1,122 @@
+[
+  {
+    "id": "src-charleston-sc-sc-state-archives",
+    "url": "https://www.scdah.sc.gov/",
+    "title": "South Carolina Department of Archives and History: Revolutionary War Records",
+    "publisherOrHolder": "South Carolina Department of Archives and History",
+    "tier": "TIER1",
+    "towns": "charleston-sc"
+  },
+  {
+    "id": "src-camden-sc-sc-state-archives-camden",
+    "url": "https://www.scdah.sc.gov/",
+    "title": "South Carolina State Records: Camden District Court and Loyalist Records, 1780-1",
+    "publisherOrHolder": "South Carolina Department of Archives and History",
+    "tier": "TIER1",
+    "towns": "camden-sc"
+  },
+  {
+    "id": "src-cowpens-sc-eyewitness-depositions",
+    "url": "https://www.fold3.com/title/452/revolutionary-war-pension-and-bounty-land-warrant-application-files",
+    "title": "Pension Depositions of Cowpens Veterans, 1820-1840",
+    "publisherOrHolder": "National Archives and Records Administration, Revolutionary War Pension Files",
+    "tier": "TIER1",
+    "towns": "cowpens-sc"
+  },
+  {
+    "id": "src-ninety-six-sc-sc-state-archives-backcountry",
+    "url": "https://www.scdah.sc.gov/",
+    "title": "South Carolina Backcountry District Records: Ninety Six, 1775-1782",
+    "publisherOrHolder": "South Carolina Department of Archives and History",
+    "tier": "TIER1",
+    "towns": "ninety-six-sc"
+  },
+  {
+    "id": "src-eutaw-springs-sc-sc-state-archives",
+    "url": "https://www.scdah.sc.gov/",
+    "title": "South Carolina State Records: Eutaw Springs District, 1781-1782",
+    "publisherOrHolder": "South Carolina Department of Archives and History",
+    "tier": "TIER1",
+    "towns": "eutaw-springs-sc"
+  },
+  {
+    "id": "src-fort-moultrie-sc-sc-state-archives-1776",
+    "url": "https://www.scdah.sc.gov/",
+    "title": "South Carolina Council of Safety Minutes: Fort Sullivan, June-July 1776",
+    "publisherOrHolder": "South Carolina Department of Archives and History",
+    "tier": "TIER1",
+    "towns": "fort-moultrie-sc"
+  },
+  {
+    "id": "src-guilford-courthouse-nc-pension-depositions",
+    "url": "https://www.fold3.com/title/452/revolutionary-war-pension-and-bounty-land-warrant-application-files",
+    "title": "Pension Applications: Guilford Courthouse Veterans, North Carolina and Virginia",
+    "publisherOrHolder": "National Archives and Records Administration",
+    "tier": "TIER1",
+    "towns": "guilford-courthouse-nc"
+  },
+  {
+    "id": "src-guilford-courthouse-nc-nc-state-archives",
+    "url": "https://www.archives.ncdcr.gov/",
+    "title": "North Carolina State Archives: Military Collection, Revolutionary War, 1780-1781",
+    "publisherOrHolder": "North Carolina State Archives",
+    "tier": "TIER1",
+    "towns": "guilford-courthouse-nc"
+  },
+  {
+    "id": "src-wilmington-nc-nc-state-archives",
+    "url": "https://www.archives.ncdcr.gov/",
+    "title": "North Carolina State Archives: New Hanover County Records and Governor's Papers,",
+    "publisherOrHolder": "North Carolina State Archives",
+    "tier": "TIER1",
+    "towns": "wilmington-nc"
+  },
+  {
+    "id": "src-kings-mountain-nc-nc-state-archives-kings-mountain",
+    "url": "https://www.archives.ncdcr.gov/",
+    "title": "North Carolina State Archives: Surry and Wilkes County Militia Records, 1780",
+    "publisherOrHolder": "North Carolina State Archives",
+    "tier": "TIER1",
+    "towns": "kings-mountain-nc"
+  },
+  {
+    "id": "src-new-bern-nc-provincial-congress-records",
+    "url": "https://www.archives.ncdcr.gov/",
+    "title": "North Carolina Provincial Congress: Proceedings and Journal, 1774-1776",
+    "publisherOrHolder": "North Carolina State Archives",
+    "tier": "TIER1",
+    "towns": "new-bern-nc"
+  },
+  {
+    "id": "src-savannah-ga-lincoln-siege-correspondence",
+    "url": "https://www.masshist.org/",
+    "title": "General Benjamin Lincoln: Correspondence during the Siege of Savannah, September",
+    "publisherOrHolder": "Massachusetts Historical Society",
+    "tier": "TIER1",
+    "towns": "savannah-ga"
+  },
+  {
+    "id": "src-savannah-ga-georgia-state-archives",
+    "url": "https://www.georgiaarchives.org/",
+    "title": "Georgia State Archives: Revolutionary War Records, 1776-1783",
+    "publisherOrHolder": "Georgia Archives",
+    "tier": "TIER1",
+    "towns": "savannah-ga"
+  },
+  {
+    "id": "src-new-haven-state-archives-council",
+    "url": "https://portal.ct.gov/SOTS/Collection-Detail-Pages/State-Archives",
+    "title": "Connecticut Council of Safety Minutes, 1779",
+    "publisherOrHolder": "Connecticut State Archives",
+    "tier": "TIER1",
+    "towns": "new-haven-ct"
+  },
+  {
+    "id": "src-augusta-ga-georgia-state-archives-augusta",
+    "url": "https://www.georgiaarchives.org/",
+    "title": "Georgia Archives: Richmond County Records and Georgia Executive Council Papers, ",
+    "publisherOrHolder": "Georgia Archives",
+    "tier": "TIER1",
+    "towns": "augusta-ga"
+  }
+]

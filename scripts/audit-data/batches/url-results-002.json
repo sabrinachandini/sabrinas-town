@@ -1,0 +1,452 @@
+[
+  {
+    "id": "src-wp2-white-plains-city-history",
+    "table": "Source",
+    "url": "https://www.cityofwhiteplains.com/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.cityofwhiteplains.com/"
+  },
+  {
+    "id": "src-new-washington-hasbrouck-orders",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/george-washington-papers/"
+  },
+  {
+    "id": "src-new-newburgh-address-text",
+    "table": "Source",
+    "url": "https://www.loc.gov/resource/mgw3b.020/?sp=375",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/resource/mgw3b.020/?sp=375"
+  },
+  {
+    "id": "src-wp-usma-library-collections",
+    "table": "Source",
+    "url": "https://www.westpoint.edu/library",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "http://library.westpoint.edu/"
+  },
+  {
+    "id": "src-new-orange-county-historical",
+    "table": "Source",
+    "url": "https://www.orangecountyhistorical.org/",
+    "status": 0,
+    "ok": false,
+    "issue": "connection error",
+    "finalUrl": "https://www.orangecountyhistorical.org/"
+  },
+  {
+    "id": "src-new-wikipedia-newburgh-conspiracy",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Newburgh_Conspiracy",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Newburgh_Conspiracy"
+  },
+  {
+    "id": "src-new-ny-heritage-digital",
+    "table": "Source",
+    "url": "https://nyheritage.org/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://nyheritage.org/"
+  },
+  {
+    "id": "src-king-ny-state-constitution-1777",
+    "table": "Source",
+    "url": "https://www.archives.nysed.gov/research/new-york-state-constitution-1777",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.archives.nysed.gov/research/new-york-state-constitution-1777"
+  },
+  {
+    "id": "src-king-senate-house-state-historic",
+    "table": "Source",
+    "url": "https://parks.ny.gov/historic-sites/33/details.aspx",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://parks.ny.gov/visit/historic-sites/schuyler-mansion-state-historic-site"
+  },
+  {
+    "id": "src-king-hudsonvalley-heritage",
+    "table": "Source",
+    "url": "https://www.hvlibrary.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://hvlibrary.org/"
+  },
+  {
+    "id": "src-king-wikipedia-kingston-ny",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Kingston,_New_York",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Kingston,_New_York"
+  },
+  {
+    "id": "src-king-kingston-tourism",
+    "table": "Source",
+    "url": "https://www.ulstercountyny.gov/tourism",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.ulstercountyny.gov/tourism"
+  },
+  {
+    "id": "src-crown-point-nps-champlain",
+    "table": "Source",
+    "url": "https://parks.ny.gov/historic-sites/crownpoint/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://parks.ny.gov/visit/historic-sites/crown-point-state-historic-site"
+  },
+  {
+    "id": "src-new-nps-washingtons-hq",
+    "table": "Source",
+    "url": "https://parks.ny.gov/historic-sites/17/details.aspx",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://parks.ny.gov/visit/historic-sites/washingtons-headquarters-state-historic-site"
+  },
+  {
+    "id": "src-crown-point-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Crown_Point,_New_York",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Crown_Point,_New_York"
+  },
+  {
+    "id": "src-harlem-heights-nyhs-collections",
+    "table": "Source",
+    "url": "https://www.nyhistory.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nyhistory.org/"
+  },
+  {
+    "id": "src-harlem-heights-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Harlem_Heights",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battle_of_Harlem_Heights"
+  },
+  {
+    "id": "src-stony-point-nps-battlefield",
+    "table": "Source",
+    "url": "https://parks.ny.gov/historic-sites/stonypoint/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://parks.ny.gov/historic-sites/stonypoint"
+  },
+  {
+    "id": "src-stony-point-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Stony_Point",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battle_of_Stony_Point"
+  },
+  {
+    "id": "src-phi-journals-continental-congress",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/century-of-lawmaking/articles-and-essays/continental-congress/journals-of-the-continental-congress/"
+  },
+  {
+    "id": "src-phi-letters-delegates-congress",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwdg.html",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/century-of-lawmaking/articles-and-essays/continental-congress/letters-of-delegates-to-congress/"
+  },
+  {
+    "id": "src-phi-nps-independence-nhp",
+    "table": "Source",
+    "url": "https://www.nps.gov/inde/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/inde/index.htm"
+  },
+  {
+    "id": "src-phi-franklin-papers",
+    "table": "Source",
+    "url": "https://franklinpapers.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://franklinpapers.org/"
+  },
+  {
+    "id": "src-phi-historical-society-pa",
+    "table": "Source",
+    "url": "https://hsp.org/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://hsp.org/"
+  },
+  {
+    "id": "src-phi-american-philosophical-society",
+    "table": "Source",
+    "url": "https://www.amphilsoc.org/library",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.amphilsoc.org/library"
+  },
+  {
+    "id": "src-phi-wikipedia-independence-hall",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Independence_Hall",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Independence_Hall"
+  },
+  {
+    "id": "src-phi-visit-philadelphia-history",
+    "table": "Source",
+    "url": "https://www.visitphiladelphia.com/things-to-do/history-and-culture/american-revolution/",
+    "status": 0,
+    "ok": false,
+    "issue": "connection error",
+    "finalUrl": "https://www.visitphiladelphia.com/things-to-do/history-and-culture/american-revolution/"
+  },
+  {
+    "id": "src-vf-nps-valley-forge",
+    "table": "Source",
+    "url": "https://www.nps.gov/vafo/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/vafo/index.htm"
+  },
+  {
+    "id": "src-vf-chester-county-archives",
+    "table": "Source",
+    "url": "https://www.chesco.org/3411/Archives",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.chesco.org/3411/Archives"
+  },
+  {
+    "id": "src-vf-wikipedia-valley-forge",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Valley_Forge",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Valley_Forge"
+  },
+  {
+    "id": "src-vf-vf-park-visitor-guide",
+    "table": "Source",
+    "url": "https://www.nps.gov/vafo/planyourvisit/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/vafo/planyourvisit/index.htm"
+  },
+  {
+    "id": "src-yor-articles-confederation",
+    "table": "Source",
+    "url": "https://www.archives.gov/milestone-documents/articles-of-confederation",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.archives.gov/milestone-documents/articles-of-confederation"
+  },
+  {
+    "id": "src-yor-journals-congress-york",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/century-of-lawmaking/articles-and-essays/continental-congress/journals-of-the-continental-congress/"
+  },
+  {
+    "id": "src-yor-nps-york-colonial-courthouse",
+    "table": "Source",
+    "url": "https://www.yorkheritage.org/colonial-complex",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.yorkheritage.org/colonial-complex"
+  },
+  {
+    "id": "src-yor-york-county-heritage-trust",
+    "table": "Source",
+    "url": "https://www.yorkheritage.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.yorkhistorycenter.org/"
+  },
+  {
+    "id": "src-car-cumberland-county-historical",
+    "table": "Source",
+    "url": "https://www.historicalsociety.com/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.historicalsociety.com/"
+  },
+  {
+    "id": "src-car-dickinson-college-archives",
+    "table": "Source",
+    "url": "https://archives.dickinson.edu/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://archives.dickinson.edu/"
+  },
+  {
+    "id": "src-car-wikipedia-carlisle-pa",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Carlisle,_Pennsylvania",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Carlisle,_Pennsylvania"
+  },
+  {
+    "id": "src-car-visit-carlisle-pa",
+    "table": "Source",
+    "url": "https://www.visitcarlislepa.com/",
+    "status": 0,
+    "ok": false,
+    "issue": "connection error",
+    "finalUrl": "https://www.visitcarlislepa.com/"
+  },
+  {
+    "id": "src-pao-chester-county-paoli-memorial",
+    "table": "Source",
+    "url": "https://www.chesco.org/3411/Archives",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.chesco.org/3411/Archives"
+  },
+  {
+    "id": "src-pao-wikipedia-paoli-massacre",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Paoli",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battle_of_Paoli"
+  },
+  {
+    "id": "src-yor-york-pa-tourism",
+    "table": "Source",
+    "url": "https://www.yorkpa.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.yorkpa.org/"
+  },
+  {
+    "id": "src-ger-nps-germantown",
+    "table": "Source",
+    "url": "https://www.nps.gov/inde/learn/historyculture/battle-of-germantown.htm",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/inde/learn/historyculture/battle-of-germantown.htm"
+  },
+  {
+    "id": "src-ger-cliveden-nhld",
+    "table": "Source",
+    "url": "https://www.cliveden.org/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.cliveden.org/"
+  },
+  {
+    "id": "src-ger-germantown-historical-society",
+    "table": "Source",
+    "url": "https://www.germantownhistory.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.germantownhistory.org/"
+  },
+  {
+    "id": "src-ger-battle-germantown-french-context",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2015/06/the-battle-of-germantown/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2015/06/the-battle-of-germantown/"
+  },
+  {
+    "id": "src-ger-wikipedia-germantown",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Germantown",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battle_of_Germantown"
+  },
+  {
+    "id": "src-ger-cliveden-visitor",
+    "table": "Source",
+    "url": "https://www.cliveden.org/visit/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.cliveden.org/visit/"
+  },
+  {
+    "id": "src-pit-nps-fort-pitt",
+    "table": "Source",
+    "url": "https://www.heinzhistorycenter.org/fort-pitt-museum",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.heinzhistorycenter.org/fort-pitt-museum"
+  },
+  {
+    "id": "src-pit-allegheny-county-historical",
+    "table": "Source",
+    "url": "https://www.heinzhistorycenter.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.heinzhistorycenter.org/"
+  }
+]

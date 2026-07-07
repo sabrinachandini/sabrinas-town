@@ -1,0 +1,1322 @@
+[
+  {
+    "id": "src-revere-deposition",
+    "title": "Paul Revere's Deposition, circa 1775",
+    "verdict": "ISSUE",
+    "issues": [
+      "Wrong document at correct URL: item_id=99 resolves to Revere's letter to Jeremy Belknap (circa 1798), not a 1775 deposition.",
+      "The 1798 Belknap letter is a retrospective account written ~23 years after the event \u2014 it does not meet the 'created at or near the time of the event' standard for primary source classification at TIER1.",
+      "Title fabricates a document type ('Deposition') that does not match the actual record ('Letter'). MHS does hold separate 1775 depositions by Revere under different item IDs.",
+      "Year in title (circa 1775) contradicts the actual document date (circa 1798)."
+    ],
+    "recommendation": "Replace item_id=99 with the correct MHS item ID for Revere's actual 1775 sworn deposition. If used as-is, reclassify as TIER2 and correct the title to 'Paul Revere Letter to Jeremy Belknap, circa 1798'."
+  },
+  {
+    "id": "source-adams-papers",
+    "title": "Adams Family Papers",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.masshist.org/adams/ returns HTTP 404 \u2014 page does not exist at this path.",
+      "Cannot verify title, content scope, or whether URL leads to the Adams Papers collection or a specific document within it.",
+      "Even if the URL were corrected, 'Adams Family Papers' describes a collection of tens of thousands of documents, not a specific primary source \u2014 a collection-level citation is insufficient for TIER1 sourcing."
+    ],
+    "recommendation": "Update URL to a working MHS Adams Papers finding aid (e.g., masshist.org/collection/adams or the online edition at masshist.org/adams_editorial_office). Narrow the citation to a specific document or sub-series relevant to the town context."
+  },
+  {
+    "id": "src-massachusetts-archives",
+    "title": "Massachusetts Archives Collection",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.sec.state.ma.us/arc/ returns HTTP 404 \u2014 this path does not resolve.",
+      "Title 'Massachusetts Archives Collection' is a generic institution-level description, not a named collection or specific record series.",
+      "Even if the URL were corrected, this citation lacks specificity: no record group, series, volume, or date range is embedded in the URL."
+    ],
+    "recommendation": "Replace with the current Massachusetts Archives URL (likely archives.lib.state.ma.us or similar) and cite a specific record series (e.g., Massachusetts Archives Collection Vol. 138 \u2014 Revolutionary Military Papers). Verify the correct domain for the State Archives digital holdings."
+  },
+  {
+    "id": "source-harvard-archives-rev",
+    "title": "Harvard University Archives: Revolutionary War Collection",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://library.harvard.edu/archives returns HTTP 404.",
+      "The named sub-collection 'Revolutionary War Collection' could not be verified \u2014 Harvard University Archives does not appear to use this as a formal collection title in their published finding aids.",
+      "Even if the URL were corrected, the title may reflect an informal or fabricated collection name rather than an officially catalogued Harvard holding."
+    ],
+    "recommendation": "Verify whether Harvard University Archives holds a formally named 'Revolutionary War Collection'. If not, identify the correct OASIS finding aid URL for Cambridge-related Revolutionary War manuscripts. Correct the URL to library.harvard.edu/university-archives or HOLLIS catalog."
+  },
+  {
+    "id": "source-mass-historical-siege",
+    "title": "Massachusetts Historical Society: Siege Papers",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL resolves to the MHS homepage (masshist.org), not any specific 'Siege Papers' collection or finding aid.",
+      "No 'Siege Papers' named collection was found on the MHS homepage or its listed collections.",
+      "Collection/institution homepage cited in place of a specific document or finding aid \u2014 fails minimum specificity for TIER1.",
+      "The title implies a discrete named collection ('Siege Papers') that cannot be confirmed as an actual MHS collection title."
+    ],
+    "recommendation": "Search the MHS online catalog for Siege of Boston-era manuscript holdings and link directly to a specific collection or item. If 'Siege Papers' is not a formal MHS collection name, remove it from the title and identify the actual record group."
+  },
+  {
+    "id": "source-washington-orders-cambridge",
+    "title": "General Orders, Cambridge Headquarters 1775-1776",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL https://www.loc.gov/collections/george-washington-papers returns HTTP 403 (bot protection), preventing full verification.",
+      "Even if accessible, the URL targets the entire George Washington Papers collection (~65,000 items), not the specific 'General Orders, Cambridge Headquarters 1775-1776' series.",
+      "Collection-level URL cited in place of a specific document or sub-series finding aid \u2014 insufficient for TIER1 specificity.",
+      "LOC does hold Washington's Cambridge-era General Orders, but a direct item-level or series-level URL is required."
+    ],
+    "recommendation": "Link to the specific LOC digital item or series for Washington's Cambridge General Orders (e.g., loc.gov/item/[specific ID] or the Series 3 sub-series in the Washington Papers finding aid). Confirm the exact date range covered."
+  },
+  {
+    "id": "source-martha-washington-letters",
+    "title": "Martha Washington Letters",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL https://www.mountvernon.org returns HTTP 403 (bot protection), preventing full verification.",
+      "Even if accessible, the URL is the Mount Vernon estate general homepage, not any letters collection or finding aid.",
+      "Mount Vernon Ladies' Association holds Martha Washington correspondence, but no specific collection URL or catalog record is cited.",
+      "The title 'Martha Washington Letters' is generic and does not identify which letters, what date range, or which repository holds the specific items relevant to Cambridge, MA.",
+      "Martha Washington's surviving letters are held across multiple repositories (LOC, MHS, MVLA); institution attribution to MVLA alone may be incomplete."
+    ],
+    "recommendation": "Identify specific Martha Washington letters relevant to the Cambridge/1775-1776 context, cite the holding institution for those specific items, and link to a finding aid or catalog record rather than the MVLA homepage."
+  },
+  {
+    "id": "src-salem-essex-county-court-records",
+    "title": "Essex County Court Records and Committee of Safety Minutes, 1774-1776",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.sec.state.ma.us/arc/ returns HTTP 404 \u2014 same broken path as src-massachusetts-archives.",
+      "Bundling two distinct record types ('Essex County Court Records' and 'Committee of Safety Minutes') under one citation without separate finding aid references is methodologically problematic.",
+      "Essex County Court Records are typically held at the Massachusetts Supreme Judicial Court Archives or Peabody Essex Museum, not necessarily the Massachusetts State Archives.",
+      "Cannot verify the title corresponds to actual records at this URL."
+    ],
+    "recommendation": "Separate into two citations with correct repository URLs. For Essex County Court Records, check Peabody Essex Museum or SJC Archives. For Committee of Safety Minutes, verify whether the Massachusetts State Archives holds a Committee of Safety record series and link to the correct finding aid."
+  },
+  {
+    "id": "src-salem-privateering-commissions",
+    "title": "Continental Congress Privateering Commissions: Salem-Registered Vessels, 1776-17",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL https://www.archives.gov/ is the NARA general homepage \u2014 no specific collection, record group, or finding aid is cited.",
+      "Title appears truncated: '1776-17' is clearly incomplete (likely '1776-1783' or similar).",
+      "Homepage-level citation provides no path to locate the actual records.",
+      "Continental Congress privateering commissions would be in NARA Record Group 360 (Papers of the Continental Congress) \u2014 no record group or series reference is provided.",
+      "Cannot confirm 'Salem-Registered Vessels' is a formally catalogued sub-series title versus a descriptive label."
+    ],
+    "recommendation": "Replace URL with a specific NARA catalog record (catalog.archives.gov) for the relevant series in RG 360. Fix the truncated date range in the title. Verify 'Salem-Registered Vessels' is a documented NARA series designation or adjust the title to reflect the actual record series name."
+  },
+  {
+    "id": "source-hackensack-nj-historical-society-bergen",
+    "title": "Bergen County in the American Revolution: Primary Sources",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL https://jerseyhistory.org is the New Jersey Historical Society general homepage \u2014 no specific 'Bergen County in the American Revolution: Primary Sources' resource found.",
+      "The title sounds like a secondary compiled guide or published bibliography rather than a primary source collection, which would contradict the TIER1 classification.",
+      "No specific finding aid, resource guide, or catalog record is linked.",
+      "Cannot confirm this named resource exists as a discrete NJHS publication or digital collection."
+    ],
+    "recommendation": "Verify whether NJHS publishes a specific resource guide by this title. If it is a secondary compilation, reclassify to TIER2. If it does not exist as a discrete resource, remove or replace with a specific NJHS finding aid for Bergen County Revolutionary War manuscripts."
+  },
+  {
+    "id": "src-marblehead-glover-orderly-books",
+    "title": "Colonel John Glover's Orderly Books, 1775-1777",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL https://www.masshist.org/ is the MHS homepage (trailing slash redirects to homepage) \u2014 no specific orderly books or finding aid is linked.",
+      "Cannot confirm MHS holds Glover orderly books under this title; the Phillips Library at the Peabody Essex Museum is more typically cited for Marblehead-related Revolutionary materials.",
+      "Homepage-level citation does not allow a researcher to locate the specific items."
+    ],
+    "recommendation": "Search MHS online catalog for 'Glover' orderly books. If MHS does not hold them, check the Phillips Library (Peabody Essex Museum) or the American Antiquarian Society. Provide a direct finding aid URL. Verify the correct institution before resubmitting."
+  },
+  {
+    "id": "src-marblehead-washington-crossing-orders",
+    "title": "General Washington's Orders to Colonel Glover, December 25-26, 1776",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL https://www.loc.gov/collections/george-washington-papers/ returns HTTP 403 (bot protection), preventing full verification.",
+      "Even if accessible, the URL targets the entire George Washington Papers collection, not the specific orders of December 25-26, 1776.",
+      "The existence of a distinct, discrete document titled 'General Washington's Orders to Colonel Glover' on those specific dates cannot be confirmed without a specific item-level LOC URL or catalog record \u2014 Washington's orders for the Delaware crossing were issued as General Orders to the army, not necessarily as a named letter to Glover specifically.",
+      "Collection-level citation is insufficient for a document claimed at this level of specificity."
+    ],
+    "recommendation": "Locate the specific LOC catalog item for Washington's orders of December 25-26, 1776. If no discrete order to Glover exists by that title, adjust the citation to reference the General Orders for that date within the George Washington Papers Series 3, with the correct item-level URL."
+  },
+  {
+    "id": "src-marblehead-state-archives-muster-rolls",
+    "title": "Massachusetts Muster Rolls: Glover's 14th Continental Regiment, 1775-1777",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.sec.state.ma.us/arc/ returns HTTP 404 \u2014 same broken path repeated across multiple sources in this batch.",
+      "Cannot verify title, content, or institution at the given URL."
+    ],
+    "recommendation": "Locate the correct Massachusetts State Archives URL for muster roll records. Glover's regiment muster rolls may also be accessible via NARA (RG 93 \u2014 Revolutionary War records) or the Massachusetts Archives digital collections. Provide a working URL."
+  },
+  {
+    "id": "src-plymouth-muster-rolls-siege-boston",
+    "title": "Plymouth County Militia Muster Rolls: Siege of Boston, 1775-1776",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.sec.state.ma.us/arc/ returns HTTP 404 \u2014 same broken path as multiple other sources in this batch.",
+      "Cannot verify title or whether Plymouth County militia muster rolls for the Siege of Boston are held at the Massachusetts State Archives versus another repository."
+    ],
+    "recommendation": "Correct the Massachusetts State Archives URL. Also verify the correct holding institution: Siege of Boston muster rolls may be split between the Massachusetts State Archives, NARA (RG 93), and local Plymouth County repositories."
+  },
+  {
+    "id": "src-worcester-court-closure-proceedings",
+    "title": "Worcester County Court of Common Pleas: Closure Proceedings, September 6, 1774",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.sec.state.ma.us/arc/ returns HTTP 404 \u2014 same broken path repeated across this batch.",
+      "Cannot verify the title or confirm the Massachusetts State Archives holds the specific Worcester County Court of Common Pleas closure proceedings.",
+      "Worcester County court records are often held at the Worcester County Courthouse or the Massachusetts Supreme Judicial Court Archives rather than the State Archives."
+    ],
+    "recommendation": "Correct the Massachusetts State Archives URL. Verify the correct holding institution for Worcester County Court of Common Pleas records from 1774; the SJC Archives or Worcester County court records collections may be more appropriate. The September 6, 1774 court closure is a well-documented event and records should be locatable."
+  },
+  {
+    "id": "src-worcester-committee-correspondence-minutes",
+    "title": "Worcester Committee of Correspondence Minutes, 1773-1775",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL points to the American Antiquarian Society homepage (https://www.americanantiquarian.org/), not to a catalog record, finding aid, or digitized version of this specific collection.",
+      "No direct link to the Worcester Committee of Correspondence Minutes is accessible from this citation; the AAS homepage confirms the institution exists but does not confirm or surface this specific holding.",
+      "Citation is non-functional as a primary source link \u2014 a researcher cannot navigate from this URL to the document."
+    ],
+    "recommendation": "Replace with a direct AAS catalog permalink (e.g., from their OPAC or ArchivesSpace finding aid) pointing to the specific collection. The AAS is the plausible repository, but the homepage URL is inadequate for citation."
+  },
+  {
+    "id": "src-plymouth-forefathers-monument-docs",
+    "title": "Plymouth Town Records and Proprietors Minutes, 1774-1776",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.sec.state.ma.us/arc/ returns HTTP 404. The Massachusetts State Archives has reorganized its web presence and this path is broken.",
+      "publisherOrHolder lists two institutions ('Plymouth County Registry of Deeds and Massachusetts State Archives') but the URL points only to the MA State Archives, creating an institution mismatch.",
+      "No specific finding aid, collection page, or document is linked \u2014 even if the URL resolved, it would be a top-level archives homepage."
+    ],
+    "recommendation": "Locate the current Massachusetts State Archives URL (likely under sec.state.ma.us or a successor domain) and identify separate citations for Plymouth County Registry of Deeds if that institution is a distinct holder. Provide specific collection-level or item-level links."
+  },
+  {
+    "id": "src-springfield-knox-ordnance-orders",
+    "title": "General Henry Knox's Orders Establishing the Springfield Arsenal, 1777",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL points to the NARA homepage (https://www.archives.gov/), not to a specific record group, series, or item. NARA holds millions of records; a homepage citation is unfalsifiable and non-navigable.",
+      "Title uses 'Arsenal' \u2014 the facility established in Springfield in 1777 was the Springfield Armory (an armory manufacturing weapons), not an arsenal (a storage depot). This is a substantive factual error in the document title.",
+      "No specific NARA record group or catalog entry number is referenced, making independent verification impossible."
+    ],
+    "recommendation": "Identify the specific NARA record group (likely RG 156 \u2014 Office of the Chief of Ordnance, or Continental Army records) and provide a catalog.archives.gov permalink or NARA finding aid URL. Correct 'Arsenal' to 'Armory' in the title."
+  },
+  {
+    "id": "src-springfield-state-archives-shays",
+    "title": "Shays' Rebellion Papers: Springfield Arsenal Attack, January 1787",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.sec.state.ma.us/arc/ returns HTTP 404. Same broken URL used for src-plymouth-forefathers-monument-docs.",
+      "Even if the URL resolved, it would point to the MA State Archives homepage, not to a specific Shays' Rebellion collection or finding aid.",
+      "Title again uses 'Arsenal' \u2014 the target of the January 1787 attack was the Springfield Armory, not an arsenal."
+    ],
+    "recommendation": "Find the current MA State Archives URL for their Shays' Rebellion holdings and link to the specific collection or finding aid. Correct 'Arsenal' to 'Armory' in the title."
+  },
+  {
+    "id": "src-springfield-continental-congress-supply",
+    "title": "Board of War Records: Springfield Armory Procurement, 1778-1781",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.loc.gov/collections/papers-of-the-continental-congress/ returns HTTP 403 (Cloudflare bot protection), preventing verification of the specific document.",
+      "The title 'Board of War Records: Springfield Armory Procurement, 1778-1781' reads as a constructed sub-series descriptor, not an official document title or series name. The Papers of the Continental Congress at LOC are organized by item number (PCC Item numbers), not by descriptors like this.",
+      "The URL is a collection-level landing page, not a specific item or series within the collection."
+    ],
+    "recommendation": "Identify the specific PCC item numbers (e.g., Item 147 for Board of War letter books) and link to the LOC catalog record or digitized item page. The collection itself (Papers of the Continental Congress) is real and held by LOC, but this citation cannot be verified at the URL provided."
+  },
+  {
+    "id": "src-nyc-british-hq-papers",
+    "title": "Sir Henry Clinton Papers (British Headquarters Papers)",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://quod.lib.umich.edu/c/clementsmss/umich-wcl-M-1 is blocked by a Cloudflare JavaScript challenge, preventing direct verification of the content at this specific path.",
+      "The parenthetical '(British Headquarters Papers)' conflates two distinct archival collections: the Sir Henry Clinton Papers at the William L. Clements Library (University of Michigan) and the British Headquarters Papers (Carleton/Dorchester Papers, PRO 30/55) held at The National Archives (UK). These are separate collections. The Clinton Papers contain British HQ correspondence but are not formally titled 'British Headquarters Papers.'",
+      "Institution listed as 'William L. Clements Library, University of Michigan' is correct for the Clinton Papers specifically, but the combined title creates ambiguity."
+    ],
+    "recommendation": "Clarify whether the citation refers to the Sir Henry Clinton Papers (Clements Library) or the British Headquarters Papers (UK National Archives). Remove the conflating parenthetical or disambiguate with two separate citations. Confirm the specific Clements finding aid URL once accessible."
+  },
+  {
+    "id": "src-nyc-continental-congress-journals-ny",
+    "title": "Journals of the Continental Congress, 1776-1783",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL https://memory.loc.gov/ammem/amlaw/lwjc.html redirects (HTTP 301) to an article/essay page within the 'Century of Lawmaking' collection, not to the actual digitized Journals of the Continental Congress.",
+      "The redirect destination is an introductory essay about the Journals, not the searchable or browsable digitized documents themselves.",
+      "Date range '1776-1783' is incorrect and narrower than the actual collection, which spans 1774-1789 (34 volumes). Restricting to 1776-1783 drops the critical First Continental Congress period."
+    ],
+    "recommendation": "Update the URL to the actual digitized Journals collection (e.g., https://www.loc.gov/collections/century-of-lawmaking/ and navigate to the Journals directly, or use a specific volume permalink). Correct the date range to 1774-1789."
+  },
+  {
+    "id": "src-alb-schuyler-papers",
+    "title": "Philip Schuyler Papers",
+    "verdict": "PASS",
+    "issues": [],
+    "recommendation": "Citation is sound. URL loads and confirms the Philip Schuyler Papers at the New York Public Library (Manuscripts and Archives Division, MssCol 2701), approximately 1,531 items spanning 1705-1864. Collection includes military records and correspondence from the Revolutionary War period. Genuinely primary. No changes needed."
+  },
+  {
+    "id": "src-sar-gates-papers",
+    "title": "Horatio Gates Papers, 1726-1828",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://digitalcollections.nyhistory.org/islandora/object/islandora:120591 is blocked by a Cloudflare JavaScript challenge, preventing verification of the specific object at this path.",
+      "Cannot confirm whether this Islandora object ID (islandora:120591) corresponds to the Gates Papers finding aid, a specific digitized item, or a collection-level record."
+    ],
+    "recommendation": "Verify the specific Islandora object ID once accessible in a browser. The New-York Historical Society is the correct institutional holder of the Horatio Gates Papers, and the date range 1726-1828 is consistent with known records. If the URL leads to a collection-level record, also provide a direct finding aid link from the NYHS website."
+  },
+  {
+    "id": "src-tic-congressional-resolution-1775",
+    "title": "Continental Congress Resolutions Regarding Fort Ticonderoga, May 1775",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL https://memory.loc.gov/ammem/amlaw/lwjc.html is the same generic URL used for three other sources in this batch. It redirects to an article/essay page about the Journals of the Continental Congress, not to a specific resolution.",
+      "No page number, volume number, or item-level link is provided to the specific May 1775 resolution regarding Ticonderoga.",
+      "The use of an identical URL for multiple distinct 'documents' is a strong indicator that these are collection-level placeholders, not specific document citations."
+    ],
+    "recommendation": "Identify the specific volume and page in the Journals of the Continental Congress where the Ticonderoga resolution appears (Volume II, May 1775) and link to the digitized page image or a specific LOC catalog item."
+  },
+  {
+    "id": "src-new-washington-hasbrouck-orders",
+    "title": "General Orders from Newburgh Headquarters, 1782-1783",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.loc.gov/collections/george-washington-papers/ is blocked by Cloudflare (HTTP 403), preventing verification.",
+      "The URL is a collection-level landing page for the entire George Washington Papers, not a specific series, subseries, or item for 'General Orders from Newburgh Headquarters.'"
+    ],
+    "recommendation": "Provide a specific URL to the General Orders series within the George Washington Papers (Series 3G, General Orders, 1775-1783) at LOC, or a catalog.loc.gov permalink to the relevant items. The collection is real and the institution is correct."
+  },
+  {
+    "id": "src-new-newburgh-address-text",
+    "title": "Washington's Address to the Officers of the Army (Newburgh Address), March 15, 1",
+    "verdict": "ISSUE",
+    "issues": [
+      "Title is truncated \u2014 cut off at 'March 15, 1' (presumably 1783). This is a data entry error that leaves the document incompletely identified.",
+      "URL https://www.loc.gov/resource/mgw3b.020/?sp=375 returns HTTP 403 (Cloudflare), preventing direct verification. However, the URL structure (mgw3b = George Washington Papers Series 3b Letterbooks, volume 020, page 375) is consistent with LOC's digitized Washington Papers format.",
+      "The Newburgh Address was delivered extemporaneously on March 15, 1783; Washington's written draft and the text circulated are documented in the Papers but the specific page number would need browser verification to confirm it is page 375 of volume 20."
+    ],
+    "recommendation": "Fix the truncated title to read 'Washington's Address to the Officers of the Army (Newburgh Address), March 15, 1783.' Verify the specific page number (sp=375) once accessible in a browser. The LOC George Washington Papers is the correct repository."
+  },
+  {
+    "id": "src-king-ny-state-constitution-1777",
+    "title": "Constitution of the State of New-York, 1777",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.archives.nysed.gov/research/new-york-state-constitution-1777 returns HTTP 404. The New York State Archives has reorganized its website and this specific path no longer resolves.",
+      "The document itself (the 1777 NY State Constitution) is real, historically significant, and held by the NY State Archives \u2014 this appears to be a broken link due to site restructuring, not a fabricated citation."
+    ],
+    "recommendation": "Locate the current NY State Archives URL for the 1777 Constitution (try searching archives.nysed.gov directly or the NYS Archives catalog). The document is also available via other repositories including Avalon Project at Yale and the NY State Library."
+  },
+  {
+    "id": "src-phi-journals-continental-congress",
+    "title": "Journals of the Continental Congress, 1774-1789",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL https://memory.loc.gov/ammem/amlaw/lwjc.html is the same generic redirect URL used for two other sources in this batch (src-nyc-continental-congress-journals-ny and src-tic-congressional-resolution-1775). It redirects to an essay/article page, not to the actual digitized journals.",
+      "This version correctly states the full date range (1774-1789), unlike the NYC version of the same citation.",
+      "Three separate entries in this batch use the same non-specific URL to cite what should be three distinct document references within the Journals collection."
+    ],
+    "recommendation": "Provide specific volume/page links within the digitized Journals collection. Consider consolidating duplicate source entries for the same collection and distinguishing them by specific item references."
+  },
+  {
+    "id": "src-phi-letters-delegates-congress",
+    "title": "Letters of Delegates to Congress, 1774-1789 (26 vols.)",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL https://memory.loc.gov/ammem/amlaw/lwdg.html redirects (HTTP 301) to an article/essay page describing the Letters of Delegates collection, not to the digitized letters themselves.",
+      "The 'Letters of Delegates to Congress' (26 volumes, edited by Paul H. Smith et al., published 1976-2000) is a modern scholarly edition \u2014 an editorially compiled, transcribed, and annotated collection assembled from dozens of repositories. As a published edited compilation, it is a secondary source by nature. The underlying individual letters are primary, but this citation points to the compiled edition, not original manuscripts.",
+      "Labeling an edited twentieth-century scholarly compilation as TIER1 primary overstates its evidential standing compared to the original holograph letters."
+    ],
+    "recommendation": "Reclassify as TIER2 (secondary/edited primary) or replace with citations to specific original letters at their holding institutions. If using LOC's digitized version, link directly to the collection's browsable interface rather than the essay redirect."
+  },
+  {
+    "id": "src-phi-franklin-papers",
+    "title": "The Papers of Benjamin Franklin (43 vols.)",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL points to collection homepage (franklinpapers.org), not a specific document or volume.",
+      "publisherOrHolder lists 'Yale University Press (various editors)' \u2014 accurate for the print edition, but the website is operated jointly by the American Philosophical Society, Yale University, and the Packard Humanities Institute (digital edition). Yale University Press is not the operator of this digital resource.",
+      "The 43-volume print series citation cannot be verified or browsed via a single homepage URL; each volume would require a specific reference."
+    ],
+    "recommendation": "Retain the collection reference but correct publisherOrHolder to 'American Philosophical Society / Yale University (print: Yale University Press)'. Link to specific documents or volumes using franklinpapers.org item-level URLs rather than the homepage."
+  },
+  {
+    "id": "src-yor-articles-confederation",
+    "title": "Articles of Confederation and Perpetual Union",
+    "verdict": "PASS",
+    "issues": [],
+    "recommendation": "Source checks out. NARA hosts the document at the cited URL with transcript and image of the original 1777 parchment. The NARA page abbreviates the title as 'Articles of Confederation (1777)' but the full official title 'Articles of Confederation and Perpetual Union' is correct. Primary source properly attributed."
+  },
+  {
+    "id": "src-yor-journals-congress-york",
+    "title": "Journals of the Continental Congress: York Period (September 1777-June 1778)",
+    "verdict": "ISSUE",
+    "issues": [
+      "The cited URL (memory.loc.gov/ammem/amlaw/lwjc.html) is a deprecated American Memory URL that now issues a 301 redirect to the general LOC page for all Journals of the Continental Congress \u2014 not a York-Period-specific resource.",
+      "The title claims specificity ('York Period, September 1777\u2013June 1778') that the URL does not deliver; the redirect destination covers all 34 volumes of JCC (1774\u20131789), not just the York sessions.",
+      "The old American Memory project URL should be considered unreliable as a stable citation."
+    ],
+    "recommendation": "Update URL to a specific LOC item-level page for the relevant JCC volumes covering the York period (Vols. 9\u201311, roughly). Correct URL pattern: https://www.loc.gov/item/[specific item id]. Alternatively cite the digitized volumes directly through the Century of Lawmaking collection with volume-specific links."
+  },
+  {
+    "id": "src-ger-washington-germantown-plan",
+    "title": "Washington's Battle Plan for Germantown, October 1777",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL points to the collection-level landing page for ALL George Washington Papers at LOC, not to any specific document.",
+      "A 'Battle Plan for Germantown, October 1777' is a very specific document that would require its own LOC item URL (e.g., https://www.loc.gov/item/mgw[series]/[item]). No such document can be verified from the collection homepage.",
+      "URL returned HTTP 403 (Cloudflare bot protection) during automated check, preventing direct content verification, though the collection itself is real and well-known."
+    ],
+    "recommendation": "Locate the specific manuscript or document in the LOC digital catalog and cite the item-level URL. Search https://www.loc.gov/collections/george-washington-papers/?q=germantown for the specific document."
+  },
+  {
+    "id": "src-tre-washington-trenton-orders",
+    "title": "Washington's Orders for the Crossing of the Delaware and Attack on Trenton",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is the same collection-level homepage for all George Washington Papers \u2014 identical to three other citations in this batch.",
+      "The title implies a specific primary document (orders, December 1776) but the URL provides no path to that specific item.",
+      "Five separate items in this batch all share the identical collection URL, suggesting bulk citation of a homepage rather than individual document research."
+    ],
+    "recommendation": "Identify and cite the specific item URL within the George Washington Papers. The crossing of the Delaware orders would be in Series 3B (Varick Transcripts) or Series 4 (General Correspondence). Use LOC catalog to find item-level URLs."
+  },
+  {
+    "id": "src-pri-princeton-university-archives",
+    "title": "Princeton University Archives: Nassau Hall During the Revolution",
+    "verdict": "ISSUE",
+    "issues": [
+      "The cited URL (rbsc.princeton.edu) redirects with a 301 to library.princeton.edu/special-collections/, which is the general landing page for Princeton's Rare Books and Special Collections \u2014 not a specific finding aid or guide about Nassau Hall during the Revolution.",
+      "No evidence found that a specific Princeton University Archives resource titled or focused on 'Nassau Hall During the Revolution' is accessible at this URL.",
+      "The redirect destination returned HTTP 403 (Cloudflare), so content could not be independently verified.",
+      "The original domain rbsc.princeton.edu appears to have been absorbed into library.princeton.edu, making the cited URL stale."
+    ],
+    "recommendation": "Locate the specific finding aid or archival guide in Princeton's Finding Aids system (findingaids.princeton.edu) for any collection related to Nassau Hall or the Revolutionary War period. Update the URL to the specific finding aid."
+  },
+  {
+    "id": "src-pri-washington-princeton-orders",
+    "title": "Washington's Orders and After-Action Report on the Battle of Princeton",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is the same collection-level homepage for all George Washington Papers \u2014 no specific document is cited.",
+      "An 'after-action report' on the Battle of Princeton would be a distinct document requiring its own item URL.",
+      "Cannot verify that a document matching this exact title exists in the collection from the homepage URL alone."
+    ],
+    "recommendation": "Search the LOC George Washington Papers catalog for Princeton-related correspondence from January 1777. Cite the specific item URL for any orders or correspondence found."
+  },
+  {
+    "id": "src-mon-washington-monmouth-orders",
+    "title": "Washington's Orders and Correspondence: Monmouth Campaign, June 1778",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is the same collection-level homepage for all George Washington Papers.",
+      "The title implies specific orders and correspondence from June 1778 but the URL provides no path to those specific items.",
+      "Multiple documents (orders, correspondence, court-martial materials re: Lee) would be involved in the Monmouth Campaign \u2014 no single document can be identified from the homepage URL."
+    ],
+    "recommendation": "Identify specific items from the Monmouth Campaign period (June 1778) within the LOC George Washington Papers and cite item-level URLs. Note that Lee court-martial records may be a separate archival series."
+  },
+  {
+    "id": "src-nbr-washington-retreat-dispatch",
+    "title": "Washington's Dispatches from New Brunswick and the New Jersey Retreat, November-",
+    "verdict": "ISSUE",
+    "issues": [
+      "Title is truncated \u2014 the date range is cut off ('November-' without year or end date), indicating a data entry error.",
+      "URL is the same collection-level homepage for all George Washington Papers.",
+      "No specific dispatches can be verified from the collection homepage URL."
+    ],
+    "recommendation": "Complete the truncated title with the full date range (likely November\u2013December 1776). Locate specific dispatch items from the New Jersey retreat in LOC catalog and cite item-level URLs."
+  },
+  {
+    "id": "src-fle-washington-fort-lee-letters",
+    "title": "Washington's Correspondence on the Fall of Fort Lee and Fort Washington, Novembe",
+    "verdict": "ISSUE",
+    "issues": [
+      "Title is truncated \u2014 'Novembe' is cut off, indicating a data entry error.",
+      "URL is the same collection-level homepage for all George Washington Papers \u2014 sixth item in this batch to share this identical URL.",
+      "Fort Lee (NJ) and Fort Washington (Manhattan) are two distinct engagements; conflating them in a single citation with a vague collection URL prevents verification of either.",
+      "No specific letters can be identified from the collection homepage URL."
+    ],
+    "recommendation": "Complete the truncated title (November 1776). Separate Fort Lee and Fort Washington correspondence into distinct citations with item-level LOC URLs. Washington's letter to Congress after the fall of Fort Washington (November 16, 1776) has a known LOC item reference."
+  },
+  {
+    "id": "src-yorktown-va-cornwallis-capitulation",
+    "title": "Articles of Capitulation, Yorktown, October 19, 1781",
+    "verdict": "FABRICATED",
+    "issues": [
+      "URL (https://www.archives.gov/milestone-documents/articles-of-capitulation) returns HTTP 404. The page does not exist.",
+      "NARA's Milestone Documents list was checked: the Articles of Capitulation (Yorktown, 1781) is NOT among NARA's 100 Milestone Documents. The list for the Revolutionary period includes Articles of Confederation and Treaty of Paris but not the Yorktown capitulation document.",
+      "The URL was apparently constructed by analogy to the real URL for the Articles of Confederation (articles-of-confederation), but no such endpoint exists at NARA.",
+      "This appears to be a fabricated citation \u2014 a plausible-sounding URL that mimics an existing URL pattern but leads nowhere."
+    ],
+    "recommendation": "Remove this citation. The actual Articles of Capitulation signed at Yorktown are held in the Papers of the Continental Congress at NARA (RG 360). A correct citation would reference the NARA catalog: catalog.archives.gov or the LOC's George Washington Papers which contain related correspondence. The document is also reproduced in secondary scholarly sources."
+  },
+  {
+    "id": "src-yorktown-va-washington-diary-1781",
+    "title": "George Washington's Diary, August-October 1781",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is the same collection-level George Washington Papers homepage used for six other citations in this batch \u2014 no specific diary item is linked.",
+      "publisherOrHolder lists 'Library of Congress, Manuscript Division' which is more precise than the collection page URL suggests, but the URL still lands on the general collection page.",
+      "Washington's diaries are a real subset within the George Washington Papers and the August\u2013October 1781 diary covering Yorktown does exist, but requires a specific item URL to be a verifiable citation."
+    ],
+    "recommendation": "The Washington diaries are available at a specific LOC item URL. Locate the diary for 1781 within the collection (Series 1, Diaries) and cite the item-level URL. The digital edition of the diaries is also published by the University Press of Virginia and accessible through the Washington Papers project."
+  },
+  {
+    "id": "src-yorktown-va-virginia-state-archives-1781",
+    "title": "Virginia Executive Papers: Governor Thomas Nelson, 1781",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL (lva.virginia.gov) is the general homepage of the Library of Virginia \u2014 not a specific collection page, finding aid, or catalog entry for the Virginia Executive Papers.",
+      "No path to Governor Thomas Nelson's 1781 executive papers is provided. The Library of Virginia homepage mentions its broad holdings but provides no direct access to this specific series.",
+      "A TIER1 citation requires a URL leading to the specific collection, finding aid, or digitized documents \u2014 not the institution's homepage."
+    ],
+    "recommendation": "Replace with the LVA catalog or finding aid URL for the Virginia Executive Papers, Governor Thomas Nelson, 1781. The LVA's online catalog (lva.primo.exlibrisgroup.com) or ArchivesSpace finding aids would provide the correct item-level or series-level URL."
+  },
+  {
+    "id": "src-yorktown-va-hamilton-assault-redoubt",
+    "title": "Alexander Hamilton's Report on the Assault on Redoubt No. 10, October 1781",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL points to the collection-level landing page for ALL Alexander Hamilton Papers at LOC, not to a specific document.",
+      "URL returned HTTP 403 (Cloudflare bot protection) during verification; the collection itself is real and held at LOC but the page could not be independently confirmed.",
+      "Hamilton's report on Redoubt No. 10 is a real document (he commanded the assault); however, it requires a specific item URL to constitute a verifiable primary source citation."
+    ],
+    "recommendation": "Search the LOC Alexander Hamilton Papers catalog for the specific report on Redoubt No. 10 (October 1781). The Papers of Alexander Hamilton (Columbia University Press edition, ed. Syrett) Vol. 2 also contains this document and may offer a more stable reference. Cite the specific item URL."
+  },
+  {
+    "id": "src-williamsburg-va-burgesses-journals",
+    "title": "Journals of the House of Burgesses of Virginia, 1773-1776",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL (colonialwilliamsburg.org) leads to the Colonial Williamsburg Foundation website \u2014 primarily a living history museum and tourism organization, not the primary archival repository for official Virginia colonial government records.",
+      "URL returned HTTP 403 (Cloudflare) and is visibly the museum's general homepage, not an archival finding aid or digitized document page.",
+      "Institution mismatch: The Journals of the House of Burgesses are official Virginia legislative records. The primary holding institution is the Library of Virginia (formerly the Virginia State Library). The journals have also been digitized and are available through the LOC and other repositories.",
+      "publisherOrHolder lists 'Colonial Williamsburg Foundation / Virginia State Library' \u2014 a dual attribution that is unusual and points to two different institutions. The URL only leads to Colonial Williamsburg, not the Virginia State Library.",
+      "The Colonial Williamsburg Foundation does hold some archival collections (Rockefeller Library) but is not the authoritative repository for official burgesses journals."
+    ],
+    "recommendation": "Replace URL with the Library of Virginia's digitized version or the LOC's digitized Journals of the House of Burgesses (available through the Century of Lawmaking collection). Correct publisherOrHolder to 'Library of Virginia' or 'Library of Congress' depending on which digitized version is used. Remove Colonial Williamsburg as a publisher/holder of official legislative records."
+  },
+  {
+    "id": "src-williamsburg-va-henry-resolves-1765",
+    "title": "Patrick Henry's Virginia Stamp Act Resolves, May 1765",
+    "verdict": "ISSUE",
+    "issues": [
+      "Wrong document at URL: the URL leads to a general Patrick Henry biography entry on Encyclopedia Virginia, not to the text of the Stamp Act Resolves themselves.",
+      "Publisher mismatch: page is published by Encyclopedia Virginia / Virginia Humanities, not the Library of Virginia as claimed.",
+      "Secondary source labeled as primary: the encyclopedia article discusses and analyzes the Resolves but is not the primary document.",
+      "Title does not match page content: the page title is 'Patrick Henry (1736\u20131799)', not the Resolves."
+    ],
+    "recommendation": "Replace URL with a direct link to the Resolves text, e.g. the Virginia Memory / Library of Virginia Document Bank entry for the Stamp Act Resolves, or the Yale Avalon Project transcription. Update publisherOrHolder to match the actual host."
+  },
+  {
+    "id": "src-williamsburg-va-virginia-declaration-rights",
+    "title": "Virginia Declaration of Rights, June 12, 1776 (George Mason's Draft)",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL returns HTTP 404 Not Found: https://www.lva.virginia.gov/public/guides/va1_declarationrights.htm no longer exists.",
+      "Cannot verify whether title or publisher claims are accurate."
+    ],
+    "recommendation": "Find the current LVA URL for this guide or replace with the Library of Virginia's Document Bank entry or the Virginia Memory digital facsimile for the Declaration of Rights. Verify George Mason draft attribution at replacement URL."
+  },
+  {
+    "id": "src-williamsburg-va-dunmore-proclamation",
+    "title": "Lord Dunmore's Proclamation, November 7, 1775",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is the NARA homepage (https://www.archives.gov/), not a specific document page.",
+      "No direct link to Lord Dunmore's Proclamation exists at this URL; users land on a general portal.",
+      "NARA holds many documents; the homepage cannot serve as a citation for a specific primary source."
+    ],
+    "recommendation": "Locate the specific NARA catalog or online-display URL for the Dunmore Proclamation. The document is also held by the Virginia State Archives and is available via the Library of Virginia; use a direct item-level URL."
+  },
+  {
+    "id": "src-williamsburg-va-virginia-gazette-1765-1776",
+    "title": "Virginia Gazette, 1765-1776 (Selected Issues)",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://research.colonialwilliamsburg.org/DigitalLibrary/va-gazettes/ returns HTTP 403 Forbidden.",
+      "Cannot confirm the page loads publicly or that the advertised issues (1765-1776) are accessible without restriction.",
+      "Publisher (Colonial Williamsburg Foundation, Rockefeller Library) is plausible but unverifiable."
+    ],
+    "recommendation": "Verify the URL is publicly accessible without institutional login. If the Colonial Williamsburg digital library requires authentication, redirect to an open-access alternative such as the Accessible Archives Virginia Gazette collection or the University of Mary Washington digital edition."
+  },
+  {
+    "id": "src-williamsburg-va-virginia-constitution-1776",
+    "title": "Constitution of Virginia, June 29, 1776",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is the Library of Virginia homepage (https://www.lva.virginia.gov/), not a specific document or finding-aid page.",
+      "The homepage does not directly surface the 1776 Constitution; users would need to navigate through multiple sub-sections.",
+      "A homepage cannot serve as a citable direct link to a primary source document."
+    ],
+    "recommendation": "Replace with a specific URL, such as the LVA Document Bank entry for the 1776 Virginia Constitution or the Virginia Memory facsimile image page. The Yale Avalon Project also hosts a full transcription."
+  },
+  {
+    "id": "src-williamsburg-va-jefferson-autobiography",
+    "title": "Jefferson's Autobiography: Virginia and the Road to Independence",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.loc.gov/item/mtjbib025151/ returns HTTP 403 Forbidden (LOC blocks automated requests).",
+      "Cannot confirm the item resolves to Jefferson's Autobiography or that the subtitle 'Virginia and the Road to Independence' appears on the actual document \u2014 that subtitle is interpretive and not part of the manuscript's own title.",
+      "Jefferson's Autobiography is a genuine primary source, but the parenthetical subtitle appended here appears to be an editorial gloss, not the document's title."
+    ],
+    "recommendation": "Verify the LOC item number in a browser. If the item exists, strip the invented subtitle and cite as 'Autobiography' (Thomas Jefferson, c. 1821). If mtjbib025151 resolves to a different record, correct the item number."
+  },
+  {
+    "id": "src-richmond-va-jefferson-arnold-letter",
+    "title": "Thomas Jefferson to Steuben, January 12, 1781 (Arnold's Raid Correspondence)",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is a collection-level landing page (https://www.loc.gov/collections/thomas-jefferson-papers/) for the entire Jefferson Papers corpus, not a link to the specific letter.",
+      "URL also returns HTTP 403 Forbidden to automated requests, so accessibility to end users is unverified.",
+      "A collection homepage cannot be cited as pointing to a single letter; users cannot navigate directly to the January 12, 1781 item from that page without a search."
+    ],
+    "recommendation": "Locate the item-level LOC URL for this specific letter (search the Jefferson Papers finding aid for 'Steuben January 1781') and use that direct link. Alternatively, cite the Princeton Papers of Thomas Jefferson edition which publishes this letter in Vol. 4."
+  },
+  {
+    "id": "src-richmond-va-virginia-state-archives",
+    "title": "Virginia Executive Papers and Council Journals, 1779-1781",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is the Library of Virginia homepage (https://www.lva.virginia.gov/), not a specific collection guide or digital resource page.",
+      "The homepage does not directly surface the Executive Papers or Council Journals; these are archival series held on-site.",
+      "No direct digital access or finding aid URL is provided; citation cannot be verified or followed by a remote researcher."
+    ],
+    "recommendation": "Replace with the LVA finding-aid or ArchivesSpace record for 'Virginia Executive Papers' (Record Group 3, Governor's Office) and 'Council Journals'. If a digital scan exists on Virginia Memory, use that URL."
+  },
+  {
+    "id": "src-alexandria-va-fairfax-resolves-1774",
+    "title": "Fairfax County Resolves, July 18, 1774",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.loc.gov/item/00694538/ returns HTTP 403 Forbidden (LOC blocks automated requests).",
+      "Cannot confirm whether this LOC item number resolves to the Fairfax County Resolves, or whether the date and publisher claims are accurate.",
+      "The Fairfax County Resolves are a genuine primary source drafted by George Mason and George Washington; the LOC plausibly holds a copy, but the item number cannot be verified without browser access."
+    ],
+    "recommendation": "Verify item 00694538 in a browser. If confirmed as the Fairfax Resolves, the citation is likely sound; note the document is also available via George Mason's Papers at the Library of Congress and the Papers of George Washington edition."
+  },
+  {
+    "id": "src-norfolk-va-woodford-letter-norfolk-burning",
+    "title": "General Woodford to the Virginia Committee of Safety, January 4, 1776",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is the Library of Virginia homepage (https://www.lva.virginia.gov/), not a specific document, manuscript record, or finding aid.",
+      "The LVA homepage does not directly surface this letter; it is an archival manuscript requiring on-site or catalog access.",
+      "No item-level or collection-level URL is provided; the citation is not followable by a researcher."
+    ],
+    "recommendation": "Locate the LVA finding aid for the Virginia Committee of Safety Papers or the William Woodford Papers. If a digital scan exists, use the Virginia Memory item URL. Alternatively, the letter may have been published in the Virginia Magazine of History and Biography or the American Archives (Force)."
+  },
+  {
+    "id": "src-norfolk-va-virginia-gazette-norfolk-burning",
+    "title": "Virginia Gazette: Reports on the Burning of Norfolk, January-March 1776",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://research.colonialwilliamsburg.org/DigitalLibrary/va-gazettes/ returns HTTP 403 Forbidden.",
+      "Cannot confirm the page is publicly accessible or that the January-March 1776 issues are available at this URL.",
+      "Publisher (Colonial Williamsburg Foundation, Rockefeller Library) is plausible but unverifiable."
+    ],
+    "recommendation": "Same as src-williamsburg-va-virginia-gazette-1765-1776: verify public accessibility or redirect to an open-access alternative. For the Norfolk burning specifically, individual issue URLs from the CW digital library (if accessible) would be preferable to a collection-level link."
+  },
+  {
+    "id": "src-mount-vernon-va-lund-washington-letters",
+    "title": "Lund Washington to George Washington: Mount Vernon Management Letters, 1775-1783",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is a collection-level landing page (https://www.loc.gov/collections/george-washington-papers/) for the entire George Washington Papers, not specific Lund Washington letters.",
+      "URL returns HTTP 403 Forbidden to automated requests; accessibility to end users is unverified.",
+      "Lund Washington's letters to George Washington are a real and well-documented series within the collection, but no item-level URL is provided.",
+      "A collection homepage cannot function as a citation for a specific subset of correspondence."
+    ],
+    "recommendation": "Locate item-level LOC URLs for individual Lund Washington letters, or cite the Papers of George Washington: Revolutionary War Series (University Press of Virginia) which transcribes these letters. The Mount Vernon digital library also holds searchable transcriptions."
+  },
+  {
+    "id": "src-charleston-sc-lincoln-capitulation",
+    "title": "Articles of Capitulation: Charleston, May 12, 1780",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is the NARA homepage (https://www.archives.gov/), not a specific document page.",
+      "No direct link to the Articles of Capitulation for Charleston exists at this URL.",
+      "It is unclear whether NARA holds the original document; the Articles of Capitulation may be held by the British National Archives or South Carolina Historical Society, making the publisherOrHolder attribution unverified."
+    ],
+    "recommendation": "Identify the actual repository for this document. The Articles of Capitulation were signed by British and American commanders; copies likely exist at NARA (Record Group 360), the South Carolina Historical Society, and the British National Archives (PRO 30/55). Provide an item-level URL or specific archival reference."
+  },
+  {
+    "id": "src-charleston-sc-lincoln-siege-journal",
+    "title": "General Benjamin Lincoln's Siege Journal, March-May 1780",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is the Massachusetts Historical Society homepage (https://www.masshist.org/), not a specific finding aid, collection guide, or digital item.",
+      "The MHS homepage does not directly surface the Lincoln Papers or the siege journal; users cannot follow this citation to the document.",
+      "The MHS does hold the Benjamin Lincoln Papers (a well-known collection), making the publisherOrHolder plausible, but no item-level or collection-level URL is provided."
+    ],
+    "recommendation": "Replace with the MHS finding aid URL for the Benjamin Lincoln Papers (call number Ms. N-1690 or similar) and, if digitized, the specific item URL for the 1780 siege journal. The MHS catalog is searchable at www.masshist.org/library."
+  },
+  {
+    "id": "src-charleston-sc-schs-collections",
+    "title": "South Carolina Historical Society: Revolutionary War Manuscript Collections",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL https://www.southcarolinahistoricalsociety.org/ performs a 301 redirect to https://schistory.org/, indicating the domain has changed; the cited URL is stale.",
+      "Destination is the SCHS homepage, not a specific collection page or finding aid.",
+      "The title 'South Carolina Historical Society: Revolutionary War Manuscript Collections' is a category description, not the name of a specific document or discrete collection \u2014 it cannot function as a primary source citation.",
+      "The SCHS holdings are largely accessible only in person; no digital repository URL is provided."
+    ],
+    "recommendation": "Update the URL to https://schistory.org/. More importantly, identify the specific manuscript collection(s) intended (e.g., Ravenel Family Papers, Drayton Papers, Henry Middleton Rutledge Papers) and provide individual finding-aid URLs. A category-level description is not a citable primary source."
+  },
+  {
+    "id": "src-charleston-sc-sc-state-archives",
+    "title": "South Carolina Department of Archives and History: Revolutionary War Records",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "Cited URL https://www.scdah.sc.gov/ returns ECONNREFUSED \u2014 the www subdomain does not resolve; the institution is accessible at scdah.sc.gov (no www) but not at the cited address.",
+      "Even if corrected, the URL is the institutional homepage, not a specific collection page or finding aid. The title implies a named collection ('Revolutionary War Records') that is not navigable from this URL.",
+      "No specific document, series, or record group is linked; citation is not actionable for verification or citation reuse."
+    ],
+    "recommendation": "Replace with the specific SCDAH finding aid or online catalog record URL for the Revolutionary War collection (e.g., via SCDAH's online research portal at scdah.sc.gov/research). Remove www from URL. Confirm that the named collection exists under that label in SCDAH's catalog."
+  },
+  {
+    "id": "src-camden-sc-sc-state-archives-camden",
+    "title": "South Carolina State Records: Camden District Court and Loyalist Records, 1780-1",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "Cited URL https://www.scdah.sc.gov/ returns ECONNREFUSED \u2014 www subdomain does not resolve.",
+      "Even if corrected, the URL lands on the institutional homepage, not a specific collection. The title names a very specific series ('Camden District Court and Loyalist Records, 1780-1') that cannot be verified.",
+      "The framing 'Camden District Court' during 1780-1 is historically suspect: Camden was a British military post during that period; a functioning American district court would not have operated there under that name. This label may reflect a post-war administrative reconstruction or may be a fabricated collection title.",
+      "Title appears truncated ('1780-1' likely means 1780-1781 or 1780-1782)."
+    ],
+    "recommendation": "Verify whether SCDAH actually holds a collection called 'Camden District Court and Loyalist Records' \u2014 the terminology is anachronistic for British-occupied Camden. Replace URL with a direct finding-aid link. If the collection does not exist under this name, the citation should be corrected or removed."
+  },
+  {
+    "id": "src-cowpens-sc-eyewitness-depositions",
+    "title": "Pension Depositions of Cowpens Veterans, 1820-1840",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "Fold3 returns HTTP 403 Forbidden \u2014 the site requires a paid subscription; content cannot be verified without credentials.",
+      "The URL points to the general Revolutionary War Pension and Bounty Land Warrant Application Files collection (approximately 80,000 files); there is no curated sub-collection of 'Cowpens Veterans' at this URL. The title implies a filtered, named sub-collection that does not exist.",
+      "The dates 1820-1840 reflect when veterans filed pension applications, not when the Battle of Cowpens occurred (1781). These are retrospective testimonies recorded 39-59 years after the event. While they qualify as primary sources (firsthand testimony), they are NOT contemporaneous battle records. Labeling them as tier-1 primary sources without this caveat is misleading.",
+      "The publisherOrHolder lists NARA, but the access point is Fold3 (an Ancestry/private subscription service), not a free NARA resource."
+    ],
+    "recommendation": "Replace with the NARA Catalog direct link to the Revolutionary War Pension files (catalog.archives.gov) which is free and accessible. Retitle to reflect that these are retrospective pension depositions, not contemporaneous battle records. Acknowledge the paywall issue."
+  },
+  {
+    "id": "src-ninety-six-sc-sc-state-archives-backcountry",
+    "title": "South Carolina Backcountry District Records: Ninety Six, 1775-1782",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "Cited URL https://www.scdah.sc.gov/ returns ECONNREFUSED \u2014 www subdomain does not resolve.",
+      "Even if corrected, the URL is the institutional homepage, not a specific collection or finding aid.",
+      "The title implies a distinct named series ('South Carolina Backcountry District Records: Ninety Six') that cannot be verified from the homepage URL. SCDAH does hold backcountry-era records, but it is unclear whether this specific named series exists in their catalog."
+    ],
+    "recommendation": "Fix URL to scdah.sc.gov and locate the specific series or record group in SCDAH's online catalog. Provide a direct finding-aid URL. Confirm the collection label matches SCDAH's actual catalog terminology."
+  },
+  {
+    "id": "src-eutaw-springs-sc-sc-state-archives",
+    "title": "South Carolina State Records: Eutaw Springs District, 1781-1782",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "Cited URL https://www.scdah.sc.gov/ returns ECONNREFUSED \u2014 www subdomain does not resolve.",
+      "Even if corrected, the URL is the institutional homepage, not a specific collection.",
+      "'Eutaw Springs District' is not a recognized historical administrative district in South Carolina \u2014 Eutaw Springs was a battle site (September 8, 1781) in what was then Orangeburg District. A collection named 'Eutaw Springs District' is likely a fabricated label.",
+      "No specific document, record group, or series can be verified from the cited URL."
+    ],
+    "recommendation": "Verify whether SCDAH holds any collection under the name 'Eutaw Springs District Records' \u2014 this administrative label appears historically inaccurate. Records from this engagement would more likely appear under Orangeburg District or British military records. If no such named collection exists, this citation should be corrected or removed."
+  },
+  {
+    "id": "src-fort-moultrie-sc-sc-state-archives-1776",
+    "title": "South Carolina Council of Safety Minutes: Fort Sullivan, June-July 1776",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "Cited URL https://www.scdah.sc.gov/ returns ECONNREFUSED \u2014 www subdomain does not resolve.",
+      "Even if corrected, the URL is the institutional homepage, not a specific collection or digitized document.",
+      "The South Carolina Council of Safety did keep minutes and SCDAH does hold such records \u2014 the collection is plausible and the historical framing (Fort Sullivan, pre-rename) is accurate. However, the specific series cannot be verified from this URL.",
+      "No direct link to the Council of Safety minute books or a finding aid is provided."
+    ],
+    "recommendation": "Fix URL to scdah.sc.gov and provide a direct finding aid or catalog link to the Council of Safety minutes. The historical framing (Fort Sullivan rather than Fort Moultrie) is correct for June-July 1776 and should be retained."
+  },
+  {
+    "id": "src-guilford-courthouse-nc-pension-depositions",
+    "title": "Pension Applications: Guilford Courthouse Veterans, North Carolina and Virginia",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "Fold3 returns HTTP 403 Forbidden \u2014 subscription required; content cannot be verified.",
+      "The URL points to the entire Revolutionary War Pension collection; there is no curated sub-collection of 'Guilford Courthouse Veterans' at this URL. The title implies a filtered, named grouping that does not exist.",
+      "Pension applications are retrospective (filed decades after the 1781 battle); they are primary sources as firsthand testimony but not contemporaneous battlefield records. The tier-1 classification should reflect this distinction.",
+      "NARA is named as publisherOrHolder but access is gated through a private subscription platform (Fold3)."
+    ],
+    "recommendation": "Replace with the free NARA Catalog link (catalog.archives.gov) for the pension files. Retitle to remove the implication of a curated Guilford Courthouse sub-collection. Note the retrospective nature of pension testimonies."
+  },
+  {
+    "id": "src-guilford-courthouse-nc-nc-state-archives",
+    "title": "North Carolina State Archives: Military Collection, Revolutionary War, 1780-1781",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL loads as the North Carolina State Archives institutional homepage (archives.ncdcr.gov) \u2014 not a specific collection page or finding aid.",
+      "The title implies a named collection ('Military Collection, Revolutionary War, 1780-1781') that is not accessible or verifiable from the homepage. While NC State Archives does hold military records from this period, no direct link to this specific collection is provided.",
+      "No specific document, record group identifier, or finding aid URL is cited."
+    ],
+    "recommendation": "Replace the homepage URL with a direct link to the NC State Archives Military Collection finding aid or online catalog record. The institution and approximate collection type are plausible."
+  },
+  {
+    "id": "src-wilmington-nc-nc-state-archives",
+    "title": "North Carolina State Archives: New Hanover County Records and Governor's Papers,",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL loads as the NC State Archives institutional homepage, not a specific collection or finding aid.",
+      "The title is truncated \u2014 'Governor's Papers,' with no date range or governor identified. Cannot determine what specific records are intended.",
+      "New Hanover County Records and Governor's Papers are distinct record groups; bundling them in a single citation suggests a collection-level or category-level reference, not a specific document.",
+      "No finding aid, record group ID, or direct collection URL is provided."
+    ],
+    "recommendation": "Supply complete title with date range and identify the relevant governor (e.g., Governor Burke or Governor Caswell for the relevant period). Provide separate citations for county records vs. governor's papers. Link to specific finding aids in NC State Archives catalog."
+  },
+  {
+    "id": "src-kings-mountain-nc-nc-state-archives-kings-mountain",
+    "title": "North Carolina State Archives: Surry and Wilkes County Militia Records, 1780",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL loads as the NC State Archives institutional homepage, not a specific collection page or finding aid.",
+      "The title implies a specific named series ('Surry and Wilkes County Militia Records, 1780') that cannot be verified from the homepage. NC State Archives does hold county-level militia records, but access requires specific finding-aid URLs.",
+      "No record group identifier, series number, or finding aid link is provided."
+    ],
+    "recommendation": "Locate and link to the specific NC State Archives finding aid for Surry County and Wilkes County militia records. The historical framing is appropriate \u2014 Overmountain Men from these counties participated at Kings Mountain \u2014 but the citation needs a specific, navigable URL."
+  },
+  {
+    "id": "src-new-bern-nc-provincial-congress-records",
+    "title": "North Carolina Provincial Congress: Proceedings and Journal, 1774-1776",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL loads as the NC State Archives institutional homepage, not a specific collection, digitized volume, or finding aid.",
+      "The North Carolina Provincial Congress Proceedings and Journals are real primary sources and NC State Archives does hold them. However, these proceedings have also been published and digitized in other locations; the citation should point to the specific volume or digitized resource.",
+      "Homepage URL is not actionable for citation or direct access."
+    ],
+    "recommendation": "Replace with a direct finding aid or digitized volume URL. Note: The Proceedings of the North Carolina Provincial Congresses have been published in the Colonial Records of North Carolina (Saunders, vols. 9-10), which may be freely accessible via digital collections. Provide the most direct and accessible URL."
+  },
+  {
+    "id": "src-savannah-ga-lincoln-siege-correspondence",
+    "title": "General Benjamin Lincoln: Correspondence during the Siege of Savannah, September",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL loads as the Massachusetts Historical Society homepage \u2014 not a specific finding aid, collection page, or digitized document for the Benjamin Lincoln Papers.",
+      "The title is truncated ('September' with no year \u2014 presumably September 1779 for the Siege of Savannah).",
+      "The MHS does hold the Benjamin Lincoln Papers (a real collection, MS N-1832), but the citation should link to the finding aid or the specific digitized correspondence, not the institutional homepage.",
+      "No finding aid number, collection identifier, or specific document URL is provided."
+    ],
+    "recommendation": "Replace URL with the MHS finding aid for the Benjamin Lincoln Papers (accessible via masshist.org/collection-guides). Correct the truncated title to include the year (September-October 1779). This is a genuinely strong primary source if properly cited."
+  },
+  {
+    "id": "src-savannah-ga-georgia-state-archives",
+    "title": "Georgia State Archives: Revolutionary War Records, 1776-1783",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL loads as the Georgia Archives institutional homepage \u2014 not a specific collection, series, or finding aid.",
+      "The title ('Revolutionary War Records, 1776-1783') is a generic category label, not a specific collection or document. The Georgia Archives does hold Revolutionary War-era records, but no specific record group or finding aid is identified.",
+      "No direct collection link, record group identifier, or finding aid is provided."
+    ],
+    "recommendation": "Replace with a direct link to Georgia Archives' Revolutionary War finding aids or Virtual Vault digitized records. Identify the specific record series (e.g., Georgia Revolutionary War Bounty Grants, Headright Grants, or militia records)."
+  },
+  {
+    "id": "src-new-haven-state-archives-council",
+    "title": "Connecticut Council of Safety Minutes, 1779",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://portal.ct.gov/SOTS/Collection-Detail-Pages/State-Archives returns HTTP 404 \u2014 the page does not exist at this path.",
+      "The Connecticut State Archives does exist under the Secretary of State (SOTS), and Connecticut Council of Safety records are real \u2014 but this specific URL is a dead link.",
+      "No working URL is provided for the Connecticut State Archives or for this specific collection.",
+      "Without a valid URL, the existence and content of the specific 'Connecticut Council of Safety Minutes, 1779' cannot be verified."
+    ],
+    "recommendation": "Find the current correct URL for the Connecticut State Archives (likely cslib.org/archives or a SOTS subpage). Locate the finding aid for the Council of Safety records. The Connecticut Council of Safety Minutes are a real primary source (held by the Connecticut State Library Archives), but this citation needs a correct, working URL."
+  },
+  {
+    "id": "src-augusta-ga-georgia-state-archives-augusta",
+    "title": "Georgia Archives: Richmond County Records and Georgia Executive Council Papers,",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL loads as the Georgia Archives institutional homepage \u2014 not a specific collection or finding aid.",
+      "The title is truncated \u2014 no date range is provided after the trailing comma.",
+      "Richmond County Records and Georgia Executive Council Papers are distinct record groups; bundling them in a single citation suggests a category-level reference rather than a specific document or series.",
+      "No record group identifier, finding aid, or direct collection URL is provided."
+    ],
+    "recommendation": "Provide complete title with date range. Separate Richmond County records from Executive Council Papers as distinct citations. Link to specific finding aids in the Georgia Archives catalog or Virtual Vault. Georgia Executive Council Papers (1778-1789) are a real and significant primary source if properly cited."
+  },
+  {
+    "id": "src-new-london-connecticut-state-records",
+    "title": "The Public Records of the State of Connecticut, 1781",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL returns HTTP 404 \u2014 page no longer exists at this path on portal.ct.gov.",
+      "Institution mismatch: publisherOrHolder lists 'Connecticut State Library' but the URL domain is CT.gov/SOTS (Connecticut Secretary of the State's office), which is a separate institution from the Connecticut State Library.",
+      "Even if the URL worked, the path '/SOTS/Collection-Detail-Pages/State-Archives' is a collection-category landing page, not a permalink to the specific 1781 volume."
+    ],
+    "recommendation": "Replace with a direct permalink from the Connecticut State Library's Digital Collections or the Connecticut State Archives finding aid for the Public Records series. Correct the publisherOrHolder to 'Connecticut State Archives' (under SOTS) or 'Connecticut State Library' depending on which institution actually holds this volume."
+  },
+  {
+    "id": "src-danbury-continental-congress-resolve",
+    "title": "Continental Congress Resolution on the Danbury Raid, May 1777",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL (memory.loc.gov/ammem/amlaw/lwjc.html) returns HTTP 403 when fetched programmatically; may be accessible in a browser but anti-bot blocking prevents verification.",
+      "Even if the URL loads, it is the collection landing page for the entire 'Journals of the Continental Congress, 1774\u20131789' series, not a direct link to any specific resolution about the Danbury Raid.",
+      "No discrete document titled 'Continental Congress Resolution on the Danbury Raid, May 1777' exists as a named standalone item; relevant material (JCC vol. VII, May 2, 1777 entries) would need a page-level URL to be citable as a specific primary source.",
+      "Title should be verified against the JCC transcription to confirm such a resolution is specifically recorded under that framing."
+    ],
+    "recommendation": "Link directly to the specific page images or transcription within the JCC digital edition (e.g., memory.loc.gov/ammem/amlaw/lwjclink.html volume VII, relevant page), and revise the title to reflect the actual heading of the journal entry rather than a descriptive gloss."
+  },
+  {
+    "id": "src-danbury-connecticut-state-archives-1777",
+    "title": "Connecticut Council of Safety Records: April-May 1777",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is identical to src-new-london-connecticut-state-records and returns HTTP 404.",
+      "The path '/SOTS/Collection-Detail-Pages/State-Archives' is a generic landing page, not a finding aid or specific record group for Council of Safety records.",
+      "Two entirely different sources (1781 Public Records and 1777 Council of Safety Records for different towns) share the same dead URL, indicating bulk URL assignment rather than individual sourcing."
+    ],
+    "recommendation": "Obtain the correct finding aid URL from the Connecticut State Archives for Record Group 001 (Governor and Council) or the Connecticut State Library's online catalog entry for the Council of Safety minute books. Do not reuse the same landing-page URL across multiple distinct source records."
+  },
+  {
+    "id": "src-providence-gaspee-testimony",
+    "title": "Proceedings of the Gaspee Commission, 1772-1773",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL (sos.ri.gov/divisions/Archival/archives) returns HTTP 404 \u2014 page no longer exists at this path.",
+      "Even if the URL worked, the path is the general Rhode Island State Archives division landing page, not a specific finding aid or digitized record for the Gaspee Commission proceedings.",
+      "The underlying document (Gaspee Commission inquiry records) is historically real and held by Rhode Island State Archives, but the URL does not point to it."
+    ],
+    "recommendation": "Contact Rhode Island State Archives directly for a permalink or finding aid reference to the Gaspee inquiry records. An alternative citation path is through the published edition in 'Records of the Colony of Rhode Island' or the digitized Rhode Island Colonial Records collection."
+  },
+  {
+    "id": "src-newport-rochambeau-journal",
+    "title": "Journal de la Campagne en Am\u00e9rique (Rochambeau's Campaign Journal)",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL (loc.gov/item/2021667630/) returns HTTP 403 Forbidden \u2014 the Library of Congress item page blocks automated fetching; accessibility in a browser cannot be confirmed from this audit.",
+      "Unable to verify that the item at this LOC catalog number corresponds to the stated title 'Journal de la Campagne en Am\u00e9rique' or to Rochambeau's personal campaign journal specifically.",
+      "The dual attribution 'Biblioth\u00e8que nationale de France / Library of Congress' is plausible for a joint digitization project but could not be confirmed against the item record."
+    ],
+    "recommendation": "Manually verify the LOC item page in a browser. If the item resolves correctly to Rochambeau's campaign journal with BnF provenance, this source is potentially valid as a primary source (journal created contemporaneously with the 1780-1781 campaign). Update verdict after browser verification."
+  },
+  {
+    "id": "src-portsmouth-langdon-papers",
+    "title": "John Langdon Papers, 1775-1819",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL points to the New Hampshire Historical Society homepage (nhhistory.org/), not to a specific collection finding aid or catalog entry for the John Langdon Papers.",
+      "The homepage makes no mention of the John Langdon Papers and provides no direct route to this collection from the content retrieved.",
+      "A reader following this URL cannot locate the cited collection without additional navigation; this does not constitute a verifiable specific-source citation."
+    ],
+    "recommendation": "Replace with the direct NHHS online catalog permalink or finding aid URL for the John Langdon Papers (MS 0100 or equivalent accession number). The NHHS online library catalog should have a searchable record for this collection."
+  },
+  {
+    "id": "src-portsmouth-continental-congress-navy",
+    "title": "Journals of the Continental Congress: Naval Committee Records, 1775-1776",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL (memory.loc.gov/ammem/amlaw/lwjc.html) is the collection landing page for all Journals of the Continental Congress, not a specific volume or page relating to Naval Committee records.",
+      "URL returns HTTP 403 when fetched programmatically.",
+      "The JCC does not have a separately titled 'Naval Committee Records' sub-series at this URL; Naval Committee minutes are embedded within the main journal volumes and would require page-specific citations."
+    ],
+    "recommendation": "Cite specific volume and page numbers within the JCC digital edition. Naval Committee records for 1775-1776 appear in JCC vol. III-IV; provide direct page image URLs from the LOC American Memory viewer."
+  },
+  {
+    "id": "src-annapolis-washington-resignation",
+    "title": "General Washington's Address to Congress on Resigning His Commission, December 2",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL (loc.gov/resource/mgw3b.048/?sp=330) returns HTTP 403 Forbidden \u2014 LOC resource viewer blocks automated fetching.",
+      "The title appears truncated in the data ('December 2') \u2014 Washington's resignation address was delivered December 23, 1783, not December 2. If this is a JSON field truncation, the date field should be corrected to 'December 23, 1783'.",
+      "Cannot confirm that page 330 of George Washington Papers Series 3b vol. 48 corresponds to the resignation address without browser access."
+    ],
+    "recommendation": "Verify the URL in a browser and confirm the document on page sp=330. Correct the title date to December 23, 1783. The George Washington Papers at LOC do hold primary copies of correspondence and addresses from this period, so the collection attribution is plausible if the page number is accurate."
+  },
+  {
+    "id": "src-annapolis-treaty-paris-ratification",
+    "title": "Ratification of the Treaty of Paris by the Continental Congress, January 14, 178",
+    "verdict": "ISSUE",
+    "issues": [
+      "Title is truncated in the data: 'January 14, 178' \u2014 the year 1784 is cut off. This suggests a data entry or field-length error.",
+      "The URL (archives.gov/milestone-documents/treaty-of-paris) leads to a NARA educational overview page presenting the Treaty of Paris text (signed September 3, 1783), NOT to the ratification instrument from January 14, 1784.",
+      "Wrong document at this URL: the ratification by the Continental Congress in Annapolis on January 14, 1784 is a distinct document (a congressional act) separate from the peace treaty itself. The NARA page does not show or discuss this ratification record.",
+      "The NARA milestone-documents page functions as a secondary educational summary with treaty text, not as a primary ratification record."
+    ],
+    "recommendation": "Locate the actual ratification instrument (Continental Congress, January 14, 1784) \u2014 it is held in NARA Record Group 360 (Papers of the Continental Congress). Replace the URL with either the specific NARA catalog entry for the ratification document or the relevant pages from the Journals of the Continental Congress vol. XXV. Fix the truncated year to 1784."
+  },
+  {
+    "id": "src-annapolis-journals-continental-congress-1783",
+    "title": "Journals of the Continental Congress, Volume XXV (1783)",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL (memory.loc.gov/ammem/amlaw/lwjc.html) is the collection landing page for the entire JCC series, not a link to Volume XXV specifically.",
+      "URL returns HTTP 403 when fetched programmatically.",
+      "Volume XXV of the JCC (1783) is a real published volume and does exist in the LOC digital collection, but a direct URL to that specific volume was not provided."
+    ],
+    "recommendation": "Replace with the direct URL for JCC Volume XXV within the LOC American Memory viewer (e.g., memory.loc.gov/ammem/amlaw/lwjclink.html volume 25 entry). This would make the citation specific and verifiable."
+  },
+  {
+    "id": "src-annapolis-md-state-archives",
+    "title": "Maryland State Archives: Revolutionary War Records Collection",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL points to the Maryland State Archives homepage (msa.maryland.gov/), not to any specific collection, finding aid, or record group.",
+      "No collection formally titled 'Revolutionary War Records Collection' is surfaced at the homepage URL; this appears to be a descriptive gloss rather than an official collection name.",
+      "The MSA homepage provides no direct path to the cited collection without additional navigation."
+    ],
+    "recommendation": "Identify the specific MSA series identifier (e.g., S1161 Muster Rolls, M3060 militia records, etc.) and link to the corresponding finding aid or online catalog record. The MSA holds extensive Revolutionary War materials but they are distributed across multiple record groups, not a single named collection."
+  },
+  {
+    "id": "src-exeter-nh-constitution-1776",
+    "title": "Constitution of New Hampshire, January 5, 1776",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL (sos.nh.gov/archives) returns HTTP 403 Forbidden when fetched; may be accessible in a browser.",
+      "The URL path '/archives' is the New Hampshire Division of Archives landing page, not a specific document permalink for the 1776 Constitution.",
+      "The NH 1776 Constitution is a real document (the first state constitution, adopted January 5, 1776) held by the NH State Archives, but a collection landing page URL is insufficient as a specific citation."
+    ],
+    "recommendation": "Locate the specific NH State Archives permalink or digitized image URL for the 1776 Constitution. The NH State Archives may have a dedicated page for this document; alternatively, it appears in published compilations of early state constitutions."
+  },
+  {
+    "id": "src-exeter-continental-association-exeter",
+    "title": "Exeter Committee of Safety Records, 1775-1783",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is identical to src-exeter-nh-constitution-1776, pointing to the same NH archives landing page (sos.nh.gov/archives) \u2014 two entirely different documents sharing the same non-specific URL.",
+      "URL returns HTTP 403 Forbidden.",
+      "The landing page provides no path to the specific Committee of Safety record series."
+    ],
+    "recommendation": "Obtain the specific NH State Archives series or box/folder reference for the Exeter Committee of Safety minute books. The title also incorrectly calls these 'Continental Association' records in the source ID while the title correctly says 'Committee of Safety Records' \u2014 the ID naming should be reconciled. Provide a distinct URL for each source."
+  },
+  {
+    "id": "src-baltimore-continental-congress-baltimore",
+    "title": "Journals of the Continental Congress, December 1776 - February 1777 (Baltimore S",
+    "verdict": "ISSUE",
+    "issues": [
+      "Title is truncated: 'Baltimore S' \u2014 presumably 'Baltimore Session' is cut off.",
+      "URL (memory.loc.gov/ammem/amlaw/lwjc.html) is the collection landing page for the entire JCC series, not a link to the specific December 1776 - February 1777 Baltimore session volumes (JCC vol. VI).",
+      "URL returns HTTP 403 when fetched programmatically.",
+      "The historical claim is accurate (Congress did meet in Baltimore Dec 20, 1776 - Feb 27, 1777), but the citation is not specific."
+    ],
+    "recommendation": "Replace with a direct URL to JCC Volume VI in the LOC digital collection. Fix the truncated title to 'Journals of the Continental Congress, December 1776 - February 1777 (Baltimore Session)'."
+  },
+  {
+    "id": "src-baltimore-privateering-records",
+    "title": "Maryland Admiralty Court Records: Privateering Commissions, 1776-1783",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL points to the Maryland State Archives homepage (msa.maryland.gov/), not to any specific series, finding aid, or record group.",
+      "No collection or series formally titled 'Maryland Admiralty Court Records: Privateering Commissions' is surfaced from the homepage URL.",
+      "The MSA homepage is the same URL used for src-annapolis-md-state-archives and src-baltimore-privateering-records, indicating bulk homepage assignment rather than individual source URLs."
+    ],
+    "recommendation": "Identify the specific MSA series for admiralty or privateering records (possibly within the Court of Admiralty records or Governor's correspondence). Provide the MSA series identifier and a direct finding aid or catalog URL. Maryland privateer commission records from the Revolution are real but require a specific archival reference."
+  },
+  {
+    "id": "src-baltimore-md-state-archives-revolution",
+    "title": "Maryland State Archives: Baltimore County Committee of Observation Records",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL resolves to the Maryland State Archives homepage, not any specific collection or document page for Baltimore County Committee of Observation Records.",
+      "No link or landing page for this specific record series is surfaced at this URL.",
+      "Collection/category page (homepage) instead of a direct link to the specific record."
+    ],
+    "recommendation": "Replace URL with a direct permalink to the Baltimore County Committee of Observation Records finding aid or digitized collection within MSA. Search https://msa.maryland.gov/msa/intromsa/html/onlinecatalog.html for the specific series."
+  },
+  {
+    "id": "src-wilmington-cooch-bridge-pension",
+    "title": "Revolutionary War Pension Applications: Delaware Veterans",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL returns HTTP 403 Forbidden \u2014 Fold3 is a subscription service requiring paid authentication; content cannot be verified without an account.",
+      "Title appends 'Delaware Veterans' which is a user-applied filter, not the actual Fold3 collection name ('Revolutionary War Pension Bounty Land Warrant Application Files').",
+      "publisherOrHolder lists 'National Archives, Record Group 15' but the URL is a private commercial platform (Fold3/Ancestry); NARA does not operate Fold3.",
+      "Institution mismatch: the access point is a third-party paywall aggregator, not NARA directly."
+    ],
+    "recommendation": "Either cite the NARA finding aid directly (https://www.archives.gov/research/military/american-revolution/pension-bounty-land.html) with RG 15 noted, or use Fold3 with the understanding that access requires a subscription and the publisher should read 'Fold3 (Ancestry), original records held by NARA, RG 15'. Title should drop 'Delaware Veterans' and instead describe it as a search of the general pension file collection."
+  },
+  {
+    "id": "src-wilmington-continental-army-orders",
+    "title": "Orderly Books of the Continental Army: Delaware Campaign, September 1777",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL returns HTTP 403 Forbidden \u2014 Library of Congress blocks automated access; content could not be verified.",
+      "URL points to the collection-level George Washington Papers landing page, not a specific orderly book or sub-series for the Delaware Campaign.",
+      "The framing 'Delaware Campaign, September 1777' is editorial \u2014 orderly books within the GW Papers are organized by date and volume, not by named campaign."
+    ],
+    "recommendation": "Identify the specific orderly book volume(s) covering September 1777 within the GW Papers and link to the individual item-level record. The LOC digital collection viewer (https://www.loc.gov/collections/george-washington-papers/) allows drilling into specific documents; cite the item URL, not the collection root."
+  },
+  {
+    "id": "src-dover-delaware-declaration",
+    "title": "Delaware Declaration of Rights and Fundamental Rules, September 11, 1776",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL resolves to the Delaware Public Archives homepage, not a specific record, finding aid, or digitized image of the Declaration of Rights and Fundamental Rules.",
+      "Institution is correctly identified as Delaware Public Archives.",
+      "Homepage/landing page instead of a specific document link."
+    ],
+    "recommendation": "Link directly to the digitized or described record for the Delaware Declaration of Rights and Fundamental Rules within the Delaware Public Archives digital collections or finding aids. The document exists and the institution is correct; only the URL specificity is lacking."
+  },
+  {
+    "id": "src-brattleboro-vermont-independence-1777",
+    "title": "Declaration of Independence of Vermont, January 15, 1777",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.sec.state.vt.us/archives-records.aspx returns ECONNREFUSED \u2014 the sec.state.vt.us domain appears to be defunct or has migrated (Vermont Secretary of State moved to sos.vermont.gov).",
+      "URL is dead; no content could be retrieved or verified.",
+      "Note: the date January 15, 1777 is accurate for Vermont's Windsor Convention declaration, so the metadata is factually plausible."
+    ],
+    "recommendation": "Update URL to the current Vermont State Archives domain. Try https://sos.vermont.gov/archives/ and locate the specific record for Vermont's 1777 independence declaration. The old sec.state.vt.us domain is no longer resolving."
+  },
+  {
+    "id": "src-castine-massachusetts-general-court-records",
+    "title": "Massachusetts General Court: Penobscot Expedition Committee Reports, 1779-1782",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.sec.state.ma.us/arc/ returns HTTP 404 Not Found \u2014 this URL path is dead.",
+      "The Massachusetts State Archives appears to have reorganized its web presence; this URL no longer resolves to any content.",
+      "Cannot verify whether the specific Penobscot Expedition Committee Reports are held at or described by this institution."
+    ],
+    "recommendation": "Locate the current Massachusetts State Archives URL for the Penobscot Expedition records. The Archives (now under the Secretary of the Commonwealth) may have moved content. Try https://www.sec.state.ma.us/arc/arcidx.htm or the current archives portal. Verify the specific series exists and link to it."
+  },
+  {
+    "id": "src-castine-paul-revere-penobscot",
+    "title": "Paul Revere's Deposition Regarding the Penobscot Expedition, 1779",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL resolves to the Massachusetts Historical Society homepage, not the specific Revere deposition document or its finding aid.",
+      "MHS homepage references Paul Revere's 'famous ride' account but does not surface the Penobscot deposition.",
+      "Institution (Massachusetts Historical Society) is correct \u2014 MHS does hold the Paul Revere Papers which include Penobscot-related depositions.",
+      "Homepage instead of specific document or finding aid link."
+    ],
+    "recommendation": "Link directly to the MHS finding aid for the Paul Revere Papers or the specific digitized deposition. MHS finding aids are accessible at https://www.masshist.org/collection-guides/. The underlying document appears genuine; the URL simply needs to point to the specific item."
+  },
+  {
+    "id": "src-portland-continental-congress-falmouth",
+    "title": "Journals of the Continental Congress: Falmouth Burning Resolution, November 1775",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://memory.loc.gov/ammem/amlaw/lwjc.html returns HTTP 403 Forbidden.",
+      "This is an old LOC American Memory project URL; the Journals of the Continental Congress collection has been substantially migrated to the main LOC site.",
+      "Cannot verify whether a specific 'Falmouth Burning Resolution' appears in the Journals for November 1775 \u2014 while the burning of Falmouth occurred in October 1775 and Congress would have discussed it, a formal 'resolution' specifically on Falmouth is unverified.",
+      "URL is a collection/series-level page, not a specific volume or date entry."
+    ],
+    "recommendation": "Migrate to the current LOC URL for the Journals of the Continental Congress (try https://www.loc.gov/collections/journals-of-the-continental-congress/). Identify and link to the specific November 1775 journal pages. Verify that a named 'Falmouth Burning Resolution' appears; this phrasing may be editorial rather than an official document title."
+  },
+  {
+    "id": "src-portland-massachusetts-provincial-congress",
+    "title": "Records of the Massachusetts Provincial Congress: Falmouth Relief Measures, 1775",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.sec.state.ma.us/arc/ returns HTTP 404 Not Found \u2014 same dead URL as src-castine-massachusetts-general-court-records.",
+      "Cannot verify institution or specific record.",
+      "Title 'Falmouth Relief Measures' is descriptive but unverified without document access."
+    ],
+    "recommendation": "Same as src-castine-massachusetts-general-court-records: locate the current Massachusetts State Archives web presence. Additionally verify that the Massachusetts Provincial Congress records include documents specifically labeled as 'Falmouth Relief Measures.'"
+  },
+  {
+    "id": "src-kaskaskia-clark-memoir",
+    "title": "George Rogers Clark's Memoir (Clark to Mason, 1791)",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.loc.gov/item/mm79070887/ returns HTTP 403 Forbidden \u2014 LOC blocks automated access; content could not be verified.",
+      "The item identifier mm79070887 appears structurally valid as a LOC American Memory item permalink, but cannot be confirmed.",
+      "Substantive note on primary-source classification: the 1791 Clark-to-Mason memoir is a retrospective account written approximately 13 years after the 1778 Kaskaskia campaign. While it qualifies as a primary source (first-person participant account), researchers should note it was composed from memory long after the events and carries retrospective framing not present in contemporaneous documents."
+    ],
+    "recommendation": "Verify the LOC item mm79070887 resolves to Clark's memoir by accessing it directly in a browser. If confirmed, add a note clarifying the retrospective nature of the 1791 document relative to 1778 events. Consider supplementing with contemporaneous Clark dispatches if available."
+  },
+  {
+    "id": "src-kaskaskia-virginia-state-papers",
+    "title": "Virginia State Papers: George Rogers Clark Correspondence, 1778-1779",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL resolves to the Library of Virginia homepage, not any specific collection, finding aid, or digitized document for Virginia State Papers or Clark correspondence.",
+      "Institution (Library of Virginia) is correctly identified.",
+      "Homepage instead of specific document or finding aid."
+    ],
+    "recommendation": "Link to the specific Virginia State Papers series or digitized finding aid within LVA. The Library of Virginia's digital collections (https://www.lva.virginia.gov/public/dvb/) or the Virginia Memory portal may contain relevant Clark correspondence; identify the specific series and link accordingly."
+  },
+  {
+    "id": "src-marietta-northwest-ordinance",
+    "title": "An Ordinance for the Government of the Territory of the United States, North-Wes",
+    "verdict": "PASS",
+    "issues": [],
+    "recommendation": "No action needed. URL resolves to an active National Archives milestone documents page; document title matches the official name of the Northwest Ordinance (1787); NARA is the correct holding institution. This is a genuine primary legislative document created at the time of the event."
+  },
+  {
+    "id": "src-wheeling-continental-congress-northwest",
+    "title": "Journals of the Continental Congress: Western Land and Defense Resolutions, 1779",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://memory.loc.gov/ammem/amlaw/lwjc.html returns HTTP 403 Forbidden \u2014 same dead/blocked old American Memory URL used for src-portland-continental-congress-falmouth.",
+      "URL is reused across two different sources citing different years (1775 and 1779), which further reduces confidence that either citation points to a specific verified document.",
+      "Cannot verify whether 'Western Land and Defense Resolutions, 1779' is an actual named resolution or editorial description."
+    ],
+    "recommendation": "Same URL remediation as src-portland-continental-congress-falmouth. Additionally, the identical URL being cited for two different claimed documents (Falmouth 1775, Western Land 1779) is a red flag suggesting these were generated with a placeholder URL rather than verified document links. Locate specific volume and page references within the Journals."
+  },
+  {
+    "id": "src-wheeling-draper-manuscripts",
+    "title": "Draper Manuscript Collection: Ohio Valley Frontier Papers",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.wisconsinhistory.org/Records/Article/CS5107 returns HTTP 404 Not Found \u2014 this specific article/record page no longer exists at WHS.",
+      "Cannot verify content or whether 'Ohio Valley Frontier Papers' is an accurate sub-series name within the Draper Manuscripts.",
+      "Secondary-source concern: The Draper Manuscript Collection is a 19th-century compilation assembled by Lyman Draper from interviews, copies, and correspondence gathered decades after the Revolutionary era. While it contains transcriptions of primary documents, it is not itself created 'at or very near the time of the event' and should be classified cautiously if cited as a primary source."
+    ],
+    "recommendation": "Update to a current WHS URL for the Draper Manuscripts finding aid. Check https://www.wisconsinhistory.org/Records/Collection/CS5. Review whether the cited sub-series 'Ohio Valley Frontier Papers' exists by that name. Add a note that Draper Manuscripts are compiled/aggregated materials and classify appropriately."
+  },
+  {
+    "id": "src-sar-nara-saratoga-records",
+    "title": "Revolutionary War Pension Files: Saratoga Veterans",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL resolves to a general NARA guide page for Revolutionary War research, not a Saratoga-specific pension file collection.",
+      "Title claims 'Saratoga Veterans' as a specific sub-collection, but no such named sub-collection exists at this URL \u2014 the page covers all Revolutionary War pension applications nationally.",
+      "Title misrepresents the scope of the page: this is a broad research guide, not a curated Saratoga-focused record set.",
+      "Collection/category guide page rather than a specific document or filtered record set."
+    ],
+    "recommendation": "Either (a) remove the 'Saratoga Veterans' specificity from the title and describe it accurately as the general NARA Revolutionary War pension guide, or (b) locate a genuine Saratoga-specific pension index (e.g., via Fold3 or Ancestry filtered search) and cite that with appropriate caveats. The current title implies a document that does not exist at this URL."
+  },
+  {
+    "id": "src-phi-declaration-independence",
+    "title": "Declaration of Independence, July 4, 1776",
+    "verdict": "PASS",
+    "issues": [],
+    "recommendation": "Citation is sound. The National Archives page at archives.gov/founding-docs/declaration serves the document with high-res images, PDF, and full transcript. Institution matches. The Declaration is unambiguously primary \u2014 created at the event. No changes needed."
+  },
+  {
+    "id": "src-car-pa-archives-carlisle",
+    "title": "Pennsylvania Archives, Series 2 and 5: Militia Records and Border Defense",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL www.phmc.pa.gov/Archives issues a 302 redirect to the PHMC agency landing page at www.pa.gov/en/agencies/phmc.html \u2014 the original path no longer resolves.",
+      "Destination page is an agency-level landing page for the Pennsylvania Historical and Museum Commission, not a specific archives collection or series page.",
+      "No mention of 'Series 2,' 'Series 5,' 'Militia Records,' or 'Border Defense' anywhere on the redirected page.",
+      "Title implies a specific identified series but the URL leads only to the institutional homepage."
+    ],
+    "recommendation": "Replace URL with a direct link to the Pennsylvania State Archives online catalog entry for the relevant series, e.g. via www.phmc.pa.gov/Archives/Research-And-Education or the Ancestry PA catalog. Series 2 and 5 of Pennsylvania Archives exist as published volumes and the State Archives does hold the underlying records; the citation just needs a precise URL."
+  },
+  {
+    "id": "src-alexandria-va-washington-letters-pre-war",
+    "title": "George Washington's Letters from Alexandria, 1769-1775",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL www.loc.gov/collections/george-washington-papers/ returned HTTP 403 Forbidden \u2014 the Library of Congress blocks automated fetches on collection pages.",
+      "Even if accessible, the URL resolves to the top-level collection landing page for the entire George Washington Papers (spanning decades), not a filtered view of Alexandria-origin letters dated 1769-1775.",
+      "Title implies a specific, geographically and temporally bounded subset of the collection that is not surfaced by this URL alone.",
+      "This exact URL is also used for a second distinct source (src-fredericksburg-va-washington-boyhood-letters), suggesting both citations are pointing to the same undifferentiated collection page."
+    ],
+    "recommendation": "Provide a direct permalink to the specific letter(s) at loc.gov (each digitized letter has its own resource URL) or cite the printed edition: The Papers of George Washington, Colonial Series, vols. 8-10 (Univ. of Virginia Press). Disambiguate from the Fredericksburg source."
+  },
+  {
+    "id": "src-fredericksburg-va-washington-boyhood-letters",
+    "title": "George Washington's Early Letters and Diary Fragments, 1748-1754",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL www.loc.gov/collections/george-washington-papers/ returned HTTP 403 Forbidden.",
+      "This is an identical URL to src-alexandria-va-washington-letters-pre-war \u2014 two entirely distinct claimed documents share the same collection-landing-page URL.",
+      "URL is the undifferentiated collection page for all Washington Papers, not the 1748-1754 diary fragments or early letters specifically.",
+      "Washington's diaries for 1748-1754 are a real subset of the collection but require specific resource permalinks or volume citations."
+    ],
+    "recommendation": "Replace with specific item permalinks from loc.gov for the surveying diaries or early letters, or cite the published edition: The Diaries of George Washington, vol. 1 (Univ. of Virginia Press, 1976). Resolve the duplicate-URL conflict with the Alexandria source."
+  },
+  {
+    "id": "src-charlottesville-va-jefferson-escape-account",
+    "title": "Thomas Jefferson to William Gordon, July 16, 1788 (Account of Tarleton's Raid)",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL www.loc.gov/collections/thomas-jefferson-papers/ returned HTTP 403 Forbidden.",
+      "URL is the collection landing page for all Thomas Jefferson Papers, not a permalink to the specific July 16, 1788 letter to William Gordon.",
+      "The letter itself is a genuine primary document (Jefferson wrote it in 1788 recounting the 1781 raid on Monticello); no fabrication concern on the document's existence, only on the URL's specificity.",
+      "A collection page does not constitute a citable link to the specific letter."
+    ],
+    "recommendation": "Provide the specific item URL from loc.gov for this letter (series 1, reel 8 approximately) or cite Founders Online: founders.archives.gov which hosts a searchable, permalinked text of this letter."
+  },
+  {
+    "id": "src-savannah-ga-pulaski-death-account",
+    "title": "Account of the Death of Count Casimir Pulaski at the Siege of Savannah, October [1779]",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is www.loc.gov/ \u2014 the bare Library of Congress homepage. This does not point to any specific document, collection, or finding aid.",
+      "A homepage URL is effectively a null citation: it confirms the institution exists but provides no path to the claimed document.",
+      "No document with this exact title was surfaced by LOC's homepage. The specificity of the title (named eyewitness account of Pulaski's death) suggests a precise manuscript source that requires a specific catalog or resource URL.",
+      "This citation pattern \u2014 using an institution homepage rather than a document URL \u2014 is a red flag for a fabricated or unverified citation."
+    ],
+    "recommendation": "Locate the specific manuscript in LOC's catalog (catalog.loc.gov) or identify whether this account exists in the Papers of the Continental Congress, a period newspaper, or a named collection. Replace URL with a verifiable permalink. If the document cannot be located, downgrade or remove this citation."
+  },
+  {
+    "id": "src-dover-delaware-ratification",
+    "title": "Delaware Ratification of the U.S. Constitution, December 7, 1787",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL www.archives.gov/founding-docs/constitution leads to the National Archives page for the U.S. Constitution itself \u2014 the parchment document signed in Philadelphia \u2014 not Delaware's ratification instrument.",
+      "The fetched page explicitly contains no state-specific ratification content. Delaware's ratification record (a separate instrument dated December 7, 1787) is not at this URL.",
+      "The publisherOrHolder claims 'Records of the Continental and Confederation Congresses' as the record group, but the URL leads to the Charters of Freedom exhibit page, not a specific archival record.",
+      "Wrong document at right institution: NARA does hold ratification records but this URL does not surface them."
+    ],
+    "recommendation": "Replace with the NARA catalog URL for the Delaware ratification instrument, Record Group 11 (General Records of the U.S. Government). The Founders Online entry and the National Archives Online Catalog (catalog.archives.gov) both have more precise access points for state ratification records."
+  },
+  {
+    "id": "src-dover-delaware-state-archives",
+    "title": "Delaware Public Archives: Revolutionary War Records",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL archives.delaware.gov resolves to the Delaware Public Archives homepage, not a specific Revolutionary War records collection or finding aid.",
+      "Title implies a specific named collection ('Revolutionary War Records') but the URL leads to the institutional homepage with general content.",
+      "The homepage does reference Revolutionary War\u2013era content and an exhibit, confirming the institution holds relevant materials, but the citation does not identify a specific record series, collection, or document."
+    ],
+    "recommendation": "Replace with a direct URL to the DPA's Revolutionary War\u2013era collection guide or specific record series (e.g., Delaware Militia Records or Continental Line records). The Delaware Public Archives catalog should have finding aids for these series."
+  },
+  {
+    "id": "source-elizabeth-nj-historical-society",
+    "title": "New Jersey Historical Society Collections: Essex County Revolutionary War Record",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL jerseyhistory.org resolves to the New Jersey Historical Society homepage. Institution name matches.",
+      "The homepage contains no reference to 'Essex County Revolutionary War Records' as a named collection or document.",
+      "Title implies a specific collection or document ('Essex County Revolutionary War Record') but the URL is just the institutional homepage.",
+      "As a TIER2 source, pointing to a homepage rather than a specific finding aid or collection page reduces verifiability."
+    ],
+    "recommendation": "Provide a direct URL to the NJHS finding aid or catalog entry for the Essex County\u2013related Revolutionary War holdings. The NJHS maintains a library and manuscript collection; a specific collection guide URL would make this citation verifiable."
+  },
+  {
+    "id": "src-bennington-stark-report",
+    "title": "General John Stark's Report on the Battle of Bennington to General Schuyler, Aug[ust 1777]",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL memory.loc.gov/ammem/amlaw/lwcc.html returned HTTP 403 Forbidden.",
+      "Even if accessible, this URL leads to the collection-level page for the Papers of the Continental Congress (American Memory project), not a specific item or document within that collection.",
+      "Historical note: Stark's primary report after Bennington (August 22, 1777) was addressed to the New Hampshire Committee of Safety and to General Lincoln, not directly to General Schuyler. Attribution to Schuyler warrants further verification; a report through Schuyler's command may exist as a forwarded document in PCC but the addressee in the title appears inaccurate.",
+      "Title specificity cannot be confirmed at this collection-level URL."
+    ],
+    "recommendation": "Verify the actual addressee of Stark's after-action report and correct if necessary. Provide a specific item URL or PCC item number from the LOC catalog. Founders Online or the National Archives microfilm edition of the PCC may offer a more precise citation."
+  },
+  {
+    "id": "src-brattleboro-continental-congress-vermont",
+    "title": "Journals of the Continental Congress: Vermont Statehood Debates, 1777-1791",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL memory.loc.gov/ammem/amlaw/lwjc.html returned HTTP 403 Forbidden.",
+      "Even if accessible, the URL is the collection landing page for the full Journals of the Continental Congress (34 volumes), not filtered to Vermont statehood debates.",
+      "Factual concern: The Continental Congress ceased to exist in 1789 when the new federal Congress convened. The Journals of the Continental Congress end in 1789; they cannot cover events through 1791. Vermont was admitted to the Union on March 4, 1791, under the new Congress, not the Continental Congress. The date range '1777-1791' in the title is misleading or erroneous for this specific source.",
+      "Debates from 1790-1791 on Vermont's admission would appear in the Annals of Congress (First Congress), not the Journals of the Continental Congress."
+    ],
+    "recommendation": "Correct the date range to reflect what the Journals actually cover (through 1788/1789). For Vermont admission debates in 1790-1791, cite the Annals of Congress or Senate records from the First Congress. Provide a specific volume and page reference rather than the collection homepage."
+  },
+  {
+    "id": "source-elizabeth-boudinot-papers-princeton",
+    "title": "Elias Boudinot Papers",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL findingaids.princeton.edu resolves to the Princeton University Library finding aids portal homepage. Institution name matches.",
+      "The homepage does not surface the specific Elias Boudinot Papers finding aid; there is no direct path to the collection from this URL.",
+      "The Elias Boudinot Papers are a real Princeton holding (American Revolutionary\u2013era statesman, Commissary General of Prisoners), making this a genuine primary source collection, but the URL must point to the specific finding aid rather than the portal home.",
+      "Title is minimal \u2014 no date range or specific documents cited."
+    ],
+    "recommendation": "Replace with the direct finding aid URL for the Boudinot Papers within Princeton's system (typically at a path like findingaids.princeton.edu/catalog/[call_number]). Adding a date range and specific sub-series reference would improve the citation's research utility."
+  },
+  {
+    "id": "src-kings-mountain-nc-draper-manuscripts",
+    "title": "Draper Manuscripts: Kings Mountain and Its Heroes -- Source Materials",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL www.wisconsinhistory.org/Records/Article/CS1945 returned HTTP 404 Not Found \u2014 the page does not exist.",
+      "The Wisconsin Historical Society does hold the Draper Manuscripts, and Lyman Draper's 'Kings Mountain and Its Heroes' (1881) and the accompanying source collection (series DD) are genuine primary and near-primary sources for the Battle of Kings Mountain.",
+      "The specific article URL referenced in this citation is a dead link. The WHS has restructured its website, breaking this path."
+    ],
+    "recommendation": "Update to the current WHS Draper Manuscripts landing page or the specific finding aid for the Kings Mountain Papers within the Draper collection. The WHS catalog and the digital microfilm edition (available via several university libraries) are more stable access points. Note that Draper's published 1881 book is secondary; the underlying manuscript interviews and documents (series DD) are the primary sources and should be cited specifically."
+  }
+]

@@ -1,0 +1,169 @@
+[
+  {
+    "id": "src-williamsburg-va-henry-resolves-1765",
+    "title": "Patrick Henry's Virginia Stamp Act Resolves, May 1765",
+    "verdict": "ISSUE",
+    "issues": [
+      "Wrong document at URL: the URL leads to a general Patrick Henry biography entry on Encyclopedia Virginia, not to the text of the Stamp Act Resolves themselves.",
+      "Publisher mismatch: page is published by Encyclopedia Virginia / Virginia Humanities, not the Library of Virginia as claimed.",
+      "Secondary source labeled as primary: the encyclopedia article discusses and analyzes the Resolves but is not the primary document.",
+      "Title does not match page content: the page title is 'Patrick Henry (1736–1799)', not the Resolves."
+    ],
+    "recommendation": "Replace URL with a direct link to the Resolves text, e.g. the Virginia Memory / Library of Virginia Document Bank entry for the Stamp Act Resolves, or the Yale Avalon Project transcription. Update publisherOrHolder to match the actual host."
+  },
+  {
+    "id": "src-williamsburg-va-virginia-declaration-rights",
+    "title": "Virginia Declaration of Rights, June 12, 1776 (George Mason's Draft)",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL returns HTTP 404 Not Found: https://www.lva.virginia.gov/public/guides/va1_declarationrights.htm no longer exists.",
+      "Cannot verify whether title or publisher claims are accurate."
+    ],
+    "recommendation": "Find the current LVA URL for this guide or replace with the Library of Virginia's Document Bank entry or the Virginia Memory digital facsimile for the Declaration of Rights. Verify George Mason draft attribution at replacement URL."
+  },
+  {
+    "id": "src-williamsburg-va-dunmore-proclamation",
+    "title": "Lord Dunmore's Proclamation, November 7, 1775",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is the NARA homepage (https://www.archives.gov/), not a specific document page.",
+      "No direct link to Lord Dunmore's Proclamation exists at this URL; users land on a general portal.",
+      "NARA holds many documents; the homepage cannot serve as a citation for a specific primary source."
+    ],
+    "recommendation": "Locate the specific NARA catalog or online-display URL for the Dunmore Proclamation. The document is also held by the Virginia State Archives and is available via the Library of Virginia; use a direct item-level URL."
+  },
+  {
+    "id": "src-williamsburg-va-virginia-gazette-1765-1776",
+    "title": "Virginia Gazette, 1765-1776 (Selected Issues)",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://research.colonialwilliamsburg.org/DigitalLibrary/va-gazettes/ returns HTTP 403 Forbidden.",
+      "Cannot confirm the page loads publicly or that the advertised issues (1765-1776) are accessible without restriction.",
+      "Publisher (Colonial Williamsburg Foundation, Rockefeller Library) is plausible but unverifiable."
+    ],
+    "recommendation": "Verify the URL is publicly accessible without institutional login. If the Colonial Williamsburg digital library requires authentication, redirect to an open-access alternative such as the Accessible Archives Virginia Gazette collection or the University of Mary Washington digital edition."
+  },
+  {
+    "id": "src-williamsburg-va-virginia-constitution-1776",
+    "title": "Constitution of Virginia, June 29, 1776",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is the Library of Virginia homepage (https://www.lva.virginia.gov/), not a specific document or finding-aid page.",
+      "The homepage does not directly surface the 1776 Constitution; users would need to navigate through multiple sub-sections.",
+      "A homepage cannot serve as a citable direct link to a primary source document."
+    ],
+    "recommendation": "Replace with a specific URL, such as the LVA Document Bank entry for the 1776 Virginia Constitution or the Virginia Memory facsimile image page. The Yale Avalon Project also hosts a full transcription."
+  },
+  {
+    "id": "src-williamsburg-va-jefferson-autobiography",
+    "title": "Jefferson's Autobiography: Virginia and the Road to Independence",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.loc.gov/item/mtjbib025151/ returns HTTP 403 Forbidden (LOC blocks automated requests).",
+      "Cannot confirm the item resolves to Jefferson's Autobiography or that the subtitle 'Virginia and the Road to Independence' appears on the actual document — that subtitle is interpretive and not part of the manuscript's own title.",
+      "Jefferson's Autobiography is a genuine primary source, but the parenthetical subtitle appended here appears to be an editorial gloss, not the document's title."
+    ],
+    "recommendation": "Verify the LOC item number in a browser. If the item exists, strip the invented subtitle and cite as 'Autobiography' (Thomas Jefferson, c. 1821). If mtjbib025151 resolves to a different record, correct the item number."
+  },
+  {
+    "id": "src-richmond-va-jefferson-arnold-letter",
+    "title": "Thomas Jefferson to Steuben, January 12, 1781 (Arnold's Raid Correspondence)",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is a collection-level landing page (https://www.loc.gov/collections/thomas-jefferson-papers/) for the entire Jefferson Papers corpus, not a link to the specific letter.",
+      "URL also returns HTTP 403 Forbidden to automated requests, so accessibility to end users is unverified.",
+      "A collection homepage cannot be cited as pointing to a single letter; users cannot navigate directly to the January 12, 1781 item from that page without a search."
+    ],
+    "recommendation": "Locate the item-level LOC URL for this specific letter (search the Jefferson Papers finding aid for 'Steuben January 1781') and use that direct link. Alternatively, cite the Princeton Papers of Thomas Jefferson edition which publishes this letter in Vol. 4."
+  },
+  {
+    "id": "src-richmond-va-virginia-state-archives",
+    "title": "Virginia Executive Papers and Council Journals, 1779-1781",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is the Library of Virginia homepage (https://www.lva.virginia.gov/), not a specific collection guide or digital resource page.",
+      "The homepage does not directly surface the Executive Papers or Council Journals; these are archival series held on-site.",
+      "No direct digital access or finding aid URL is provided; citation cannot be verified or followed by a remote researcher."
+    ],
+    "recommendation": "Replace with the LVA finding-aid or ArchivesSpace record for 'Virginia Executive Papers' (Record Group 3, Governor's Office) and 'Council Journals'. If a digital scan exists on Virginia Memory, use that URL."
+  },
+  {
+    "id": "src-alexandria-va-fairfax-resolves-1774",
+    "title": "Fairfax County Resolves, July 18, 1774",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.loc.gov/item/00694538/ returns HTTP 403 Forbidden (LOC blocks automated requests).",
+      "Cannot confirm whether this LOC item number resolves to the Fairfax County Resolves, or whether the date and publisher claims are accurate.",
+      "The Fairfax County Resolves are a genuine primary source drafted by George Mason and George Washington; the LOC plausibly holds a copy, but the item number cannot be verified without browser access."
+    ],
+    "recommendation": "Verify item 00694538 in a browser. If confirmed as the Fairfax Resolves, the citation is likely sound; note the document is also available via George Mason's Papers at the Library of Congress and the Papers of George Washington edition."
+  },
+  {
+    "id": "src-norfolk-va-woodford-letter-norfolk-burning",
+    "title": "General Woodford to the Virginia Committee of Safety, January 4, 1776",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is the Library of Virginia homepage (https://www.lva.virginia.gov/), not a specific document, manuscript record, or finding aid.",
+      "The LVA homepage does not directly surface this letter; it is an archival manuscript requiring on-site or catalog access.",
+      "No item-level or collection-level URL is provided; the citation is not followable by a researcher."
+    ],
+    "recommendation": "Locate the LVA finding aid for the Virginia Committee of Safety Papers or the William Woodford Papers. If a digital scan exists, use the Virginia Memory item URL. Alternatively, the letter may have been published in the Virginia Magazine of History and Biography or the American Archives (Force)."
+  },
+  {
+    "id": "src-norfolk-va-virginia-gazette-norfolk-burning",
+    "title": "Virginia Gazette: Reports on the Burning of Norfolk, January-March 1776",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://research.colonialwilliamsburg.org/DigitalLibrary/va-gazettes/ returns HTTP 403 Forbidden.",
+      "Cannot confirm the page is publicly accessible or that the January-March 1776 issues are available at this URL.",
+      "Publisher (Colonial Williamsburg Foundation, Rockefeller Library) is plausible but unverifiable."
+    ],
+    "recommendation": "Same as src-williamsburg-va-virginia-gazette-1765-1776: verify public accessibility or redirect to an open-access alternative. For the Norfolk burning specifically, individual issue URLs from the CW digital library (if accessible) would be preferable to a collection-level link."
+  },
+  {
+    "id": "src-mount-vernon-va-lund-washington-letters",
+    "title": "Lund Washington to George Washington: Mount Vernon Management Letters, 1775-1783",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is a collection-level landing page (https://www.loc.gov/collections/george-washington-papers/) for the entire George Washington Papers, not specific Lund Washington letters.",
+      "URL returns HTTP 403 Forbidden to automated requests; accessibility to end users is unverified.",
+      "Lund Washington's letters to George Washington are a real and well-documented series within the collection, but no item-level URL is provided.",
+      "A collection homepage cannot function as a citation for a specific subset of correspondence."
+    ],
+    "recommendation": "Locate item-level LOC URLs for individual Lund Washington letters, or cite the Papers of George Washington: Revolutionary War Series (University Press of Virginia) which transcribes these letters. The Mount Vernon digital library also holds searchable transcriptions."
+  },
+  {
+    "id": "src-charleston-sc-lincoln-capitulation",
+    "title": "Articles of Capitulation: Charleston, May 12, 1780",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is the NARA homepage (https://www.archives.gov/), not a specific document page.",
+      "No direct link to the Articles of Capitulation for Charleston exists at this URL.",
+      "It is unclear whether NARA holds the original document; the Articles of Capitulation may be held by the British National Archives or South Carolina Historical Society, making the publisherOrHolder attribution unverified."
+    ],
+    "recommendation": "Identify the actual repository for this document. The Articles of Capitulation were signed by British and American commanders; copies likely exist at NARA (Record Group 360), the South Carolina Historical Society, and the British National Archives (PRO 30/55). Provide an item-level URL or specific archival reference."
+  },
+  {
+    "id": "src-charleston-sc-lincoln-siege-journal",
+    "title": "General Benjamin Lincoln's Siege Journal, March-May 1780",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is the Massachusetts Historical Society homepage (https://www.masshist.org/), not a specific finding aid, collection guide, or digital item.",
+      "The MHS homepage does not directly surface the Lincoln Papers or the siege journal; users cannot follow this citation to the document.",
+      "The MHS does hold the Benjamin Lincoln Papers (a well-known collection), making the publisherOrHolder plausible, but no item-level or collection-level URL is provided."
+    ],
+    "recommendation": "Replace with the MHS finding aid URL for the Benjamin Lincoln Papers (call number Ms. N-1690 or similar) and, if digitized, the specific item URL for the 1780 siege journal. The MHS catalog is searchable at www.masshist.org/library."
+  },
+  {
+    "id": "src-charleston-sc-schs-collections",
+    "title": "South Carolina Historical Society: Revolutionary War Manuscript Collections",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL https://www.southcarolinahistoricalsociety.org/ performs a 301 redirect to https://schistory.org/, indicating the domain has changed; the cited URL is stale.",
+      "Destination is the SCHS homepage, not a specific collection page or finding aid.",
+      "The title 'South Carolina Historical Society: Revolutionary War Manuscript Collections' is a category description, not the name of a specific document or discrete collection — it cannot function as a primary source citation.",
+      "The SCHS holdings are largely accessible only in person; no digital repository URL is provided."
+    ],
+    "recommendation": "Update the URL to https://schistory.org/. More importantly, identify the specific manuscript collection(s) intended (e.g., Ravenel Family Papers, Drayton Papers, Henry Middleton Rutledge Papers) and provide individual finding-aid URLs. A category-level description is not a citable primary source."
+  }
+]

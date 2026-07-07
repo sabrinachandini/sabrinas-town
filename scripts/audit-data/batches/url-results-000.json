@@ -1,0 +1,452 @@
+[
+  {
+    "id": "src-lexington-historical-society",
+    "table": "Source",
+    "url": "https://lexingtonhistory.org",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.lexingtonhistory.org/"
+  },
+  {
+    "id": "src-freedom-trail-foundation",
+    "table": "Source",
+    "url": "https://www.thefreedomtrail.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.thefreedomtrail.org/"
+  },
+  {
+    "id": "source-old-manse-archives",
+    "table": "Source",
+    "url": "https://thetrustees.org/place/the-old-manse/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://thetrustees.org/place/the-old-manse/"
+  },
+  {
+    "id": "source-nps-boston",
+    "table": "Source",
+    "url": "https://www.nps.gov/bost/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/bost/index.htm"
+  },
+  {
+    "id": "src-revere-deposition",
+    "table": "Source",
+    "url": "https://www.masshist.org/database/viewer.php?item_id=99",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.masshist.org/database/viewer.php?item_id=99"
+  },
+  {
+    "id": "source-adams-papers",
+    "table": "Source",
+    "url": "https://www.masshist.org/adams/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.masshist.org/adams/"
+  },
+  {
+    "id": "source-nps-concord",
+    "table": "Source",
+    "url": "https://www.nps.gov/mima/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/mima/index.htm"
+  },
+  {
+    "id": "src-loc-american-memory",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/collections/continental/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/continental-congress-and-constitutional-convention-from-1774-to-1789/about-this-collection/"
+  },
+  {
+    "id": "src-wikipedia-lexington",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battles_of_Lexington_and_Concord",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battles_of_Lexington_and_Concord"
+  },
+  {
+    "id": "src-nps-minuteman",
+    "table": "Source",
+    "url": "https://www.nps.gov/mima/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/mima/index.htm"
+  },
+  {
+    "id": "source-mhs-collections",
+    "table": "Source",
+    "url": "https://www.masshist.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.masshist.org/"
+  },
+  {
+    "id": "src-massachusetts-archives",
+    "table": "Source",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.sec.state.ma.us/arc/"
+  },
+  {
+    "id": "source-freedom-trail-foundation",
+    "table": "Source",
+    "url": "https://www.thefreedomtrail.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.thefreedomtrail.org/"
+  },
+  {
+    "id": "source-boston-athenaeum",
+    "table": "Source",
+    "url": "https://www.bostonathenaeum.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://bostonathenaeum.org/"
+  },
+  {
+    "id": "source-longfellow-nps",
+    "table": "Source",
+    "url": "https://www.nps.gov/long/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/long/index.htm"
+  },
+  {
+    "id": "source-cambridge-historical",
+    "table": "Source",
+    "url": "https://www.cambridgema.gov/historic",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.cambridgema.gov/historic"
+  },
+  {
+    "id": "source-harvard-archives-rev",
+    "table": "Source",
+    "url": "https://library.harvard.edu/archives",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://library.harvard.edu/archives"
+  },
+  {
+    "id": "source-cambridge-museum",
+    "table": "Source",
+    "url": "https://cambridgehistory.org",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://historycambridge.org/"
+  },
+  {
+    "id": "source-mass-historical-siege",
+    "table": "Source",
+    "url": "https://www.masshist.org",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.masshist.org/"
+  },
+  {
+    "id": "source-washington-orders-cambridge",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/george-washington-papers"
+  },
+  {
+    "id": "source-martha-washington-letters",
+    "table": "Source",
+    "url": "https://www.mountvernon.org",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mountvernon.org/"
+  },
+  {
+    "id": "source-russell-house-museum",
+    "table": "Source",
+    "url": "https://arlingtonhistorical.org/jason-russell-house/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://arlingtonhistorical.org/jason-russell-house/"
+  },
+  {
+    "id": "source-arlington-historical",
+    "table": "Source",
+    "url": "https://arlingtonhistorical.org",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://arlingtonhistorical.org/"
+  },
+  {
+    "id": "source-mma-april19",
+    "table": "Source",
+    "url": "https://www.nps.gov/mima",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/mima/index.htm"
+  },
+  {
+    "id": "src-lex-boston1775-blog",
+    "table": "Source",
+    "url": "https://boston1775.blogspot.com/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://boston1775.blogspot.com/"
+  },
+  {
+    "id": "source-museum-fine-arts-revolutionary",
+    "table": "Source",
+    "url": "https://www.mfa.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.mfa.org/"
+  },
+  {
+    "id": "src-salem-essex-county-court-records",
+    "table": "Source",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.sec.state.ma.us/arc/"
+  },
+  {
+    "id": "src-salem-privateering-commissions",
+    "table": "Source",
+    "url": "https://www.archives.gov/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.archives.gov/"
+  },
+  {
+    "id": "src-lex-prince-estabrook",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2019/04/prince-estabrook/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2019/04/prince-estabrook/"
+  },
+  {
+    "id": "src-lex-nps-wayside",
+    "table": "Source",
+    "url": "https://www.nps.gov/mima/planyourvisit/the-battle-road-trail.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/mima/planyourvisit/the-battle-road-trail.htm"
+  },
+  {
+    "id": "src-lex-lexington-visitor",
+    "table": "Source",
+    "url": "https://www.lexingtonma.gov/visitors-center",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.lexingtonma.gov/visitors-center"
+  },
+  {
+    "id": "source-hackensack-nps-washington-hq",
+    "table": "Source",
+    "url": "https://www.nps.gov/revwar",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/revwar/index.htm"
+  },
+  {
+    "id": "source-hackensack-nj-historical-society-bergen",
+    "table": "Source",
+    "url": "https://jerseyhistory.org",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://jerseyhistory.org/"
+  },
+  {
+    "id": "source-hackensack-rutgers-nj-revolution",
+    "table": "Source",
+    "url": "https://www.rutgersuniversitypress.org",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.rutgersuniversitypress.org/"
+  },
+  {
+    "id": "src-salem-pem-collections",
+    "table": "Source",
+    "url": "https://www.pem.org/library",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.pem.org/phillips-library"
+  },
+  {
+    "id": "src-salem-carey-leslie-retreat",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2014/02/leslies-retreat-the-first-blow-for-liberty/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2014/02/leslies-retreat-the-first-blow-for-liberty/"
+  },
+  {
+    "id": "src-salem-essex-county-hist-soc",
+    "table": "Source",
+    "url": "https://www.essexheritage.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://essexheritage.org/"
+  },
+  {
+    "id": "src-salem-wikipedia-leslies-retreat",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Leslie%27s_Retreat",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Leslie%27s_Retreat"
+  },
+  {
+    "id": "src-salem-tourism-revolution",
+    "table": "Source",
+    "url": "https://www.salem.org/history/revolutionary-war/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.salem.org/history/revolutionary-war/"
+  },
+  {
+    "id": "src-marblehead-glover-orderly-books",
+    "table": "Source",
+    "url": "https://www.masshist.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.masshist.org/"
+  },
+  {
+    "id": "src-marblehead-washington-crossing-orders",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/george-washington-papers/"
+  },
+  {
+    "id": "src-marblehead-nps-valley-forge",
+    "table": "Source",
+    "url": "https://www.nps.gov/vafo/learn/historyculture/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/vafo/learn/historyculture/index.htm"
+  },
+  {
+    "id": "src-marblehead-state-archives-muster-rolls",
+    "table": "Source",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.sec.state.ma.us/arc/"
+  },
+  {
+    "id": "src-marblehead-historical-society",
+    "table": "Source",
+    "url": "https://www.marbleheadmuseum.org/",
+    "status": 0,
+    "ok": false,
+    "issue": "connection error",
+    "finalUrl": "https://www.marbleheadmuseum.org/"
+  },
+  {
+    "id": "src-marblehead-chandler-long-island",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2016/08/battle-long-island/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2016/08/battle-long-island/"
+  },
+  {
+    "id": "src-plymouth-muster-rolls-siege-boston",
+    "table": "Source",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.sec.state.ma.us/arc/"
+  },
+  {
+    "id": "src-plymouth-nps-site",
+    "table": "Source",
+    "url": "https://www.nps.gov/nr/travel/american_revolution/nationalmonumenttotheforefathers.html",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/nr/travel/american_revolution/nationalmonumenttotheforefathers.html"
+  },
+  {
+    "id": "src-plymouth-historical-society",
+    "table": "Source",
+    "url": "https://www.pilgrimhall.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.pilgrimhall.org/"
+  },
+  {
+    "id": "src-plymouth-wikipedia-revolution",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Plymouth,_Massachusetts#American_Revolution",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Plymouth,_Massachusetts#American_Revolution"
+  },
+  {
+    "id": "src-plymouth-visit-tourism",
+    "table": "Source",
+    "url": "https://www.seeplymouth.com/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://seeplymouth.com/"
+  }
+]

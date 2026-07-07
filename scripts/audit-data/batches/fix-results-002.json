@@ -1,0 +1,182 @@
+[
+  {
+    "id": "src-mor-cold-winter-1779-80",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2016/02/the-hard-winter-morristown-1779-1780/",
+    "newUrl": "https://emergingrevolutionarywar.org/2016/01/23/the-hard-winter-of-1779-1780/",
+    "reason": "Original allthingsliberty URL returns 404. Emerging Revolutionary War published a contemporaneous article on the same topic (same January 2016 date range, same subject) that returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-mon-nps-monmouth-battlefield",
+    "table": "Source",
+    "oldUrl": "https://www.nj.gov/dep/parksandforests/historic/monmouth/index.html",
+    "newUrl": "https://dep.nj.gov/parksandforests/state-park/monmouth-battlefield-state-park/",
+    "reason": "NJ DEP reorganized its parks site. The Monmouth Battlefield page moved from the /historic/ path to the new /state-park/ path at dep.nj.gov (without www). Returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-mon-molly-pitcher-scholarship",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2013/12/molly-pitcher-the-real-story/",
+    "newUrl": "https://allthingsliberty.com/2013/05/molly-pitcher-and-captain-molly/",
+    "reason": "Original allthingsliberty URL returns 404. A May 2013 article on the same site by Ray Raphael covers identical scholarly content debunking the Molly Pitcher legend and returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-fle-fort-lee-historic-park-visitor",
+    "table": "Source",
+    "oldUrl": "https://www.nj.gov/dep/parksandforests/historic/fortlee/index.html",
+    "newUrl": "https://njpalisades.org/fortlee/",
+    "reason": "NJ DEP URL returns 404. Fort Lee Historic Park is managed by the Palisades Interstate Park Commission; their official page at njpalisades.org/fortlee/ returns 200 and covers visitor information.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-yorktown-va-cornwallis-capitulation",
+    "table": "Source",
+    "oldUrl": "https://www.archives.gov/milestone-documents/articles-of-capitulation",
+    "newUrl": "https://www.nps.gov/york/learn/historyculture/mooorehouseandarticle.htm",
+    "reason": "NARA milestone-documents URL returns 404; the document is not listed in their current milestone catalog. NPS Yorktown Battlefield provides the authoritative page on the Moore House and Articles of Capitulation negotiations and returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-williamsburg-va-virginia-declaration-rights",
+    "table": "Source",
+    "oldUrl": "https://www.lva.virginia.gov/public/guides/va1_declarationrights.htm",
+    "newUrl": "https://www.lva.virginia.gov/collections/educator-resources/online-classroom/stc/entries/the-virginia-declaration-of-rights-june-12-1776",
+    "reason": "Original LVA public guide URL returns 404. LVA migrated guide content to its Online Classroom / Document Bank path. The new LVA URL covers the Virginia Declaration of Rights (June 12, 1776) and returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-richmond-va-lva-revolutionary-virginia",
+    "table": "Source",
+    "oldUrl": "https://www.lva.virginia.gov/public/guides/va1_revwar.htm",
+    "newUrl": "https://lva-virginia.libguides.com/revolutionary-war",
+    "reason": "Original LVA public guide URL returns 404. LVA migrated research guides to the LibGuides platform. The Revolutionary War research guide at lva-virginia.libguides.com returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-richmond-va-wikipedia-arnold-raid",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/Arnold%27s_expedition_to_Virginia",
+    "newUrl": "https://en.wikipedia.org/wiki/Military_career_of_Benedict_Arnold,_1781",
+    "reason": "The Wikipedia article 'Arnold's expedition to Virginia' no longer exists at that title. Wikipedia content about Arnold's 1781 Virginia raids is now consolidated under 'Military career of Benedict Arnold, 1781', which returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-alexandria-va-visit-alexandria",
+    "table": "Source",
+    "oldUrl": "https://www.visitalexandriava.com/history-culture/history/revolutionary-war/",
+    "newUrl": "https://www.alexandriava.gov/historic-alexandria/a-brief-history-of-alexandria",
+    "reason": "visitalexandriava.com redirects (301) to visitalexandria.com which returns 403 for bots. City of Alexandria's official historic preservation page covers the same Revolutionary War context and returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-fredericksburg-va-visit-fredericksburg",
+    "table": "Source",
+    "oldUrl": "https://www.visitfred.com/history",
+    "newUrl": "https://fxbg.com/things-to-do/history/",
+    "reason": "visitfred.com domain now permanently redirects (301) to fxbg.com. The history section of the successor site at fxbg.com/things-to-do/history/ returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-fredericksburg-va-fredericksburg-area-museum",
+    "table": "Source",
+    "oldUrl": "https://www.fredericksburgareamuseum.org/",
+    "newUrl": "https://www.famva.org/",
+    "reason": "fredericksburgareamuseum.org returns ECONNREFUSED. The museum relaunched under the domain famva.org (Fredericksburg Area Museum Virginia) which returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-charlottesville-va-wikipedia-tarleton-raid",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/Tarleton%27s_Raid",
+    "newUrl": "https://encyclopediavirginia.org/entries/jack-jouetts-ride-1781/",
+    "reason": "Wikipedia has no article at 'Tarleton's Raid'; web search confirms no such Wikipedia title exists. Encyclopedia Virginia's peer-reviewed entry on Jack Jouett's Ride covers the same Tarleton raid on Charlottesville (1781) and returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-mount-vernon-va-washington-papers-project",
+    "table": "Source",
+    "oldUrl": "https://www.upress.virginia.edu/rotunda/washington/",
+    "newUrl": "https://rotunda.upress.virginia.edu/founders/GEWN.html",
+    "reason": "upress.virginia.edu/rotunda/washington/ returns 404. The Papers of George Washington Digital Edition moved to the Rotunda subdomain; the canonical URL at rotunda.upress.virginia.edu/founders/GEWN.html returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-charleston-sc-sc-state-archives",
+    "table": "Source",
+    "oldUrl": "https://www.scdah.sc.gov/",
+    "newUrl": "https://scdah.sc.gov/",
+    "reason": "The www-prefixed domain (www.scdah.sc.gov) returns ECONNREFUSED. The non-www canonical URL scdah.sc.gov returns 200 OK with the SC Department of Archives and History homepage.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-charleston-sc-wikipedia-siege-1780",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/Siege_of_Charleston_(1780)",
+    "newUrl": "https://en.wikipedia.org/wiki/Siege_of_Charleston",
+    "reason": "Wikipedia article was moved/renamed; the (1780) disambiguator was removed from the title. The canonical article at en.wikipedia.org/wiki/Siege_of_Charleston returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-charleston-sc-visitch",
+    "table": "Source",
+    "oldUrl": "https://www.explorecharleston.com/history/revolutionary-war/",
+    "newUrl": "https://www.nps.gov/articles/siege-of-charleston-1780.htm",
+    "reason": "explorecharleston.com permanently redirects to charlestoncvb.com which returns 403 for automated access. NPS article on the Siege of Charleston 1780 covers Revolutionary War history in Charleston authoritatively and returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-camden-sc-sc-state-archives-camden",
+    "table": "Source",
+    "oldUrl": "https://www.scdah.sc.gov/",
+    "newUrl": "https://scdah.sc.gov/",
+    "reason": "The www-prefixed domain (www.scdah.sc.gov) returns ECONNREFUSED. The non-www canonical URL scdah.sc.gov returns 200 OK with the SC Department of Archives and History homepage.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-camden-sc-south-carolina-hist-mag",
+    "table": "Source",
+    "oldUrl": "https://www.southcarolinahistoricalsociety.org/publications/",
+    "newUrl": "https://schistory.org/publications/",
+    "reason": "southcarolinahistoricalsociety.org returns 404. The SC Historical Society migrated to the domain schistory.org; the publications page at schistory.org/publications/ returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-cowpens-sc-eyewitness-depositions",
+    "table": "Source",
+    "oldUrl": "https://www.fold3.com/title/452/revolutionary-war-pension-and-bounty-land-warrant-application-files",
+    "newUrl": "https://www.familysearch.org/en/search/collection/1417475",
+    "reason": "Fold3's /title/452/ path redirects to the homepage and blocks automated access (403). FamilySearch hosts the same NARA M804 Revolutionary War Pension and Bounty Land Warrant Application Files collection freely with full indexing, returns 200.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-ninety-six-sc-sc-state-archives-backcountry",
+    "table": "Source",
+    "oldUrl": "https://www.scdah.sc.gov/",
+    "newUrl": "https://scdah.sc.gov/",
+    "reason": "The www-prefixed domain (www.scdah.sc.gov) returns ECONNREFUSED. The non-www canonical URL scdah.sc.gov returns 200 OK with the SC Department of Archives and History homepage.",
+    "verified": true,
+    "httpStatus": 200
+  }
+]

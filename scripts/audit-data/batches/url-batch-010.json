@@ -1,0 +1,502 @@
+[
+  {
+    "id": "cmodzfmpv000bd6hshjd40dke",
+    "table": "Source",
+    "url": "https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/danbury-raid-connecticut",
+    "title": "https://www.encyclopedia.com/history/encyclopedias-almanacs-",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "danbury-ct",
+    "publisherOrHolder": "www.encyclopedia.com"
+  },
+  {
+    "id": "cmofetd6q00004kyjr5hlyuso",
+    "table": "Source",
+    "url": "https://www.fortgriswold.org/the-battle-of-groton-heights/",
+    "title": "https://www.fortgriswold.org/the-battle-of-groton-heights/",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "groton-ct",
+    "publisherOrHolder": "www.fortgriswold.org"
+  },
+  {
+    "id": "cmofetd7a00034kyjdqall3q4",
+    "table": "Source",
+    "url": "https://connecticuthistory.org/fort-griswold-and-the-battle-of-groton-heights-1781/",
+    "title": "https://connecticuthistory.org/fort-griswold-and-the-battle-",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "groton-ct",
+    "publisherOrHolder": "connecticuthistory.org"
+  },
+  {
+    "id": "cmofetd7o00064kyj4gu0mvh8",
+    "table": "Source",
+    "url": "https://portal.ct.gov/-/media/deep/stateparks/parks/thebattleofgrotonheightsandtheburningofnewlondonpdf.pdf",
+    "title": "https://portal.ct.gov/-/media/deep/stateparks/parks/thebattl",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "groton-ct",
+    "publisherOrHolder": "portal.ct.gov"
+  },
+  {
+    "id": "cmofevoy9000b4kyj6x2s3oph",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/connecticut-raids",
+    "title": "https://www.mountvernon.org/library/digitalhistory/digital-e",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "new-haven-ct",
+    "publisherOrHolder": "www.mountvernon.org"
+  },
+  {
+    "id": "cmofevoyl000e4kyj4b8ftiv5",
+    "table": "Source",
+    "url": "https://web.library.yale.edu/news/2020/07/happy-4th-july-british-are-not-coming-year",
+    "title": "https://web.library.yale.edu/news/2020/07/happy-4th-july-bri",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "new-haven-ct",
+    "publisherOrHolder": "web.library.yale.edu"
+  },
+  {
+    "id": "cmofevoyw000h4kyjcoxokrgz",
+    "table": "Source",
+    "url": "https://news.yale.edu/2015/07/01/redcoats-are-coming-new-haven",
+    "title": "https://news.yale.edu/2015/07/01/redcoats-are-coming-new-hav",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "new-haven-ct",
+    "publisherOrHolder": "news.yale.edu"
+  },
+  {
+    "id": "cmogu9ad90000ee6i15wrqc9n",
+    "table": "Source",
+    "url": "https://connecticuthistory.org/benedict-arnold-turns-and-burns-new-london/",
+    "title": "https://connecticuthistory.org/benedict-arnold-turns-and-bur",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "new-london-ct",
+    "publisherOrHolder": "connecticuthistory.org"
+  },
+  {
+    "id": "cmogubcz50005ee6i6pby5m0u",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2020/05/george-washingtons-1777-wilmington-delaware-headquarters-insights-to-an-unmarked-site/",
+    "title": "https://allthingsliberty.com/2020/05/george-washingtons-1777",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "wilmington-de",
+    "publisherOrHolder": "allthingsliberty.com"
+  },
+  {
+    "id": "cmogubczm0008ee6iptqynh0l",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2020/04/washingtons-head-of-elk-reconnaissance-a-new-letter-and-and-old-receipt/",
+    "title": "https://allthingsliberty.com/2020/04/washingtons-head-of-elk",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "wilmington-de",
+    "publisherOrHolder": "allthingsliberty.com"
+  },
+  {
+    "id": "cmogubd00000bee6ita936i8a",
+    "table": "Source",
+    "url": "https://philadelphiaencyclopedia.org/essays/wilmington-delaware/",
+    "title": "https://philadelphiaencyclopedia.org/essays/wilmington-delaw",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "wilmington-de",
+    "publisherOrHolder": "philadelphiaencyclopedia.org"
+  },
+  {
+    "id": "cmoi9p1rz0000r6o735h301ar",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/savannah",
+    "title": "https://www.battlefields.org/learn/revolutionary-war/battles",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "savannah-ga",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmoi9p1t30003r6o77zcezqi5",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/savannah",
+    "title": "https://www.battlefields.org/learn/articles/savannah",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "savannah-ga",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmoi9p1ti0006r6o70zvh37fu",
+    "table": "Source",
+    "url": "https://www.georgiaencyclopedia.org/articles/history-archaeology/siege-of-savannah/",
+    "title": "https://www.georgiaencyclopedia.org/articles/history-archaeo",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "savannah-ga",
+    "publisherOrHolder": "www.georgiaencyclopedia.org"
+  },
+  {
+    "id": "cmoi9rh0m000br6o7vl72r5v1",
+    "table": "Source",
+    "url": "https://www.nps.gov/people/father-pierre-gibault.htm",
+    "title": "https://www.nps.gov/people/father-pierre-gibault.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "kaskaskia-il",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmoi9rh12000er6o73qyxzi8x",
+    "table": "Source",
+    "url": "https://www.nps.gov/people/george-rogers-clark.htm",
+    "title": "https://www.nps.gov/people/george-rogers-clark.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "kaskaskia-il",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmoi9rh1d000hr6o7yyurjq4e",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/fort-kaskaskia.htm",
+    "title": "https://www.nps.gov/places/fort-kaskaskia.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "kaskaskia-il",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmojp4zkb00007bjk7u1hbqdt",
+    "table": "Source",
+    "url": "https://www.nps.gov/people/david-lamson.htm",
+    "title": "https://www.nps.gov/people/david-lamson.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "arlington-ma",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmojp4zl000037bjk9wtp8fev",
+    "table": "Source",
+    "url": "https://arlingtonhistorical.org/learn/articles/the-battle-of-menotomy/",
+    "title": "https://arlingtonhistorical.org/learn/articles/the-battle-of",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "arlington-ma",
+    "publisherOrHolder": "arlingtonhistorical.org"
+  },
+  {
+    "id": "cmojp4zld00067bjky6uuaivx",
+    "table": "Source",
+    "url": "https://www.americanheritage.com/forgotten-battle-menotomy",
+    "title": "https://www.americanheritage.com/forgotten-battle-menotomy",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "arlington-ma",
+    "publisherOrHolder": "www.americanheritage.com"
+  },
+  {
+    "id": "cmojp70kh000b7bjkb7g8bok6",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/boston-massacre.htm",
+    "title": "https://www.nps.gov/articles/000/boston-massacre.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "boston-ma",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmojp70kw000e7bjkm6omxtga",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/siege-of-boston-overview.htm",
+    "title": "https://www.nps.gov/articles/000/siege-of-boston-overview.ht",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "boston-ma",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmojp70l8000h7bjkh0jrqk1l",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/siege-of-boston-map.htm",
+    "title": "https://www.nps.gov/articles/000/siege-of-boston-map.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "boston-ma",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmojp95cw000m7bjkf3v0yj31",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/john-glover-sailor-soldier-patriot.htm",
+    "title": "https://www.nps.gov/articles/000/john-glover-sailor-soldier-",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "marblehead-ma",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmojp95dy000p7bjkpfc4xyxo",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/john-glover-and-marblehead-men-massachusetts",
+    "title": "https://www.battlefields.org/learn/articles/john-glover-and-",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "marblehead-ma",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmojp95eb000s7bjko7oj6utz",
+    "table": "Source",
+    "url": "https://www.americanrevolutioninstitute.org/coastal-regiments-in-the-continental-army/",
+    "title": "https://www.americanrevolutioninstitute.org/coastal-regiment",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "marblehead-ma",
+    "publisherOrHolder": "www.americanrevolutioninstitute.org"
+  },
+  {
+    "id": "cmol4kosf0000r4t2ksrt56vk",
+    "table": "Source",
+    "url": "https://founders.archives.gov/documents/Adams/06-02-02-0002",
+    "title": "https://founders.archives.gov/documents/Adams/06-02-02-0002",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "plymouth-ma",
+    "publisherOrHolder": "founders.archives.gov"
+  },
+  {
+    "id": "cmol4kosy0003r4t2c67u743v",
+    "table": "Source",
+    "url": "https://founders.archives.gov/documents/Adams/06-02-02-0003",
+    "title": "https://founders.archives.gov/documents/Adams/06-02-02-0003",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "plymouth-ma",
+    "publisherOrHolder": "founders.archives.gov"
+  },
+  {
+    "id": "cmol4kotb0006r4t2d3kvqy8m",
+    "table": "Source",
+    "url": "https://ofgraveyardsandthings.com/2019/12/11/7-december-1773-plymouth-patriots-lend-support-prior-to-the-boston-tea-party/",
+    "title": "https://ofgraveyardsandthings.com/2019/12/11/7-december-1773",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "plymouth-ma",
+    "publisherOrHolder": "ofgraveyardsandthings.com"
+  },
+  {
+    "id": "cmol4n0c1000br4t2sbcpwgkg",
+    "table": "Source",
+    "url": "https://www.smithsonianmag.com/history/was-this-little-known-standoff-between-british-soldiers-and-colonists-the-real-start-of-the-american-revolution-180986105/",
+    "title": "https://www.smithsonianmag.com/history/was-this-little-known",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "salem-ma, marblehead-ma",
+    "publisherOrHolder": "www.smithsonianmag.com"
+  },
+  {
+    "id": "cmol4n0cc000er4t2q7o2itfq",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/privateers-in-the-american-revolution.htm",
+    "title": "https://www.nps.gov/articles/privateers-in-the-american-revo",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "salem-ma",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmol4n0cn000hr4t2iprhlc8u",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2015/04/a-fast-ship-from-salem-carrying-news-of-war/",
+    "title": "https://allthingsliberty.com/2015/04/a-fast-ship-from-salem-",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "salem-ma",
+    "publisherOrHolder": "allthingsliberty.com"
+  },
+  {
+    "id": "cmomk0jue0000130q5mtm0wtd",
+    "table": "Source",
+    "url": "https://massar.org/setting-the-record-straight-the-worcester-revolt-of-september-6-1774/",
+    "title": "https://massar.org/setting-the-record-straight-the-worcester",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "springfield-ma",
+    "publisherOrHolder": "massar.org"
+  },
+  {
+    "id": "cmomk0jv20003130q4cwdtton",
+    "table": "Source",
+    "url": "https://founders.archives.gov/documents/Washington/03-01-02-0047-0003",
+    "title": "https://founders.archives.gov/documents/Washington/03-01-02-",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "springfield-ma",
+    "publisherOrHolder": "founders.archives.gov"
+  },
+  {
+    "id": "cmomk2yz7000e130qvkur41cg",
+    "table": "Source",
+    "url": "https://www.westfield.ma.edu/historical-journal/wp-content/uploads/2018/11/2017-Summer-Raphael-Lexington-Worcester-and-the-American-Revolution.pdf",
+    "title": "https://www.westfield.ma.edu/historical-journal/wp-content/u",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "worcester-ma",
+    "publisherOrHolder": "www.westfield.ma.edu"
+  },
+  {
+    "id": "cmomk2yzo000h130qrz4nmf91",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2013/02/the-true-start-of-the-american-revolution/",
+    "title": "https://allthingsliberty.com/2013/02/the-true-start-of-the-a",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "worcester-ma",
+    "publisherOrHolder": "allthingsliberty.com"
+  },
+  {
+    "id": "cmonzghud00001p158fgxlasz",
+    "table": "Source",
+    "url": "https://history.house.gov/Historical-Highlights/1700s/General-George-Washington-resigning-his-commission-in-Annapolis",
+    "title": "https://history.house.gov/Historical-Highlights/1700s/Genera",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "annapolis-md",
+    "publisherOrHolder": "history.house.gov"
+  },
+  {
+    "id": "cmonzghv900031p154gtzrdn9",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/resignation-of-military-commission",
+    "title": "https://www.mountvernon.org/library/digitalhistory/digital-e",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "annapolis-md",
+    "publisherOrHolder": "www.mountvernon.org"
+  },
+  {
+    "id": "cmonzghvl00061p15ux50qc9r",
+    "table": "Source",
+    "url": "https://www.aoc.gov/explore-capitol-campus/art/general-george-washington-resigning-his-commission",
+    "title": "https://www.aoc.gov/explore-capitol-campus/art/general-georg",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "annapolis-md",
+    "publisherOrHolder": "www.aoc.gov"
+  },
+  {
+    "id": "cmonziw0w000b1p15u83jeuy1",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/the-maryland-400.htm",
+    "title": "https://www.nps.gov/articles/000/the-maryland-400.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "baltimore-md",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmonziw1c000e1p15995g0klv",
+    "table": "Source",
+    "url": "https://www.mdhistory.org/resources/congress-hall-baltimore-and-sharp-streets-1776/",
+    "title": "https://www.mdhistory.org/resources/congress-hall-baltimore-",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "baltimore-md",
+    "publisherOrHolder": "www.mdhistory.org"
+  },
+  {
+    "id": "cmonziw1n000h1p15u7jwgb4g",
+    "table": "Source",
+    "url": "https://history.house.gov/People/Continental-Congress/Meeting-Places/",
+    "title": "https://history.house.gov/People/Continental-Congress/Meetin",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "baltimore-md",
+    "publisherOrHolder": "history.house.gov"
+  },
+  {
+    "id": "cmopewbji0000hrdfqtfzw9mn",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Burning_of_Falmouth",
+    "title": "https://en.wikipedia.org/wiki/Burning_of_Falmouth",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "portland-me",
+    "publisherOrHolder": "en.wikipedia.org"
+  },
+  {
+    "id": "cmopewbkb0003hrdfko2px524",
+    "table": "Source",
+    "url": "https://digitalcommons.library.umaine.edu/cgi/viewcontent.cgi?article=1000&context=mainehistoryjournal",
+    "title": "https://digitalcommons.library.umaine.edu/cgi/viewcontent.cg",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "portland-me",
+    "publisherOrHolder": "digitalcommons.library.umaine.edu"
+  },
+  {
+    "id": "cmopewbkq0006hrdfbiv0w5qx",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2015/09/a-tale-of-two-cities-the-destruction-of-falmouth-and-the-defense-of-hampton/",
+    "title": "https://allthingsliberty.com/2015/09/a-tale-of-two-cities-th",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "portland-me",
+    "publisherOrHolder": "allthingsliberty.com"
+  },
+  {
+    "id": "cmopeyoc7000bhrdfi87doh2j",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/guilford-courthouse-national-military-park-550002.htm",
+    "title": "https://www.nps.gov/articles/000/guilford-courthouse-nationa",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "guilford-courthouse-nc",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmopeyocw000ehrdfomjt8vbb",
+    "table": "Source",
+    "url": "https://www.ncpedia.org/history/usrevolution/guilford-courthouse",
+    "title": "https://www.ncpedia.org/history/usrevolution/guilford-courth",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "guilford-courthouse-nc",
+    "publisherOrHolder": "www.ncpedia.org"
+  },
+  {
+    "id": "cmoqud024000012npx9artcoo",
+    "table": "Source",
+    "url": "https://www.britannica.com/event/Battle-of-Kings-Mountain",
+    "title": "https://www.britannica.com/event/Battle-of-Kings-Mountain",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "kings-mountain-nc",
+    "publisherOrHolder": "www.britannica.com"
+  },
+  {
+    "id": "cmoquf87u000512npdsn7xzdu",
+    "table": "Source",
+    "url": "https://www.ncpedia.org/tryon-palace",
+    "title": "https://www.ncpedia.org/tryon-palace",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "new-bern-nc",
+    "publisherOrHolder": "www.ncpedia.org"
+  },
+  {
+    "id": "cmoquf888000812npwqkv6qtu",
+    "table": "Source",
+    "url": "https://www.ncpedia.org/resolves-prerevolutionary",
+    "title": "https://www.ncpedia.org/resolves-prerevolutionary",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "new-bern-nc",
+    "publisherOrHolder": "www.ncpedia.org"
+  }
+]

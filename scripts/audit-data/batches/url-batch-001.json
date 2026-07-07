@@ -1,0 +1,502 @@
+[
+  {
+    "id": "src-worcester-court-closure-proceedings",
+    "table": "Source",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "title": "Worcester County Court of Common Pleas: Closure Proceedings,",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "worcester-ma",
+    "publisherOrHolder": "Massachusetts State Archives"
+  },
+  {
+    "id": "src-worcester-committee-correspondence-minutes",
+    "table": "Source",
+    "url": "https://www.americanantiquarian.org/",
+    "title": "Worcester Committee of Correspondence Minutes, 1773-1775",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "worcester-ma",
+    "publisherOrHolder": "American Antiquarian Society"
+  },
+  {
+    "id": "src-worcester-american-antiquarian-society",
+    "table": "Source",
+    "url": "https://www.americanantiquarian.org/collections/revolutionary-war",
+    "title": "American Antiquarian Society: Worcester County Revolutionary",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "worcester-ma",
+    "publisherOrHolder": "American Antiquarian Society"
+  },
+  {
+    "id": "src-marblehead-visit-marblehead",
+    "table": "Source",
+    "url": "https://visitmarblehead.com/",
+    "title": "Marblehead: Colonial and Revolutionary History -- Marblehead",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "marblehead-ma",
+    "publisherOrHolder": "Marblehead Chamber of Commerce"
+  },
+  {
+    "id": "src-plymouth-forefathers-monument-docs",
+    "table": "Source",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "title": "Plymouth Town Records and Proprietors Minutes, 1774-1776",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "plymouth-ma",
+    "publisherOrHolder": "Plymouth County Registry of Deeds and Massachusetts State Archives"
+  },
+  {
+    "id": "src-worcester-historical-museum",
+    "table": "Source",
+    "url": "https://www.worcesterhistory.net/",
+    "title": "Worcester Historical Museum: Revolution-Era Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "worcester-ma",
+    "publisherOrHolder": "Worcester Historical Museum"
+  },
+  {
+    "id": "src-worcester-bell-powder-alarm",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2014/09/powder-alarm-1774/",
+    "title": "The Powder Alarm: Worcester County and the Road to Revolutio",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "worcester-ma",
+    "publisherOrHolder": "Journal of the American Revolution"
+  },
+  {
+    "id": "src-worcester-wikipedia-revolution",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Worcester,_Massachusetts#American_Revolution",
+    "title": "Worcester, Massachusetts -- Wikipedia (American Revolution s",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "worcester-ma",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-worcester-mass-moments",
+    "table": "Source",
+    "url": "https://www.massmoments.org/",
+    "title": "Worcester Closes the Courts: Massachusetts Moments",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "worcester-ma",
+    "publisherOrHolder": "WGBH Educational Foundation / MassHumanities"
+  },
+  {
+    "id": "src-springfield-armory-nps",
+    "table": "Source",
+    "url": "https://www.nps.gov/spar/learn/historyculture/index.htm",
+    "title": "Springfield Armory National Historic Site: History and Colle",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "springfield-ma",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-springfield-knox-ordnance-orders",
+    "table": "Source",
+    "url": "https://www.archives.gov/",
+    "title": "General Henry Knox's Orders Establishing the Springfield Ars",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "springfield-ma",
+    "publisherOrHolder": "National Archives and Records Administration"
+  },
+  {
+    "id": "src-springfield-state-archives-shays",
+    "table": "Source",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "title": "Shays' Rebellion Papers: Springfield Arsenal Attack, January",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "springfield-ma",
+    "publisherOrHolder": "Massachusetts State Archives"
+  },
+  {
+    "id": "src-springfield-continental-congress-supply",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/papers-of-the-continental-congress/",
+    "title": "Board of War Records: Springfield Armory Procurement, 1778-1",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "springfield-ma",
+    "publisherOrHolder": "Library of Congress, Papers of the Continental Congress"
+  },
+  {
+    "id": "src-springfield-historical-society",
+    "table": "Source",
+    "url": "https://www.springfieldlibrary.org/history/",
+    "title": "Springfield History Library and Archives",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "springfield-ma",
+    "publisherOrHolder": "Springfield History Library and Archives (City of Springfield)"
+  },
+  {
+    "id": "src-springfield-nps-shays-teaching",
+    "table": "Source",
+    "url": "https://www.nps.gov/subjects/teachingwithhistoricplaces/shaysrebellion.htm",
+    "title": "Shays' Rebellion and the Springfield Armory -- NPS Teaching ",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "springfield-ma",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-worcester-nps-revolution-resources",
+    "table": "Source",
+    "url": "https://www.nps.gov/subjects/teachingwithhistoricplaces/worcester.htm",
+    "title": "American Revolution: Worcester County Resistance -- NPS Teac",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "worcester-ma",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-nyc-british-hq-papers",
+    "table": "Source",
+    "url": "https://quod.lib.umich.edu/c/clementsmss/umich-wcl-M-1",
+    "title": "Sir Henry Clinton Papers (British Headquarters Papers)",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "new-york-city-ny",
+    "publisherOrHolder": "William L. Clements Library, University of Michigan"
+  },
+  {
+    "id": "src-nyc-continental-congress-journals-ny",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "title": "Journals of the Continental Congress, 1776-1783",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "new-york-city-ny",
+    "publisherOrHolder": "Library of Congress"
+  },
+  {
+    "id": "src-nyc-nps-revolution-ny",
+    "table": "Source",
+    "url": "https://www.nps.gov/subjects/revwar/new-york.htm",
+    "title": "American Revolution in New York: Official NPS Theme Study",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "new-york-city-ny",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-nyc-new-york-historical-society-collections",
+    "table": "Source",
+    "url": "https://www.nyhistory.org/library/manuscript-collections",
+    "title": "New-York Historical Society: Revolutionary War Manuscript Co",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "new-york-city-ny",
+    "publisherOrHolder": "New-York Historical Society"
+  },
+  {
+    "id": "src-nyc-wallabout-martyrs",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2014/02/wallabout-prison-ships/",
+    "title": "The Wallabout Prison Ships: The Untold Story of Brooklyn's R",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "new-york-city-ny",
+    "publisherOrHolder": "Journal of the American Revolution"
+  },
+  {
+    "id": "src-nyc-battle-long-island-nps",
+    "table": "Source",
+    "url": "https://www.nps.gov/gate/learn/historyculture/battle-of-brooklyn.htm",
+    "title": "Battle of Long Island -- Gateway National Recreation Area",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "new-york-city-ny",
+    "publisherOrHolder": "National Park Service, Gateway NRA"
+  },
+  {
+    "id": "src-nyc-wikipedia-battle-long-island",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Long_Island",
+    "title": "Battle of Long Island -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "new-york-city-ny",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-nyc-nycgo-revolutionary-sites",
+    "table": "Source",
+    "url": "https://www.nyctourism.com/articles/revolutionary-war-sites/",
+    "title": "American Revolution NYC: Historical Sites Guide",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "new-york-city-ny",
+    "publisherOrHolder": "NYC Tourism & Conventions"
+  },
+  {
+    "id": "src-nyc-fraunces-tavern-museum",
+    "table": "Source",
+    "url": "https://www.frauncestavernmuseum.org/",
+    "title": "Fraunces Tavern Museum: Washington's Farewell",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "new-york-city-ny",
+    "publisherOrHolder": "Fraunces Tavern Museum"
+  },
+  {
+    "id": "src-springfield-wikipedia-armory",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Springfield_Armory_National_Historic_Site",
+    "title": "Springfield Armory National Historic Site -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "springfield-ma",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-springfield-tourism-site",
+    "table": "Source",
+    "url": "https://www.valleyvisitor.com/",
+    "title": "Springfield, MA: History and Heritage",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "springfield-ma",
+    "publisherOrHolder": "Greater Springfield Convention and Visitors Bureau"
+  },
+  {
+    "id": "src-sar-nps-saratoga-nbp",
+    "table": "Source",
+    "url": "https://www.nps.gov/sara/index.htm",
+    "title": "Saratoga National Historical Park Official Site and Administ",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "saratoga-springs-ny",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-sar-new-york-state-archives-saratoga",
+    "table": "Source",
+    "url": "https://www.archives.nysed.gov/research/military-records",
+    "title": "New York State Archives: Revolutionary War Manuscripts",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "saratoga-springs-ny",
+    "publisherOrHolder": "New York State Archives"
+  },
+  {
+    "id": "src-sar-saratoga-county-historical",
+    "table": "Source",
+    "url": "https://www.saratogahistory.com/",
+    "title": "Saratoga County Historical Society: Revolutionary War Collec",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "saratoga-springs-ny",
+    "publisherOrHolder": "Saratoga County Historical Society"
+  },
+  {
+    "id": "src-sar-wikipedia-saratoga",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battles_of_Saratoga",
+    "title": "Battles of Saratoga -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "saratoga-springs-ny",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-sar-nps-visitor-saratoga",
+    "table": "Source",
+    "url": "https://www.nps.gov/sara/planyourvisit/index.htm",
+    "title": "Saratoga National Historical Park: Visitor Guide",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "saratoga-springs-ny",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-sar-discover-saratoga",
+    "table": "Source",
+    "url": "https://www.discoversaratoga.org/history/revolutionary-war",
+    "title": "Discover Saratoga: Revolutionary War Sites",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "saratoga-springs-ny",
+    "publisherOrHolder": "Saratoga Convention and Tourism Bureau"
+  },
+  {
+    "id": "src-alb-schuyler-papers",
+    "table": "Source",
+    "url": "https://digitalcollections.nypl.org/collections/philip-schuyler-papers",
+    "title": "Philip Schuyler Papers",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "albany-ny",
+    "publisherOrHolder": "New York Public Library"
+  },
+  {
+    "id": "src-sar-gates-papers",
+    "table": "Source",
+    "url": "https://digitalcollections.nyhistory.org/islandora/object/islandora:120591",
+    "title": "Horatio Gates Papers, 1726-1828",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "saratoga-springs-ny",
+    "publisherOrHolder": "New-York Historical Society"
+  },
+  {
+    "id": "src-alb-ten-broeck-mansion",
+    "table": "Source",
+    "url": "https://www.tenbroeckmansion.org/",
+    "title": "Ten Broeck Mansion: Historic Site Documentation",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "albany-ny",
+    "publisherOrHolder": "Albany County Historical Association"
+  },
+  {
+    "id": "src-alb-wikipedia-albany",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Albany,_New_York",
+    "title": "Albany, New York -- Revolutionary War History (Wikipedia)",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "albany-ny",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-alb-albany-visitor",
+    "table": "Source",
+    "url": "https://www.albany.org/",
+    "title": "Discover Albany: Colonial and Revolutionary History",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "albany-ny",
+    "publisherOrHolder": "Albany County Convention and Visitors Bureau"
+  },
+  {
+    "id": "src-tic-nps-fort-ticonderoga",
+    "table": "Source",
+    "url": "https://www.nps.gov/nr/travel/geo-flyer/fortticonderoga.html",
+    "title": "Fort Ticonderoga: National Historic Landmark Documentation",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "ticonderoga-ny",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-tic-congressional-resolution-1775",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "title": "Continental Congress Resolutions Regarding Fort Ticonderoga,",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "ticonderoga-ny",
+    "publisherOrHolder": "Library of Congress, Journals of the Continental Congress"
+  },
+  {
+    "id": "src-tic-fort-ticonderoga-museum",
+    "table": "Source",
+    "url": "https://www.fortticonderoga.org/",
+    "title": "Fort Ticonderoga Museum: Collections and Research Library",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "ticonderoga-ny",
+    "publisherOrHolder": "Fort Ticonderoga Association"
+  },
+  {
+    "id": "src-tic-wikipedia-fort-tic",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Fort_Ticonderoga",
+    "title": "Fort Ticonderoga -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "ticonderoga-ny",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-tic-fort-tic-tourism",
+    "table": "Source",
+    "url": "https://www.fortticonderoga.org/visit",
+    "title": "Fort Ticonderoga Visitor Information",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "ticonderoga-ny",
+    "publisherOrHolder": "Fort Ticonderoga Association"
+  },
+  {
+    "id": "src-alb-albany-county-historical",
+    "table": "Source",
+    "url": "https://www.historicalbany.org/",
+    "title": "Albany County Historical Association Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "albany-ny",
+    "publisherOrHolder": "Albany County Historical Association"
+  },
+  {
+    "id": "src-wp-great-chain-history",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2014/05/the-great-chain-across-the-hudson/",
+    "title": "The Great Chain Across the Hudson River",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "west-point-ny",
+    "publisherOrHolder": "Journal of the American Revolution"
+  },
+  {
+    "id": "src-wp-wikipedia-west-point",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/West_Point,_New_York",
+    "title": "West Point, New York -- Revolutionary War History (Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "west-point-ny",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-wp-usma-visitor",
+    "table": "Source",
+    "url": "https://www.westpoint.edu/visiting",
+    "title": "West Point Visitor Center and Museum",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "west-point-ny",
+    "publisherOrHolder": "United States Military Academy"
+  },
+  {
+    "id": "src-wp2-nps-washington-ny-campaign",
+    "table": "Source",
+    "url": "https://www.nps.gov/subjects/revwar/new-york-campaign-1776.htm",
+    "title": "The New York Campaign of 1776: NPS Interpretive Overview",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "white-plains-ny",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-wp2-westchester-county-historical",
+    "table": "Source",
+    "url": "https://westchesterhistory.com/",
+    "title": "Westchester County Historical Society: Revolutionary War Col",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "white-plains-ny",
+    "publisherOrHolder": "Westchester County Historical Society"
+  },
+  {
+    "id": "src-wp2-wikipedia-battle-white-plains",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_White_Plains",
+    "title": "Battle of White Plains -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "white-plains-ny",
+    "publisherOrHolder": "Wikipedia"
+  }
+]

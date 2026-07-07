@@ -1,0 +1,452 @@
+[
+  {
+    "id": "src-williamsburg-va-dunmore-proclamation",
+    "table": "Source",
+    "url": "https://www.archives.gov/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.archives.gov/"
+  },
+  {
+    "id": "src-williamsburg-va-colonial-williamsburg-research",
+    "table": "Source",
+    "url": "https://www.colonialwilliamsburg.org/learn/living-history/revolutionary-city/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.colonialwilliamsburg.org/learn/living-history/revolutionary-city/"
+  },
+  {
+    "id": "src-williamsburg-va-virginia-gazette-1765-1776",
+    "table": "Source",
+    "url": "https://research.colonialwilliamsburg.org/DigitalLibrary/va-gazettes/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://research.colonialwilliamsburg.org/DigitalLibrary/va-gazettes/"
+  },
+  {
+    "id": "src-williamsburg-va-virginia-constitution-1776",
+    "table": "Source",
+    "url": "https://www.lva.virginia.gov/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.lva.virginia.gov/"
+  },
+  {
+    "id": "src-williamsburg-va-jefferson-autobiography",
+    "table": "Source",
+    "url": "https://www.loc.gov/item/mtjbib025151/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/item/mtjbib025151/"
+  },
+  {
+    "id": "cmomk0jvf0006130qhrsvg2qc",
+    "table": "Source",
+    "url": "https://www.masshist.org/database/viewer.php?item_id=463&pid=15",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.masshist.org/database/viewer.php?item_id=463&pid=15"
+  },
+  {
+    "id": "src-yorktown-va-museum-colonial-national",
+    "table": "Source",
+    "url": "https://www.historyisfun.org/yorktown-victory-center/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.jyfmuseums.org/yorktown-victory-center/"
+  },
+  {
+    "id": "src-yorktown-va-virginia-hist-soc",
+    "table": "Source",
+    "url": "https://www.virginiahistory.org/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.virginiahistory.org/"
+  },
+  {
+    "id": "cmomk2yxq000b130qs77omezi",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/from-hammer-to-musket-the-tragedy-of-timothy-bigelow.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/from-hammer-to-musket-the-tragedy-of-timothy-bigelow.htm"
+  },
+  {
+    "id": "src-williamsburg-va-wikipedia-colonial-capital",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Williamsburg,_Virginia",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Williamsburg,_Virginia"
+  },
+  {
+    "id": "src-richmond-va-jefferson-arnold-letter",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/thomas-jefferson-papers/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/thomas-jefferson-papers/"
+  },
+  {
+    "id": "src-richmond-va-virginia-state-archives",
+    "table": "Source",
+    "url": "https://www.lva.virginia.gov/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.lva.virginia.gov/"
+  },
+  {
+    "id": "src-richmond-va-nps-richmond-nbp",
+    "table": "Source",
+    "url": "https://www.nps.gov/rich/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/rich/index.htm"
+  },
+  {
+    "id": "src-richmond-va-lva-revolutionary-virginia",
+    "table": "Source",
+    "url": "https://www.lva.virginia.gov/public/guides/va1_revwar.htm",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.lva.virginia.gov/public/guides/va1_revwar.htm"
+  },
+  {
+    "id": "src-richmond-va-wikipedia-arnold-raid",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Arnold%27s_expedition_to_Virginia",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Arnold%27s_expedition_to_Virginia"
+  },
+  {
+    "id": "src-richmond-va-richmond-civil-war-museum",
+    "table": "Source",
+    "url": "https://acwm.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://acwm.org/"
+  },
+  {
+    "id": "src-williamsburg-va-colonial-williamsburg-almanack",
+    "table": "Source",
+    "url": "https://research.colonialwilliamsburg.org/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://research.colonialwilliamsburg.org/"
+  },
+  {
+    "id": "src-williamsburg-va-visit-williamsburg",
+    "table": "Source",
+    "url": "https://www.colonialwilliamsburg.org/plan/historic-area/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.colonialwilliamsburg.org/plan/historic-area/"
+  },
+  {
+    "id": "src-alexandria-va-nps-george-washington",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mountvernon.org/"
+  },
+  {
+    "id": "src-alexandria-va-gadsby-tavern-museum",
+    "table": "Source",
+    "url": "https://www.alexandriava.gov/GadsbysTavern",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.alexandriava.gov/GadsbysTavern"
+  },
+  {
+    "id": "src-alexandria-va-george-washington-masonic",
+    "table": "Source",
+    "url": "https://www.gwmemorial.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://gwmemorial.org/"
+  },
+  {
+    "id": "src-alexandria-va-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Alexandria,_Virginia",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Alexandria,_Virginia"
+  },
+  {
+    "id": "src-alexandria-va-visit-alexandria",
+    "table": "Source",
+    "url": "https://www.visitalexandriava.com/history-culture/history/revolutionary-war/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://visitalexandria.com/history-culture/history/revolutionary-war/"
+  },
+  {
+    "id": "src-fredericksburg-va-nps-kenmore",
+    "table": "Source",
+    "url": "https://www.kenmore.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://kenmore.org/"
+  },
+  {
+    "id": "src-alexandria-va-fairfax-resolves-1774",
+    "table": "Source",
+    "url": "https://www.loc.gov/item/00694538/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/item/00694538/"
+  },
+  {
+    "id": "src-fredericksburg-va-encyclopedia-virginia-fredericksburg",
+    "table": "Source",
+    "url": "https://www.encyclopediavirginia.org/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.encyclopediavirginia.org/"
+  },
+  {
+    "id": "src-fredericksburg-va-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Fredericksburg,_Virginia",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Fredericksburg,_Virginia"
+  },
+  {
+    "id": "src-fredericksburg-va-visit-fredericksburg",
+    "table": "Source",
+    "url": "https://www.visitfred.com/history",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.visitfred.com/history"
+  },
+  {
+    "id": "src-norfolk-va-woodford-letter-norfolk-burning",
+    "table": "Source",
+    "url": "https://www.lva.virginia.gov/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.lva.virginia.gov/"
+  },
+  {
+    "id": "src-norfolk-va-virginia-gazette-norfolk-burning",
+    "table": "Source",
+    "url": "https://research.colonialwilliamsburg.org/DigitalLibrary/va-gazettes/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://research.colonialwilliamsburg.org/DigitalLibrary/va-gazettes/"
+  },
+  {
+    "id": "src-norfolk-va-virginia-historical-society-norfolk",
+    "table": "Source",
+    "url": "https://www.virginiahistory.org/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.virginiahistory.org/"
+  },
+  {
+    "id": "src-norfolk-va-norfolk-history-museum",
+    "table": "Source",
+    "url": "https://www.chrysler.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://chrysler.org/"
+  },
+  {
+    "id": "src-norfolk-va-wikipedia-burning",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Burning_of_Norfolk",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Burning_of_Norfolk"
+  },
+  {
+    "id": "src-norfolk-va-visit-norfolk",
+    "table": "Source",
+    "url": "https://www.visitnorfolk.com/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.visitnorfolk.com/"
+  },
+  {
+    "id": "cmotpa453000b2hy6szugwhys",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/monmouth",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/monmouth"
+  },
+  {
+    "id": "src-fredericksburg-va-fredericksburg-area-museum",
+    "table": "Source",
+    "url": "https://www.fredericksburgareamuseum.org/",
+    "status": 0,
+    "ok": false,
+    "issue": "connection error",
+    "finalUrl": "https://www.fredericksburgareamuseum.org/"
+  },
+  {
+    "id": "cmotpa462000e2hy6nz4s7j5n",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/battle-of-monmouth",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/battle-of-monmouth"
+  },
+  {
+    "id": "src-charlottesville-va-monticello-research",
+    "table": "Source",
+    "url": "https://www.monticello.org/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.monticello.org/"
+  },
+  {
+    "id": "src-charlottesville-va-monticello-enslavement",
+    "table": "Source",
+    "url": "https://www.monticello.org/getting-word/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.monticello.org/getting-word/"
+  },
+  {
+    "id": "src-charlottesville-va-uva-special-collections",
+    "table": "Source",
+    "url": "https://small.library.virginia.edu/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://library.virginia.edu/special-collections"
+  },
+  {
+    "id": "src-charlottesville-va-wikipedia-tarleton-raid",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Tarleton%27s_Raid",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Tarleton%27s_Raid"
+  },
+  {
+    "id": "src-charlottesville-va-monticello-visitor",
+    "table": "Source",
+    "url": "https://www.monticello.org/visit/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.monticello.org/visit/"
+  },
+  {
+    "id": "src-mount-vernon-va-lund-washington-letters",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/george-washington-papers/"
+  },
+  {
+    "id": "src-mount-vernon-va-mvla-research",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mountvernon.org/library/"
+  },
+  {
+    "id": "src-mount-vernon-va-washington-papers-project",
+    "table": "Source",
+    "url": "https://www.upress.virginia.edu/rotunda/washington/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.upress.virginia.edu/rotunda/washington/"
+  },
+  {
+    "id": "cmp54qjun0003nhebyzkd4olv",
+    "table": "Source",
+    "url": "https://history.state.gov/departmenthistory/buildings/section6",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://history.state.gov/departmenthistory/buildings/section6"
+  },
+  {
+    "id": "cmp54qjuy0006nhebnx4ld4yh",
+    "table": "Source",
+    "url": "https://www.britannica.com/place/York-Pennsylvania",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.britannica.com/place/York-Pennsylvania"
+  },
+  {
+    "id": "src-mount-vernon-va-mvla-archaeology",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/preservation/archaeology/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mountvernon.org/preservation/archaeology/"
+  },
+  {
+    "id": "src-mount-vernon-va-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Mount_Vernon",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Mount_Vernon"
+  },
+  {
+    "id": "src-mount-vernon-va-visitor-guide",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/plan-your-visit/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mountvernon.org/plan-your-visit/"
+  }
+]

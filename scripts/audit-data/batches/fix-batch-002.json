@@ -1,0 +1,22 @@
+[
+  {"id":"src-mor-cold-winter-1779-80","table":"Source","url":"https://allthingsliberty.com/2016/02/the-hard-winter-morristown-1779-1780/","issue":""},
+  {"id":"src-mon-nps-monmouth-battlefield","table":"Source","url":"https://www.nj.gov/dep/parksandforests/historic/monmouth/index.html","issue":""},
+  {"id":"src-mon-molly-pitcher-scholarship","table":"Source","url":"https://allthingsliberty.com/2013/12/molly-pitcher-the-real-story/","issue":""},
+  {"id":"src-fle-fort-lee-historic-park-visitor","table":"Source","url":"https://www.nj.gov/dep/parksandforests/historic/fortlee/index.html","issue":""},
+  {"id":"src-yorktown-va-cornwallis-capitulation","table":"Source","url":"https://www.archives.gov/milestone-documents/articles-of-capitulation","issue":""},
+  {"id":"src-williamsburg-va-virginia-declaration-rights","table":"Source","url":"https://www.lva.virginia.gov/public/guides/va1_declarationrights.htm","issue":""},
+  {"id":"src-richmond-va-lva-revolutionary-virginia","table":"Source","url":"https://www.lva.virginia.gov/public/guides/va1_revwar.htm","issue":""},
+  {"id":"src-richmond-va-wikipedia-arnold-raid","table":"Source","url":"https://en.wikipedia.org/wiki/Arnold%27s_expedition_to_Virginia","issue":""},
+  {"id":"src-alexandria-va-visit-alexandria","table":"Source","url":"https://www.visitalexandriava.com/history-culture/history/revolutionary-war/","issue":""},
+  {"id":"src-fredericksburg-va-visit-fredericksburg","table":"Source","url":"https://www.visitfred.com/history","issue":""},
+  {"id":"src-fredericksburg-va-fredericksburg-area-museum","table":"Source","url":"https://www.fredericksburgareamuseum.org/","issue":"connection error"},
+  {"id":"src-charlottesville-va-wikipedia-tarleton-raid","table":"Source","url":"https://en.wikipedia.org/wiki/Tarleton%27s_Raid","issue":""},
+  {"id":"src-mount-vernon-va-washington-papers-project","table":"Source","url":"https://www.upress.virginia.edu/rotunda/washington/","issue":""},
+  {"id":"src-charleston-sc-sc-state-archives","table":"Source","url":"https://www.scdah.sc.gov/","issue":"connection error"},
+  {"id":"src-charleston-sc-wikipedia-siege-1780","table":"Source","url":"https://en.wikipedia.org/wiki/Siege_of_Charleston_(1780)","issue":""},
+  {"id":"src-charleston-sc-visitch","table":"Source","url":"https://www.explorecharleston.com/history/revolutionary-war/","issue":""},
+  {"id":"src-camden-sc-sc-state-archives-camden","table":"Source","url":"https://www.scdah.sc.gov/","issue":"connection error"},
+  {"id":"src-camden-sc-south-carolina-hist-mag","table":"Source","url":"https://www.southcarolinahistoricalsociety.org/publications/","issue":""},
+  {"id":"src-cowpens-sc-eyewitness-depositions","table":"Source","url":"https://www.fold3.com/title/452/revolutionary-war-pension-and-bounty-land-warrant-application-files","issue":"redirects to homepage"},
+  {"id":"src-ninety-six-sc-sc-state-archives-backcountry","table":"Source","url":"https://www.scdah.sc.gov/","issue":"connection error"}
+]

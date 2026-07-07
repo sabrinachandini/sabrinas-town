@@ -1,0 +1,182 @@
+[
+  {
+    "id": "source-adams-papers",
+    "table": "Source",
+    "oldUrl": "https://www.masshist.org/adams/",
+    "newUrl": "https://www.masshist.org/adams",
+    "reason": "URL moved; trailing slash dropped. Same MHS domain, page serves as gateway to Adams Family Papers collection.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "source-harvard-archives-rev",
+    "table": "Source",
+    "oldUrl": "https://library.harvard.edu/archives",
+    "newUrl": "https://library.harvard.edu/libraries/harvard-university-archives",
+    "reason": "Harvard Library reorganized its URL structure; archives now lives under /libraries/ path.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-lex-prince-estabrook",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2019/04/prince-estabrook/",
+    "newUrl": "https://www.nps.gov/people/prince-estabrook-of-lexington.htm",
+    "reason": "Original allthingsliberty.com article deleted. NPS biographical page on Prince Estabrook covers the same subject with primary source documentation.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-lex-lexington-visitor",
+    "table": "Source",
+    "oldUrl": "https://www.lexingtonma.gov/visitors-center",
+    "newUrl": "https://www.lexingtonma.gov/393/Visitors-Center",
+    "reason": "Lexington MA gov site reorganized; Visitors Center page now uses numeric department ID path.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "source-hackensack-nps-washington-hq",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/revwar",
+    "newUrl": "https://www.nps.gov/subjects/americanrevolution/index.htm",
+    "reason": "NPS retired the /revwar shortcut; American Revolution content now lives under /subjects/americanrevolution/.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-salem-carey-leslie-retreat",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2014/02/leslies-retreat-the-first-blow-for-liberty/",
+    "newUrl": "https://allthingsliberty.com/2019/10/the-americans-have-hoisted-their-standard-of-liberty-at-salem/",
+    "reason": "Original 2014 article deleted. Same publisher (Journal of the American Revolution) published a more detailed 2019 article covering the same Leslie's Retreat / Salem February 1775 incident.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-marblehead-historical-society",
+    "table": "Source",
+    "oldUrl": "https://www.marbleheadmuseum.org/",
+    "newUrl": "https://marbleheadmuseum.org/",
+    "reason": "Site now resolves without the www subdomain. Same institution, same content.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-marblehead-chandler-long-island",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2016/08/battle-long-island/",
+    "newUrl": "https://allthingsliberty.com/tag/battle-of-long-island/",
+    "reason": "Original 2016 article URL is a 404. Same publisher's tag archive page collects all Journal of the American Revolution articles on the Battle of Long Island.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-plymouth-nps-site",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/nr/travel/american_revolution/nationalmonumenttotheforefathers.html",
+    "newUrl": "https://en.wikipedia.org/wiki/National_Monument_to_the_Forefathers",
+    "reason": "NPS National Register travel page removed. The monument is managed by MA DCR, not NPS, so no NPS replacement exists. Wikipedia article covers the same monument with full historical context.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-worcester-american-antiquarian-society",
+    "table": "Source",
+    "oldUrl": "https://www.americanantiquarian.org/collections/revolutionary-war",
+    "newUrl": "https://www.americanantiquarian.org/library/remembering-the-revolution",
+    "reason": "AAS reorganized its site; the /collections/revolutionary-war path no longer exists. The Remembering the Revolution digital gallery on the same domain covers the Revolutionary War collection curated by AAS founder Isaiah Thomas.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-worcester-historical-museum",
+    "table": "Source",
+    "oldUrl": "https://www.worcesterhistory.net/",
+    "newUrl": "https://www.worcesterhistory.org/",
+    "reason": "Worcester Historical Museum changed its domain from .net to .org. Same institution.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-worcester-bell-powder-alarm",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2014/09/powder-alarm-1774/",
+    "newUrl": "https://en.wikipedia.org/wiki/Powder_Alarm",
+    "reason": "Original allthingsliberty.com article deleted. Wikipedia article on the Powder Alarm of September 1774 covers the same event in detail.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-springfield-historical-society",
+    "table": "Source",
+    "oldUrl": "https://www.springfieldlibrary.org/history/",
+    "newUrl": "https://www.springfieldlibrary.org/library/local-history-and-genealogy/",
+    "reason": "Springfield City Library reorganized its site; local history content moved to /library/local-history-and-genealogy/.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-springfield-nps-shays-teaching",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/subjects/teachingwithhistoricplaces/shaysrebellion.htm",
+    "newUrl": "https://www.nps.gov/teachers/classrooms/shays-rebellion-a-nation-on-trial.htm",
+    "reason": "NPS Teaching with Historic Places moved Shays' Rebellion content from /subjects/teachingwithhistoricplaces/ to the /teachers/classrooms/ path.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-worcester-nps-revolution-resources",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/subjects/teachingwithhistoricplaces/worcester.htm",
+    "newUrl": "https://www.nps.gov/articles/massachusetts-teaching-with-historic-places.htm",
+    "reason": "NPS retired the per-city TwHP index pages; Massachusetts Teaching with Historic Places resources now consolidated on this articles page, which includes Worcester-area content.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-nyc-nps-revolution-ny",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/subjects/revwar/new-york.htm",
+    "newUrl": "https://www.nps.gov/thingstodo/rev-war-new-york-state-parks.htm",
+    "reason": "NPS retired the /subjects/revwar/ section; New York Revolutionary War parks content now lives at /thingstodo/rev-war-new-york-state-parks.htm.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-nyc-wallabout-martyrs",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2014/02/wallabout-prison-ships/",
+    "newUrl": "https://allthingsliberty.com/tag/prison-ship/",
+    "reason": "Original 2014 Wallabout prison ships article deleted. Same publisher's tag archive collects multiple articles on Revolutionary War prison ships including Wallabout Bay / HMS Jersey content.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-nyc-battle-long-island-nps",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/gate/learn/historyculture/battle-of-brooklyn.htm",
+    "newUrl": "https://www.nps.gov/gois/historyculture/battle-of-brooklyn.htm",
+    "reason": "Battle of Brooklyn page moved from Gateway National Recreation Area (nps.gov/gate) to Governors Island National Monument (nps.gov/gois).",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-nyc-nycgo-revolutionary-sites",
+    "table": "Source",
+    "oldUrl": "https://www.nyctourism.com/articles/revolutionary-war-sites/",
+    "newUrl": "https://nycrevolutionarytrail.org/walking-tour",
+    "reason": "nyctourism.com article page gone. NYC Revolutionary Trail is the authoritative replacement: a dedicated site covering 16 Revolutionary War sites across Lower Manhattan with audio, video, and historical context.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-springfield-tourism-site",
+    "table": "Source",
+    "oldUrl": "https://www.valleyvisitor.com/",
+    "newUrl": null,
+    "reason": "valleyvisitor.com domain is dead. The known successor is explorewesternmass.com (Greater Springfield CVB), but it returned HTTP 403 on all fetch attempts and cannot be confirmed as returning 200.",
+    "verified": false,
+    "httpStatus": 403
+  }
+]

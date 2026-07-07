@@ -1,0 +1,167 @@
+[
+  {
+    "id": "src-baltimore-md-state-archives-revolution",
+    "title": "Maryland State Archives: Baltimore County Committee of Observation Records",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL resolves to the Maryland State Archives homepage, not any specific collection or document page for Baltimore County Committee of Observation Records.",
+      "No link or landing page for this specific record series is surfaced at this URL.",
+      "Collection/category page (homepage) instead of a direct link to the specific record."
+    ],
+    "recommendation": "Replace URL with a direct permalink to the Baltimore County Committee of Observation Records finding aid or digitized collection within MSA. Search https://msa.maryland.gov/msa/intromsa/html/onlinecatalog.html for the specific series."
+  },
+  {
+    "id": "src-wilmington-cooch-bridge-pension",
+    "title": "Revolutionary War Pension Applications: Delaware Veterans",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL returns HTTP 403 Forbidden — Fold3 is a subscription service requiring paid authentication; content cannot be verified without an account.",
+      "Title appends 'Delaware Veterans' which is a user-applied filter, not the actual Fold3 collection name ('Revolutionary War Pension Bounty Land Warrant Application Files').",
+      "publisherOrHolder lists 'National Archives, Record Group 15' but the URL is a private commercial platform (Fold3/Ancestry); NARA does not operate Fold3.",
+      "Institution mismatch: the access point is a third-party paywall aggregator, not NARA directly."
+    ],
+    "recommendation": "Either cite the NARA finding aid directly (https://www.archives.gov/research/military/american-revolution/pension-bounty-land.html) with RG 15 noted, or use Fold3 with the understanding that access requires a subscription and the publisher should read 'Fold3 (Ancestry), original records held by NARA, RG 15'. Title should drop 'Delaware Veterans' and instead describe it as a search of the general pension file collection."
+  },
+  {
+    "id": "src-wilmington-continental-army-orders",
+    "title": "Orderly Books of the Continental Army: Delaware Campaign, September 1777",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL returns HTTP 403 Forbidden — Library of Congress blocks automated access; content could not be verified.",
+      "URL points to the collection-level George Washington Papers landing page, not a specific orderly book or sub-series for the Delaware Campaign.",
+      "The framing 'Delaware Campaign, September 1777' is editorial — orderly books within the GW Papers are organized by date and volume, not by named campaign."
+    ],
+    "recommendation": "Identify the specific orderly book volume(s) covering September 1777 within the GW Papers and link to the individual item-level record. The LOC digital collection viewer (https://www.loc.gov/collections/george-washington-papers/) allows drilling into specific documents; cite the item URL, not the collection root."
+  },
+  {
+    "id": "src-dover-delaware-declaration",
+    "title": "Delaware Declaration of Rights and Fundamental Rules, September 11, 1776",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL resolves to the Delaware Public Archives homepage, not a specific record, finding aid, or digitized image of the Declaration of Rights and Fundamental Rules.",
+      "Institution is correctly identified as Delaware Public Archives.",
+      "Homepage/landing page instead of a specific document link."
+    ],
+    "recommendation": "Link directly to the digitized or described record for the Delaware Declaration of Rights and Fundamental Rules within the Delaware Public Archives digital collections or finding aids. The document exists and the institution is correct; only the URL specificity is lacking."
+  },
+  {
+    "id": "src-brattleboro-vermont-independence-1777",
+    "title": "Declaration of Independence of Vermont, January 15, 1777",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.sec.state.vt.us/archives-records.aspx returns ECONNREFUSED — the sec.state.vt.us domain appears to be defunct or has migrated (Vermont Secretary of State moved to sos.vermont.gov).",
+      "URL is dead; no content could be retrieved or verified.",
+      "Note: the date January 15, 1777 is accurate for Vermont's Windsor Convention declaration, so the metadata is factually plausible."
+    ],
+    "recommendation": "Update URL to the current Vermont State Archives domain. Try https://sos.vermont.gov/archives/ and locate the specific record for Vermont's 1777 independence declaration. The old sec.state.vt.us domain is no longer resolving."
+  },
+  {
+    "id": "src-castine-massachusetts-general-court-records",
+    "title": "Massachusetts General Court: Penobscot Expedition Committee Reports, 1779-1782",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.sec.state.ma.us/arc/ returns HTTP 404 Not Found — this URL path is dead.",
+      "The Massachusetts State Archives appears to have reorganized its web presence; this URL no longer resolves to any content.",
+      "Cannot verify whether the specific Penobscot Expedition Committee Reports are held at or described by this institution."
+    ],
+    "recommendation": "Locate the current Massachusetts State Archives URL for the Penobscot Expedition records. The Archives (now under the Secretary of the Commonwealth) may have moved content. Try https://www.sec.state.ma.us/arc/arcidx.htm or the current archives portal. Verify the specific series exists and link to it."
+  },
+  {
+    "id": "src-castine-paul-revere-penobscot",
+    "title": "Paul Revere's Deposition Regarding the Penobscot Expedition, 1779",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL resolves to the Massachusetts Historical Society homepage, not the specific Revere deposition document or its finding aid.",
+      "MHS homepage references Paul Revere's 'famous ride' account but does not surface the Penobscot deposition.",
+      "Institution (Massachusetts Historical Society) is correct — MHS does hold the Paul Revere Papers which include Penobscot-related depositions.",
+      "Homepage instead of specific document or finding aid link."
+    ],
+    "recommendation": "Link directly to the MHS finding aid for the Paul Revere Papers or the specific digitized deposition. MHS finding aids are accessible at https://www.masshist.org/collection-guides/. The underlying document appears genuine; the URL simply needs to point to the specific item."
+  },
+  {
+    "id": "src-portland-continental-congress-falmouth",
+    "title": "Journals of the Continental Congress: Falmouth Burning Resolution, November 1775",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://memory.loc.gov/ammem/amlaw/lwjc.html returns HTTP 403 Forbidden.",
+      "This is an old LOC American Memory project URL; the Journals of the Continental Congress collection has been substantially migrated to the main LOC site.",
+      "Cannot verify whether a specific 'Falmouth Burning Resolution' appears in the Journals for November 1775 — while the burning of Falmouth occurred in October 1775 and Congress would have discussed it, a formal 'resolution' specifically on Falmouth is unverified.",
+      "URL is a collection/series-level page, not a specific volume or date entry."
+    ],
+    "recommendation": "Migrate to the current LOC URL for the Journals of the Continental Congress (try https://www.loc.gov/collections/journals-of-the-continental-congress/). Identify and link to the specific November 1775 journal pages. Verify that a named 'Falmouth Burning Resolution' appears; this phrasing may be editorial rather than an official document title."
+  },
+  {
+    "id": "src-portland-massachusetts-provincial-congress",
+    "title": "Records of the Massachusetts Provincial Congress: Falmouth Relief Measures, 1775",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.sec.state.ma.us/arc/ returns HTTP 404 Not Found — same dead URL as src-castine-massachusetts-general-court-records.",
+      "Cannot verify institution or specific record.",
+      "Title 'Falmouth Relief Measures' is descriptive but unverified without document access."
+    ],
+    "recommendation": "Same as src-castine-massachusetts-general-court-records: locate the current Massachusetts State Archives web presence. Additionally verify that the Massachusetts Provincial Congress records include documents specifically labeled as 'Falmouth Relief Measures.'"
+  },
+  {
+    "id": "src-kaskaskia-clark-memoir",
+    "title": "George Rogers Clark's Memoir (Clark to Mason, 1791)",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.loc.gov/item/mm79070887/ returns HTTP 403 Forbidden — LOC blocks automated access; content could not be verified.",
+      "The item identifier mm79070887 appears structurally valid as a LOC American Memory item permalink, but cannot be confirmed.",
+      "Substantive note on primary-source classification: the 1791 Clark-to-Mason memoir is a retrospective account written approximately 13 years after the 1778 Kaskaskia campaign. While it qualifies as a primary source (first-person participant account), researchers should note it was composed from memory long after the events and carries retrospective framing not present in contemporaneous documents."
+    ],
+    "recommendation": "Verify the LOC item mm79070887 resolves to Clark's memoir by accessing it directly in a browser. If confirmed, add a note clarifying the retrospective nature of the 1791 document relative to 1778 events. Consider supplementing with contemporaneous Clark dispatches if available."
+  },
+  {
+    "id": "src-kaskaskia-virginia-state-papers",
+    "title": "Virginia State Papers: George Rogers Clark Correspondence, 1778-1779",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL resolves to the Library of Virginia homepage, not any specific collection, finding aid, or digitized document for Virginia State Papers or Clark correspondence.",
+      "Institution (Library of Virginia) is correctly identified.",
+      "Homepage instead of specific document or finding aid."
+    ],
+    "recommendation": "Link to the specific Virginia State Papers series or digitized finding aid within LVA. The Library of Virginia's digital collections (https://www.lva.virginia.gov/public/dvb/) or the Virginia Memory portal may contain relevant Clark correspondence; identify the specific series and link accordingly."
+  },
+  {
+    "id": "src-marietta-northwest-ordinance",
+    "title": "An Ordinance for the Government of the Territory of the United States, North-Wes",
+    "verdict": "PASS",
+    "issues": [],
+    "recommendation": "No action needed. URL resolves to an active National Archives milestone documents page; document title matches the official name of the Northwest Ordinance (1787); NARA is the correct holding institution. This is a genuine primary legislative document created at the time of the event."
+  },
+  {
+    "id": "src-wheeling-continental-congress-northwest",
+    "title": "Journals of the Continental Congress: Western Land and Defense Resolutions, 1779",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://memory.loc.gov/ammem/amlaw/lwjc.html returns HTTP 403 Forbidden — same dead/blocked old American Memory URL used for src-portland-continental-congress-falmouth.",
+      "URL is reused across two different sources citing different years (1775 and 1779), which further reduces confidence that either citation points to a specific verified document.",
+      "Cannot verify whether 'Western Land and Defense Resolutions, 1779' is an actual named resolution or editorial description."
+    ],
+    "recommendation": "Same URL remediation as src-portland-continental-congress-falmouth. Additionally, the identical URL being cited for two different claimed documents (Falmouth 1775, Western Land 1779) is a red flag suggesting these were generated with a placeholder URL rather than verified document links. Locate specific volume and page references within the Journals."
+  },
+  {
+    "id": "src-wheeling-draper-manuscripts",
+    "title": "Draper Manuscript Collection: Ohio Valley Frontier Papers",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.wisconsinhistory.org/Records/Article/CS5107 returns HTTP 404 Not Found — this specific article/record page no longer exists at WHS.",
+      "Cannot verify content or whether 'Ohio Valley Frontier Papers' is an accurate sub-series name within the Draper Manuscripts.",
+      "Secondary-source concern: The Draper Manuscript Collection is a 19th-century compilation assembled by Lyman Draper from interviews, copies, and correspondence gathered decades after the Revolutionary era. While it contains transcriptions of primary documents, it is not itself created 'at or very near the time of the event' and should be classified cautiously if cited as a primary source."
+    ],
+    "recommendation": "Update to a current WHS URL for the Draper Manuscripts finding aid. Check https://www.wisconsinhistory.org/Records/Collection/CS5. Review whether the cited sub-series 'Ohio Valley Frontier Papers' exists by that name. Add a note that Draper Manuscripts are compiled/aggregated materials and classify appropriately."
+  },
+  {
+    "id": "src-sar-nara-saratoga-records",
+    "title": "Revolutionary War Pension Files: Saratoga Veterans",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL resolves to a general NARA guide page for Revolutionary War research, not a Saratoga-specific pension file collection.",
+      "Title claims 'Saratoga Veterans' as a specific sub-collection, but no such named sub-collection exists at this URL — the page covers all Revolutionary War pension applications nationally.",
+      "Title misrepresents the scope of the page: this is a broad research guide, not a curated Saratoga-focused record set.",
+      "Collection/category guide page rather than a specific document or filtered record set."
+    ],
+    "recommendation": "Either (a) remove the 'Saratoga Veterans' specificity from the title and describe it accurately as the general NARA Revolutionary War pension guide, or (b) locate a genuine Saratoga-specific pension index (e.g., via Fold3 or Ancestry filtered search) and cite that with appropriate caveats. The current title implies a document that does not exist at this URL."
+  }
+]

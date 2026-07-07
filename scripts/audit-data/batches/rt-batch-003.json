@@ -1,0 +1,122 @@
+[
+  {
+    "id": "src-williamsburg-va-henry-resolves-1765",
+    "url": "https://www.encyclopediavirginia.org/entries/henry-patrick-1736-1799/",
+    "title": "Patrick Henry's Virginia Stamp Act Resolves, May 1765",
+    "publisherOrHolder": "Library of Virginia",
+    "tier": "TIER1",
+    "towns": "williamsburg-va"
+  },
+  {
+    "id": "src-williamsburg-va-virginia-declaration-rights",
+    "url": "https://www.lva.virginia.gov/public/guides/va1_declarationrights.htm",
+    "title": "Virginia Declaration of Rights, June 12, 1776 (George Mason's Draft)",
+    "publisherOrHolder": "Library of Virginia",
+    "tier": "TIER1",
+    "towns": "williamsburg-va"
+  },
+  {
+    "id": "src-williamsburg-va-dunmore-proclamation",
+    "url": "https://www.archives.gov/",
+    "title": "Lord Dunmore's Proclamation, November 7, 1775",
+    "publisherOrHolder": "National Archives and Records Administration",
+    "tier": "TIER1",
+    "towns": "williamsburg-va"
+  },
+  {
+    "id": "src-williamsburg-va-virginia-gazette-1765-1776",
+    "url": "https://research.colonialwilliamsburg.org/DigitalLibrary/va-gazettes/",
+    "title": "Virginia Gazette, 1765-1776 (Selected Issues)",
+    "publisherOrHolder": "Colonial Williamsburg Foundation, Rockefeller Library",
+    "tier": "TIER1",
+    "towns": "williamsburg-va"
+  },
+  {
+    "id": "src-williamsburg-va-virginia-constitution-1776",
+    "url": "https://www.lva.virginia.gov/",
+    "title": "Constitution of Virginia, June 29, 1776",
+    "publisherOrHolder": "Library of Virginia",
+    "tier": "TIER1",
+    "towns": "williamsburg-va"
+  },
+  {
+    "id": "src-williamsburg-va-jefferson-autobiography",
+    "url": "https://www.loc.gov/item/mtjbib025151/",
+    "title": "Jefferson's Autobiography: Virginia and the Road to Independence",
+    "publisherOrHolder": "Library of Congress",
+    "tier": "TIER1",
+    "towns": "williamsburg-va"
+  },
+  {
+    "id": "src-richmond-va-jefferson-arnold-letter",
+    "url": "https://www.loc.gov/collections/thomas-jefferson-papers/",
+    "title": "Thomas Jefferson to Steuben, January 12, 1781 (Arnold's Raid Correspondence)",
+    "publisherOrHolder": "Library of Congress, Thomas Jefferson Papers",
+    "tier": "TIER1",
+    "towns": "richmond-va"
+  },
+  {
+    "id": "src-richmond-va-virginia-state-archives",
+    "url": "https://www.lva.virginia.gov/",
+    "title": "Virginia Executive Papers and Council Journals, 1779-1781",
+    "publisherOrHolder": "Library of Virginia",
+    "tier": "TIER1",
+    "towns": "richmond-va"
+  },
+  {
+    "id": "src-alexandria-va-fairfax-resolves-1774",
+    "url": "https://www.loc.gov/item/00694538/",
+    "title": "Fairfax County Resolves, July 18, 1774",
+    "publisherOrHolder": "Library of Congress",
+    "tier": "TIER1",
+    "towns": "alexandria-va"
+  },
+  {
+    "id": "src-norfolk-va-woodford-letter-norfolk-burning",
+    "url": "https://www.lva.virginia.gov/",
+    "title": "General Woodford to the Virginia Committee of Safety, January 4, 1776",
+    "publisherOrHolder": "Library of Virginia",
+    "tier": "TIER1",
+    "towns": "norfolk-va"
+  },
+  {
+    "id": "src-norfolk-va-virginia-gazette-norfolk-burning",
+    "url": "https://research.colonialwilliamsburg.org/DigitalLibrary/va-gazettes/",
+    "title": "Virginia Gazette: Reports on the Burning of Norfolk, January-March 1776",
+    "publisherOrHolder": "Colonial Williamsburg Foundation, Rockefeller Library",
+    "tier": "TIER1",
+    "towns": "norfolk-va"
+  },
+  {
+    "id": "src-mount-vernon-va-lund-washington-letters",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "Lund Washington to George Washington: Mount Vernon Management Letters, 1775-1783",
+    "publisherOrHolder": "Library of Congress, George Washington Papers",
+    "tier": "TIER1",
+    "towns": "mount-vernon-va"
+  },
+  {
+    "id": "src-charleston-sc-lincoln-capitulation",
+    "url": "https://www.archives.gov/",
+    "title": "Articles of Capitulation: Charleston, May 12, 1780",
+    "publisherOrHolder": "National Archives and Records Administration",
+    "tier": "TIER1",
+    "towns": "charleston-sc"
+  },
+  {
+    "id": "src-charleston-sc-lincoln-siege-journal",
+    "url": "https://www.masshist.org/",
+    "title": "General Benjamin Lincoln's Siege Journal, March-May 1780",
+    "publisherOrHolder": "Massachusetts Historical Society",
+    "tier": "TIER1",
+    "towns": "charleston-sc"
+  },
+  {
+    "id": "src-charleston-sc-schs-collections",
+    "url": "https://www.southcarolinahistoricalsociety.org/",
+    "title": "South Carolina Historical Society: Revolutionary War Manuscript Collections",
+    "publisherOrHolder": "South Carolina Historical Society",
+    "tier": "TIER1",
+    "towns": "charleston-sc"
+  }
+]
