@@ -13,13 +13,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!muster) return { title: "Muster | History Is For Everyone" };
 
   const totalDays = muster.days.length;
-  const townNames = [...new Set(
-    muster.days.flatMap((d) => d.stops.map((s) => s.place?.town?.name).filter(Boolean))
-  )].slice(0, 4).join(", ");
+  const totalStopsCount = muster.days.reduce((n, d) => n + d.stops.length, 0);
 
   const title = muster.title || `${totalDays}-Day Revolutionary War Muster`;
-  const description = townNames
-    ? `${totalDays} days exploring ${townNames} and more — mustered by History Is For Everyone.`
+  const description = totalStopsCount
+    ? `${totalDays} days, ${totalStopsCount} stops along the Revolutionary War trail — mustered by History Is For Everyone.`
     : `A ${totalDays}-day Revolutionary War road trip, mustered by History Is For Everyone.`;
 
   return {
