@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { getMapData } from "@/lib/api";
 import { TownNetworkMap } from "@/components/town/TownNetworkMap";
 
@@ -31,7 +32,7 @@ export default async function MapPage() {
       {/* ── Header ── */}
       <div className="bg-[#1a3a72] border-b-4 border-[#cc3322] px-4 sm:px-6 md:px-10 py-3 sm:py-5 flex-shrink-0 relative overflow-hidden">
         <div
-          aria-hidden
+          aria-hidden="true"
           className="absolute right-[-0.04em] top-[-0.2em] font-display leading-none text-white/[0.04] pointer-events-none select-none"
           style={{ fontSize: "clamp(3.5rem,10vw,8rem)" }}
         >
@@ -39,43 +40,69 @@ export default async function MapPage() {
         </div>
         <div className="relative z-10 max-w-[1200px] mx-auto flex items-end justify-between gap-4 sm:gap-6">
           <div>
-            <p className="font-ui text-[9px] sm:text-[10px] uppercase tracking-[0.22em] sm:tracking-[0.28em] text-[#4A6A9B] mb-0.5 sm:mb-1">
+            {/* Eyebrow — text-[#a8bcd8] on #1a3a72 = 5.8:1 contrast (AA) */}
+            <p className="font-ui text-[9px] sm:text-[10px] uppercase tracking-[0.22em] sm:tracking-[0.28em] text-[#a8bcd8] mb-0.5 sm:mb-1">
               Town Network
             </p>
             <h1 className="font-display text-[#f2e6c8] text-[clamp(17px,4vw,32px)] sm:text-[clamp(20px,3vw,32px)] leading-none tracking-[-0.02em]">
               The Revolutionary Map
             </h1>
           </div>
-          {/* Stats — desktop only */}
-          <div className="hidden sm:flex items-center gap-6">
-            {[
-              { n: townsWithCoords, label: "Towns" },
-              { n: stateCount, label: "States" },
-              { n: links.length, label: "Connections" },
-            ].map((s) => (
-              <div key={s.label} className="text-right">
-                <p className="font-display text-[#4A6A9B] text-[1.6rem] leading-none">{s.n}</p>
-                <p className="font-ui text-[10px] uppercase tracking-[0.1em] text-[#f2e6c8]/30 mt-0.5">{s.label}</p>
-              </div>
-            ))}
-          </div>
-          {/* Stats — mobile: compact inline row */}
-          <div className="sm:hidden flex items-center gap-4">
-            {[
-              { n: townsWithCoords, label: "Towns" },
-              { n: stateCount, label: "States" },
-            ].map((s) => (
-              <div key={s.label} className="text-right">
-                <p className="font-display text-[#4A6A9B] text-[1.1rem] leading-none">{s.n}</p>
-                <p className="font-ui text-[9px] uppercase tracking-[0.08em] text-[#f2e6c8]/30">{s.label}</p>
-              </div>
-            ))}
+
+          <div className="flex flex-col items-end gap-3">
+            {/* Browse as list — keyboard/screen-reader equivalent path */}
+            <Link
+              href="/towns"
+              className="no-underline font-ui text-[10px] uppercase tracking-[0.16em] text-[#a8bcd8] border border-[#a8bcd8]/40 px-3 py-2 min-h-[44px] flex items-center hover:text-[#f2e6c8] hover:border-[#f2e6c8]/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:ring-offset-[#1a3a72]"
+            >
+              Browse as list ↗
+            </Link>
+
+            {/* Stats — desktop only */}
+            <div className="hidden sm:flex items-center gap-6">
+              {[
+                { n: townsWithCoords, label: "Towns" },
+                { n: stateCount, label: "States" },
+                { n: links.length, label: "Connections" },
+              ].map((s) => (
+                <div key={s.label} className="text-right">
+                  {/* text-[#7fa0c8] on #1a3a72 = 3.5:1 — large text (25px), passes AA large */}
+                  <p className="font-display text-[#7fa0c8] text-[1.6rem] leading-none" aria-hidden="true">{s.n}</p>
+                  <p className="font-ui text-[10px] uppercase tracking-[0.1em] text-[#a8bcd8] mt-0.5">
+                    <span className="sr-only">{s.n} </span>{s.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+            {/* Stats — mobile: compact inline row */}
+            <div className="sm:hidden flex items-center gap-4">
+              {[
+                { n: townsWithCoords, label: "Towns" },
+                { n: stateCount, label: "States" },
+              ].map((s) => (
+                <div key={s.label} className="text-right">
+                  <p className="font-display text-[#7fa0c8] text-[1.1rem] leading-none" aria-hidden="true">{s.n}</p>
+                  <p className="font-ui text-[9px] uppercase tracking-[0.08em] text-[#a8bcd8]">
+                    <span className="sr-only">{s.n} </span>{s.label}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
       {/* ── Map fills remaining height ── */}
-      <div className="flex-1 relative overflow-hidden">
+      {/*
+        The map is a visual tool. Every town reachable via the map is also reachable
+        at /towns (the "Browse as list" link above). Screen-reader users and keyboard
+        users who cannot operate the map can use that route instead.
+      */}
+      <div
+        className="flex-1 relative overflow-hidden"
+        role="region"
+        aria-label="Interactive map of Revolutionary War towns. Use Browse as list for full keyboard access."
+      >
         <TownNetworkMap towns={towns} links={links} />
       </div>
     </main>

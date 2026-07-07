@@ -115,7 +115,7 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
           className={`font-ui text-[10px] uppercase tracking-[0.14em] px-2.5 py-1 border transition-colors whitespace-nowrap shadow-sm ${
             !activeState
               ? "bg-[#1a3a72] text-[#f2e6c8] border-[#14100a]"
-              : "bg-white/90 text-[#14100a]/55 border-[#14100a]/20 hover:border-[#14100a]/50"
+              : "bg-white/95 text-[#3d4046] border-[#14100a]/25 hover:border-[#14100a]/50"
           }`}
         >
           All States
@@ -127,7 +127,7 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
             className={`font-ui text-[10px] uppercase tracking-[0.14em] px-2.5 py-1 border transition-colors whitespace-nowrap shadow-sm ${
               activeState === s
                 ? "bg-[#cc3322] text-white border-[#cc3322]"
-                : "bg-white/90 text-[#14100a]/55 border-[#14100a]/20 hover:border-[#14100a]/50"
+                : "bg-white/95 text-[#3d4046] border-[#14100a]/25 hover:border-[#14100a]/50"
             }`}
           >
             {s}
@@ -181,7 +181,12 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
                 onClick={() => setSelectedSlug(isSelected ? null : town.slug)}
               >
                 <MarkerContent>
-                  <div
+                  {/* button makes the marker keyboard-focusable */}
+                  <button
+                    aria-label={`${town.name}, ${town.state}${isSelected ? " — selected, press to deselect" : " — press to view details"}`}
+                    aria-pressed={isSelected}
+                    onClick={() => setSelectedSlug(isSelected ? null : town.slug)}
+                    className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:ring-offset-transparent rounded-full"
                     style={{
                       width: isSelected ? size + 4 : size,
                       height: isSelected ? size + 4 : size,
@@ -194,6 +199,8 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
                       opacity,
                       transition: "all 0.15s ease",
                       cursor: "pointer",
+                      padding: 0,
+                      display: "block",
                     }}
                   />
                 </MarkerContent>
@@ -214,18 +221,18 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
       >
         {selectedTown && (
           <>
-            {/* Close */}
+            {/* Close — min 44×44px touch target */}
             <button
               onClick={() => setSelectedSlug(null)}
-              className="absolute top-4 right-4 w-7 h-7 flex items-center justify-center text-[#f2e6c8]/30 hover:text-[#f2e6c8] transition-colors z-10 text-xl leading-none"
-              aria-label="Close"
+              className="absolute top-2 right-2 w-[44px] h-[44px] flex items-center justify-center text-[#a8bcd8] hover:text-[#f2e6c8] transition-colors z-10 text-xl leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:ring-offset-[#1a3a72]"
+              aria-label={`Close ${selectedTown?.name ?? ""} details`}
             >
-              ×
+              <span aria-hidden="true">×</span>
             </button>
 
             {/* Town header */}
             <div className="px-4 sm:px-6 pt-6 sm:pt-8 pb-4 sm:pb-5 border-b border-[#f2e6c8]/8">
-              <span className="font-ui text-[9px] uppercase tracking-[0.18em] sm:tracking-[0.22em] text-[#4A6A9B] block mb-1.5 sm:mb-2">
+              <span className="font-ui text-[9px] uppercase tracking-[0.18em] sm:tracking-[0.22em] text-[#a8bcd8] block mb-1.5 sm:mb-2">
                 {selectedTown.scoreTier} · {selectedTown.state}
               </span>
               <h2 className="font-display text-[#f2e6c8] text-[20px] sm:text-[26px] leading-tight">
@@ -266,7 +273,7 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
                         className="flex items-center gap-2 w-full text-left group"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-[#cc3322]/40 flex-shrink-0 group-hover:bg-[#cc3322] transition-colors" />
-                        <span className="font-ui text-[10px] sm:text-[11px] text-[#f2e6c8]/60 group-hover:text-[#4A6A9B] transition-colors">
+                        <span className="font-ui text-[10px] sm:text-[11px] text-[#f2e6c8]/60 group-hover:text-[#a8bcd8] transition-colors">
                           {t.name}, {t.state}
                         </span>
                       </button>

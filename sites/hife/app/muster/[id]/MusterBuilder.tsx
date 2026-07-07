@@ -96,20 +96,26 @@ function SortableStop({
       )}
 
       <div className={`flex gap-3 py-4 ${isEvent ? "bg-[#1a3a72]/[0.03]" : ""}`}>
-        {/* Drag handle */}
+        {/* Drag handle — keyboard: Space/Enter activates, arrow keys move, Space/Enter drops */}
         <button
           ref={setActivatorNodeRef}
           {...attributes}
           {...listeners}
-          className="flex-shrink-0 mt-1 cursor-grab active:cursor-grabbing text-ink/20 hover:text-ink/50 transition-colors touch-none"
-          aria-label="Drag to reorder"
+          className="flex-shrink-0 cursor-grab active:cursor-grabbing text-ink/30 hover:text-ink/60 transition-colors touch-none w-[44px] h-[44px] flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a3a72] focus-visible:ring-offset-1"
+          aria-label={`Reorder ${name}. Press Space or Enter to start dragging, then use arrow keys to move.`}
+          aria-roledescription="sortable"
+          aria-describedby={`stop-pos-${stop.id}`}
         >
-          <svg width="12" height="16" viewBox="0 0 12 16" fill="currentColor">
+          <svg width="12" height="16" viewBox="0 0 12 16" fill="currentColor" aria-hidden="true">
             <circle cx="4" cy="3" r="1.5"/><circle cx="8" cy="3" r="1.5"/>
             <circle cx="4" cy="8" r="1.5"/><circle cx="8" cy="8" r="1.5"/>
             <circle cx="4" cy="13" r="1.5"/><circle cx="8" cy="13" r="1.5"/>
           </svg>
         </button>
+        {/* Screen-reader position announcement */}
+        <span id={`stop-pos-${stop.id}`} className="sr-only">
+          Stop {stopIdx + 1}
+        </span>
 
         {/* Stop number bubble */}
         <div
@@ -167,11 +173,10 @@ function SortableStop({
         <button
           type="button"
           onClick={onRemove}
-          className="flex-shrink-0 mt-1 p-1 text-ink/15 hover:text-[#cc3322] transition-colors"
-          aria-label="Remove stop"
-          title="Remove this stop"
+          className="flex-shrink-0 text-ink/30 hover:text-[#cc3322] transition-colors w-[44px] h-[44px] flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a3a72] focus-visible:ring-offset-1"
+          aria-label={`Remove ${name} from itinerary`}
         >
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
             <line x1="2" y1="2" x2="10" y2="10"/>
             <line x1="10" y1="2" x2="2" y2="10"/>
           </svg>
@@ -255,32 +260,50 @@ export function MusterBuilder({ muster }: { muster: MusterDetail }) {
       {/* Top bar */}
       <div className="border-b border-ink/8 bg-white/60 sticky top-0 z-20">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-2.5 flex items-center gap-3 flex-wrap">
-          <Link href="/muster/new" className="no-underline font-ui text-[10px] uppercase tracking-[0.15em] text-ink/40 hover:text-ink transition-colors">
+          <Link
+            href="/muster/new"
+            className="no-underline font-ui text-[10px] uppercase tracking-[0.15em] text-[#6b7280] hover:text-ink transition-colors min-h-[44px] flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a3a72] focus-visible:ring-offset-1"
+          >
             ← New
           </Link>
           <div className="flex-1" />
-          {isSaving && <span className="font-ui text-[10px] text-ink/30 uppercase tracking-[0.1em]">Saving…</span>}
+          {/* Save status — announced to screen readers */}
+          <span
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+            className="font-ui text-[10px] text-[#6b7280] uppercase tracking-[0.1em]"
+          >
+            {isSaving ? "Saving…" : ""}
+          </span>
           <button
             onClick={handleRemuster}
             disabled={isRemustering}
-            className="font-ui text-[10px] uppercase tracking-[0.14em] text-ink/50 border border-ink/15 px-3 py-1.5 hover:border-[#1a3a72]/40 hover:text-[#1a3a72] transition-colors disabled:opacity-40"
+            aria-busy={isRemustering}
+            className="font-ui text-[10px] uppercase tracking-[0.14em] text-[#6b7280] border border-ink/15 px-3 min-h-[44px] hover:border-[#1a3a72]/40 hover:text-[#1a3a72] transition-colors disabled:opacity-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a3a72] focus-visible:ring-offset-1"
           >
             {isRemustering ? "Re-mustering…" : "Re-muster ↺"}
           </button>
-          <a href={`/muster/${muster.id}/print`} className="no-underline font-ui text-[10px] uppercase tracking-[0.14em] text-ink/50 border border-ink/15 px-3 py-1.5 hover:border-ink/40 hover:text-ink transition-colors">
+          <a
+            href={`/muster/${muster.id}/print`}
+            className="no-underline font-ui text-[10px] uppercase tracking-[0.14em] text-[#6b7280] border border-ink/15 px-3 min-h-[44px] flex items-center hover:border-ink/40 hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a3a72] focus-visible:ring-offset-1"
+          >
             Print
           </a>
           <button
             type="button"
             onClick={() => setShowShare((v) => !v)}
-            className="font-ui text-[11px] font-semibold uppercase tracking-[0.14em] bg-[#cc3322] text-cream px-4 py-1.5 hover:bg-[#a32818] transition-colors"
+            aria-expanded={showShare}
+            aria-controls="share-panel"
+            className="font-ui text-[11px] font-semibold uppercase tracking-[0.14em] bg-[#cc3322] text-cream px-4 min-h-[44px] hover:bg-[#a32818] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a3a72] focus-visible:ring-offset-1"
           >
             Share →
           </button>
-          {/* Mobile map toggle */}
+          {/* Mobile map/agenda toggle */}
           <button
-            className="sm:hidden font-ui text-[10px] uppercase tracking-[0.14em] text-ink/50 border border-ink/15 px-3 py-1.5"
+            className="sm:hidden font-ui text-[10px] uppercase tracking-[0.14em] text-[#6b7280] border border-ink/15 px-3 min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a3a72] focus-visible:ring-offset-1"
             onClick={() => setMobileTab((t) => t === "agenda" ? "map" : "agenda")}
+            aria-label={`Show ${mobileTab === "agenda" ? "map" : "agenda"}`}
           >
             {mobileTab === "agenda" ? "Map" : "Agenda"}
           </button>
@@ -295,16 +318,17 @@ export function MusterBuilder({ muster }: { muster: MusterDetail }) {
         const text = encodeURIComponent(`Check out my Revolutionary War road trip: ${muster.title}`);
         const encodedUrl = encodeURIComponent(shareUrl);
         return (
-          <div className="border-b border-ink/10 bg-[#1a3a72]/[0.04] px-4 md:px-8 py-4">
+          <div id="share-panel" className="border-b border-ink/10 bg-[#1a3a72]/[0.04] px-4 md:px-8 py-4">
             <div className="max-w-[1400px] mx-auto">
-              <p className="font-ui text-[10px] uppercase tracking-[0.18em] text-ink/40 mb-3">Share this Muster</p>
+              <p className="font-ui text-[10px] uppercase tracking-[0.18em] text-[#6b7280] mb-3">Share this Muster</p>
               <div className="flex flex-wrap items-center gap-3">
                 <div className="flex-1 min-w-0 flex items-center gap-2 bg-white border border-ink/15 px-3 py-2">
-                  <span className="font-ui text-[12px] text-ink/50 truncate flex-1">{shareUrl}</span>
+                  <span className="font-ui text-[12px] text-[#6b7280] truncate flex-1" aria-label={`Share link: ${shareUrl}`}>{shareUrl}</span>
                   <button
                     type="button"
                     onClick={() => { navigator.clipboard.writeText(shareUrl); }}
-                    className="font-ui text-[10px] uppercase tracking-[0.12em] text-[#1a3a72] hover:text-ink transition-colors whitespace-nowrap flex-shrink-0"
+                    aria-label="Copy share link to clipboard"
+                    className="font-ui text-[10px] uppercase tracking-[0.12em] text-[#1a3a72] hover:text-ink transition-colors whitespace-nowrap flex-shrink-0 min-h-[44px] px-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a3a72] focus-visible:ring-offset-1"
                   >
                     Copy
                   </button>

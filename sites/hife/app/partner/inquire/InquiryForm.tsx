@@ -4,6 +4,10 @@ import { useState } from "react";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
 
+// Shared class for all text inputs/textareas — includes visible focus ring
+const INPUT_CLASS =
+  "w-full px-4 py-3 min-h-[44px] border-2 border-[#ddd8ce] bg-[#f2ece0] text-[#0e1428] text-[15px] focus:outline-none focus:border-[#1a3a72] focus:ring-2 focus:ring-[#1a3a72]/25 transition-colors";
+
 export function InquiryForm({ townSlug }: { townSlug?: string }) {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -49,18 +53,22 @@ export function InquiryForm({ townSlug }: { townSlug?: string }) {
 
   if (success) {
     return (
-      <div className="p-component bg-bg-secondary rounded-lg text-center">
-        <p className="text-h3 font-heading font-semibold">Inquiry received</p>
-        <p className="mt-element text-text-muted">
-          We review every inquiry personally. You'll hear from us soon.
+      <div
+        role="status"
+        aria-live="polite"
+        className="p-8 bg-[#f8f0d8] border-2 border-[#ddd8ce] text-center"
+      >
+        <p className="font-heading font-black text-[22px] text-[#0e1428]">Inquiry received</p>
+        <p className="mt-3 text-[16px] text-[#6b7280]">
+          We review every inquiry personally. You&rsquo;ll hear from us soon.
         </p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-element">
-      {/* Honeypot — visually hidden */}
+    <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+      {/* Honeypot — visually and programmatically hidden */}
       <div style={{ display: "none" }} aria-hidden="true">
         <label htmlFor="website">Website</label>
         <input
@@ -72,9 +80,14 @@ export function InquiryForm({ townSlug }: { townSlug?: string }) {
         />
       </div>
 
+      {/* Required field notice */}
+      <p className="font-ui text-[13px] text-[#6b7280]">
+        Fields marked <span aria-label="required">*</span> are required.
+      </p>
+
       <div>
-        <label htmlFor="name" className="block text-small font-medium mb-1">
-          Name <span className="text-red-600">*</span>
+        <label htmlFor="name" className="block font-ui text-[13px] font-medium text-[#0e1428] mb-1.5">
+          Name <span aria-hidden="true" className="text-[#B53A29]">*</span>
         </label>
         <input
           type="text"
@@ -82,13 +95,15 @@ export function InquiryForm({ townSlug }: { townSlug?: string }) {
           name="name"
           required
           maxLength={200}
-          className="w-full px-4 py-2 border-2 border-border-light rounded-lg bg-bg-primary text-text-primary text-small focus:border-accent-blue focus:outline-none"
+          autoComplete="name"
+          aria-required="true"
+          className={INPUT_CLASS}
         />
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-small font-medium mb-1">
-          Email <span className="text-red-600">*</span>
+        <label htmlFor="email" className="block font-ui text-[13px] font-medium text-[#0e1428] mb-1.5">
+          Email <span aria-hidden="true" className="text-[#B53A29]">*</span>
         </label>
         <input
           type="email"
@@ -96,12 +111,14 @@ export function InquiryForm({ townSlug }: { townSlug?: string }) {
           name="email"
           required
           maxLength={200}
-          className="w-full px-4 py-2 border-2 border-border-light rounded-lg bg-bg-primary text-text-primary text-small focus:border-accent-blue focus:outline-none"
+          autoComplete="email"
+          aria-required="true"
+          className={INPUT_CLASS}
         />
       </div>
 
       <div>
-        <label htmlFor="title" className="block text-small font-medium mb-1">
+        <label htmlFor="title" className="block font-ui text-[13px] font-medium text-[#0e1428] mb-1.5">
           Title
         </label>
         <input
@@ -109,15 +126,13 @@ export function InquiryForm({ townSlug }: { townSlug?: string }) {
           id="title"
           name="title"
           maxLength={200}
-          className="w-full px-4 py-2 border-2 border-border-light rounded-lg bg-bg-primary text-text-primary text-small focus:border-accent-blue focus:outline-none"
+          autoComplete="organization-title"
+          className={INPUT_CLASS}
         />
       </div>
 
       <div>
-        <label
-          htmlFor="organization"
-          className="block text-small font-medium mb-1"
-        >
+        <label htmlFor="organization" className="block font-ui text-[13px] font-medium text-[#0e1428] mb-1.5">
           Organization
         </label>
         <input
@@ -125,12 +140,13 @@ export function InquiryForm({ townSlug }: { townSlug?: string }) {
           id="organization"
           name="organization"
           maxLength={200}
-          className="w-full px-4 py-2 border-2 border-border-light rounded-lg bg-bg-primary text-text-primary text-small focus:border-accent-blue focus:outline-none"
+          autoComplete="organization"
+          className={INPUT_CLASS}
         />
       </div>
 
       <div>
-        <label htmlFor="phone" className="block text-small font-medium mb-1">
+        <label htmlFor="phone" className="block font-ui text-[13px] font-medium text-[#0e1428] mb-1.5">
           Phone
         </label>
         <input
@@ -138,31 +154,54 @@ export function InquiryForm({ townSlug }: { townSlug?: string }) {
           id="phone"
           name="phone"
           maxLength={50}
-          className="w-full px-4 py-2 border-2 border-border-light rounded-lg bg-bg-primary text-text-primary text-small focus:border-accent-blue focus:outline-none"
+          autoComplete="tel"
+          className={INPUT_CLASS}
         />
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-small font-medium mb-1">
+        <label htmlFor="message" className="block font-ui text-[13px] font-medium text-[#0e1428] mb-1.5">
           Message
         </label>
         <textarea
           id="message"
           name="message"
-          rows={4}
+          rows={5}
           maxLength={5000}
-          className="w-full px-4 py-2 border-2 border-border-light rounded-lg bg-bg-primary text-text-primary text-small focus:border-accent-blue focus:outline-none resize-y"
+          className={`${INPUT_CLASS} resize-y`}
         />
       </div>
 
-      {error && <p className="text-small text-red-600">{error}</p>}
+      {/* Error — announced immediately to screen readers */}
+      {error && (
+        <p
+          role="alert"
+          aria-live="assertive"
+          className="font-ui text-[14px] text-[#B53A29] border-l-4 border-[#B53A29] pl-3 py-1"
+        >
+          {error}
+        </p>
+      )}
 
       <button
         type="submit"
         disabled={loading}
-        className="inline-block px-6 py-2.5 text-small font-medium border-2 border-accent-blue text-accent-blue rounded-lg hover:bg-accent-blue hover:text-white transition-colors disabled:opacity-50"
+        aria-busy={loading}
+        aria-disabled={loading}
+        className="inline-flex items-center gap-2 px-6 py-3 min-h-[44px] font-ui text-[13px] font-semibold uppercase tracking-[0.15em] border-2 border-[#1a3a72] text-[#1a3a72] hover:bg-[#1a3a72] hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a3a72] focus-visible:ring-offset-2"
       >
-        {loading ? "Submitting..." : "Submit Inquiry"}
+        {loading && (
+          <svg
+            aria-hidden="true"
+            className="animate-spin w-4 h-4 flex-shrink-0"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+          </svg>
+        )}
+        {loading ? "Submitting…" : "Submit Inquiry"}
       </button>
     </form>
   );

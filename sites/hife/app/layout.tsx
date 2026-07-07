@@ -80,15 +80,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${bebasNeue.variable} ${instrumentSerif.variable} ${dmSans.variable} bg-cream text-ink`}>
+        {/* Skip link — visible only on focus; lets keyboard users bypass the nav */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-[#1a3a72] focus:text-white focus:text-sm focus:font-medium focus:rounded focus:no-underline"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-[#1a3a72] focus:text-white focus:text-sm focus:font-medium focus:no-underline focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#1a3a72]"
         >
           Skip to main content
         </a>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }} />
         <Header />
-        <div id="main-content" tabIndex={-1}>
+        {/*
+          id="main-content" is the skip-link target. tabIndex={-1} lets it receive
+          programmatic focus without appearing in the natural tab order.
+          Pages that render their own <main> are direct children; pages that don't
+          (e.g. town overview which returns <div>) are wrapped by this element which
+          acts as the landmark. This preserves a single landmark entry point.
+        */}
+        <div id="main-content" tabIndex={-1} className="outline-none">
           {children}
         </div>
         <Footer />
