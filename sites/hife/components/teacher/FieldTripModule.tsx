@@ -10,7 +10,7 @@
 import prisma from "@/lib/prisma";
 
 interface Stop {
-  placeId: string | null;
+  placeId?: string | null;
   customName?: string | null;
   place?: { id: string; name: string } | null;
 }
@@ -40,10 +40,10 @@ interface TownModule {
 }
 
 async function getFieldTripModules(days: Day[]): Promise<TownModule[]> {
-  // Collect all placeIds from stops
+  // Collect all placeIds from stops (via either placeId field or nested place.id)
   const placeIds = days
     .flatMap((d) => d.stops)
-    .map((s) => s.placeId)
+    .map((s) => s.placeId ?? s.place?.id ?? null)
     .filter((id): id is string => !!id);
 
   if (placeIds.length === 0) return [];
