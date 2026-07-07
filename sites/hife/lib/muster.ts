@@ -16,6 +16,10 @@ export interface MusterRequest {
   interests: string[];
   travelerType: "SOLO_COUPLE" | "FAMILY_KIDS" | "SCHOOL_GROUP" | "HISTORY_BUFF";
   pace: "LEISURELY" | "BALANCED" | "PACKED";
+  // Teacher / field-trip mode
+  fieldTrip?: boolean;
+  gradeLevel?: string;
+  busCapacity?: number;
 }
 
 export interface MusterStopData {
@@ -45,6 +49,7 @@ export interface MusterItinerary {
 
 export interface MusterDetail {
   id: string;
+  userId: string | null;
   title: string;
   summary: string | null;
   shareToken: string;
@@ -369,6 +374,19 @@ export async function generateMusterWithClaude(
         (1000 * 60 * 60 * 24)
     ) + 1;
 
+  const fieldTripBlock = request.fieldTrip
+    ? `\n\nFIELD TRIP MODE — MANDATORY CONSTRAINTS:
+- Grade level: ${request.gradeLevel ?? "not specified"} — calibrate all language and site choices to this age group
+- Bus capacity: ${request.busCapacity ? `${request.busCapacity} students` : "not specified"}
+- School day hours ONLY: all stops must fall between 8:00 AM and 3:00 PM. No lodging stops. Day trips only.
+- Every site must be bus-accessible (parking for a full-size school bus, or within 2 blocks of drop-off zone). Flag any site without confirmed bus access in the tip field.
+- Prioritize sites with formal school programs, ranger-led tours, hands-on exhibits, or primary source access.
+- Frame why_this_stop in curriculum language: connect each stop to a specific learning objective (e.g. "aligns with 4th-grade social studies: causes of the Revolution").
+- Suggest a grade-appropriate lunch spot — school-cafeteria-friendly, able to seat a large group. No alcohol references anywhere.
+- Keep the total daily driving to under 2 hours so students are not exhausted.
+- End each day by 2:30 PM to allow travel back to school.`
+    : "";
+
   const prompt = `You are Muster, a warm, knowledgeable tour guide for History Is For Everyone, an authoritative Revolutionary War travel website. You help travelers assemble — "muster" — multi-day road trips that blend historical sites with real, time-bound living-history events.
 
 Draft a day-by-day road trip itinerary based on these inputs:
@@ -378,7 +396,7 @@ Draft a day-by-day road trip itinerary based on these inputs:
 - Ending at: ${request.endLocation}
 - Interests: ${request.interests.map((i) => INTEREST_LABELS[i] ?? i).join(", ") || "General Revolutionary War history"}
 - Traveler type: ${TRAVELER_LABELS[request.travelerType] ?? request.travelerType}
-- Pace: ${PACE_LABELS[request.pace] ?? request.pace}
+- Pace: ${PACE_LABELS[request.pace] ?? request.pace}${fieldTripBlock}
 
 Available historical sites (use these IDs when referencing them):
 ${JSON.stringify(sites.slice(0, 40), null, 2)}
@@ -527,6 +545,9 @@ export async function saveMuster(
       interests: request.interests,
       travelerType: request.travelerType as never,
       pace: request.pace as never,
+      fieldTrip: request.fieldTrip ?? false,
+      gradeLevel: request.gradeLevel ?? null,
+      busCapacity: request.busCapacity ?? null,
       rawItinerary: itinerary as never,
       days: {
         create: itinerary.days.map((day) => ({

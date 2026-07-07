@@ -22,9 +22,22 @@ import { CSS } from "@dnd-kit/utilities";
 import { Map, MapMarker, MarkerContent, MarkerPopup, MapRoute, MapControls, useMap } from "@/components/ui/map";
 import Link from "next/link";
 import type { MusterDetail } from "@/lib/muster";
-import { remuster } from "@/app/muster/actions";
+import { remuster, removeMusterStop } from "@/app/muster/actions";
 
 const DAY_COLORS = ["#cc3322", "#1a3a72", "#4A6A9B", "#5a7a5a", "#8B6914", "#6B21A8"];
+
+function haversineMins(lat1: number, lng1: number, lat2: number, lng2: number): number {
+  const R = 3958.8;
+  const dLat = (lat2 - lat1) * (Math.PI / 180);
+  const dLng = (lng2 - lng1) * (Math.PI / 180);
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(lat1 * (Math.PI / 180)) *
+    Math.cos(lat2 * (Math.PI / 180)) *
+    Math.sin(dLng / 2) ** 2;
+  const miles = 2 * R * Math.asin(Math.sqrt(a));
+  return Math.max(1, Math.round((miles / 45) * 60));
+}
 
 function FitBounds({ stops }: { stops: { lat: number; lng: number }[] }) {
   const { map, isLoaded } = useMap();
@@ -51,7 +64,13 @@ function formatDate(d: Date) {
   return new Date(d).toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
 }
 
-function SortableStop({ stop, color, dayIdx, stopIdx }: { stop: Stop; color: string; dayIdx: number; stopIdx: number }) {
+function SortableStop({
+  stop, color, dayIdx, stopIdx, onRemove, driveMinsBefore,
+}: {
+  stop: Stop; color: string; dayIdx: number; stopIdx: number;
+  onRemove: () => void;
+  driveMinsBefore?: number;
+}) {
   const { attributes, listeners, setNodeRef, setActivatorNodeRef, transform, transition, isDragging } =
     useSortable({ id: stop.id });
 
@@ -62,32 +81,45 @@ function SortableStop({ stop, color, dayIdx, stopIdx }: { stop: Stop; color: str
     <li
       ref={setNodeRef}
       style={{ transform: CSS.Transform.toString(transform), transition }}
-      className={`flex gap-3 py-4 border-b border-ink/8 last:border-0 ${isDragging ? "opacity-40 bg-cream" : ""} ${isEvent ? "bg-[#1a3a72]/[0.03]" : ""}`}
+      className={`border-b border-ink/8 last:border-0 ${isDragging ? "opacity-40 bg-cream" : ""}`}
     >
-      {/* Drag handle */}
-      <button
-        ref={setActivatorNodeRef}
-        {...attributes}
-        {...listeners}
-        className="flex-shrink-0 mt-1 cursor-grab active:cursor-grabbing text-ink/20 hover:text-ink/50 transition-colors touch-none"
-        aria-label="Drag to reorder"
-      >
-        <svg width="12" height="16" viewBox="0 0 12 16" fill="currentColor">
-          <circle cx="4" cy="3" r="1.5"/><circle cx="8" cy="3" r="1.5"/>
-          <circle cx="4" cy="8" r="1.5"/><circle cx="8" cy="8" r="1.5"/>
-          <circle cx="4" cy="13" r="1.5"/><circle cx="8" cy="13" r="1.5"/>
-        </svg>
-      </button>
+      {/* Drive time connector */}
+      {driveMinsBefore !== undefined && (
+        <div className="flex items-center gap-2 py-1.5 pl-10">
+          <div className="w-px h-3 bg-ink/15 ml-3" />
+          <span className="font-ui text-[9px] uppercase tracking-[0.14em] text-ink/25">
+            ~{driveMinsBefore < 60
+              ? `${driveMinsBefore} min drive`
+              : `${Math.floor(driveMinsBefore / 60)}h ${driveMinsBefore % 60}m drive`}
+          </span>
+        </div>
+      )}
 
-      {/* Stop number bubble */}
-      <div
-        className="flex-shrink-0 w-7 h-7 flex items-center justify-center text-[11px] font-ui font-semibold border-2 mt-0.5"
-        style={isEvent ? { background: color, borderColor: color, color: "#f2e6c8" } : { borderColor: `${color}40`, color: `${color}80` }}
-      >
-        {stopIdx + 1}
-      </div>
+      <div className={`flex gap-3 py-4 ${isEvent ? "bg-[#1a3a72]/[0.03]" : ""}`}>
+        {/* Drag handle */}
+        <button
+          ref={setActivatorNodeRef}
+          {...attributes}
+          {...listeners}
+          className="flex-shrink-0 mt-1 cursor-grab active:cursor-grabbing text-ink/20 hover:text-ink/50 transition-colors touch-none"
+          aria-label="Drag to reorder"
+        >
+          <svg width="12" height="16" viewBox="0 0 12 16" fill="currentColor">
+            <circle cx="4" cy="3" r="1.5"/><circle cx="8" cy="3" r="1.5"/>
+            <circle cx="4" cy="8" r="1.5"/><circle cx="8" cy="8" r="1.5"/>
+            <circle cx="4" cy="13" r="1.5"/><circle cx="8" cy="13" r="1.5"/>
+          </svg>
+        </button>
 
-      <div className="flex-1 min-w-0">
+        {/* Stop number bubble */}
+        <div
+          className="flex-shrink-0 w-7 h-7 flex items-center justify-center text-[11px] font-ui font-semibold border-2 mt-0.5"
+          style={isEvent ? { background: color, borderColor: color, color: "#f2e6c8" } : { borderColor: `${color}40`, color: `${color}80` }}
+        >
+          {stopIdx + 1}
+        </div>
+
+        <div className="flex-1 min-w-0">
         {isEvent && (
           <span className="font-ui text-[8px] uppercase tracking-[0.15em] px-1.5 py-0.5 mr-1 text-cream" style={{ background: color }}>
             Event
@@ -129,6 +161,21 @@ function SortableStop({ stop, color, dayIdx, stopIdx }: { stop: Stop; color: str
             </a>
           );
         })()}
+        </div>
+
+        {/* Remove stop */}
+        <button
+          type="button"
+          onClick={onRemove}
+          className="flex-shrink-0 mt-1 p-1 text-ink/15 hover:text-[#cc3322] transition-colors"
+          aria-label="Remove stop"
+          title="Remove this stop"
+        >
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+            <line x1="2" y1="2" x2="10" y2="10"/>
+            <line x1="10" y1="2" x2="2" y2="10"/>
+          </svg>
+        </button>
       </div>
     </li>
   );
@@ -183,6 +230,14 @@ export function MusterBuilder({ muster }: { muster: MusterDetail }) {
       setIsRemustering(false);
     }
   };
+
+  const handleRemoveStop = useCallback(async (stopId: string, dayIdx: number) => {
+    setLocalDays((prev) =>
+      prev.map((d, i) => i !== dayIdx ? d : { ...d, stops: d.stops.filter((s) => s.id !== stopId) })
+    );
+    const result = await removeMusterStop(muster.id, stopId);
+    if (result?.error) router.refresh();
+  }, [muster.id, router]);
 
   // Collect map coords from stops with place lat/lng
   const allStopsWithCoords = localDays.flatMap((day, di) =>
@@ -296,9 +351,31 @@ export function MusterBuilder({ muster }: { muster: MusterDetail }) {
                     </div>
                     <SortableContext items={day.stops.map((s) => s.id)} strategy={verticalListSortingStrategy}>
                       <ol className="space-y-0">
-                        {day.stops.map((stop, si) => (
-                          <SortableStop key={stop.id} stop={stop} color={color} dayIdx={di} stopIdx={si} />
-                        ))}
+                        {day.stops.map((stop, si) => {
+                          const prev = day.stops[si - 1];
+                          let driveMinsBefore: number | undefined;
+                          if (
+                            si > 0 &&
+                            prev?.place?.lat && prev?.place?.lng &&
+                            stop.place?.lat && stop.place?.lng
+                          ) {
+                            driveMinsBefore = haversineMins(
+                              prev.place.lat, prev.place.lng,
+                              stop.place.lat, stop.place.lng
+                            );
+                          }
+                          return (
+                            <SortableStop
+                              key={stop.id}
+                              stop={stop}
+                              color={color}
+                              dayIdx={di}
+                              stopIdx={si}
+                              driveMinsBefore={driveMinsBefore}
+                              onRemove={() => handleRemoveStop(stop.id, di)}
+                            />
+                          );
+                        })}
                       </ol>
                     </SortableContext>
                   </section>
