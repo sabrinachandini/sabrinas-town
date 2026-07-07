@@ -285,11 +285,8 @@ export default async function TeacherPage({ params }: PageProps) {
                 <div className="divide-y divide-[#14100a]/8">
                   {sources.map((source, i) => {
                     const conf = tierToConfidence(source.credibilityTier);
-                    return (
-                      <div
-                        key={source.id}
-                        className="py-5 grid grid-cols-1 sm:grid-cols-[auto_1fr_auto] gap-4 sm:gap-6 items-start"
-                      >
+                    const rowContent = (
+                      <>
                         {/* Confidence icon */}
                         <div className="flex items-center gap-2">
                           <span
@@ -306,7 +303,7 @@ export default async function TeacherPage({ params }: PageProps) {
 
                         {/* Source info */}
                         <div>
-                          <p className="font-editorial text-[18px] text-[#14100a] leading-snug mb-0.5">
+                          <p className="font-editorial text-[18px] text-[#14100a] leading-snug mb-0.5 group-hover:underline decoration-[#14100a]/20 underline-offset-2">
                             {source.title}
                           </p>
                           <p className="font-ui text-[11px] text-[#14100a]/50">
@@ -320,20 +317,36 @@ export default async function TeacherPage({ params }: PageProps) {
                           )}
                         </div>
 
-                        {/* External link */}
+                        {/* External link indicator */}
                         {source.url && (
-                          <a
-                            href={source.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="no-underline inline-flex items-center gap-1.5 font-ui text-[10px] uppercase tracking-[0.15em] text-[#14100a]/40 border border-[#14100a]/15 px-3 py-1.5 hover:text-[#14100a] hover:border-[#14100a]/30 transition-colors self-start whitespace-nowrap focus-visible:ring-2 focus-visible:ring-[#1a3a72] focus-visible:ring-offset-2 rounded-sm"
+                          <span
+                            aria-hidden
+                            className="inline-flex items-center gap-1.5 font-ui text-[10px] uppercase tracking-[0.15em] text-[#14100a]/30 group-hover:text-[#14100a]/60 transition-colors self-start whitespace-nowrap mt-1"
                           >
                             View Source
                             <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden>
                               <path d="M1 9L9 1M9 1H3M9 1V7" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
                             </svg>
-                          </a>
+                          </span>
                         )}
+                      </>
+                    );
+                    return source.url ? (
+                      <a
+                        key={source.id}
+                        href={source.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="no-underline py-5 grid grid-cols-1 sm:grid-cols-[auto_1fr_auto] gap-4 sm:gap-6 items-start group hover:bg-[#14100a]/[0.025] -mx-4 px-4 rounded transition-colors focus-visible:ring-2 focus-visible:ring-[#1a3a72] focus-visible:ring-offset-2"
+                      >
+                        {rowContent}
+                      </a>
+                    ) : (
+                      <div
+                        key={source.id}
+                        className="py-5 grid grid-cols-1 sm:grid-cols-[auto_1fr_auto] gap-4 sm:gap-6 items-start group"
+                      >
+                        {rowContent}
                       </div>
                     );
                   })}
@@ -527,7 +540,7 @@ export default async function TeacherPage({ params }: PageProps) {
                   {relatedTowns.slice(0, 6).map((rt) => (
                     <a
                       key={rt.townId}
-                      href={`/towns/${rt.townId}/teacher`}
+                      href={`/towns/${rt.townSlug}/teacher`}
                       className="no-underline bg-[#f2e6c8]/5 border border-[#f2e6c8]/10 p-4 hover:bg-[#f2e6c8]/10 hover:border-[#f2e6c8]/20 transition-colors group focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1a3a72] rounded-sm"
                     >
                       <p className="font-display text-[20px] text-[#f2e6c8]/90 leading-none mb-1.5 group-hover:text-[#C8A24A] transition-colors">
