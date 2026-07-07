@@ -154,7 +154,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
               fontWeight: 600,
               letterSpacing: "0.32em",
               textTransform: "uppercase",
-              color: "rgba(255,255,255,0.55)",
+              color: "white",
             }}
           >
             <span className="w-5 h-[2px] flex-shrink-0" style={{ background: "rgba(255,255,255,0.5)" }} />
@@ -175,6 +175,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
           </h1>
 
           <span
+            aria-hidden="true"
             style={{
               fontFamily: "var(--font-bebas)",
               fontSize: "clamp(40px, 11vw, 136px)",
@@ -202,7 +203,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
               fontStyle: "italic",
               fontWeight: 300,
               fontSize: "clamp(15px, 2vw, 19px)",
-              color: "rgba(255,255,255,0.75)",
+              color: "white",
               lineHeight: 1.5,
             }}
           >
@@ -304,7 +305,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
         return (
           <section style={{ background: "var(--cream)", borderBottom: "4px solid var(--ink-deep)" }}>
             <div className="px-5 sm:px-[52px] pt-8 pb-10">
-              <p style={{ fontFamily: "var(--font-dm)", fontSize: 9, fontWeight: 700, letterSpacing: "0.32em", textTransform: "uppercase", color: "rgba(20,16,10,0.45)", marginBottom: 20, display: "flex", alignItems: "center", gap: 10 }}>
+              <p style={{ fontFamily: "var(--font-dm)", fontSize: 9, fontWeight: 700, letterSpacing: "0.32em", textTransform: "uppercase", color: "rgba(20,16,10,0.70)", marginBottom: 20, display: "flex", alignItems: "center", gap: 10 }}>
                 <span style={{ width: 14, height: 2, background: "rgba(20,16,10,0.25)", display: "block", flexShrink: 0 }} />
                 Three Good First Towns
               </p>
@@ -318,18 +319,18 @@ export default async function TownsPage({ searchParams }: PageProps) {
                       href={`/towns/${town.slug}`}
                       style={{ display: "block", textDecoration: "none", background: accent.bg, border: "3px solid #14100a", padding: "20px 22px 18px", position: "relative", overflow: "hidden" }}
                     >
-                      <span style={{ fontFamily: "var(--font-dm)", fontSize: 8, fontWeight: 700, letterSpacing: "0.3em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)", display: "block", marginBottom: 10 }}>
+                      <span style={{ fontFamily: "var(--font-dm)", fontSize: 8, fontWeight: 700, letterSpacing: "0.3em", textTransform: "uppercase", color: "rgba(255,255,255,0.90)", display: "block", marginBottom: 10 }}>
                         {accent.label}
                       </span>
                       <span style={{ fontFamily: "var(--font-instrument)", fontWeight: 900, fontSize: "clamp(22px,3vw,28px)", lineHeight: 1, color: "#f2e6c8", display: "block", marginBottom: 8 }}>
                         {town.name}
                       </span>
                       {blurb && (
-                        <span style={{ fontFamily: "var(--font-instrument)", fontStyle: "italic", fontWeight: 300, fontSize: 13, lineHeight: 1.45, color: "rgba(242,230,200,0.7)", display: "block", marginBottom: 14 }}>
+                        <span style={{ fontFamily: "var(--font-instrument)", fontStyle: "italic", fontWeight: 300, fontSize: 13, lineHeight: 1.45, color: "#f2e6c8", display: "block", marginBottom: 14 }}>
                           {blurb}{blurb.length >= 72 ? "…" : ""}
                         </span>
                       )}
-                      <span style={{ fontFamily: "var(--font-dm)", fontSize: 9, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)", borderBottom: "1px solid rgba(255,255,255,0.3)", paddingBottom: 1 }}>
+                      <span style={{ fontFamily: "var(--font-dm)", fontSize: 9, fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.90)", borderBottom: "1px solid rgba(255,255,255,0.3)", paddingBottom: 1 }}>
                         Explore →
                       </span>
                     </a>
@@ -363,6 +364,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
         ) : filtered.length === 0 ? (
           <div className="py-24 text-center max-w-[480px] mx-auto">
             <p
+              aria-hidden="true"
               style={{
                 fontFamily: "var(--font-bebas)",
                 fontSize: "clamp(60px,10vw,100px)",
@@ -390,7 +392,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
               style={{
                 fontFamily: "var(--font-dm)",
                 fontSize: 12,
-                color: "rgba(20,16,10,0.4)",
+                color: "rgba(20,16,10,0.65)",
                 letterSpacing: "0.05em",
               }}
             >
@@ -571,7 +573,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
         style={{ background: "var(--red)", borderTop: "4px solid var(--ink)" }}
       >
         <div
-          aria-hidden
+          aria-hidden="true"
           className="absolute right-[-10px] bottom-[-30px] pointer-events-none select-none z-0"
           style={{ fontFamily: "var(--font-bebas)", fontSize: "clamp(100px, 25vw, 340px)", lineHeight: 1, color: "rgba(255,255,255,0.07)" }}
         >
@@ -588,7 +590,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
             className="inline-block mb-5"
             style={{
               border: "2.5px solid rgba(255,255,255,0.45)",
-              color: "rgba(255,255,255,0.65)",
+              color: "white",
               fontFamily: "var(--font-dm)",
               fontSize: 9,
               fontWeight: 700,
@@ -613,7 +615,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
             }}
           >
             Teach the<br />
-            <span style={{ fontStyle: "italic", color: "rgba(255,255,255,0.85)", display: "inline-block", transform: "rotate(-1.5deg)", transformOrigin: "left center" }}>
+            <span style={{ fontStyle: "italic", color: "white", display: "inline-block", transform: "rotate(-1.5deg)", transformOrigin: "left center" }}>
               Revolution.
             </span>
           </h2>
@@ -629,7 +631,7 @@ export default async function TownsPage({ searchParams }: PageProps) {
               fontStyle: "italic",
               fontWeight: 300,
               fontSize: "clamp(15px, 2vw, 19px)",
-              color: "rgba(255,255,255,0.75)",
+              color: "white",
               lineHeight: 1.5,
             }}
           >

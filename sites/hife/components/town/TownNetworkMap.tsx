@@ -245,7 +245,7 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
                   style={{ width: `${selectedTown.compositeScore}%` }}
                 />
               </div>
-              <p className="font-ui text-[9px] sm:text-[10px] uppercase tracking-[0.1em] text-[#f2e6c8]/20 mt-1.5">
+              <p className="font-ui text-[9px] sm:text-[10px] uppercase tracking-[0.1em] text-[rgba(242,230,200,0.2)] mt-1.5">
                 Historical significance: {selectedTown.compositeScore}/100
               </p>
             </div>
@@ -253,7 +253,7 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
             {/* Summary */}
             {selectedTown.execSummary150 && (
               <div className="px-4 sm:px-6 py-4 sm:py-5 border-b border-[#f2e6c8]/8">
-                <p className="font-editorial italic text-[12px] sm:text-[19px] text-[#f2e6c8]/60 leading-relaxed">
+                <p className="font-editorial italic text-[12px] sm:text-[19px] text-[rgba(242,230,200,0.6)] leading-relaxed">
                   &ldquo;{selectedTown.execSummary150}&rdquo;
                 </p>
               </div>
@@ -262,7 +262,7 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
             {/* Connected towns */}
             {connectedTowns.length > 0 && (
               <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-[#f2e6c8]/8 overflow-y-auto flex-1">
-                <p className="font-ui text-[9px] sm:text-[10px] uppercase tracking-[0.16em] text-[#f2e6c8]/22 mb-2.5 sm:mb-3">
+                <p className="font-ui text-[9px] sm:text-[10px] uppercase tracking-[0.16em] text-[rgba(242,230,200,0.22)] mb-2.5 sm:mb-3">
                   Connected Towns
                 </p>
                 <div className="space-y-2.5 sm:space-y-3">
@@ -273,12 +273,12 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
                         className="flex items-center gap-2 w-full text-left group"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-[#cc3322]/40 flex-shrink-0 group-hover:bg-[#cc3322] transition-colors" />
-                        <span className="font-ui text-[10px] sm:text-[11px] text-[#f2e6c8]/60 group-hover:text-[#a8bcd8] transition-colors">
+                        <span className="font-ui text-[10px] sm:text-[11px] text-[rgba(242,230,200,0.6)] group-hover:text-[#a8bcd8] transition-colors">
                           {t.name}, {t.state}
                         </span>
                       </button>
                       {reason && (
-                        <p className="font-editorial italic text-[10px] sm:text-[11px] text-[#f2e6c8]/30 leading-snug mt-0.5 pl-3.5 line-clamp-2">
+                        <p className="font-editorial italic text-[10px] sm:text-[11px] text-[rgba(242,230,200,0.3)] leading-snug mt-0.5 pl-3.5 line-clamp-2">
                           {reason}
                         </p>
                       )}
@@ -299,7 +299,7 @@ export function TownNetworkMap({ towns, links }: TownNetworkMapProps) {
               </a>
               <button
                 onClick={() => router.push(`/towns/${selectedTown.slug}/timeline`)}
-                className="mt-2 flex items-center justify-between w-full font-ui text-[10px] sm:text-[11px] uppercase tracking-[0.18em] sm:tracking-[0.2em] text-[#f2e6c8]/40 border border-[#f2e6c8]/10 px-3 sm:px-4 py-2.5 sm:py-3 hover:text-[#f2e6c8]/70 hover:border-[#f2e6c8]/25 transition-colors"
+                className="mt-2 flex items-center justify-between w-full font-ui text-[10px] sm:text-[11px] uppercase tracking-[0.18em] sm:tracking-[0.2em] text-[rgba(242,230,200,0.4)] border border-[#f2e6c8]/10 px-3 sm:px-4 py-2.5 sm:py-3 hover:text-[rgba(242,230,200,0.7)] hover:border-[#f2e6c8]/25 transition-colors"
               >
                 <span>Timeline</span>
                 <span aria-hidden>→</span>

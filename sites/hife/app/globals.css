@@ -117,11 +117,17 @@
   --color-rust:   var(--rust);
   --color-sky:    var(--sky);
 
+  /* Explicit ink/white/black — needed so axe-core can resolve these as sRGB hex */
+  --color-white:    #ffffff;
+  --color-black:    #000000;
+  --color-ink:      var(--ink);
+  --color-ink-deep: var(--ink-deep);
+
   /* Legacy aliases */
   --color-bg-primary: var(--ivory);
   --color-bg-secondary: var(--cream);
   --color-text-primary: var(--charcoal);
-  --color-text-muted: var(--slate);
+  --color-text-muted: #545b63;
   --color-accent-blue: var(--navy);
   --color-accent-blue-hover: #1a3560;
   --color-accent-red: var(--crimson);

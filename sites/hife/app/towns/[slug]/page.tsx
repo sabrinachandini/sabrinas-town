@@ -100,14 +100,14 @@ export default async function TownOverviewPage({ params }: PageProps) {
       {/* ── Significance strip ───────────────────────────────────── */}
       <div className="bg-[#1a3a72] border-b border-[#f2e6c8]/8 px-4 sm:px-8 md:px-16 py-2.5 sm:py-3">
         <div className="mx-auto max-w-[1200px] flex flex-wrap items-center gap-x-8 gap-y-1">
-          <span className="font-ui text-[10px] uppercase tracking-[0.22em] text-cream/50">
+          <span className="font-ui text-[10px] uppercase tracking-[0.22em] text-[rgba(242,236,224,0.5)]">
             {town.scoreTier}
           </span>
           <div className="flex items-center gap-1.5">
             <div className="w-20 h-[2px] bg-[#f2e6c8]/10">
               <div className="h-full bg-[#cc3322]" style={{ width: `${town.compositeScore}%` }} />
             </div>
-            <span className="font-ui text-[10px] text-[#f2e6c8]/30 uppercase tracking-[0.1em]">
+            <span className="font-ui text-[10px] text-[rgba(242,230,200,0.3)] uppercase tracking-[0.1em]">
               {town.compositeScore}/100
             </span>
           </div>
@@ -116,8 +116,8 @@ export default async function TownOverviewPage({ params }: PageProps) {
             { n: town.events.length, label: "Events" },
             { n: town.stories.length, label: "Stories" },
           ].map((s) => (
-            <span key={s.label} className="font-ui text-[10px] uppercase tracking-[0.12em] text-[#f2e6c8]/30">
-              <span className="text-[#f2e6c8]/60 mr-1">{s.n}</span>{s.label}
+            <span key={s.label} className="font-ui text-[10px] uppercase tracking-[0.12em] text-[rgba(242,230,200,0.3)]">
+              <span className="text-[rgba(242,230,200,0.6)] mr-1">{s.n}</span>{s.label}
             </span>
           ))}
         </div>
@@ -403,7 +403,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
           <div className="mx-auto max-w-[1200px]">
             <div className="flex items-end justify-between mb-8">
               <div>
-                <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-cream/40 mb-2">
+                <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-[rgba(242,236,224,0.4)] mb-2">
                   Plan Your Visit
                 </p>
                 <h2 className="font-display text-cream text-[clamp(28px,4vw,44px)] leading-none tracking-[-0.02em]">
@@ -412,7 +412,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
               </div>
               <NextLink
                 href={`/towns/${slug}/events`}
-                className="no-underline font-ui text-[10px] uppercase tracking-[0.15em] text-cream/50 hover:text-cream transition-colors flex items-center gap-1.5"
+                className="no-underline font-ui text-[10px] uppercase tracking-[0.15em] text-[rgba(242,236,224,0.5)] hover:text-cream transition-colors flex items-center gap-1.5"
               >
                 All Events <span aria-hidden="true">→</span>
               </NextLink>
@@ -438,7 +438,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
                       <div className="flex-shrink-0 text-center w-12">
                         {evt.month ? (
                           <>
-                            <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-cream/40">
+                            <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-[rgba(242,236,224,0.4)]">
                               {MONTH_SHORT[evt.month]}
                             </p>
                             {evt.day && (
@@ -448,7 +448,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
                             )}
                           </>
                         ) : (
-                          <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-cream/30 mt-1">
+                          <p className="font-ui text-[11px] uppercase tracking-[0.1em] text-[rgba(242,236,224,0.3)] mt-1">
                             Annual
                           </p>
                         )}
@@ -456,14 +456,14 @@ export default async function TownOverviewPage({ params }: PageProps) {
 
                       {/* Info */}
                       <div className="flex-1 min-w-0">
-                        <p className="font-ui text-[11px] uppercase tracking-[0.12em] text-crimson mb-1">
+                        <p className="font-ui text-[11px] uppercase tracking-[0.12em] text-[#e8b84b] mb-1">
                           {evt.category}
                         </p>
                         <p className="font-editorial text-cream text-[21px] leading-snug group-hover:text-yellow transition-colors line-clamp-2">
                           {evt.name}
                         </p>
                         {evt.venue && (
-                          <p className="font-ui text-[10px] text-cream/40 mt-1 truncate">
+                          <p className="font-ui text-[10px] text-[rgba(242,236,224,0.4)] mt-1 truncate">
                             {evt.venue}
                           </p>
                         )}
@@ -500,13 +500,13 @@ export default async function TownOverviewPage({ params }: PageProps) {
             >
               History Happened <span className="text-crimson">Everywhere.</span>
             </p>
-            <p className="font-ui font-light text-cream/50 text-[0.9rem] mt-3 max-w-[420px]">
+            <p className="font-ui font-light text-[rgba(242,236,224,0.5)] text-[0.9rem] mt-3 max-w-[420px]">
               Explore every town where the American Revolution unfolded — sourced, documented, and connected.
             </p>
           </div>
           <a
             href="/towns"
-            className="no-underline border-2 border-cream text-cream font-ui font-medium text-[11px] uppercase tracking-[0.12em] px-8 py-3 hover:bg-crimson hover:border-crimson transition-colors whitespace-nowrap"
+            className="no-underline border-2 border-cream text-cream font-ui font-medium text-[11px] uppercase tracking-[0.12em] px-8 py-3 hover:bg-crimson hover:border-crimson hover:text-white transition-colors whitespace-nowrap"
           >
             Browse All Towns
           </a>

@@ -59,7 +59,7 @@ export function InquiryForm({ townSlug }: { townSlug?: string }) {
         className="p-8 bg-[#f8f0d8] border-2 border-[#ddd8ce] text-center"
       >
         <p className="font-heading font-black text-[22px] text-[#0e1428]">Inquiry received</p>
-        <p className="mt-3 text-[16px] text-[#6b7280]">
+        <p className="mt-3 text-[16px] text-[#545b63]">
           We review every inquiry personally. You&rsquo;ll hear from us soon.
         </p>
       </div>
@@ -81,7 +81,7 @@ export function InquiryForm({ townSlug }: { townSlug?: string }) {
       </div>
 
       {/* Required field notice */}
-      <p className="font-ui text-[13px] text-[#6b7280]">
+      <p className="font-ui text-[13px] text-[#545b63]">
         Fields marked <span aria-label="required">*</span> are required.
       </p>
 

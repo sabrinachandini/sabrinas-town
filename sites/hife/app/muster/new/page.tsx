@@ -82,7 +82,7 @@ export default function MusterNewPage() {
       {/* Header */}
       <div className="bg-[#1a3a72] border-b-4 border-[#cc3322] px-8 md:px-16 py-8">
         <div className="max-w-[680px] mx-auto">
-          <p className="font-ui text-[10px] uppercase tracking-[0.24em] text-cream/40 mb-1">
+          <p className="font-ui text-[10px] uppercase tracking-[0.24em] text-cream/65 mb-1">
             From History Is For Everyone
           </p>
           <h1 className="font-display text-cream text-[clamp(28px,5vw,48px)] leading-none tracking-[-0.02em]">
@@ -103,7 +103,7 @@ export default function MusterNewPage() {
                   }`}
                 />
                 <p className={`font-ui text-[9px] uppercase tracking-[0.15em] mt-1.5 ${
-                  i === step ? "text-[#cc3322]" : i < step ? "text-ink/40" : "text-ink/20"
+                  i === step ? "text-[#cc3322]" : i < step ? "text-ink/65" : "text-ink/65"
                 }`}>
                   {label}
                 </p>
@@ -136,13 +136,13 @@ export default function MusterNewPage() {
               <h2 className="font-display text-[clamp(24px,4vw,36px)] text-ink tracking-[-0.02em] mb-2">
                 When are you going?
               </h2>
-              <p className="font-ui text-[17px] text-ink/50 mb-10">
+              <p className="font-ui text-[17px] text-ink/70 mb-10">
                 Pick your travel dates — up to 14 days.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <label className="block">
-                  <span className="font-ui text-[10px] uppercase tracking-[0.18em] text-ink/50 block mb-2">
+                  <span className="font-ui text-[10px] uppercase tracking-[0.18em] text-ink/70 block mb-2">
                     Start date
                   </span>
                   <input
@@ -157,7 +157,7 @@ export default function MusterNewPage() {
                   />
                 </label>
                 <label className="block">
-                  <span className="font-ui text-[10px] uppercase tracking-[0.18em] text-ink/50 block mb-2">
+                  <span className="font-ui text-[10px] uppercase tracking-[0.18em] text-ink/70 block mb-2">
                     End date
                   </span>
                   <input
@@ -193,13 +193,13 @@ export default function MusterNewPage() {
               <h2 className="font-display text-[clamp(24px,4vw,36px)] text-ink tracking-[-0.02em] mb-2">
                 Where are you starting and ending?
               </h2>
-              <p className="font-ui text-[17px] text-ink/50 mb-10">
+              <p className="font-ui text-[17px] text-ink/70 mb-10">
                 City, town, or landmark. Can be the same place for a round trip.
               </p>
 
               <div className="space-y-6">
                 <label className="block">
-                  <span className="font-ui text-[10px] uppercase tracking-[0.18em] text-ink/50 block mb-2">
+                  <span className="font-ui text-[10px] uppercase tracking-[0.18em] text-ink/70 block mb-2">
                     Starting from
                   </span>
                   <input
@@ -211,7 +211,7 @@ export default function MusterNewPage() {
                   />
                 </label>
                 <label className="block">
-                  <span className="font-ui text-[10px] uppercase tracking-[0.18em] text-ink/50 block mb-2">
+                  <span className="font-ui text-[10px] uppercase tracking-[0.18em] text-ink/70 block mb-2">
                     Ending at
                   </span>
                   <input
@@ -232,7 +232,7 @@ export default function MusterNewPage() {
               <h2 className="font-display text-[clamp(24px,4vw,36px)] text-ink tracking-[-0.02em] mb-2">
                 What kind of history?
               </h2>
-              <p className="font-ui text-[17px] text-ink/50 mb-10">
+              <p className="font-ui text-[17px] text-ink/70 mb-10">
                 Pick as many as you like — or skip and we&apos;ll cover the highlights.
               </p>
 
@@ -265,7 +265,7 @@ export default function MusterNewPage() {
                 <h2 className="font-display text-[clamp(24px,4vw,36px)] text-ink tracking-[-0.02em] mb-2">
                   Who&apos;s traveling?
                 </h2>
-                <p className="font-ui text-[17px] text-ink/50 mb-8">
+                <p className="font-ui text-[17px] text-ink/70 mb-8">
                   Helps us get the tone and pacing right.
                 </p>
 
@@ -292,7 +292,7 @@ export default function MusterNewPage() {
                 <div className="bg-[#1a3a72]/[0.05] border-l-4 border-[#1a3a72] p-5 space-y-4">
                   <p className="font-ui text-[10px] uppercase tracking-[0.18em] text-[#1a3a72] font-semibold">Field Trip Details</p>
                   <div>
-                    <label className="font-ui text-[10px] uppercase tracking-[0.15em] text-ink/50 block mb-2">
+                    <label className="font-ui text-[10px] uppercase tracking-[0.15em] text-ink/70 block mb-2">
                       Grade Level
                     </label>
                     <input
@@ -304,7 +304,7 @@ export default function MusterNewPage() {
                     />
                   </div>
                   <div>
-                    <label className="font-ui text-[10px] uppercase tracking-[0.15em] text-ink/50 block mb-2">
+                    <label className="font-ui text-[10px] uppercase tracking-[0.15em] text-ink/70 block mb-2">
                       Number of Students
                     </label>
                     <input
@@ -327,7 +327,7 @@ export default function MusterNewPage() {
                 <h2 className="font-display text-[clamp(22px,3.5vw,30px)] text-ink tracking-[-0.02em] mb-2">
                   What&apos;s your pace?
                 </h2>
-                <p className="font-ui text-[17px] text-ink/50 mb-8">
+                <p className="font-ui text-[17px] text-ink/70 mb-8">
                   How many stops per day feels right?
                 </p>
 

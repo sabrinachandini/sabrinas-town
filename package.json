@@ -23,7 +23,12 @@
     "lint:links": "npx tsx sites/hife/scripts/validateExternalLinks.ts",
     "create-town": "tsx scripts/create-town.ts"
   },
-  "keywords": ["american-revolution", "tourism", "history", "education"],
+  "keywords": [
+    "american-revolution",
+    "tourism",
+    "history",
+    "education"
+  ],
   "author": "Sabrina Bhattacharjya",
   "license": "MIT",
   "engines": {
@@ -44,10 +49,12 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.12.1",
+    "@playwright/test": "^1.61.1",
     "@types/node": "^20.11.0",
     "prisma": "^5.22.0",
-    "turbo": "^2.5.4",
     "tsx": "^4.7.0",
+    "turbo": "^2.5.4",
     "typescript": "^5.3.3"
   }
 }

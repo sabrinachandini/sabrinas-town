@@ -90,12 +90,12 @@ export default async function HomePage() {
           </div>
 
           {/* Badge 1 */}
-          <div className="hidden sm:block absolute top-12 left-8 -rotate-[3deg] font-editorial font-black text-[11px] tracking-[0.1em] uppercase bg-[#4A6A9B] text-[#f2e6c8] px-3 py-1.5 border-[2.5px] border-[#f2e6c8]/50 z-[4]">
+          <div className="hidden sm:block absolute top-12 left-8 -rotate-[3deg] font-editorial font-black text-[11px] tracking-[0.1em] uppercase bg-[#4A6A9B] text-white px-3 py-1.5 border-[2.5px] border-[#f2e6c8]/50 z-[4]">
             April 19, 1775
           </div>
 
           {/* Badge 2 */}
-          <div className="hidden sm:block absolute bottom-20 right-6 rotate-[2.5deg] font-editorial font-black text-[11px] tracking-[0.1em] uppercase bg-[#4A6A9B] text-[#f2e6c8] px-3 py-1.5 border-[2.5px] border-[#f2e6c8]/50 z-[4]">
+          <div className="hidden sm:block absolute bottom-20 right-6 rotate-[2.5deg] font-editorial font-black text-[11px] tracking-[0.1em] uppercase bg-[#4A6A9B] text-white px-3 py-1.5 border-[2.5px] border-[#f2e6c8]/50 z-[4]">
             Massachusetts, 1775
           </div>
 
@@ -143,7 +143,7 @@ export default async function HomePage() {
 
           {/* Bottom-anchored content block — desktop only */}
           <div className="hidden sm:flex absolute bottom-0 left-0 right-0 h-full z-[3] p-14 flex-col justify-end">
-            <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.65)] mb-4">
+            <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.80)] mb-4">
               The Shot Heard Round the World
             </p>
             <p
@@ -153,7 +153,7 @@ export default async function HomePage() {
               75 Towns.<br />One Revolution.
             </p>
             <div className="w-12 h-[3px] bg-[#cc3322] my-5" />
-            <p className="font-editorial italic font-light text-[20px] leading-[1.65] text-[rgba(242,230,200,0.58)] max-w-[280px]">
+            <p className="font-editorial italic font-light text-[20px] leading-[1.65] text-[rgba(242,230,200,0.80)] max-w-[280px]">
               Every town has a story. Most of them have never been told.
             </p>
           </div>
@@ -182,9 +182,9 @@ export default async function HomePage() {
             className="stat-cell flex-1 px-4 sm:px-6 py-6 sm:py-7 border-r-2 border-[rgba(242,230,200,0.08)] last:border-r-0 flex flex-col gap-1"
           >
             <div className="font-display text-[40px] sm:text-[48px] text-[#f2e6c8] leading-none tracking-[-0.04em]">
-              {stat.number}<span className="text-cream/50 text-[0.7em]">{stat.accent}</span>
+              {stat.number}<span className="text-[rgba(242,236,224,0.5)] text-[0.7em]">{stat.accent}</span>
             </div>
-            <div className="font-ui text-[10px] font-normal tracking-[0.2em] uppercase text-[rgba(242,230,200,0.7)]">
+            <div className="font-ui text-[10px] font-normal tracking-[0.2em] uppercase text-[rgba(242,230,200,0.80)]">
               {stat.label}
             </div>
             {/* Tiny squiggle under stat label — whimsy */}
@@ -211,7 +211,7 @@ export default async function HomePage() {
 
         <div className="relative z-10 max-w-[1200px] mx-auto">
           {/* Kicker */}
-          <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-cream/60 flex items-center gap-2 mb-6 before:content-[''] before:w-4 before:h-[2px] before:bg-cream/40 before:block">
+          <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-[rgba(242,236,224,0.75)] flex items-center gap-2 mb-6 before:content-[''] before:w-4 before:h-[2px] before:bg-cream/40 before:block">
             On This Day in the Revolution
           </p>
 
@@ -234,17 +234,17 @@ export default async function HomePage() {
                   {/* Year badge */}
                   <div className="bg-[#cc3322] px-2.5 sm:px-3 py-2 text-center min-w-[52px] sm:min-w-[60px] flex-shrink-0 self-start">
                     <p className="font-display text-[20px] sm:text-[24px] text-[#f2e6c8] leading-none">{event.year}</p>
-                    <p className="font-ui text-[9px] uppercase tracking-[0.1em] text-[#f2e6c8]/55 mt-0.5">{otdMonthName.slice(0, 3)}</p>
+                    <p className="font-ui text-[9px] uppercase tracking-[0.1em] text-[#f2e6c8] mt-0.5">{otdMonthName.slice(0, 3)}</p>
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="font-display text-[clamp(17px,2.5vw,26px)] text-[#f2e6c8] group-hover:text-[#cc3322] transition-colors leading-tight tracking-[-0.02em]">
                       {event.name}
                     </p>
-                    <p className="font-ui text-[10px] uppercase tracking-[0.12em] text-cream/65 mt-1">
+                    <p className="font-ui text-[10px] uppercase tracking-[0.12em] text-[rgba(242,236,224,0.65)] mt-1">
                       {event.town.name}, {event.town.state}
                     </p>
                     {event.summary && (
-                      <p className="font-ui text-[12px] sm:text-[19px] text-[#f2e6c8]/65 leading-relaxed mt-1.5 line-clamp-2">
+                      <p className="font-ui text-[12px] sm:text-[19px] text-[rgba(242,230,200,0.8)] leading-relaxed mt-1.5 line-clamp-2">
                         {event.summary}
                       </p>
                     )}
@@ -253,14 +253,14 @@ export default async function HomePage() {
               ))}
             </div>
           ) : (
-            <p className="font-editorial italic text-[18px] text-[#f2e6c8]/35 border-t border-[rgba(242,230,200,0.08)] pt-8">
+            <p className="font-editorial italic text-[18px] text-[#f2e6c8]/70 border-t border-[rgba(242,230,200,0.08)] pt-8">
               No documented events recorded on {otdMonthName} {otdDayNum} — but the war never stopped.
             </p>
           )}
 
           <NextLink
             href="/on-this-day"
-            className="no-underline inline-flex items-center gap-2 mt-8 font-ui text-[10px] font-semibold tracking-[0.2em] uppercase text-[#f2e6c8]/45 border border-[rgba(242,230,200,0.15)] px-6 py-3 hover:border-[#cc3322] hover:text-[#cc3322] transition-colors"
+            className="no-underline inline-flex items-center gap-2 mt-8 font-ui text-[10px] font-semibold tracking-[0.2em] uppercase text-[#f2e6c8]/75 border border-[rgba(242,230,200,0.15)] px-6 py-3 hover:border-[#cc3322] hover:text-[#cc3322] transition-colors"
           >
             See all events on {otdMonthName} {otdDayNum} →
           </NextLink>
@@ -286,17 +286,17 @@ export default async function HomePage() {
           {/* Left */}
           <div className="pr-0 sm:pr-10 pb-8 sm:pb-0 border-b-[3px] sm:border-b-0 sm:border-r-[3px] border-[rgba(242,230,200,0.25)]">
             <h2
-              className="font-editorial font-black text-[#f2e6c8] leading-[0.92] tracking-[-0.04em]"
+              className="font-editorial font-black text-white leading-[0.92] tracking-[-0.04em]"
               style={{ fontSize: "clamp(36px,4vw,60px)" }}
             >
               The War<br />Was Won<br />
-              <span className="inline-block -rotate-[4deg] text-[#f2e6c8] origin-left">Here.</span>
+              <span className="inline-block -rotate-[4deg] text-white origin-left">Here.</span>
             </h2>
           </div>
 
           {/* Right */}
           <div className="pt-8 sm:pt-0 sm:pl-12 flex flex-col justify-between">
-            <p className="font-editorial italic font-light text-[20px] sm:text-[22px] leading-[1.55] text-[rgba(242,230,200,0.85)]">
+            <p className="font-editorial italic font-light text-[20px] sm:text-[22px] leading-[1.55] text-white">
               Not on famous battlefields alone. It was won in a farmhouse in Wilmington where a surgeon packed his bag. In a church in Salem where men argued through the night. In a kitchen in Concord where someone hid the powder.
               <br /><br />
               This project maps those places. All of them.
@@ -306,7 +306,7 @@ export default async function HomePage() {
               <path d="M0 6 Q11 1 22 6 Q33 11 45 5 Q56 0 67 5 Q78 10 90 5 Q101 1 112 5 Q123 10 135 5 Q146 1 157 5 Q168 10 180 4"
                 stroke="rgba(255,255,255,0.3)" strokeWidth="2" fill="none" strokeLinecap="round" />
             </svg>
-            <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.4)] mt-6 flex items-center gap-3">
+            <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase mt-6 flex items-center gap-3" style={{ color: "rgba(255,255,255,0.80)" }}>
               <span className="w-6 h-[2px] bg-[rgba(242,230,200,0.3)] block" />
               75 Towns · 8 Years · 1 Revolution
             </p>
@@ -361,7 +361,7 @@ export default async function HomePage() {
             <li className="border-b border-[rgba(20,16,10,0.15)]">
               <NextLink
                 href="/towns"
-                className="flex items-center gap-2 px-3 py-2.5 text-[12px] font-ui text-[#14100a] no-underline opacity-50 italic hover:opacity-100 hover:bg-[#1a3a72] hover:text-[#f2e6c8] transition-all duration-150"
+                className="flex items-center gap-2 px-3 py-2.5 text-[12px] font-ui text-[#14100a] no-underline opacity-[0.65] italic hover:opacity-100 hover:bg-[#1a3a72] hover:text-[#f2e6c8] transition-all duration-150"
               >
                 + 54 more →
               </NextLink>
@@ -386,7 +386,7 @@ export default async function HomePage() {
         <div className="bg-[#1a3a72] px-8 sm:px-12 py-12 sm:py-16 relative overflow-hidden flex flex-col justify-between">
 
           {/* Tilted tag */}
-          <div className="absolute top-12 right-8 rotate-[3deg] bg-[#4A6A9B] text-[#f2e6c8] font-editorial font-bold text-[12px] px-3.5 py-2 border-[2.5px] border-[#f2e6c8]/50 shadow-[3px_3px_0_#14100a] z-[3]">
+          <div className="absolute top-12 right-8 rotate-[3deg] bg-[#4A6A9B] text-white font-editorial font-bold text-[12px] px-3.5 py-2 border-[2.5px] border-[#f2e6c8]/50 shadow-[3px_3px_0_#14100a] z-[3]">
             Featured Town
           </div>
 
@@ -396,7 +396,7 @@ export default async function HomePage() {
           </div>
 
           <div className="relative z-10">
-            <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.65)] mb-5">
+            <p className="font-ui text-[11px] font-semibold tracking-[0.28em] uppercase text-[rgba(242,230,200,0.80)] mb-5">
               This Week
             </p>
             <h3
@@ -405,10 +405,10 @@ export default async function HomePage() {
             >
               Concord
             </h3>
-            <p className="font-editorial font-black text-[#cc3322] text-[48px] sm:text-[72px] leading-none tracking-[-0.04em] mt-4">
+            <p className="font-editorial font-black text-[#f2e6c8] text-[48px] sm:text-[72px] leading-none tracking-[-0.04em] mt-4">
               Apr 19
             </p>
-            <p className="font-editorial italic font-light text-[19px] sm:text-[18px] leading-[1.6] text-[rgba(242,230,200,0.7)] max-w-[340px] mt-6">
+            <p className="font-editorial italic font-light text-[19px] sm:text-[18px] leading-[1.6] text-[rgba(242,230,200,0.85)] max-w-[340px] mt-6">
               The shot heard round the world. But who fired it? Seventy-seven militia stood on a triangular green at dawn. What they knew — and feared — is more complicated than the myth.
             </p>
             <NextLink
@@ -473,7 +473,7 @@ export default async function HomePage() {
               <svg width="32" height="1" viewBox="0 0 32 1" aria-hidden="true">
                 <line x1="0" y1="0.5" x2="32" y2="0.5" stroke="rgba(242,230,200,0.25)" strokeWidth="1" />
               </svg>
-              <p className="font-ui text-[10px] font-medium tracking-[0.24em] uppercase text-[rgba(242,230,200,0.7)]">
+              <p className="font-ui text-[10px] font-medium tracking-[0.24em] uppercase text-[rgba(242,230,200,0.88)]">
                 Thomas Paine · The American Crisis · 1776
               </p>
               <svg width="32" height="1" viewBox="0 0 32 1" aria-hidden="true">
@@ -519,7 +519,7 @@ export default async function HomePage() {
             <div className="absolute top-4 right-5 font-editorial font-black text-[80px] leading-none tracking-[-0.05em] opacity-[0.12] pointer-events-none select-none text-[#14100a]" aria-hidden="true">
               01
             </div>
-            <span className="inline-block font-ui text-[11px] font-semibold tracking-[0.24em] uppercase px-2.5 py-1 border-[1.5px] mb-5 text-[#cc3322] border-[#cc3322]">
+            <span className="inline-block font-ui text-[11px] font-semibold tracking-[0.24em] uppercase px-2.5 py-1 border-[1.5px] mb-5 text-[#B53A29] border-[#B53A29]">
               People
             </span>
             <h3 className="font-editorial font-black text-[20px] sm:text-[24px] leading-[1.05] tracking-[-0.02em] mb-4 text-[#14100a]">
@@ -541,18 +541,18 @@ export default async function HomePage() {
             <div className="absolute top-4 right-5 font-editorial font-black text-[80px] leading-none tracking-[-0.05em] opacity-[0.12] pointer-events-none select-none text-[#f2e6c8]" aria-hidden="true">
               02
             </div>
-            <span className="inline-block font-ui text-[11px] font-semibold tracking-[0.24em] uppercase px-2.5 py-1 border-[1.5px] mb-5 text-cream/80 border-cream/50">
+            <span className="inline-block font-ui text-[11px] font-semibold tracking-[0.24em] uppercase px-2.5 py-1 border-[1.5px] mb-5 text-[rgba(242,236,224,0.8)] border-cream/50">
               Places
             </span>
             <h3 className="font-editorial font-black text-[20px] sm:text-[24px] leading-[1.05] tracking-[-0.02em] mb-4 text-[#f2e6c8]">
               The Tavern That Was Really a War Room
             </h3>
-            <p className="font-ui text-[20px] font-light leading-[1.7] text-[rgba(242,230,200,0.6)]">
+            <p className="font-ui text-[20px] font-light leading-[1.7] text-[rgba(242,230,200,0.80)]">
               Every town had one. The public room where men drank cider and planned treason. Buckman Tavern had both — sometimes on the same night.
             </p>
             <NextLink
               href="/towns/lexington-ma"
-              className="inline-flex items-center gap-2 mt-6 font-ui text-[10px] font-semibold tracking-[0.18em] uppercase no-underline pb-0.5 text-cream/80 border-b-[1.5px] border-cream/60"
+              className="inline-flex items-center gap-2 mt-6 font-ui text-[10px] font-semibold tracking-[0.18em] uppercase no-underline pb-0.5 text-[rgba(242,236,224,0.8)] border-b-[1.5px] border-cream/60"
             >
               Read More
             </NextLink>
@@ -563,18 +563,18 @@ export default async function HomePage() {
             <div className="absolute top-4 right-5 font-editorial font-black text-[80px] leading-none tracking-[-0.05em] opacity-[0.12] pointer-events-none select-none text-[#f2e6c8]" aria-hidden="true">
               03
             </div>
-            <span className="inline-block font-ui text-[11px] font-semibold tracking-[0.24em] uppercase px-2.5 py-1 border-[1.5px] mb-5 text-[#f2e6c8] border-[rgba(242,230,200,0.5)]">
+            <span className="inline-block font-ui text-[11px] font-semibold tracking-[0.24em] uppercase px-2.5 py-1 border-[1.5px] mb-5 text-white border-[rgba(255,255,255,0.5)]">
               Forgotten
             </span>
-            <h3 className="font-editorial font-black text-[20px] sm:text-[24px] leading-[1.05] tracking-[-0.02em] mb-4 text-[#f2e6c8]">
+            <h3 className="font-editorial font-black text-[20px] sm:text-[24px] leading-[1.05] tracking-[-0.02em] mb-4 text-white">
               The Women Who Kept the Powder Dry
             </h3>
-            <p className="font-ui text-[20px] font-light leading-[1.7] text-[rgba(242,230,200,0.65)]">
+            <p className="font-ui text-[20px] font-light leading-[1.7] text-white">
               When the men marched out, someone stayed behind. Hid the flax. Buried the pewter. Fed the scouts who came through at midnight. These are their names.
             </p>
             <NextLink
               href="/towns"
-              className="inline-flex items-center gap-2 mt-6 font-ui text-[10px] font-semibold tracking-[0.18em] uppercase no-underline pb-0.5 text-[#f2e6c8] border-b-[1.5px] border-[rgba(242,230,200,0.5)]"
+              className="inline-flex items-center gap-2 mt-6 font-ui text-[10px] font-semibold tracking-[0.18em] uppercase no-underline pb-0.5 text-white border-b-[1.5px] border-[rgba(255,255,255,0.5)]"
             >
               Browse Towns →
             </NextLink>
@@ -597,7 +597,7 @@ export default async function HomePage() {
         </div>
 
         {/* Tilted stamp */}
-        <div className="absolute top-10 right-[300px] font-editorial font-black text-[11px] tracking-[0.12em] uppercase text-[#f2e6c8] border-[3px] border-[rgba(242,230,200,0.6)] px-3.5 py-2 -rotate-[8deg] opacity-60 z-[2] hidden sm:block">
+        <div className="absolute top-10 right-[300px] font-editorial font-black text-[11px] tracking-[0.12em] uppercase text-[#f2e6c8] border-[3px] border-[rgba(242,230,200,0.6)] px-3.5 py-2 -rotate-[8deg] opacity-60 z-[2] hidden sm:block" aria-hidden="true">
           All Welcome
         </div>
 

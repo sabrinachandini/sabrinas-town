@@ -43,7 +43,7 @@ export function TownSubnav({ slug }: TownSubnavProps) {
                   className={`no-underline block px-4 py-3.5 font-ui font-medium text-[10px] uppercase tracking-[0.15em] whitespace-nowrap border-b-2 transition-colors duration-150 ${
                     active
                       ? "text-cream border-crimson"
-                      : "text-cream/40 border-transparent hover:text-cream hover:border-cream/30"
+                      : "text-[rgba(242,236,224,0.4)] border-transparent hover:text-cream hover:border-cream/30"
                   }`}
                 >
                   {label}

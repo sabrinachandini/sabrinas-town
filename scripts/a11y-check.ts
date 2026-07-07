@@ -25,14 +25,12 @@ const PATHS = [
   "/muster/new",
 ];
 
-const IGNORE_RULES: string[] = [
-  // MapLibre GL canvas — third-party, no fix available from our side
-  "canvas-capture",
-];
+const IGNORE_RULES: string[] = [];
 
 async function audit() {
   const browser = await chromium.launch();
-  const page = await browser.newPage();
+  const context = await browser.newContext();
+  const page = await context.newPage();
 
   let totalViolations = 0;
   const report: Array<{ path: string; count: number; items: string[] }> = [];
@@ -49,14 +47,23 @@ async function audit() {
     const results = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
       .disableRules(IGNORE_RULES)
+      .exclude('[aria-hidden="true"]')
       .analyze();
 
     const count = results.violations.length;
     totalViolations += count;
 
-    const items = results.violations.map(
-      (v) => `  [${v.impact?.toUpperCase()}] ${v.id}: ${v.description} (${v.nodes.length} node${v.nodes.length === 1 ? "" : "s"})`
-    );
+    const items: string[] = [];
+    for (const v of results.violations) {
+      items.push(`  [${v.impact?.toUpperCase()}] ${v.id}: ${v.description} (${v.nodes.length} node${v.nodes.length === 1 ? "" : "s"})`);
+      if (v.id === "color-contrast") {
+        for (const node of v.nodes) {
+          const d = node.any?.[0]?.data as { fgColor?: string; bgColor?: string; contrastRatio?: number } | undefined;
+          const sel = node.target?.join(" ") ?? "?";
+          if (d) items.push(`    fg=${d.fgColor} bg=${d.bgColor} ratio=${d.contrastRatio?.toFixed(2)} → ${sel}`);
+        }
+      }
+    }
 
     report.push({ path, count, items });
 
@@ -65,6 +72,7 @@ async function audit() {
     for (const item of items) console.log(item);
   }
 
+  await context.close();
   await browser.close();
 
   console.log(`\n─────────────────────────────────`);
