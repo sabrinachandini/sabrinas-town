@@ -72,8 +72,13 @@ The business directory has 25 entries, zero HIFE Picks. The Bible requires that 
 **5. Publish the Accessibility Statement**
 `/accessibility` is live but the page notes it's a draft. Once you've reviewed the known gaps section (printed musters, complex data tables, map keyboard experience), update the statement's status note and consider this the official WCAG 2.2 AA declaration.
 
-**6. Set up Apify tasks for the 7 new HTML event sources**
-The `APIFY_API_KEY` (provided tonight) is now in `sites/hife/.env.local`. Seven new event sources have `type: "html"` but no `apifyTaskId` yet (Massachusetts Historical Society, Historic Annapolis, Maryland Historical Society, Old Barracks Museum, Friends of Jockey Hollow, Newport Historical Society, Princeton Battlefield Society). Create Apify web-scraper tasks for each and update `seed-event-sources.ts` with the task IDs.
+**6. ~~Set up Apify tasks~~ — DONE. One action needed: approve the actor.**
+All 7 tasks were created and wired up in the DB. Task IDs: Massachusetts Historical Society (7aL74x75sF5K7U0kW), Historic Annapolis (uImQsAOMuGqaPlPaq), Maryland Historical Society (bwmcrtdEs5VbgyDQ4), Old Barracks Museum (ecwlazjth4795rvwm), Morristown NHP Friends of Jockey Hollow (07WKD6GbHPAojiNkU), Newport Historical Society (NL5Rk4A1DEBPO2g26), Princeton Battlefield Society (ymel65zJSuiaE2Xmv).
+
+**One action required to activate all 12 tasks (existing + new):** visit this URL while logged into Apify and click Approve:
+`https://console.apify.com/actors/moJRLRc85AitArpNN?approvePermissions=true`
+
+After approval, the cron-based event ingest pipeline will run all 12 tasks automatically.
 
 **7. Confirm NPS park code BENN (Bennington)**
 The Bennington Battlefield source was added with park code `BENN` — this should be confirmed against the NPS API (`https://developer.nps.gov/api/v1/parks?parkCode=BENN`) before enabling. The Bennington Battle Monument is a Vermont state site, not NPS — the code may not exist. If it doesn't, set `active=false` on that source record.
@@ -84,7 +89,9 @@ The Bennington Battlefield source was added with park code `BENN` — this shoul
 
 **Anthropic API credits exhausted.** The `generate-draft-lessons.ts` script that calls Claude to write AI-generated lesson plans failed with a credit balance error on all 15 towns. The stub lesson plans were created using template data from the DB instead (simpler but solid framework). When credits are replenished, run `npx tsx scripts/generate-draft-lessons.ts` to replace the template versions with richer AI-generated content.
 
-**relatedTrails field.** The task asked to populate `relatedTrails` on entities. This field does not exist in the current Prisma schema — it was not added in any branch. Adding it would require a schema migration and Supabase push. Noted for a future migration; added to the backlog.
+**relatedTrails field.** This field does not exist in the current Prisma schema. Adding it requires a schema migration pushed to Supabase. Backlogged — do when next doing a schema migration pass.
+
+**Apify actor permission.** The API key can CREATE tasks but cannot RUN them until the actor is approved once in the Apify console (see item 6 above). This is a one-click fix.
 
 **Google Places enrichment.** Deferred — GOOGLE_PLACES_API_KEY not configured. 15 hand-checked businesses were added instead. Run `scripts/enrich-places.ts` (or a new enrichBusinessesFromPlaces script) when the key arrives.
 
