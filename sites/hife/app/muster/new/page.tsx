@@ -318,7 +318,7 @@ export default function MusterNewPage() {
                     />
                   </div>
                   <p className="font-editorial italic text-[14px] text-ink/40 leading-snug">
-                    Claude will design a school-day itinerary (8 AM – 3 PM), prioritize bus-accessible sites, and frame every stop with curriculum connections.
+                    Claude will design a school-day muster (8 AM – 3 PM), prioritize bus-accessible sites, and frame every stop with curriculum connections.
                   </p>
                 </div>
               )}
@@ -458,7 +458,7 @@ export default function MusterNewPage() {
               Mustering your troops…
             </p>
             <p className="font-editorial italic text-[17px] text-ink/40">
-              Scouting routes, consulting the archives,<br className="hidden sm:block" /> assembling your itinerary.
+              Scouting routes, consulting the archives,<br className="hidden sm:block" /> drawing up your muster.
             </p>
             <p className="font-ui text-[11px] uppercase tracking-[0.18em] text-ink/25">
               This takes about 15 seconds

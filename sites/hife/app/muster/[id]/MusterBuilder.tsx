@@ -174,7 +174,7 @@ function SortableStop({
           type="button"
           onClick={onRemove}
           className="flex-shrink-0 text-ink/30 hover:text-[#cc3322] transition-colors w-[44px] h-[44px] flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a3a72] focus-visible:ring-offset-1"
-          aria-label={`Remove ${name} from itinerary`}
+          aria-label={`Remove ${name} from muster`}
         >
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
             <line x1="2" y1="2" x2="10" y2="10"/>

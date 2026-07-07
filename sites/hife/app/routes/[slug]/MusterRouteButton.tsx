@@ -31,7 +31,7 @@ export function MusterRouteButton({ routeId, routeName }: Props) {
         <p className="font-ui text-[9px] uppercase tracking-[0.24em] text-cream/60 mb-1">Follow this route</p>
         <p className="font-display text-cream text-[22px] leading-none tracking-[-0.01em]">Muster this trip</p>
         <p className="font-editorial italic text-cream/60 text-[14px] mt-1 leading-snug">
-          Claude drafts a day-by-day itinerary following the {routeName}.
+          Claude drafts a day-by-day muster following the {routeName}.
         </p>
       </div>
 

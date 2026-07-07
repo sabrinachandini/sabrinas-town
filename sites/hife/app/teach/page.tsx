@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "Teach | History is for Everyone",
   description:

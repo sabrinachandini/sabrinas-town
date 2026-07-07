@@ -49,7 +49,7 @@ export default function AccessibilityPage() {
                 "All animations and transitions pause when you have \"prefer reduced motion\" turned on in your system settings.",
                 "Every interactive element has a visible focus indicator — a navy ring on light backgrounds, a cream ring on dark ones.",
                 "The interactive map has a \"Browse as list\" alternative at every entry point, so the full town network is reachable without the map.",
-                "The Muster itinerary editor supports keyboard-only reordering of stops via the drag-and-drop library's built-in keyboard sensor.",
+                "The Muster stop editor supports keyboard-only reordering via the drag-and-drop library's built-in keyboard sensor.",
                 "All forms announce errors immediately to screen readers using live regions.",
                 "Color is never the only signal — labels, icons, and text always accompany color coding.",
                 "Touch targets are at least 44×44 pixels on all interactive controls.",

@@ -1,10 +1,43 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { getMusterByToken } from "@/lib/muster";
 import { MusterShareMap } from "./MusterShareMap";
 import { ShareActions } from "./ShareActions";
 
 interface PageProps { params: Promise<{ token: string }> }
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { token } = await params;
+  const muster = await getMusterByToken(token);
+  if (!muster) return { title: "Muster | History Is For Everyone" };
+
+  const totalDays = muster.days.length;
+  const townNames = [...new Set(
+    muster.days.flatMap((d) => d.stops.map((s) => s.place?.town?.name).filter(Boolean))
+  )].slice(0, 4).join(", ");
+
+  const title = muster.title || `${totalDays}-Day Revolutionary War Muster`;
+  const description = townNames
+    ? `${totalDays} days exploring ${townNames} and more — mustered by History Is For Everyone.`
+    : `A ${totalDays}-day Revolutionary War road trip, mustered by History Is For Everyone.`;
+
+  return {
+    title: `${title} | History Is For Everyone`,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      siteName: "History Is For Everyone",
+    },
+    twitter: {
+      card: "summary",
+      title,
+      description,
+    },
+  };
+}
 
 const DAY_COLORS = ["#cc3322", "#1a3a72", "#4A6A9B", "#5a7a5a", "#8B6914", "#6B21A8"];
 
@@ -124,7 +157,7 @@ export default async function MusterSharePage({ params }: PageProps) {
           {/* Footer CTA */}
           <div className="border-t border-ink/10 bg-[#1a3a72]/5">
             <div className="max-w-[680px] mx-auto px-8 md:px-10 py-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <p className="font-ui text-[14px] text-ink/50">Plan your own Revolutionary War road trip.</p>
+              <p className="font-ui text-[14px] text-ink/50">Muster your own Revolutionary War road trip.</p>
               <Link href="/muster/new" className="no-underline font-ui text-[10px] font-semibold uppercase tracking-[0.18em] bg-[#cc3322] text-cream px-6 py-3 hover:bg-[#a32818] transition-colors">
                 Muster a Trip →
               </Link>

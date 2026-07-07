@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Muster — Plan Your Revolutionary War Road Trip | History Is For Everyone",
   description:
-    "Muster a multi-day Revolutionary War road trip. Get a day-by-day itinerary with historical sites, living history events, and HIFE's expert voice — in under 5 minutes.",
+    "Muster a multi-day Revolutionary War road trip. Get a day-by-day plan with historical sites, living history events, and HIFE's expert voice — in under 5 minutes.",
 };
 
 const HOW_IT_WORKS = [
@@ -16,7 +16,7 @@ const HOW_IT_WORKS = [
   {
     step: "02",
     title: "We muster a plan",
-    body: "Claude — powered by History Is For Everyone's content — drafts a day-by-day itinerary built around sites and real events happening on your dates.",
+    body: "Claude — powered by History Is For Everyone's content — drafts a day-by-day muster built around sites and real events happening on your dates.",
   },
   {
     step: "03",
