@@ -267,6 +267,164 @@ export async function fetchICSEvents(
   return events;
 }
 
+// ── Apify task fetcher ────────────────────────────────────────────────────────
+
+const APIFY_BASE = "https://api.apify.com/v2";
+
+/**
+ * Trigger an Apify task run (fire-and-forget — we read the *previous* run's
+ * dataset on the same cron tick, so today's trigger is tomorrow's data).
+ */
+async function triggerApifyTask(taskId: string, log: (msg: string) => void): Promise<void> {
+  const token = process.env.APIFY_API_TOKEN;
+  if (!token) return;
+  try {
+    const res = await fetch(`${APIFY_BASE}/actor-tasks/${taskId}/runs?token=${token}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({}),
+    });
+    if (res.ok) {
+      log(`[Apify] Triggered task ${taskId}`);
+    } else {
+      log(`[Apify] Trigger failed for ${taskId}: HTTP ${res.status}`);
+    }
+  } catch (e) {
+    log(`[Apify] Trigger error for ${taskId}: ${String(e).slice(0, 80)}`);
+  }
+}
+
+interface ApifyItem {
+  title?: string;
+  name?: string;
+  startDate?: string;
+  endDate?: string;
+  description?: string;
+  venue?: string;
+  location?: string | { name?: string };
+  url?: string;
+}
+
+export async function fetchApifyEvents(
+  source: EventSource,
+  log: (msg: string) => void
+): Promise<RawEvent[]> {
+  const token = process.env.APIFY_API_TOKEN;
+  if (!token) {
+    log(`[Apify] No APIFY_API_TOKEN — skipping ${source.name}`);
+    return [];
+  }
+
+  const taskId = source.apifyTaskId;
+  if (!taskId) {
+    log(`[Apify] No apifyTaskId on source ${source.name} — skipping`);
+    return [];
+  }
+
+  // Trigger a fresh run (results will be ready next cron tick)
+  await triggerApifyTask(taskId, log);
+
+  // Read the last SUCCEEDED run's dataset
+  let datasetId: string | null = null;
+  try {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT);
+    const runRes = await fetch(
+      `${APIFY_BASE}/actor-tasks/${taskId}/runs/last?status=SUCCEEDED&token=${token}`,
+      { signal: controller.signal }
+    );
+    clearTimeout(timer);
+    if (!runRes.ok) {
+      log(`[Apify] No succeeded run yet for ${source.name} (HTTP ${runRes.status}) — will retry next day`);
+      return [];
+    }
+    const runData = (await runRes.json()) as { data?: { defaultDatasetId?: string } };
+    datasetId = runData.data?.defaultDatasetId ?? null;
+  } catch (e) {
+    log(`[Apify] Failed to fetch last run for ${source.name}: ${String(e).slice(0, 80)}`);
+    return [];
+  }
+
+  if (!datasetId) {
+    log(`[Apify] No dataset for ${source.name}`);
+    return [];
+  }
+
+  // Fetch items from the dataset
+  let items: ApifyItem[] = [];
+  try {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT);
+    const itemsRes = await fetch(
+      `${APIFY_BASE}/datasets/${datasetId}/items?token=${token}&limit=100`,
+      { signal: controller.signal }
+    );
+    clearTimeout(timer);
+    if (!itemsRes.ok) {
+      log(`[Apify] Failed to fetch dataset items for ${source.name}: HTTP ${itemsRes.status}`);
+      return [];
+    }
+    items = (await itemsRes.json()) as ApifyItem[];
+  } catch (e) {
+    log(`[Apify] Dataset fetch error for ${source.name}: ${String(e).slice(0, 80)}`);
+    return [];
+  }
+
+  if (!Array.isArray(items)) {
+    log(`[Apify] Unexpected dataset format for ${source.name}`);
+    return [];
+  }
+
+  const events: RawEvent[] = [];
+  for (const item of items) {
+    try {
+      const title = (item.title || item.name || "").trim();
+      if (!title || title.length < 4) continue;
+
+      const startStr = item.startDate ?? null;
+      let startDate: Date | null = null;
+      if (startStr) {
+        const d = new Date(startStr);
+        if (!isNaN(d.getTime())) startDate = d;
+      }
+      if (!startDate) {
+        log(`[Apify] Skipping "${title}" from ${source.name} — unparseable date "${startStr}"`);
+        continue;
+      }
+
+      let endDate: Date | null = null;
+      if (item.endDate) {
+        const d = new Date(item.endDate);
+        if (!isNaN(d.getTime())) endDate = d;
+      }
+
+      const venueRaw = item.venue ?? item.location ?? null;
+      const venue = typeof venueRaw === "string"
+        ? venueRaw.slice(0, 200)
+        : typeof venueRaw === "object" && venueRaw !== null
+        ? String(venueRaw.name ?? "").slice(0, 200) || null
+        : null;
+
+      events.push({
+        externalId: `apify-${taskId}-${title.slice(0, 40).replace(/\s+/g, "-")}-${startDate.toISOString().split("T")[0]}`,
+        title,
+        description: truncate(item.description ?? title, 300),
+        startDate,
+        endDate,
+        isRecurring: false,
+        venue: venue || null,
+        url: item.url || source.url,
+        category: "tour",
+      });
+    } catch (e) {
+      log(`[Apify] Error normalizing item from ${source.name}: ${String(e).slice(0, 80)}`);
+    }
+  }
+
+  log(`[Apify] ${source.name}: ${events.length} events from dataset ${datasetId}`);
+  return events;
+}
+
 // ── Town matching (for NPS multi-town parks) ──────────────────────────────────
 
 export function matchTownFromVenue(venue: string | null, candidateTownNames: Array<{ id: string; name: string }>): string | null {
@@ -315,6 +473,8 @@ export async function processSource(
     rawEvents = await fetchNPSEvents(source.npsParkCode, log);
   } else if (source.type === "ics") {
     rawEvents = await fetchICSEvents(source, log);
+  } else if (source.type === "apify") {
+    rawEvents = await fetchApifyEvents(source, log);
   } else {
     log(`[pipeline] Source type "${source.type}" not yet automated — skipping ${source.name}`);
     return { ...result, status: "empty" };

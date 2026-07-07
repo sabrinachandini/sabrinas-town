@@ -22,9 +22,10 @@ const DRY_RUN = process.argv.includes("--dry-run");
 interface SourceDef {
   name: string;
   url: string;
-  type: "nps_api" | "ics" | "html";
+  type: "nps_api" | "ics" | "html" | "apify";
   trustLevel: "auto_publish" | "review_first";
   npsParkCode?: string;
+  apifyTaskId?: string;
   primaryTownSlug?: string;
   extraTownSlugs?: string[];
   notes?: string;
@@ -80,46 +81,51 @@ const SOURCES: SourceDef[] = [
     notes: "Valley Forge encampment site. Park code VAFO.",
   },
 
-  // ── Museum / Historical Society pages (review_first — add ICS URL when confirmed) ──
+  // ── Museum / Historical Society pages — scraped via Apify web-scraper tasks ──
   {
     name: "Lexington Historical Society",
     url: "https://www.lexingtonhistory.org/events/",
-    type: "html",
+    type: "apify",
     trustLevel: "review_first",
+    apifyTaskId: "5SCGilwWZGosi42Nn",
     primaryTownSlug: "lexington-ma",
-    notes: "Check for ICS export on their calendar page. If found, change type to 'ics' and update URL to the ICS feed link.",
+    notes: "Apify task: hife-lexington-historical-society. Events land in review queue.",
   },
   {
     name: "Concord Museum",
     url: "https://www.concordmuseum.org/events.php",
-    type: "html",
+    type: "apify",
     trustLevel: "review_first",
+    apifyTaskId: "WHe7blDa18zXhbvwG",
     primaryTownSlug: "concord-ma",
-    notes: "Check for ICS/Google Calendar export. Change type to 'ics' once confirmed.",
+    notes: "Apify task: hife-concord-museum.",
   },
   {
     name: "Paul Revere House",
     url: "https://www.paulreverehouse.org/",
-    type: "html",
+    type: "apify",
     trustLevel: "review_first",
+    apifyTaskId: "wbdwOt80eX5WDUvAG",
     primaryTownSlug: "boston-ma",
-    notes: "Small museum in Boston's North End. Check events section for ICS feed.",
+    notes: "Apify task: hife-paul-revere-house.",
   },
   {
     name: "Colonial Williamsburg — Events",
     url: "https://www.colonialwilliamsburg.org/plan/events/",
-    type: "html",
+    type: "apify",
     trustLevel: "review_first",
+    apifyTaskId: "sNY1pXUsqRGNfKJQp",
     primaryTownSlug: "williamsburg-va",
-    notes: "Large events calendar. They may offer an ICS export — check the calendar page source for feed links.",
+    notes: "Apify task: hife-colonial-williamsburg.",
   },
   {
     name: "Museum of the American Revolution",
     url: "https://www.amrevmuseum.org/events",
-    type: "html",
+    type: "apify",
     trustLevel: "review_first",
+    apifyTaskId: "j1tTp7RsHqmxRBrYY",
     primaryTownSlug: "philadelphia-pa",
-    notes: "Philadelphia museum dedicated entirely to the Revolution. Check for ICS feed.",
+    notes: "Apify task: hife-amrev-museum.",
   },
 ];
 
@@ -164,6 +170,7 @@ async function main() {
           type: def.type,
           trustLevel: def.trustLevel,
           npsParkCode: def.npsParkCode ?? null,
+          apifyTaskId: def.apifyTaskId ?? null,
           primaryTownId: primaryTown?.id ?? null,
           townIds: extraIds,
           notes: def.notes ?? null,

@@ -1272,6 +1272,7 @@ model EventSource {
   townIds        String[]  @default([])  // extra town IDs (e.g. NPS park spans multiple towns)
 
   npsParkCode    String?   // e.g. "MIMA"
+  apifyTaskId    String?   // Apify actor task ID for html sources
   active         Boolean   @default(true)
   lastFetchAt    DateTime?
   lastStatus     String?   // "ok" | "empty" | "error: ..."
