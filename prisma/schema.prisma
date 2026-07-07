@@ -90,6 +90,9 @@ model Town {
   // Business directory
   businesses       Business[]
 
+  // Event ingestion sources
+  eventSources     EventSource[]  @relation("EventSourcePrimaryTown")
+
   // Editor note — shown on the town page (e.g. "The battlefield lies just
   // across the South Carolina state line in York County, SC.")
   footnote         String?   @db.Text
@@ -113,11 +116,20 @@ model LocalEvent {
   endDay      Int?
   dateNote    String?
   eventDate   DateTime?
+  eventEndDate DateTime?
 
   venue       String?
   url         String?
   admission   String?
   featured    Boolean  @default(false)
+
+  // Ingestion pipeline fields
+  published   Boolean  @default(true)   // existing events default published; pipeline sets per trust level
+  needsReview Boolean  @default(false)
+  sourceId    String?
+  source      EventSource? @relation(fields: [sourceId], references: [id])
+  externalId  String?  // source-unique ID for deduplication
+  confidence  String   @default("unverified")  // "verified" | "unverified"
 
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
@@ -126,6 +138,9 @@ model LocalEvent {
 
   @@index([townId])
   @@index([month])
+  @@index([published])
+  @@index([townId, published])
+  @@index([sourceId, externalId])
 }
 
 model Event {
@@ -1241,4 +1256,45 @@ model Business {
   @@index([category])
   @@index([isHifePick])
   @@index([status])
+}
+
+// ── Event Ingestion ───────────────────────────────────────────────────────────
+
+model EventSource {
+  id             String    @id @default(cuid())
+  name           String
+  url            String
+  type           String    // "nps_api" | "ics" | "html"
+  trustLevel     String    // "auto_publish" | "review_first"
+
+  primaryTownId  String?
+  primaryTown    Town?     @relation("EventSourcePrimaryTown", fields: [primaryTownId], references: [id])
+  townIds        String[]  @default([])  // extra town IDs (e.g. NPS park spans multiple towns)
+
+  npsParkCode    String?   // e.g. "MIMA"
+  active         Boolean   @default(true)
+  lastFetchAt    DateTime?
+  lastStatus     String?   // "ok" | "empty" | "error: ..."
+  lastEventCount Int?
+  notes          String?   @db.Text
+
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  events         LocalEvent[]
+
+  @@index([active])
+}
+
+model IngestionRun {
+  id             String    @id @default(cuid())
+  startedAt      DateTime  @default(now())
+  completedAt    DateTime?
+  status         String    @default("running")  // "running" | "completed" | "failed"
+  sourcesChecked Int       @default(0)
+  eventsCreated  Int       @default(0)
+  eventsDuped    Int       @default(0)
+  eventsExpired  Int       @default(0)
+  errors         Json?
+  log            String    @db.Text @default("")
 }

@@ -206,6 +206,7 @@ export async function findMusterData(
         take: 5,
       },
       localEvents: {
+        where: { published: true },
         select: {
           id: true, name: true, category: true, description: true,
           venue: true, url: true, eventDate: true, month: true, day: true, endDay: true,
