@@ -10,6 +10,31 @@ export const metadata: Metadata = {
     "Classroom-ready resources for teaching the American Revolution through local history. Lesson plans, primary sources, quizzes, and comparative assignments aligned to state standards.",
 };
 
+// ─── State code → display name + teach slug ───────────────────────────────────
+
+const STATE_META: Record<string, { name: string; slug: string }> = {
+  MA: { name: "Massachusetts", slug: "massachusetts" },
+  NJ: { name: "New Jersey", slug: "new-jersey" },
+  VA: { name: "Virginia", slug: "virginia" },
+  NY: { name: "New York", slug: "new-york" },
+  PA: { name: "Pennsylvania", slug: "pennsylvania" },
+  SC: { name: "South Carolina", slug: "south-carolina" },
+  CT: { name: "Connecticut", slug: "connecticut" },
+  NC: { name: "North Carolina", slug: "north-carolina" },
+  RI: { name: "Rhode Island", slug: "rhode-island" },
+  MD: { name: "Maryland", slug: "maryland" },
+  NH: { name: "New Hampshire", slug: "new-hampshire" },
+  GA: { name: "Georgia", slug: "georgia" },
+  VT: { name: "Vermont", slug: "vermont" },
+  DE: { name: "Delaware", slug: "delaware" },
+  ME: { name: "Maine", slug: "maine" },
+  // Frontier states (IL, IN, OH, WV) use the existing /teach/frontier page
+  IL: { name: "Illinois Territory", slug: "frontier" },
+  IN: { name: "Indiana Territory", slug: "frontier" },
+  OH: { name: "Ohio (Northwest Territory)", slug: "frontier" },
+  WV: { name: "West Virginia (Virginia frontier)", slug: "frontier" },
+};
+
 // ─── State descriptions (human-authored, unchanged from original) ──────────────
 
 const STATE_DESCRIPTIONS: Record<string, string> = {
@@ -145,8 +170,11 @@ async function getTeachDirectoryData(): Promise<{
 export default async function TeachPage() {
   const { towns, stats } = await getTeachDirectoryData();
 
-  // States represented in DB data, sorted
-  const stateNames = [...new Set(towns.map((t) => t.state))].sort();
+  // Resolve state codes → display names; sort by display name
+  const stateCodes = [...new Set(towns.map((t) => t.state))].sort();
+  const stateNames = stateCodes.map(
+    (code) => STATE_META[code]?.name ?? code
+  );
 
   return (
     <main>
@@ -310,9 +338,13 @@ export default async function TeachPage() {
           </div>
 
           {stateNames.map((stateName, i) => {
-            const stateTowns = towns.filter((t) => t.state === stateName);
+            // Find the code for this display name
+            const stateCode = stateCodes.find(
+              (c) => (STATE_META[c]?.name ?? c) === stateName
+            ) ?? stateName;
+            const stateTowns = towns.filter((t) => t.state === stateCode);
             const desc = STATE_DESCRIPTIONS[stateName];
-            const stateSlug = stateName.toLowerCase().replace(/\s+/g, "-");
+            const stateSlug = STATE_META[stateCode]?.slug ?? stateName.toLowerCase().replace(/\s+/g, "-");
 
             return (
               <div

@@ -8,10 +8,19 @@
 
 import { useState, useMemo } from "react";
 
+// State abbreviation → display name (for card labels)
+const STATE_NAMES: Record<string, string> = {
+  MA: "Massachusetts", NJ: "New Jersey", VA: "Virginia", NY: "New York",
+  PA: "Pennsylvania", SC: "South Carolina", CT: "Connecticut", NC: "North Carolina",
+  RI: "Rhode Island", MD: "Maryland", NH: "New Hampshire", GA: "Georgia",
+  VT: "Vermont", DE: "Delaware", ME: "Maine", IL: "Illinois", IN: "Indiana",
+  OH: "Ohio", WV: "West Virginia",
+};
+
 export interface TeachTownCard {
   slug: string;
   name: string;
-  state: string;
+  state: string; // 2-letter code
   gradeRange: string;
   estimatedDuration: string;
   summary: string;
@@ -76,7 +85,7 @@ export function TeachDirectory({ towns }: TeachDirectoryProps) {
         const q = query.toLowerCase();
         return (
           t.name.toLowerCase().includes(q) ||
-          t.state.toLowerCase().includes(q) ||
+          (STATE_NAMES[t.state] ?? t.state).toLowerCase().includes(q) ||
           t.summary.toLowerCase().includes(q) ||
           (t.inquiryQuestion?.toLowerCase().includes(q) ?? false)
         );
@@ -199,7 +208,7 @@ export function TeachDirectory({ towns }: TeachDirectoryProps) {
                         {town.name}
                       </p>
                       <p className="font-ui text-[10px] uppercase tracking-[0.15em] text-[#0e1428]/40 mt-0.5">
-                        {town.state}
+                        {STATE_NAMES[town.state] ?? town.state}
                       </p>
                     </div>
                     {/* Grade badge */}
