@@ -1214,6 +1214,7 @@ enum BusinessCategory {
   CAFE_BAKERY
   SHOPPING
   LODGING
+  HISTORIC_SITE
 }
 
 enum BusinessStatus {
