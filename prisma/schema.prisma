@@ -173,6 +173,8 @@ model Event {
   lat             Float?
   lng             Float?
 
+  relatedTrails   String[] @default([]) // trail IDs or slugs associated with this event
+
   createdAt       DateTime      @default(now())
   updatedAt       DateTime      @updatedAt
 
@@ -202,6 +204,8 @@ model Person {
   deathYear           Int?
   verificationStatus  VerificationStatus @default(VERIFIED)
   needsReview         Boolean            @default(false)
+
+  relatedTrails       String[] @default([]) // trail IDs or slugs associated with this person
 
   createdAt           DateTime           @default(now())
   updatedAt           DateTime           @updatedAt
@@ -283,6 +287,7 @@ model Place {
   accessibilityNotes String?  @db.Text
   parkingNotes       String?
   amenities          String[] // ["restrooms", "gift shop", "cafe"]
+  relatedTrails      String[] @default([]) // trail IDs or slugs associated with this place
 
   // Content
   historicalNote     String?  @db.Text  // Revolutionary significance
