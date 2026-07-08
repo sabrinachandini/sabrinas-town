@@ -1,10 +1,6 @@
-import { ComingSoon } from "@hife/ui";
-import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Places — Lexington, MA",
-};
-
+// Places information is now part of the Before You Go visitor guide.
 export default function PlacesPage() {
-  return <ComingSoon slug="lexington-ma" section="Places" />;
+  redirect("/visit");
 }
