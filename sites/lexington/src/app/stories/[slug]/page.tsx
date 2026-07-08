@@ -11,7 +11,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const story = await getStory(slug);
   if (!story) return { title: "Story Not Found" };
-  return { title: `${story.title} — Lexington, MA` };
+  return {
+    title: `${story.title} — Visit Lexington MA`,
+    description: story.excerpt || story.body.slice(0, 150) || undefined,
+  };
 }
 
 const VERIFICATION_LABELS: Record<string, string> = {
@@ -29,12 +32,14 @@ export default async function StoryDetailPage({ params }: Props) {
   return (
     <Container>
       <div className="py-12 max-w-2xl">
-        <a href="/stories" className="text-sm font-body text-red hover:underline mb-8 inline-block">
-          ← All stories
+        {/* Back link — text-sm (14px) — crimson-ink for AA */}
+        <a href="/stories" className="text-sm font-body text-crimson-ink hover:underline mb-8 inline-block">
+          ← Voices from 1775
         </a>
 
         <div className="flex items-center gap-3 mb-3">
-          <span className="text-red font-condensed text-xs tracking-widest uppercase">
+          {/* text-xs (12px) — crimson-ink required */}
+          <span className="text-crimson-ink font-condensed text-xs tracking-widest uppercase">
             {story.storyType === "HISTORICAL_VOICE" ? "Historical voice" : "Modern voice"}
           </span>
           <span className="text-text-muted text-xs font-body">·</span>
@@ -56,7 +61,8 @@ export default async function StoryDetailPage({ params }: Props) {
         )}
 
         {story.excerpt && (
-          <Text className="mt-4 text-lg text-text-muted leading-relaxed italic border-l-2 border-red pl-4">
+          /* Left border in crimson is fine (it's a border, not text) */
+          <Text className="mt-4 text-lg text-text-muted leading-relaxed italic border-l-4 border-crimson pl-4">
             {story.excerpt}
           </Text>
         )}

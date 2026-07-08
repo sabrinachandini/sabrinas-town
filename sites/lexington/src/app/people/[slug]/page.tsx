@@ -11,7 +11,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const person = await getPerson(slug);
   if (!person) return { title: "Person Not Found" };
-  return { title: `${person.name} — Lexington, MA` };
+  return {
+    title: `${person.name} — Visit Lexington MA`,
+    description: person.bioShort || undefined,
+  };
 }
 
 export default async function PersonDetailPage({ params }: Props) {
@@ -29,26 +32,31 @@ export default async function PersonDetailPage({ params }: Props) {
   return (
     <Container>
       <div className="py-12 max-w-2xl">
-        <a href="/people" className="text-sm font-body text-red hover:underline mb-8 inline-block">
-          ← All people
+        {/* Back link — text-sm (14px) needs crimson-ink not text-red */}
+        <a href="/people" className="text-sm font-body text-crimson-ink hover:underline mb-8 inline-block">
+          ← People
         </a>
 
         <div className="flex gap-6 items-start">
           {person.imageUrl && (
             <img
               src={person.imageUrl}
-              alt={person.name}
-              className="w-24 h-24 rounded-full object-cover shrink-0 border-2 border-border-light"
+              alt={`Portrait of ${person.name}`}
+              className="w-24 h-24 object-cover shrink-0 border-2 border-border-light"
             />
           )}
           <div>
             <Heading level={1} className="text-4xl font-condensed uppercase tracking-tight">
               {person.name}
             </Heading>
-            <div className="flex items-center gap-3 mt-1">
+            <div className="flex flex-wrap items-center gap-3 mt-1">
               {person.roles.length > 0 && (
-                <span className="text-red font-condensed text-sm tracking-widest uppercase">
-                  {person.roles.slice(0, 2).join(" · ")}
+                /* text-sm (14px) — use crimson-ink not text-red */
+                <span className="text-crimson-ink font-condensed text-sm tracking-widest uppercase">
+                  {person.roles
+                    .slice(0, 2)
+                    .map((r) => r.replace(/_/g, " "))
+                    .join(" · ")}
                 </span>
               )}
               {lifespan && (

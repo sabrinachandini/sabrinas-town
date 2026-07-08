@@ -11,7 +11,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const event = await getEvent(slug);
   if (!event) return { title: "Event Not Found" };
-  return { title: `${event.name} — Lexington, MA` };
+  return {
+    title: `${event.name} — Visit Lexington MA`,
+    description: event.summary || undefined,
+  };
 }
 
 export default async function EventDetailPage({ params }: Props) {
@@ -19,7 +22,6 @@ export default async function EventDetailPage({ params }: Props) {
   const event = await getEvent(slug);
   if (!event) notFound();
 
-  const year = event.startDate ? new Date(event.startDate).getFullYear() : null;
   const dateLabel = event.startDate
     ? new Date(event.startDate).toLocaleDateString("en-US", {
         month: "long", day: "numeric", year: "numeric",
@@ -29,13 +31,15 @@ export default async function EventDetailPage({ params }: Props) {
   return (
     <Container>
       <div className="py-12 max-w-2xl">
-        <a href="/events" className="text-sm font-body text-red hover:underline mb-8 inline-block">
-          ← All events
+        {/* Back link — text-crimson-ink: 14px text requires #B53A29 for AA */}
+        <a href="/events" className="text-sm font-body text-crimson-ink hover:underline mb-8 inline-block">
+          ← What&apos;s On
         </a>
 
-        {year && (
-          <div className="text-red font-condensed text-sm tracking-widest uppercase mb-3">
-            {dateLabel ?? year}
+        {dateLabel && (
+          /* Date label: text-sm (14px) — use crimson-ink */
+          <div className="text-crimson-ink font-condensed text-sm tracking-widest uppercase mb-3">
+            {dateLabel}
           </div>
         )}
 
@@ -47,7 +51,6 @@ export default async function EventDetailPage({ params }: Props) {
           {event.summary}
         </Text>
 
-
         {event.people.length > 0 && (
           <div className="mt-10 pt-8 border-t border-border-light">
             <div className="text-xs font-body text-text-muted uppercase tracking-widest mb-4">
@@ -58,12 +61,13 @@ export default async function EventDetailPage({ params }: Props) {
                 <a
                   key={person.id}
                   href={person.slug ? `/people/${person.slug}` : "/people"}
-                  className="inline-flex flex-col px-4 py-2 bg-bg-secondary rounded border border-border-light hover:border-red transition-colors"
+                  className="inline-flex flex-col px-4 py-2 bg-bg-secondary rounded border border-border-light hover:border-crimson transition-colors"
                 >
                   <span className="font-body font-semibold text-sm text-text-primary">{person.name}</span>
                   {person.roles.length > 0 && (
-                    <span className="text-xs text-red uppercase tracking-wide mt-0.5">
-                      {person.roles[0]}
+                    /* text-xs (12px) — use crimson-ink not text-red */
+                    <span className="text-xs text-crimson-ink uppercase tracking-wide mt-0.5">
+                      {person.roles[0].replace(/_/g, " ")}
                     </span>
                   )}
                 </a>
