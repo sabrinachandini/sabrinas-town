@@ -224,6 +224,12 @@ export async function getStory(slug: string): Promise<{
   };
 }
 
+export async function getPeopleCount(): Promise<number> {
+  const town = await prisma.town.findUnique({ where: { slug: SLUG }, select: { id: true } });
+  if (!town) return 0;
+  return prisma.person.count({ where: { townPeople: { some: { townId: town.id } } } });
+}
+
 export async function getEvents(): Promise<TownEvent[]> {
   const town = await prisma.town.findUnique({
     where: { slug: SLUG },
