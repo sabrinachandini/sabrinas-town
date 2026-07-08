@@ -47,13 +47,6 @@ export default async function EventDetailPage({ params }: Props) {
           {event.summary}
         </Text>
 
-        {event.fullText && (
-          <div className="mt-8 prose prose-sm max-w-none text-text-primary leading-relaxed space-y-4">
-            {event.fullText.split("\n\n").map((para, i) => (
-              <p key={i}>{para}</p>
-            ))}
-          </div>
-        )}
 
         {event.people.length > 0 && (
           <div className="mt-10 pt-8 border-t border-border-light">

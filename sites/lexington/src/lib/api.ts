@@ -103,7 +103,7 @@ export async function getPeople(): Promise<TownPerson[]> {
 export async function getEvent(slug: string): Promise<{
   id: string; slug: string | null; name: string;
   startDate: string | null; datePrecision: string;
-  summary: string; fullText: string | null;
+  summary: string;
   people: { id: string; name: string; roles: string[]; slug: string | null }[];
 } | null> {
   const town = await prisma.town.findUnique({ where: { slug: SLUG }, select: { id: true } });
@@ -114,7 +114,7 @@ export async function getEvent(slug: string): Promise<{
     select: {
       id: true, slug: true, name: true,
       startDate: true, datePrecision: true,
-      summary: true, fullText: true,
+      summary: true,
       eventPeople: {
         include: {
           person: { select: { id: true, name: true, roles: true, slug: true } },
@@ -131,7 +131,6 @@ export async function getEvent(slug: string): Promise<{
     startDate: row.startDate?.toISOString() ?? null,
     datePrecision: row.datePrecision,
     summary: row.summary ?? "",
-    fullText: row.fullText ?? null,
     people: row.eventPeople.map((ep) => ({
       id: ep.person.id,
       name: ep.person.name,
@@ -178,19 +177,21 @@ export async function getStories(): Promise<{
   if (!town) return [];
 
   const rows = await prisma.story.findMany({
-    where: { townId: town.id },
-    select: { id: true, slug: true, title: true, storyType: true, excerpt: true, verificationStatus: true },
+    where: { townId: town.id, slug: { not: null } },
+    select: { id: true, slug: true, title: true, storyType: true, verificationStatus: true },
     orderBy: { createdAt: "desc" },
   });
 
-  return rows.map((s) => ({
-    id: s.id,
-    slug: s.slug,
-    title: s.title,
-    storyType: s.storyType,
-    excerpt: s.excerpt ?? "",
-    verificationStatus: s.verificationStatus,
-  }));
+  return rows
+    .filter((s): s is typeof s & { slug: string } => s.slug !== null)
+    .map((s) => ({
+      id: s.id,
+      slug: s.slug,
+      title: s.title,
+      storyType: s.storyType,
+      excerpt: "",
+      verificationStatus: s.verificationStatus,
+    }));
 }
 
 export async function getStory(slug: string): Promise<{
@@ -205,21 +206,21 @@ export async function getStory(slug: string): Promise<{
     where: { townId: town.id, slug },
     select: {
       id: true, slug: true, title: true, storyType: true,
-      body: true, excerpt: true, verificationStatus: true,
-      subjectPersonName: true, narratorName: true,
+      textVersion: true, verificationStatus: true, narratorName: true,
+      subjectPerson: { select: { name: true } },
     },
   });
-  if (!row) return null;
+  if (!row || !row.slug) return null;
 
   return {
     id: row.id,
     slug: row.slug,
     title: row.title,
     storyType: row.storyType,
-    body: row.body ?? "",
-    excerpt: row.excerpt ?? "",
+    body: row.textVersion ?? "",
+    excerpt: "",
     verificationStatus: row.verificationStatus,
-    subjectPersonName: row.subjectPersonName ?? null,
+    subjectPersonName: row.subjectPerson?.name ?? null,
     narratorName: row.narratorName ?? null,
   };
 }
