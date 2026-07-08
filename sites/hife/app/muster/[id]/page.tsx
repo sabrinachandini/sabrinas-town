@@ -5,6 +5,7 @@ import { getMuster } from "@/lib/muster";
 import { auth } from "@/lib/auth";
 import { claimMuster } from "@/app/muster/actions";
 import { MusterBuilder } from "./MusterBuilder";
+import { FieldTripModule } from "@/components/teacher/FieldTripModule";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -103,6 +104,9 @@ export default async function MusterPage({ params }: PageProps) {
 
       {/* Interactive builder */}
       <MusterBuilder muster={muster} />
+
+      {/* Field trip materials — shown for musters with lesson content at stops */}
+      <FieldTripModule days={muster.days} />
 
       {/* Footer */}
       <div className="border-t border-ink/10 max-w-[1400px] mx-auto px-6 md:px-10 py-8 flex flex-wrap gap-4">

@@ -499,6 +499,7 @@ export interface TeacherModuleResponse {
   standards: Record<string, unknown>;
   relatedTowns: Array<{
     townId: string;
+    townSlug: string;
     townName: string;
     connectionType: string;
     teachingConnection: string;
@@ -1177,6 +1178,7 @@ export async function getTeacherModule(slug: string): Promise<TeacherModuleRespo
         },
         relatedTowns: town.outgoingLinks.map((link) => ({
           townId: link.toTown.id,
+          townSlug: link.toTown.slug,
           townName: link.toTown.name,
           connectionType: link.linkType as string,
           teachingConnection: link.reason,
@@ -1290,6 +1292,7 @@ export async function getTeacherModule(slug: string): Promise<TeacherModuleRespo
       },
       relatedTowns: fullTown.outgoingLinks.map((link) => ({
         townId: link.toTown.id,
+        townSlug: link.toTown.slug,
         townName: link.toTown.name,
         connectionType: link.linkType as string,
         teachingConnection: link.reason,
@@ -2684,7 +2687,7 @@ export interface TownBusiness {
   id: string;
   name: string;
   slug: string;
-  category: "RESTAURANT" | "CAFE_BAKERY" | "SHOPPING" | "LODGING";
+  category: "RESTAURANT" | "CAFE_BAKERY" | "SHOPPING" | "LODGING" | "HISTORIC_SITE";
   address: string | null;
   hours: string | null;
   priceRange: string | null;
@@ -2703,6 +2706,7 @@ export interface TownBusinesses {
     CAFE_BAKERY: TownBusiness[];
     SHOPPING: TownBusiness[];
     LODGING: TownBusiness[];
+    HISTORIC_SITE: TownBusiness[];
   };
 }
 
@@ -2733,6 +2737,7 @@ export async function getBusinessesByTown(slug: string): Promise<TownBusinesses 
       CAFE_BAKERY: businesses.filter((b) => b.category === "CAFE_BAKERY").map(toTownBusiness),
       SHOPPING: businesses.filter((b) => b.category === "SHOPPING").map(toTownBusiness),
       LODGING: businesses.filter((b) => b.category === "LODGING").map(toTownBusiness),
+      HISTORIC_SITE: businesses.filter((b) => b.category === "HISTORIC_SITE").map(toTownBusiness),
     };
 
     return { picks, byCategory };
