@@ -1,6 +1,19 @@
 import prisma from "./prisma";
 import type { Town, TownEvent, TownPerson } from "@hife/content";
 
+export type Business = {
+  id: string;
+  name: string;
+  slug: string;
+  category: string;
+  address: string | null;
+  hours: string | null;
+  website: string | null;
+  phone: string | null;
+  isHifePick: boolean;
+  blurb: string | null;
+};
+
 const SLUG = "lexington-ma";
 
 export async function getTown(): Promise<Town | null> {
@@ -229,6 +242,34 @@ export async function getPeopleCount(): Promise<number> {
   const town = await prisma.town.findUnique({ where: { slug: SLUG }, select: { id: true } });
   if (!town) return 0;
   return prisma.person.count({ where: { townPeople: { some: { townId: town.id } } } });
+}
+
+export async function getBusinesses(): Promise<Business[]> {
+  const town = await prisma.town.findUnique({ where: { slug: SLUG }, select: { id: true } });
+  if (!town) return [];
+
+  const rows = await prisma.business.findMany({
+    where: { townId: town.id, status: "ACTIVE" },
+    select: {
+      id: true, name: true, slug: true, category: true,
+      address: true, hours: true, website: true, phone: true,
+      isHifePick: true, blurb: true,
+    },
+    orderBy: [{ isHifePick: "desc" }, { name: "asc" }],
+  });
+
+  return rows.map((b) => ({
+    id: b.id,
+    name: b.name,
+    slug: b.slug,
+    category: b.category,
+    address: b.address,
+    hours: b.hours,
+    website: b.website,
+    phone: b.phone,
+    isHifePick: b.isHifePick,
+    blurb: b.blurb,
+  }));
 }
 
 export async function getEvents(): Promise<TownEvent[]> {
