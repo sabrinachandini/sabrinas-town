@@ -794,12 +794,15 @@ model LessonPlan {
 
   displayOrder         Int      @default(100)
   published            Boolean  @default(true)
+  needsReview          Boolean  @default(false)  // Flag for editorial review before high-stakes use
+  needsReviewReason    String?  @db.Text          // Why this plan needs review
 
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
 
   @@index([townId])
   @@index([published])
+  @@index([needsReview])
 }
 
 model PrimarySourcePacket {
@@ -818,6 +821,11 @@ model PrimarySourcePacket {
   analysisPrompts   String[]
   teacherNarrative  String?         @db.Text  // Long-form educator guidance (Opus)
   narrativeModel    String?         // "opus" if written by Opus
+
+  // Packet display fields
+  transcription     String?         @db.Text  // Period spelling preserved; shown in StudentPacket
+  facsimileUrl      String?                   // High-res image URL for StudentPacket facsimile column
+  glossary          Json?                     // [{term: string, definition: string}]
 
   displayOrder      Int             @default(100)
   published         Boolean         @default(true)
@@ -1206,6 +1214,7 @@ enum BusinessCategory {
   CAFE_BAKERY
   SHOPPING
   LODGING
+  HISTORIC_SITE
 }
 
 enum BusinessStatus {

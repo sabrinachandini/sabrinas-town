@@ -50,9 +50,10 @@ export default async function TeacherPrintPage({ params, searchParams }: PagePro
   const { slug } = await params;
   const { mode } = await searchParams;
   const isTeacherMode = mode === "teacher";
+  const isQuizMode = mode === "quiz";
 
   const module = await getTeacherModule(slug);
-  void recordOrgEvent(slug, "PRINT_CLICK");
+  void recordOrgEvent(slug, isQuizMode ? "QUIZ_PRINT" : "PRINT_CLICK");
 
   if (!module) {
     return <div className="p-8"><h1>Teacher module not found</h1></div>;
@@ -60,6 +61,99 @@ export default async function TeacherPrintPage({ params, searchParams }: PagePro
 
   const { town, overview, primarySources, handouts, quiz } = module;
   const lessonPlan = module.lessonPlan as unknown as LessonPlan;
+
+  // Quiz-only mode: render just the quiz + answer key (teacher gets both)
+  if (isQuizMode) {
+    return (
+      <div className="ws-page">
+        <PrintTrigger />
+
+        {/* Quiz cover */}
+        <section className="ws-cover page-break-after">
+          <div className="ws-cover-topbar">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo-horizontal.svg" alt="History is for Everyone" style={{ height: 48, width: "auto" }} />
+            <span className="ws-cover-topbar-series">American Revolution Network</span>
+          </div>
+          <p className="ws-cover-brand">Assessment Quiz</p>
+          <h1 className="ws-cover-title">{quiz?.title ?? overview.title}</h1>
+          <div className="ws-cover-rule" />
+          <p className="ws-cover-location">{town.name}, {town.state}</p>
+          <div className="ws-cover-meta">
+            <span>Grades {overview.gradeRange}</span>
+          </div>
+          <div className="ws-student-fields" style={{ marginTop: "2rem" }}>
+            <span className="ws-field">Name: <span className="ws-field-line" /></span>
+            <span className="ws-field">Date: <span className="ws-field-line ws-field-line--short" /></span>
+            <span className="ws-field">Period: <span className="ws-field-line ws-field-line--short" /></span>
+          </div>
+        </section>
+
+        {/* Quiz questions */}
+        {quiz?.questions?.length > 0 && (
+          <section className="ws-sheet print-section">
+            <StudentHeader title={overview.title} subtitle="Assessment Quiz" />
+            <div className="ws-quiz-header">
+              <h2 className="ws-quiz-title">{quiz.title}</h2>
+              <p className="ws-directions">{quiz.instructions}</p>
+            </div>
+            <ol className="ws-question-list">
+              {quiz.questions.map((q, qi) => (
+                <li key={q.id} className="ws-question-item">
+                  <p className="ws-question-text">{qi + 1}.&nbsp; {q.question}</p>
+                  {q.type === "multiple_choice" && q.options && (
+                    <div className="ws-mc-options">
+                      {q.options.map((opt, oi) => (
+                        <label key={oi} className="ws-mc-option">
+                          <span className="ws-mc-bubble">{String.fromCharCode(65 + oi)}</span>
+                          <span className="ws-mc-text">{opt}</span>
+                        </label>
+                      ))}
+                    </div>
+                  )}
+                  {q.type === "true_false" && (
+                    <div className="ws-tf-options">
+                      <label className="ws-tf-option"><span className="ws-tf-bubble" /> True</label>
+                      <label className="ws-tf-option"><span className="ws-tf-bubble" /> False</label>
+                    </div>
+                  )}
+                  {q.type === "short_answer" && (
+                    <><p className="ws-answer-label">Answer:</p><AnswerLines count={4} /></>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
+
+        {/* Answer key — always included in quiz PDF (teacher controls who receives it) */}
+        {quiz?.questions?.length > 0 && (
+          <section className="ws-sheet ws-answer-key print-section">
+            <div className="ws-ak-banner">ANSWER KEY · TEACHER COPY · DO NOT DISTRIBUTE</div>
+            <div className="ws-ak-header">
+              <h2 className="ws-ak-title">{quiz.title}</h2>
+              <p className="ws-ak-subtitle">{overview.title} — {town.name}, {town.state}</p>
+            </div>
+            <ol className="ws-ak-list">
+              {quiz.questions.map((q, qi) => (
+                <li key={q.id} className="ws-ak-item">
+                  <div className="ws-ak-q">
+                    <span className="ws-ak-num">{qi + 1}.</span>
+                    <span className="ws-ak-qtext">{q.question}</span>
+                  </div>
+                  <div className="ws-ak-a">
+                    <span className="ws-ak-answer-label">Answer:</span>
+                    <span className="ws-ak-answer">{q.correctAnswer}</span>
+                  </div>
+                  {q.explanation && <p className="ws-ak-explanation">{q.explanation}</p>}
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
+      </div>
+    );
+  }
 
   return (
     <div className="ws-page">
