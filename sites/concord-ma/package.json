@@ -1,0 +1,33 @@
+{
+  "name": "concord-ma",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Concord, MA — branded town site",
+  "scripts": {
+    "dev": "next dev --port 3002",
+    "build": "prisma generate --schema=../../prisma/schema.prisma && next build",
+    "typecheck": "tsc --noEmit",
+    "postinstall": "prisma generate --schema=../../prisma/schema.prisma || true"
+  },
+  "dependencies": {
+    "@hife/content": "workspace:*",
+    "@hife/ui": "workspace:*",
+    "@prisma/client": "5.22.0",
+    "next": "^16.2.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "prisma": "5.22.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49"
+  },
+  "prisma": {
+    "schema": "../../prisma/schema.prisma"
+  }
+}
