@@ -1,0 +1,502 @@
+[
+  {
+    "id": "src-williamsburg-va-dunmore-proclamation",
+    "table": "Source",
+    "url": "https://www.archives.gov/",
+    "title": "Lord Dunmore's Proclamation, November 7, 1775",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "williamsburg-va",
+    "publisherOrHolder": "National Archives and Records Administration"
+  },
+  {
+    "id": "src-williamsburg-va-colonial-williamsburg-research",
+    "table": "Source",
+    "url": "https://www.colonialwilliamsburg.org/learn/living-history/revolutionary-city/",
+    "title": "Colonial Williamsburg Foundation: Revolutionary City Program",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "williamsburg-va",
+    "publisherOrHolder": "Colonial Williamsburg Foundation"
+  },
+  {
+    "id": "src-williamsburg-va-virginia-gazette-1765-1776",
+    "table": "Source",
+    "url": "https://research.colonialwilliamsburg.org/DigitalLibrary/va-gazettes/",
+    "title": "Virginia Gazette, 1765-1776 (Selected Issues)",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "williamsburg-va",
+    "publisherOrHolder": "Colonial Williamsburg Foundation, Rockefeller Library"
+  },
+  {
+    "id": "src-williamsburg-va-virginia-constitution-1776",
+    "table": "Source",
+    "url": "https://www.lva.virginia.gov/",
+    "title": "Constitution of Virginia, June 29, 1776",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "williamsburg-va",
+    "publisherOrHolder": "Library of Virginia"
+  },
+  {
+    "id": "src-williamsburg-va-jefferson-autobiography",
+    "table": "Source",
+    "url": "https://www.loc.gov/item/mtjbib025151/",
+    "title": "Jefferson's Autobiography: Virginia and the Road to Independ",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "williamsburg-va",
+    "publisherOrHolder": "Library of Congress"
+  },
+  {
+    "id": "cmomk0jvf0006130qhrsvg2qc",
+    "table": "Source",
+    "url": "https://www.masshist.org/database/viewer.php?item_id=463&pid=15",
+    "title": "https://www.masshist.org/database/viewer.php?item_id=463&pid",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "springfield-ma",
+    "publisherOrHolder": "www.masshist.org"
+  },
+  {
+    "id": "src-yorktown-va-museum-colonial-national",
+    "table": "Source",
+    "url": "https://www.historyisfun.org/yorktown-victory-center/",
+    "title": "Yorktown Victory Center / American Revolution Museum at York",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "yorktown-va",
+    "publisherOrHolder": "Jamestown-Yorktown Foundation"
+  },
+  {
+    "id": "src-yorktown-va-virginia-hist-soc",
+    "table": "Source",
+    "url": "https://www.virginiahistory.org/",
+    "title": "Virginia Historical Society: Revolutionary War Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "yorktown-va",
+    "publisherOrHolder": "Virginia Museum of History and Culture"
+  },
+  {
+    "id": "cmomk2yxq000b130qs77omezi",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/from-hammer-to-musket-the-tragedy-of-timothy-bigelow.htm",
+    "title": "https://www.nps.gov/articles/000/from-hammer-to-musket-the-t",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "worcester-ma",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "src-williamsburg-va-wikipedia-colonial-capital",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Williamsburg,_Virginia",
+    "title": "Williamsburg, Virginia -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "williamsburg-va",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-richmond-va-jefferson-arnold-letter",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/thomas-jefferson-papers/",
+    "title": "Thomas Jefferson to Steuben, January 12, 1781 (Arnold's Raid",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "richmond-va",
+    "publisherOrHolder": "Library of Congress, Thomas Jefferson Papers"
+  },
+  {
+    "id": "src-richmond-va-virginia-state-archives",
+    "table": "Source",
+    "url": "https://www.lva.virginia.gov/",
+    "title": "Virginia Executive Papers and Council Journals, 1779-1781",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "richmond-va",
+    "publisherOrHolder": "Library of Virginia"
+  },
+  {
+    "id": "src-richmond-va-nps-richmond-nbp",
+    "table": "Source",
+    "url": "https://www.nps.gov/rich/index.htm",
+    "title": "Richmond National Battlefield Park: Revolutionary War Resour",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "richmond-va",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-richmond-va-lva-revolutionary-virginia",
+    "table": "Source",
+    "url": "https://www.lva.virginia.gov/public/guides/va1_revwar.htm",
+    "title": "Library of Virginia: Revolutionary Virginia Digital Collecti",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "richmond-va",
+    "publisherOrHolder": "Library of Virginia"
+  },
+  {
+    "id": "src-richmond-va-wikipedia-arnold-raid",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Arnold%27s_expedition_to_Virginia",
+    "title": "Arnold's Expedition to Virginia -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "richmond-va",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-richmond-va-richmond-civil-war-museum",
+    "table": "Source",
+    "url": "https://acwm.org/",
+    "title": "American Civil War Museum: Richmond's Revolutionary Roots",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "richmond-va",
+    "publisherOrHolder": "American Civil War Museum"
+  },
+  {
+    "id": "src-williamsburg-va-colonial-williamsburg-almanack",
+    "table": "Source",
+    "url": "https://research.colonialwilliamsburg.org/",
+    "title": "Colonial Williamsburg Almanack: Historical Research Reports",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "williamsburg-va",
+    "publisherOrHolder": "Colonial Williamsburg Foundation"
+  },
+  {
+    "id": "src-williamsburg-va-visit-williamsburg",
+    "table": "Source",
+    "url": "https://www.colonialwilliamsburg.org/plan/historic-area/",
+    "title": "Colonial Williamsburg: Visitor Guide to the Historic Area",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "williamsburg-va",
+    "publisherOrHolder": "Colonial Williamsburg Foundation"
+  },
+  {
+    "id": "src-alexandria-va-nps-george-washington",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/",
+    "title": "George Washington's Mount Vernon: Alexandria and the Revolut",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "alexandria-va",
+    "publisherOrHolder": "Mount Vernon Ladies' Association"
+  },
+  {
+    "id": "src-alexandria-va-gadsby-tavern-museum",
+    "table": "Source",
+    "url": "https://www.alexandriava.gov/GadsbysTavern",
+    "title": "Gadsby's Tavern Museum: Revolutionary Alexandria",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "alexandria-va",
+    "publisherOrHolder": "City of Alexandria / Gadsby's Tavern Museum"
+  },
+  {
+    "id": "src-alexandria-va-george-washington-masonic",
+    "table": "Source",
+    "url": "https://www.gwmemorial.org/",
+    "title": "George Washington Masonic National Memorial: Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "alexandria-va",
+    "publisherOrHolder": "George Washington Masonic National Memorial Association"
+  },
+  {
+    "id": "src-alexandria-va-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Alexandria,_Virginia",
+    "title": "Alexandria, Virginia -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "alexandria-va",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-alexandria-va-visit-alexandria",
+    "table": "Source",
+    "url": "https://www.visitalexandriava.com/history-culture/history/revolutionary-war/",
+    "title": "Visit Alexandria: Revolutionary War History",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "alexandria-va",
+    "publisherOrHolder": "Visit Alexandria (Alexandria Convention and Visitors Association)"
+  },
+  {
+    "id": "src-fredericksburg-va-nps-kenmore",
+    "table": "Source",
+    "url": "https://www.kenmore.org/",
+    "title": "Kenmore and Washington Heritage Sites: Fredericksburg's Revo",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "fredericksburg-va",
+    "publisherOrHolder": "George Washington Foundation"
+  },
+  {
+    "id": "src-alexandria-va-fairfax-resolves-1774",
+    "table": "Source",
+    "url": "https://www.loc.gov/item/00694538/",
+    "title": "Fairfax County Resolves, July 18, 1774",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "alexandria-va",
+    "publisherOrHolder": "Library of Congress"
+  },
+  {
+    "id": "src-fredericksburg-va-encyclopedia-virginia-fredericksburg",
+    "table": "Source",
+    "url": "https://www.encyclopediavirginia.org/",
+    "title": "Encyclopedia Virginia: Fredericksburg in the Revolutionary E",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "fredericksburg-va",
+    "publisherOrHolder": "Virginia Museum of History and Culture / University of Virginia Press"
+  },
+  {
+    "id": "src-fredericksburg-va-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Fredericksburg,_Virginia",
+    "title": "Fredericksburg, Virginia -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "fredericksburg-va",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-fredericksburg-va-visit-fredericksburg",
+    "table": "Source",
+    "url": "https://www.visitfred.com/history",
+    "title": "Visit Fredericksburg: Revolutionary War Heritage",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "fredericksburg-va",
+    "publisherOrHolder": "Visit Fredericksburg"
+  },
+  {
+    "id": "src-norfolk-va-woodford-letter-norfolk-burning",
+    "table": "Source",
+    "url": "https://www.lva.virginia.gov/",
+    "title": "General Woodford to the Virginia Committee of Safety, Januar",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "norfolk-va",
+    "publisherOrHolder": "Library of Virginia"
+  },
+  {
+    "id": "src-norfolk-va-virginia-gazette-norfolk-burning",
+    "table": "Source",
+    "url": "https://research.colonialwilliamsburg.org/DigitalLibrary/va-gazettes/",
+    "title": "Virginia Gazette: Reports on the Burning of Norfolk, January",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "norfolk-va",
+    "publisherOrHolder": "Colonial Williamsburg Foundation, Rockefeller Library"
+  },
+  {
+    "id": "src-norfolk-va-virginia-historical-society-norfolk",
+    "table": "Source",
+    "url": "https://www.virginiahistory.org/",
+    "title": "Virginia Historical Society: Norfolk and the Tidewater in th",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "norfolk-va",
+    "publisherOrHolder": "Virginia Museum of History and Culture"
+  },
+  {
+    "id": "src-norfolk-va-norfolk-history-museum",
+    "table": "Source",
+    "url": "https://www.chrysler.org/",
+    "title": "Chrysler Museum of Art / Norfolk History: Revolutionary Peri",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "norfolk-va",
+    "publisherOrHolder": "Norfolk History Collections"
+  },
+  {
+    "id": "src-norfolk-va-wikipedia-burning",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Burning_of_Norfolk",
+    "title": "Burning of Norfolk -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "norfolk-va",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-norfolk-va-visit-norfolk",
+    "table": "Source",
+    "url": "https://www.visitnorfolk.com/",
+    "title": "Norfolk, Virginia: Colonial and Revolutionary History",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "norfolk-va",
+    "publisherOrHolder": "Visit Norfolk"
+  },
+  {
+    "id": "cmotpa453000b2hy6szugwhys",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/monmouth",
+    "title": "https://www.battlefields.org/learn/revolutionary-war/battles",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "monmouth-nj",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "src-fredericksburg-va-fredericksburg-area-museum",
+    "table": "Source",
+    "url": "https://www.fredericksburgareamuseum.org/",
+    "title": "Fredericksburg Area Museum: Washington, Lewis, and Revolutio",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "fredericksburg-va",
+    "publisherOrHolder": "Fredericksburg Area Museum"
+  },
+  {
+    "id": "cmotpa462000e2hy6nz4s7j5n",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/battle-of-monmouth",
+    "title": "https://www.mountvernon.org/library/digitalhistory/digital-e",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "monmouth-nj",
+    "publisherOrHolder": "www.mountvernon.org"
+  },
+  {
+    "id": "src-charlottesville-va-monticello-research",
+    "table": "Source",
+    "url": "https://www.monticello.org/",
+    "title": "Thomas Jefferson's Monticello: Research and Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "charlottesville-va",
+    "publisherOrHolder": "Thomas Jefferson Foundation, Monticello"
+  },
+  {
+    "id": "src-charlottesville-va-monticello-enslavement",
+    "table": "Source",
+    "url": "https://www.monticello.org/getting-word/",
+    "title": "Enslaved Community at Monticello During the Revolution",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "charlottesville-va",
+    "publisherOrHolder": "Thomas Jefferson Foundation, Getting Word Project"
+  },
+  {
+    "id": "src-charlottesville-va-uva-special-collections",
+    "table": "Source",
+    "url": "https://small.library.virginia.edu/",
+    "title": "University of Virginia Special Collections: Albemarle County",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "charlottesville-va",
+    "publisherOrHolder": "University of Virginia, Albert and Shirley Small Special Collections Library"
+  },
+  {
+    "id": "src-charlottesville-va-wikipedia-tarleton-raid",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Tarleton%27s_Raid",
+    "title": "Tarleton's Raid -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "charlottesville-va",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-charlottesville-va-monticello-visitor",
+    "table": "Source",
+    "url": "https://www.monticello.org/visit/",
+    "title": "Monticello Visitor Guide: Jefferson and the Revolution",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "charlottesville-va",
+    "publisherOrHolder": "Thomas Jefferson Foundation"
+  },
+  {
+    "id": "src-mount-vernon-va-lund-washington-letters",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "Lund Washington to George Washington: Mount Vernon Managemen",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "mount-vernon-va",
+    "publisherOrHolder": "Library of Congress, George Washington Papers"
+  },
+  {
+    "id": "src-mount-vernon-va-mvla-research",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/",
+    "title": "Mount Vernon Research Library and Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "mount-vernon-va",
+    "publisherOrHolder": "Mount Vernon Ladies' Association"
+  },
+  {
+    "id": "src-mount-vernon-va-washington-papers-project",
+    "table": "Source",
+    "url": "https://www.upress.virginia.edu/rotunda/washington/",
+    "title": "The Papers of George Washington Digital Edition",
+    "type": "DATASET",
+    "tier": "TIER1",
+    "towns": "mount-vernon-va",
+    "publisherOrHolder": "University of Virginia Press"
+  },
+  {
+    "id": "cmp54qjun0003nhebyzkd4olv",
+    "table": "Source",
+    "url": "https://history.state.gov/departmenthistory/buildings/section6",
+    "title": "https://history.state.gov/departmenthistory/buildings/sectio",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "york-pa",
+    "publisherOrHolder": "history.state.gov"
+  },
+  {
+    "id": "cmp54qjuy0006nhebnx4ld4yh",
+    "table": "Source",
+    "url": "https://www.britannica.com/place/York-Pennsylvania",
+    "title": "https://www.britannica.com/place/York-Pennsylvania",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "york-pa",
+    "publisherOrHolder": "www.britannica.com"
+  },
+  {
+    "id": "src-mount-vernon-va-mvla-archaeology",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/preservation/archaeology/",
+    "title": "Mount Vernon Archaeological Research Reports",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "mount-vernon-va",
+    "publisherOrHolder": "Mount Vernon Ladies' Association, Archaeology Department"
+  },
+  {
+    "id": "src-mount-vernon-va-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Mount_Vernon",
+    "title": "Mount Vernon -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "mount-vernon-va",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-mount-vernon-va-visitor-guide",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/plan-your-visit/",
+    "title": "Mount Vernon Estate Visitor Guide",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "mount-vernon-va",
+    "publisherOrHolder": "Mount Vernon Ladies' Association"
+  }
+]

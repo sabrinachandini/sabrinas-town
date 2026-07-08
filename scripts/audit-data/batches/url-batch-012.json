@@ -1,0 +1,502 @@
+[
+  {
+    "id": "cmp29x9mi000bef4in2ggvsnq",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/philadelphia-campaign-1777.htm",
+    "title": "https://www.nps.gov/articles/000/philadelphia-campaign-1777.",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "germantown-pa, philadelphia-pa",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmp29x9nf000eef4i1jcd43mm",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/battle-of-germantown",
+    "title": "https://www.mountvernon.org/library/digitalhistory/digital-e",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "germantown-pa",
+    "publisherOrHolder": "www.mountvernon.org"
+  },
+  {
+    "id": "cmp29x9nu000hef4igrwbmvsh",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/germantown",
+    "title": "https://www.battlefields.org/learn/revolutionary-war/battles",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "germantown-pa",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmp3pap4k0000th4bdlfe1wgi",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/paoli",
+    "title": "https://www.battlefields.org/learn/revolutionary-war/battles",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "paoli-pa",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmp3pap5k0003th4bgmghwyjw",
+    "table": "Source",
+    "url": "https://www.nps.gov/people/anthony-wayne.htm",
+    "title": "https://www.nps.gov/people/anthony-wayne.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "paoli-pa",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmp3pcz2q000ath4bqo1qnz3g",
+    "table": "Source",
+    "url": "https://philadelphiaencyclopedia.org/essays/british-occupation-of-philadelphia/",
+    "title": "https://philadelphiaencyclopedia.org/essays/british-occupati",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "philadelphia-pa",
+    "publisherOrHolder": "philadelphiaencyclopedia.org"
+  },
+  {
+    "id": "cmp3pcz31000dth4bpsnlczba",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/heart-revolution-philadelphia-during-war-independence",
+    "title": "https://www.battlefields.org/learn/articles/heart-revolution",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "philadelphia-pa",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmp3pf2ix000ith4bsvqmgiz5",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/valley-forge-encampment",
+    "title": "https://www.battlefields.org/learn/articles/valley-forge-enc",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "valley-forge-pa",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmp3pf2ju000lth4bb91jkx90",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/winter-valley-forge",
+    "title": "https://www.battlefields.org/learn/articles/winter-valley-fo",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "valley-forge-pa",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmp3pf2k9000oth4by1tiviqc",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/alliance-day",
+    "title": "https://www.battlefields.org/learn/articles/alliance-day",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "valley-forge-pa",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmp54qju00000nhebz8ugj08c",
+    "table": "Source",
+    "url": "https://www.achp.gov/preserve-america/community/york-pennsylvania",
+    "title": "https://www.achp.gov/preserve-america/community/york-pennsyl",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "york-pa",
+    "publisherOrHolder": "www.achp.gov"
+  },
+  {
+    "id": "cmp54sp2l000enhebm5i9zhuo",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/life-liberty-and-the-moral-dilemma-of-slavery-uncovering-the-history-of-rhode-island-s-black-soldiers-during-the-american-revolution.htm",
+    "title": "https://www.nps.gov/articles/000/life-liberty-and-the-moral-",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "newport-ri, providence-ri",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmp54sp2z000hnhebhahqb4gx",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/weathering-storm-battle-rhode-island",
+    "title": "https://www.battlefields.org/learn/articles/weathering-storm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "newport-ri",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmp6k6hr50000dkr3zmdkubxl",
+    "table": "Source",
+    "url": "https://www.scencyclopedia.org/sce/entries/beaufort/",
+    "title": "https://www.scencyclopedia.org/sce/entries/beaufort/",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "beaufort-sc",
+    "publisherOrHolder": "www.scencyclopedia.org"
+  },
+  {
+    "id": "cmp6k6hru0003dkr3oav2b6vq",
+    "table": "Source",
+    "url": "https://www.scencyclopedia.org/sce/entries/beaufort-county/",
+    "title": "https://www.scencyclopedia.org/sce/entries/beaufort-county/",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "beaufort-sc",
+    "publisherOrHolder": "www.scencyclopedia.org"
+  },
+  {
+    "id": "cmp6k6hs50006dkr3ycs7t4nm",
+    "table": "Source",
+    "url": "https://www.scencyclopedia.org/sce/entries/port-royal-island-battle-of/",
+    "title": "https://www.scencyclopedia.org/sce/entries/port-royal-island",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "beaufort-sc",
+    "publisherOrHolder": "www.scencyclopedia.org"
+  },
+  {
+    "id": "cmp6k8sd3000bdkr3cklnxkiw",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/siege-of-charleston-1780.htm",
+    "title": "https://www.nps.gov/articles/siege-of-charleston-1780.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "charleston-sc",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmp6k8sdr000edkr3jhu14kji",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/british-evacuation-of-charleston.htm",
+    "title": "https://www.nps.gov/articles/000/british-evacuation-of-charl",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "charleston-sc",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmp6k8se2000hdkr3qc5s8tbc",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/charleston-community-history.htm",
+    "title": "https://www.nps.gov/articles/charleston-community-history.ht",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "charleston-sc",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmp7zmcvy00007fq73p2rp769",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/battle-of-cowpens.htm",
+    "title": "https://www.nps.gov/articles/000/battle-of-cowpens.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "cowpens-sc",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmp7zmcwj00037fq7x5p8k7s4",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/washington-light-infantry-monument.htm",
+    "title": "https://www.nps.gov/articles/000/washington-light-infantry-m",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "cowpens-sc",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmp7zo8ha00087fq7f4hk3w8j",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2023/05/eutaw-springs-and-the-ambiguity-of-victory/",
+    "title": "https://allthingsliberty.com/2023/05/eutaw-springs-and-the-a",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "eutaw-springs-sc",
+    "publisherOrHolder": "allthingsliberty.com"
+  },
+  {
+    "id": "cmp7zo8hi000b7fq7l6fcjz9k",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/battle-eutaw-springs",
+    "title": "https://www.mountvernon.org/library/digitalhistory/digital-e",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "eutaw-springs-sc",
+    "publisherOrHolder": "www.mountvernon.org"
+  },
+  {
+    "id": "cmp7zo8hq000e7fq702i3ozqd",
+    "table": "Source",
+    "url": "https://americanhistory.si.edu/collections/object/nmah_1097423",
+    "title": "https://americanhistory.si.edu/collections/object/nmah_10974",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "eutaw-springs-sc",
+    "publisherOrHolder": "americanhistory.si.edu"
+  },
+  {
+    "id": "cmp7zqep1000j7fq7pwjhgn4o",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/hobkirk-hill-blag.htm",
+    "title": "https://www.nps.gov/articles/000/hobkirk-hill-blag.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "hobkirks-hill-sc",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmp7zqepp000m7fq7fkgjajev",
+    "table": "Source",
+    "url": "https://www.scbattlegroundtrust.org/revolutionary-war-gaol-site-acquired-for-permanent-protection",
+    "title": "https://www.scbattlegroundtrust.org/revolutionary-war-gaol-s",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "hobkirks-hill-sc",
+    "publisherOrHolder": "www.scbattlegroundtrust.org"
+  },
+  {
+    "id": "cmp7zqepx000p7fq7c8jerc7k",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/hobkirk-hill",
+    "title": "https://www.battlefields.org/learn/revolutionary-war/battles",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "hobkirks-hill-sc",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmp9f2ehq000011bgztu9djty",
+    "table": "Source",
+    "url": "https://www.nps.gov/nisi/learn/historyculture/birmingham.htm",
+    "title": "https://www.nps.gov/nisi/learn/historyculture/birmingham.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "ninety-six-sc",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmp9f2eij000311bgvu9hvyhi",
+    "table": "Source",
+    "url": "https://www.scencyclopedia.org/sce/entries/ninety-six-battles-of/",
+    "title": "https://www.scencyclopedia.org/sce/entries/ninety-six-battle",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "ninety-six-sc",
+    "publisherOrHolder": "www.scencyclopedia.org"
+  },
+  {
+    "id": "cmp9f4kj5000811bgo1nqja9d",
+    "table": "Source",
+    "url": "https://encyclopediavirginia.org/entries/jack-jouetts-ride-1781/",
+    "title": "https://encyclopediavirginia.org/entries/jack-jouetts-ride-1",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "charlottesville-va",
+    "publisherOrHolder": "encyclopediavirginia.org"
+  },
+  {
+    "id": "cmp9f4kk0000b11bgxnqfkgyc",
+    "table": "Source",
+    "url": "https://encyclopediavirginia.org/entries/the-albemarle-barracks/",
+    "title": "https://encyclopediavirginia.org/entries/the-albemarle-barra",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "charlottesville-va",
+    "publisherOrHolder": "encyclopediavirginia.org"
+  },
+  {
+    "id": "cmp9f4kkc000e11bg6t9geuie",
+    "table": "Source",
+    "url": "https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/charlottesville-raid-virginia",
+    "title": "https://www.encyclopedia.com/history/encyclopedias-almanacs-",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "charlottesville-va",
+    "publisherOrHolder": "www.encyclopedia.com"
+  },
+  {
+    "id": "cmpauhz160000m35woq7xqkog",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/echoes-revolutionary-fredericksburg",
+    "title": "https://www.battlefields.org/learn/articles/echoes-revolutio",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "fredericksburg-va",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmpauhz210003m35wxhohx1sm",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/hugh-mercers-fredericksburg",
+    "title": "https://www.battlefields.org/learn/articles/hugh-mercers-fre",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "fredericksburg-va",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmpauhz2f0006m35wi0c0u14q",
+    "table": "Source",
+    "url": "https://encyclopediavirginia.org/entries/mercer-hugh-1725-1777",
+    "title": "https://encyclopediavirginia.org/entries/mercer-hugh-1725-17",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "fredericksburg-va",
+    "publisherOrHolder": "encyclopediavirginia.org"
+  },
+  {
+    "id": "cmpauk48b000bm35w7o3oweg5",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/george-washington/slavery/resistance-and-punishment/savage",
+    "title": "https://www.mountvernon.org/george-washington/slavery/resist",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "mount-vernon-va",
+    "publisherOrHolder": "www.mountvernon.org"
+  },
+  {
+    "id": "cmpauk498000em35w3n4t0fk0",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/h-m-s-savage",
+    "title": "https://www.mountvernon.org/library/digitalhistory/digital-e",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "mount-vernon-va",
+    "publisherOrHolder": "www.mountvernon.org"
+  },
+  {
+    "id": "cmpaumc4a000sm35wtyeucw2y",
+    "table": "Source",
+    "url": "https://encyclopediavirginia.org/entries/virginia-statute-for-establishing-religious-freedom-1786/",
+    "title": "https://encyclopediavirginia.org/entries/virginia-statute-fo",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "richmond-va",
+    "publisherOrHolder": "encyclopediavirginia.org"
+  },
+  {
+    "id": "cmpc9xwxm0000szcw2w3oox1n",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/yorktown",
+    "title": "https://www.battlefields.org/learn/revolutionary-war/battles",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "yorktown-va",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmpc9xwy70003szcwf1fzg0fi",
+    "table": "Source",
+    "url": "https://americanhistory.si.edu/explore/exhibitions/american-revolution-world-war/online/yorktown/bombarding-yorktown",
+    "title": "https://americanhistory.si.edu/explore/exhibitions/american-",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "yorktown-va",
+    "publisherOrHolder": "americanhistory.si.edu"
+  },
+  {
+    "id": "cmpc9xwyi0006szcwxmdpbuml",
+    "table": "Source",
+    "url": "https://www.armyheritage.org/soldier-stories-information/let-freedom-ring-the-battle-of-yorktown/",
+    "title": "https://www.armyheritage.org/soldier-stories-information/let",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "yorktown-va",
+    "publisherOrHolder": "www.armyheritage.org"
+  },
+  {
+    "id": "cmpca00z2000bszcwdtaqx4c8",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/the-battle-of-bennington-an-american-victory-teaching-with-historic-places.htm",
+    "title": "https://www.nps.gov/articles/the-battle-of-bennington-an-ame",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "bennington-vt",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmpca00zq000eszcwtbie8i4n",
+    "table": "Source",
+    "url": "https://historicsites.vermont.gov/bennington-battle/research",
+    "title": "https://historicsites.vermont.gov/bennington-battle/research",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "bennington-vt",
+    "publisherOrHolder": "historicsites.vermont.gov"
+  },
+  {
+    "id": "cmpca0104000hszcwshyemfov",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/bennington",
+    "title": "https://www.battlefields.org/learn/revolutionary-war/battles",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "bennington-vt",
+    "publisherOrHolder": "www.battlefields.org"
+  },
+  {
+    "id": "cmpca27t8000mszcw9cjwjl1w",
+    "table": "Source",
+    "url": "https://www.reformer.com/local-news/the-long-battle-for-independence/article_6feccc86-4b08-503f-8244-536c8734e37a.html",
+    "title": "https://www.reformer.com/local-news/the-long-battle-for-inde",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "brattleboro-vt",
+    "publisherOrHolder": "www.reformer.com"
+  },
+  {
+    "id": "cmpca27tk000pszcww7mazpme",
+    "table": "Source",
+    "url": "https://www.reformer.com/community-news/brattleborough-was-home-to-spies-and-double-agents-during-revoluntionary-war/article_ef14b530-5f69-11ec-8eba-ff384fb60a30.html",
+    "title": "https://www.reformer.com/community-news/brattleborough-was-h",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "brattleboro-vt",
+    "publisherOrHolder": "www.reformer.com"
+  },
+  {
+    "id": "cmpca27tu000sszcwqwtw6yiv",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Westminster_Massacre",
+    "title": "https://en.wikipedia.org/wiki/Westminster_Massacre",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "brattleboro-vt",
+    "publisherOrHolder": "en.wikipedia.org"
+  },
+  {
+    "id": "cmpdpdukd0000uh4z8tgot44i",
+    "table": "Source",
+    "url": "https://www.wvencyclopedia.org/entries/1986",
+    "title": "https://www.wvencyclopedia.org/entries/1986",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "wheeling-wv",
+    "publisherOrHolder": "www.wvencyclopedia.org"
+  },
+  {
+    "id": "cmpdpdul40003uh4zcomyk97e",
+    "table": "Source",
+    "url": "https://www.wvencyclopedia.org/entries/59",
+    "title": "https://www.wvencyclopedia.org/entries/59",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "wheeling-wv",
+    "publisherOrHolder": "www.wvencyclopedia.org"
+  },
+  {
+    "id": "cmpdpdule0006uh4zfv8zmwxc",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2020/01/betty-zane-and-the-siege-of-fort-henry-september-1782/",
+    "title": "https://allthingsliberty.com/2020/01/betty-zane-and-the-sieg",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "wheeling-wv",
+    "publisherOrHolder": "allthingsliberty.com"
+  }
+]

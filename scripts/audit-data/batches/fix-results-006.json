@@ -1,0 +1,29 @@
+[
+  {
+    "id": "cmpjf769j000edqjhm0kbnfs3",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/History_of_Albany",
+    "newUrl": "https://en.wikipedia.org/wiki/History_of_Albany,_New_York",
+    "reason": "The original URL path does not exist on Wikipedia. The article was moved/titled 'History of Albany, New York'. The replacement URL returned content successfully (HTTP 200).",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "cmprzueof0008um0ruqkkryi8",
+    "table": "Source",
+    "oldUrl": "https://www.nlchs.org/about/shaw-mansion/",
+    "newUrl": "https://en.wikipedia.org/wiki/Shaw_Mansion_(New_London,_Connecticut)",
+    "reason": "NLCHS website (nlchs.org) returned HTTP 503 Service Unavailable at time of check. Wikipedia's article on the Shaw Mansion covers the same subject (New London County Historical Society headquarters, history, and museum), returned HTTP 200, and is from a stable institution.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "cmprzueop000bum0r7mpcwgg0",
+    "table": "Source",
+    "oldUrl": "https://www.nlchs.org/privateering-out-of-new-london/",
+    "newUrl": "https://www.nlchs.org/privateering-out-of-new-london/",
+    "reason": "The original URL was previously returning a server error but is now accessible and returned full page content ('Privateering out of New London' article from the New London County Historical Society) at HTTP 200. No URL change needed.",
+    "verified": true,
+    "httpStatus": 200
+  }
+]

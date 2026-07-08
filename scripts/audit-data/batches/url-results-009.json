@@ -1,0 +1,452 @@
+[
+  {
+    "id": "src-sar-nara-saratoga-records",
+    "table": "Source",
+    "url": "https://www.archives.gov/research/military/american-revolution",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.archives.gov/research/military/american-revolution"
+  },
+  {
+    "id": "src-alb-nps-hudson-valley",
+    "table": "Source",
+    "url": "https://www.hudsonrivervalley.com/heritage/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.hudsonrivervalley.com/heritage/"
+  },
+  {
+    "id": "src-wp-nps-west-point-highlands",
+    "table": "Source",
+    "url": "https://www.nps.gov/subjects/revwar/west-point.htm",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/subjects/revwar/west-point.htm"
+  },
+  {
+    "id": "src-phi-declaration-independence",
+    "table": "Source",
+    "url": "https://www.archives.gov/founding-docs/declaration",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.archives.gov/founding-docs/declaration"
+  },
+  {
+    "id": "src-phi-constitution-center",
+    "table": "Source",
+    "url": "https://constitutioncenter.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://constitutioncenter.org/"
+  },
+  {
+    "id": "src-yor-wikipedia-york-congress",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/York,_Pennsylvania",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/York,_Pennsylvania"
+  },
+  {
+    "id": "src-car-pa-archives-carlisle",
+    "table": "Source",
+    "url": "https://www.phmc.pa.gov/Archives",
+    "status": 302,
+    "ok": false,
+    "issue": "redirects to homepage",
+    "finalUrl": "https://www.pa.gov/en/agencies/phmc.html"
+  },
+  {
+    "id": "src-pao-paoli-battlefield-org",
+    "table": "Source",
+    "url": "https://www.paolipreservation.org/",
+    "status": 0,
+    "ok": false,
+    "issue": "connection error",
+    "finalUrl": "https://www.paolipreservation.org/"
+  },
+  {
+    "id": "src-tre-trenton-capital-history",
+    "table": "Source",
+    "url": "https://www.trentonnj.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.trentonnj.org/"
+  },
+  {
+    "id": "src-mor-nps-morristown-nhp",
+    "table": "Source",
+    "url": "https://www.nps.gov/morr/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/morr/index.htm"
+  },
+  {
+    "id": "src-marblehead-wikipedia-glovers-regiment",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Glover%27s_Marblehead_Regiment",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Glover%27s_Marblehead_Regiment"
+  },
+  {
+    "id": "src-alexandria-va-washington-letters-pre-war",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/george-washington-papers/"
+  },
+  {
+    "id": "src-fredericksburg-va-washington-boyhood-letters",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/george-washington-papers/"
+  },
+  {
+    "id": "src-charlottesville-va-jefferson-escape-account",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/thomas-jefferson-papers/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/thomas-jefferson-papers/"
+  },
+  {
+    "id": "src-camden-sc-battlefields-trust",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/camden",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/camden"
+  },
+  {
+    "id": "src-eutaw-springs-sc-scprt-marker",
+    "table": "Source",
+    "url": "https://southcarolinaparks.com/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://southcarolinaparks.com/"
+  },
+  {
+    "id": "src-fle-nps-fort-lee-historic-park",
+    "table": "Source",
+    "url": "https://www.nj.gov/dep/parksandforests/historic/fortlee/index.html",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nj.gov/dep/parksandforests/historic/fortlee/index.html"
+  },
+  {
+    "id": "src-savannah-ga-pulaski-death-account",
+    "table": "Source",
+    "url": "https://www.loc.gov/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/"
+  },
+  {
+    "id": "src-savannah-ga-georgia-hist-quarterly",
+    "table": "Source",
+    "url": "https://georgiahistory.com/education-outreach/publications/georgia-historical-quarterly/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://georgiahistory.com/education-outreach/publications/georgia-historical-quarterly/"
+  },
+  {
+    "id": "src-danbury-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Raid_on_Danbury",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Raid_on_Danbury"
+  },
+  {
+    "id": "src-exeter-american-independence-museum",
+    "table": "Source",
+    "url": "https://www.independencemuseum.org/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://aicnh.org/"
+  },
+  {
+    "id": "src-annapolis-historic-annapolis",
+    "table": "Source",
+    "url": "https://www.historiccannapolis.org/",
+    "status": 0,
+    "ok": false,
+    "issue": "connection error",
+    "finalUrl": "https://www.historiccannapolis.org/"
+  },
+  {
+    "id": "src-dover-delaware-ratification",
+    "table": "Source",
+    "url": "https://www.archives.gov/founding-docs/constitution",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.archives.gov/founding-docs/constitution"
+  },
+  {
+    "id": "src-dover-delaware-state-archives",
+    "table": "Source",
+    "url": "https://archives.delaware.gov/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://archives.delaware.gov/"
+  },
+  {
+    "id": "source-elizabeth-jar-elizabethtown",
+    "table": "Source",
+    "url": "https://allthingsliberty.com",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com"
+  },
+  {
+    "id": "source-elizabeth-nj-historical-society",
+    "table": "Source",
+    "url": "https://jerseyhistory.org",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://jerseyhistory.org"
+  },
+  {
+    "id": "source-elizabeth-nj-state-museum",
+    "table": "Source",
+    "url": "https://www.nj.gov/state/museum",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nj.gov/state/museum"
+  },
+  {
+    "id": "src-wilmington-cooch-bridge-society",
+    "table": "Source",
+    "url": "https://www.coochsbridgebattlefield.org/",
+    "status": 0,
+    "ok": false,
+    "issue": "connection error",
+    "finalUrl": "https://www.coochsbridgebattlefield.org/"
+  },
+  {
+    "id": "src-bennington-stark-report",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwcc.html",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://memory.loc.gov/ammem/amlaw/lwcc.html"
+  },
+  {
+    "id": "src-brattleboro-continental-congress-vermont",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://memory.loc.gov/ammem/amlaw/lwjc.html"
+  },
+  {
+    "id": "src-kaskaskia-illinois-historical-survey",
+    "table": "Source",
+    "url": "https://www.illinois.gov/agencies/agency.illinois-state-historical-library.html",
+    "status": 200,
+    "ok": false,
+    "issue": "redirects to homepage",
+    "finalUrl": "https://www.illinois.gov/agencies/agency.illinois-state-historical-library.html"
+  },
+  {
+    "id": "src-marietta-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Marietta,_Ohio",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Marietta,_Ohio"
+  },
+  {
+    "id": "source-elizabeth-nps-revolutionary-nj",
+    "table": "Source",
+    "url": "https://www.nps.gov/revwar/about_the_revolution/new_jersey.html",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/revwar/about_the_revolution/new_jersey.html"
+  },
+  {
+    "id": "src-mon-monmouth-county-historical",
+    "table": "Source",
+    "url": "https://www.monmouthhistory.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.monmouthhistory.org/"
+  },
+  {
+    "id": "src-williamsburg-va-encyclopedia-virginia",
+    "table": "Source",
+    "url": "https://www.encyclopediavirginia.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.encyclopediavirginia.org/"
+  },
+  {
+    "id": "src-dover-john-dickinson-plantation",
+    "table": "Source",
+    "url": "https://history.delaware.gov/dickinson/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://history.delaware.gov/dickinson/"
+  },
+  {
+    "id": "src-castine-maine-historical-society",
+    "table": "Source",
+    "url": "https://www.mainehistory.org/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mainehistory.org/"
+  },
+  {
+    "id": "source-elizabeth-gerlach-prologue",
+    "table": "Source",
+    "url": "https://www.rutgersuniversitypress.org",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.rutgersuniversitypress.org"
+  },
+  {
+    "id": "source-elizabeth-boudinot-papers-princeton",
+    "table": "Source",
+    "url": "https://findingaids.princeton.edu",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://findingaids.princeton.edu"
+  },
+  {
+    "id": "src-salem-nps-maritime",
+    "table": "Source",
+    "url": "https://www.nps.gov/sama/learn/historyculture/revolutionary-war.htm",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/sama/learn/historyculture/revolutionary-war.htm"
+  },
+  {
+    "id": "src-pit-pa-historical-museum-commission",
+    "table": "Source",
+    "url": "https://www.phmc.pa.gov/",
+    "status": 302,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.pa.gov/en/agencies/phmc.html"
+  },
+  {
+    "id": "src-williamsburg-va-virginia-mag-history",
+    "table": "Source",
+    "url": "https://www.virginiahistory.org/publications-and-resources/virginia-magazine-history-and-biography",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.virginiahistory.org/publications-and-resources/virginia-magazine-history-and-biography"
+  },
+  {
+    "id": "src-kings-mountain-nc-draper-manuscripts",
+    "table": "Source",
+    "url": "https://www.wisconsinhistory.org/Records/Article/CS1945",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.wisconsinhistory.org/Records/Article/CS1945"
+  },
+  {
+    "id": "cmoagrnsa000036gwew6ze63k",
+    "table": "Source",
+    "url": "https://www.nps.gov/subjects/amrevolution/index.htm",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/subjects/amrevolution/index.htm"
+  },
+  {
+    "id": "cmoagrnzi000336gw19d41gdv",
+    "table": "Source",
+    "url": "https://www.britannica.com/topic/American-Revolution",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.britannica.com/topic/American-Revolution"
+  },
+  {
+    "id": "cmoagro4x000636gwsnlcwp8t",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/American_Revolutionary_War",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/American_Revolutionary_War"
+  },
+  {
+    "id": "cmoagrobo000936gwmoc8jw0n",
+    "table": "Source",
+    "url": "https://www.nysm.nysed.gov/collections",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nysm.nysed.gov/collections"
+  },
+  {
+    "id": "cmodzdhiw0000d6hsz7tfd66u",
+    "table": "Source",
+    "url": "https://www.heinzhistorycenter.org/blog/fort-pitt-museum-fort-pitt-during-the-revolutionary-war-general-brodheads-expedition/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.heinzhistorycenter.org/blog/fort-pitt-museum-fort-pitt-during-the-revolutionary-war-general-brodheads-expedition/"
+  },
+  {
+    "id": "cmodzfmoh0005d6hsu0vlpdbt",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/avenging-danbury-revisiting-the-battle-of-ridgefield-and-american-attempts-to-stop-the-british-raid-of-1777.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/avenging-danbury-revisiting-the-battle-of-ridgefield-and-american-attempts-to-stop-the-british-raid-of-1777.htm"
+  },
+  {
+    "id": "cmodzfmpg0008d6hseb0to2sg",
+    "table": "Source",
+    "url": "https://ridgefieldhistoricalsociety.org/wp-content/uploads/2023/08/Battle-of-Ridgefield-Technical-Report-2022-NPS-ABPP.pdf",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://ridgefieldhistoricalsociety.org/wp-content/uploads/2023/08/Battle-of-Ridgefield-Technical-Report-2022-NPS-ABPP.pdf"
+  }
+]

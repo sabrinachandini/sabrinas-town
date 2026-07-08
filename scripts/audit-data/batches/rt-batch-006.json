@@ -1,0 +1,122 @@
+[
+  {
+    "id": "src-baltimore-md-state-archives-revolution",
+    "url": "https://msa.maryland.gov/",
+    "title": "Maryland State Archives: Baltimore County Committee of Observation Records",
+    "publisherOrHolder": "Maryland State Archives",
+    "tier": "TIER1",
+    "towns": "baltimore-md"
+  },
+  {
+    "id": "src-wilmington-cooch-bridge-pension",
+    "url": "https://www.fold3.com/collection/revolutionary-war-pension-bounty-land-warrant-application-files",
+    "title": "Revolutionary War Pension Applications: Delaware Veterans",
+    "publisherOrHolder": "National Archives, Record Group 15",
+    "tier": "TIER1",
+    "towns": "wilmington-de"
+  },
+  {
+    "id": "src-wilmington-continental-army-orders",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "Orderly Books of the Continental Army: Delaware Campaign, September 1777",
+    "publisherOrHolder": "Library of Congress, George Washington Papers",
+    "tier": "TIER1",
+    "towns": "wilmington-de"
+  },
+  {
+    "id": "src-dover-delaware-declaration",
+    "url": "https://archives.delaware.gov/",
+    "title": "Delaware Declaration of Rights and Fundamental Rules, September 11, 1776",
+    "publisherOrHolder": "Delaware Public Archives",
+    "tier": "TIER1",
+    "towns": "dover-de"
+  },
+  {
+    "id": "src-brattleboro-vermont-independence-1777",
+    "url": "https://www.sec.state.vt.us/archives-records.aspx",
+    "title": "Declaration of Independence of Vermont, January 15, 1777",
+    "publisherOrHolder": "Vermont State Archives and Records Administration",
+    "tier": "TIER1",
+    "towns": "brattleboro-vt"
+  },
+  {
+    "id": "src-castine-massachusetts-general-court-records",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "title": "Massachusetts General Court: Penobscot Expedition Committee Reports, 1779-1782",
+    "publisherOrHolder": "Massachusetts State Archives",
+    "tier": "TIER1",
+    "towns": "castine-me"
+  },
+  {
+    "id": "src-castine-paul-revere-penobscot",
+    "url": "https://www.masshist.org/",
+    "title": "Paul Revere's Deposition Regarding the Penobscot Expedition, 1779",
+    "publisherOrHolder": "Massachusetts Historical Society",
+    "tier": "TIER1",
+    "towns": "castine-me"
+  },
+  {
+    "id": "src-portland-continental-congress-falmouth",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "title": "Journals of the Continental Congress: Falmouth Burning Resolution, November 1775",
+    "publisherOrHolder": "Library of Congress",
+    "tier": "TIER1",
+    "towns": "portland-me"
+  },
+  {
+    "id": "src-portland-massachusetts-provincial-congress",
+    "url": "https://www.sec.state.ma.us/arc/",
+    "title": "Records of the Massachusetts Provincial Congress: Falmouth Relief Measures, 1775",
+    "publisherOrHolder": "Massachusetts State Archives",
+    "tier": "TIER1",
+    "towns": "portland-me"
+  },
+  {
+    "id": "src-kaskaskia-clark-memoir",
+    "url": "https://www.loc.gov/item/mm79070887/",
+    "title": "George Rogers Clark's Memoir (Clark to Mason, 1791)",
+    "publisherOrHolder": "Library of Congress, George Rogers Clark Papers",
+    "tier": "TIER1",
+    "towns": "kaskaskia-il"
+  },
+  {
+    "id": "src-kaskaskia-virginia-state-papers",
+    "url": "https://www.lva.virginia.gov/",
+    "title": "Virginia State Papers: George Rogers Clark Correspondence, 1778-1779",
+    "publisherOrHolder": "Library of Virginia",
+    "tier": "TIER1",
+    "towns": "kaskaskia-il"
+  },
+  {
+    "id": "src-marietta-northwest-ordinance",
+    "url": "https://www.archives.gov/milestone-documents/northwest-ordinance",
+    "title": "An Ordinance for the Government of the Territory of the United States, North-Wes",
+    "publisherOrHolder": "National Archives",
+    "tier": "TIER1",
+    "towns": "marietta-oh"
+  },
+  {
+    "id": "src-wheeling-continental-congress-northwest",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "title": "Journals of the Continental Congress: Western Land and Defense Resolutions, 1779",
+    "publisherOrHolder": "Library of Congress",
+    "tier": "TIER1",
+    "towns": "wheeling-wv"
+  },
+  {
+    "id": "src-wheeling-draper-manuscripts",
+    "url": "https://www.wisconsinhistory.org/Records/Article/CS5107",
+    "title": "Draper Manuscript Collection: Ohio Valley Frontier Papers",
+    "publisherOrHolder": "Wisconsin Historical Society",
+    "tier": "TIER1",
+    "towns": "wheeling-wv"
+  },
+  {
+    "id": "src-sar-nara-saratoga-records",
+    "url": "https://www.archives.gov/research/military/american-revolution",
+    "title": "Revolutionary War Pension Files: Saratoga Veterans",
+    "publisherOrHolder": "National Archives and Records Administration",
+    "tier": "TIER1",
+    "towns": "saratoga-springs-ny"
+  }
+]

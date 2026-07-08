@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getTown, getTownEventDetail, getAllEvents } from "@/lib/api";
+import { getTown, getTownEventDetail, getAllEvents, getTownSources } from "@/lib/api";
 
 export async function generateStaticParams() {
   const events = await getAllEvents({ limit: 5000 });
@@ -35,9 +35,10 @@ export async function generateMetadata({ params }: PageProps) {
 export default async function EventDetailPage({ params }: PageProps) {
   const { slug, eventSlug } = await params;
 
-  const [town, event] = await Promise.all([
+  const [town, event, sourcesData] = await Promise.all([
     getTown(slug),
     getTownEventDetail(slug, eventSlug),
+    getTownSources(slug),
   ]);
 
   if (!town || !event) notFound();
@@ -305,8 +306,53 @@ export default async function EventDetailPage({ params }: PageProps) {
           </div>
         )}
 
-        {/* ── Navigation footer ── */}
-        <div className="mt-16 pt-8 border-t-[3px] border-[#14100a] flex items-center justify-between gap-4">
+      </div>
+
+      {/* ── Sources section ── */}
+      {sourcesData && sourcesData.sources.length > 0 && (
+        <section className="bg-[#f2e6c8] border-b-4 border-[#14100a] py-14 px-8 md:px-16">
+          <div className="max-w-[900px] mx-auto">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-12 h-[3px] bg-[#cc3322]" />
+              <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-[#cc3322]">
+                Sources for {town.name}
+              </p>
+            </div>
+            <div className="space-y-3">
+              {sourcesData.sources.map((source) => (
+                <div
+                  key={source.id}
+                  className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4 border-b border-[#14100a]/10 pb-3 last:border-b-0 last:pb-0"
+                >
+                  <div className="flex-1 min-w-0">
+                    {source.url ? (
+                      <a
+                        href={source.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-editorial text-[16px] text-[#1a3a72] underline underline-offset-2 hover:text-[#cc3322] transition-colors break-words"
+                      >
+                        {source.title}
+                      </a>
+                    ) : (
+                      <span className="font-editorial text-[16px] text-[#14100a]/85 break-words">
+                        {source.title}
+                      </span>
+                    )}
+                  </div>
+                  <span className="flex-shrink-0 font-ui text-[11px] uppercase tracking-[0.1em] text-[#14100a]/45 sm:text-right">
+                    {source.publisherOrHolder}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── Navigation footer (real) ── */}
+      <div className="max-w-[900px] mx-auto px-8 md:px-16">
+        <div className="mt-8 pt-8 border-t-[3px] border-[#14100a] flex items-center justify-between gap-4">
           <NextLink
             href={`/towns/${slug}/timeline`}
             className="font-ui text-[11px] tracking-[0.2em] uppercase text-[#14100a]/40 hover:text-[#cc3322] transition-colors no-underline"

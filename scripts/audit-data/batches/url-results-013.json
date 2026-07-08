@@ -1,0 +1,452 @@
+[
+  {
+    "id": "cmpdpfvcl000buh4zziu45l5a",
+    "table": "Source",
+    "url": "https://history.delaware.gov/2021/05/12/dover-green/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://history.delaware.gov/2021/05/12/dover-green/"
+  },
+  {
+    "id": "cmpdpfvcw000euh4zdyzusvk2",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/the-dover-green.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/places/the-dover-green.htm"
+  },
+  {
+    "id": "cmpdpfvd6000huh4z0rxp6evg",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/caesar-rodney-statue.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/places/caesar-rodney-statue.htm"
+  },
+  {
+    "id": "cmpdphy8f000muh4z7ytg0zaf",
+    "table": "Source",
+    "url": "https://www.georgiaencyclopedia.org/articles/history-archaeology/thomas-brown-1750-1825/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.georgiaencyclopedia.org/articles/history-archaeology/thomas-brown-1750-1825/"
+  },
+  {
+    "id": "cmpdphy9g000puh4zvv025kby",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/biographies/thomas-brown",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/biographies/thomas-brown"
+  },
+  {
+    "id": "cmpdphy9t000suh4z6wk2lo1n",
+    "table": "Source",
+    "url": "https://www.scencyclopedia.org/sce/entries/brown-thomas/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.scencyclopedia.org/sce/entries/brown-thomas/"
+  },
+  {
+    "id": "cmpf4tqnv0000ez88l0kds9aj",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/massachusetts-hall.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/places/massachusetts-hall.htm"
+  },
+  {
+    "id": "cmpf4tqom0003ez885ymu50kx",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/generals-and-staff-at-washingtons-cambridge-headquarters.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/generals-and-staff-at-washingtons-cambridge-headquarters.htm"
+  },
+  {
+    "id": "cmpf4tqp10006ez88efe8p340",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/washingtons-cambridge-headquarters-and-the-memory-of-the-american-revolution.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/washingtons-cambridge-headquarters-and-the-memory-of-the-american-revolution.htm"
+  },
+  {
+    "id": "cmpf4vw54000bez884hybtrnw",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/concord-s-north-bridge.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/places/concord-s-north-bridge.htm"
+  },
+  {
+    "id": "cmpf4vw5v000eez880ddkvloi",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/biographies/james-barrett",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/biographies/james-barrett"
+  },
+  {
+    "id": "cmpf4vw6g000hez882e6zhu4q",
+    "table": "Source",
+    "url": "https://www.nps.gov/mima/learn/news/nps-discovers-nearly-250-year-old-musket-balls-from-shot-heard-round-the-world.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/mima/learn/news/nps-discovers-nearly-250-year-old-musket-balls-from-shot-heard-round-the-world.htm"
+  },
+  {
+    "id": "cmpf4xxk4000sez88npzbuz27",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/john-hannigan-patriots-of-color-paper-4.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/john-hannigan-patriots-of-color-paper-4.htm"
+  },
+  {
+    "id": "cmpgk9ns80000lne0adv1ysgz",
+    "table": "Source",
+    "url": "https://www.history.navy.mil/research/underwater-archaeology/sites-and-projects/ship-wrecksites/penobscot-expedition-archaeological-project.html",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.history.navy.mil/research/underwater-archaeology/sites-and-projects/ship-wrecksites/penobscot-expedition-archaeological-project.html"
+  },
+  {
+    "id": "cmpgk9nsz0003lne0dk6o6avh",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2019/08/the-penobscot-expedition-of-1779/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2019/08/the-penobscot-expedition-of-1779/"
+  },
+  {
+    "id": "cmpgk9ntc0006lne0nhvnp3i1",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/penobscot-expedition",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/penobscot-expedition"
+  },
+  {
+    "id": "cmpgkbrwa000blne0hnm7jxkw",
+    "table": "Source",
+    "url": "https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/elizabethtown-new-jersey",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/elizabethtown-new-jersey"
+  },
+  {
+    "id": "cmpgkbrx7000elne01eid6xyj",
+    "table": "Source",
+    "url": "https://ucnj.org/parks-recreation/the-last-invasion-historic-trail/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://ucnj.org/parks-recreation/the-last-invasion-historic-trail/"
+  },
+  {
+    "id": "cmpgkbrxl000hlne0bftnw5ew",
+    "table": "Source",
+    "url": "https://www.revolutionary-war-and-beyond.com/presbyterian-church-burned-elizabethtown-new-jersey.html",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.revolutionary-war-and-beyond.com/presbyterian-church-burned-elizabethtown-new-jersey.html"
+  },
+  {
+    "id": "cmphzpuwp0000i4sidi2otwgk",
+    "table": "Source",
+    "url": "https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/fort-lee-new-jersey",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/fort-lee-new-jersey"
+  },
+  {
+    "id": "cmphzpuxg0003i4siqok6xm0c",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/fort-lee",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/fort-lee"
+  },
+  {
+    "id": "cmphzpuxx0006i4sic2yi5ms6",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/forts-washington-and-lee",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/articles/forts-washington-and-lee"
+  },
+  {
+    "id": "cmphzryt6000bi4sik7vh9cja",
+    "table": "Source",
+    "url": "https://www.revolutionarywarnewjersey.com/new_jersey_revolutionary_war_sites/towns/hackensack_nj_revolutionary_war_sites.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.revolutionarywarnewjersey.com/new_jersey_revolutionary_war_sites/towns/hackensack_nj_revolutionary_war_sites.htm"
+  },
+  {
+    "id": "cmphzrytw000ei4si6b154u4w",
+    "table": "Source",
+    "url": "https://www.bergencountyhistory.org/newbridge-revwar",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.bergencountyhistory.org/newbridge-revwar"
+  },
+  {
+    "id": "cmphzryua000hi4sio9cg953d",
+    "table": "Source",
+    "url": "https://bergencountynj.gov/tourism/discovering-history/revolutionary-war-sites-in-bergen-county/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://bergencountynj.gov/tourism/discovering-history/revolutionary-war-sites-in-bergen-county/"
+  },
+  {
+    "id": "cmpjf52830000dqjhk9fovxel",
+    "table": "Source",
+    "url": "https://www.revolutionarywarnewjersey.com/new_jersey_revolutionary_war_sites/towns/new_brunswick_nj_revolutionary_war_sites.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.revolutionarywarnewjersey.com/new_jersey_revolutionary_war_sites/towns/new_brunswick_nj_revolutionary_war_sites.htm"
+  },
+  {
+    "id": "cmpjf528y0003dqjhdm6xeo77",
+    "table": "Source",
+    "url": "https://www.hmdb.org/m.asp?m=208921",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.hmdb.org/m.asp?m=208921"
+  },
+  {
+    "id": "cmpjf529c0006dqjhopo6e08w",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2018/01/baptism-fire-brunswick-new-jersey-june-1777/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2018/01/baptism-fire-brunswick-new-jersey-june-1777/"
+  },
+  {
+    "id": "cmpjf768t000bdqjh3r4sfd2d",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2014/08/the-american-revolution-comes-to-albany-new-york-1756-1776/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2014/08/the-american-revolution-comes-to-albany-new-york-1756-1776/"
+  },
+  {
+    "id": "cmpjf769j000edqjhm0kbnfs3",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/History_of_Albany",
+    "status": 404,
+    "ok": false,
+    "issue": "article does not exist on Wikipedia",
+    "finalUrl": "https://en.wikipedia.org/wiki/History_of_Albany"
+  },
+  {
+    "id": "cmpjf769v000hdqjhy34onhip",
+    "table": "Source",
+    "url": "https://www.newyorkalmanack.com/2022/03/revolutionary-albany-the-battles-of-saratoga-loyalist-opposition/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.newyorkalmanack.com/2022/03/revolutionary-albany-the-battles-of-saratoga-loyalist-opposition/"
+  },
+  {
+    "id": "cmpjf9d33000mdqjhclhzhzn3",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/where-the-battle-of-harlem-heights-began.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/places/where-the-battle-of-harlem-heights-began.htm"
+  },
+  {
+    "id": "cmpjf9d3i000pdqjhpgqfj1y8",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/battle-of-harlem-heights-plaque.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/places/battle-of-harlem-heights-plaque.htm"
+  },
+  {
+    "id": "cmpjf9d3u000sdqjhbnw4kd46",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/battle-of-harlem-heights",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/battle-of-harlem-heights"
+  },
+  {
+    "id": "cmpkul1wd0000c57roevpmqda",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/bowling-green.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/places/bowling-green.htm"
+  },
+  {
+    "id": "cmpkul1x90003c57rvqonpr1l",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/british-occupation-of-new-york-city",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/british-occupation-of-new-york-city"
+  },
+  {
+    "id": "cmpkul1xn0006c57rruizphn6",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/culper-spy-ring",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/culper-spy-ring"
+  },
+  {
+    "id": "cmpkuncuo000dc57rgs6xgli8",
+    "table": "Source",
+    "url": "https://www.sos.ri.gov/divisions/civics-and-education/for-educators/themed-collections/american-revolution",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.sos.ri.gov/divisions/civics-and-education/for-educators/themed-collections/american-revolution"
+  },
+  {
+    "id": "cmpkuncv6000gc57r1xu41z1j",
+    "table": "Source",
+    "url": "https://www.history.navy.mil/browse-by-topic/people/historical-figures/esek-hopkins.html",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.history.navy.mil/browse-by-topic/people/historical-figures/esek-hopkins.html"
+  },
+  {
+    "id": "cmpma132i0000ftl1xxdftdoc",
+    "table": "Source",
+    "url": "https://www.britannica.com/event/Battle-of-Camden-1780",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.britannica.com/event/Battle-of-Camden-1780"
+  },
+  {
+    "id": "cmpma13360003ftl18stk4n6k",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Johann_de_Kalb",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Johann_de_Kalb"
+  },
+  {
+    "id": "cmpma31fk0008ftl1ecjemo2s",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/battle-of-sullivan-s-island.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/battle-of-sullivan-s-island.htm"
+  },
+  {
+    "id": "cmpma31fs000bftl1z39xsvai",
+    "table": "Source",
+    "url": "https://www.scencyclopedia.org/sce/entries/sullivan%C2%92s-island-battle-of/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.scencyclopedia.org/sce/entries/sullivan%C2%92s-island-battle-of/"
+  },
+  {
+    "id": "cmpma31g0000eftl16q8cv70g",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2023/05/danger-at-the-beach/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2023/05/danger-at-the-beach/"
+  },
+  {
+    "id": "cmpnpgx0a00008vsqidvxmxib",
+    "table": "Source",
+    "url": "https://encyclopediavirginia.org/entries/fairfax-resolves/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://encyclopediavirginia.org/entries/fairfax-resolves/"
+  },
+  {
+    "id": "cmpnpgx1c00038vsqi42f3ngt",
+    "table": "Source",
+    "url": "https://founders.archives.gov/documents/Washington/02-10-02-0080",
+    "status": 202,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://founders.archives.gov/documents/Washington/02-10-02-0080"
+  },
+  {
+    "id": "cmpnpgx1n00068vsqzy1yhb12",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2020/10/the-american-revolution-in-alexandria-virginia-upheaval-in-george-washingtons-hometown/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2020/10/the-american-revolution-in-alexandria-virginia-upheaval-in-george-washingtons-hometown/"
+  },
+  {
+    "id": "cmpnpj5vp000b8vsqo5d0g5nc",
+    "table": "Source",
+    "url": "https://encyclopediavirginia.org/entries/the-burning-of-norfolk/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://encyclopediavirginia.org/entries/the-burning-of-norfolk/"
+  },
+  {
+    "id": "cmpp4winx0000hj1wsrxim3tv",
+    "table": "Source",
+    "url": "https://encyclopediavirginia.org/entries/williamsburg-during-the-colonial-period/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://encyclopediavirginia.org/entries/williamsburg-during-the-colonial-period/"
+  },
+  {
+    "id": "cmpp4wioj0003hj1w9aixr21v",
+    "table": "Source",
+    "url": "https://encyclopediavirginia.org/entries/the-gunpowder-incident/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://encyclopediavirginia.org/entries/the-gunpowder-incident/"
+  }
+]

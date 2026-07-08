@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
-import { getTown, getTownStoryDetail, getAllStoryParams } from "@/lib/api";
+import { getTown, getTownStoryDetail, getAllStoryParams, getTownSources } from "@/lib/api";
+import type { TownSource } from "@/lib/api";
 
 export async function generateStaticParams() {
   const stories = await getAllStoryParams();
@@ -41,10 +42,13 @@ export async function generateMetadata({ params }: PageProps) {
 export default async function StoryDetailPage({ params }: PageProps) {
   const { slug, storySlug } = await params;
 
-  const [town, story] = await Promise.all([
+  const [town, story, sourcesResponse] = await Promise.all([
     getTown(slug),
     getTownStoryDetail(slug, storySlug),
+    getTownSources(slug),
   ]);
+
+  const townSources: TownSource[] = sourcesResponse?.sources ?? [];
 
   if (!town || !story) {
     notFound();
@@ -117,6 +121,59 @@ export default async function StoryDetailPage({ params }: PageProps) {
           ))}
         </div>
       )}
+
+      {/* Sources section */}
+      <section className="bg-[#f2ece0] border-b-4 border-[#14100a] py-12 px-8 md:px-16 mt-16">
+        <p className="font-ui text-[11px] uppercase tracking-[0.28em] text-[#cc3322] mb-4">
+          Sources
+        </p>
+        <h2 className="font-display text-[28px] text-[#14100a] mb-8">
+          Primary &amp; Secondary Sources
+        </h2>
+
+        {townSources.length === 0 ? (
+          <p className="font-editorial text-[18px] text-[#14100a]/60">
+            No sources on record for this town yet.
+          </p>
+        ) : (
+          <ul className="divide-y divide-[#14100a]/10">
+            {townSources.map((source) => {
+              const row = (
+                <div className="py-4">
+                  <p className="font-editorial text-[18px] text-[#14100a]">
+                    {source.title}
+                  </p>
+                  <p className="font-ui text-[11px] text-[#14100a]/50 mt-1">
+                    {source.publisherOrHolder}
+                    {source.type ? ` · ${source.type}` : ""}
+                    {source.credibilityTier ? ` · ${source.credibilityTier}` : ""}
+                  </p>
+                  {source.notes && (
+                    <p className="font-ui text-[11px] text-[#14100a]/40 mt-1 italic">
+                      {source.notes}
+                    </p>
+                  )}
+                </div>
+              );
+
+              return source.url ? (
+                <li key={source.id}>
+                  <a
+                    href={source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="no-underline block transition-colors hover:bg-[#14100a]/[0.025]"
+                  >
+                    {row}
+                  </a>
+                </li>
+              ) : (
+                <li key={source.id}>{row}</li>
+              );
+            })}
+          </ul>
+        )}
+      </section>
 
       <div className="mt-12 pt-8 border-t border-ink/8 flex items-center gap-6">
         <NextLink

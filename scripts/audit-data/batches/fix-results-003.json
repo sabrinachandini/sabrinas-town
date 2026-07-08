@@ -1,0 +1,182 @@
+[
+  {
+    "id": "src-ninety-six-sc-usc-library-backcountry",
+    "table": "Source",
+    "oldUrl": "https://library.sc.edu/p/Collections/SCL",
+    "newUrl": "https://www.nps.gov/nisi/",
+    "reason": "Original USC South Caroliniana Library collections URL redirected to homepage; digital.library.sc.edu collection pages block automated access. NPS Ninety Six National Historic Site (200 OK) covers the same Ninety Six SC backcountry Revolutionary War history.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-eutaw-springs-sc-sc-state-archives",
+    "table": "Source",
+    "oldUrl": "https://www.scdah.sc.gov/",
+    "newUrl": "https://scdah.sc.gov/",
+    "reason": "SCDAH dropped the www subdomain; new canonical URL returns 200 OK.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-hobkirks-hill-sc-historic-camden-visit",
+    "table": "Source",
+    "oldUrl": "https://www.historiccamden.org/plan-your-visit",
+    "newUrl": "https://www.historiccamden.org/",
+    "reason": "/plan-your-visit path returns 404; organization homepage returns 200 OK and covers the Revolutionary War Living History Park in Camden SC.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-fort-moultrie-sc-nps-fort-moultrie",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/fosu/learn/historyculture/fort-moultrie.htm",
+    "newUrl": "https://www.nps.gov/fosu/learn/historyculture/fort_moultrie.htm",
+    "reason": "NPS renamed slug from hyphen to underscore; fort_moultrie.htm returns 200 OK with full Fort Moultrie Revolutionary War history.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-fort-moultrie-sc-sc-state-archives-1776",
+    "table": "Source",
+    "oldUrl": "https://www.scdah.sc.gov/",
+    "newUrl": "https://scdah.sc.gov/",
+    "reason": "SCDAH dropped the www subdomain; new canonical URL returns 200 OK.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-fort-moultrie-sc-american-battlefield-trust-fm",
+    "table": "Source",
+    "oldUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/sullivan%27s-island",
+    "newUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/sullivans-island-south-carolina",
+    "reason": "American Battlefield Trust restructured the slug to remove apostrophe encoding and added state suffix; new URL returns 200 OK with full Battle of Sullivan's Island / Fort Moultrie coverage.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-guilford-courthouse-nc-pension-depositions",
+    "table": "Source",
+    "oldUrl": "https://www.fold3.com/title/452/revolutionary-war-pension-and-bounty-land-warrant-application-files",
+    "newUrl": "https://www.archives.gov/citizen-archivist/missions/revolutionary-war-pension-files",
+    "reason": "Fold3 title/452 URL redirects to homepage. National Archives (primary custodian of these pension files) hosts the Revolutionary War Pension Files transcription mission at this 200 OK URL, covering the same case files including Guilford Courthouse veterans.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-guilford-courthouse-nc-historical-assoc-nc",
+    "table": "Source",
+    "oldUrl": "https://www.ncdcr.gov/about/history/north-carolina-historical-review",
+    "newUrl": "https://www.dncr.nc.gov/explore/history-culture/history/division-historical-resources/historical-publications/north-carolina-historical-review",
+    "reason": "NC DNCR migrated from ncdcr.gov to dncr.nc.gov and restructured URL paths; new URL returns 200 OK with the full North Carolina Historical Review page.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-wilmington-nc-lower-cape-fear-historical-society",
+    "table": "Source",
+    "oldUrl": "https://www.lcfhs.org/",
+    "newUrl": "https://latimerhouse.org/",
+    "reason": "lcfhs.org redirects to unrelated site. The Lower Cape Fear Historical Society now operates under the Latimer House Museum brand; latimerhouse.org returns 200 OK.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-wilmington-nc-visit-wilmington",
+    "table": "Source",
+    "oldUrl": "https://www.wilmingtonandbeaches.com/history-culture/history/",
+    "newUrl": "https://www.wilmingtonandbeaches.com/things-to-do/attractions-and-activities/history/wilmington/",
+    "reason": "Wilmington CVB restructured its URL hierarchy; new path returns 200 OK with Wilmington NC history page explicitly covering Revolutionary War heritage.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-savannah-ga-nps-fort-pulaski",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/fopu/learn/historyculture/revolutionary-war.htm",
+    "newUrl": "https://www.nps.gov/people/casimir-pulaski.htm",
+    "reason": "NPS Fort Pulaski Revolutionary War page no longer exists (404); the H&C index confirms the park's primary focus is Civil War. NPS People page for Casimir Pulaski returns 200 OK and covers his Revolutionary War role including the 1779 Savannah campaign.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-savannah-ga-wikipedia-capture-1778",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/Capture_of_Savannah_(1778)",
+    "newUrl": "https://en.wikipedia.org/wiki/Capture_of_Savannah",
+    "reason": "Wikipedia dropped the year disambiguator from the article title; Capture_of_Savannah returns 200 OK with full 1778 British capture of Savannah coverage.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-augusta-ga-wikipedia-battle-1781",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/Siege_of_Augusta_(1781)",
+    "newUrl": "https://en.wikipedia.org/wiki/Siege_of_Augusta",
+    "reason": "Wikipedia dropped the year disambiguator; Siege_of_Augusta returns 200 OK with full May–June 1781 Augusta campaign coverage.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-augusta-ga-american-battlefield-trust",
+    "table": "Source",
+    "oldUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/augusta",
+    "newUrl": null,
+    "reason": "battlefields.org/learn/revolutionary-war/battles/augusta returns 404 and no dedicated Augusta battle page exists on the American Battlefield Trust site; the organization covers nearby Georgia battles (Kettle Creek, Brier Creek) but not the Siege of Augusta.",
+    "verified": false,
+    "httpStatus": 404
+  },
+  {
+    "id": "src-new-haven-nps-coastal-raids",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/subjects/nationalregister/upload/CT-MPS-Revolutionary-War-Coastal-Raids.pdf",
+    "newUrl": "https://connecticuthistory.org/topics-page/revolutionary-war/",
+    "reason": "NPS National Register PDF no longer hosted at that path (404); new NPS location not found. CT Humanities connecticuthistory.org Revolutionary War topic page returns 200 OK and explicitly documents Connecticut coastal raids including New Haven (Tryon's 1779 raid).",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-new-haven-state-archives-council",
+    "table": "Source",
+    "oldUrl": "https://portal.ct.gov/SOTS/Collection-Detail-Pages/State-Archives",
+    "newUrl": "https://portal.ct.gov/csl/departments/state-archives",
+    "reason": "CT Secretary of State SOTS path redirected to homepage; Connecticut State Library's State Archives page at portal.ct.gov/csl/departments/state-archives returns 200 OK.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-new-haven-dandrea-raid",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2018/07/the-british-raid-on-new-haven/",
+    "newUrl": "https://en.wikipedia.org/wiki/Tryon%27s_raid",
+    "reason": "The 2018 allthingsliberty.com article is no longer available (404). Wikipedia's Tryon's Raid article returns 200 OK and covers the same July 1779 British raid on New Haven, Fairfield, and Norwalk, Connecticut.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-new-london-connecticut-state-records",
+    "table": "Source",
+    "oldUrl": "https://portal.ct.gov/SOTS/Collection-Detail-Pages/State-Archives",
+    "newUrl": "https://portal.ct.gov/csl/departments/state-archives",
+    "reason": "CT Secretary of State SOTS path redirected to homepage; Connecticut State Library's State Archives page returns 200 OK.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-new-london-wikipedia",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/Raid_on_New_London",
+    "newUrl": "https://en.wikipedia.org/wiki/Battle_of_Groton_Heights",
+    "reason": "Wikipedia's Raid_on_New_London article does not exist; the 1781 event is documented under Battle_of_Groton_Heights, which returns 200 OK and covers Benedict Arnold's raid on New London and Groton, CT in full.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-groton-connecticut-sons-revolution",
+    "table": "Source",
+    "oldUrl": "https://connecticutsar.org/",
+    "newUrl": "https://www.fortgriswold.org/",
+    "reason": "connecticutsar.org redirects to unrelated site; replacement CT SAR site (sarconnecticut.org) blocks automated fetch (403). Fort Griswold Battlefield State Park Foundation (fortgriswold.org) returns 200 OK and is the primary institutional authority for the Groton CT Revolutionary War site.",
+    "verified": true,
+    "httpStatus": 200
+  }
+]

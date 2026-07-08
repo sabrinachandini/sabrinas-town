@@ -1,0 +1,168 @@
+[
+  {
+    "id": "src-phi-franklin-papers",
+    "title": "The Papers of Benjamin Franklin (43 vols.)",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL points to collection homepage (franklinpapers.org), not a specific document or volume.",
+      "publisherOrHolder lists 'Yale University Press (various editors)' — accurate for the print edition, but the website is operated jointly by the American Philosophical Society, Yale University, and the Packard Humanities Institute (digital edition). Yale University Press is not the operator of this digital resource.",
+      "The 43-volume print series citation cannot be verified or browsed via a single homepage URL; each volume would require a specific reference."
+    ],
+    "recommendation": "Retain the collection reference but correct publisherOrHolder to 'American Philosophical Society / Yale University (print: Yale University Press)'. Link to specific documents or volumes using franklinpapers.org item-level URLs rather than the homepage."
+  },
+  {
+    "id": "src-yor-articles-confederation",
+    "title": "Articles of Confederation and Perpetual Union",
+    "verdict": "PASS",
+    "issues": [],
+    "recommendation": "Source checks out. NARA hosts the document at the cited URL with transcript and image of the original 1777 parchment. The NARA page abbreviates the title as 'Articles of Confederation (1777)' but the full official title 'Articles of Confederation and Perpetual Union' is correct. Primary source properly attributed."
+  },
+  {
+    "id": "src-yor-journals-congress-york",
+    "title": "Journals of the Continental Congress: York Period (September 1777-June 1778)",
+    "verdict": "ISSUE",
+    "issues": [
+      "The cited URL (memory.loc.gov/ammem/amlaw/lwjc.html) is a deprecated American Memory URL that now issues a 301 redirect to the general LOC page for all Journals of the Continental Congress — not a York-Period-specific resource.",
+      "The title claims specificity ('York Period, September 1777–June 1778') that the URL does not deliver; the redirect destination covers all 34 volumes of JCC (1774–1789), not just the York sessions.",
+      "The old American Memory project URL should be considered unreliable as a stable citation."
+    ],
+    "recommendation": "Update URL to a specific LOC item-level page for the relevant JCC volumes covering the York period (Vols. 9–11, roughly). Correct URL pattern: https://www.loc.gov/item/[specific item id]. Alternatively cite the digitized volumes directly through the Century of Lawmaking collection with volume-specific links."
+  },
+  {
+    "id": "src-ger-washington-germantown-plan",
+    "title": "Washington's Battle Plan for Germantown, October 1777",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL points to the collection-level landing page for ALL George Washington Papers at LOC, not to any specific document.",
+      "A 'Battle Plan for Germantown, October 1777' is a very specific document that would require its own LOC item URL (e.g., https://www.loc.gov/item/mgw[series]/[item]). No such document can be verified from the collection homepage.",
+      "URL returned HTTP 403 (Cloudflare bot protection) during automated check, preventing direct content verification, though the collection itself is real and well-known."
+    ],
+    "recommendation": "Locate the specific manuscript or document in the LOC digital catalog and cite the item-level URL. Search https://www.loc.gov/collections/george-washington-papers/?q=germantown for the specific document."
+  },
+  {
+    "id": "src-tre-washington-trenton-orders",
+    "title": "Washington's Orders for the Crossing of the Delaware and Attack on Trenton",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is the same collection-level homepage for all George Washington Papers — identical to three other citations in this batch.",
+      "The title implies a specific primary document (orders, December 1776) but the URL provides no path to that specific item.",
+      "Five separate items in this batch all share the identical collection URL, suggesting bulk citation of a homepage rather than individual document research."
+    ],
+    "recommendation": "Identify and cite the specific item URL within the George Washington Papers. The crossing of the Delaware orders would be in Series 3B (Varick Transcripts) or Series 4 (General Correspondence). Use LOC catalog to find item-level URLs."
+  },
+  {
+    "id": "src-pri-princeton-university-archives",
+    "title": "Princeton University Archives: Nassau Hall During the Revolution",
+    "verdict": "ISSUE",
+    "issues": [
+      "The cited URL (rbsc.princeton.edu) redirects with a 301 to library.princeton.edu/special-collections/, which is the general landing page for Princeton's Rare Books and Special Collections — not a specific finding aid or guide about Nassau Hall during the Revolution.",
+      "No evidence found that a specific Princeton University Archives resource titled or focused on 'Nassau Hall During the Revolution' is accessible at this URL.",
+      "The redirect destination returned HTTP 403 (Cloudflare), so content could not be independently verified.",
+      "The original domain rbsc.princeton.edu appears to have been absorbed into library.princeton.edu, making the cited URL stale."
+    ],
+    "recommendation": "Locate the specific finding aid or archival guide in Princeton's Finding Aids system (findingaids.princeton.edu) for any collection related to Nassau Hall or the Revolutionary War period. Update the URL to the specific finding aid."
+  },
+  {
+    "id": "src-pri-washington-princeton-orders",
+    "title": "Washington's Orders and After-Action Report on the Battle of Princeton",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is the same collection-level homepage for all George Washington Papers — no specific document is cited.",
+      "An 'after-action report' on the Battle of Princeton would be a distinct document requiring its own item URL.",
+      "Cannot verify that a document matching this exact title exists in the collection from the homepage URL alone."
+    ],
+    "recommendation": "Search the LOC George Washington Papers catalog for Princeton-related correspondence from January 1777. Cite the specific item URL for any orders or correspondence found."
+  },
+  {
+    "id": "src-mon-washington-monmouth-orders",
+    "title": "Washington's Orders and Correspondence: Monmouth Campaign, June 1778",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is the same collection-level homepage for all George Washington Papers.",
+      "The title implies specific orders and correspondence from June 1778 but the URL provides no path to those specific items.",
+      "Multiple documents (orders, correspondence, court-martial materials re: Lee) would be involved in the Monmouth Campaign — no single document can be identified from the homepage URL."
+    ],
+    "recommendation": "Identify specific items from the Monmouth Campaign period (June 1778) within the LOC George Washington Papers and cite item-level URLs. Note that Lee court-martial records may be a separate archival series."
+  },
+  {
+    "id": "src-nbr-washington-retreat-dispatch",
+    "title": "Washington's Dispatches from New Brunswick and the New Jersey Retreat, November-",
+    "verdict": "ISSUE",
+    "issues": [
+      "Title is truncated — the date range is cut off ('November-' without year or end date), indicating a data entry error.",
+      "URL is the same collection-level homepage for all George Washington Papers.",
+      "No specific dispatches can be verified from the collection homepage URL."
+    ],
+    "recommendation": "Complete the truncated title with the full date range (likely November–December 1776). Locate specific dispatch items from the New Jersey retreat in LOC catalog and cite item-level URLs."
+  },
+  {
+    "id": "src-fle-washington-fort-lee-letters",
+    "title": "Washington's Correspondence on the Fall of Fort Lee and Fort Washington, Novembe",
+    "verdict": "ISSUE",
+    "issues": [
+      "Title is truncated — 'Novembe' is cut off, indicating a data entry error.",
+      "URL is the same collection-level homepage for all George Washington Papers — sixth item in this batch to share this identical URL.",
+      "Fort Lee (NJ) and Fort Washington (Manhattan) are two distinct engagements; conflating them in a single citation with a vague collection URL prevents verification of either.",
+      "No specific letters can be identified from the collection homepage URL."
+    ],
+    "recommendation": "Complete the truncated title (November 1776). Separate Fort Lee and Fort Washington correspondence into distinct citations with item-level LOC URLs. Washington's letter to Congress after the fall of Fort Washington (November 16, 1776) has a known LOC item reference."
+  },
+  {
+    "id": "src-yorktown-va-cornwallis-capitulation",
+    "title": "Articles of Capitulation, Yorktown, October 19, 1781",
+    "verdict": "FABRICATED",
+    "issues": [
+      "URL (https://www.archives.gov/milestone-documents/articles-of-capitulation) returns HTTP 404. The page does not exist.",
+      "NARA's Milestone Documents list was checked: the Articles of Capitulation (Yorktown, 1781) is NOT among NARA's 100 Milestone Documents. The list for the Revolutionary period includes Articles of Confederation and Treaty of Paris but not the Yorktown capitulation document.",
+      "The URL was apparently constructed by analogy to the real URL for the Articles of Confederation (articles-of-confederation), but no such endpoint exists at NARA.",
+      "This appears to be a fabricated citation — a plausible-sounding URL that mimics an existing URL pattern but leads nowhere."
+    ],
+    "recommendation": "Remove this citation. The actual Articles of Capitulation signed at Yorktown are held in the Papers of the Continental Congress at NARA (RG 360). A correct citation would reference the NARA catalog: catalog.archives.gov or the LOC's George Washington Papers which contain related correspondence. The document is also reproduced in secondary scholarly sources."
+  },
+  {
+    "id": "src-yorktown-va-washington-diary-1781",
+    "title": "George Washington's Diary, August-October 1781",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL is the same collection-level George Washington Papers homepage used for six other citations in this batch — no specific diary item is linked.",
+      "publisherOrHolder lists 'Library of Congress, Manuscript Division' which is more precise than the collection page URL suggests, but the URL still lands on the general collection page.",
+      "Washington's diaries are a real subset within the George Washington Papers and the August–October 1781 diary covering Yorktown does exist, but requires a specific item URL to be a verifiable citation."
+    ],
+    "recommendation": "The Washington diaries are available at a specific LOC item URL. Locate the diary for 1781 within the collection (Series 1, Diaries) and cite the item-level URL. The digital edition of the diaries is also published by the University Press of Virginia and accessible through the Washington Papers project."
+  },
+  {
+    "id": "src-yorktown-va-virginia-state-archives-1781",
+    "title": "Virginia Executive Papers: Governor Thomas Nelson, 1781",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL (lva.virginia.gov) is the general homepage of the Library of Virginia — not a specific collection page, finding aid, or catalog entry for the Virginia Executive Papers.",
+      "No path to Governor Thomas Nelson's 1781 executive papers is provided. The Library of Virginia homepage mentions its broad holdings but provides no direct access to this specific series.",
+      "A TIER1 citation requires a URL leading to the specific collection, finding aid, or digitized documents — not the institution's homepage."
+    ],
+    "recommendation": "Replace with the LVA catalog or finding aid URL for the Virginia Executive Papers, Governor Thomas Nelson, 1781. The LVA's online catalog (lva.primo.exlibrisgroup.com) or ArchivesSpace finding aids would provide the correct item-level or series-level URL."
+  },
+  {
+    "id": "src-yorktown-va-hamilton-assault-redoubt",
+    "title": "Alexander Hamilton's Report on the Assault on Redoubt No. 10, October 1781",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL points to the collection-level landing page for ALL Alexander Hamilton Papers at LOC, not to a specific document.",
+      "URL returned HTTP 403 (Cloudflare bot protection) during verification; the collection itself is real and held at LOC but the page could not be independently confirmed.",
+      "Hamilton's report on Redoubt No. 10 is a real document (he commanded the assault); however, it requires a specific item URL to constitute a verifiable primary source citation."
+    ],
+    "recommendation": "Search the LOC Alexander Hamilton Papers catalog for the specific report on Redoubt No. 10 (October 1781). The Papers of Alexander Hamilton (Columbia University Press edition, ed. Syrett) Vol. 2 also contains this document and may offer a more stable reference. Cite the specific item URL."
+  },
+  {
+    "id": "src-williamsburg-va-burgesses-journals",
+    "title": "Journals of the House of Burgesses of Virginia, 1773-1776",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL (colonialwilliamsburg.org) leads to the Colonial Williamsburg Foundation website — primarily a living history museum and tourism organization, not the primary archival repository for official Virginia colonial government records.",
+      "URL returned HTTP 403 (Cloudflare) and is visibly the museum's general homepage, not an archival finding aid or digitized document page.",
+      "Institution mismatch: The Journals of the House of Burgesses are official Virginia legislative records. The primary holding institution is the Library of Virginia (formerly the Virginia State Library). The journals have also been digitized and are available through the LOC and other repositories.",
+      "publisherOrHolder lists 'Colonial Williamsburg Foundation / Virginia State Library' — a dual attribution that is unusual and points to two different institutions. The URL only leads to Colonial Williamsburg, not the Virginia State Library.",
+      "The Colonial Williamsburg Foundation does hold some archival collections (Rockefeller Library) but is not the authoritative repository for official burgesses journals."
+    ],
+    "recommendation": "Replace URL with the Library of Virginia's digitized version or the LOC's digitized Journals of the House of Burgesses (available through the Century of Lawmaking collection). Correct publisherOrHolder to 'Library of Virginia' or 'Library of Congress' depending on which digitized version is used. Remove Colonial Williamsburg as a publisher/holder of official legislative records."
+  }
+]

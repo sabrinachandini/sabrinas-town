@@ -1,0 +1,22 @@
+[
+  {"id":"src-wheeling-draper-manuscripts","table":"Source","url":"https://www.wisconsinhistory.org/Records/Article/CS5107","issue":""},
+  {"id":"src-alb-nps-hudson-valley","table":"Source","url":"https://www.hudsonrivervalley.com/heritage/","issue":""},
+  {"id":"src-wp-nps-west-point-highlands","table":"Source","url":"https://www.nps.gov/subjects/revwar/west-point.htm","issue":""},
+  {"id":"src-car-pa-archives-carlisle","table":"Source","url":"https://www.phmc.pa.gov/Archives","issue":"redirects to homepage"},
+  {"id":"src-pao-paoli-battlefield-org","table":"Source","url":"https://www.paolipreservation.org/","issue":"connection error"},
+  {"id":"src-marblehead-wikipedia-glovers-regiment","table":"Source","url":"https://en.wikipedia.org/wiki/Glover%27s_Marblehead_Regiment","issue":""},
+  {"id":"src-fle-nps-fort-lee-historic-park","table":"Source","url":"https://www.nj.gov/dep/parksandforests/historic/fortlee/index.html","issue":""},
+  {"id":"src-savannah-ga-georgia-hist-quarterly","table":"Source","url":"https://georgiahistory.com/education-outreach/publications/georgia-historical-quarterly/","issue":""},
+  {"id":"src-danbury-wikipedia","table":"Source","url":"https://en.wikipedia.org/wiki/Raid_on_Danbury","issue":""},
+  {"id":"src-annapolis-historic-annapolis","table":"Source","url":"https://www.historiccannapolis.org/","issue":"connection error"},
+  {"id":"src-wilmington-cooch-bridge-society","table":"Source","url":"https://www.coochsbridgebattlefield.org/","issue":"connection error"},
+  {"id":"src-kaskaskia-illinois-historical-survey","table":"Source","url":"https://www.illinois.gov/agencies/agency.illinois-state-historical-library.html","issue":"redirects to homepage"},
+  {"id":"source-elizabeth-nps-revolutionary-nj","table":"Source","url":"https://www.nps.gov/revwar/about_the_revolution/new_jersey.html","issue":""},
+  {"id":"src-salem-nps-maritime","table":"Source","url":"https://www.nps.gov/sama/learn/historyculture/revolutionary-war.htm","issue":""},
+  {"id":"src-kings-mountain-nc-draper-manuscripts","table":"Source","url":"https://www.wisconsinhistory.org/Records/Article/CS1945","issue":""},
+  {"id":"cmoagrnsa000036gwew6ze63k","table":"Source","url":"https://www.nps.gov/subjects/amrevolution/index.htm","issue":""},
+  {"id":"cmoagrobo000936gwmoc8jw0n","table":"Source","url":"https://www.nysm.nysed.gov/collections","issue":""},
+  {"id":"cmonzghud00001p158fgxlasz","table":"Source","url":"https://history.house.gov/Historical-Highlights/1700s/General-George-Washington-resigning-his-commission-in-Annapolis","issue":"redirects to homepage"},
+  {"id":"cmp29v0sh0003ef4ivbuj7icm","table":"Source","url":"https://ahec.armywarcollege.edu/exhibits/CBKsThenAndNow.cfm","issue":""},
+  {"id":"cmp29v0sv0006ef4idfth0to1","table":"Source","url":"https://goordnance.army.mil/history/OrdnanceCorpshistory.html","issue":"connection error"}
+]

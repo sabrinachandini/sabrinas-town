@@ -1,0 +1,106 @@
+[
+  {
+    "id": "src-phi-declaration-independence",
+    "url": "https://www.archives.gov/founding-docs/declaration",
+    "title": "Declaration of Independence, July 4, 1776",
+    "publisherOrHolder": "National Archives and Records Administration",
+    "tier": "TIER1",
+    "towns": "philadelphia-pa"
+  },
+  {
+    "id": "src-car-pa-archives-carlisle",
+    "url": "https://www.phmc.pa.gov/Archives",
+    "title": "Pennsylvania Archives, Series 2 and 5: Militia Records and Border Defense",
+    "publisherOrHolder": "Pennsylvania State Archives",
+    "tier": "TIER1",
+    "towns": "carlisle-pa"
+  },
+  {
+    "id": "src-alexandria-va-washington-letters-pre-war",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "George Washington's Letters from Alexandria, 1769-1775",
+    "publisherOrHolder": "Library of Congress, George Washington Papers",
+    "tier": "TIER1",
+    "towns": "alexandria-va"
+  },
+  {
+    "id": "src-fredericksburg-va-washington-boyhood-letters",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "George Washington's Early Letters and Diary Fragments, 1748-1754",
+    "publisherOrHolder": "Library of Congress, George Washington Papers",
+    "tier": "TIER1",
+    "towns": "fredericksburg-va"
+  },
+  {
+    "id": "src-charlottesville-va-jefferson-escape-account",
+    "url": "https://www.loc.gov/collections/thomas-jefferson-papers/",
+    "title": "Thomas Jefferson to William Gordon, July 16, 1788 (Account of Tarleton's Raid)",
+    "publisherOrHolder": "Library of Congress, Thomas Jefferson Papers",
+    "tier": "TIER1",
+    "towns": "charlottesville-va"
+  },
+  {
+    "id": "src-savannah-ga-pulaski-death-account",
+    "url": "https://www.loc.gov/",
+    "title": "Account of the Death of Count Casimir Pulaski at the Siege of Savannah, October ",
+    "publisherOrHolder": "Library of Congress",
+    "tier": "TIER1",
+    "towns": "savannah-ga"
+  },
+  {
+    "id": "src-dover-delaware-ratification",
+    "url": "https://www.archives.gov/founding-docs/constitution",
+    "title": "Delaware Ratification of the U.S. Constitution, December 7, 1787",
+    "publisherOrHolder": "National Archives, Records of the Continental and Confederation Congresses",
+    "tier": "TIER1",
+    "towns": "dover-de"
+  },
+  {
+    "id": "src-dover-delaware-state-archives",
+    "url": "https://archives.delaware.gov/",
+    "title": "Delaware Public Archives: Revolutionary War Records",
+    "publisherOrHolder": "Delaware Public Archives",
+    "tier": "TIER1",
+    "towns": "dover-de"
+  },
+  {
+    "id": "source-elizabeth-nj-historical-society",
+    "url": "https://jerseyhistory.org",
+    "title": "New Jersey Historical Society Collections: Essex County Revolutionary War Record",
+    "publisherOrHolder": "New Jersey Historical Society",
+    "tier": "TIER2",
+    "towns": "elizabeth-nj"
+  },
+  {
+    "id": "src-bennington-stark-report",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwcc.html",
+    "title": "General John Stark's Report on the Battle of Bennington to General Schuyler, Aug",
+    "publisherOrHolder": "Library of Congress, Papers of the Continental Congress",
+    "tier": "TIER1",
+    "towns": "bennington-vt"
+  },
+  {
+    "id": "src-brattleboro-continental-congress-vermont",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "title": "Journals of the Continental Congress: Vermont Statehood Debates, 1777-1791",
+    "publisherOrHolder": "Library of Congress",
+    "tier": "TIER1",
+    "towns": "brattleboro-vt"
+  },
+  {
+    "id": "source-elizabeth-boudinot-papers-princeton",
+    "url": "https://findingaids.princeton.edu",
+    "title": "Elias Boudinot Papers",
+    "publisherOrHolder": "Princeton University Library",
+    "tier": "TIER1",
+    "towns": "elizabeth-nj"
+  },
+  {
+    "id": "src-kings-mountain-nc-draper-manuscripts",
+    "url": "https://www.wisconsinhistory.org/Records/Article/CS1945",
+    "title": "Draper Manuscripts: Kings Mountain and Its Heroes -- Source Materials",
+    "publisherOrHolder": "State Historical Society of Wisconsin",
+    "tier": "TIER1",
+    "towns": "kings-mountain-nc"
+  }
+]

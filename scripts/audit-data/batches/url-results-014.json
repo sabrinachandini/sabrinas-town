@@ -1,0 +1,452 @@
+[
+  {
+    "id": "cmpp4wiot0006hj1wcf42fpe0",
+    "table": "Source",
+    "url": "https://www.colonialwilliamsburg.org/discover/sources/revolutionary-documents/virginias-independence-resolution-may-15-1776/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.colonialwilliamsburg.org/discover/sources/revolutionary-documents/virginias-independence-resolution-may-15-1776/"
+  },
+  {
+    "id": "cmpp4yqxv000bhj1wh0nlruhb",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2021/05/a-choice-body-of-men-the-continental-army-on-the-upper-ohio/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2021/05/a-choice-body-of-men-the-continental-army-on-the-upper-ohio/"
+  },
+  {
+    "id": "cmpp4yqy6000ehj1ww9h0h9el",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2020/10/the-connolly-plot/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2020/10/the-connolly-plot/"
+  },
+  {
+    "id": "cmpqkci6i0000ebjtmwctxyqp",
+    "table": "Source",
+    "url": "https://connecticuthistory.org/the-burning-of-danbury/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://connecticuthistory.org/the-burning-of-danbury/"
+  },
+  {
+    "id": "cmpqkeuvy0005ebjtqlrvg7j5",
+    "table": "Source",
+    "url": "https://revolutionarywar.us/year-1781/battle-groton-heights/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://revolutionarywar.us/year-1781/battle-groton-heights/"
+  },
+  {
+    "id": "cmprzscv40000um0rbqaajh9q",
+    "table": "Source",
+    "url": "https://connecticuthistory.org/benedict-arnold-demands-the-key-today-in-history/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://connecticuthistory.org/benedict-arnold-demands-the-key-today-in-history/"
+  },
+  {
+    "id": "cmprzscvm0003um0rf4ncgazu",
+    "table": "Source",
+    "url": "https://connecticuthistory.org/roger-sherman-revolutionary-and-dedicated-public-servant/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://connecticuthistory.org/roger-sherman-revolutionary-and-dedicated-public-servant/"
+  },
+  {
+    "id": "cmprzueof0008um0ruqkkryi8",
+    "table": "Source",
+    "url": "https://www.nlchs.org/about/shaw-mansion/",
+    "status": 503,
+    "ok": false,
+    "issue": "server error",
+    "finalUrl": "https://www.nlchs.org/about/shaw-mansion/"
+  },
+  {
+    "id": "cmprzueop000bum0r7mpcwgg0",
+    "table": "Source",
+    "url": "https://www.nlchs.org/privateering-out-of-new-london/",
+    "status": 503,
+    "ok": false,
+    "issue": "server error",
+    "finalUrl": "https://www.nlchs.org/privateering-out-of-new-london/"
+  },
+  {
+    "id": "cmptfaf8a00023cb8xrb7hkkn",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/siege-of-savannah",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/siege-of-savannah"
+  },
+  {
+    "id": "cmpuuo1gu0000utb5clrbi70z",
+    "table": "Source",
+    "url": "https://scrcexhibits.omeka.net/exhibits/show/sihistory/settlement/revolution",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://scrcexhibits.omeka.net/exhibits/show/sihistory/settlement/revolution"
+  },
+  {
+    "id": "cmpuuq5z60005utb5fq8vwhy6",
+    "table": "Source",
+    "url": "https://emergingrevolutionarywar.org/2025/04/17/the-bloody-battle-road-battle-of-menotomy/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://emergingrevolutionarywar.org/2025/04/17/the-bloody-battle-road-battle-of-menotomy/"
+  },
+  {
+    "id": "cmpwa7zed0008uhiyra7qrz4e",
+    "table": "Source",
+    "url": "https://www.history.navy.mil/research/histories/ship-histories/danfs/h/hannah-schooner.html",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.history.navy.mil/research/histories/ship-histories/danfs/h/hannah-schooner.html"
+  },
+  {
+    "id": "cmpxpjkoe0000txo7lzcpl3wh",
+    "table": "Source",
+    "url": "https://www.pilgrimhall.org/plymouth_rock.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.pilgrimhall.org/history-of-plymouth-rock/"
+  },
+  {
+    "id": "cmpxpjkpa0003txo7xyyeyznd",
+    "table": "Source",
+    "url": "https://www.gilderlehrman.org/history-resources/essays/righteous-revolution-mercy-otis-warren",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.gilderlehrman.org/history-resources/essays/righteous-revolution-mercy-otis-warren"
+  },
+  {
+    "id": "cmpxpjkpo0006txo7fps7035j",
+    "table": "Source",
+    "url": "https://www.masshist.org/collection-guides/view/fa0235",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.masshist.org/collection-guides/view/fa0235"
+  },
+  {
+    "id": "cmpxplqoa000btxo777fc4mv9",
+    "table": "Source",
+    "url": "https://www.nps.gov/people/alexander-leslie.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/people/alexander-leslie.htm"
+  },
+  {
+    "id": "cmpxplqox000etxo76dsmmzw3",
+    "table": "Source",
+    "url": "https://www.nps.gov/sama/learn/news/british-encampment.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/sama/learn/news/british-encampment.htm"
+  },
+  {
+    "id": "cmpz4zsir000011wdamz0qoie",
+    "table": "Source",
+    "url": "https://www.gilderlehrman.org/history-resources/spotlight-primary-source/dragging-cannon-fort-ticonderoga-boston-1775",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.gilderlehrman.org/history-resources/spotlight-primary-source/dragging-cannon-fort-ticonderoga-boston-1775"
+  },
+  {
+    "id": "cmpz4zsju000311wd7jqgciy8",
+    "table": "Source",
+    "url": "https://hamilton.gilderlehrman.org/supporting-document/defending-springfield-armory-1787",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://hamilton.gilderlehrman.org/supporting-document/defending-springfield-armory-1787"
+  },
+  {
+    "id": "cmpz52494000811wdgqpw3q6v",
+    "table": "Source",
+    "url": "https://aaslh.org/worcester-revolution-of-1774/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://aaslh.org/worcester-revolution-of-1774/"
+  },
+  {
+    "id": "cmq0kfgyu0000w93cma10nqxl",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/the-mob-and-the-peggy-stewart.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/the-mob-and-the-peggy-stewart.htm"
+  },
+  {
+    "id": "cmq0khupw0005w93cnefqlvh9",
+    "table": "Source",
+    "url": "https://history.state.gov/departmenthistory/buildings/section4",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://history.state.gov/departmenthistory/buildings/section4"
+  },
+  {
+    "id": "cmq0khuqo0008w93c5lj9rvuq",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/john-eager-howard.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/john-eager-howard.htm"
+  },
+  {
+    "id": "cmq1zvebh0000kjivct3bihcy",
+    "table": "Source",
+    "url": "https://www.tatehouse.org/history",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.tatehouse.org/history"
+  },
+  {
+    "id": "cmq1zveca0003kjiv1hh6no1k",
+    "table": "Source",
+    "url": "https://www.mainememory.net/sitebuilder/site/899/page/1310/display?page=2",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mainememory.net/sitebuilder/site/899/page/1310/display?page=2"
+  },
+  {
+    "id": "cmq1zxizq0008kjivl8p3wa2c",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/battle-of-guilford-courthouse",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/battle-of-guilford-courthouse"
+  },
+  {
+    "id": "cmq3fb0r50000zmdgnekhyi86",
+    "table": "Source",
+    "url": "https://www.ncpedia.org/kings-mountain-battle",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.ncpedia.org/kings-mountain-battle"
+  },
+  {
+    "id": "cmq3fb0s40003zmdgai8fcpvc",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/overmountain-men",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/articles/overmountain-men"
+  },
+  {
+    "id": "cmq3fd2mt0008zmdga55pcxiq",
+    "table": "Source",
+    "url": "https://www.america250.nc.gov/blog/2024/08/22/home-grown-grievances-250-years-new-bern-resolves",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.america250.nc.gov/blog/2024/08/22/home-grown-grievances-250-years-new-bern-resolves"
+  },
+  {
+    "id": "cmq3fd2n4000bzmdg58s3oym0",
+    "table": "Source",
+    "url": "https://www.america250.nc.gov/blog/2024/08/22/friends-american-liberty-250-years-new-bern-resolves",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.america250.nc.gov/blog/2024/08/22/friends-american-liberty-250-years-new-bern-resolves"
+  },
+  {
+    "id": "cmq3fd2nf000ezmdgwi6s1ewu",
+    "table": "Source",
+    "url": "https://www.ncpedia.org/history/usrevolution/overview",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.ncpedia.org/history/usrevolution/overview"
+  },
+  {
+    "id": "cmr3556zb0000aqtijaakp372",
+    "table": "Source",
+    "url": "https://www.dncr.nc.gov/blog/2016/11/18/british-forces-leave-wilmington-and-nc-1781",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.dncr.nc.gov/blog/2016/11/18/british-forces-leave-wilmington-and-nc-1781"
+  },
+  {
+    "id": "cmr357dn60005aqtipwnzgpnj",
+    "table": "Source",
+    "url": "https://exhibits.nhd.uscourts.gov/9.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://exhibits.nhd.uscourts.gov/9.htm"
+  },
+  {
+    "id": "cmr357dnj0008aqtiv1sp9vvl",
+    "table": "Source",
+    "url": "https://www.chesterfieldhistoricalsociety-nh.org/nh-first-constitution",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.chesterfieldhistoricalsociety-nh.org/nh-first-constitution"
+  },
+  {
+    "id": "cmr357dns000baqtitvmkqth9",
+    "table": "Source",
+    "url": "https://statecourtreport.org/our-work/analysis-opinion/story-first-state-constitution",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://statecourtreport.org/our-work/analysis-opinion/story-first-state-constitution"
+  },
+  {
+    "id": "cmmndyige00cqouv2fd7tj6jr",
+    "table": "PrimarySourcePacket",
+    "url": "https://www.masshist.org/database/viewer.php?pid=2&old=1&mode=nav&ft=Coming+of+the+American+Revolution&item_id=667",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.masshist.org/database/viewer.php?pid=2&old=1&mode=nav&ft=Coming+of+the+American+Revolution&item_id=667"
+  },
+  {
+    "id": "cmmndyle500d3ouv2ixgensxk",
+    "table": "PrimarySourcePacket",
+    "url": "https://archive.org/details/retrospectofbost00hawk",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://archive.org/details/retrospectofbost00hawk"
+  },
+  {
+    "id": "cmmndyl8100d2ouv2p13n7rx1",
+    "table": "PrimarySourcePacket",
+    "url": "https://www.loc.gov/item/2008680173/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/item/2008680173/"
+  },
+  {
+    "id": "cmmndynot00dhouv2kpsomf5a",
+    "table": "PrimarySourcePacket",
+    "url": "https://founders.archives.gov/documents/Washington/03-01-02-0027",
+    "status": 202,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://founders.archives.gov/documents/Washington/03-01-02-0027"
+  },
+  {
+    "id": "cmmndyny500djouv2kwsqe7b7",
+    "table": "PrimarySourcePacket",
+    "url": "https://www.loc.gov/collections/george-washington-papers/articles-and-essays/george-washingtons-life-in-letters/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/george-washington-papers/articles-and-essays/george-washingtons-life-in-letters/"
+  },
+  {
+    "id": "cmmndynut00diouv2aekyqxbl",
+    "table": "PrimarySourcePacket",
+    "url": "https://founders.archives.gov/documents/Washington/03-02-02-0351",
+    "status": 202,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://founders.archives.gov/documents/Washington/03-02-02-0351"
+  },
+  {
+    "id": "cmmndyqjg00dxouv2r2n46v7a",
+    "table": "PrimarySourcePacket",
+    "url": "https://www.sec.state.ma.us/ArchivesSearch/RevolutionarySearch.aspx",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.sec.state.ma.us/ArchivesSearch/RevolutionarySearch.aspx"
+  },
+  {
+    "id": "cmmndysr800e2ouv28z5kyl5j",
+    "table": "PrimarySourcePacket",
+    "url": "https://archive.org/details/journalsofeachprma00mass",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://archive.org/details/journalsofeachprma00mass"
+  },
+  {
+    "id": "cmmndypjv00dqouv2vkqoc16g",
+    "table": "PrimarySourcePacket",
+    "url": "https://www.sec.state.ma.us/ArchivesSearch/RevolutionarySearch.aspx",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.sec.state.ma.us/ArchivesSearch/RevolutionarySearch.aspx"
+  },
+  {
+    "id": "cmmndyqgi00dwouv2wvhsv8wv",
+    "table": "PrimarySourcePacket",
+    "url": "https://archive.org/details/bradfordshisto00brad",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://archive.org/details/bradfordshisto00brad"
+  },
+  {
+    "id": "cmmndyury00eaouv2pthh53s9",
+    "table": "PrimarySourcePacket",
+    "url": "https://www.archives.gov/research/guide-fed-records/groups/360.html",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.archives.gov/research/guide-fed-records/groups/360.html"
+  },
+  {
+    "id": "cmmndyvvr00egouv2aku3putv",
+    "table": "PrimarySourcePacket",
+    "url": "https://archive.org/details/jamesthachermil00revorich",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://archive.org/details/jamesthachermil00revorich"
+  },
+  {
+    "id": "cmmndyuvs00ebouv2rotrcuhh",
+    "table": "PrimarySourcePacket",
+    "url": "https://www.masshist.org/collection-guides/view?id=fa0313",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.masshist.org/collection-guides/view?id=fa0313"
+  },
+  {
+    "id": "cmmndyw4n00eiouv2elfhahi4",
+    "table": "PrimarySourcePacket",
+    "url": "https://www.loc.gov/item/mgw426673/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/item/mgw426673/"
+  }
+]

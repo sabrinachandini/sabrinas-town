@@ -1,0 +1,379 @@
+[
+  {
+    "id": "cmmndyige00cqouv2fd7tj6jr",
+    "title": "Depositions of the Lexington Militia (April 1775)",
+    "url": "https://www.masshist.org/database/viewer.php?pid=2&old=1&mode=nav&ft=Coming+of+the+American+Revolution&item_id=667",
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "Massachusetts Provincial Congress / National Archives",
+    "published": true,
+    "town": {
+      "slug": "lexington-ma",
+      "name": "Lexington"
+    }
+  },
+  {
+    "id": "cmmndyle500d3ouv2ixgensxk",
+    "title": "George Robert Twelves Hewes' Account of the Tea Party",
+    "url": "https://archive.org/details/retrospectofbost00hawk",
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "Various historical societies / Originally published by S.S. Bliss (Hawkes) and Harper & Brothers (Thatcher)",
+    "published": true,
+    "town": {
+      "slug": "boston-ma",
+      "name": "Boston"
+    }
+  },
+  {
+    "id": "cmmndym6p00d7ouv2cee1iecg",
+    "title": "Salem Town Records (1774-1775)",
+    "url": null,
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "Peabody Essex Museum",
+    "published": true,
+    "town": {
+      "slug": "salem-ma",
+      "name": "Salem"
+    }
+  },
+  {
+    "id": "cmmndykh500cyouv2xeb9xj4l",
+    "title": "Reverend William Emerson's Diary (1775)",
+    "url": null,
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "Concord Museum",
+    "published": true,
+    "town": {
+      "slug": "concord-ma",
+      "name": "Concord"
+    }
+  },
+  {
+    "id": "cmmndyl8100d2ouv2p13n7rx1",
+    "title": "Paul Revere's Engraving of the Boston Massacre (1770)",
+    "url": "https://www.loc.gov/item/2008680173/",
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "American Antiquarian Society / Museum of Fine Arts, Boston / Various museum collections",
+    "published": true,
+    "town": {
+      "slug": "boston-ma",
+      "name": "Boston"
+    }
+  },
+  {
+    "id": "cmmndynot00dhouv2kpsomf5a",
+    "title": "Washington's General Orders from Cambridge (1775-1776)",
+    "url": "https://founders.archives.gov/documents/Washington/03-01-02-0027",
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "National Archives / Library of Congress, Founders Online",
+    "published": true,
+    "town": {
+      "slug": "cambridge-ma",
+      "name": "Cambridge"
+    }
+  },
+  {
+    "id": "cmmndyny500djouv2kwsqe7b7",
+    "title": "Martha Washington's Cambridge Letters (Winter 1775-1776)",
+    "url": "https://www.loc.gov/collections/george-washington-papers/articles-and-essays/george-washingtons-life-in-letters/",
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "Mount Vernon Ladies' Association / Virginia Historical Society",
+    "published": true,
+    "town": {
+      "slug": "cambridge-ma",
+      "name": "Cambridge"
+    }
+  },
+  {
+    "id": "cmmndynut00diouv2aekyqxbl",
+    "title": "Henry Knox's Artillery Proposal Letter (November 1775)",
+    "url": "https://founders.archives.gov/documents/Washington/03-02-02-0351",
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "Massachusetts Historical Society / Library of Congress",
+    "published": true,
+    "town": {
+      "slug": "cambridge-ma",
+      "name": "Cambridge"
+    }
+  },
+  {
+    "id": "cmmndyqjg00dxouv2r2n46v7a",
+    "title": "Plymouth Militia Correspondence and Muster Records (1775)",
+    "url": "https://www.sec.state.ma.us/ArchivesSearch/RevolutionarySearch.aspx",
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "Massachusetts State Archives / Pilgrim Hall Museum",
+    "published": true,
+    "town": {
+      "slug": "plymouth-ma",
+      "name": "Plymouth"
+    }
+  },
+  {
+    "id": "cmmndysr800e2ouv28z5kyl5j",
+    "title": "Worcester County Convention Records (August-September 1774)",
+    "url": "https://archive.org/details/journalsofeachprma00mass",
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "American Antiquarian Society / Worcester County records",
+    "published": true,
+    "town": {
+      "slug": "worcester-ma",
+      "name": "Worcester"
+    }
+  },
+  {
+    "id": "cmmndypjv00dqouv2vkqoc16g",
+    "title": "Local Militia Muster Rolls from Menotomy (1775)",
+    "url": "https://www.sec.state.ma.us/ArchivesSearch/RevolutionarySearch.aspx",
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "Massachusetts State Archives / Arlington Historical Society",
+    "published": true,
+    "town": {
+      "slug": "arlington-ma",
+      "name": "Arlington"
+    }
+  },
+  {
+    "id": "cmmndypbm00dpouv2hwfy0fyw",
+    "title": "British Casualty Reports from the Retreat Through Menotomy (1775)",
+    "url": null,
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "British National Archives / Published in Gage correspondence collections",
+    "published": true,
+    "town": {
+      "slug": "arlington-ma",
+      "name": "Arlington"
+    }
+  },
+  {
+    "id": "cmmndyqd400dvouv25f9jth7e",
+    "title": "Plymouth Town Meeting Records (1770-1776)",
+    "url": null,
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "Plymouth Town Clerk Archives / Pilgrim Hall Museum",
+    "published": true,
+    "town": {
+      "slug": "plymouth-ma",
+      "name": "Plymouth"
+    }
+  },
+  {
+    "id": "cmmndyqgi00dwouv2wvhsv8wv",
+    "title": "The Mayflower Compact and Plymouth Colony Governance Records",
+    "url": "https://archive.org/details/bradfordshisto00brad",
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "Pilgrim Hall Museum / Massachusetts State Archives",
+    "published": true,
+    "town": {
+      "slug": "plymouth-ma",
+      "name": "Plymouth"
+    }
+  },
+  {
+    "id": "cmmndyury00eaouv2pthh53s9",
+    "title": "Continental Congress Requisition Documents for Springfield (1777-1781)",
+    "url": "https://www.archives.gov/research/guide-fed-records/groups/360.html",
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "National Archives / Library of Congress, Continental Congress Papers",
+    "published": true,
+    "town": {
+      "slug": "springfield-ma",
+      "name": "Springfield"
+    }
+  },
+  {
+    "id": "cmmndyvvr00egouv2aku3putv",
+    "title": "Dr. James Thacher's Military Journal: The Morristown Winters",
+    "url": "https://archive.org/details/jamesthachermil00revorich",
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "Massachusetts Historical Society / Morristown NHP Archives",
+    "published": true,
+    "town": {
+      "slug": "morristown-nj",
+      "name": "Morristown"
+    }
+  },
+  {
+    "id": "cmmndyuvs00ebouv2rotrcuhh",
+    "title": "General Henry Knox Inspection Reports on the Springfield Armory (1778-1782)",
+    "url": "https://www.masshist.org/collection-guides/view?id=fa0313",
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "Massachusetts Historical Society / Henry Knox Papers, National Archives",
+    "published": true,
+    "town": {
+      "slug": "springfield-ma",
+      "name": "Springfield"
+    }
+  },
+  {
+    "id": "cmmndyt0000e4ouv2rsc539ym",
+    "title": "Timothy Bigelow's Speeches and the Worcester Militia (1774-1775)",
+    "url": null,
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "Worcester Historical Museum / American Antiquarian Society",
+    "published": true,
+    "town": {
+      "slug": "worcester-ma",
+      "name": "Worcester"
+    }
+  },
+  {
+    "id": "cmmndykdc00cxouv23ncfvnwb",
+    "title": "Amos Barrett's Account of the North Bridge Fight",
+    "url": null,
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "Concord Free Public Library",
+    "published": true,
+    "town": {
+      "slug": "concord-ma",
+      "name": "Concord"
+    }
+  },
+  {
+    "id": "cmmndyw4n00eiouv2elfhahi4",
+    "title": "Pennsylvania Line Mutiny Documents (January 1781)",
+    "url": "https://www.loc.gov/item/mgw426673/",
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "Pennsylvania State Archives / National Archives",
+    "published": true,
+    "town": {
+      "slug": "morristown-nj",
+      "name": "Morristown"
+    }
+  },
+  {
+    "id": "cmmndyj1r00crouv2knhjmbvq",
+    "title": "Lieutenant John Barker's Diary (April 19, 1775)",
+    "url": "https://archive.org/details/JohnBarkerDiary-TheBritishInBoston1774-1776",
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "British Library / Published in \"The British in Boston\" collection",
+    "published": true,
+    "town": {
+      "slug": "lexington-ma",
+      "name": "Lexington"
+    }
+  },
+  {
+    "id": "cmmndyjaz00csouv2eedvmp18",
+    "title": "Amos Doolittle Engravings (1775)",
+    "url": null,
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "Connecticut Historical Society / Various museum collections",
+    "published": true,
+    "town": {
+      "slug": "lexington-ma",
+      "name": "Lexington"
+    }
+  },
+  {
+    "id": "cmmndyn0v00ddouv281hl4tkh",
+    "title": "John Glover's Correspondence (1775-1776)",
+    "url": "https://founders.archives.gov/documents/Washington/03-02-02-0090",
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER2",
+    "publisherOrHolder": "Marblehead Museum",
+    "published": true,
+    "town": {
+      "slug": "marblehead-ma",
+      "name": "Marblehead"
+    }
+  },
+  {
+    "id": "cmmndysuv00e3ouv2vf02us83",
+    "title": "Accounts of the Worcester Courthouse Closure (September 6, 1774)",
+    "url": "https://archive.org/details/journalsofeachprma00mass",
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "Massachusetts Historical Society / Contemporary newspaper accounts",
+    "published": true,
+    "town": {
+      "slug": "worcester-ma",
+      "name": "Worcester"
+    }
+  },
+  {
+    "id": "cmmndyulg00e9ouv2gyprm2fa",
+    "title": "Springfield Armory Production Records (1777-1783)",
+    "url": null,
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "Springfield Armory National Historic Site / National Archives",
+    "published": true,
+    "town": {
+      "slug": "springfield-ma",
+      "name": "Springfield"
+    }
+  },
+  {
+    "id": "cmmndyw0800ehouv2yjhify0m",
+    "title": "Washington's Letters to Congress on the Supply Crisis (1779-1780)",
+    "url": "https://founders.archives.gov/documents/Washington/03-23-02-0474",
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "Library of Congress / National Archives",
+    "published": true,
+    "town": {
+      "slug": "morristown-nj",
+      "name": "Morristown"
+    }
+  },
+  {
+    "id": "cmmndymun00dcouv2kz30cqoh",
+    "title": "Muster Rolls of the Marblehead Regiment (1775-1776)",
+    "url": "https://www.archives.gov/research/guide-fed-records/groups/093.html",
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "National Archives",
+    "published": true,
+    "town": {
+      "slug": "marblehead-ma",
+      "name": "Marblehead"
+    }
+  },
+  {
+    "id": "cmmndyma400d8ouv2wtcli3qj",
+    "title": "Leslie's Retreat Eyewitness Accounts (February 1775)",
+    "url": "https://archive.org/details/accountofleslies00endi",
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "Salem Historical Society",
+    "published": true,
+    "town": {
+      "slug": "salem-ma",
+      "name": "Salem"
+    }
+  },
+  {
+    "id": "cmmndyp6o00doouv2x06va7h1",
+    "title": "Depositions About the Menotomy Fighting (April-May 1775)",
+    "url": "https://www.masshist.org/database/viewer.php?item_id=627&mode=dual&img_step=1&pid=2",
+    "sourceType": "PRIMARY",
+    "credibilityTier": "TIER1",
+    "publisherOrHolder": "Massachusetts Provincial Congress / Massachusetts State Archives",
+    "published": true,
+    "town": {
+      "slug": "arlington-ma",
+      "name": "Arlington"
+    }
+  }
+]

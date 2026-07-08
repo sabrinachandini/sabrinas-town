@@ -1,0 +1,182 @@
+[
+  {
+    "id": "src-groton-harris-ledyard",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2021/09/colonel-william-ledyard-fort-griswold/",
+    "newUrl": "https://allthingsliberty.com/2016/03/anything-but-monotonous-nine-months-of-garrison-duty-at-fort-griswold/",
+    "reason": "Original 2021 ATL article returned 404. Replaced with a 2016 Journal of the American Revolution article from the same publisher that discusses Colonel William Ledyard as commandant of Fort Griswold in detail.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-groton-jordan-african-american",
+    "table": "Source",
+    "oldUrl": "https://connecticuthistory.org/african-americans-at-fort-griswold/",
+    "newUrl": "https://revolutionarywarjournal.com/african-americans-in-the-american-revolution-jordan-freeman-dies-defending-fort-griswold/",
+    "reason": "Original Connecticut History URL returned 404. The connecticuthistory.org battle page that still exists does not discuss African Americans. Replaced with Revolutionary War Journal article (Feb 2023) specifically about Jordan Freeman and Lambert Latham, African American defenders at Fort Griswold.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-danbury-connecticut-state-archives-1777",
+    "table": "Source",
+    "oldUrl": "https://portal.ct.gov/SOTS/Collection-Detail-Pages/State-Archives",
+    "newUrl": "https://libguides.ctstatelibrary.org/hg/militaryrecords/revwar",
+    "reason": "Original portal.ct.gov page returned 404 ('no longer here'). Replaced with Connecticut State Library's LibGuide for Revolutionary War military records, which covers CT state archives holdings for the 1777 period including the Danbury raid.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-newport-nps-rochambeau",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/roc/index.htm",
+    "newUrl": "https://www.nps.gov/waro/",
+    "reason": "Original NPS Rochambeau site (nps.gov/roc) returned 404. The Washington-Rochambeau Revolutionary Route National Historic Trail (WARO) is the current NPS program covering Rochambeau's 1781 march from Newport, RI to Yorktown.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-providence-gaspee-testimony",
+    "table": "Source",
+    "oldUrl": "https://www.sos.ri.gov/divisions/Archival/archives",
+    "newUrl": "https://sosri.access.preservica.com/uncategorized/SO_ad412bed-2274-4bd6-8013-1d9994900096/",
+    "reason": "Original RI SOS archives URL returned 404. Replaced with the Rhode Island State Archives Digital Archive record for HMS Gaspee, which contains the Gaspee Commission's witness testimony, depositions, and official court records.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-providence-nps-gaspee",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/articles/gaspee.htm",
+    "newUrl": "https://www.nps.gov/articles/000/providence-tea-party.htm",
+    "reason": "Original NPS Gaspee article URL returned 404. Replaced with the current NPS article 'Anyone Up for a Cup of Tea? The Providence Tea Party' (Blackstone River Valley NHP), which discusses the 1772 burning of HMS Gaspee as the precursor to the Revolution.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-danbury-visitdanbury",
+    "table": "Source",
+    "oldUrl": "https://www.danbury.org/",
+    "newUrl": "https://danburymuseum.org/danbury-history-in-brief",
+    "reason": "Original danbury.org returned a TLS certificate error (connection failure). Replaced with the Danbury Museum & Historical Society's 'Danbury History in Brief' page, which covers the 1777 British raid and the town's Revolutionary War history.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-exeter-nps-war-independence",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/nr/travel/revwar/index.htm",
+    "newUrl": "https://www.nps.gov/subjects/americanrevolution/visit.htm",
+    "reason": "Original NPS 'revwar' travel itinerary URL returned 404. Replaced with the current NPS American Revolution 'Visit' page, which lists battlefields and sites open to visitors across all states including New England.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-baltimore-maryland-line",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2016/08/maryland-400/",
+    "newUrl": "https://msa.maryland.gov/maryland400",
+    "reason": "Original ATL article returned 404. Replaced with the Maryland State Archives 'Maryland 400' project page, a primary institutional source documenting the 1st Maryland Regiment's heroic rearguard action at the Battle of Brooklyn (1776).",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-dover-delaware-historical-society",
+    "table": "Source",
+    "oldUrl": "https://dehs.org/",
+    "newUrl": "https://dehistory.org/",
+    "reason": "Original dehs.org domain is parked for sale on GoDaddy (307 redirect). The Delaware Historical Society has migrated to dehistory.org, confirmed by the page title 'Delaware Historical Society - Giving Life to History' at their Wilmington campus.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-wilmington-cooch-bridge-pension",
+    "table": "Source",
+    "oldUrl": "https://www.fold3.com/collection/revolutionary-war-pension-bounty-land-warrant-application-files",
+    "newUrl": "https://www.archives.gov/research/military/american-revolution",
+    "reason": "Original Fold3 URL returns HTTP 403 (requires paid subscription). Replaced with the National Archives (NARA) guide to American Revolution records, which describes the M804 Revolutionary War pension and bounty land warrant application files and links to searchable databases.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-bennington-nps-bennington-battlefield",
+    "table": "Source",
+    "oldUrl": "https://parks.ny.gov/historic-sites/35/details.aspx",
+    "newUrl": "https://parks.ny.gov/historic-sites/benningtonbattlefield/details.aspx",
+    "reason": "Original URL (numeric ID 35) redirects to Darwin Martin House in Buffalo — wrong site. The correct slug-based URL resolves to Bennington Battlefield State Historic Site in Walloomsac, NY, covering the August 16, 1777 battle.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-brattleboro-vermont-independence-1777",
+    "table": "Source",
+    "oldUrl": "https://www.sec.state.vt.us/archives-records.aspx",
+    "newUrl": "https://avalon.law.yale.edu/18th_century/vt01.asp",
+    "reason": "Original Vermont Secretary of State archives URL returned ECONNREFUSED (server down). sec.state.vt.us and sos.vermont.gov both failed or blocked access. Replaced with Yale Law School Avalon Project's full text of the Vermont Constitution of July 8, 1777, the founding document of Vermont's independence.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-castine-nps-penobscot",
+    "table": "Source",
+    "oldUrl": "https://wilsonmuseum.org/",
+    "newUrl": "https://www.wilsonmuseum.org/",
+    "reason": "Original bare domain wilsonmuseum.org (no www) returned a TLS certificate mismatch error. The canonical URL with www prefix resolves correctly to the Wilson Museum's homepage in Castine, Maine, which holds Penobscot Expedition archives.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-portland-wikipedia-falmouth",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/Burning_of_Falmouth_(1775)",
+    "newUrl": "https://en.wikipedia.org/wiki/Burning_of_Falmouth",
+    "reason": "Original Wikipedia URL with '(1775)' disambiguation suffix returned 404 — the article does not use that suffix. The correct article title is 'Burning of Falmouth' and returned HTTP 200 with full content about the October 18, 1775 Royal Navy attack on Portland, Maine.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-kaskaskia-wikipedia",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/Capture_of_Kaskaskia",
+    "newUrl": "https://en.wikipedia.org/wiki/Illinois_campaign",
+    "reason": "Original Wikipedia article 'Capture_of_Kaskaskia' returned 404 — the article was merged/renamed. The current Wikipedia article 'Illinois campaign' covers Clark's 1778 capture of Kaskaskia in the 'Occupation of the Illinois Country' section in detail.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-kaskaskia-illinois-tourism",
+    "table": "Source",
+    "oldUrl": "https://www.dnr.illinois.gov/Parks/Pages/Kaskaskia.aspx",
+    "newUrl": "https://dnrhistoric.illinois.gov/experience/sites/site.fort-kaskaskia.html",
+    "reason": "Original Illinois DNR URL returned 404 — the DNR historic sites migrated to a new subdomain. The Illinois Historic Preservation Division now hosts Fort Kaskaskia State Historic Site content at dnrhistoric.illinois.gov.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-marietta-campus-martius-museum",
+    "table": "Source",
+    "oldUrl": "https://www.ohiohistory.org/visit/museum-and-site-locator/campus-martius-museum/",
+    "newUrl": "https://www.ohiohistory.org/visit/browse-historical-sites/campus-martius-museum/",
+    "reason": "Original Ohio History URL returned 404 — the site restructured from 'museum-and-site-locator' to 'browse-historical-sites'. The new URL resolves correctly to the Campus Martius Museum page at Ohio History Connection.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-wheeling-archives-wv",
+    "table": "Source",
+    "oldUrl": "https://archives.wv.gov/",
+    "newUrl": "https://archive.wvculture.org/history/archives/services.html",
+    "reason": "Original archives.wv.gov returned ECONNREFUSED (server offline). The West Virginia State Archives operates under wvculture.org; the services page at archive.wvculture.org is accessible and covers research resources including Revolutionary War records.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-wheeling-wikipedia-fort-henry",
+    "table": "Source",
+    "oldUrl": "https://en.wikipedia.org/wiki/Battle_of_Fort_Henry_(1777)",
+    "newUrl": "https://en.wikipedia.org/wiki/Siege_of_Fort_Henry_(1777)",
+    "reason": "Original Wikipedia URL 'Battle_of_Fort_Henry_(1777)' returned 404 — the article uses 'Siege' not 'Battle' as the title. The correct URL 'Siege_of_Fort_Henry_(1777)' returned HTTP 200 with full content about the September 1777 multi-tribal attack on the Virginia outpost near Wheeling.",
+    "verified": true,
+    "httpStatus": 200
+  }
+]

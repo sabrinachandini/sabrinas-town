@@ -1,0 +1,502 @@
+[
+  {
+    "id": "src-danbury-ridgefield-hist-soc",
+    "table": "Source",
+    "url": "https://www.ridgefieldhistoricalsociety.org/",
+    "title": "Ridgefield Historical Society: Battle of Ridgefield Collecti",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "danbury-ct",
+    "publisherOrHolder": "Ridgefield Historical Society"
+  },
+  {
+    "id": "src-danbury-museum",
+    "table": "Source",
+    "url": "https://www.danburymuseum.org/",
+    "title": "Danbury Museum and Historical Society: Revolutionary War Col",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "danbury-ct",
+    "publisherOrHolder": "Danbury Museum and Historical Society"
+  },
+  {
+    "id": "src-newport-nps-rochambeau",
+    "table": "Source",
+    "url": "https://www.nps.gov/roc/index.htm",
+    "title": "Rochambeau National Historic Trail: Newport Segment",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "newport-ri",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-newport-preservation-society",
+    "table": "Source",
+    "url": "https://www.newportmansions.org/",
+    "title": "The Preservation Society of Newport County: Revolutionary Wa",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "newport-ri",
+    "publisherOrHolder": "Preservation Society of Newport County"
+  },
+  {
+    "id": "src-newport-rihs-collections",
+    "table": "Source",
+    "url": "https://www.rihs.org/",
+    "title": "Rhode Island Historical Society: Newport Revolutionary War C",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "newport-ri",
+    "publisherOrHolder": "Rhode Island Historical Society"
+  },
+  {
+    "id": "src-newport-wikipedia-rochambeau",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Rochambeau",
+    "title": "Rochambeau -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "newport-ri",
+    "publisherOrHolder": "Wikimedia Foundation"
+  },
+  {
+    "id": "src-newport-discover-newport",
+    "table": "Source",
+    "url": "https://www.discovernewport.org/",
+    "title": "Discover Newport: Revolutionary War Heritage Trail",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "newport-ri",
+    "publisherOrHolder": "Discover Newport (tourism bureau)"
+  },
+  {
+    "id": "src-providence-gaspee-testimony",
+    "table": "Source",
+    "url": "https://www.sos.ri.gov/divisions/Archival/archives",
+    "title": "Proceedings of the Gaspee Commission, 1772-1773",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "providence-ri",
+    "publisherOrHolder": "Rhode Island State Archives"
+  },
+  {
+    "id": "src-providence-nps-gaspee",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/gaspee.htm",
+    "title": "Gaspee Affair Historical Overview",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "providence-ri",
+    "publisherOrHolder": "National Park Service, American Revolution"
+  },
+  {
+    "id": "cmpauk49m000hm35wx01gpvxd",
+    "table": "Source",
+    "url": "https://founders.archives.gov/documents/Washington/03-31-02-0415",
+    "title": "https://founders.archives.gov/documents/Washington/03-31-02-",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "mount-vernon-va",
+    "publisherOrHolder": "founders.archives.gov"
+  },
+  {
+    "id": "src-danbury-visitdanbury",
+    "table": "Source",
+    "url": "https://www.danbury.org/",
+    "title": "Visit Danbury: Revolutionary History",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "danbury-ct",
+    "publisherOrHolder": "Danbury Chamber of Commerce"
+  },
+  {
+    "id": "src-newport-rochambeau-journal",
+    "table": "Source",
+    "url": "https://www.loc.gov/item/2021667630/",
+    "title": "Journal de la Campagne en Amérique (Rochambeau's Campaign Jo",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "newport-ri",
+    "publisherOrHolder": "Bibliothèque nationale de France / Library of Congress"
+  },
+  {
+    "id": "cmpaumc2y000mm35w4j7lyvig",
+    "table": "Source",
+    "url": "https://encyclopediavirginia.org/entries/the-virginia-revolutionary-conventions-1774-1776/",
+    "title": "https://encyclopediavirginia.org/entries/the-virginia-revolu",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "richmond-va",
+    "publisherOrHolder": "encyclopediavirginia.org"
+  },
+  {
+    "id": "src-providence-providence-preservation",
+    "table": "Source",
+    "url": "https://www.ppsri.org/",
+    "title": "Providence Preservation Society: College Hill Historic Distr",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "providence-ri",
+    "publisherOrHolder": "Providence Preservation Society"
+  },
+  {
+    "id": "src-providence-wikipedia-gaspee",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Gaspee_affair",
+    "title": "Gaspee Affair -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "providence-ri",
+    "publisherOrHolder": "Wikimedia Foundation"
+  },
+  {
+    "id": "src-providence-visitprovidence",
+    "table": "Source",
+    "url": "https://www.goprovidence.com/",
+    "title": "GoProvidence: Revolutionary History",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "providence-ri",
+    "publisherOrHolder": "Providence Warwick Convention and Visitors Bureau"
+  },
+  {
+    "id": "src-portsmouth-langdon-papers",
+    "table": "Source",
+    "url": "https://www.nhhistory.org/",
+    "title": "John Langdon Papers, 1775-1819",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "portsmouth-nh",
+    "publisherOrHolder": "New Hampshire Historical Society"
+  },
+  {
+    "id": "src-portsmouth-continental-congress-navy",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "title": "Journals of the Continental Congress: Naval Committee Record",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "portsmouth-nh",
+    "publisherOrHolder": "Library of Congress"
+  },
+  {
+    "id": "src-portsmouth-nps-strawbery-banke",
+    "table": "Source",
+    "url": "https://www.strawberybanke.org/",
+    "title": "Strawbery Banke Museum: Revolution in Portsmouth",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "portsmouth-nh",
+    "publisherOrHolder": "Strawbery Banke Museum"
+  },
+  {
+    "id": "src-portsmouth-nh-division-records",
+    "table": "Source",
+    "url": "https://www.nh.gov/nhdhr/",
+    "title": "New Hampshire Division of Historical Resources: Portsmouth H",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "portsmouth-nh",
+    "publisherOrHolder": "New Hampshire Division of Historical Resources"
+  },
+  {
+    "id": "src-portsmouth-paul-jones-house",
+    "table": "Source",
+    "url": "https://portsmouthhistory.org/",
+    "title": "John Paul Jones House Museum: Historical Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "portsmouth-nh",
+    "publisherOrHolder": "Portsmouth Historical Society"
+  },
+  {
+    "id": "src-portsmouth-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Portsmouth,_New_Hampshire",
+    "title": "Portsmouth, New Hampshire -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "portsmouth-nh",
+    "publisherOrHolder": "Wikimedia Foundation"
+  },
+  {
+    "id": "src-portsmouth-visit-tourism",
+    "table": "Source",
+    "url": "https://www.portsmouthnh.com/",
+    "title": "Visit Portsmouth NH: History and Heritage",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "portsmouth-nh",
+    "publisherOrHolder": "Greater Portsmouth Chamber of Commerce"
+  },
+  {
+    "id": "cmpf4xxjd000mez88dqoo18xw",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/parker-s-revenge.htm",
+    "title": "https://www.nps.gov/places/parker-s-revenge.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "lexington-ma",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "src-providence-rihs-revolution",
+    "table": "Source",
+    "url": "https://www.rihs.org/",
+    "title": "Rhode Island Historical Society: Providence in the Revolutio",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "providence-ri",
+    "publisherOrHolder": "Rhode Island Historical Society"
+  },
+  {
+    "id": "cmpf4xxjq000pez8831rvq50k",
+    "table": "Source",
+    "url": "https://www.nps.gov/people/prince-estabrook-of-lexington.htm",
+    "title": "https://www.nps.gov/people/prince-estabrook-of-lexington.htm",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "lexington-ma",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "src-exeter-nps-war-independence",
+    "table": "Source",
+    "url": "https://www.nps.gov/nr/travel/revwar/index.htm",
+    "title": "American Independence: New Hampshire's Role in the Revolutio",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "exeter-nh",
+    "publisherOrHolder": "National Park Service, Discover Our Shared Heritage"
+  },
+  {
+    "id": "src-exeter-nh-historical-society",
+    "table": "Source",
+    "url": "https://www.nhhistory.org/",
+    "title": "New Hampshire Historical Society: Revolutionary War Manuscri",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "exeter-nh",
+    "publisherOrHolder": "New Hampshire Historical Society"
+  },
+  {
+    "id": "src-exeter-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Exeter,_New_Hampshire",
+    "title": "Exeter, New Hampshire -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "exeter-nh",
+    "publisherOrHolder": "Wikimedia Foundation"
+  },
+  {
+    "id": "src-exeter-visit-tourism",
+    "table": "Source",
+    "url": "https://www.exeternh.gov/",
+    "title": "Visit Exeter NH: Revolutionary Heritage",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "exeter-nh",
+    "publisherOrHolder": "Exeter Area Chamber of Commerce"
+  },
+  {
+    "id": "src-annapolis-washington-resignation",
+    "table": "Source",
+    "url": "https://www.loc.gov/resource/mgw3b.048/?sp=330",
+    "title": "General Washington's Address to Congress on Resigning His Co",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "annapolis-md",
+    "publisherOrHolder": "Library of Congress, George Washington Papers"
+  },
+  {
+    "id": "src-annapolis-treaty-paris-ratification",
+    "table": "Source",
+    "url": "https://www.archives.gov/milestone-documents/treaty-of-paris",
+    "title": "Ratification of the Treaty of Paris by the Continental Congr",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "annapolis-md",
+    "publisherOrHolder": "National Archives, Record Group 360"
+  },
+  {
+    "id": "src-annapolis-journals-continental-congress-1783",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "title": "Journals of the Continental Congress, Volume XXV (1783)",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "annapolis-md",
+    "publisherOrHolder": "Library of Congress"
+  },
+  {
+    "id": "src-annapolis-md-state-archives",
+    "table": "Source",
+    "url": "https://msa.maryland.gov/",
+    "title": "Maryland State Archives: Revolutionary War Records Collectio",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "annapolis-md",
+    "publisherOrHolder": "Maryland State Archives"
+  },
+  {
+    "id": "src-exeter-nh-constitution-1776",
+    "table": "Source",
+    "url": "https://www.sos.nh.gov/archives",
+    "title": "Constitution of New Hampshire, January 5, 1776",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "exeter-nh",
+    "publisherOrHolder": "New Hampshire State Archives"
+  },
+  {
+    "id": "src-exeter-continental-association-exeter",
+    "table": "Source",
+    "url": "https://www.sos.nh.gov/archives",
+    "title": "Exeter Committee of Safety Records, 1775-1783",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "exeter-nh",
+    "publisherOrHolder": "New Hampshire Division of Archives and Records Management"
+  },
+  {
+    "id": "src-annapolis-maryland-historical-society",
+    "table": "Source",
+    "url": "https://www.mdhs.org/",
+    "title": "Maryland Historical Society: Annapolis Revolutionary Collect",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "annapolis-md",
+    "publisherOrHolder": "Maryland Historical Society"
+  },
+  {
+    "id": "src-annapolis-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Annapolis,_Maryland",
+    "title": "Annapolis, Maryland -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "annapolis-md",
+    "publisherOrHolder": "Wikimedia Foundation"
+  },
+  {
+    "id": "src-annapolis-visit-tourism",
+    "table": "Source",
+    "url": "https://www.visitannapolis.org/",
+    "title": "Visit Annapolis: History and Heritage",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "annapolis-md",
+    "publisherOrHolder": "Visit Annapolis & Anne Arundel County"
+  },
+  {
+    "id": "src-baltimore-continental-congress-baltimore",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "title": "Journals of the Continental Congress, December 1776 - Februa",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "baltimore-md",
+    "publisherOrHolder": "Library of Congress"
+  },
+  {
+    "id": "src-baltimore-privateering-records",
+    "table": "Source",
+    "url": "https://msa.maryland.gov/",
+    "title": "Maryland Admiralty Court Records: Privateering Commissions, ",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "baltimore-md",
+    "publisherOrHolder": "Maryland State Archives"
+  },
+  {
+    "id": "src-baltimore-md-state-archives-revolution",
+    "table": "Source",
+    "url": "https://msa.maryland.gov/",
+    "title": "Maryland State Archives: Baltimore County Committee of Obser",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "baltimore-md",
+    "publisherOrHolder": "Maryland State Archives"
+  },
+  {
+    "id": "src-baltimore-nps-flag-house",
+    "table": "Source",
+    "url": "https://flaghouse.org/",
+    "title": "Flag House and Star-Spangled Banner Museum",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "baltimore-md",
+    "publisherOrHolder": "Flag House and Star-Spangled Banner Museum / National Register"
+  },
+  {
+    "id": "src-baltimore-maryland-historical-magazine",
+    "table": "Source",
+    "url": "https://www.mdhs.org/research/maryland-historical-magazine/",
+    "title": "Maryland Historical Magazine: Baltimore in the Revolution",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "baltimore-md",
+    "publisherOrHolder": "Maryland Historical Society"
+  },
+  {
+    "id": "src-baltimore-maryland-line",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2016/08/maryland-400/",
+    "title": "The Maryland 400: The Stand at the Battle of Brooklyn",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "baltimore-md",
+    "publisherOrHolder": "Journal of the American Revolution"
+  },
+  {
+    "id": "src-baltimore-balt-museum-of-industry",
+    "table": "Source",
+    "url": "https://www.thebmi.org/",
+    "title": "Baltimore Museum of Industry: Maritime and Manufacturing Her",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "baltimore-md",
+    "publisherOrHolder": "Baltimore Museum of Industry"
+  },
+  {
+    "id": "src-baltimore-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Baltimore",
+    "title": "Baltimore -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "baltimore-md",
+    "publisherOrHolder": "Wikimedia Foundation"
+  },
+  {
+    "id": "src-baltimore-visit-baltimore",
+    "table": "Source",
+    "url": "https://baltimore.org/",
+    "title": "Visit Baltimore: History and Culture",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "baltimore-md",
+    "publisherOrHolder": "Visit Baltimore"
+  },
+  {
+    "id": "src-dover-nps-first-state",
+    "table": "Source",
+    "url": "https://www.nps.gov/frst/index.htm",
+    "title": "First State National Historical Park: Dover Unit",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "dover-de",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-dover-delaware-historical-society",
+    "table": "Source",
+    "url": "https://dehs.org/",
+    "title": "Delaware Historical Society: Revolutionary War Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "dover-de",
+    "publisherOrHolder": "Delaware Historical Society"
+  }
+]

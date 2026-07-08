@@ -2726,13 +2726,18 @@ export async function getBusinessesByTown(slug: string): Promise<TownBusinesses 
       },
     });
 
-    const picks = businesses.filter((b) => b.isHifePick);
+    const toTownBusiness = (b: typeof businesses[0]): TownBusiness => ({
+      ...b,
+      category: b.category as TownBusiness["category"],
+    });
+
+    const picks = businesses.filter((b) => b.isHifePick).map(toTownBusiness);
     const byCategory = {
-      RESTAURANT: businesses.filter((b) => b.category === "RESTAURANT"),
-      CAFE_BAKERY: businesses.filter((b) => b.category === "CAFE_BAKERY"),
-      SHOPPING: businesses.filter((b) => b.category === "SHOPPING"),
-      LODGING: businesses.filter((b) => b.category === "LODGING"),
-      HISTORIC_SITE: businesses.filter((b) => b.category === "HISTORIC_SITE"),
+      RESTAURANT: businesses.filter((b) => b.category === "RESTAURANT").map(toTownBusiness),
+      CAFE_BAKERY: businesses.filter((b) => b.category === "CAFE_BAKERY").map(toTownBusiness),
+      SHOPPING: businesses.filter((b) => b.category === "SHOPPING").map(toTownBusiness),
+      LODGING: businesses.filter((b) => b.category === "LODGING").map(toTownBusiness),
+      HISTORIC_SITE: businesses.filter((b) => b.category === "HISTORIC_SITE").map(toTownBusiness),
     };
 
     return { picks, byCategory };
@@ -2992,4 +2997,54 @@ interface PlacesResult {
   price_level?: number;
   formatted_address?: string;
   geometry?: { location?: { lat?: number; lng?: number } };
+}
+
+export interface TownSourceEntry {
+  id: string;
+  title: string;
+  url: string | null;
+  type: string;
+  publisherOrHolder: string;
+  credibilityTier: string;
+}
+
+export async function getSourcesByTown(slug: string): Promise<TownSourceEntry[]> {
+  try {
+    const town = await prisma.town.findUnique({
+      where: { slug },
+      select: {
+        sourceTowns: {
+          where: {
+            source: {
+              OR: [
+                { credibilityTier: "TIER1" },
+                { type: "PRIMARY" },
+              ],
+            },
+          },
+          include: {
+            source: {
+              select: {
+                id: true, title: true, url: true,
+                type: true, publisherOrHolder: true, credibilityTier: true,
+              },
+            },
+          },
+        },
+      },
+    });
+    if (!town) return [];
+    return town.sourceTowns
+      .map(st => ({
+        id: st.source.id,
+        title: st.source.title,
+        url: st.source.url ?? null,
+        type: st.source.type as string,
+        publisherOrHolder: st.source.publisherOrHolder,
+        credibilityTier: st.source.credibilityTier as string,
+      }))
+      .sort((a, b) => a.type.localeCompare(b.type) || a.title.localeCompare(b.title));
+  } catch {
+    return [];
+  }
 }

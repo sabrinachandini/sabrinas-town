@@ -1,0 +1,502 @@
+[
+  {
+    "id": "src-sar-nara-saratoga-records",
+    "table": "Source",
+    "url": "https://www.archives.gov/research/military/american-revolution",
+    "title": "Revolutionary War Pension Files: Saratoga Veterans",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "saratoga-springs-ny",
+    "publisherOrHolder": "National Archives and Records Administration"
+  },
+  {
+    "id": "src-alb-nps-hudson-valley",
+    "table": "Source",
+    "url": "https://www.hudsonrivervalley.com/heritage/",
+    "title": "Hudson River Valley National Heritage Area: Revolutionary Wa",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "albany-ny",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-wp-nps-west-point-highlands",
+    "table": "Source",
+    "url": "https://www.nps.gov/subjects/revwar/west-point.htm",
+    "title": "Hudson Highlands: West Point and the Revolutionary War",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "west-point-ny",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-phi-declaration-independence",
+    "table": "Source",
+    "url": "https://www.archives.gov/founding-docs/declaration",
+    "title": "Declaration of Independence, July 4, 1776",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "philadelphia-pa",
+    "publisherOrHolder": "National Archives and Records Administration"
+  },
+  {
+    "id": "src-phi-constitution-center",
+    "table": "Source",
+    "url": "https://constitutioncenter.org/",
+    "title": "National Constitution Center: Philadelphia and the Founding",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "philadelphia-pa",
+    "publisherOrHolder": "National Constitution Center"
+  },
+  {
+    "id": "src-yor-wikipedia-york-congress",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/York,_Pennsylvania",
+    "title": "York, Pennsylvania (Continental Congress) -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "york-pa",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-car-pa-archives-carlisle",
+    "table": "Source",
+    "url": "https://www.phmc.pa.gov/Archives",
+    "title": "Pennsylvania Archives, Series 2 and 5: Militia Records and B",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "carlisle-pa",
+    "publisherOrHolder": "Pennsylvania State Archives"
+  },
+  {
+    "id": "src-pao-paoli-battlefield-org",
+    "table": "Source",
+    "url": "https://www.paolipreservation.org/",
+    "title": "Paoli Battlefield Preservation Fund",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "paoli-pa",
+    "publisherOrHolder": "Paoli Battlefield Preservation Fund"
+  },
+  {
+    "id": "src-tre-trenton-capital-history",
+    "table": "Source",
+    "url": "https://www.trentonnj.org/",
+    "title": "Capital City: Trenton's History as State Capital",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "trenton-nj",
+    "publisherOrHolder": "City of Trenton"
+  },
+  {
+    "id": "src-mor-nps-morristown-nhp",
+    "table": "Source",
+    "url": "https://www.nps.gov/morr/index.htm",
+    "title": "Morristown National Historical Park: Official Site and Resea",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "morristown-nj",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-marblehead-wikipedia-glovers-regiment",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Glover%27s_Marblehead_Regiment",
+    "title": "Glover's Regiment (14th Continental Infantry) -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "marblehead-ma",
+    "publisherOrHolder": "Wikipedia"
+  },
+  {
+    "id": "src-alexandria-va-washington-letters-pre-war",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "George Washington's Letters from Alexandria, 1769-1775",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "alexandria-va",
+    "publisherOrHolder": "Library of Congress, George Washington Papers"
+  },
+  {
+    "id": "src-fredericksburg-va-washington-boyhood-letters",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "George Washington's Early Letters and Diary Fragments, 1748-",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "fredericksburg-va",
+    "publisherOrHolder": "Library of Congress, George Washington Papers"
+  },
+  {
+    "id": "src-charlottesville-va-jefferson-escape-account",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/thomas-jefferson-papers/",
+    "title": "Thomas Jefferson to William Gordon, July 16, 1788 (Account o",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "charlottesville-va",
+    "publisherOrHolder": "Library of Congress, Thomas Jefferson Papers"
+  },
+  {
+    "id": "src-camden-sc-battlefields-trust",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/camden",
+    "title": "Camden Battlefield -- American Battlefield Trust",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "camden-sc",
+    "publisherOrHolder": "American Battlefield Trust"
+  },
+  {
+    "id": "src-eutaw-springs-sc-scprt-marker",
+    "table": "Source",
+    "url": "https://southcarolinaparks.com/",
+    "title": "Eutaw Springs Battlefield State Marker and Interpretive Sign",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "eutaw-springs-sc",
+    "publisherOrHolder": "South Carolina Department of Parks, Recreation and Tourism"
+  },
+  {
+    "id": "src-fle-nps-fort-lee-historic-park",
+    "table": "Source",
+    "url": "https://www.nj.gov/dep/parksandforests/historic/fortlee/index.html",
+    "title": "Fort Lee Historic Park: State Historic Site Documentation",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "fort-lee-nj",
+    "publisherOrHolder": "New Jersey State Park Service"
+  },
+  {
+    "id": "src-savannah-ga-pulaski-death-account",
+    "table": "Source",
+    "url": "https://www.loc.gov/",
+    "title": "Account of the Death of Count Casimir Pulaski at the Siege o",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "savannah-ga",
+    "publisherOrHolder": "Library of Congress"
+  },
+  {
+    "id": "src-savannah-ga-georgia-hist-quarterly",
+    "table": "Source",
+    "url": "https://georgiahistory.com/education-outreach/publications/georgia-historical-quarterly/",
+    "title": "Georgia Historical Quarterly: Siege of Savannah Studies",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "savannah-ga",
+    "publisherOrHolder": "Georgia Historical Society"
+  },
+  {
+    "id": "src-danbury-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Raid_on_Danbury",
+    "title": "Raid on Danbury -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "danbury-ct",
+    "publisherOrHolder": "Wikimedia Foundation"
+  },
+  {
+    "id": "src-exeter-american-independence-museum",
+    "table": "Source",
+    "url": "https://www.independencemuseum.org/",
+    "title": "American Independence Museum: Ladd-Gilman House Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "exeter-nh",
+    "publisherOrHolder": "American Independence Museum, Exeter NH"
+  },
+  {
+    "id": "src-annapolis-historic-annapolis",
+    "table": "Source",
+    "url": "https://www.historiccannapolis.org/",
+    "title": "Historic Annapolis Foundation: Revolutionary War Preservatio",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "annapolis-md",
+    "publisherOrHolder": "Historic Annapolis Foundation"
+  },
+  {
+    "id": "src-dover-delaware-ratification",
+    "table": "Source",
+    "url": "https://www.archives.gov/founding-docs/constitution",
+    "title": "Delaware Ratification of the U.S. Constitution, December 7, ",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "dover-de",
+    "publisherOrHolder": "National Archives, Records of the Continental and Confederation Congresses"
+  },
+  {
+    "id": "src-dover-delaware-state-archives",
+    "table": "Source",
+    "url": "https://archives.delaware.gov/",
+    "title": "Delaware Public Archives: Revolutionary War Records",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "dover-de",
+    "publisherOrHolder": "Delaware Public Archives"
+  },
+  {
+    "id": "source-elizabeth-jar-elizabethtown",
+    "table": "Source",
+    "url": "https://allthingsliberty.com",
+    "title": "Elizabethtown and the Revolution (Journal of the American Re",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "elizabeth-nj",
+    "publisherOrHolder": "Journal of the American Revolution / Westholme Publishing"
+  },
+  {
+    "id": "source-elizabeth-nj-historical-society",
+    "table": "Source",
+    "url": "https://jerseyhistory.org",
+    "title": "New Jersey Historical Society Collections: Essex County Revo",
+    "type": "PRIMARY",
+    "tier": "TIER2",
+    "towns": "elizabeth-nj",
+    "publisherOrHolder": "New Jersey Historical Society"
+  },
+  {
+    "id": "source-elizabeth-nj-state-museum",
+    "table": "Source",
+    "url": "https://www.nj.gov/state/museum",
+    "title": "New Jersey State Museum: Revolutionary New Jersey Collection",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "elizabeth-nj",
+    "publisherOrHolder": "New Jersey State Museum"
+  },
+  {
+    "id": "src-wilmington-cooch-bridge-society",
+    "table": "Source",
+    "url": "https://www.coochsbridgebattlefield.org/",
+    "title": "Cooch's Bridge Battlefield: Historical Documentation",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "wilmington-de",
+    "publisherOrHolder": "Friends of Cooch's Bridge Battlefield"
+  },
+  {
+    "id": "src-bennington-stark-report",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwcc.html",
+    "title": "General John Stark's Report on the Battle of Bennington to G",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "bennington-vt",
+    "publisherOrHolder": "Library of Congress, Papers of the Continental Congress"
+  },
+  {
+    "id": "src-brattleboro-continental-congress-vermont",
+    "table": "Source",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "title": "Journals of the Continental Congress: Vermont Statehood Deba",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "brattleboro-vt",
+    "publisherOrHolder": "Library of Congress"
+  },
+  {
+    "id": "src-kaskaskia-illinois-historical-survey",
+    "table": "Source",
+    "url": "https://www.illinois.gov/agencies/agency.illinois-state-historical-library.html",
+    "title": "Illinois Historical Survey: Kaskaskia Revolutionary Records",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "kaskaskia-il",
+    "publisherOrHolder": "Illinois State Historical Library (now Abraham Lincoln Presidential Library)"
+  },
+  {
+    "id": "src-marietta-wikipedia",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Marietta,_Ohio",
+    "title": "Marietta, Ohio -- Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "marietta-oh",
+    "publisherOrHolder": "Wikimedia Foundation"
+  },
+  {
+    "id": "source-elizabeth-nps-revolutionary-nj",
+    "table": "Source",
+    "url": "https://www.nps.gov/revwar/about_the_revolution/new_jersey.html",
+    "title": "New Jersey in the American Revolution",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "elizabeth-nj",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-mon-monmouth-county-historical",
+    "table": "Source",
+    "url": "https://www.monmouthhistory.org/",
+    "title": "Monmouth County Historical Association: Revolutionary War Co",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "monmouth-nj",
+    "publisherOrHolder": "Monmouth County Historical Association"
+  },
+  {
+    "id": "src-williamsburg-va-encyclopedia-virginia",
+    "table": "Source",
+    "url": "https://www.encyclopediavirginia.org/",
+    "title": "Encyclopedia Virginia: Williamsburg in the Revolutionary Era",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "williamsburg-va",
+    "publisherOrHolder": "Virginia Museum of History and Culture / University of Virginia Press"
+  },
+  {
+    "id": "src-dover-john-dickinson-plantation",
+    "table": "Source",
+    "url": "https://history.delaware.gov/dickinson/",
+    "title": "John Dickinson Plantation State Historic Site",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "dover-de",
+    "publisherOrHolder": "Delaware Division of Historical and Cultural Affairs"
+  },
+  {
+    "id": "src-castine-maine-historical-society",
+    "table": "Source",
+    "url": "https://www.mainehistory.org/",
+    "title": "Maine Historical Society: Penobscot Expedition Papers",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "castine-me",
+    "publisherOrHolder": "Maine Historical Society"
+  },
+  {
+    "id": "source-elizabeth-gerlach-prologue",
+    "table": "Source",
+    "url": "https://www.rutgersuniversitypress.org",
+    "title": "Prologue to Independence: New Jersey in the Coming of the Am",
+    "type": "SECONDARY",
+    "tier": "TIER1",
+    "towns": "elizabeth-nj",
+    "publisherOrHolder": "Rutgers University Press"
+  },
+  {
+    "id": "source-elizabeth-boudinot-papers-princeton",
+    "table": "Source",
+    "url": "https://findingaids.princeton.edu",
+    "title": "Elias Boudinot Papers",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "elizabeth-nj",
+    "publisherOrHolder": "Princeton University Library"
+  },
+  {
+    "id": "src-salem-nps-maritime",
+    "table": "Source",
+    "url": "https://www.nps.gov/sama/learn/historyculture/revolutionary-war.htm",
+    "title": "Salem Maritime National Historic Site: Revolutionary War Era",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "salem-ma",
+    "publisherOrHolder": "National Park Service"
+  },
+  {
+    "id": "src-pit-pa-historical-museum-commission",
+    "table": "Source",
+    "url": "https://www.phmc.pa.gov/",
+    "title": "Pennsylvania Historical and Museum Commission: Fort Pitt Doc",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER2",
+    "towns": "pittsburgh-pa",
+    "publisherOrHolder": "Pennsylvania Historical and Museum Commission"
+  },
+  {
+    "id": "src-williamsburg-va-virginia-mag-history",
+    "table": "Source",
+    "url": "https://www.virginiahistory.org/publications-and-resources/virginia-magazine-history-and-biography",
+    "title": "Virginia Magazine of History and Biography -- Revolutionary ",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "williamsburg-va",
+    "publisherOrHolder": "Virginia Museum of History and Culture"
+  },
+  {
+    "id": "src-kings-mountain-nc-draper-manuscripts",
+    "table": "Source",
+    "url": "https://www.wisconsinhistory.org/Records/Article/CS1945",
+    "title": "Draper Manuscripts: Kings Mountain and Its Heroes -- Source ",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "kings-mountain-nc",
+    "publisherOrHolder": "State Historical Society of Wisconsin"
+  },
+  {
+    "id": "cmoagrnsa000036gwew6ze63k",
+    "table": "Source",
+    "url": "https://www.nps.gov/subjects/amrevolution/index.htm",
+    "title": "American Revolution — National Park Service",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "saratoga-springs-ny",
+    "publisherOrHolder": "National Park Service, U.S. Department of the Interior"
+  },
+  {
+    "id": "cmoagrnzi000336gw19d41gdv",
+    "table": "Source",
+    "url": "https://www.britannica.com/topic/American-Revolution",
+    "title": "American Revolution — Encyclopedia Britannica",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "saratoga-springs-ny",
+    "publisherOrHolder": "Encyclopaedia Britannica, Inc."
+  },
+  {
+    "id": "cmoagro4x000636gwsnlcwp8t",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/American_Revolutionary_War",
+    "title": "American Revolutionary War — Wikipedia",
+    "type": "TERTIARY",
+    "tier": "TIER3",
+    "towns": "saratoga-springs-ny",
+    "publisherOrHolder": "Wikimedia Foundation"
+  },
+  {
+    "id": "cmoagrobo000936gwmoc8jw0n",
+    "table": "Source",
+    "url": "https://www.nysm.nysed.gov/collections",
+    "title": "New York State Museum — Revolutionary War Collections",
+    "type": "INSTITUTIONAL",
+    "tier": "TIER1",
+    "towns": "saratoga-springs-ny",
+    "publisherOrHolder": "New York State Museum"
+  },
+  {
+    "id": "cmodzdhiw0000d6hsz7tfd66u",
+    "table": "Source",
+    "url": "https://www.heinzhistorycenter.org/blog/fort-pitt-museum-fort-pitt-during-the-revolutionary-war-general-brodheads-expedition/",
+    "title": "https://www.heinzhistorycenter.org/blog/fort-pitt-museum-for",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "pittsburgh-pa",
+    "publisherOrHolder": "www.heinzhistorycenter.org"
+  },
+  {
+    "id": "cmodzfmoh0005d6hsu0vlpdbt",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/avenging-danbury-revisiting-the-battle-of-ridgefield-and-american-attempts-to-stop-the-british-raid-of-1777.htm",
+    "title": "https://www.nps.gov/articles/000/avenging-danbury-revisiting",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "danbury-ct",
+    "publisherOrHolder": "www.nps.gov"
+  },
+  {
+    "id": "cmodzfmpg0008d6hseb0to2sg",
+    "table": "Source",
+    "url": "https://ridgefieldhistoricalsociety.org/wp-content/uploads/2023/08/Battle-of-Ridgefield-Technical-Report-2022-NPS-ABPP.pdf",
+    "title": "https://ridgefieldhistoricalsociety.org/wp-content/uploads/2",
+    "type": "SECONDARY",
+    "tier": "TIER2",
+    "towns": "danbury-ct",
+    "publisherOrHolder": "ridgefieldhistoricalsociety.org"
+  }
+]

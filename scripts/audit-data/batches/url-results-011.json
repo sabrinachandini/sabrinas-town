@@ -1,0 +1,452 @@
+[
+  {
+    "id": "cmoquf88o000b12nplq9mlrqe",
+    "table": "Source",
+    "url": "https://www.ncpedia.org/biography/stanly-john-wright",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.ncpedia.org/biography/stanly-john-wright"
+  },
+  {
+    "id": "cmos9sij7000012qjrw1c2ate",
+    "table": "Source",
+    "url": "https://www.ncpedia.org/wilmington-campaign-1781",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.ncpedia.org/wilmington-campaign-1781"
+  },
+  {
+    "id": "cmos9sijt000312qjlcf1ifmh",
+    "table": "Source",
+    "url": "https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/wilmington-north-carolina",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/wilmington-north-carolina"
+  },
+  {
+    "id": "cmos9sik7000612qjm4pu47gx",
+    "table": "Source",
+    "url": "https://amrevnc.com/wilmington/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://amrevnc.com/wilmington/"
+  },
+  {
+    "id": "cmos9ujcz000b12qjiw0ecfc1",
+    "table": "Source",
+    "url": "https://www.exeterhistory.org/historically-speaking/revolutionary-war-capital",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.exeterhistory.org/historically-speaking/revolutionary-war-capital"
+  },
+  {
+    "id": "cmos9ujdu000e12qj55l8ifdw",
+    "table": "Source",
+    "url": "https://www.exeterhistory.org/exeter-history/2016/6/24/early-exeter-history-1638-1887",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.exeterhistory.org/exeter-history/2016/6/24/early-exeter-history-1638-1887"
+  },
+  {
+    "id": "cmos9uje7000h12qjs15buqyj",
+    "table": "Source",
+    "url": "https://www.yahoo.com/lifestyle/articles/revolutionary-era-committee-met-exeter-100149193.html",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.yahoo.com/lifestyle/articles/revolutionary-era-committee-met-exeter-100149193.html"
+  },
+  {
+    "id": "cmotp7ujd00002hy6yrusdq84",
+    "table": "Source",
+    "url": "https://nhsar.org/the-raid-on-fort-william-and-mary-in-1774/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://nhsar.org/the-raid-on-fort-william-and-mary-in-1774/"
+  },
+  {
+    "id": "cmotp7uk100032hy6ljed8mmf",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Capture_of_Fort_William_and_Mary",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Capture_of_Fort_William_and_Mary"
+  },
+  {
+    "id": "cmotp7ukb00062hy6u5sa9v4m",
+    "table": "Source",
+    "url": "https://exhibits.nhd.uscourts.gov/6.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://exhibits.nhd.uscourts.gov/6.htm"
+  },
+  {
+    "id": "cmotpc5kz000p2hy66g0xuj0x",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/morristown-nj",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/morristown-nj"
+  },
+  {
+    "id": "cmov4no7e0000u9q3q8uzjufo",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/experiencing-the-story-of-the-battle-of-princeton.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/experiencing-the-story-of-the-battle-of-princeton.htm"
+  },
+  {
+    "id": "cmov4no800003u9q3tsjt8f6t",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/ten-crucial-days-princeton",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/articles/ten-crucial-days-princeton"
+  },
+  {
+    "id": "cmov4no8e0006u9q3796va3nq",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/george-washington/the-revolutionary-war/washingtons-revolutionary-war-battles/the-trenton-princeton-campaign/10-facts-about-the-battle-of-princeton",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mountvernon.org/george-washington/the-revolutionary-war/washingtons-revolutionary-war-battles/the-trenton-princeton-campaign/10-facts-about-the-battle-of-princeton"
+  },
+  {
+    "id": "cmov4pwlk000bu9q3m10ri9gi",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/trenton",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/trenton"
+  },
+  {
+    "id": "cmov4pwly000eu9q3otvmixjp",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/george-washington/the-revolutionary-war/washingtons-revolutionary-war-battles/the-trenton-princeton-campaign/10-facts-about-washingtons-crossing-of-the-delaware-river",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mountvernon.org/george-washington/the-revolutionary-war/washingtons-revolutionary-war-battles/the-trenton-princeton-campaign/10-facts-about-washingtons-crossing-of-the-delaware-river"
+  },
+  {
+    "id": "cmov4pwmb000hu9q3qc1fxztf",
+    "table": "Source",
+    "url": "https://www.nps.gov/people/henry-knox.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/people/henry-knox.htm"
+  },
+  {
+    "id": "cmowk3gqi0000rkwcnqbb3ppv",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/history-crown-point-1734-1783",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/articles/history-crown-point-1734-1783"
+  },
+  {
+    "id": "cmowk3gr70003rkwcuzy6oxsi",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/crown-point",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/crown-point"
+  },
+  {
+    "id": "cmowk3grl0006rkwcb2l4rot2",
+    "table": "Source",
+    "url": "https://founders.archives.gov/documents/Washington/03-05-02-0279",
+    "status": 202,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://founders.archives.gov/documents/Washington/03-05-02-0279"
+  },
+  {
+    "id": "cmowk5iug000brkwc920bycmf",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2014/09/so-heavy-a-trial-the-burning-of-new-yorks-first-capital/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2014/09/so-heavy-a-trial-the-burning-of-new-yorks-first-capital/"
+  },
+  {
+    "id": "cmowk5iur000erkwc0jkmhfu8",
+    "table": "Source",
+    "url": "https://history.nycourts.gov/about_period/20-stories-constitution/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://history.nycourts.gov/about_period/20-stories-constitution/"
+  },
+  {
+    "id": "cmowk5iv3000hrkwcpp974uoy",
+    "table": "Source",
+    "url": "https://www.encyclopedia.com/law/encyclopedias-almanacs-transcripts-and-maps/new-york-constitution-1777",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.encyclopedia.com/law/encyclopedias-almanacs-transcripts-and-maps/new-york-constitution-1777"
+  },
+  {
+    "id": "cmowk7lx5000mrkwcsww3a64m",
+    "table": "Source",
+    "url": "https://parks.ny.gov/visit/historic-sites/washingtons-headquarters-state-historic-site",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://parks.ny.gov/visit/historic-sites/washingtons-headquarters-state-historic-site"
+  },
+  {
+    "id": "cmowk7ly1000prkwc8jjioary",
+    "table": "Source",
+    "url": "https://parks.ny.gov/visit/historic-sites/new-windsor-cantonment-state-historic-site",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://parks.ny.gov/visit/historic-sites/new-windsor-cantonment-state-historic-site"
+  },
+  {
+    "id": "cmowk7lye000srkwcxf87qv1l",
+    "table": "Source",
+    "url": "https://npg.si.edu/es/blog/newburgh-conspiracy",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://npg.si.edu/es/blog/newburgh-conspiracy"
+  },
+  {
+    "id": "cmoxzjfzg0000yuayyxz64fq6",
+    "table": "Source",
+    "url": "https://www.nps.gov/sara/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/sara/index.htm"
+  },
+  {
+    "id": "cmoxzjg060003yuaytziqbayd",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/saratoga-surrender-site.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/places/saratoga-surrender-site.htm"
+  },
+  {
+    "id": "cmoxzjg0i0006yuay6rgmrwge",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/schuyler-estate.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/places/schuyler-estate.htm"
+  },
+  {
+    "id": "cmoxzllun000byuayr53l6zt0",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/saratoga-the-tide-turns-on-the-frontier-teaching-with-historic-places.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/saratoga-the-tide-turns-on-the-frontier-teaching-with-historic-places.htm"
+  },
+  {
+    "id": "cmoxzllw6000gyuayq1wl22lo",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/saratoga",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/saratoga"
+  },
+  {
+    "id": "cmozezbgk0000ibgzqwxyrvi8",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/battle-of-stony-point",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/battle-of-stony-point"
+  },
+  {
+    "id": "cmozezbha0003ibgz973vz8st",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/battle-stony-point",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/articles/battle-stony-point"
+  },
+  {
+    "id": "cmozezbho0006ibgzl3d6dge0",
+    "table": "Source",
+    "url": "https://armyhistory.org/our-officers-and-men-behaved-like-men-determined-to-be-free-the-battle-of-stony-point-15-16-july-1779/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://armyhistory.org/our-officers-and-men-behaved-like-men-determined-to-be-free-the-battle-of-stony-point-15-16-july-1779/"
+  },
+  {
+    "id": "cmpwa4e0i0000uhiyv299h1o6",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/boston-massacre-trial.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/boston-massacre-trial.htm"
+  },
+  {
+    "id": "cmozf1jj2000bibgzue201dxh",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/fort-ticonderoga-1775",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/fort-ticonderoga-1775"
+  },
+  {
+    "id": "cmozf1jjg000eibgza5ww3j6g",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/reinterpreting-new-york-s-fort-ticonderoga.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/reinterpreting-new-york-s-fort-ticonderoga.htm"
+  },
+  {
+    "id": "cmozf1jjs000hibgzgb7v3qsu",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/the-humdrum-side-of-war-investigating-camp-life-during-the-american-revolution.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/the-humdrum-side-of-war-investigating-camp-life-during-the-american-revolution.htm"
+  },
+  {
+    "id": "cmozf3k9a000mibgzmighpcvz",
+    "table": "Source",
+    "url": "https://www.westpoint.edu/about/history-of-west-point/brief-history-of-west-point",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.westpoint.edu/about/history-of-west-point/brief-history-of-west-point"
+  },
+  {
+    "id": "cmozf3kam000pibgz9wbk6i9d",
+    "table": "Source",
+    "url": "https://home.army.mil/westpoint/about/history",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://home.army.mil/westpoint/about/history"
+  },
+  {
+    "id": "cmozf3kay000sibgzmlzyydga",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/west-point",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/articles/west-point"
+  },
+  {
+    "id": "cmp0uf6wk0000xazrhk74ckv1",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/new-york-militia-soldier-who-fought-at-battle-of-white-plains-buried-at-st-paul-s.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/new-york-militia-soldier-who-fought-at-battle-of-white-plains-buried-at-st-paul-s.htm"
+  },
+  {
+    "id": "cmp0uf6y10003xazrc757gpn4",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/battle-white-plains",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/articles/battle-white-plains"
+  },
+  {
+    "id": "cmp0uf6yc0006xazr0ljhzsy3",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/battle-of-white-plains",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/battle-of-white-plains"
+  },
+  {
+    "id": "cmp0uhiq6000bxazr9w8e9afs",
+    "table": "Source",
+    "url": "https://www.ohiohistory.org/visit/browse-historical-sites/campus-martius-museum/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.ohiohistory.org/visit/browse-historical-sites/campus-martius-museum/"
+  },
+  {
+    "id": "cmp0uhiqe000exazruq9v35p7",
+    "table": "Source",
+    "url": "https://www.ohiohistory.org/marietta_mound_cemetery/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.ohiohistory.org/marietta_mound_cemetery/"
+  },
+  {
+    "id": "cmp0uhiqn000hxazrkbduq1as",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/campus-martius-museum.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/places/campus-martius-museum.htm"
+  },
+  {
+    "id": "cmp29v0rg0000ef4ii7s6ossf",
+    "table": "Source",
+    "url": "https://founders.archives.gov/documents/Washington/03-08-02-0086",
+    "status": 202,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://founders.archives.gov/documents/Washington/03-08-02-0086"
+  },
+  {
+    "id": "cmp29v0sh0003ef4ivbuj7icm",
+    "table": "Source",
+    "url": "https://ahec.armywarcollege.edu/exhibits/CBKsThenAndNow.cfm",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://ahec.armywarcollege.edu/exhibits/CBKsThenAndNow.cfm"
+  },
+  {
+    "id": "cmp29v0sv0006ef4idfth0to1",
+    "table": "Source",
+    "url": "https://goordnance.army.mil/history/OrdnanceCorpshistory.html",
+    "status": 0,
+    "ok": false,
+    "issue": "connection error",
+    "finalUrl": "https://goordnance.army.mil/history/OrdnanceCorpshistory.html"
+  }
+]

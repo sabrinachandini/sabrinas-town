@@ -1,0 +1,452 @@
+[
+  {
+    "id": "src-ger-washington-germantown-plan",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/george-washington-papers/"
+  },
+  {
+    "id": "src-pit-visit-pittsburgh-history",
+    "table": "Source",
+    "url": "https://www.visitpittsburgh.com/things-to-do/history-heritage/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.visitpittsburgh.com/things-to-do/history-heritage/"
+  },
+  {
+    "id": "src-tre-washington-trenton-orders",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/george-washington-papers/"
+  },
+  {
+    "id": "src-tre-nps-washington-crossing",
+    "table": "Source",
+    "url": "https://www.nj.gov/dep/parksandforests/historic/washcros/index.html",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nj.gov/dep/parksandforests/historic/washcros/index.html"
+  },
+  {
+    "id": "src-tre-nj-state-archives-trenton",
+    "table": "Source",
+    "url": "https://www.nj.gov/state/archives/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nj.gov/state/archives/"
+  },
+  {
+    "id": "src-tre-trenton-city-museum",
+    "table": "Source",
+    "url": "https://www.barracks.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://barracks.org/"
+  },
+  {
+    "id": "src-tre-trenton-nj-heritage",
+    "table": "Source",
+    "url": "https://ellarslie.org/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://ellarslie.org/"
+  },
+  {
+    "id": "src-tre-wikipedia-battle-trenton",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Trenton",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battle_of_Trenton"
+  },
+  {
+    "id": "src-tre-visit-nj-trenton",
+    "table": "Source",
+    "url": "https://www.visitnj.org/trenton",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.visitnj.org/trenton"
+  },
+  {
+    "id": "src-pit-wikipedia-fort-pitt",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Fort_Pitt",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Fort_Pitt"
+  },
+  {
+    "id": "source-hackensack-dey-mansion-nps",
+    "table": "Source",
+    "url": "https://npgallery.nps.gov",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://npgallery.nps.gov/"
+  },
+  {
+    "id": "cmpwa4e1e0003uhiyc6imj53g",
+    "table": "Source",
+    "url": "https://www.nps.gov/people/crispus-attucks.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/people/crispus-attucks.htm"
+  },
+  {
+    "id": "src-pri-nps-princeton-battlefield",
+    "table": "Source",
+    "url": "https://www.nj.gov/dep/parksandforests/historic/princeton/index.html",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nj.gov/dep/parksandforests/historic/princeton/index.html"
+  },
+  {
+    "id": "src-pri-princeton-university-archives",
+    "table": "Source",
+    "url": "https://rbsc.princeton.edu/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://library.princeton.edu/special-collections/"
+  },
+  {
+    "id": "src-pri-nj-historical-society-princeton",
+    "table": "Source",
+    "url": "https://jerseyhistory.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://jerseyhistory.org/"
+  },
+  {
+    "id": "src-pri-princeton-battlefield-society",
+    "table": "Source",
+    "url": "https://www.theprincetonbattlefield.org/",
+    "status": 0,
+    "ok": false,
+    "issue": "connection error",
+    "finalUrl": "https://www.theprincetonbattlefield.org/"
+  },
+  {
+    "id": "src-pri-wikipedia-princeton",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Princeton",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battle_of_Princeton"
+  },
+  {
+    "id": "src-pri-visit-princeton-revolution",
+    "table": "Source",
+    "url": "https://www.visitprinceton.org/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.visitprinceton.org/"
+  },
+  {
+    "id": "src-pri-nassau-hall-history",
+    "table": "Source",
+    "url": "https://www.princeton.edu/history",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://history.princeton.edu/"
+  },
+  {
+    "id": "src-pri-washington-princeton-orders",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/george-washington-papers/"
+  },
+  {
+    "id": "src-mor-morris-county-historical",
+    "table": "Source",
+    "url": "https://www.morrishistory.org/",
+    "status": 0,
+    "ok": false,
+    "issue": "connection error",
+    "finalUrl": "https://www.morrishistory.org/"
+  },
+  {
+    "id": "src-mor-cold-winter-1779-80",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2016/02/the-hard-winter-morristown-1779-1780/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2016/02/the-hard-winter-morristown-1779-1780/"
+  },
+  {
+    "id": "src-mor-wikipedia-morristown-nhp",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Morristown_National_Historical_Park",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Morristown_National_Historical_Park"
+  },
+  {
+    "id": "src-mor-visit-morristown",
+    "table": "Source",
+    "url": "https://www.morristourism.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://morristourism.org/"
+  },
+  {
+    "id": "src-mor-nps-morristown-visitor",
+    "table": "Source",
+    "url": "https://www.nps.gov/morr/planyourvisit/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/morr/planyourvisit/index.htm"
+  },
+  {
+    "id": "src-mon-washington-monmouth-orders",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/george-washington-papers/"
+  },
+  {
+    "id": "src-mon-nps-monmouth-battlefield",
+    "table": "Source",
+    "url": "https://www.nj.gov/dep/parksandforests/historic/monmouth/index.html",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nj.gov/dep/parksandforests/historic/monmouth/index.html"
+  },
+  {
+    "id": "src-mon-molly-pitcher-scholarship",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2013/12/molly-pitcher-the-real-story/",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2013/12/molly-pitcher-the-real-story/"
+  },
+  {
+    "id": "cmotpc5ke000j2hy643v2uobt",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/washingtons-encampment-morristown-new-jersey-and-hard-winter-1779-1780",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/articles/washingtons-encampment-morristown-new-jersey-and-hard-winter-1779-1780"
+  },
+  {
+    "id": "cmotpc5ko000m2hy6ntpya80w",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/morristown-winter-encampment",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/articles/morristown-winter-encampment"
+  },
+  {
+    "id": "src-mon-monmouth-county-tourism",
+    "table": "Source",
+    "url": "https://www.visitmonmouth.com/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.visitmonmouth.com/"
+  },
+  {
+    "id": "src-nbr-washington-retreat-dispatch",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/george-washington-papers/"
+  },
+  {
+    "id": "src-nbr-rutgers-university-archives",
+    "table": "Source",
+    "url": "https://www.libraries.rutgers.edu/rul/libs/scua/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.libraries.rutgers.edu/new-brunswick/visit-study/locations/special-collections-university-archives"
+  },
+  {
+    "id": "src-nbr-wikipedia-new-brunswick",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/New_Brunswick,_New_Jersey",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/New_Brunswick,_New_Jersey"
+  },
+  {
+    "id": "src-nbr-visit-new-brunswick",
+    "table": "Source",
+    "url": "https://www.visitnewbrunswick.com/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.visitnewbrunswick.com/"
+  },
+  {
+    "id": "src-fle-washington-fort-lee-letters",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/george-washington-papers/"
+  },
+  {
+    "id": "src-mon-wikipedia-monmouth",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Battle_of_Monmouth",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Battle_of_Monmouth"
+  },
+  {
+    "id": "src-fle-wikipedia-fort-lee",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Fort_Lee,_New_Jersey",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Fort_Lee,_New_Jersey"
+  },
+  {
+    "id": "src-fle-fort-lee-historic-park-visitor",
+    "table": "Source",
+    "url": "https://www.nj.gov/dep/parksandforests/historic/fortlee/index.html",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.nj.gov/dep/parksandforests/historic/fortlee/index.html"
+  },
+  {
+    "id": "src-yorktown-va-cornwallis-capitulation",
+    "table": "Source",
+    "url": "https://www.archives.gov/milestone-documents/articles-of-capitulation",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.archives.gov/milestone-documents/articles-of-capitulation"
+  },
+  {
+    "id": "src-yorktown-va-washington-diary-1781",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/george-washington-papers/"
+  },
+  {
+    "id": "src-yorktown-va-nps-colonial-nhp",
+    "table": "Source",
+    "url": "https://www.nps.gov/york/index.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/york/index.htm"
+  },
+  {
+    "id": "src-yorktown-va-virginia-state-archives-1781",
+    "table": "Source",
+    "url": "https://www.lva.virginia.gov/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.lva.virginia.gov/"
+  },
+  {
+    "id": "src-yorktown-va-hamilton-assault-redoubt",
+    "table": "Source",
+    "url": "https://www.loc.gov/collections/alexander-hamilton-papers/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.loc.gov/collections/alexander-hamilton-papers/"
+  },
+  {
+    "id": "src-fle-bergen-county-historical",
+    "table": "Source",
+    "url": "https://www.bergencountyhistory.org/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.bergencountyhistory.org/"
+  },
+  {
+    "id": "src-yorktown-va-wikipedia-siege",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Siege_of_Yorktown",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Siege_of_Yorktown"
+  },
+  {
+    "id": "src-yorktown-va-nps-battlemap",
+    "table": "Source",
+    "url": "https://www.nps.gov/york/planyourvisit/maps.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/york/planyourvisit/maps.htm"
+  },
+  {
+    "id": "src-williamsburg-va-burgesses-journals",
+    "table": "Source",
+    "url": "https://www.colonialwilliamsburg.org/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.colonialwilliamsburg.org/"
+  },
+  {
+    "id": "src-williamsburg-va-henry-resolves-1765",
+    "table": "Source",
+    "url": "https://www.encyclopediavirginia.org/entries/henry-patrick-1736-1799/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.encyclopediavirginia.org/entries/henry-patrick-1736-1799/"
+  },
+  {
+    "id": "src-williamsburg-va-virginia-declaration-rights",
+    "table": "Source",
+    "url": "https://www.lva.virginia.gov/public/guides/va1_declarationrights.htm",
+    "status": 404,
+    "ok": false,
+    "issue": "",
+    "finalUrl": "https://www.lva.virginia.gov/public/guides/va1_declarationrights.htm"
+  }
+]

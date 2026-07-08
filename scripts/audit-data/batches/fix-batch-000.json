@@ -1,0 +1,22 @@
+[
+  {"id":"source-adams-papers","table":"Source","url":"https://www.masshist.org/adams/","issue":""},
+  {"id":"source-harvard-archives-rev","table":"Source","url":"https://library.harvard.edu/archives","issue":""},
+  {"id":"src-lex-prince-estabrook","table":"Source","url":"https://allthingsliberty.com/2019/04/prince-estabrook/","issue":""},
+  {"id":"src-lex-lexington-visitor","table":"Source","url":"https://www.lexingtonma.gov/visitors-center","issue":""},
+  {"id":"source-hackensack-nps-washington-hq","table":"Source","url":"https://www.nps.gov/revwar","issue":""},
+  {"id":"src-salem-carey-leslie-retreat","table":"Source","url":"https://allthingsliberty.com/2014/02/leslies-retreat-the-first-blow-for-liberty/","issue":""},
+  {"id":"src-marblehead-historical-society","table":"Source","url":"https://www.marbleheadmuseum.org/","issue":"connection error"},
+  {"id":"src-marblehead-chandler-long-island","table":"Source","url":"https://allthingsliberty.com/2016/08/battle-long-island/","issue":""},
+  {"id":"src-plymouth-nps-site","table":"Source","url":"https://www.nps.gov/nr/travel/american_revolution/nationalmonumenttotheforefathers.html","issue":""},
+  {"id":"src-worcester-american-antiquarian-society","table":"Source","url":"https://www.americanantiquarian.org/collections/revolutionary-war","issue":""},
+  {"id":"src-worcester-historical-museum","table":"Source","url":"https://www.worcesterhistory.net/","issue":"connection error"},
+  {"id":"src-worcester-bell-powder-alarm","table":"Source","url":"https://allthingsliberty.com/2014/09/powder-alarm-1774/","issue":""},
+  {"id":"src-springfield-historical-society","table":"Source","url":"https://www.springfieldlibrary.org/history/","issue":""},
+  {"id":"src-springfield-nps-shays-teaching","table":"Source","url":"https://www.nps.gov/subjects/teachingwithhistoricplaces/shaysrebellion.htm","issue":""},
+  {"id":"src-worcester-nps-revolution-resources","table":"Source","url":"https://www.nps.gov/subjects/teachingwithhistoricplaces/worcester.htm","issue":""},
+  {"id":"src-nyc-nps-revolution-ny","table":"Source","url":"https://www.nps.gov/subjects/revwar/new-york.htm","issue":""},
+  {"id":"src-nyc-wallabout-martyrs","table":"Source","url":"https://allthingsliberty.com/2014/02/wallabout-prison-ships/","issue":""},
+  {"id":"src-nyc-battle-long-island-nps","table":"Source","url":"https://www.nps.gov/gate/learn/historyculture/battle-of-brooklyn.htm","issue":""},
+  {"id":"src-nyc-nycgo-revolutionary-sites","table":"Source","url":"https://www.nyctourism.com/articles/revolutionary-war-sites/","issue":""},
+  {"id":"src-springfield-tourism-site","table":"Source","url":"https://www.valleyvisitor.com/","issue":"connection error"}
+]

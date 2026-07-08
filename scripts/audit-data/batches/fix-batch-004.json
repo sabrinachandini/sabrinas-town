@@ -1,0 +1,22 @@
+[
+  {"id":"src-groton-harris-ledyard","table":"Source","url":"https://allthingsliberty.com/2021/09/colonel-william-ledyard-fort-griswold/","issue":""},
+  {"id":"src-groton-jordan-african-american","table":"Source","url":"https://connecticuthistory.org/african-americans-at-fort-griswold/","issue":""},
+  {"id":"src-danbury-connecticut-state-archives-1777","table":"Source","url":"https://portal.ct.gov/SOTS/Collection-Detail-Pages/State-Archives","issue":"redirects to homepage"},
+  {"id":"src-newport-nps-rochambeau","table":"Source","url":"https://www.nps.gov/roc/index.htm","issue":""},
+  {"id":"src-providence-gaspee-testimony","table":"Source","url":"https://www.sos.ri.gov/divisions/Archival/archives","issue":"redirects to homepage"},
+  {"id":"src-providence-nps-gaspee","table":"Source","url":"https://www.nps.gov/articles/gaspee.htm","issue":""},
+  {"id":"src-danbury-visitdanbury","table":"Source","url":"https://www.danbury.org/","issue":"connection error"},
+  {"id":"src-exeter-nps-war-independence","table":"Source","url":"https://www.nps.gov/nr/travel/revwar/index.htm","issue":""},
+  {"id":"src-baltimore-maryland-line","table":"Source","url":"https://allthingsliberty.com/2016/08/maryland-400/","issue":""},
+  {"id":"src-dover-delaware-historical-society","table":"Source","url":"https://dehs.org/","issue":"redirects to homepage"},
+  {"id":"src-wilmington-cooch-bridge-pension","table":"Source","url":"https://www.fold3.com/collection/revolutionary-war-pension-bounty-land-warrant-application-files","issue":""},
+  {"id":"src-bennington-nps-bennington-battlefield","table":"Source","url":"https://parks.ny.gov/historic-sites/35/details.aspx","issue":"redirects to wrong page"},
+  {"id":"src-brattleboro-vermont-independence-1777","table":"Source","url":"https://www.sec.state.vt.us/archives-records.aspx","issue":"connection error"},
+  {"id":"src-castine-nps-penobscot","table":"Source","url":"https://wilsonmuseum.org/","issue":"connection error"},
+  {"id":"src-portland-wikipedia-falmouth","table":"Source","url":"https://en.wikipedia.org/wiki/Burning_of_Falmouth_(1775)","issue":""},
+  {"id":"src-kaskaskia-wikipedia","table":"Source","url":"https://en.wikipedia.org/wiki/Capture_of_Kaskaskia","issue":""},
+  {"id":"src-kaskaskia-illinois-tourism","table":"Source","url":"https://www.dnr.illinois.gov/Parks/Pages/Kaskaskia.aspx","issue":""},
+  {"id":"src-marietta-campus-martius-museum","table":"Source","url":"https://www.ohiohistory.org/visit/museum-and-site-locator/campus-martius-museum/","issue":""},
+  {"id":"src-wheeling-archives-wv","table":"Source","url":"https://archives.wv.gov/","issue":"connection error"},
+  {"id":"src-wheeling-wikipedia-fort-henry","table":"Source","url":"https://en.wikipedia.org/wiki/Battle_of_Fort_Henry_(1777)","issue":""}
+]

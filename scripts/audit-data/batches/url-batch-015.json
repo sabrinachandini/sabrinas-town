@@ -1,0 +1,72 @@
+[
+  {
+    "id": "cmmndyj1r00crouv2knhjmbvq",
+    "table": "PrimarySourcePacket",
+    "url": "https://archive.org/details/JohnBarkerDiary-TheBritishInBoston1774-1776",
+    "title": "Lieutenant John Barker's Diary (April 19, 1775)",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "lexington-ma",
+    "publisherOrHolder": "British Library / Published in \"The British in Boston\" collection"
+  },
+  {
+    "id": "cmmndyn0v00ddouv281hl4tkh",
+    "table": "PrimarySourcePacket",
+    "url": "https://founders.archives.gov/documents/Washington/03-02-02-0090",
+    "title": "John Glover's Correspondence (1775-1776)",
+    "type": "PRIMARY",
+    "tier": "TIER2",
+    "towns": "marblehead-ma",
+    "publisherOrHolder": "Marblehead Museum"
+  },
+  {
+    "id": "cmmndysuv00e3ouv2vf02us83",
+    "table": "PrimarySourcePacket",
+    "url": "https://archive.org/details/journalsofeachprma00mass",
+    "title": "Accounts of the Worcester Courthouse Closure (September 6, 1",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "worcester-ma",
+    "publisherOrHolder": "Massachusetts Historical Society / Contemporary newspaper accounts"
+  },
+  {
+    "id": "cmmndyw0800ehouv2yjhify0m",
+    "table": "PrimarySourcePacket",
+    "url": "https://founders.archives.gov/documents/Washington/03-23-02-0474",
+    "title": "Washington's Letters to Congress on the Supply Crisis (1779-",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "morristown-nj",
+    "publisherOrHolder": "Library of Congress / National Archives"
+  },
+  {
+    "id": "cmmndymun00dcouv2kz30cqoh",
+    "table": "PrimarySourcePacket",
+    "url": "https://www.archives.gov/research/guide-fed-records/groups/093.html",
+    "title": "Muster Rolls of the Marblehead Regiment (1775-1776)",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "marblehead-ma",
+    "publisherOrHolder": "National Archives"
+  },
+  {
+    "id": "cmmndyma400d8ouv2wtcli3qj",
+    "table": "PrimarySourcePacket",
+    "url": "https://archive.org/details/accountofleslies00endi",
+    "title": "Leslie's Retreat Eyewitness Accounts (February 1775)",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "salem-ma",
+    "publisherOrHolder": "Salem Historical Society"
+  },
+  {
+    "id": "cmmndyp6o00doouv2x06va7h1",
+    "table": "PrimarySourcePacket",
+    "url": "https://www.masshist.org/database/viewer.php?item_id=627&mode=dual&img_step=1&pid=2",
+    "title": "Depositions About the Menotomy Fighting (April-May 1775)",
+    "type": "PRIMARY",
+    "tier": "TIER1",
+    "towns": "arlington-ma",
+    "publisherOrHolder": "Massachusetts Provincial Congress / Massachusetts State Archives"
+  }
+]

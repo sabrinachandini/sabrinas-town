@@ -1,0 +1,182 @@
+[
+  {
+    "id": "src-tic-nps-fort-ticonderoga",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/nr/travel/geo-flyer/fortticonderoga.html",
+    "newUrl": "https://www.nps.gov/articles/000/reinterpreting-new-york-s-fort-ticonderoga.htm",
+    "reason": "Original NPS geo-flyer URL returned 404. Replaced with current NPS article about Fort Ticonderoga from the same institution.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-alb-albany-county-historical",
+    "table": "Source",
+    "oldUrl": "https://www.historicalbany.org/",
+    "newUrl": "https://www.albanycountyhistory.org/",
+    "reason": "historicalbany.org refused connection. Albany County History Collaborative at albanycountyhistory.org is the active successor site serving the same historical organization.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-wp-great-chain-history",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2014/05/the-great-chain-across-the-hudson/",
+    "newUrl": "https://allthingsliberty.com/2014/09/the-great-west-point-chain/",
+    "reason": "Original May 2014 allthingsliberty article returned 404. Replaced with the September 2014 article on the same site covering the same subject (the Great Chain across the Hudson at West Point).",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-wp2-nps-washington-ny-campaign",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/subjects/revwar/new-york-campaign-1776.htm",
+    "newUrl": "https://www.battlefields.org/learn/articles/lost-battlefield-disastrous-battle-new-york",
+    "reason": "NPS subjects page for the 1776 NY campaign returned 404. No direct NPS replacement found. American Battlefield Trust article covers the full 1776 New York campaign (July–November 1776) comprehensively.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-new-orange-county-historical",
+    "table": "Source",
+    "oldUrl": "https://www.orangecountyhistorical.org/",
+    "newUrl": "https://www.orangecountyhistoricalsociety.org/",
+    "reason": "orangecountyhistorical.org refused connection. The Orange County Historical Society of New York now operates at orangecountyhistoricalsociety.org.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-king-ny-state-constitution-1777",
+    "table": "Source",
+    "oldUrl": "https://www.archives.nysed.gov/research/new-york-state-constitution-1777",
+    "newUrl": "https://www.archives.nysed.gov/research/constitutions-and-constitional-conventions",
+    "reason": "Original specific page returned 404. NY State Archives now hosts the 1777 Constitution under the broader Constitutions and Constitutional Conventions research page at the same domain.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-stony-point-nps-battlefield",
+    "table": "Source",
+    "oldUrl": "https://parks.ny.gov/historic-sites/stonypoint/",
+    "newUrl": "https://parks.ny.gov/visit/historic-sites/stony-point-battlefield-state-historic-site",
+    "reason": "Old parks.ny.gov URL pattern returned 404. NY State Parks reorganized URLs; the Stony Point Battlefield page moved to the new /visit/historic-sites/ path structure.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-phi-visit-philadelphia-history",
+    "table": "Source",
+    "oldUrl": "https://www.visitphiladelphia.com/things-to-do/history-and-culture/american-revolution/",
+    "newUrl": "https://www.visitphilly.com/articles/philadelphia/the-historic-american-revolution-trail-of-greater-philadelphia/",
+    "reason": "visitphiladelphia.com refused connection. The official Philadelphia tourism site migrated to visitphilly.com; this article covers American Revolution history and culture across Greater Philadelphia.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-vf-chester-county-archives",
+    "table": "Source",
+    "oldUrl": "https://www.chesco.org/3411/Archives",
+    "newUrl": "https://www.chesco.org/192/Archives-Records",
+    "reason": "Old chesco.org page ID /3411/Archives returned 404. Chester County Archives moved to /192/Archives-Records on the same domain.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-yor-nps-york-colonial-courthouse",
+    "table": "Source",
+    "oldUrl": "https://www.yorkheritage.org/colonial-complex",
+    "newUrl": "https://www.yorkhistorycenter.org/museums/colonial-complex/",
+    "reason": "yorkheritage.org/colonial-complex returned 404. The York County History Center rebranded and the Colonial Complex page moved to yorkhistorycenter.org.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-car-visit-carlisle-pa",
+    "table": "Source",
+    "oldUrl": "https://www.visitcarlislepa.com/",
+    "newUrl": "https://www.visitcumberlandvalley.com/towns/carlisle/",
+    "reason": "visitcarlislepa.com refused connection. Carlisle tourism is now covered under the Visit Cumberland Valley regional site, which has a dedicated Carlisle destination page.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-pao-chester-county-paoli-memorial",
+    "table": "Source",
+    "oldUrl": "https://www.chesco.org/3411/Archives",
+    "newUrl": "https://www.chesco.org/192/Archives-Records",
+    "reason": "Old chesco.org page ID /3411/Archives returned 404. Chester County Archives moved to /192/Archives-Records on the same domain.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-ger-nps-germantown",
+    "table": "Source",
+    "oldUrl": "https://www.nps.gov/inde/learn/historyculture/battle-of-germantown.htm",
+    "newUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/germantown",
+    "reason": "NPS Germantown history/culture page returned 404 and no equivalent NPS redirect found. American Battlefield Trust Germantown page provides comparable battle facts, historical summary, and significance.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-ger-battle-germantown-french-context",
+    "table": "Source",
+    "oldUrl": "https://allthingsliberty.com/2015/06/the-battle-of-germantown/",
+    "newUrl": "https://allthingsliberty.com/2020/02/the-death-of-lt-michael-grosh-the-maryland-militia-at-germantown/",
+    "reason": "Original 2015 allthingsliberty Germantown article returned 404. Replaced with a 2020 article on the same site covering the Battle of Germantown including its French significance: the battle convinced the French nearly as much as Saratoga that Americans could fight the British.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-pit-visit-pittsburgh-history",
+    "table": "Source",
+    "oldUrl": "https://www.visitpittsburgh.com/things-to-do/history-heritage/",
+    "newUrl": "https://www.visitpittsburgh.com/blog/historical-sites-to-visit/",
+    "reason": "Original visitpittsburgh.com history-heritage page returned 404. The same official tourism site now publishes Pittsburgh history content under the blog/historical-sites-to-visit/ path.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-tre-nps-washington-crossing",
+    "table": "Source",
+    "oldUrl": "https://www.nj.gov/dep/parksandforests/historic/washcros/index.html",
+    "newUrl": "https://dep.nj.gov/parksandforests/state-park/washington-crossing-state-park/",
+    "reason": "Old NJ DEP URL structure returned 404. NJ DEP reorganized its parks site; Washington Crossing State Park now lives at dep.nj.gov under the new /state-park/ URL pattern.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-pri-nps-princeton-battlefield",
+    "table": "Source",
+    "oldUrl": "https://www.nj.gov/dep/parksandforests/historic/princeton/index.html",
+    "newUrl": "https://dep.nj.gov/parksandforests/state-park/princeton-battlefield-state-park/",
+    "reason": "Old NJ DEP URL structure returned 404. NJ DEP reorganized its parks site; Princeton Battlefield State Park now lives at dep.nj.gov under the new /state-park/ URL pattern.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-pri-princeton-battlefield-society",
+    "table": "Source",
+    "oldUrl": "https://www.theprincetonbattlefield.org/",
+    "newUrl": "https://pbs1777.org/",
+    "reason": "theprincetonbattlefield.org refused connection. The Princeton Battlefield Society now operates at pbs1777.org (the society's current official domain).",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-pri-visit-princeton-revolution",
+    "table": "Source",
+    "oldUrl": "https://www.visitprinceton.org/",
+    "newUrl": "https://www.experienceprinceton.org/visit",
+    "reason": "visitprinceton.org had an expired SSL certificate. Princeton's official visitor guide migrated to experienceprinceton.org.",
+    "verified": true,
+    "httpStatus": 200
+  },
+  {
+    "id": "src-mor-morris-county-historical",
+    "table": "Source",
+    "oldUrl": "https://www.morrishistory.org/",
+    "newUrl": "https://morriscountyhistory.org/",
+    "reason": "morrishistory.org refused connection. The Morris County Historical Society now operates at morriscountyhistory.org.",
+    "verified": true,
+    "httpStatus": 200
+  }
+]

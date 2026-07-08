@@ -1,0 +1,175 @@
+[
+  {
+    "id": "src-revere-deposition",
+    "title": "Paul Revere's Deposition, circa 1775",
+    "verdict": "ISSUE",
+    "issues": [
+      "Wrong document at correct URL: item_id=99 resolves to Revere's letter to Jeremy Belknap (circa 1798), not a 1775 deposition.",
+      "The 1798 Belknap letter is a retrospective account written ~23 years after the event — it does not meet the 'created at or near the time of the event' standard for primary source classification at TIER1.",
+      "Title fabricates a document type ('Deposition') that does not match the actual record ('Letter'). MHS does hold separate 1775 depositions by Revere under different item IDs.",
+      "Year in title (circa 1775) contradicts the actual document date (circa 1798)."
+    ],
+    "recommendation": "Replace item_id=99 with the correct MHS item ID for Revere's actual 1775 sworn deposition. If used as-is, reclassify as TIER2 and correct the title to 'Paul Revere Letter to Jeremy Belknap, circa 1798'."
+  },
+  {
+    "id": "source-adams-papers",
+    "title": "Adams Family Papers",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.masshist.org/adams/ returns HTTP 404 — page does not exist at this path.",
+      "Cannot verify title, content scope, or whether URL leads to the Adams Papers collection or a specific document within it.",
+      "Even if the URL were corrected, 'Adams Family Papers' describes a collection of tens of thousands of documents, not a specific primary source — a collection-level citation is insufficient for TIER1 sourcing."
+    ],
+    "recommendation": "Update URL to a working MHS Adams Papers finding aid (e.g., masshist.org/collection/adams or the online edition at masshist.org/adams_editorial_office). Narrow the citation to a specific document or sub-series relevant to the town context."
+  },
+  {
+    "id": "src-massachusetts-archives",
+    "title": "Massachusetts Archives Collection",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.sec.state.ma.us/arc/ returns HTTP 404 — this path does not resolve.",
+      "Title 'Massachusetts Archives Collection' is a generic institution-level description, not a named collection or specific record series.",
+      "Even if the URL were corrected, this citation lacks specificity: no record group, series, volume, or date range is embedded in the URL."
+    ],
+    "recommendation": "Replace with the current Massachusetts Archives URL (likely archives.lib.state.ma.us or similar) and cite a specific record series (e.g., Massachusetts Archives Collection Vol. 138 — Revolutionary Military Papers). Verify the correct domain for the State Archives digital holdings."
+  },
+  {
+    "id": "source-harvard-archives-rev",
+    "title": "Harvard University Archives: Revolutionary War Collection",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://library.harvard.edu/archives returns HTTP 404.",
+      "The named sub-collection 'Revolutionary War Collection' could not be verified — Harvard University Archives does not appear to use this as a formal collection title in their published finding aids.",
+      "Even if the URL were corrected, the title may reflect an informal or fabricated collection name rather than an officially catalogued Harvard holding."
+    ],
+    "recommendation": "Verify whether Harvard University Archives holds a formally named 'Revolutionary War Collection'. If not, identify the correct OASIS finding aid URL for Cambridge-related Revolutionary War manuscripts. Correct the URL to library.harvard.edu/university-archives or HOLLIS catalog."
+  },
+  {
+    "id": "source-mass-historical-siege",
+    "title": "Massachusetts Historical Society: Siege Papers",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL resolves to the MHS homepage (masshist.org), not any specific 'Siege Papers' collection or finding aid.",
+      "No 'Siege Papers' named collection was found on the MHS homepage or its listed collections.",
+      "Collection/institution homepage cited in place of a specific document or finding aid — fails minimum specificity for TIER1.",
+      "The title implies a discrete named collection ('Siege Papers') that cannot be confirmed as an actual MHS collection title."
+    ],
+    "recommendation": "Search the MHS online catalog for Siege of Boston-era manuscript holdings and link directly to a specific collection or item. If 'Siege Papers' is not a formal MHS collection name, remove it from the title and identify the actual record group."
+  },
+  {
+    "id": "source-washington-orders-cambridge",
+    "title": "General Orders, Cambridge Headquarters 1775-1776",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL https://www.loc.gov/collections/george-washington-papers returns HTTP 403 (bot protection), preventing full verification.",
+      "Even if accessible, the URL targets the entire George Washington Papers collection (~65,000 items), not the specific 'General Orders, Cambridge Headquarters 1775-1776' series.",
+      "Collection-level URL cited in place of a specific document or sub-series finding aid — insufficient for TIER1 specificity.",
+      "LOC does hold Washington's Cambridge-era General Orders, but a direct item-level or series-level URL is required."
+    ],
+    "recommendation": "Link to the specific LOC digital item or series for Washington's Cambridge General Orders (e.g., loc.gov/item/[specific ID] or the Series 3 sub-series in the Washington Papers finding aid). Confirm the exact date range covered."
+  },
+  {
+    "id": "source-martha-washington-letters",
+    "title": "Martha Washington Letters",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL https://www.mountvernon.org returns HTTP 403 (bot protection), preventing full verification.",
+      "Even if accessible, the URL is the Mount Vernon estate general homepage, not any letters collection or finding aid.",
+      "Mount Vernon Ladies' Association holds Martha Washington correspondence, but no specific collection URL or catalog record is cited.",
+      "The title 'Martha Washington Letters' is generic and does not identify which letters, what date range, or which repository holds the specific items relevant to Cambridge, MA.",
+      "Martha Washington's surviving letters are held across multiple repositories (LOC, MHS, MVLA); institution attribution to MVLA alone may be incomplete."
+    ],
+    "recommendation": "Identify specific Martha Washington letters relevant to the Cambridge/1775-1776 context, cite the holding institution for those specific items, and link to a finding aid or catalog record rather than the MVLA homepage."
+  },
+  {
+    "id": "src-salem-essex-county-court-records",
+    "title": "Essex County Court Records and Committee of Safety Minutes, 1774-1776",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.sec.state.ma.us/arc/ returns HTTP 404 — same broken path as src-massachusetts-archives.",
+      "Bundling two distinct record types ('Essex County Court Records' and 'Committee of Safety Minutes') under one citation without separate finding aid references is methodologically problematic.",
+      "Essex County Court Records are typically held at the Massachusetts Supreme Judicial Court Archives or Peabody Essex Museum, not necessarily the Massachusetts State Archives.",
+      "Cannot verify the title corresponds to actual records at this URL."
+    ],
+    "recommendation": "Separate into two citations with correct repository URLs. For Essex County Court Records, check Peabody Essex Museum or SJC Archives. For Committee of Safety Minutes, verify whether the Massachusetts State Archives holds a Committee of Safety record series and link to the correct finding aid."
+  },
+  {
+    "id": "src-salem-privateering-commissions",
+    "title": "Continental Congress Privateering Commissions: Salem-Registered Vessels, 1776-17",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL https://www.archives.gov/ is the NARA general homepage — no specific collection, record group, or finding aid is cited.",
+      "Title appears truncated: '1776-17' is clearly incomplete (likely '1776-1783' or similar).",
+      "Homepage-level citation provides no path to locate the actual records.",
+      "Continental Congress privateering commissions would be in NARA Record Group 360 (Papers of the Continental Congress) — no record group or series reference is provided.",
+      "Cannot confirm 'Salem-Registered Vessels' is a formally catalogued sub-series title versus a descriptive label."
+    ],
+    "recommendation": "Replace URL with a specific NARA catalog record (catalog.archives.gov) for the relevant series in RG 360. Fix the truncated date range in the title. Verify 'Salem-Registered Vessels' is a documented NARA series designation or adjust the title to reflect the actual record series name."
+  },
+  {
+    "id": "source-hackensack-nj-historical-society-bergen",
+    "title": "Bergen County in the American Revolution: Primary Sources",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL https://jerseyhistory.org is the New Jersey Historical Society general homepage — no specific 'Bergen County in the American Revolution: Primary Sources' resource found.",
+      "The title sounds like a secondary compiled guide or published bibliography rather than a primary source collection, which would contradict the TIER1 classification.",
+      "No specific finding aid, resource guide, or catalog record is linked.",
+      "Cannot confirm this named resource exists as a discrete NJHS publication or digital collection."
+    ],
+    "recommendation": "Verify whether NJHS publishes a specific resource guide by this title. If it is a secondary compilation, reclassify to TIER2. If it does not exist as a discrete resource, remove or replace with a specific NJHS finding aid for Bergen County Revolutionary War manuscripts."
+  },
+  {
+    "id": "src-marblehead-glover-orderly-books",
+    "title": "Colonel John Glover's Orderly Books, 1775-1777",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL https://www.masshist.org/ is the MHS homepage (trailing slash redirects to homepage) — no specific orderly books or finding aid is linked.",
+      "Cannot confirm MHS holds Glover orderly books under this title; the Phillips Library at the Peabody Essex Museum is more typically cited for Marblehead-related Revolutionary materials.",
+      "Homepage-level citation does not allow a researcher to locate the specific items."
+    ],
+    "recommendation": "Search MHS online catalog for 'Glover' orderly books. If MHS does not hold them, check the Phillips Library (Peabody Essex Museum) or the American Antiquarian Society. Provide a direct finding aid URL. Verify the correct institution before resubmitting."
+  },
+  {
+    "id": "src-marblehead-washington-crossing-orders",
+    "title": "General Washington's Orders to Colonel Glover, December 25-26, 1776",
+    "verdict": "ISSUE",
+    "issues": [
+      "URL https://www.loc.gov/collections/george-washington-papers/ returns HTTP 403 (bot protection), preventing full verification.",
+      "Even if accessible, the URL targets the entire George Washington Papers collection, not the specific orders of December 25-26, 1776.",
+      "The existence of a distinct, discrete document titled 'General Washington's Orders to Colonel Glover' on those specific dates cannot be confirmed without a specific item-level LOC URL or catalog record — Washington's orders for the Delaware crossing were issued as General Orders to the army, not necessarily as a named letter to Glover specifically.",
+      "Collection-level citation is insufficient for a document claimed at this level of specificity."
+    ],
+    "recommendation": "Locate the specific LOC catalog item for Washington's orders of December 25-26, 1776. If no discrete order to Glover exists by that title, adjust the citation to reference the General Orders for that date within the George Washington Papers Series 3, with the correct item-level URL."
+  },
+  {
+    "id": "src-marblehead-state-archives-muster-rolls",
+    "title": "Massachusetts Muster Rolls: Glover's 14th Continental Regiment, 1775-1777",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.sec.state.ma.us/arc/ returns HTTP 404 — same broken path repeated across multiple sources in this batch.",
+      "Cannot verify title, content, or institution at the given URL."
+    ],
+    "recommendation": "Locate the correct Massachusetts State Archives URL for muster roll records. Glover's regiment muster rolls may also be accessible via NARA (RG 93 — Revolutionary War records) or the Massachusetts Archives digital collections. Provide a working URL."
+  },
+  {
+    "id": "src-plymouth-muster-rolls-siege-boston",
+    "title": "Plymouth County Militia Muster Rolls: Siege of Boston, 1775-1776",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.sec.state.ma.us/arc/ returns HTTP 404 — same broken path as multiple other sources in this batch.",
+      "Cannot verify title or whether Plymouth County militia muster rolls for the Siege of Boston are held at the Massachusetts State Archives versus another repository."
+    ],
+    "recommendation": "Correct the Massachusetts State Archives URL. Also verify the correct holding institution: Siege of Boston muster rolls may be split between the Massachusetts State Archives, NARA (RG 93), and local Plymouth County repositories."
+  },
+  {
+    "id": "src-worcester-court-closure-proceedings",
+    "title": "Worcester County Court of Common Pleas: Closure Proceedings, September 6, 1774",
+    "verdict": "INACCESSIBLE",
+    "issues": [
+      "URL https://www.sec.state.ma.us/arc/ returns HTTP 404 — same broken path repeated across this batch.",
+      "Cannot verify the title or confirm the Massachusetts State Archives holds the specific Worcester County Court of Common Pleas closure proceedings.",
+      "Worcester County court records are often held at the Worcester County Courthouse or the Massachusetts Supreme Judicial Court Archives rather than the State Archives."
+    ],
+    "recommendation": "Correct the Massachusetts State Archives URL. Verify the correct holding institution for Worcester County Court of Common Pleas records from 1774; the SJC Archives or Worcester County court records collections may be more appropriate. The September 6, 1774 court closure is a well-documented event and records should be locatable."
+  }
+]

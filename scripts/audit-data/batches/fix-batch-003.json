@@ -1,0 +1,22 @@
+[
+  {"id":"src-ninety-six-sc-usc-library-backcountry","table":"Source","url":"https://library.sc.edu/p/Collections/SCL","issue":"redirects to homepage"},
+  {"id":"src-eutaw-springs-sc-sc-state-archives","table":"Source","url":"https://www.scdah.sc.gov/","issue":"connection error"},
+  {"id":"src-hobkirks-hill-sc-historic-camden-visit","table":"Source","url":"https://www.historiccamden.org/plan-your-visit","issue":""},
+  {"id":"src-fort-moultrie-sc-nps-fort-moultrie","table":"Source","url":"https://www.nps.gov/fosu/learn/historyculture/fort-moultrie.htm","issue":""},
+  {"id":"src-fort-moultrie-sc-sc-state-archives-1776","table":"Source","url":"https://www.scdah.sc.gov/","issue":"connection error"},
+  {"id":"src-fort-moultrie-sc-american-battlefield-trust-fm","table":"Source","url":"https://www.battlefields.org/learn/revolutionary-war/battles/sullivan%27s-island","issue":""},
+  {"id":"src-guilford-courthouse-nc-pension-depositions","table":"Source","url":"https://www.fold3.com/title/452/revolutionary-war-pension-and-bounty-land-warrant-application-files","issue":"redirects to homepage"},
+  {"id":"src-guilford-courthouse-nc-historical-assoc-nc","table":"Source","url":"https://www.ncdcr.gov/about/history/north-carolina-historical-review","issue":""},
+  {"id":"src-wilmington-nc-lower-cape-fear-historical-society","table":"Source","url":"https://www.lcfhs.org/","issue":"redirects to unrelated site"},
+  {"id":"src-wilmington-nc-visit-wilmington","table":"Source","url":"https://www.wilmingtonandbeaches.com/history-culture/history/","issue":""},
+  {"id":"src-savannah-ga-nps-fort-pulaski","table":"Source","url":"https://www.nps.gov/fopu/learn/historyculture/revolutionary-war.htm","issue":""},
+  {"id":"src-savannah-ga-wikipedia-capture-1778","table":"Source","url":"https://en.wikipedia.org/wiki/Capture_of_Savannah_(1778)","issue":""},
+  {"id":"src-augusta-ga-wikipedia-battle-1781","table":"Source","url":"https://en.wikipedia.org/wiki/Siege_of_Augusta_(1781)","issue":""},
+  {"id":"src-augusta-ga-american-battlefield-trust","table":"Source","url":"https://www.battlefields.org/learn/revolutionary-war/battles/augusta","issue":""},
+  {"id":"src-new-haven-nps-coastal-raids","table":"Source","url":"https://www.nps.gov/subjects/nationalregister/upload/CT-MPS-Revolutionary-War-Coastal-Raids.pdf","issue":""},
+  {"id":"src-new-haven-state-archives-council","table":"Source","url":"https://portal.ct.gov/SOTS/Collection-Detail-Pages/State-Archives","issue":"redirects to homepage"},
+  {"id":"src-new-haven-dandrea-raid","table":"Source","url":"https://allthingsliberty.com/2018/07/the-british-raid-on-new-haven/","issue":""},
+  {"id":"src-new-london-connecticut-state-records","table":"Source","url":"https://portal.ct.gov/SOTS/Collection-Detail-Pages/State-Archives","issue":"redirects to homepage"},
+  {"id":"src-new-london-wikipedia","table":"Source","url":"https://en.wikipedia.org/wiki/Raid_on_New_London","issue":""},
+  {"id":"src-groton-connecticut-sons-revolution","table":"Source","url":"https://connecticutsar.org/","issue":"redirects to unrelated site"}
+]

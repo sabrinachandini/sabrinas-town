@@ -1,0 +1,122 @@
+[
+  {
+    "id": "src-new-london-connecticut-state-records",
+    "url": "https://portal.ct.gov/SOTS/Collection-Detail-Pages/State-Archives",
+    "title": "The Public Records of the State of Connecticut, 1781",
+    "publisherOrHolder": "Connecticut State Library",
+    "tier": "TIER1",
+    "towns": "new-london-ct"
+  },
+  {
+    "id": "src-danbury-continental-congress-resolve",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "title": "Continental Congress Resolution on the Danbury Raid, May 1777",
+    "publisherOrHolder": "Library of Congress, Journals of the Continental Congress",
+    "tier": "TIER1",
+    "towns": "danbury-ct"
+  },
+  {
+    "id": "src-danbury-connecticut-state-archives-1777",
+    "url": "https://portal.ct.gov/SOTS/Collection-Detail-Pages/State-Archives",
+    "title": "Connecticut Council of Safety Records: April-May 1777",
+    "publisherOrHolder": "Connecticut State Archives",
+    "tier": "TIER1",
+    "towns": "danbury-ct"
+  },
+  {
+    "id": "src-providence-gaspee-testimony",
+    "url": "https://www.sos.ri.gov/divisions/Archival/archives",
+    "title": "Proceedings of the Gaspee Commission, 1772-1773",
+    "publisherOrHolder": "Rhode Island State Archives",
+    "tier": "TIER1",
+    "towns": "providence-ri"
+  },
+  {
+    "id": "src-newport-rochambeau-journal",
+    "url": "https://www.loc.gov/item/2021667630/",
+    "title": "Journal de la Campagne en Amérique (Rochambeau's Campaign Journal)",
+    "publisherOrHolder": "Bibliothèque nationale de France / Library of Congress",
+    "tier": "TIER1",
+    "towns": "newport-ri"
+  },
+  {
+    "id": "src-portsmouth-langdon-papers",
+    "url": "https://www.nhhistory.org/",
+    "title": "John Langdon Papers, 1775-1819",
+    "publisherOrHolder": "New Hampshire Historical Society",
+    "tier": "TIER1",
+    "towns": "portsmouth-nh"
+  },
+  {
+    "id": "src-portsmouth-continental-congress-navy",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "title": "Journals of the Continental Congress: Naval Committee Records, 1775-1776",
+    "publisherOrHolder": "Library of Congress",
+    "tier": "TIER1",
+    "towns": "portsmouth-nh"
+  },
+  {
+    "id": "src-annapolis-washington-resignation",
+    "url": "https://www.loc.gov/resource/mgw3b.048/?sp=330",
+    "title": "General Washington's Address to Congress on Resigning His Commission, December 2",
+    "publisherOrHolder": "Library of Congress, George Washington Papers",
+    "tier": "TIER1",
+    "towns": "annapolis-md"
+  },
+  {
+    "id": "src-annapolis-treaty-paris-ratification",
+    "url": "https://www.archives.gov/milestone-documents/treaty-of-paris",
+    "title": "Ratification of the Treaty of Paris by the Continental Congress, January 14, 178",
+    "publisherOrHolder": "National Archives, Record Group 360",
+    "tier": "TIER1",
+    "towns": "annapolis-md"
+  },
+  {
+    "id": "src-annapolis-journals-continental-congress-1783",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "title": "Journals of the Continental Congress, Volume XXV (1783)",
+    "publisherOrHolder": "Library of Congress",
+    "tier": "TIER1",
+    "towns": "annapolis-md"
+  },
+  {
+    "id": "src-annapolis-md-state-archives",
+    "url": "https://msa.maryland.gov/",
+    "title": "Maryland State Archives: Revolutionary War Records Collection",
+    "publisherOrHolder": "Maryland State Archives",
+    "tier": "TIER1",
+    "towns": "annapolis-md"
+  },
+  {
+    "id": "src-exeter-nh-constitution-1776",
+    "url": "https://www.sos.nh.gov/archives",
+    "title": "Constitution of New Hampshire, January 5, 1776",
+    "publisherOrHolder": "New Hampshire State Archives",
+    "tier": "TIER1",
+    "towns": "exeter-nh"
+  },
+  {
+    "id": "src-exeter-continental-association-exeter",
+    "url": "https://www.sos.nh.gov/archives",
+    "title": "Exeter Committee of Safety Records, 1775-1783",
+    "publisherOrHolder": "New Hampshire Division of Archives and Records Management",
+    "tier": "TIER1",
+    "towns": "exeter-nh"
+  },
+  {
+    "id": "src-baltimore-continental-congress-baltimore",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "title": "Journals of the Continental Congress, December 1776 - February 1777 (Baltimore S",
+    "publisherOrHolder": "Library of Congress",
+    "tier": "TIER1",
+    "towns": "baltimore-md"
+  },
+  {
+    "id": "src-baltimore-privateering-records",
+    "url": "https://msa.maryland.gov/",
+    "title": "Maryland Admiralty Court Records: Privateering Commissions, 1776-1783",
+    "publisherOrHolder": "Maryland State Archives",
+    "tier": "TIER1",
+    "towns": "baltimore-md"
+  }
+]

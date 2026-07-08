@@ -1,0 +1,452 @@
+[
+  {
+    "id": "cmodzfmpv000bd6hshjd40dke",
+    "table": "Source",
+    "url": "https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/danbury-raid-connecticut",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/danbury-raid-connecticut"
+  },
+  {
+    "id": "cmofetd6q00004kyjr5hlyuso",
+    "table": "Source",
+    "url": "https://www.fortgriswold.org/the-battle-of-groton-heights/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.fortgriswold.org/the-battle-of-groton-heights/"
+  },
+  {
+    "id": "cmofetd7a00034kyjdqall3q4",
+    "table": "Source",
+    "url": "https://connecticuthistory.org/fort-griswold-and-the-battle-of-groton-heights-1781/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://connecticuthistory.org/fort-griswold-and-the-battle-of-groton-heights-1781/"
+  },
+  {
+    "id": "cmofetd7o00064kyj4gu0mvh8",
+    "table": "Source",
+    "url": "https://portal.ct.gov/-/media/deep/stateparks/parks/thebattleofgrotonheightsandtheburningofnewlondonpdf.pdf",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://portal.ct.gov/-/media/deep/stateparks/parks/thebattleofgrotonheightsandtheburningofnewlondonpdf.pdf"
+  },
+  {
+    "id": "cmofevoy9000b4kyj6x2s3oph",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/connecticut-raids",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/connecticut-raids"
+  },
+  {
+    "id": "cmofevoyl000e4kyj4b8ftiv5",
+    "table": "Source",
+    "url": "https://web.library.yale.edu/news/2020/07/happy-4th-july-british-are-not-coming-year",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://web.library.yale.edu/news/2020/07/happy-4th-july-british-are-not-coming-year"
+  },
+  {
+    "id": "cmofevoyw000h4kyjcoxokrgz",
+    "table": "Source",
+    "url": "https://news.yale.edu/2015/07/01/redcoats-are-coming-new-haven",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://news.yale.edu/2015/07/01/redcoats-are-coming-new-haven"
+  },
+  {
+    "id": "cmogu9ad90000ee6i15wrqc9n",
+    "table": "Source",
+    "url": "https://connecticuthistory.org/benedict-arnold-turns-and-burns-new-london/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://connecticuthistory.org/benedict-arnold-turns-and-burns-new-london/"
+  },
+  {
+    "id": "cmogubcz50005ee6i6pby5m0u",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2020/05/george-washingtons-1777-wilmington-delaware-headquarters-insights-to-an-unmarked-site/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2020/05/george-washingtons-1777-wilmington-delaware-headquarters-insights-to-an-unmarked-site/"
+  },
+  {
+    "id": "cmogubczm0008ee6iptqynh0l",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2020/04/washingtons-head-of-elk-reconnaissance-a-new-letter-and-and-old-receipt/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2020/04/washingtons-head-of-elk-reconnaissance-a-new-letter-and-and-old-receipt/"
+  },
+  {
+    "id": "cmogubd00000bee6ita936i8a",
+    "table": "Source",
+    "url": "https://philadelphiaencyclopedia.org/essays/wilmington-delaware/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://philadelphiaencyclopedia.org/locations/wilmington-delaware/"
+  },
+  {
+    "id": "cmoi9p1rz0000r6o735h301ar",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/revolutionary-war/battles/savannah",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/revolutionary-war/battles/savannah"
+  },
+  {
+    "id": "cmoi9p1t30003r6o77zcezqi5",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/savannah",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/articles/savannah"
+  },
+  {
+    "id": "cmoi9p1ti0006r6o70zvh37fu",
+    "table": "Source",
+    "url": "https://www.georgiaencyclopedia.org/articles/history-archaeology/siege-of-savannah/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.georgiaencyclopedia.org/articles/history-archaeology/siege-of-savannah/"
+  },
+  {
+    "id": "cmoi9rh0m000br6o7vl72r5v1",
+    "table": "Source",
+    "url": "https://www.nps.gov/people/father-pierre-gibault.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/people/father-pierre-gibault.htm"
+  },
+  {
+    "id": "cmoi9rh12000er6o73qyxzi8x",
+    "table": "Source",
+    "url": "https://www.nps.gov/people/george-rogers-clark.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/people/george-rogers-clark.htm"
+  },
+  {
+    "id": "cmoi9rh1d000hr6o7yyurjq4e",
+    "table": "Source",
+    "url": "https://www.nps.gov/places/fort-kaskaskia.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/places/fort-kaskaskia.htm"
+  },
+  {
+    "id": "cmojp4zkb00007bjk7u1hbqdt",
+    "table": "Source",
+    "url": "https://www.nps.gov/people/david-lamson.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/people/david-lamson.htm"
+  },
+  {
+    "id": "cmojp4zl000037bjk9wtp8fev",
+    "table": "Source",
+    "url": "https://arlingtonhistorical.org/learn/articles/the-battle-of-menotomy/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://arlingtonhistorical.org/learn/articles/the-battle-of-menotomy/"
+  },
+  {
+    "id": "cmojp4zld00067bjky6uuaivx",
+    "table": "Source",
+    "url": "https://www.americanheritage.com/forgotten-battle-menotomy",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.americanheritage.com/forgotten-battle-menotomy"
+  },
+  {
+    "id": "cmojp70kh000b7bjkb7g8bok6",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/boston-massacre.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/boston-massacre.htm"
+  },
+  {
+    "id": "cmojp70kw000e7bjkm6omxtga",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/siege-of-boston-overview.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/siege-of-boston-overview.htm"
+  },
+  {
+    "id": "cmojp70l8000h7bjkh0jrqk1l",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/siege-of-boston-map.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/siege-of-boston-map.htm"
+  },
+  {
+    "id": "cmojp95cw000m7bjkf3v0yj31",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/john-glover-sailor-soldier-patriot.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/john-glover-sailor-soldier-patriot.htm"
+  },
+  {
+    "id": "cmojp95dy000p7bjkpfc4xyxo",
+    "table": "Source",
+    "url": "https://www.battlefields.org/learn/articles/john-glover-and-marblehead-men-massachusetts",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.battlefields.org/learn/articles/john-glover-and-marblehead-men-massachusetts"
+  },
+  {
+    "id": "cmojp95eb000s7bjko7oj6utz",
+    "table": "Source",
+    "url": "https://www.americanrevolutioninstitute.org/coastal-regiments-in-the-continental-army/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.americanrevolutioninstitute.org/coastal-regiments-in-the-continental-army/"
+  },
+  {
+    "id": "cmol4kosf0000r4t2ksrt56vk",
+    "table": "Source",
+    "url": "https://founders.archives.gov/documents/Adams/06-02-02-0002",
+    "status": 202,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://founders.archives.gov/documents/Adams/06-02-02-0002"
+  },
+  {
+    "id": "cmol4kosy0003r4t2c67u743v",
+    "table": "Source",
+    "url": "https://founders.archives.gov/documents/Adams/06-02-02-0003",
+    "status": 202,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://founders.archives.gov/documents/Adams/06-02-02-0003"
+  },
+  {
+    "id": "cmol4kotb0006r4t2d3kvqy8m",
+    "table": "Source",
+    "url": "https://ofgraveyardsandthings.com/2019/12/11/7-december-1773-plymouth-patriots-lend-support-prior-to-the-boston-tea-party/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://ofgraveyardsandthings.com/2019/12/11/7-december-1773-plymouth-patriots-lend-support-prior-to-the-boston-tea-party/"
+  },
+  {
+    "id": "cmol4n0c1000br4t2sbcpwgkg",
+    "table": "Source",
+    "url": "https://www.smithsonianmag.com/history/was-this-little-known-standoff-between-british-soldiers-and-colonists-the-real-start-of-the-american-revolution-180986105/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.smithsonianmag.com/history/was-this-little-known-standoff-between-british-soldiers-and-colonists-the-real-start-of-the-american-revolution-180986105/"
+  },
+  {
+    "id": "cmol4n0cc000er4t2q7o2itfq",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/privateers-in-the-american-revolution.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/privateers-in-the-american-revolution.htm"
+  },
+  {
+    "id": "cmol4n0cn000hr4t2iprhlc8u",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2015/04/a-fast-ship-from-salem-carrying-news-of-war/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2015/04/a-fast-ship-from-salem-carrying-news-of-war/"
+  },
+  {
+    "id": "cmomk0jue0000130q5mtm0wtd",
+    "table": "Source",
+    "url": "https://massar.org/setting-the-record-straight-the-worcester-revolt-of-september-6-1774/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://massar.org/setting-the-record-straight-the-worcester-revolt-of-september-6-1774/"
+  },
+  {
+    "id": "cmomk0jv20003130q4cwdtton",
+    "table": "Source",
+    "url": "https://founders.archives.gov/documents/Washington/03-01-02-0047-0003",
+    "status": 202,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://founders.archives.gov/documents/Washington/03-01-02-0047-0003"
+  },
+  {
+    "id": "cmomk2yz7000e130qvkur41cg",
+    "table": "Source",
+    "url": "https://www.westfield.ma.edu/historical-journal/wp-content/uploads/2018/11/2017-Summer-Raphael-Lexington-Worcester-and-the-American-Revolution.pdf",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.westfield.ma.edu/historical-journal/wp-content/uploads/2018/11/2017-Summer-Raphael-Lexington-Worcester-and-the-American-Revolution.pdf"
+  },
+  {
+    "id": "cmomk2yzo000h130qrz4nmf91",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2013/02/the-true-start-of-the-american-revolution/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2013/02/the-true-start-of-the-american-revolution/"
+  },
+  {
+    "id": "cmonzghud00001p158fgxlasz",
+    "table": "Source",
+    "url": "https://history.house.gov/Historical-Highlights/1700s/General-George-Washington-resigning-his-commission-in-Annapolis",
+    "status": 200,
+    "ok": false,
+    "issue": "redirects to homepage",
+    "finalUrl": "https://history.house.gov/errorpage.htm?aspxerrorpath=/Historical-Highlights/1700s/General-George-Washington-resigning-his-commission-in-Annapolis"
+  },
+  {
+    "id": "cmonzghv900031p154gtzrdn9",
+    "table": "Source",
+    "url": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/resignation-of-military-commission",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mountvernon.org/library/digitalhistory/digital-encyclopedia/article/resignation-of-military-commission"
+  },
+  {
+    "id": "cmonzghvl00061p15ux50qc9r",
+    "table": "Source",
+    "url": "https://www.aoc.gov/explore-capitol-campus/art/general-george-washington-resigning-his-commission",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.aoc.gov/explore-capitol-campus/art/general-george-washington-resigning-his-commission"
+  },
+  {
+    "id": "cmonziw0w000b1p15u83jeuy1",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/the-maryland-400.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/the-maryland-400.htm"
+  },
+  {
+    "id": "cmonziw1c000e1p15995g0klv",
+    "table": "Source",
+    "url": "https://www.mdhistory.org/resources/congress-hall-baltimore-and-sharp-streets-1776/",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.mdhistory.org/resources/congress-hall-baltimore-and-sharp-streets-1776/"
+  },
+  {
+    "id": "cmonziw1n000h1p15u7jwgb4g",
+    "table": "Source",
+    "url": "https://history.house.gov/People/Continental-Congress/Meeting-Places/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://history.house.gov/People/Continental-Congress/Meeting-Places/"
+  },
+  {
+    "id": "cmopewbji0000hrdfqtfzw9mn",
+    "table": "Source",
+    "url": "https://en.wikipedia.org/wiki/Burning_of_Falmouth",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://en.wikipedia.org/wiki/Burning_of_Falmouth"
+  },
+  {
+    "id": "cmopewbkb0003hrdfko2px524",
+    "table": "Source",
+    "url": "https://digitalcommons.library.umaine.edu/cgi/viewcontent.cgi?article=1000&context=mainehistoryjournal",
+    "status": 202,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://digitalcommons.library.umaine.edu/cgi/viewcontent.cgi?article=1000&context=mainehistoryjournal"
+  },
+  {
+    "id": "cmopewbkq0006hrdfbiv0w5qx",
+    "table": "Source",
+    "url": "https://allthingsliberty.com/2015/09/a-tale-of-two-cities-the-destruction-of-falmouth-and-the-defense-of-hampton/",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://allthingsliberty.com/2015/09/a-tale-of-two-cities-the-destruction-of-falmouth-and-the-defense-of-hampton/"
+  },
+  {
+    "id": "cmopeyoc7000bhrdfi87doh2j",
+    "table": "Source",
+    "url": "https://www.nps.gov/articles/000/guilford-courthouse-national-military-park-550002.htm",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.nps.gov/articles/000/guilford-courthouse-national-military-park-550002.htm"
+  },
+  {
+    "id": "cmopeyocw000ehrdfomjt8vbb",
+    "table": "Source",
+    "url": "https://www.ncpedia.org/history/usrevolution/guilford-courthouse",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.ncpedia.org/history/usrevolution/guilford-courthouse"
+  },
+  {
+    "id": "cmoqud024000012npx9artcoo",
+    "table": "Source",
+    "url": "https://www.britannica.com/event/Battle-of-Kings-Mountain",
+    "status": 403,
+    "ok": true,
+    "issue": "bot-blocked",
+    "finalUrl": "https://www.britannica.com/event/Battle-of-Kings-Mountain"
+  },
+  {
+    "id": "cmoquf87u000512npdsn7xzdu",
+    "table": "Source",
+    "url": "https://www.ncpedia.org/tryon-palace",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.ncpedia.org/tryon-palace"
+  },
+  {
+    "id": "cmoquf888000812npwqkv6qtu",
+    "table": "Source",
+    "url": "https://www.ncpedia.org/resolves-prerevolutionary",
+    "status": 200,
+    "ok": true,
+    "issue": "",
+    "finalUrl": "https://www.ncpedia.org/resolves-prerevolutionary"
+  }
+]

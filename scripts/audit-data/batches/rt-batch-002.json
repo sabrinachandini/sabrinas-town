@@ -1,0 +1,122 @@
+[
+  {
+    "id": "src-phi-franklin-papers",
+    "url": "https://franklinpapers.org/",
+    "title": "The Papers of Benjamin Franklin (43 vols.)",
+    "publisherOrHolder": "Yale University Press (various editors)",
+    "tier": "TIER1",
+    "towns": "philadelphia-pa"
+  },
+  {
+    "id": "src-yor-articles-confederation",
+    "url": "https://www.archives.gov/milestone-documents/articles-of-confederation",
+    "title": "Articles of Confederation and Perpetual Union",
+    "publisherOrHolder": "National Archives and Records Administration",
+    "tier": "TIER1",
+    "towns": "york-pa"
+  },
+  {
+    "id": "src-yor-journals-congress-york",
+    "url": "https://memory.loc.gov/ammem/amlaw/lwjc.html",
+    "title": "Journals of the Continental Congress: York Period (September 1777-June 1778)",
+    "publisherOrHolder": "Library of Congress",
+    "tier": "TIER1",
+    "towns": "york-pa"
+  },
+  {
+    "id": "src-ger-washington-germantown-plan",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "Washington's Battle Plan for Germantown, October 1777",
+    "publisherOrHolder": "Library of Congress, George Washington Papers",
+    "tier": "TIER1",
+    "towns": "germantown-pa"
+  },
+  {
+    "id": "src-tre-washington-trenton-orders",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "Washington's Orders for the Crossing of the Delaware and Attack on Trenton",
+    "publisherOrHolder": "Library of Congress, George Washington Papers",
+    "tier": "TIER1",
+    "towns": "trenton-nj"
+  },
+  {
+    "id": "src-pri-princeton-university-archives",
+    "url": "https://rbsc.princeton.edu/",
+    "title": "Princeton University Archives: Nassau Hall During the Revolution",
+    "publisherOrHolder": "Princeton University Library",
+    "tier": "TIER1",
+    "towns": "princeton-nj"
+  },
+  {
+    "id": "src-pri-washington-princeton-orders",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "Washington's Orders and After-Action Report on the Battle of Princeton",
+    "publisherOrHolder": "Library of Congress, George Washington Papers",
+    "tier": "TIER1",
+    "towns": "princeton-nj"
+  },
+  {
+    "id": "src-mon-washington-monmouth-orders",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "Washington's Orders and Correspondence: Monmouth Campaign, June 1778",
+    "publisherOrHolder": "Library of Congress, George Washington Papers",
+    "tier": "TIER1",
+    "towns": "monmouth-nj"
+  },
+  {
+    "id": "src-nbr-washington-retreat-dispatch",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "Washington's Dispatches from New Brunswick and the New Jersey Retreat, November-",
+    "publisherOrHolder": "Library of Congress, George Washington Papers",
+    "tier": "TIER1",
+    "towns": "new-brunswick-nj"
+  },
+  {
+    "id": "src-fle-washington-fort-lee-letters",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "Washington's Correspondence on the Fall of Fort Lee and Fort Washington, Novembe",
+    "publisherOrHolder": "Library of Congress, George Washington Papers",
+    "tier": "TIER1",
+    "towns": "fort-lee-nj"
+  },
+  {
+    "id": "src-yorktown-va-cornwallis-capitulation",
+    "url": "https://www.archives.gov/milestone-documents/articles-of-capitulation",
+    "title": "Articles of Capitulation, Yorktown, October 19, 1781",
+    "publisherOrHolder": "National Archives and Records Administration",
+    "tier": "TIER1",
+    "towns": "yorktown-va"
+  },
+  {
+    "id": "src-yorktown-va-washington-diary-1781",
+    "url": "https://www.loc.gov/collections/george-washington-papers/",
+    "title": "George Washington's Diary, August-October 1781",
+    "publisherOrHolder": "Library of Congress, Manuscript Division",
+    "tier": "TIER1",
+    "towns": "yorktown-va"
+  },
+  {
+    "id": "src-yorktown-va-virginia-state-archives-1781",
+    "url": "https://www.lva.virginia.gov/",
+    "title": "Virginia Executive Papers: Governor Thomas Nelson, 1781",
+    "publisherOrHolder": "Library of Virginia",
+    "tier": "TIER1",
+    "towns": "yorktown-va"
+  },
+  {
+    "id": "src-yorktown-va-hamilton-assault-redoubt",
+    "url": "https://www.loc.gov/collections/alexander-hamilton-papers/",
+    "title": "Alexander Hamilton's Report on the Assault on Redoubt No. 10, October 1781",
+    "publisherOrHolder": "Library of Congress, Alexander Hamilton Papers",
+    "tier": "TIER1",
+    "towns": "yorktown-va"
+  },
+  {
+    "id": "src-williamsburg-va-burgesses-journals",
+    "url": "https://www.colonialwilliamsburg.org/",
+    "title": "Journals of the House of Burgesses of Virginia, 1773-1776",
+    "publisherOrHolder": "Colonial Williamsburg Foundation / Virginia State Library",
+    "tier": "TIER1",
+    "towns": "williamsburg-va"
+  }
+]
