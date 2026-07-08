@@ -16,8 +16,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             Lexington
           </a>
           <nav className="flex gap-6 text-sm font-body ml-auto">
-            <a href="/people" className="hover:underline">People</a>
             <a href="/events" className="hover:underline">Events</a>
+            <a href="/people" className="hover:underline">People</a>
+            <a href="/stories" className="hover:underline">Stories</a>
             <a href="/places" className="hover:underline">Places</a>
           </nav>
         </header>

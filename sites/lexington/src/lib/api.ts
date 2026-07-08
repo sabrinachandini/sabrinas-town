@@ -100,6 +100,130 @@ export async function getPeople(): Promise<TownPerson[]> {
   } satisfies TownPerson));
 }
 
+export async function getEvent(slug: string): Promise<{
+  id: string; slug: string | null; name: string;
+  startDate: string | null; datePrecision: string;
+  summary: string; fullText: string | null;
+  people: { id: string; name: string; roles: string[]; slug: string | null }[];
+} | null> {
+  const town = await prisma.town.findUnique({ where: { slug: SLUG }, select: { id: true } });
+  if (!town) return null;
+
+  const row = await prisma.event.findFirst({
+    where: { townId: town.id, slug },
+    select: {
+      id: true, slug: true, name: true,
+      startDate: true, datePrecision: true,
+      summary: true, fullText: true,
+      eventPeople: {
+        include: {
+          person: { select: { id: true, name: true, roles: true, slug: true } },
+        },
+      },
+    },
+  });
+  if (!row) return null;
+
+  return {
+    id: row.id,
+    slug: row.slug,
+    name: row.name,
+    startDate: row.startDate?.toISOString() ?? null,
+    datePrecision: row.datePrecision,
+    summary: row.summary ?? "",
+    fullText: row.fullText ?? null,
+    people: row.eventPeople.map((ep) => ({
+      id: ep.person.id,
+      name: ep.person.name,
+      roles: ep.person.roles ?? [],
+      slug: ep.person.slug,
+    })),
+  };
+}
+
+export async function getPerson(slug: string): Promise<TownPerson | null> {
+  const town = await prisma.town.findUnique({ where: { slug: SLUG }, select: { id: true } });
+  if (!town) return null;
+
+  const row = await prisma.person.findFirst({
+    where: { slug, townPeople: { some: { townId: town.id } } },
+    select: {
+      id: true, slug: true, name: true, roles: true,
+      bioShort: true, bioLong: true,
+      birthYear: true, deathYear: true,
+      verificationStatus: true, imageUrl: true,
+    },
+  });
+  if (!row) return null;
+
+  return {
+    id: row.id,
+    slug: row.slug ?? undefined,
+    name: row.name,
+    roles: row.roles ?? [],
+    bioShort: row.bioShort ?? "",
+    bioLong: row.bioLong ?? null,
+    birthYear: row.birthYear ?? null,
+    deathYear: row.deathYear ?? null,
+    verificationStatus: row.verificationStatus,
+    imageUrl: row.imageUrl ?? null,
+  };
+}
+
+export async function getStories(): Promise<{
+  id: string; slug: string; title: string; storyType: string;
+  excerpt: string; verificationStatus: string;
+}[]> {
+  const town = await prisma.town.findUnique({ where: { slug: SLUG }, select: { id: true } });
+  if (!town) return [];
+
+  const rows = await prisma.story.findMany({
+    where: { townId: town.id },
+    select: { id: true, slug: true, title: true, storyType: true, excerpt: true, verificationStatus: true },
+    orderBy: { createdAt: "desc" },
+  });
+
+  return rows.map((s) => ({
+    id: s.id,
+    slug: s.slug,
+    title: s.title,
+    storyType: s.storyType,
+    excerpt: s.excerpt ?? "",
+    verificationStatus: s.verificationStatus,
+  }));
+}
+
+export async function getStory(slug: string): Promise<{
+  id: string; slug: string; title: string; storyType: string;
+  body: string; excerpt: string; verificationStatus: string;
+  subjectPersonName: string | null; narratorName: string | null;
+} | null> {
+  const town = await prisma.town.findUnique({ where: { slug: SLUG }, select: { id: true } });
+  if (!town) return null;
+
+  const row = await prisma.story.findFirst({
+    where: { townId: town.id, slug },
+    select: {
+      id: true, slug: true, title: true, storyType: true,
+      body: true, excerpt: true, verificationStatus: true,
+      subjectPersonName: true, narratorName: true,
+    },
+  });
+  if (!row) return null;
+
+  return {
+    id: row.id,
+    slug: row.slug,
+    title: row.title,
+    storyType: row.storyType,
+    body: row.body ?? "",
+    excerpt: row.excerpt ?? "",
+    verificationStatus: row.verificationStatus,
+    subjectPersonName: row.subjectPersonName ?? null,
+    narratorName: row.narratorName ?? null,
+  };
+}
+
 export async function getEvents(): Promise<TownEvent[]> {
   const town = await prisma.town.findUnique({
     where: { slug: SLUG },

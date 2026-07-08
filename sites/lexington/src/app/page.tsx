@@ -43,15 +43,19 @@ export default async function HomePage() {
         <Heading level={2} className="mb-6">Key Events</Heading>
         <div className="space-y-4">
           {town.events.slice(0, 6).map((event) => (
-            <div key={event.id} className="flex gap-4 items-start">
+            <a
+              key={event.id}
+              href={event.slug ? `/events/${event.slug}` : "/events"}
+              className="flex gap-4 items-start group"
+            >
               <div className="text-red font-condensed text-lg w-12 shrink-0">
                 {event.startDate ? new Date(event.startDate).getFullYear() : "—"}
               </div>
               <div>
-                <div className="font-body font-semibold">{event.name}</div>
+                <div className="font-body font-semibold group-hover:text-red transition-colors">{event.name}</div>
                 <Text className="text-sm text-text-muted">{event.summary}</Text>
               </div>
-            </div>
+            </a>
           ))}
         </div>
         <a href="/events" className="inline-block mt-6 text-sm font-body text-red hover:underline">

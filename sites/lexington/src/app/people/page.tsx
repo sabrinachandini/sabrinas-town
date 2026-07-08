@@ -22,11 +22,12 @@ export default async function PeoplePage() {
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-16">
         {people.map((person) => (
-          <div
+          <a
             key={person.id}
-            className="p-5 bg-bg-secondary rounded-lg border border-border-light"
+            href={person.slug ? `/people/${person.slug}` : undefined}
+            className="p-5 bg-bg-secondary rounded-lg border border-border-light hover:border-red transition-colors group"
           >
-            <div className="font-body font-semibold text-text-primary">{person.name}</div>
+            <div className="font-body font-semibold text-text-primary group-hover:text-red transition-colors">{person.name}</div>
             {person.roles.length > 0 && (
               <div className="text-xs font-body text-red uppercase tracking-wide mt-1">
                 {person.roles.slice(0, 2).join(" · ")}
@@ -35,7 +36,7 @@ export default async function PeoplePage() {
             <Text className="mt-2 text-sm text-text-muted line-clamp-3">
               {person.bioShort}
             </Text>
-          </div>
+          </a>
         ))}
       </div>
     </Container>
