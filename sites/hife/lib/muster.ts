@@ -185,6 +185,12 @@ export async function findMusterData(
   endDate: Date,
   maxMilesFromRoute = 80
 ): Promise<{ sites: SiteForPrompt[]; events: EventForPrompt[]; businesses: BusinessForPrompt[] }> {
+  if (!process.env.DATABASE_URL) {
+    throw new Error("DATABASE_URL is not set. Add it to Vercel Environment Variables (production target) and redeploy.");
+  }
+  if (!process.env.DIRECT_URL) {
+    throw new Error("DIRECT_URL is not set. Add it to Vercel Environment Variables (production target) and redeploy.");
+  }
   // Fetch all towns with coordinates and their places + events + businesses
   const towns = await prisma.town.findMany({
     where: { lat: { not: null }, lng: { not: null } },

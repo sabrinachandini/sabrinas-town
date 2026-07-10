@@ -54,7 +54,7 @@ export async function createMuster(formData: FormData): Promise<{ error: string 
   } catch (e) {
     console.error("createMuster failed:", e);
     const msg = e instanceof Error ? e.message : String(e);
-    return { error: `Something went wrong generating your trip. ${msg.slice(0, 120)}` };
+    return { error: `Something went wrong generating your trip. ${msg.slice(0, 300)}` };
   }
 
   redirect(`/muster/${musterId}`);
