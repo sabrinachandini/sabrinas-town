@@ -3,6 +3,8 @@ export const dynamic = "force-dynamic";
 import { notFound } from "next/navigation";
 import { getTown, getPeopleCount } from "@/lib/api";
 import { Container, Divider } from "@hife/ui";
+import { TownHero, WhatsOnSection } from "@hife/town-site";
+import { townConfig } from "@/lib/town.config";
 
 export default async function HomePage() {
   const [town, peopleCount] = await Promise.all([getTown(), getPeopleCount()]);
@@ -14,71 +16,29 @@ export default async function HomePage() {
   return (
     <>
       {/* ── Hero ── */}
-      <div className="bg-navy text-cream">
-        <div className="max-w-5xl mx-auto px-6 pt-16 pb-14">
-          <div className="text-red font-condensed text-xs tracking-[0.25em] uppercase mb-4">
-            April 19, 1775 · The First Shot of the American Revolution
-          </div>
-          <h1 className="font-condensed text-[clamp(3.5rem,10vw,7rem)] leading-none uppercase tracking-tight">
-            Lexington
-          </h1>
-          <p className="font-condensed text-xl tracking-[0.15em] uppercase text-cream/50 mt-1 mb-6">
-            Massachusetts
-          </p>
-          <p className="font-body text-base md:text-lg text-cream/75 max-w-2xl leading-relaxed">
-            {town.execSummary150 || town.heroSummary40}
-          </p>
-
-          {/* Stats */}
-          <div className="flex flex-wrap gap-8 mt-10 border-t border-cream/10 pt-8">
-            <div>
-              <div className="font-condensed text-4xl text-red leading-none">{town.events.length}</div>
-              <div className="font-body text-xs uppercase tracking-widest text-cream/50 mt-1">Events</div>
-            </div>
-            <div>
-              <div className="font-condensed text-4xl text-red leading-none">{peopleCount}</div>
-              <div className="font-body text-xs uppercase tracking-widest text-cream/50 mt-1">People</div>
-            </div>
-            <div>
-              <div className="font-condensed text-4xl text-red leading-none">{town.stories.length}</div>
-              <div className="font-body text-xs uppercase tracking-widest text-cream/50 mt-1">Stories</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <TownHero
+        config={townConfig}
+        intro={town.execSummary150 || town.heroSummary40}
+        stats={{
+          events: town.events.length,
+          people: peopleCount,
+          stories: town.stories.length,
+        }}
+      />
 
       {/* ── Key Events ── */}
       <Container>
-        <section className="py-14">
-          <div className="flex items-baseline justify-between mb-8">
-            <h2 className="font-condensed text-2xl uppercase tracking-wide">Key Events</h2>
-            <a href="/events" className="font-body text-sm text-red hover:underline">
-              All {town.events.length} events →
-            </a>
-          </div>
-
-          <div className="divide-y divide-border-light">
-            {topEvents.map((event) => (
-              <a
-                key={event.id}
-                href={event.slug ? `/events/${event.slug}` : "/events"}
-                className="flex gap-5 py-5 group"
-              >
-                <div className="font-condensed text-red text-xl w-12 shrink-0 tabular-nums pt-0.5">
-                  {event.startDate ? new Date(event.startDate).getFullYear() : "—"}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="font-body font-semibold text-text-primary group-hover:text-red transition-colors">
-                    {event.name}
-                  </div>
-                  <p className="font-body text-sm text-text-muted mt-0.5 leading-snug line-clamp-2">
-                    {event.summary}
-                  </p>
-                </div>
-              </a>
-            ))}
-          </div>
-        </section>
+        <WhatsOnSection
+          config={townConfig}
+          totalCount={town.events.length}
+          events={topEvents.map((event) => ({
+            id: event.id,
+            title: event.name,
+            date: event.startDate,
+            description: event.summary,
+            href: event.slug ? `/events/${event.slug}` : "/events",
+          }))}
+        />
 
         {topStories.length > 0 && (
           <>

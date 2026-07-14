@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 import path from "path";
 
 const nextConfig: NextConfig = {
-  transpilePackages: ["@hife/ui", "@hife/content"],
+  transpilePackages: ["@hife/ui", "@hife/content", "@hife/town-site"],
   trailingSlash: false,
   images: {
     remotePatterns: [

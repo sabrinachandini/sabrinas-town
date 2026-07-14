@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@hife/content": "workspace:*",
+    "@hife/town-site": "workspace:*",
     "@hife/ui": "workspace:*",
     "@prisma/client": "5.22.0",
     "next": "^16.2.3",
