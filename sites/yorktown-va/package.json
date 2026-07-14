@@ -1,10 +1,10 @@
 {
-  "name": "lexington",
+  "name": "yorktown-va",
   "version": "0.0.1",
   "private": true,
-  "description": "Lexington, MA — branded town site for the first shot of the Revolution",
+  "description": "Yorktown, VA — branded town site",
   "scripts": {
-    "dev": "next dev --port 3001",
+    "dev": "next dev --port 3003",
     "build": "prisma generate --schema=../../prisma/schema.prisma && next build",
     "postinstall": "prisma generate --schema=../../prisma/schema.prisma || true",
     "typecheck": "tsc --noEmit"

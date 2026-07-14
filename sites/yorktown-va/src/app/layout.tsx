@@ -4,9 +4,10 @@ import { TownLayout } from "@hife/town-site";
 import { townConfig } from "@/lib/town.config";
 
 export const metadata: Metadata = {
-  title: "Concord, MA — History Is for Everyone",
+  metadataBase: new URL("https://visityorktownva.com"),
+  title: "Yorktown, VA — History Is for Everyone",
   description:
-    "Explore the Revolutionary War history of Concord, Massachusetts — where the Redcoats turned back at the North Bridge on April 19, 1775.",
+    "Explore the history of Yorktown, VA with History Is for Everyone.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
