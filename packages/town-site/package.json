@@ -1,0 +1,24 @@
+{
+  "name": "@hife/town-site",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hife/content": "workspace:*",
+    "@hife/ui": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": ">=19",
+    "react-dom": ">=19",
+    "next": ">=16.2.3"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/react": "^19",
+    "@types/react-dom": "^19"
+  }
+}
