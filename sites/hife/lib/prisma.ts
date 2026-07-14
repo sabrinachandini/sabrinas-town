@@ -15,9 +15,7 @@ export const prisma =
     datasources: {
       db: {
         url: process.env.DATABASE_URL,
-        // directUrl bypasses the connection pool for migrations; Prisma types lag the feature
-        ...(process.env.DIRECT_URL ? { directUrl: process.env.DIRECT_URL } : {}),
-      } as { url: string | undefined },
+      },
     },
   });
 
