@@ -196,3 +196,263 @@ If a design choice would look at home on any of those sites, it probably doesn't
 ---
 
 *Last revised: July 2026. Triggered by design audit finding gold token mapped to crimson, ink tokens absent, and no written design constitution to enforce either rule.*
+
+---
+
+## IX. Liberty — The Character
+
+### Who Liberty Is
+
+Liberty is a small, round star who has been present for a lot of history and finds it genuinely interesting, though also genuinely exhausting. Liberty is not performing enthusiasm. Liberty is not a mascot in a sports-team sense. Liberty is a quiet, self-possessed creature who shows up, pays attention, and would very much like a nap afterward. Liberty is the honest version of what it feels like to care about something difficult.
+
+Liberty's emotional range is narrow on purpose: **contentment, gentle fatigue, soft wonder, mild bewilderment.** Liberty does not panic. Liberty does not celebrate loudly. Liberty watches the Battle of Lexington and thinks: *yes, that happened, that mattered, I was there, I am tired.* This is the register.
+
+Liberty is not a stand-in for HIFE. Liberty is a witness. The distinction matters.
+
+---
+
+### The Visual Rules (Law)
+
+These are not guidelines. Any illustration that breaks them ships nothing.
+
+**Form**
+- Perfectly round or very slightly oval body — no pointed star rays, no spiky silhouette
+- Body diameter: small. Liberty does not dominate a composition; Liberty occupies a corner, a margin, a gentle aside
+- Soft felt-cut edges on all outlines — think linocut or fabric, not vector-sharp. The outer contour has a slight hand-cut quality; inner details are clean
+- Flat brand colors only. No gradients. No drop shadows. No glows. No dimensional shading
+- One warm ink outline (`#14100a`, 2–3px equivalent) around the full body and all features. No secondary outlines, no glow strokes
+
+**Face**
+- Eyes: gently closed, or a soft half-moon lidded look. Never wide open. Never surprised. Never alarmed. The eye is a simple curved line or a very small closed oval — nothing more
+- Mouth: tiny. Contented, not smiling. The resting expression. A small horizontal line that curves just barely upward at the ends, or does not curve at all. No teeth. No open mouth except in the "slightly lost" pose, where it may be a very small open circle of mild confusion
+- No eyebrows that read as distressed, angry, or cartoonishly happy
+- No blush marks, sweat drops, action lines, or other manga conventions
+- No accessories on the face
+
+**Limbs**
+- Small, rounded stubs. No detailed hands. No fingers. No feet with toes
+- Limbs are optional per pose — some poses have none and Liberty is simply a resting round body. This is fine
+- If limbs hold something (a lantern, a book), the object is equally flat and brand-colored
+
+**Color**
+- Body: cream (`#f2ece0`) or gold (`#C8A24A`) — these are Liberty's primary body colors. Gold Liberty is the hero version; Cream Liberty is the everyday version
+- Cheek suggestion (optional): a very soft circle of rust (`#b5431a`) at 30% opacity — one per cheek, maximum
+- Outline: ink-deep (`#14100a`)
+- Any held objects: one brand color each, flat
+
+**What Liberty Is Not**
+- Not wearing a tricorn hat, colonial coat, or any historical costume
+- Not holding a musket, sword, or flag
+- Not wide-eyed or excited
+- Not angry or sad in a way that needs explaining
+- Not 3D, not shaded, not gradient-filled
+- Not cute in an aggressive way — Liberty does not beg for affection; Liberty simply exists
+
+---
+
+### The Six Canonical Poses
+
+These are the official set. All six must exist before Liberty appears on any product or digital surface. New poses require ratification.
+
+| Pose | Description | Primary use |
+|---|---|---|
+| **Resting** | Liberty sitting, limbs folded or absent, eyes closed, radiating profound okayness | Hero illustration, product anchor |
+| **Floating** | Liberty drifting slightly upward, one stub-arm out, expression unchanged | Hero variants, tote, sticker |
+| **Napping** | Liberty fully horizontal, tiny Z nearby (ink-deep, not a speech bubble), mouth in the resting position | "Liberty had a long day" print, loading state |
+| **With Lantern** | Liberty standing, holding a small flat lantern in one stub. The lantern is gold; a tiny cream glow circle around it (soft, not gradient — a flat opacity shape) | The midnight content, "still here" moment |
+| **Reading** | Liberty seated, holding a very small book flat in front. Book cover: one color, no title visible | Almanac products, story pages |
+| **Slightly Lost** | Liberty mid-rotation, mouth a tiny open circle, one stub pointing in a direction that may not be right | 404 page, empty states |
+
+---
+
+### The Friends System
+
+Liberty may have companions. Every companion is a proposal — Sabrina ratifies the roster before any friend appears on a product, a page, or a digital surface. A friend not ratified does not exist for production purposes.
+
+**Proposal format for any new friend:**
+1. Name
+2. Form (what kind of creature or object — must be simple enough to draw in the Liberty style)
+3. Personality in one sentence
+4. Rationale: why does this friend belong in Liberty's world?
+5. One rough sketch or description precise enough to execute
+
+**Proposed friends awaiting ratification:**
+
+**Vivo** — A small, weathered compass rose rendered in the Liberty style. Personality: has extremely strong opinions about which direction is north and would like to discuss it. Rationale: the navigation metaphor fits naturally with travel and history; the compass is a period-appropriate object that reads without explanation. *(Vivo: life.)*
+
+**Percy** — A small candle, flat and round-based, with a calm flame. Personality: has been burning since approximately 1775 and is frankly fine with that. Rationale: light in dark places is the right emotional register for stories that have been overlooked; the candle is quieter and more useful than a torch. *(Percy: pursuit of happiness.)*
+
+*Two additional friend candidates are reserved for the first merch review. Submit proposals in the format above.*
+
+**Friends rules:**
+- Friends share Liberty's visual language exactly: flat, felt-cut, brand colors, ink outline
+- Friends never upstage Liberty — in any composition, Liberty is the emotional anchor
+- Friends do not speak in their own voice on products; Liberty's voice is the only voice
+- A friend who appears on one product is not automatically cleared for all products
+
+---
+
+### Liberty's Voice (Digital Use)
+
+When Liberty appears in an empty state, a 404, or a loading moment, the copy follows Liberty's register: **quiet, honest, slightly wry, not apologetic.**
+
+| Moment | Copy |
+|---|---|
+| 404 | "Liberty has been here. This page has not." |
+| Empty events list | "Nothing here yet. Liberty is patient." |
+| Loading | "Liberty is looking into it." |
+| No search results | "Liberty searched. Liberty found nothing. This is not Liberty's fault." |
+| Error state | "Something went wrong. Liberty witnessed it." |
+
+Rules for writing new Liberty copy:
+- One or two sentences maximum
+- Liberty is the subject, not the user
+- No exclamation marks
+- No apologies ("we're sorry," "oops") — Liberty does not apologize for circumstances beyond Liberty's control
+- No instructions ("please try again") unless absolutely necessary, and never with "please"
+
+---
+
+## X. The Merch Voice
+
+### The Register
+
+The merch voice is **deadpan warmth.** It knows things. It is not showing off that it knows things. It is fond of the subject without being precious about it. It does not work hard to be funny. It trusts the reader to notice.
+
+The test: read the copy out loud in the voice of someone who has read every primary source about the Revolution and finds the whole thing genuinely interesting and also kind of a lot. That is the voice.
+
+---
+
+### What It Sounds Like
+
+**Good:**
+- "Liberty. A star who has seen some things and would still like a nap."
+- "75 towns. One revolution. Comfortable shoes recommended."
+- "The Muster Book. For notes on where you've been and where you're going, in that order."
+- "History is for everyone. Pack accordingly."
+- "Birthplace of American Liberty. First shot fired here. Excellent parking on Meriam Street."
+
+**Not good:**
+- "Raise a glass to the rebels!" — we are not a tavern
+- "1776 and ready to party" — banned, full stop
+- "Make history!" — marketing speak; means nothing
+- "For the history buff in your life" — gift-shop voice; we are not a gift shop
+- "You won't find this in your textbook!" — we work alongside textbooks, not against them
+- Exclamation marks used for enthusiasm — never; use them only for actual imperatives
+
+---
+
+### Banned Phrases and Tropes
+
+No exceptions. If a copywriter submits any of the following, it goes back:
+
+- "1776" as a celebration rather than a year
+- "Founding Fathers" as a reverential term (use names; they were people)
+- "Don't tread on me" in any form
+- "Liberty" as a brand word (it belongs to the towns, not the product)
+- "Rebel," "revolutionary," or "patriot" as a compliment to the buyer
+- Distressed typography meant to look old
+- Any phrase that would also work on a product at a highway rest stop
+
+---
+
+### The Packaging Voice
+
+Hang tags, packaging inserts, and backs of prints follow the same register. One or two sentences. The product earns the space; the copy doesn't justify it.
+
+Back-of-print example:
+> *The Muster Book. A pocket notebook for road-tripping through American history. Blank inside. You bring the story.*
+
+Hang tag example (tee):
+> *History is for everyone. This tee is for you.*
+
+---
+
+## XI. The Merch System
+
+### The Test
+
+Every product must pass both of these before it enters the line:
+
+1. **The stranger test:** Would someone who has never heard of HIFE pick this up at a well-curated independent shop? If yes, it belongs. If it only makes sense to someone already in the community, it does not.
+
+2. **The embarrassment test:** Would anyone feel embarrassed giving this as a gift to someone they respect? If yes, it does not belong.
+
+Price point, production method, and margin are secondary to these two tests. A product that fails either test does not get a price.
+
+---
+
+### The Four Lines
+
+**The Trio Line** — The mark doing the work. Clean, confident, built to last.
+- Heavyweight tee: the HIFE wordmark or the "75 Towns · 1 Revolution" lockup, one color on cream or navy ground
+- Heavyweight tote: same lockup, screen-printed, natural canvas
+- Enamel pin: the wordmark or a single brand element, hard enamel, gold metal
+- Sticker: the tagline lockup, die-cut, weatherproof
+
+*These are the evergreen products. They do not have a season. They are the foundation of any retail relationship.*
+
+**The Liberty Line** — The character line. Liberty leads; everything else follows.
+- Sticker sheet: all six canonical poses, one per sticker, brand colors, die-cut
+- Enamel pin: Resting Liberty, gold body, ink outline, soft enamel
+- Tee: Floating Liberty, centered or chest-pocket scale, one color on cream
+- "Liberty had a long day" print: Napping Liberty, 5×7 or 8×10, letterpress-style flat, the phrase set in Instrument Serif beneath
+
+*The Liberty line scales with the friends roster. No friend ships on a product until ratified.*
+
+**The Almanac Line** — For the person who takes notes and thinks about things.
+- The Muster Book: Field Notes format (3.5×5.5"), 48 pages blank, cover printed with the grid and "The Muster Book" in Bebas Neue, subtitle "Trip Notes · American Revolution" in DM Sans
+- "★ 75 Towns · 1 Revolution ★" print: 11×17 or 12×16, letterpress-style, navy ground, cream type, the full set of stars for all 75 towns arranged as a grid — each one labeled with the town name at 6pt
+
+**The Lexington Capsule** — For the flagship partner and the Buckman Tavern retail tie-in.
+- "Birthplace of American Liberty" tee: the Visit Lexington lockup, rust accent on cream, screen-print
+- "Birthplace of American Liberty" print: same lockup, 8×10, suitable for framing, letterpress-style flat treatment
+
+*The Lexington capsule is the template for future town capsules. Concord gets one when the site launches. Every partner town with a retail relationship eventually gets one.*
+
+---
+
+### What Is Banned
+
+No exceptions:
+
+- Distressed flag graphics in any form
+- Musket shapes, cannon shapes, or any weapon silhouette
+- "1776 and ready to party" or any drinking-culture reference
+- Anything that reads as political in the present tense (the Revolution is historical; we do not take sides in current events)
+- Souvenir-shop aesthetics: fake parchment, faux aged ink, Liberty Bell clipart
+- Products that require explanation to make sense ("a HIFE person would get it" is not enough)
+
+---
+
+### Production: The Question
+
+**Print-on-demand (POD)** means no inventory, no upfront cost, and per-unit margins around 25–35%. The trade-off: quality control is harder, shipping times vary, and the product feels like a POD product if you're not careful. Suitable for: prints, stickers, and tees where brand is strong enough to carry the presentation.
+
+**Local printer + inventory** means upfront cost (typically $500–2,000 per SKU for a minimum run), higher per-unit margins (50–65%), and full quality control. The trade-off: you own the inventory; unsold stock is a real cost. Suitable for: enamel pins (must be manufactured, minimum runs of 50–100), the Muster Book (custom notebooks require print runs), and anything going into retail (Buckman Tavern will not take consignment from a POD vendor).
+
+**The honest recommendation:** Start with POD for tees, stickers, and prints to validate demand. Use a local printer for enamel pins and the Muster Book from day one — these cannot be done well at POD quality. The Lexington capsule for Buckman should be locally printed regardless.
+
+---
+
+### The Buckman Tavern Angle
+
+Buckman Tavern is a natural first retail partner: it is a historic site with foot traffic, it is in Lexington, and it sells goods related to the history HIFE documents. The pitch is consignment: HIFE supplies product at wholesale (typically 50% of retail), the tavern keeps the margin on sales, and unsold product returns.
+
+The Lexington capsule is designed for this relationship. The Trio line is a secondary fit. The Liberty line is a harder sell in a historic site retail context — Liberty is an abstraction; tee and sticker buyers at a historic site usually want place-based product.
+
+*The Buckman conversation happens after the capsule exists. Do not approach without product in hand.*
+
+---
+
+### The Three Products to Bet On First
+
+In order of confidence:
+
+1. **Liberty sticker sheet** — low production cost, high perceived value, shareable, tests the character before committing to larger inventory
+2. **The Muster Book** — the strongest demonstration of the Field Notes standard; people who go on history road trips take notes; this is the product that converts a visitor into a repeat customer
+3. **Trio heavyweight tote** — the tote is the most versatile retail object; it goes everywhere; it is the product that makes HIFE visible in the world without requiring explanation
+
+---
+
+*Chapters IX–XI added July 2026. Liberty established as the HIFE witness character. Friends roster pending Sabrina's ratification. Merch system requires no production decisions until the lookbook review.*
