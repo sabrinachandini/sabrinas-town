@@ -47,7 +47,7 @@ export default async function HomePage() {
             {/* ── Stories ── */}
             <section className="py-14">
               <div className="flex items-baseline justify-between mb-8">
-                <h2 className="font-condensed text-2xl uppercase tracking-wide">Voices from 1775</h2>
+                <h2 className="font-condensed text-2xl uppercase tracking-wide">Voices from the Past</h2>
                 <a href="/stories" className="font-body text-sm text-red hover:underline">
                   All {town.stories.length} stories →
                 </a>
@@ -77,12 +77,12 @@ export default async function HomePage() {
 
         {/* ── Explore grid ── */}
         <section className="py-14">
-          <h2 className="font-condensed text-2xl uppercase tracking-wide mb-8">Explore Concord</h2>
+          <h2 className="font-condensed text-2xl uppercase tracking-wide mb-8">Explore Yorktown</h2>
           <div className="grid sm:grid-cols-3 gap-4">
             {[
-              { href: "/people", label: "People", desc: "Minutemen, farmers, officers, and witnesses of 1775" },
-              { href: "/events", label: "Events", desc: "From the alarm riders to the retreat back to Boston" },
-              { href: "/places", label: "Places", desc: "The North Bridge, taverns, and the roads that mattered" },
+              { href: "/people", label: "People", desc: "The figures who shaped Yorktown's history" },
+              { href: "/events", label: "Events", desc: "The full timeline of what happened here" },
+              { href: "/places", label: "Places", desc: "The sites and landscapes that tell the story" },
             ].map((item) => (
               <a
                 key={item.href}

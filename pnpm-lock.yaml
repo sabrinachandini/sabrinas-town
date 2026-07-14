@@ -189,6 +189,9 @@ importers:
       '@hife/content':
         specifier: workspace:*
         version: link:../../packages/content
+      '@hife/town-site':
+        specifier: workspace:*
+        version: link:../../packages/town-site
       '@hife/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -359,6 +362,55 @@ importers:
       next:
         specifier: ^16.2.3
         version: 16.2.4(@opentelemetry/api@1.9.1)(@playwright/test@1.61.1)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      react:
+        specifier: ^19.0.0
+        version: 19.2.3
+      react-dom:
+        specifier: ^19.0.0
+        version: 19.2.3(react@19.2.3)
+    devDependencies:
+      '@types/node':
+        specifier: ^22
+        version: 22.19.17
+      '@types/react':
+        specifier: ^19
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: ^19
+        version: 19.2.3(@types/react@19.2.14)
+      autoprefixer:
+        specifier: ^10.4.20
+        version: 10.5.0(postcss@8.5.10)
+      postcss:
+        specifier: ^8.4.49
+        version: 8.5.10
+      prisma:
+        specifier: 5.22.0
+        version: 5.22.0
+      tailwindcss:
+        specifier: ^3.4.0
+        version: 3.4.19(tsx@4.21.0)
+      typescript:
+        specifier: ^5
+        version: 5.9.3
+
+  sites/yorktown-va:
+    dependencies:
+      '@hife/content':
+        specifier: workspace:*
+        version: link:../../packages/content
+      '@hife/town-site':
+        specifier: workspace:*
+        version: link:../../packages/town-site
+      '@hife/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
+      '@prisma/client':
+        specifier: 5.22.0
+        version: 5.22.0(prisma@5.22.0)
+      next:
+        specifier: ^16.2.3
+        version: 16.2.9(@babel/core@7.29.0)(@opentelemetry/api@1.9.1)(@playwright/test@1.61.1)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       react:
         specifier: ^19.0.0
         version: 19.2.3
