@@ -1,6 +1,8 @@
 import { getChangelog } from "@/lib/api";
 import NextLink from "next/link";
 
+export const dynamic = "force-dynamic";
+
 interface PageProps {
   searchParams: Promise<{ town?: string }>;
 }
