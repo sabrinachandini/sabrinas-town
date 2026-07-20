@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import { isRedirectError } from "next/dist/client/components/redirect-error";
 import { signIn, auth } from "@/lib/auth";
 import { Container, Heading, Text, Link, Button } from "@/components/ui";
 
@@ -24,11 +25,17 @@ export default async function LoginPage({
 
   async function handleSignIn(formData: FormData) {
     "use server";
-    await signIn("credentials", {
-      email: formData.get("email") as string,
-      password: formData.get("password") as string,
-      redirectTo: callbackUrl || "/org/new",
-    });
+    try {
+      await signIn("credentials", {
+        email: formData.get("email") as string,
+        password: formData.get("password") as string,
+        redirectTo: callbackUrl || "/org/new",
+      });
+    } catch (err) {
+      if (isRedirectError(err)) throw err;
+      const base = `/login${callbackUrl ? `?callbackUrl=${encodeURIComponent(callbackUrl)}` : "?"}`;
+      redirect(`${base}${callbackUrl ? "&" : ""}error=CredentialsSignin`);
+    }
   }
 
   return (
