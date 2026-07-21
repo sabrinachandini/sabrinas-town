@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
-import { Container, Heading, Text } from "@/components/ui";
+import { resolveScope } from "@/lib/scope";
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
@@ -12,20 +13,16 @@ export default async function AdminLayout({
   children: React.ReactNode;
 }) {
   const session = await auth();
-  const adminEmail = process.env.ADMIN_EMAIL;
+  const scope = await resolveScope(session);
 
-  if (!adminEmail || !session?.user?.email || session.user.email !== adminEmail) {
-    return (
-      <main className="py-section">
-        <Container>
-          <Heading level={1}>Access Denied</Heading>
-          <Text className="mt-element" muted>
-            You do not have permission to view this page.
-          </Text>
-        </Container>
-      </main>
-    );
+  if (!scope) {
+    redirect("/login?callbackUrl=/admin");
   }
 
+  if (scope.type === "town") {
+    redirect("/admin/town");
+  }
+
+  // scope.type === "network" — staff; render Mission Control
   return <>{children}</>;
 }
