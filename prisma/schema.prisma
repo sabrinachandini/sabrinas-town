@@ -1530,3 +1530,67 @@ model IngestionRun {
   errors         Json?
   log            String    @db.Text @default("")
 }
+
+// ============================================================================
+// ENTITY LINK — Bible's typed relationship vocabulary (F-4)
+//
+// Replaces the ad-hoc join tables over time.
+// Existing join tables (EventPerson, TownPerson, etc.) remain until the
+// migration script is verified and the originals are retired.
+//
+// Invariant: linkType=RELATED_TO requires a non-empty label.
+//            Enforced in the DAL — never rely on the DB alone.
+// ============================================================================
+
+enum EntityType {
+  TOWN
+  PLACE
+  PERSON
+  EVENT
+  SOURCE
+  STORY
+  ORGANIZATION
+  ROUTE
+  BUSINESS
+}
+
+enum LinkType {
+  LOCATED_IN        // entity is geographically within a place/town
+  PARTICIPATED_IN   // person participated in an event
+  HAPPENED_AT       // event happened at a place
+  HAPPENED_ON       // event happened on a date (target = Event with date)
+  MENTIONS          // source mentions an entity
+  MEMBER_OF         // person is/was a member of an organization
+  PASSES_THROUGH    // route passes through a town/place
+  RELATED_TO        // generic relationship — label REQUIRED
+}
+
+enum EntityLinkStatus {
+  NEEDS_REVIEW
+  PUBLISHED
+}
+
+model EntityLink {
+  id       String           @id @default(cuid())
+
+  fromId   String
+  fromType EntityType
+  toId     String
+  toType   EntityType
+
+  linkType LinkType
+  label    String?          // required when linkType = RELATED_TO
+
+  sourceId String?          // supporting source for this relationship
+
+  status   EntityLinkStatus @default(NEEDS_REVIEW)
+
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+
+  @@unique([fromId, fromType, toId, toType, linkType])
+  @@index([fromId, fromType])
+  @@index([toId, toType])
+  @@index([linkType])
+  @@index([status])
+}
