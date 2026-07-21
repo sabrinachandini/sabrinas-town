@@ -21,21 +21,37 @@ export type Scope = NetworkScope | TownScope | null;
  *   NetworkScope — user is HIFE staff; may access Mission Control
  *   TownScope    — user is a partner; restricted to their town
  *   null         — unauthenticated or no recognised role
- *
- * Partner path is wired once Membership model lands in F-3.
  */
 export async function resolveScope(session: Session | null): Promise<Scope> {
   if (!session?.user?.id) return null;
 
   const user = await prisma.user.findUnique({
     where: { id: session.user.id },
-    select: { isStaff: true },
+    select: {
+      isStaff: true,
+      memberships: {
+        where: { partnerAccount: { status: "ACTIVE" } },
+        select: {
+          partnerAccount: { select: { id: true, townId: true } },
+        },
+        take: 1,
+        orderBy: { createdAt: "asc" },
+      },
+    },
   });
 
   if (!user) return null;
   if (user.isStaff) return { type: "network", role: "staff" };
 
-  // Partner path: resolved in F-3 once Membership model exists.
+  const membership = user.memberships[0];
+  if (membership) {
+    return {
+      type: "town",
+      townId: membership.partnerAccount.townId,
+      partnerAccountId: membership.partnerAccount.id,
+    };
+  }
+
   return null;
 }
 

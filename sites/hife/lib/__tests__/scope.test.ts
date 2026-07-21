@@ -53,10 +53,36 @@ describe("resolveScope", () => {
     expect(scope).toEqual({ type: "network", role: "staff" });
   });
 
-  it("returns null for a non-staff user with no partner account (pre-F3)", async () => {
-    mockFindUnique.mockResolvedValue({ isStaff: false });
+  it("returns null for a non-staff user with no memberships", async () => {
+    mockFindUnique.mockResolvedValue({ isStaff: false, memberships: [] });
     const scope = await resolveScope(session());
     expect(scope).toBeNull();
+  });
+
+  it("returns TownScope for a partner user with an active membership", async () => {
+    mockFindUnique.mockResolvedValue({
+      isStaff: false,
+      memberships: [
+        { partnerAccount: { id: "pa-1", townId: "town-lex" } },
+      ],
+    });
+    const scope = await resolveScope(session());
+    expect(scope).toEqual({
+      type: "town",
+      townId: "town-lex",
+      partnerAccountId: "pa-1",
+    });
+  });
+
+  it("prefers staff over partner membership when both are set", async () => {
+    mockFindUnique.mockResolvedValue({
+      isStaff: true,
+      memberships: [
+        { partnerAccount: { id: "pa-1", townId: "town-lex" } },
+      ],
+    });
+    const scope = await resolveScope(session());
+    expect(scope).toEqual({ type: "network", role: "staff" });
   });
 
   it("queries by session user id", async () => {

@@ -97,6 +97,9 @@ model Town {
   // across the South Carolina state line in York County, SC.")
   footnote         String?   @db.Text
 
+  // Partner system
+  partnerAccount   PartnerAccount?
+
   @@index([state])
   @@index([compositeScore(sort: Desc)])
 }
@@ -520,10 +523,13 @@ model User {
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 
-  accounts      Account[]
-  sessions      Session[]
-  orgUsers      OrgUser[]
-  musters       Muster[]
+  accounts             Account[]
+  sessions             Session[]
+  orgUsers             OrgUser[]
+  musters              Muster[]
+  memberships          Membership[]
+  suggestionsSubmitted Suggestion[] @relation("SuggestionSubmitter")
+  proposalsSubmitted   Proposal[]   @relation("ProposalSubmitter")
 }
 
 model Account {
@@ -1301,6 +1307,216 @@ model EventSource {
 
   @@index([active])
 }
+
+// ============================================================================
+// HIFE FOR TOWNS — OPERATIONAL SCHEMA (F-3)
+// ============================================================================
+
+enum PartnerAccountStatus {
+  PENDING
+  ACTIVE
+  SUSPENDED
+  CHURNED
+}
+
+model PartnerAccount {
+  id       String               @id @default(cuid())
+  townId   String               @unique
+  town     Town                 @relation(fields: [townId], references: [id])
+  name     String
+  contactEmail String?
+  status   PartnerAccountStatus @default(PENDING)
+
+  // Stripe-shaped refs — no live billing in P0/P1
+  stripeCustomerId     String? @unique
+  stripeSubscriptionId String? @unique
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  memberships Membership[]
+  agreements  Agreement[]
+  suggestions Suggestion[]
+  proposals   Proposal[]
+  auditEvents AuditEvent[]
+
+  @@index([status])
+}
+
+enum MemberRole {
+  OWNER
+  ADMIN
+  EDITOR
+  VIEWER
+}
+
+model Membership {
+  id               String         @id @default(cuid())
+  partnerAccountId String
+  partnerAccount   PartnerAccount @relation(fields: [partnerAccountId], references: [id], onDelete: Cascade)
+  userId           String
+  user             User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role             MemberRole     @default(VIEWER)
+  createdAt        DateTime       @default(now())
+
+  @@unique([partnerAccountId, userId])
+  @@index([userId])
+  @@index([partnerAccountId])
+}
+
+enum AgreementStatus {
+  DRAFT
+  ACTIVE
+  EXPIRED
+  TERMINATED
+}
+
+model Agreement {
+  id               String          @id @default(cuid())
+  partnerAccountId String
+  partnerAccount   PartnerAccount  @relation(fields: [partnerAccountId], references: [id])
+  title            String
+  terms            String          @db.Text
+  status           AgreementStatus @default(DRAFT)
+
+  // Stripe-shaped refs — no live billing in P0/P1
+  stripeCustomerId     String?
+  stripeSubscriptionId String?
+  stripePriceId        String?
+
+  startsAt  DateTime?
+  expiresAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  proposals Proposal[]
+
+  @@index([partnerAccountId])
+  @@index([status])
+}
+
+enum SuggestionStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+}
+
+enum SuggestionEntityType {
+  TOWN
+  PLACE
+  EVENT
+  PERSON
+  SOURCE
+  STORY
+  ORGANIZATION
+  ROUTE
+  BUSINESS
+}
+
+model Suggestion {
+  id               String               @id @default(cuid())
+  partnerAccountId String
+  partnerAccount   PartnerAccount       @relation(fields: [partnerAccountId], references: [id])
+  submittedById    String
+  submittedBy      User                 @relation("SuggestionSubmitter", fields: [submittedById], references: [id])
+
+  entityType       SuggestionEntityType
+  entityId         String?              // null for new-entity suggestions
+
+  payload          Json                 // Proposed change as structured diff
+  note             String?              @db.Text
+
+  status           SuggestionStatus @default(PENDING)
+  reviewedById     String?
+  reviewNote       String?          @db.Text
+  reviewedAt       DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([partnerAccountId])
+  @@index([status])
+  @@index([entityType, entityId])
+}
+
+enum ProposalStatus {
+  DRAFT
+  SUBMITTED
+  IN_REVIEW
+  APPROVED
+  REJECTED
+}
+
+model Proposal {
+  id               String         @id @default(cuid())
+  partnerAccountId String
+  partnerAccount   PartnerAccount @relation(fields: [partnerAccountId], references: [id])
+  agreementId      String?
+  agreement        Agreement?     @relation(fields: [agreementId], references: [id])
+  submittedById    String
+  submittedBy      User           @relation("ProposalSubmitter", fields: [submittedById], references: [id])
+
+  title   String
+  summary String @db.Text
+  details Json?
+
+  status       ProposalStatus @default(DRAFT)
+  reviewedById String?
+  reviewNote   String?        @db.Text
+  reviewedAt   DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([partnerAccountId])
+  @@index([status])
+  @@index([agreementId])
+}
+
+enum AuditAction {
+  CREATED
+  UPDATED
+  DELETED
+  PUBLISHED
+  UNPUBLISHED
+  APPROVED
+  REJECTED
+  MEMBERSHIP_ADDED
+  MEMBERSHIP_REMOVED
+  AGREEMENT_SIGNED
+  PROPOSAL_SUBMITTED
+  SUGGESTION_SUBMITTED
+}
+
+// Immutable audit log — never update, only insert.
+model AuditEvent {
+  id               String          @id @default(cuid())
+
+  // Actor — denormalised so the record survives user deletion
+  actorId          String?
+  actorEmail       String?
+
+  // Scope — null for network-wide actions
+  partnerAccountId String?
+  partnerAccount   PartnerAccount? @relation(fields: [partnerAccountId], references: [id])
+
+  action     AuditAction
+  entityType String      // "Suggestion" | "Proposal" | "Agreement" | etc.
+  entityId   String?
+
+  metadata  Json?
+  createdAt DateTime @default(now())
+
+  @@index([partnerAccountId])
+  @@index([actorId])
+  @@index([action])
+  @@index([createdAt(sort: Desc)])
+}
+
+// ============================================================================
+// EVENT INGESTION
+// ============================================================================
 
 model IngestionRun {
   id             String    @id @default(cuid())
