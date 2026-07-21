@@ -1339,6 +1339,7 @@ model PartnerAccount {
   suggestions Suggestion[]
   proposals   Proposal[]
   auditEvents AuditEvent[]
+  invites     PartnerInvite[]
 
   @@index([status])
 }
@@ -1512,6 +1513,25 @@ model AuditEvent {
   @@index([actorId])
   @@index([action])
   @@index([createdAt(sort: Desc)])
+}
+
+// ============================================================================
+// PARTNER INVITES
+// ============================================================================
+
+model PartnerInvite {
+  id               String         @id @default(cuid())
+  partnerAccountId String
+  partnerAccount   PartnerAccount @relation(fields: [partnerAccountId], references: [id], onDelete: Cascade)
+  email            String
+  role             MemberRole     @default(VIEWER)
+  token            String         @unique @default(cuid())
+  expiresAt        DateTime
+  acceptedAt       DateTime?
+  createdAt        DateTime       @default(now())
+
+  @@index([partnerAccountId])
+  @@index([token])
 }
 
 // ============================================================================
