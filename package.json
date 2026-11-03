@@ -34,7 +34,6 @@
   "engines": {
     "node": "22.x"
   },
-  "packageManager": "pnpm@10.33.2",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",
     "@fastify/cors": "^9.0.1",
