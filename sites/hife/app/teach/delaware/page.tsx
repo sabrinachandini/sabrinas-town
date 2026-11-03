@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     title: "Teach Delaware | History is for Everyone",
     description:
       "Teacher resources for Delaware towns in the American Revolution. Curated lesson plans, primary sources, and classroom assessments.",
-    url: "https://sabrinas-town.vercel.app/teach/delaware",
+    url: "https://www.historyisforeveryone.com/teach/delaware",
   },
-  alternates: { canonical: "https://sabrinas-town.vercel.app/teach/delaware" },
+  alternates: { canonical: "https://www.historyisforeveryone.com/teach/delaware" },
 };
 
 export const dynamic = "force-dynamic";

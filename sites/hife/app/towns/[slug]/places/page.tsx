@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps) {
   if (!town) return { title: "Visit | Town Not Found" };
   const title = `Places | ${town.name}, ${town.state}`;
   const description = `Plan your visit to ${town.name}, ${town.state} — historic sites, hours, and trip planning.`;
-  const url = `https://sabrinas-town.vercel.app/towns/${slug}/places`;
+  const url = `https://www.historyisforeveryone.com/towns/${slug}/places`;
   const images = town.imageUrl ? [{ url: town.imageUrl, width: 1200, height: 630 }] : undefined;
   return {
     title,

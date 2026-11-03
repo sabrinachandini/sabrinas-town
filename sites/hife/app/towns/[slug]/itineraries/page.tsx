@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: PageProps) {
   if (!town) return { title: "Itineraries | Town Not Found" };
   const title = `Itineraries from ${town.name}, ${town.state} | History is for Everyone`;
   const description = `Suggested multi-town itineraries featuring ${town.name}, ${town.state} — connecting Revolutionary sites along historic routes.`;
-  const url = `https://sabrinas-town.vercel.app/towns/${slug}/itineraries`;
+  const url = `https://www.historyisforeveryone.com/towns/${slug}/itineraries`;
   return {
     title,
     description,

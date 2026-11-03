@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: PageProps) {
   if (!person) return { title: "Person Not Found" };
   const title = `${person.name} | History is for Everyone`;
   const description = person.bioShort.slice(0, 160);
-  const url = `https://sabrinas-town.vercel.app/towns/${slug}/people/${personSlug}`;
+  const url = `https://www.historyisforeveryone.com/towns/${slug}/people/${personSlug}`;
   return {
     title,
     description,

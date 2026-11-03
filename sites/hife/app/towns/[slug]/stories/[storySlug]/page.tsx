@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PageProps) {
 
   const title = story.title;
   const description = story.textVersion.slice(0, 160);
-  const url = `https://sabrinas-town.vercel.app/towns/${slug}/stories/${storySlug}`;
+  const url = `https://www.historyisforeveryone.com/towns/${slug}/stories/${storySlug}`;
   return {
     title,
     description,

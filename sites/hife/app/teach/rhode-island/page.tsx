@@ -9,10 +9,10 @@ export const metadata: Metadata = {
     title: "Teach Rhode Island | History is for Everyone",
     description:
       "Teacher resources for Rhode Island towns in the American Revolution. Curated lesson plans, primary sources, and classroom assessments.",
-    url: "https://sabrinas-town.vercel.app/teach/rhode-island",
+    url: "https://www.historyisforeveryone.com/teach/rhode-island",
   },
   alternates: {
-    canonical: "https://sabrinas-town.vercel.app/teach/rhode-island",
+    canonical: "https://www.historyisforeveryone.com/teach/rhode-island",
   },
 };
 

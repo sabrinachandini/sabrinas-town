@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: PageProps) {
 
   const title = cluster.name;
   const description = cluster.theme;
-  const url = `https://sabrinas-town.vercel.app/clusters/${slug}`;
+  const url = `https://www.historyisforeveryone.com/clusters/${slug}`;
   return {
     title,
     description,

@@ -48,8 +48,8 @@ export function TownLayout({ config, children, nav = DEFAULT_NAV }: TownLayoutPr
       <main>{children}</main>
       <footer className="bg-navy text-cream/60 text-xs font-body text-center py-6 mt-16">
         Part of the History Is for Everyone network ·{" "}
-        <a href="https://sabrinas-town.vercel.app" className="underline">
-          sabrinas-town.vercel.app
+        <a href="https://www.historyisforeveryone.com" className="underline">
+          www.historyisforeveryone.com
         </a>
       </footer>
     </>

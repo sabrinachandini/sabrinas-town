@@ -27,7 +27,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sabrinas-town.vercel.app"),
+  metadataBase: new URL("https://www.historyisforeveryone.com"),
   title: {
     default: "History is for Everyone | American Revolution Research Network",
     template: "%s | History is for Everyone",
@@ -59,8 +59,8 @@ export default function RootLayout({
       "@context": "https://schema.org",
       "@type": "Organization",
       name: "History is for Everyone",
-      url: "https://sabrinas-town.vercel.app",
-      logo: "https://sabrinas-town.vercel.app/logo.png",
+      url: "https://www.historyisforeveryone.com",
+      logo: "https://www.historyisforeveryone.com/logo.png",
       description: "A living network of America's Revolutionary towns — built for travelers, teachers, and towns themselves.",
       founder: { "@type": "Person", name: "Sabrina Bhattacharjya", url: "https://sabrinachandini.com" },
     },
@@ -68,10 +68,10 @@ export default function RootLayout({
       "@context": "https://schema.org",
       "@type": "WebSite",
       name: "History is for Everyone",
-      url: "https://sabrinas-town.vercel.app",
+      url: "https://www.historyisforeveryone.com",
       potentialAction: {
         "@type": "SearchAction",
-        target: { "@type": "EntryPoint", urlTemplate: "https://sabrinas-town.vercel.app/search?q={search_term_string}" },
+        target: { "@type": "EntryPoint", urlTemplate: "https://www.historyisforeveryone.com/search?q={search_term_string}" },
         "query-input": "required name=search_term_string",
       },
     },

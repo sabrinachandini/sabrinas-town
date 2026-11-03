@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!event) return { title: "Event Not Found" };
   const title = `${event.name} | History is for Everyone`;
   const description = event.summary.slice(0, 160);
-  const url = `https://sabrinas-town.vercel.app/events/${slug}`;
+  const url = `https://www.historyisforeveryone.com/events/${slug}`;
   return {
     title,
     description,

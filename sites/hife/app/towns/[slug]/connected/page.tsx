@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps) {
 
   const title = `Connected Towns | ${town.name}, ${town.state}`;
   const description = `Towns connected to ${town.name}, ${town.state} through shared events, people, themes, and routes.`;
-  const url = `https://sabrinas-town.vercel.app/towns/${slug}/connected`;
+  const url = `https://www.historyisforeveryone.com/towns/${slug}/connected`;
   return {
     title,
     description,

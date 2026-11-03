@@ -52,7 +52,7 @@ export const townConfig: TownConfig = {
   ],
   accessibilityNotes:
     "Concord Center sidewalks and the North Bridge approach are largely walkable, though the bridge itself has steps. For current site access and program details, check the official Minute Man National Historical Park and Concord visitor sources before you travel.",
-  hifeMusterUrl: "https://sabrinas-town.vercel.app/muster/new?towns=concord-ma",
+  hifeMusterUrl: "https://www.historyisforeveryone.com/muster/new?towns=concord-ma",
 };
 
 export default townConfig;

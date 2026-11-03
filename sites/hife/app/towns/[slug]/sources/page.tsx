@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: PageProps) {
 
   const title = `Sources | ${town.name}, ${town.state}`;
   const description = `Sources and references for ${town.name}, ${town.state} organized by credibility tier.`;
-  const url = `https://sabrinas-town.vercel.app/towns/${slug}/sources`;
+  const url = `https://www.historyisforeveryone.com/towns/${slug}/sources`;
   const images = town.imageUrl ? [{ url: town.imageUrl, width: 1200, height: 630 }] : undefined;
   return {
     title,

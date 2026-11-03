@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!place) return { title: "Place Not Found" };
   const title = `${place.name} | History is for Everyone`;
   const description = place.description.slice(0, 160);
-  const url = `https://sabrinas-town.vercel.app/places/${slug}`;
+  const url = `https://www.historyisforeveryone.com/places/${slug}`;
   return {
     title,
     description,

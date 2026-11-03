@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     title: "Teach New York | History is for Everyone",
     description:
       "Teacher resources for New York towns at the strategic center of the American Revolution. Curated lesson plans, primary sources, and classroom assessments.",
-    url: "https://sabrinas-town.vercel.app/teach/new-york",
+    url: "https://www.historyisforeveryone.com/teach/new-york",
   },
-  alternates: { canonical: "https://sabrinas-town.vercel.app/teach/new-york" },
+  alternates: { canonical: "https://www.historyisforeveryone.com/teach/new-york" },
 };
 
 export const dynamic = "force-dynamic";

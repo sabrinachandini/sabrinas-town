@@ -7,9 +7,9 @@ export const metadata = {
   openGraph: {
     title: "About",
     description: "Why we built this, who it serves, and what we believe about history, access, and trust.",
-    url: "https://sabrinas-town.vercel.app/about",
+    url: "https://www.historyisforeveryone.com/about",
   },
-  alternates: { canonical: "https://sabrinas-town.vercel.app/about" },
+  alternates: { canonical: "https://www.historyisforeveryone.com/about" },
 };
 
 export default function AboutPage() {

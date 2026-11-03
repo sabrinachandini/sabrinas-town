@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: PageProps) {
   if (!town) return { title: "Not Found" };
   const title = `Stories from ${town.name}, ${town.state} | History is for Everyone`;
   const description = `First-person accounts and historical voices from ${town.name}, ${town.state} during the Revolutionary War.`;
-  const url = `https://sabrinas-town.vercel.app/towns/${slug}/stories`;
+  const url = `https://www.historyisforeveryone.com/towns/${slug}/stories`;
   const images = town.imageUrl ? [{ url: town.imageUrl, width: 1200, height: 630 }] : undefined;
   return {
     title,

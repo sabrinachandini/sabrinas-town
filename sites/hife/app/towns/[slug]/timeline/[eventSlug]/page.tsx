@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps) {
   if (!event) return { title: "Event Not Found" };
   const title = event.name;
   const description = event.summary.slice(0, 160);
-  const url = `https://sabrinas-town.vercel.app/towns/${slug}/timeline/${eventSlug}`;
+  const url = `https://www.historyisforeveryone.com/towns/${slug}/timeline/${eventSlug}`;
   const images = event.imageUrl ? [{ url: event.imageUrl, width: 1200, height: 630 }] : undefined;
   return {
     title, description,
@@ -67,11 +67,11 @@ export default async function EventDetailPage({ params }: PageProps) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://sabrinas-town.vercel.app" },
-      { "@type": "ListItem", position: 2, name: "Towns", item: "https://sabrinas-town.vercel.app/towns" },
-      { "@type": "ListItem", position: 3, name: town.name, item: `https://sabrinas-town.vercel.app/towns/${slug}` },
-      { "@type": "ListItem", position: 4, name: "Timeline", item: `https://sabrinas-town.vercel.app/towns/${slug}/timeline` },
-      { "@type": "ListItem", position: 5, name: event.name, item: `https://sabrinas-town.vercel.app/towns/${slug}/timeline/${eventSlug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.historyisforeveryone.com" },
+      { "@type": "ListItem", position: 2, name: "Towns", item: "https://www.historyisforeveryone.com/towns" },
+      { "@type": "ListItem", position: 3, name: town.name, item: `https://www.historyisforeveryone.com/towns/${slug}` },
+      { "@type": "ListItem", position: 4, name: "Timeline", item: `https://www.historyisforeveryone.com/towns/${slug}/timeline` },
+      { "@type": "ListItem", position: 5, name: event.name, item: `https://www.historyisforeveryone.com/towns/${slug}/timeline/${eventSlug}` },
     ],
   };
 
@@ -80,11 +80,11 @@ export default async function EventDetailPage({ params }: PageProps) {
     "@type": "Event",
     name: event.name,
     description: event.summary.slice(0, 300),
-    url: `https://sabrinas-town.vercel.app/towns/${slug}/timeline/${eventSlug}`,
+    url: `https://www.historyisforeveryone.com/towns/${slug}/timeline/${eventSlug}`,
     ...(event.startDate ? { startDate: event.startDate } : {}),
     ...(event.endDate ? { endDate: event.endDate } : {}),
     location: { "@type": "Place", name: town.name, address: { "@type": "PostalAddress", addressRegion: town.state, addressCountry: "US" } },
-    organizer: { "@type": "Organization", name: "History is for Everyone", url: "https://sabrinas-town.vercel.app" },
+    organizer: { "@type": "Organization", name: "History is for Everyone", url: "https://www.historyisforeveryone.com" },
     ...(event.imageUrl ? { image: event.imageUrl } : {}),
   };
 

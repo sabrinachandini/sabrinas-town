@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getRankings, getAllPeople } from "@/lib/api";
 import type { RankedTown } from "@/lib/api";
 
-const BASE = "https://sabrinas-town.vercel.app";
+const BASE = "https://www.historyisforeveryone.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [towns, people] = await Promise.all([

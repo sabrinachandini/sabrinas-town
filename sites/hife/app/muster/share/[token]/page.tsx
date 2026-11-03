@@ -87,7 +87,7 @@ export default async function MusterSharePage({ params }: PageProps) {
       </div>
 
       <ShareActions
-        shareUrl={`https://sabrinas-town.vercel.app/muster/share/${token}`}
+        shareUrl={`https://www.historyisforeveryone.com/muster/share/${token}`}
         title={muster.title}
       />
 

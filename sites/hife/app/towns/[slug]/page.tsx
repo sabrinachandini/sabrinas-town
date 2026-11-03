@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PageProps) {
   if (!town) return { title: "Town Not Found" };
   const title = `${town.name}, ${town.state}`;
   const description = town.execSummary150;
-  const url = `https://sabrinas-town.vercel.app/towns/${slug}`;
+  const url = `https://www.historyisforeveryone.com/towns/${slug}`;
   const images = town.imageUrl ? [{ url: town.imageUrl, width: 1200, height: 630 }] : undefined;
   return {
     title,
@@ -84,7 +84,7 @@ export default async function TownOverviewPage({ params }: PageProps) {
     "@type": "TouristDestination",
     name: town.name,
     description: town.execSummary150,
-    url: `https://sabrinas-town.vercel.app/towns/${slug}`,
+    url: `https://www.historyisforeveryone.com/towns/${slug}`,
     ...(town.geo ? { geo: { "@type": "GeoCoordinates", latitude: town.geo.lat, longitude: town.geo.lng } } : {}),
     ...(town.imageUrl ? { image: town.imageUrl } : {}),
     touristType: "History & Culture",

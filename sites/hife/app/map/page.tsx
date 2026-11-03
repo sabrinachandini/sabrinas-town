@@ -13,9 +13,9 @@ export const metadata: Metadata = {
     title: "Interactive Map | History is for Everyone",
     description:
       "Revolutionary War towns mapped with their historical connections across the thirteen colonies.",
-    url: "https://sabrinas-town.vercel.app/map",
+    url: "https://www.historyisforeveryone.com/map",
   },
-  alternates: { canonical: "https://sabrinas-town.vercel.app/map" },
+  alternates: { canonical: "https://www.historyisforeveryone.com/map" },
 };
 
 export default async function MapPage() {

@@ -10,9 +10,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Historic Places | History is for Everyone",
     description: "Battlefields, historic houses, monuments, and landmarks of the American Revolution.",
-    url: "https://sabrinas-town.vercel.app/places",
+    url: "https://www.historyisforeveryone.com/places",
   },
-  alternates: { canonical: "https://sabrinas-town.vercel.app/places" },
+  alternates: { canonical: "https://www.historyisforeveryone.com/places" },
 };
 
 const PLACE_TYPE_LABELS: Record<string, string> = {

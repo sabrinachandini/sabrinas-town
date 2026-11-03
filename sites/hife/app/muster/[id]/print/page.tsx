@@ -71,7 +71,7 @@ export default async function MusterPrintPage({ params }: PageProps) {
       ))}
 
       <div className="border-t border-ink/10 pt-4 mt-8 flex justify-between text-[10px] text-ink/30 uppercase tracking-[0.1em]">
-        <span>History Is For Everyone · sabrinas-town.vercel.app/muster</span>
+        <span>History Is For Everyone · www.historyisforeveryone.com/muster</span>
         <span>Printed from Muster</span>
       </div>
     </div>

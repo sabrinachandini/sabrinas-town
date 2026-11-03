@@ -5,9 +5,9 @@ export const metadata = {
   openGraph: {
     title: "Partner With Us",
     description: "Join the Revolutionary Town Network. Tourism boards and historical societies can feature their town's story.",
-    url: "https://sabrinas-town.vercel.app/partner",
+    url: "https://www.historyisforeveryone.com/partner",
   },
-  alternates: { canonical: "https://sabrinas-town.vercel.app/partner" },
+  alternates: { canonical: "https://www.historyisforeveryone.com/partner" },
 };
 
 const PROPOSITIONS = [

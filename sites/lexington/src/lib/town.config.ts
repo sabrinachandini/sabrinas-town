@@ -54,7 +54,7 @@ export const townConfig: TownConfig = {
   ],
   accessibilityNotes:
     "The Battle Green and Center sidewalks are largely level. For current site access and program details, check the official Lexington visitor and National Park sources before you travel.",
-  hifeMusterUrl: "https://sabrinas-town.vercel.app/muster/new?towns=lexington-ma",
+  hifeMusterUrl: "https://www.historyisforeveryone.com/muster/new?towns=lexington-ma",
 };
 
 export default townConfig;

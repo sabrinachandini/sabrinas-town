@@ -656,7 +656,7 @@ export const townConfig: TownConfig = {
   ],
   accessibilityNotes:
     "For current site access and program details, check the official ${name} visitor and National Park sources before you travel.",
-  hifeMusterUrl: "https://sabrinas-town.vercel.app/muster/new?towns=${slug}",
+  hifeMusterUrl: "https://www.historyisforeveryone.com/muster/new?towns=${slug}",
 };
 
 export default townConfig;

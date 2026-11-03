@@ -36,7 +36,7 @@ export async function GET(req: Request) {
           <p style="font-size:12px;text-transform:uppercase;letter-spacing:0.15em;color:#cc3322;margin-bottom:4px;">${e.year} · ${e.town.name}, ${e.town.state}</p>
           <p style="font-size:18px;font-weight:700;color:#14100a;margin-bottom:6px;line-height:1.2;">${e.name}</p>
           ${e.summary ? `<p style="font-size:14px;color:#555;line-height:1.6;">${e.summary.slice(0, 200)}${e.summary.length > 200 ? "…" : ""}</p>` : ""}
-          <a href="https://sabrinas-town.vercel.app/towns/${e.town.slug}/timeline/${e.slug ?? e.id}" style="display:inline-block;margin-top:10px;font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:#cc3322;text-decoration:none;border:1.5px solid #cc3322;padding:4px 12px;">Read more →</a>
+          <a href="https://www.historyisforeveryone.com/towns/${e.town.slug}/timeline/${e.slug ?? e.id}" style="display:inline-block;margin-top:10px;font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:#cc3322;text-decoration:none;border:1.5px solid #cc3322;padding:4px 12px;">Read more →</a>
         </div>
       `).join("");
 
@@ -61,7 +61,7 @@ export async function GET(req: Request) {
           ${eventsHtml}
 
           <div style="margin-top:32px;padding-top:24px;border-top:2px solid rgba(20,16,10,0.1);">
-            <a href="https://sabrinas-town.vercel.app/on-this-day" style="display:inline-block;background:#cc3322;color:#f2e6c8;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;font-weight:600;padding:12px 24px;text-decoration:none;">
+            <a href="https://www.historyisforeveryone.com/on-this-day" style="display:inline-block;background:#cc3322;color:#f2e6c8;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;font-weight:600;padding:12px 24px;text-decoration:none;">
               View on the site →
             </a>
           </div>
@@ -71,7 +71,7 @@ export async function GET(req: Request) {
         <div style="padding:20px 32px;border-top:2px solid rgba(20,16,10,0.08);">
           <p style="font-size:11px;color:rgba(20,16,10,0.35);line-height:1.5;margin:0;">
             You're receiving this because you signed up at History is for Everyone.<br>
-            <a href="https://sabrinas-town.vercel.app" style="color:rgba(20,16,10,0.5);">historyisforeveryone.com</a>
+            <a href="https://www.historyisforeveryone.com" style="color:rgba(20,16,10,0.5);">historyisforeveryone.com</a>
           </p>
         </div>
       </div>

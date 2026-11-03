@@ -52,7 +52,7 @@ export const townConfig: TownConfig = {
   ],
   accessibilityNotes:
     "The Yorktown waterfront and visitor center areas are largely accessible, though battlefield terrain varies. For current site access and program details, check the official Colonial National Historical Park and Yorktown visitor sources before you travel.",
-  hifeMusterUrl: "https://sabrinas-town.vercel.app/muster/new?towns=yorktown-va",
+  hifeMusterUrl: "https://www.historyisforeveryone.com/muster/new?towns=yorktown-va",
 };
 
 export default townConfig;

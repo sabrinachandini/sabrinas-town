@@ -10,9 +10,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Events of the Revolution | History is for Everyone",
     description: "Battles, signings, sieges, and turning points of the American Revolution.",
-    url: "https://sabrinas-town.vercel.app/events",
+    url: "https://www.historyisforeveryone.com/events",
   },
-  alternates: { canonical: "https://sabrinas-town.vercel.app/events" },
+  alternates: { canonical: "https://www.historyisforeveryone.com/events" },
 };
 
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];

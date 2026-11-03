@@ -52,9 +52,9 @@ export async function generateMetadata({ params }: PageProps) {
     openGraph: {
       title: `Events in ${town.name}, ${town.state}`,
       description: `Reenactments, festivals, and heritage events in ${town.name}.`,
-      url: `https://sabrinas-town.vercel.app/towns/${slug}/events`,
+      url: `https://www.historyisforeveryone.com/towns/${slug}/events`,
     },
-    alternates: { canonical: `https://sabrinas-town.vercel.app/towns/${slug}/events` },
+    alternates: { canonical: `https://www.historyisforeveryone.com/towns/${slug}/events` },
   };
 }
 

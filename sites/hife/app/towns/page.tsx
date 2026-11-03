@@ -8,9 +8,9 @@ export const metadata = {
   openGraph: {
     title: "Browse Towns",
     description: "A growing network of Revolutionary towns across America — every place where the American Revolution happened.",
-    url: "https://sabrinas-town.vercel.app/towns",
+    url: "https://www.historyisforeveryone.com/towns",
   },
-  alternates: { canonical: "https://sabrinas-town.vercel.app/towns" },
+  alternates: { canonical: "https://www.historyisforeveryone.com/towns" },
 };
 
 export const dynamic = "force-dynamic";

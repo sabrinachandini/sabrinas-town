@@ -9,10 +9,10 @@ export const metadata: Metadata = {
     title: "Teach Vermont | History is for Everyone",
     description:
       "Teacher resources for Vermont towns in the American Revolution. Curated lesson plans, primary sources, and classroom assessments.",
-    url: "https://sabrinas-town.vercel.app/teach/vermont",
+    url: "https://www.historyisforeveryone.com/teach/vermont",
   },
   alternates: {
-    canonical: "https://sabrinas-town.vercel.app/teach/vermont",
+    canonical: "https://www.historyisforeveryone.com/teach/vermont",
   },
 };
 

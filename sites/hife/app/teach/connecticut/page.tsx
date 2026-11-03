@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     title: "Teach Connecticut | History is for Everyone",
     description:
       "Teacher resources for Connecticut towns in the American Revolution. Curated lesson plans, primary sources, and classroom assessments.",
-    url: "https://sabrinas-town.vercel.app/teach/connecticut",
+    url: "https://www.historyisforeveryone.com/teach/connecticut",
   },
-  alternates: { canonical: "https://sabrinas-town.vercel.app/teach/connecticut" },
+  alternates: { canonical: "https://www.historyisforeveryone.com/teach/connecticut" },
 };
 
 export const dynamic = "force-dynamic";

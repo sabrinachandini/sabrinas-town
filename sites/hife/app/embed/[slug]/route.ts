@@ -14,7 +14,7 @@ export async function GET(
     return new NextResponse("Not found", { status: 404 });
   }
 
-  const siteUrl = "https://sabrinas-town.vercel.app";
+  const siteUrl = "https://www.historyisforeveryone.com";
   const summary = esc((town.execSummary150 ?? town.heroSummary40 ?? "").slice(0, 200));
   const initial = esc(town.name.charAt(0));
 

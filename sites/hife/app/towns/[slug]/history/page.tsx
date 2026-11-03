@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PageProps) {
 
   const title = `History | ${town.name}, ${town.state}`;
   const description = `The Revolutionary War history of ${town.name}, ${town.state}.`;
-  const url = `https://sabrinas-town.vercel.app/towns/${slug}/history`;
+  const url = `https://www.historyisforeveryone.com/towns/${slug}/history`;
   const images = town.imageUrl ? [{ url: town.imageUrl, width: 1200, height: 630 }] : undefined;
   return {
     title,
@@ -53,8 +53,8 @@ export default async function HistoryPage({ params }: PageProps) {
     "@type": "Article",
     headline: `The Revolutionary War History of ${town.name}, ${town.state}`,
     description: `The Revolutionary War history of ${town.name}, ${town.state}.`,
-    url: `https://sabrinas-town.vercel.app/towns/${town.slug}/history`,
-    publisher: { "@type": "Organization", name: "History is for Everyone", url: "https://sabrinas-town.vercel.app" },
+    url: `https://www.historyisforeveryone.com/towns/${town.slug}/history`,
+    publisher: { "@type": "Organization", name: "History is for Everyone", url: "https://www.historyisforeveryone.com" },
     dateModified: town.lastUpdatedAt,
     ...(town.imageUrl ? { image: town.imageUrl } : {}),
   };

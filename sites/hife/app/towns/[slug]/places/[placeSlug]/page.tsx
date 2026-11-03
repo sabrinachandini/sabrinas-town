@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: PageProps) {
 
   const title = place.name;
   const description = place.description.slice(0, 160);
-  const url = `https://sabrinas-town.vercel.app/towns/${slug}/places/${placeSlug}`;
+  const url = `https://www.historyisforeveryone.com/towns/${slug}/places/${placeSlug}`;
   return {
     title,
     description,

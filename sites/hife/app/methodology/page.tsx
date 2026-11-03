@@ -6,9 +6,9 @@ export const metadata = {
   openGraph: {
     title: "Methodology",
     description: "How towns are researched, sourced, and scored — our seven-dimension framework.",
-    url: "https://sabrinas-town.vercel.app/methodology",
+    url: "https://www.historyisforeveryone.com/methodology",
   },
-  alternates: { canonical: "https://sabrinas-town.vercel.app/methodology" },
+  alternates: { canonical: "https://www.historyisforeveryone.com/methodology" },
 };
 
 export default function MethodologyPage() {

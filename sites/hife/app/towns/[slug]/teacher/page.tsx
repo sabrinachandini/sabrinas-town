@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: PageProps) {
 
   const title = `Teach ${module.town.name}`;
   const description = `Complete teacher resources for ${module.town.name}: lesson plans, primary sources, discussion questions, and assessments.`;
-  const url = `https://sabrinas-town.vercel.app/towns/${slug}/teacher`;
+  const url = `https://www.historyisforeveryone.com/towns/${slug}/teacher`;
   return {
     title,
     description,

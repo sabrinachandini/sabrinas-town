@@ -9,7 +9,7 @@ export function generateMetadata() {
   return {
     title: "Search | History is for Everyone",
     description: "Search towns, events, people, and places across the American Revolution network.",
-    alternates: { canonical: "https://sabrinas-town.vercel.app/search" },
+    alternates: { canonical: "https://www.historyisforeveryone.com/search" },
   };
 }
 

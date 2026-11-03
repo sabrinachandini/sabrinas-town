@@ -11,9 +11,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "People of the Revolution | History is for Everyone",
     description: "Patriots, Loyalists, soldiers, and civilians who shaped the American Revolution.",
-    url: "https://sabrinas-town.vercel.app/people",
+    url: "https://www.historyisforeveryone.com/people",
   },
-  alternates: { canonical: "https://sabrinas-town.vercel.app/people" },
+  alternates: { canonical: "https://www.historyisforeveryone.com/people" },
 };
 
 const ROLE_GROUPS = [

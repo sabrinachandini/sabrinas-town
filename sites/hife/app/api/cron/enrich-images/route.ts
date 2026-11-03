@@ -11,7 +11,7 @@ export const maxDuration = 300;
 export const dynamic = "force-dynamic";
 
 const WIKIMEDIA_HEADERS = {
-  "User-Agent": "HistoryIsForEveryone/1.0 (https://sabrinas-town.vercel.app; contact@sabrinas-town.vercel.app) node-fetch/3",
+  "User-Agent": "HistoryIsForEveryone/1.0 (https://www.historyisforeveryone.com; contact@sabrinas-town.vercel.app) node-fetch/3",
   "Accept": "application/json",
 };
 

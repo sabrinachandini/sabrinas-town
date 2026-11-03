@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: PageProps) {
   if (!town) return { title: "Timeline | Town Not Found" };
   const title = `Timeline | ${town.name}, ${town.state}`;
   const description = `Timeline of Revolutionary War events in ${town.name}, ${town.state}.`;
-  const url = `https://sabrinas-town.vercel.app/towns/${slug}/timeline`;
+  const url = `https://www.historyisforeveryone.com/towns/${slug}/timeline`;
   return {
     title, description,
     openGraph: { title, description, url },

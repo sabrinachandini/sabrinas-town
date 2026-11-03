@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     title: "Teach Georgia | History is for Everyone",
     description:
       "Teacher resources for Georgia towns in the American Revolution. Curated lesson plans, primary sources, and classroom assessments.",
-    url: "https://sabrinas-town.vercel.app/teach/georgia",
+    url: "https://www.historyisforeveryone.com/teach/georgia",
   },
-  alternates: { canonical: "https://sabrinas-town.vercel.app/teach/georgia" },
+  alternates: { canonical: "https://www.historyisforeveryone.com/teach/georgia" },
 };
 
 export const dynamic = "force-dynamic";
